@@ -1,0 +1,1662 @@
+{
+  "selected_tag": "",
+  "bin_dump_file": "",
+  "mission_settings": {
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2,
+      "wing": ""
+    },
+    "mission": {
+      "name": "",
+      "level": "levels/avg_ireland.bin",
+      "type": "domination",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
+      "campaign": "pacific",
+      "environment": "Day",
+      "weather": "hazy",
+      "missionDebriefing": "",
+      "missionBriefing": "",
+      "chapter": "air_ground_battles",
+      "scoreLimit": 8000,
+      "timeLimit": 25,
+      "deathPenaltyMul": 1.0,
+      "ctaCaptureZoneEqualPenaltyMul": 0.0,
+      "randomSpawnTeams": true,
+      "remapAiTankModels": true,
+      "country_axis": "germany",
+      "country_allies": "ussr",
+      "tags": [],
+      "missionType": {
+        "_Dom": false,
+        "_Conq": false,
+        "_Bttl": false,
+        "_Bto": false,
+        "_DBttlA": true,
+        "_DBttlB": true,
+        "_Flc": false,
+        "_v1_race_straight": false,
+        "_v1_race_inverted": false,
+        "_v2_race_straight": false,
+        "_v2_race_inverted": false,
+        "_Conq1": false,
+        "_Conq2": false,
+        "_Conq3": false,
+        "_Conq4": false,
+        "_Conq5": false,
+        "_Conq6": false
+      }
+    },
+    "cover_points": [],
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 10.0
+    },
+    "aiParams": {
+      "aiEffectivenessViscosity": 90.0,
+      "effectivenessDistances": [2500.0,7000.0]
+    },
+    "spectator_points": []
+  },
+  "imports": [],
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "ctf_event_check": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "initMission": []
+      },
+      "conditions": [],
+      "actions": {
+        "varSetBool": {
+          "value": false,
+          "var": "useTankMissionsEvents",
+          "fromDescriptor": "useTankMissionsEvents"
+        },
+        "triggerEnable": {
+          "target": "ctf_event_start"
+        }
+      },
+      "else_actions": []
+    },
+    "ctf_event_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareBool": {
+          "var_value": "useTankMissionsEvents",
+          "value": true,
+          "comparasion_func": "equal"
+        }
+      },
+      "actions": [
+        {
+          "unitPutToSleep": [
+            {
+              "target": "ctf_event_bombers_squad"
+            },
+            {
+              "target": "ctf_event_objGroups_squad"
+            }
+          ]
+        },
+        {
+          "unitSetStealth": {
+            "set": true,
+            "radius": 0.0,
+            "target": "ctf_event_objGroups_squad"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "var": "event_ctf_random_time_int",
+            "from": 180,
+            "to_not_including": 300
+          }
+        },
+        {
+          "unitSetProperties": {
+            "object": "ctf_event_objGroups_squad",
+            "isImmortal": true
+          }
+        },
+        {
+          "unitSetProperties": {
+            "object": "ctf_event_bombers_squad",
+            "targetableByAi": false,
+            "plane": {
+              "targetDeviation": {
+                "trigger": "bombs",
+                "defaultVal": 0.0,
+                "limits": [0.0,0.0]
+              }
+            }
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "ctf_event_random_time"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_random_time": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "event_ctf_time_passed_int",
+          "value": 0,
+          "comparasion_func": "equal",
+          "var_value_other": "event_ctf_random_time_int"
+        }
+      },
+      "actions": {
+        "triggerEnable": [
+          {
+            "target": "ctf_event_zone01_active"
+          },
+          {
+            "target": "ctf_event_zone02_active"
+          },
+          {
+            "target": "ctf_event_zone03_active"
+          },
+          {
+            "target": "ctf_event_3_zones_active"
+          },
+          {
+            "target": "ctf_event_1_zone_active"
+          }
+        ],
+        "triggerDisable": {
+          "target": "ctf_event_random_time"
+        }
+      },
+      "else_actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "event_ctf_time_passed_int"
+        }
+      }
+    },
+    "ctf_event_zone01_active": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": [
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone01",
+            "army": 0
+          }
+        },
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone01",
+            "army": 1
+          }
+        },
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone01",
+            "army": 2
+          }
+        }
+      ],
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "event_ctf_active_zones_int"
+        }
+      },
+      "else_actions": []
+    },
+    "ctf_event_zone02_active": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": [
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone02",
+            "army": 0
+          }
+        },
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone02",
+            "army": 1
+          }
+        },
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone02",
+            "army": 2
+          }
+        }
+      ],
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "event_ctf_active_zones_int"
+        }
+      },
+      "else_actions": []
+    },
+    "ctf_event_zone03_active": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": [
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone03",
+            "army": 0
+          }
+        },
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone03",
+            "army": 1
+          }
+        },
+        {
+          "missionIsZoneCaptured": {
+            "target": "zone03",
+            "army": 2
+          }
+        }
+      ],
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "event_ctf_active_zones_int"
+        }
+      },
+      "else_actions": []
+    },
+    "ctf_event_3_zones_active": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "event_ctf_active_zones_int",
+          "value": 2,
+          "comparasion_func": "more"
+        }
+      },
+      "actions": [
+        {
+          "varSetString": {
+            "value": "zone",
+            "var": "event_ctf_random_final_zone_prefix_str"
+          }
+        },
+        {
+          "triggerDisable": [
+            {
+              "target": "ctf_event_zone01_active"
+            },
+            {
+              "target": "ctf_event_zone02_active"
+            },
+            {
+              "target": "ctf_event_zone03_active"
+            },
+            {
+              "target": "ctf_event_1_zone_active"
+            }
+          ]
+        },
+        {
+          "varSetRandomInt": {
+            "var": "event_ctf_random_final_zone_int",
+            "from": 1,
+            "to_not_including": 4
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_final_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_final_zone_prefix_str"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "var": "event_ctf_random_event_start_zone_int",
+            "from": 1,
+            "to_not_including": 3
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 0.0,
+            "var": "event_ctf_random_event_start_zone_int",
+            "use_variable": true,
+            "var_value": "event_ctf_random_final_zone_int"
+          }
+        },
+        {
+          "varAddString": [
+            {
+              "value": "event_ctf_random_final_zone_prefix_str"
+            },
+            {
+              "digits": 0
+            },
+            {
+              "var": "event_ctf_allied_player_captured_the_flag_hint_str"
+            },
+            {
+              "var": "event_ctf_enemy_player_captured_the_flag_hint_str"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "ctf_event_starting_point"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "ctf_event_spawn_circle_zone",
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "ctf_event_spawn_area_zone",
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "ctf_event_spawn_smoke_zone",
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "zone",
+            "var": "event_ctf_random_event_start_zone_prefix_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "_point",
+            "var": "event_ctf_random_event_start_point_prefix_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "hints/allied_player_has_captured_the_flag",
+            "var": "event_ctf_allied_player_captured_the_flag_hint_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "hints/enemy_player_has_captured_the_flag",
+            "var": "event_ctf_enemy_player_captured_the_flag_hint_str"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_1_zone_active": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "event_ctf_active_zones_int",
+          "value": 2,
+          "comparasion_func": "less"
+        }
+      },
+      "actions": [
+        {
+          "varSetString": {
+            "value": "zone",
+            "var": "event_ctf_random_final_zone_prefix_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "hints/allied_player_has_captured_the_flag",
+            "var": "event_ctf_allied_player_captured_the_flag_hint_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "hints/enemy_player_has_captured_the_flag",
+            "var": "event_ctf_enemy_player_captured_the_flag_hint_str"
+          }
+        },
+        {
+          "triggerDisable": [
+            {
+              "target": "ctf_event_zone01_active"
+            },
+            {
+              "target": "ctf_event_zone02_active"
+            },
+            {
+              "target": "ctf_event_zone03_active"
+            },
+            {
+              "target": "ctf_event_3_zones_active"
+            }
+          ]
+        },
+        {
+          "varAddString": {
+            "value": "@conq_random_capture_zone_var",
+            "digits": 2,
+            "var": "event_ctf_random_final_zone_prefix_str"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "var": "event_ctf_random_event_start_zone_int",
+            "from": 1,
+            "to_not_including": 3
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 0.0,
+            "var": "event_ctf_random_event_start_zone_int",
+            "use_variable": true,
+            "var_value": "conq_random_capture_zone_var"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "ctf_event_starting_point"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "ctf_event_spawn_circle_zone",
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "ctf_event_spawn_area_zone",
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "ctf_event_spawn_smoke_zone",
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "zone",
+            "var": "event_ctf_random_event_start_zone_prefix_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "_point",
+            "var": "event_ctf_random_event_start_point_prefix_str"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_starting_point": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "event_ctf_random_event_start_zone_int",
+          "value": 3,
+          "comparasion_func": "more"
+        }
+      },
+      "actions": [
+        {
+          "varModify": {
+            "operator": "subAB",
+            "value": 3.0,
+            "var": "event_ctf_random_event_start_zone_int"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_prefix_str",
+            "digits": 0,
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_prefix_str",
+            "digits": 0,
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_prefix_str",
+            "digits": 0,
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "var": "event_ctf_random_event_start_point_int",
+            "from": 1,
+            "to_not_including": 8
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_int",
+            "digits": 2,
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "ctf_event_starting_point_activation"
+          }
+        }
+      ],
+      "else_actions": [
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_prefix_str",
+            "digits": 0,
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_prefix_str",
+            "digits": 0,
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_zone_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_prefix_str",
+            "digits": 0,
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "var": "event_ctf_random_event_start_point_int",
+            "from": 1,
+            "to_not_including": 8
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_int",
+            "digits": 2,
+            "var": "event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_area_str"
+          }
+        },
+        {
+          "varAddString": {
+            "value": "@event_ctf_random_event_start_point_int",
+            "digits": 2,
+            "var": "event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "ctf_event_starting_point_activation"
+          }
+        }
+      ]
+    },
+    "ctf_event_bomber_wakeup": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": [],
+      "actions": {
+        "unitGetRandomNameFromSquad": {
+          "string_var": "event_ctf_random_plane_str",
+          "check_objects": "any",
+          "squad": "ctf_event_bombers_squad"
+        },
+        "unitWakeUp": {
+          "target": "@event_ctf_random_plane_str"
+        },
+        "unitAttackTarget": {
+          "playerAttracted": false,
+          "object": "@event_ctf_random_plane_str",
+          "target": "@event_ctf_random_zone_circle_str"
+        },
+        "triggerEnable": [
+          {
+            "target": "ctf_event_starting_point_activation"
+          },
+          {
+            "target": "ctf_event_bomber_is_dead"
+          }
+        ]
+      },
+      "else_actions": []
+    },
+    "ctf_event_bomber_is_dead": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "unitWhenStatus": {
+          "object_type": "isKilled",
+          "check_objects": "any",
+          "object_marking": 0,
+          "target_type": "isAlive",
+          "check_period": 1.0,
+          "object": "@event_ctf_random_plane_str"
+        }
+      },
+      "actions": {
+        "wait": {
+          "time": 20.0
+        },
+        "triggerDisable": [
+          {
+            "target": "ctf_event_starting_point_activation"
+          },
+          {
+            "target": "ctf_event_starting_point_capturer_indication_teamA"
+          },
+          {
+            "target": "ctf_event_starting_point_capturer_indication_teamB"
+          },
+          {
+            "target": "ctf_event_if_player_is_in_final_zone_teamA"
+          },
+          {
+            "target": "ctf_event_if_player_is_in_final_zone_teamB"
+          },
+          {
+            "target": "ctf_event_marked_player_is_dead"
+          },
+          {
+            "target": "ctf_event_both_teams_failed"
+          }
+        ],
+        "triggerEnable": [
+          {
+            "target": "ctf_event_3_zones_active"
+          },
+          {
+            "target": "ctf_event_1_zone_active"
+          }
+        ]
+      },
+      "else_actions": []
+    },
+    "ctf_event_starting_point_activation": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": [],
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "ctf_event_bomber_is_dead"
+          }
+        },
+        {
+          "unitWakeUp": {
+            "target": "@event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 0.3,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "@event_ctf_random_point_area_str",
+            "canCaptureOnGround": false,
+            "canCaptureInAir": false,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "unitPlayEffect": {
+            "effect_type": "specify",
+            "loopSpawn": true,
+            "delay": [1.0,1.0],
+            "effect": "pv_point_smoke_blue",
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
+            "show": true,
+            "attach": true,
+            "scale": 1.0,
+            "target": "@event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "ctf_event_starting_point_capturer_indication_teamA"
+            },
+            {
+              "target": "ctf_event_starting_point_capturer_indication_teamB"
+            }
+          ]
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "ctf_event_objective_teamA"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "ctf_event_objective_teamB"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_starting_point_capturer_indication_teamA": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "conditions": {
+        "playersWhenInArea": {
+          "math": "2D",
+          "players": "isAlive",
+          "check_players": "any",
+          "object_marking": 0,
+          "target_type": "isAlive",
+          "check_period": 1.0,
+          "target": "@event_ctf_random_point_area_str"
+        },
+        "missionIsZoneCaptured": {
+          "target": "@event_ctf_random_point_area_str",
+          "army": 1
+        }
+      },
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "ctf_event_starting_point_capturer_indication_teamB"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 0.1,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@event_ctf_random_point_area_str",
+            "canCaptureOnGround": false,
+            "canCaptureInAir": false,
+            "canCaptureByGM": true,
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "unitPlayEffect": {
+            "effect_type": "specify",
+            "loopSpawn": true,
+            "delay": [1.0,1.0],
+            "effect": "pv_point_smoke_blue",
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
+            "show": false,
+            "attach": true,
+            "scale": 1.0,
+            "target": "@event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "@event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "unitSetIndication": {
+            "set": true,
+            "target": "all_players_squad",
+            "useForTriggerFiltered": true
+          }
+        },
+        {
+          "unitMark": {
+            "target_marking": 1,
+            "target": "all_players_squad",
+            "useForTriggerFiltered": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "ctf_event_if_player_is_in_final_zone_teamA"
+            },
+            {
+              "target": "ctf_event_marked_player_is_dead"
+            },
+            {
+              "target": "ctf_event_both_teams_failed"
+            }
+          ]
+        },
+        {
+          "hideAirDrops": {
+            "object": "@event_ctf_random_point_area_str",
+            "distance": 100.0
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "@event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "@event_ctf_allied_player_captured_the_flag_hint_str",
+            "action": "show",
+            "shouldFadeOut": false,
+            "time": 10.0,
+            "priority": 0,
+            "shouldBlink": false,
+            "team": "A"
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "@event_ctf_enemy_player_captured_the_flag_hint_str",
+            "action": "show",
+            "shouldFadeOut": false,
+            "time": 10.0,
+            "priority": 0,
+            "shouldBlink": false,
+            "team": "B"
+          }
+        },
+        {
+          "wait": {
+            "time": 10.0
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_starting_point_capturer_indication_teamB": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "conditions": {
+        "playersWhenInArea": {
+          "math": "2D",
+          "players": "isAlive",
+          "check_players": "any",
+          "object_marking": 0,
+          "target_type": "isAlive",
+          "check_period": 1.0,
+          "target": "@event_ctf_random_point_area_str"
+        },
+        "missionIsZoneCaptured": {
+          "target": "@event_ctf_random_point_area_str",
+          "army": 2
+        }
+      },
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "ctf_event_starting_point_capturer_indication_teamA"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 0.1,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@event_ctf_random_point_area_str",
+            "canCaptureOnGround": false,
+            "canCaptureInAir": false,
+            "canCaptureByGM": true,
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "unitPlayEffect": {
+            "effect_type": "specify",
+            "loopSpawn": true,
+            "delay": [1.0,1.0],
+            "effect": "pv_point_smoke_blue",
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
+            "show": false,
+            "attach": true,
+            "scale": 1.0,
+            "target": "@event_ctf_random_point_smoke_str"
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "@event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "unitSetIndication": {
+            "set": true,
+            "target": "all_players_squad",
+            "useForTriggerFiltered": true
+          }
+        },
+        {
+          "unitMark": {
+            "target_marking": 1,
+            "target": "all_players_squad",
+            "useForTriggerFiltered": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "ctf_event_if_player_is_in_final_zone_teamB"
+            },
+            {
+              "target": "ctf_event_marked_player_is_dead"
+            },
+            {
+              "target": "ctf_event_both_teams_failed"
+            }
+          ]
+        },
+        {
+          "hideAirDrops": {
+            "object": "@event_ctf_random_point_area_str",
+            "distance": 100.0
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "@event_ctf_random_zone_circle_str"
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "@event_ctf_allied_player_captured_the_flag_hint_str",
+            "action": "show",
+            "shouldFadeOut": false,
+            "time": 10.0,
+            "priority": 0,
+            "shouldBlink": false,
+            "team": "B"
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "@event_ctf_enemy_player_captured_the_flag_hint_str",
+            "action": "show",
+            "shouldFadeOut": false,
+            "time": 10.0,
+            "priority": 0,
+            "shouldBlink": false,
+            "team": "A"
+          }
+        },
+        {
+          "wait": {
+            "time": 10.0
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_if_player_is_in_final_zone_teamA": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "unitWhenInArea": {
+          "math": "2D",
+          "object_type": "isMarked",
+          "object_marking": 1,
+          "check_objects": "any",
+          "object": "all_players_squad",
+          "target": "@event_ctf_random_final_zone_prefix_str"
+        },
+        "missionIsZoneCaptured": {
+          "target": "@event_ctf_random_final_zone_prefix_str",
+          "army": 1
+        }
+      },
+      "actions": [
+        {
+          "triggerDisable": [
+            {
+              "target": "ctf_event_if_player_is_in_final_zone_teamB"
+            },
+            {
+              "target": "ctf_event_marked_player_is_dead"
+            }
+          ]
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        },
+        {
+          "unitSetIndication": {
+            "set": false,
+            "target": "all_players_squad"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "target": "ctf_event_objective_teamA",
+            "status": 2
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "target": "ctf_event_objective_teamB",
+            "status": 3
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "value": -30,
+            "valueSystem": "percentage",
+            "team": "B"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_if_player_is_in_final_zone_teamB": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "unitWhenInArea": {
+          "math": "2D",
+          "object_type": "isMarked",
+          "object_marking": 1,
+          "check_objects": "any",
+          "object": "all_players_squad",
+          "target": "@event_ctf_random_final_zone_prefix_str"
+        },
+        "missionIsZoneCaptured": {
+          "target": "@event_ctf_random_final_zone_prefix_str",
+          "army": 2
+        }
+      },
+      "actions": [
+        {
+          "triggerDisable": [
+            {
+              "target": "ctf_event_if_player_is_in_final_zone_teamA"
+            },
+            {
+              "target": "ctf_event_marked_player_is_dead"
+            }
+          ]
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        },
+        {
+          "unitSetIndication": {
+            "set": false,
+            "target": "all_players_squad"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "target": "ctf_event_objective_teamA",
+            "status": 3
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "target": "ctf_event_objective_teamB",
+            "status": 2
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "value": -30,
+            "valueSystem": "percentage",
+            "team": "A"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "ctf_event_marked_player_is_dead": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "unitWhenStatus": {
+          "object_type": "isMarked",
+          "check_objects": "any",
+          "object_marking": 1,
+          "target_type": "isAlive",
+          "check_period": 1.0,
+          "object": "killed_players_squad"
+        }
+      },
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "event_ctf_marked_player_deaths_count"
+        },
+        "triggerDisable": [
+          {
+            "target": "ctf_event_if_player_is_in_final_zone_teamA"
+          },
+          {
+            "target": "ctf_event_if_player_is_in_final_zone_teamB"
+          }
+        ],
+        "playHint": {
+          "hintType": "custom",
+          "name": "",
+          "action": "hideCur",
+          "shouldFadeOut": false,
+          "time": -1.0,
+          "priority": 0,
+          "shouldBlink": false
+        },
+        "unitMark": {
+          "target_marking": 0,
+          "target": "all_players_squad"
+        },
+        "unitSetIndication": {
+          "set": false,
+          "target": "all_players_squad"
+        },
+        "wait": {
+          "time": 1.0
+        },
+        "triggerEnable": [
+          {
+            "target": "ctf_event_3_zones_active"
+          },
+          {
+            "target": "ctf_event_1_zone_active"
+          }
+        ]
+      },
+      "else_actions": []
+    },
+    "ctf_event_both_teams_failed": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "event_ctf_marked_player_deaths_count",
+          "value": 4,
+          "comparasion_func": "more"
+        }
+      },
+      "actions": [
+        {
+          "triggerDisable": [
+            {
+              "target": "ctf_event_3_zones_active"
+            },
+            {
+              "target": "ctf_event_1_zone_active"
+            },
+            {
+              "target": "ctf_event_starting_point"
+            },
+            {
+              "target": "ctf_event_starting_point_activation"
+            },
+            {
+              "target": "ctf_event_starting_point_capturer_indication_teamA"
+            },
+            {
+              "target": "ctf_event_starting_point_capturer_indication_teamB"
+            },
+            {
+              "target": "ctf_event_if_player_is_in_final_zone_teamA"
+            },
+            {
+              "target": "ctf_event_if_player_is_in_final_zone_teamB"
+            },
+            {
+              "target": "ctf_event_marked_player_is_dead"
+            }
+          ]
+        },
+        {
+          "playHint": {
+            "hintType": "custom",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "time": -1.0,
+            "priority": 0,
+            "shouldBlink": false
+          }
+        },
+        {
+          "unitMark": {
+            "target_marking": 0,
+            "target": "all_players_squad"
+          }
+        },
+        {
+          "unitSetIndication": {
+            "set": false,
+            "target": "all_players_squad"
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "visible": false,
+            "primary": true,
+            "oriented": false,
+            "ignoreDifficulty": false,
+            "scale": 1.0,
+            "target": "@event_ctf_random_final_zone_prefix_str"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "target": "ctf_event_objective_teamA",
+            "status": 3
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "target": "ctf_event_objective_teamB",
+            "status": 3
+          }
+        }
+      ],
+      "else_actions": []
+    }
+  },
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "ctf_event_objective_teamA": {
+      "is_enabled": false,
+      "comments": "",
+      "type": "abstractMissionObjective",
+      "props": {
+        "isPrimary": true,
+        "timeLimit": 1800,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "team": "A"
+      },
+      "onSuccess": [],
+      "onFailed": []
+    },
+    "ctf_event_objective_teamB": {
+      "is_enabled": false,
+      "comments": "",
+      "type": "abstractMissionObjective",
+      "props": {
+        "isPrimary": true,
+        "timeLimit": 1800,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "team": "B"
+      },
+      "onSuccess": [],
+      "onFailed": []
+    }
+  },
+  "variables": {
+    "event_ctf_random_zone_circle_str": "ctf_event_spawn_circle_zone",
+    "event_ctf_random_point_area_str": "ctf_event_spawn_area_zone",
+    "event_ctf_random_point_smoke_str": "ctf_event_spawn_smoke_zone",
+    "event_ctf_random_event_start_zone_prefix_str": "zone",
+    "event_ctf_random_event_start_zone_int": 0,
+    "event_ctf_random_final_zone_prefix_str": "zone",
+    "event_ctf_random_final_zone_int": 0,
+    "event_ctf_random_event_start_point_prefix_str": "_point",
+    "event_ctf_random_event_start_point_int": 0,
+    "event_ctf_random_time_int": 0,
+    "event_ctf_time_passed_int": 0,
+    "event_ctf_active_zones_int": 0,
+    "event_ctf_allied_player_captured_the_flag_hint_str": "hints/allied_player_has_captured_the_flag",
+    "event_ctf_enemy_player_captured_the_flag_hint_str": "hints/enemy_player_has_captured_the_flag",
+    "event_ctf_marked_player_deaths_count": 0,
+    "event_ctf_random_plane_str": "",
+    "useTankMissionsEvents": false
+  },
+  "dialogs": [],
+  "airfields": [],
+  "effects": [],
+  "units": [],
+  "areas": [],
+  "objLayers": [],
+  "wayPoints": []
+}

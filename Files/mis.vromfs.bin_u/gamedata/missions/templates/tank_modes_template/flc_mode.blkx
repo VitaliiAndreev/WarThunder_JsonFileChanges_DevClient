@@ -1,0 +1,1726 @@
+{
+  "selected_tag": "",
+  "bin_dump_file": "",
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 15.0
+    },
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "mission": {
+      "name": "untitled",
+      "level": "levels/water.bin",
+      "type": "singleMission",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
+      "campaign": "UserMissions",
+      "environment": "Day",
+      "weather": "hazy",
+      "missionDebriefing": "",
+      "missionBriefing": "",
+      "tags": [],
+      "missionType": {
+        "_Dom": false,
+        "_Conq": false,
+        "_Bttl": false,
+        "_Bto": false,
+        "_Flc": false,
+        "_v1_race_straight": false,
+        "_v1_race_inverted": false,
+        "_v2_race_straight": false,
+        "_v2_race_inverted": false,
+        "_Conq1": false,
+        "_Conq2": false,
+        "_Conq3": false,
+        "_Conq4": false,
+        "_Conq5": false,
+        "_Conq6": false
+      }
+    },
+    "spectator_points": [],
+    "cover_points": [],
+    "aiParams": {
+      "aiEffectivenessViscosity": 90.0,
+      "effectivenessDistances": [2500.0,7000.0]
+    }
+  },
+  "imports": [],
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "Flc": {
+      "isCategory": true,
+      "is_enabled": true,
+      "line01_mechanic": {
+        "isCategory": true,
+        "is_enabled": true,
+        "t1_capture_line01": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": true
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "missionIsZoneCaptured": {
+              "target": "@captureZone",
+              "army": 1
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line01captured"
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "points"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "captureZone",
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line01captured",
+                "digits": 2,
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "triggerActivate": {
+                "target": "t1_crate_next_CZline01",
+                "activate_type": "checkConidtions",
+                "check_trigger_status": false,
+                "after_activation": "disable"
+              }
+            },
+            {
+              "triggerEnable": {
+                "target": "t2_capture_line01"
+              }
+            }
+          ],
+          "else_actions": []
+        },
+        "t1_crate_next_CZline01": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": false
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "objectExists": {
+              "target": "@line01Tempzone",
+              "type": "area"
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line01captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "captureZone",
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line01captured",
+                "digits": 2,
+                "var": "captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 0.1,
+                "disableZone": true,
+                "name_for_respawn_base": "",
+                "target": "@captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line01captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "captureZone",
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line01captured",
+                "digits": 2,
+                "var": "captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": false,
+                "name_for_respawn_base": "",
+                "target": "@captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            }
+          ],
+          "else_actions": {
+            "varModify": {
+              "operator": "add",
+              "value": -1.0,
+              "var": "line01captured"
+            },
+            "triggerDisable": {
+              "target": "t1_capture_line01"
+            }
+          }
+        },
+        "t2_capture_line01": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": true
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "missionIsZoneCaptured": {
+              "target": "@captureZone",
+              "army": 2
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line01captured"
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "points"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "captureZone",
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line01captured",
+                "digits": 2,
+                "var": "line01Tempzone"
+              }
+            },
+            {
+              "triggerActivate": {
+                "target": "t2_crate_next_CZline01",
+                "activate_type": "checkConidtions",
+                "check_trigger_status": false,
+                "after_activation": "disable"
+              }
+            },
+            {
+              "triggerEnable": {
+                "target": "t1_capture_line01"
+              }
+            }
+          ],
+          "else_actions": []
+        },
+        "t2_crate_next_CZline01": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": false
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "objectExists": {
+              "target": "@line01Tempzone",
+              "type": "area"
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line01captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "captureZone",
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line01captured",
+                "digits": 2,
+                "var": "captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 0.1,
+                "disableZone": true,
+                "name_for_respawn_base": "",
+                "target": "@captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line01captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "captureZone",
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line01captured",
+                "digits": 2,
+                "var": "captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": false,
+                "name_for_respawn_base": "",
+                "target": "@captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            }
+          ],
+          "else_actions": {
+            "varModify": {
+              "operator": "add",
+              "value": 1.0,
+              "var": "line01captured"
+            },
+            "triggerDisable": {
+              "target": "t2_capture_line01"
+            }
+          }
+        }
+      },
+      "line02_mechanic": {
+        "isCategory": true,
+        "is_enabled": true,
+        "t1_capture_line02": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": true
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "missionIsZoneCaptured": {
+              "target": "@t1_captureZone",
+              "army": 1
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line02captured"
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "points"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t1_captureZone",
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line02captured",
+                "digits": 2,
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "triggerActivate": {
+                "target": "t1_crate_next_CZline02",
+                "activate_type": "checkConidtions",
+                "check_trigger_status": false,
+                "after_activation": "disable"
+              }
+            },
+            {
+              "triggerEnable": {
+                "target": "t2_capture_line02"
+              }
+            }
+          ],
+          "else_actions": []
+        },
+        "t1_crate_next_CZline02": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": false
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "objectExists": {
+              "target": "@line02Tempzone",
+              "type": "area"
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line02captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t1_captureZone",
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line02captured",
+                "digits": 2,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": true,
+                "name_for_respawn_base": "",
+                "target": "@t1_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line02captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t1_captureZone",
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line02captured",
+                "digits": 2,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": false,
+                "name_for_respawn_base": "",
+                "target": "@t1_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            }
+          ],
+          "else_actions": {
+            "varModify": {
+              "operator": "add",
+              "value": -1.0,
+              "var": "line02captured"
+            },
+            "triggerDisable": {
+              "target": "t1_capture_line02"
+            }
+          }
+        },
+        "t2_capture_line02": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": true
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "missionIsZoneCaptured": {
+              "target": "@t1_captureZone",
+              "army": 2
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line02captured"
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "points"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t1_captureZone",
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line02captured",
+                "digits": 2,
+                "var": "line02Tempzone"
+              }
+            },
+            {
+              "triggerActivate": {
+                "target": "t2_crate_next_CZline02",
+                "activate_type": "checkConidtions",
+                "check_trigger_status": false,
+                "after_activation": "disable"
+              }
+            },
+            {
+              "triggerEnable": {
+                "target": "t1_capture_line02"
+              }
+            }
+          ],
+          "else_actions": []
+        },
+        "t2_crate_next_CZline02": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": false
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "objectExists": {
+              "target": "@line02Tempzone",
+              "type": "area"
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line02captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t1_captureZone",
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line02captured",
+                "digits": 2,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 0.1,
+                "disableZone": true,
+                "name_for_respawn_base": "",
+                "target": "@t1_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line02captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t1_captureZone",
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line02captured",
+                "digits": 2,
+                "var": "t1_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": false,
+                "name_for_respawn_base": "",
+                "target": "@t1_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            }
+          ],
+          "else_actions": {
+            "varModify": {
+              "operator": "add",
+              "value": 1.0,
+              "var": "line02captured"
+            },
+            "triggerDisable": {
+              "target": "t2_capture_line02"
+            }
+          }
+        }
+      },
+      "line03_mechanic": {
+        "isCategory": true,
+        "is_enabled": true,
+        "t1_capture_line03": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": true
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "missionIsZoneCaptured": {
+              "target": "@t2_captureZone",
+              "army": 1
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line03captured"
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "points"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t2_captureZone",
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line03captured",
+                "digits": 2,
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "triggerActivate": {
+                "target": "t1_crate_next_CZline03",
+                "activate_type": "checkConidtions",
+                "check_trigger_status": false,
+                "after_activation": "disable"
+              }
+            },
+            {
+              "triggerEnable": {
+                "target": "t2_capture_line03"
+              }
+            }
+          ],
+          "else_actions": []
+        },
+        "t1_crate_next_CZline03": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": false
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "objectExists": {
+              "target": "@line03Tempzone",
+              "type": "area"
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line03captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t2_captureZone",
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line03captured",
+                "digits": 2,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 0.1,
+                "disableZone": true,
+                "name_for_respawn_base": "",
+                "target": "@t2_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line03captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t2_captureZone",
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line03captured",
+                "digits": 2,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": false,
+                "name_for_respawn_base": "",
+                "target": "@t2_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            }
+          ],
+          "else_actions": {
+            "varModify": {
+              "operator": "add",
+              "value": -1.0,
+              "var": "line03captured"
+            },
+            "triggerDisable": {
+              "target": "t1_capture_line03"
+            }
+          }
+        },
+        "t2_capture_line03": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": true
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "missionIsZoneCaptured": {
+              "target": "@t2_captureZone",
+              "army": 2
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line03captured"
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "points"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t2_captureZone",
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line03captured",
+                "digits": 2,
+                "var": "line03Tempzone"
+              }
+            },
+            {
+              "triggerActivate": {
+                "target": "t2_crate_next_CZline03",
+                "activate_type": "checkConidtions",
+                "check_trigger_status": false,
+                "after_activation": "disable"
+              }
+            },
+            {
+              "triggerEnable": {
+                "target": "t1_capture_line03"
+              }
+            }
+          ],
+          "else_actions": []
+        },
+        "t2_crate_next_CZline03": {
+          "is_enabled": false,
+          "comments": "",
+          "props": {
+            "actionsType": "PERFORM_ONE_BY_ONE",
+            "conditionsType": "ALL",
+            "enableAfterComplete": false
+          },
+          "events": {
+            "periodicEvent": {
+              "time": 1.0
+            }
+          },
+          "conditions": {
+            "objectExists": {
+              "target": "@line03Tempzone",
+              "type": "area"
+            }
+          },
+          "actions": [
+            {
+              "varModify": {
+                "operator": "add",
+                "value": 1.0,
+                "var": "line03captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t2_captureZone",
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line03captured",
+                "digits": 2,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 0.1,
+                "disableZone": true,
+                "name_for_respawn_base": "",
+                "target": "@t2_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            },
+            {
+              "varModify": {
+                "operator": "add",
+                "value": -1.0,
+                "var": "line03captured"
+              }
+            },
+            {
+              "varSetString": {
+                "value": "t2_captureZone",
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@rb_tank_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@modeName_var",
+                "digits": 0,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "varAddString": {
+                "value": "@line03captured",
+                "digits": 2,
+                "var": "t2_captureZone"
+              }
+            },
+            {
+              "missionMarkAsCaptureZone": {
+                "army": 0,
+                "timeMultiplier": 1.0,
+                "disableZone": false,
+                "name_for_respawn_base": "",
+                "target": "@t2_captureZone",
+                "canCaptureByGM": true,
+                "captureNoPenalty": true
+              }
+            }
+          ],
+          "else_actions": {
+            "varModify": {
+              "operator": "add",
+              "value": 1.0,
+              "var": "line03captured"
+            },
+            "triggerDisable": {
+              "target": "t2_capture_line03"
+            }
+          }
+        }
+      },
+      "spawn_captureZones_Flc": {
+        "is_enabled": true,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "missionNamePostfix": {
+            "postfix": "_Flc"
+          }
+        },
+        "actions": [
+          {
+            "varSetString": {
+              "value": "captureZone",
+              "var": "captureZone"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "t1_captureZone",
+              "var": "t1_captureZone"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "t2_captureZone",
+              "var": "t2_captureZone"
+            }
+          },
+          {
+            "varAddString": [
+              {
+                "value": "@rb_tank_var"
+              },
+              {
+                "digits": 0
+              },
+              {
+                "var": "captureZone"
+              },
+              {
+                "var": "t1_captureZone"
+              },
+              {
+                "var": "t2_captureZone"
+              }
+            ]
+          },
+          {
+            "varAddString": [
+              {
+                "value": "@modeName_var"
+              },
+              {
+                "digits": 0
+              },
+              {
+                "var": "captureZone"
+              },
+              {
+                "var": "t1_captureZone"
+              },
+              {
+                "var": "t2_captureZone"
+              }
+            ]
+          },
+          {
+            "varAddString": [
+              {
+                "value": "@line01captured"
+              },
+              {
+                "digits": 2
+              },
+              {
+                "var": "captureZone"
+              },
+              {
+                "var": "t1_captureZone"
+              },
+              {
+                "var": "t2_captureZone"
+              }
+            ]
+          },
+          {
+            "missionMarkAsCaptureZone": [
+              {
+                "army": 0
+              },
+              {
+                "timeMultiplier": 1.0
+              },
+              {
+                "disableZone": false
+              },
+              {
+                "name_for_respawn_base": ""
+              },
+              {
+                "target": "@captureZone"
+              },
+              {
+                "target": "@t1_captureZone"
+              },
+              {
+                "target": "@t2_captureZone"
+              },
+              {
+                "canCaptureByGM": true
+              },
+              {
+                "captureNoPenalty": true
+              }
+            ]
+          },
+          {
+            "triggerEnable": [
+              {
+                "target": "t1_capture_line01"
+              },
+              {
+                "target": "t2_capture_line01"
+              },
+              {
+                "target": "t1_capture_line02"
+              },
+              {
+                "target": "t2_capture_line02"
+              },
+              {
+                "target": "t1_capture_line03"
+              },
+              {
+                "target": "t2_capture_line03"
+              },
+              {
+                "target": "close_t1_base_zone"
+              },
+              {
+                "target": "open_t2_base_zone"
+              }
+            ]
+          }
+        ],
+        "else_actions": []
+      },
+      "open_t2_base_zone": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "points",
+            "value": 6,
+            "comparasion_func": "notLess"
+          }
+        },
+        "actions": [
+          {
+            "varSetString": {
+              "value": "t2_base_zone",
+              "var": "t2_base_zone"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@rb_tank_var",
+              "digits": 0,
+              "var": "t2_base_zone"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@modeName_var",
+              "digits": 0,
+              "var": "t2_base_zone"
+            }
+          },
+          {
+            "missionMarkAsCaptureZone": {
+              "army": 2,
+              "timeMultiplier": 10.0,
+              "disableZone": false,
+              "name_for_respawn_base": "",
+              "target": "@t2_base_zone",
+              "canCaptureByGM": true,
+              "captureNoPenalty": true
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flc_bto_t2_base_zone_captured"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "close_t2_base_zone"
+            }
+          }
+        ],
+        "else_actions": []
+      },
+      "close_t2_base_zone": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "points",
+            "value": 6,
+            "comparasion_func": "less"
+          }
+        },
+        "actions": {
+          "missionMarkAsCaptureZone": {
+            "army": 2,
+            "timeMultiplier": 10.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@t2_base_zone",
+            "canCaptureByGM": true,
+            "captureNoPenalty": true
+          },
+          "triggerDisable": {
+            "target": "flc_bto_t2_base_zone_captured"
+          },
+          "triggerEnable": {
+            "target": "open_t2_base_zone"
+          }
+        },
+        "else_actions": []
+      },
+      "open_t1_base_zone": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "points",
+            "value": -6,
+            "comparasion_func": "notMore"
+          }
+        },
+        "actions": [
+          {
+            "varSetString": {
+              "value": "t1_base_zone",
+              "var": "t1_base_zone"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@rb_tank_var",
+              "digits": 0,
+              "var": "t1_base_zone"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@modeName_var",
+              "digits": 0,
+              "var": "t1_base_zone"
+            }
+          },
+          {
+            "missionMarkAsCaptureZone": {
+              "army": 1,
+              "timeMultiplier": 10.0,
+              "disableZone": false,
+              "name_for_respawn_base": "",
+              "target": "@t1_base_zone",
+              "canCaptureByGM": true,
+              "captureNoPenalty": true
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flc_bto_t1_base_zone_captured"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "close_t1_base_zone"
+            }
+          }
+        ],
+        "else_actions": []
+      },
+      "close_t1_base_zone": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "points",
+            "value": 6,
+            "comparasion_func": "more"
+          }
+        },
+        "actions": {
+          "missionMarkAsCaptureZone": {
+            "army": 1,
+            "timeMultiplier": 10.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@t1_base_zone",
+            "canCaptureByGM": true,
+            "captureNoPenalty": true
+          },
+          "triggerDisable": {
+            "target": "flc_bto_t1_base_zone_captured"
+          },
+          "triggerEnable": {
+            "target": "open_t1_base_zone"
+          }
+        },
+        "else_actions": []
+      },
+      "flc_bto_t2_base_zone_captured": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": true
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "missionIsZoneCaptured": {
+            "target": "@t2_base_zone",
+            "army": 1
+          }
+        },
+        "actions": {
+          "gameMPChangeScore": {
+            "value": -500,
+            "valueSystem": "amount",
+            "team": "B"
+          }
+        },
+        "else_actions": []
+      },
+      "flc_bto_t1_base_zone_captured": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": true
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "missionIsZoneCaptured": {
+            "target": "@t1_base_zone",
+            "army": 2
+          }
+        },
+        "actions": {
+          "gameMPChangeScore": {
+            "value": -500,
+            "valueSystem": "amount",
+            "team": "A"
+          }
+        },
+        "else_actions": []
+      }
+    }
+  },
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "variables": [],
+  "dialogs": [],
+  "airfields": [],
+  "effects": [],
+  "units": [],
+  "areas": [],
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "wayPoints": []
+}

@@ -1,0 +1,80 @@
+{
+  "common": {
+    "condensation_type": "rain",
+    "dirt_type": "ground",
+    "water": {
+      "L_inv_white": 0.3
+    },
+    "hdr": {
+      "useAdaptation": true,
+      "adaptationTimeHighToNorm": 0.25,
+      "adaptationTimeNormToHigh": 0.65,
+      "adaptationMultiplier": 0.65,
+      "targetBrightnessUp": 1.005,
+      "targetBrightnessEffect": 0.0,
+      "fake": {
+        "adaptationMax": 2.2,
+        "adaptationMin": 0.65,
+        "lumMin": 0.68,
+        "lumMax": 0.95
+      }
+    },
+    "DemonPostFx": {
+      "use": true,
+      "showAlpha": false,
+      "glowRadius": 0.1,
+      "useBetterGlow": true,
+      "glowFadeK": 2.0,
+      "glowEdgeK": 0.0,
+      "glowAngleU": 44.0,
+      "glowAngleV": 144.0,
+      "useRawSkyMask": true,
+      "hdrStarThreshold": 4.75,
+      "hdrDarkThreshold": 0.6,
+      "hdrGlowPower": 1.0,
+      "hdrGlowMul": 0.2,
+      "hdrStarPowerMul": 0.32,
+      "starGlow": {
+        "numRays": 3,
+        "defaultRayParams": {
+          "radius": 0.03,
+          "power": 1.0,
+          "fadeK": [5.0,1.5,0.0],
+          "color": "#ffd296ff"
+        },
+        "ray01": {
+          "angle": 99.0,
+          "useCustom": false,
+          "radius": 0.03,
+          "power": 2.0,
+          "fadeK": [2.0,2.0,1.0],
+          "color": "#ffffffff"
+        },
+        "ray02": {
+          "angle": 39.0,
+          "useCustom": false,
+          "radius": 0.051,
+          "power": 4.0,
+          "fadeK": [2.0,2.0,1.0],
+          "color": "#ffffffff"
+        },
+        "ray03": {
+          "angle": -21.0,
+          "useCustom": false,
+          "radius": 0.047,
+          "power": 4.0,
+          "fadeK": [2.0,2.0,1.0],
+          "color": "#ffffffff"
+        },
+        "ray04": {
+          "angle": 0.0,
+          "useCustom": true,
+          "radius": 0.061,
+          "power": 1.0,
+          "fadeK": [2.0,2.0,1.0],
+          "color": "#ffffffff"
+        }
+      }
+    }
+  }
+}

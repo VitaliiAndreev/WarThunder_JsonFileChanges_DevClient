@@ -1,0 +1,251 @@
+{
+  "root": {
+    "flow": "vertical",
+    "background-color": "@shadeBackgroundColor",
+    "optionlist_container": [
+      {
+        "id": "flight_menu_bgd"
+      },
+      {
+        "flow": "vertical"
+      },
+      {
+        "type": "artillerymap"
+      },
+      {
+        "tdiv": {
+          "position": "absolute",
+          "pos": "pw/2-w/2, -1.3h",
+          "activeText": {
+            "titleFont": "yes",
+            "text": "#hints/use_artillery"
+          }
+        }
+      },
+      {
+        "tdiv": [
+          {
+            "position": "absolute"
+          },
+          {
+            "pos": "pw/2-w/2, ph + 24@sf/@pf"
+          },
+          {
+            "flow": "vertical"
+          },
+          {
+            "tdiv": {
+              "pos": "50%pw-50%w, 0",
+              "position": "relative",
+              "activeText": {
+                "id": "txt_artillery_hint",
+                "overlayTextColor": "bad",
+                "text": "#artillery_strike/not_allowed"
+              }
+            }
+          },
+          {
+            "tdiv": {
+              "id": "shortcuts_block",
+              "pos": "pw/2-w/2, 12@sf/@pf",
+              "position": "relative"
+            }
+          }
+        ]
+      },
+      {
+        "button": {
+          "size": "sw, sh",
+          "position": "root",
+          "_on_r_click": "cancelArtillery"
+        }
+      },
+      {
+        "tdiv": [
+          {
+            "size": "ph - 24@sf/@pf, ph - 24@sf/@pf"
+          },
+          {
+            "pos": "pw/2-w/2, ph/2-h/2"
+          },
+          {
+            "position": "absolute"
+          },
+          {
+            "tacticalMap": {
+              "id": "tactical_map",
+              "enable": "yes",
+              "size": "ph, ph",
+              "position": "absolute",
+              "style": "border:no"
+            }
+          },
+          {
+            "tdiv": [
+              {
+                "size": "ph, ph"
+              },
+              {
+                "position": "absolute"
+              },
+              {
+                "overflow": "hidden"
+              },
+              {
+                "tdiv": {
+                  "id": "map_shade_center",
+                  "size": "ph, ph",
+                  "position": "absolute",
+                  "background-image": "ui/map_radius",
+                  "background-color": "@shadeBackgroundColor"
+                }
+              },
+              {
+                "tdiv": {
+                  "id": "map_shade_t",
+                  "position": "absolute",
+                  "background-color": "@shadeBackgroundColor"
+                }
+              },
+              {
+                "tdiv": {
+                  "id": "map_shade_r",
+                  "position": "absolute",
+                  "background-color": "@shadeBackgroundColor"
+                }
+              },
+              {
+                "tdiv": {
+                  "id": "map_shade_b",
+                  "position": "absolute",
+                  "background-color": "@shadeBackgroundColor"
+                }
+              },
+              {
+                "tdiv": {
+                  "id": "map_shade_l",
+                  "position": "absolute",
+                  "background-color": "@shadeBackgroundColor"
+                }
+              }
+            ]
+          },
+          {
+            "tdiv": {
+              "size": "ph, ph",
+              "position": "absolute",
+              "super_artillery_target": {
+                "id": "super_artillery_target",
+                "size": "140@sf/@pf, 140@sf/@pf",
+                "pos": "pw/2-w/2, ph/2-h/2",
+                "position": "absolute",
+                "background-image": "#ui/gameuiskin#artillery_region",
+                "background-color": "#ffb751",
+                "display": "hide",
+                "tdiv": {
+                  "id": "super_artillery_target_center",
+                  "size": "24@sf/@pf, 24@sf/@pf",
+                  "pos": "pw/2-w/2, ph/2-h/2",
+                  "position": "absolute",
+                  "background-image": "#ui/gameuiskin#chat_icon_attack",
+                  "background-color": "#ffb751",
+                  "rotation": "0"
+                }
+              }
+            }
+          },
+          {
+            "tdiv": {
+              "size": "ph, ph",
+              "position": "absolute",
+              "artillery_target": {
+                "id": "artillery_target",
+                "size": "(15@sf/@pf)\\2*2, (15@sf/@pf)\\2*2",
+                "min-width": "@artilleryTargetInnerDiameterMin",
+                "min-height": "@artilleryTargetInnerDiameterMin",
+                "pos": "pw/2-w/2, ph/2-h/2",
+                "position": "absolute",
+                "enable": "no",
+                "display": "hide",
+                "tdiv": [
+                  {
+                    "size": "pw +2@artilleryTargetArcOffset, ph +2@artilleryTargetArcOffset"
+                  },
+                  {
+                    "pos": "pw/2-w/2, ph/2-h/2"
+                  },
+                  {
+                    "position": "absolute"
+                  },
+                  {
+                    "targetShade": {
+                      "pos": "pw/2-w/2, 0",
+                      "rotation": "0"
+                    }
+                  },
+                  {
+                    "targetShade": {
+                      "pos": "pw-w, ph/2-h/2",
+                      "rotation": "90"
+                    }
+                  },
+                  {
+                    "targetShade": {
+                      "pos": "pw/2-w/2, ph-h",
+                      "rotation": "180"
+                    }
+                  },
+                  {
+                    "targetShade": {
+                      "pos": "0, ph/2-h/2",
+                      "rotation": "270"
+                    }
+                  },
+                  {
+                    "targetArc": {
+                      "pos": "pw/2-w/2, 0",
+                      "rotation": "0"
+                    }
+                  },
+                  {
+                    "targetArc": {
+                      "pos": "pw-w, ph/2-h/2",
+                      "rotation": "90"
+                    }
+                  },
+                  {
+                    "targetArc": {
+                      "pos": "pw/2-w/2, ph-h",
+                      "rotation": "180"
+                    }
+                  },
+                  {
+                    "targetArc": {
+                      "pos": "0, ph/2-h/2",
+                      "rotation": "270"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "div": {
+              "size": "pw, ph",
+              "position": "absolute",
+              "cursor": "invisible",
+              "behaviour": "button",
+              "_on_click": "onArtilleryMapClick",
+              "_on_r_click": "cancelArtillery"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "dummy": {
+    "id": "update_timer",
+    "behaviour": "Timer",
+    "timer_handler_func": "update"
+  }
+}
