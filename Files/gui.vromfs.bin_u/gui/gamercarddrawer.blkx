@@ -17,44 +17,21 @@
       "width": "sw",
       "pos": "0.5pw-0.5w, ph-sh",
       "flow": "vertical",
-      "tdiv": [
-        {
-          "id": "gamercard_drawer_content"
-        },
-        {
-          "width": "pw"
-        },
-        {
-          "height": "sh - 1@bottomBarHeight - 1@gameModeSelectPadding - 1@gameModeChangeButtonHeight"
-        },
-        {
-          "pos": "0.5pw-0.5w, 1@gameModeSelectPadding + 1@gameModeChangeButtonHeight + 1@bh"
-        },
-        {
-          "position": "absolute"
-        },
-        {
-          "flow": "vertical"
-        },
-        {
-          "tdiv": {
-            "id": "queue_table_container",
-            "height": "ph",
-            "position": "relative",
-            "pos": "0.5pw-0.5w, 0",
-            "display": "hide"
-          }
-        },
-        {
-          "tdiv": {
-            "id": "game_mode_select_container",
-            "height": "ph",
-            "position": "relative",
-            "pos": "0.5pw-0.5w, 0",
-            "display": "hide"
-          }
+      "tdiv": {
+        "id": "gamercard_drawer_content",
+        "width": "pw",
+        "height": "sh - 1@gamercardDrawerPosY",
+        "pos": "0.5pw-0.5w, 1@gamercardDrawerPosY",
+        "position": "absolute",
+        "flow": "vertical",
+        "tdiv": {
+          "id": "queue_table_container",
+          "height": "ph",
+          "position": "relative",
+          "pos": "0.5pw-0.5w, 0",
+          "display": "hide"
         }
-      ]
+      }
     }
   }
 }

@@ -309,6 +309,16 @@
           },
           {
             "hoverButton": {
+              "id": "ID_FLIGHTMENU",
+              "is_shortcut": "yes",
+              "on_click": "onBtnShortcut",
+              "icon": {
+                "background-image": "#ui/gameuiskin#btn_modifications.svg"
+              }
+            }
+          },
+          {
+            "hoverButton": {
               "id": "ID_MPSTATSCREEN",
               "is_shortcut": "yes",
               "on_click": "onBtnShortcut",
@@ -669,7 +679,7 @@
         "hitCamera": {
           "id": "hud_hitcamera",
           "position": "absolute",
-          "pos": "pw - w, ph - h",
+          "pos": "pw - w, ph-h - 1@spectatorTableWidth -2@framePadding - 1@blockInterval",
           "input-transparent": "yes",
           "total-input-transparent": "yes",
           "result": "",
