@@ -276,6 +276,7 @@
     "eventAlarmFire": "alarm_fire",
     "eventAlarmBattle": "alarm_battle",
     "eventAlarmDepth": "alarm_depth",
+    "eventPickupBonus": "tross_on",
     "eventWheelDrift": "wheel_drift",
     "eventFarShot": "main_caliber_distant",
     "eventFarShotDist": 5000.0,
@@ -1781,6 +1782,22 @@
     }
   },
   "engine_ctr_ai": {
+    "effects": {
+      "path": "ships/engines_ships/ai_ctr",
+      "eventStart": "engine_start",
+      "eventStop": "engine_stop"
+    },
+    "outside": {
+      "path": "ships/engines_ships/ai_ctr",
+      "eventBack": "engine",
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine_ctr_jet_ai": {
     "effects": {
       "path": "ships/engines_ships/ai_ctr",
       "eventStart": "engine_start",
@@ -4813,6 +4830,102 @@
       }
     }
   },
+  "engine_ka50": {
+    "engines": {
+      "effects": {
+        "path": "sounds/engines",
+        "wep": "engine_wep",
+        "overheatOutside": "engine_overheat_camera",
+        "overheatCockpit": "engine_overheat_cockpit",
+        "dive": "engine_dive",
+        "timeFallingDown": 2.0,
+        "engineVolumeOnOverheat": 0.8,
+        "eventStart_1": "engine_mi24v_start_l",
+        "eventStop_1": "engine_mi24v_stop_l",
+        "eventProp_1": "engine_mi24v_prop_l",
+        "eventStart_2": "engine_mi24v_start_r",
+        "eventStop_2": "engine_mi24v_stop_r",
+        "eventProp_2": "engine_mi24v_prop_r"
+      },
+      "outside": {
+        "path": "sounds/engines",
+        "eventFront": "",
+        "eventBack_1": "engine_mi24v_l",
+        "eventBack_2": "engine_mi24v_r",
+        "rpm2Type": "jetTrue",
+        "rpm2Bias": 0.0,
+        "rpm2Scale": 2700.0,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9,
+        "distScaleOnNotHero": 0.8,
+        "pos_1": [0.5,1.5,1.0],
+        "pos_2": [0.5,1.5,-1.0]
+      },
+      "cockpit": {
+        "path": "sounds/engines",
+        "event_cockpit_l": "engine_mi24v_cockpit_l",
+        "event_cockpit_r": "engine_mi24v_cockpit_r",
+        "event_start_cockpit_l": "engine_mi24v_start_cockpit_l",
+        "event_start_cockpit_r": "engine_mi24v_start_cockpit_r",
+        "event_stop_cockpit_l": "engine_mi24v_stop_cockpit_l",
+        "event_stop_cockpit_r": "engine_mi24v_stop_cockpit_r",
+        "event_prop_cockpit_l": "engine_mi24v_prop_cockpit_l",
+        "event_prop_cockpit_r": "engine_mi24v_prop_cockpit_r",
+        "event_cockpit_1": "engine_mi24v_cockpit_l",
+        "event_start_cockpit_1": "engine_mi24v_start_cockpit_l",
+        "event_stop_cockpit_1": "engine_mi24v_stop_cockpit_l",
+        "event_prop_cockpit_1": "engine_mi24v_prop_cockpit_l",
+        "pos_1": [0.5,1.5,1.0],
+        "event_cockpit_2": "engine_mi24v_cockpit_r",
+        "event_start_cockpit_2": "engine_mi24v_start_cockpit_r",
+        "event_stop_cockpit_2": "engine_mi24v_stop_cockpit_r",
+        "event_prop_cockpit_2": "engine_mi24v_prop_cockpit_r",
+        "pos_2": [0.5,1.5,-1.0],
+        "rpm2Type": "jetTrue",
+        "rpm2Bias": 0.0,
+        "rpm2Scale": 2700.0,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9
+      }
+    },
+    "propellers": {
+      "effects": {
+        "path": "sounds/engines"
+      },
+      "outside": {
+        "path": "sounds/engines",
+        "event_1": "rotor_mi24v_l",
+        "event_2": "rotor_mi24v_r",
+        "event_3": "rotor_tail",
+        "pos_1": [0.5,1.5,3.0],
+        "pos_2": [0.5,1.5,-3.0],
+        "propIndex_1": 1,
+        "propIndex_2": 1,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9,
+        "distScaleOnNotHero": 0.8
+      },
+      "cockpit": {
+        "path": "sounds/engines",
+        "event_1": "rotor_mi24v_cockpit_l",
+        "event_2": "rotor_mi24v_cockpit_r",
+        "pos_1": [0.5,1.5,1.0],
+        "pos_2": [0.5,1.5,-1.0],
+        "propIndex_1": 1,
+        "propIndex_2": 1,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9
+      }
+    }
+  },
   "engine_bo_105": {
     "engines": {
       "effects": {
@@ -5662,6 +5775,82 @@
       }
     }
   },
+  "engine_ka50_ai": {
+    "engines": {
+      "effects": {
+        "path": "sounds/engines",
+        "wep": "engine_wep",
+        "overheatOutside": "engine_overheat_camera",
+        "overheatCockpit": "engine_overheat_cockpit",
+        "dive": "engine_dive",
+        "timeFallingDown": 2.0,
+        "engineVolumeOnOverheat": 0.8,
+        "eventStart": "engine_heli_ai_start",
+        "eventStop": "engine_heli_ai_stop"
+      },
+      "outside": {
+        "path": "sounds/engines",
+        "eventFront": "",
+        "eventBack": "engine_heli_ai",
+        "eventSurround": "",
+        "eventLod1": "engine_heli_ai",
+        "rpm2Type": "jetTrue",
+        "rpm2Bias": 0.0,
+        "rpm2Scale": 2700.0,
+        "rpmSmooth": 0.014,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9,
+        "distScaleOnNotHero": 1.0
+      },
+      "cockpit": {
+        "path": "sounds/engines",
+        "event_cockpit_l": "engine_mi24v_cockpit_l",
+        "event_cockpit_r": "engine_mi24v_cockpit_r",
+        "leftPos": [0.5,1.0,5.0],
+        "rightPos": [0.5,1.0,-5.0],
+        "rpm2Type": "jetTrue",
+        "rpm2Bias": 0.0,
+        "rpm2Scale": 2700.0,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9
+      }
+    },
+    "propellers": {
+      "effects": {
+        "path": "sounds/engines"
+      },
+      "outside": {
+        "path": "sounds/engines",
+        "event_1": "rotor_heli_blades_ai",
+        "event_2": "rotor_tail",
+        "pos_1": [0.5,1.5,0.0],
+        "pos_2": [-11.5,2.0,0.0],
+        "propIndex_1": 1,
+        "propIndex_2": 2,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9,
+        "distScaleOnNotHero": 0.8
+      },
+      "cockpit": {
+        "path": "sounds/engines",
+        "event_1": "rotor_mi24v_cockpit_l",
+        "event_2": "rotor_mi24v_cockpit_r",
+        "pos_1": [0.5,1.5,1.0],
+        "pos_2": [0.5,1.5,-1.0],
+        "propIndex_1": 1,
+        "propIndex_2": 1,
+        "rpmSmooth": 0.02,
+        "loadScale": 6.0,
+        "loadSmooth": 0.05,
+        "distSmooth": 0.9
+      }
+    }
+  },
   "engine_heli_ai": {
     "engines": {
       "effects": {
@@ -5805,6 +5994,64 @@
     }
   },
   "engine_ctr01": {
+    "effects": {
+      "path": "ships/engines_ships/ctr01",
+      "wep": "",
+      "overheatOutside": "",
+      "overheatCockpit": "",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine_start",
+      "eventStop": "engine_stop"
+    },
+    "outside": [
+      {
+        "path": "ships/engines_ships/ctr01"
+      },
+      {
+        "eventFront": ""
+      },
+      {
+        "eventBack": "engine"
+      },
+      {
+        "eventSurround": ""
+      },
+      {
+        "eventLod1": "engine"
+      },
+      {
+        "offsetPos": [1.0,1.0,0.0]
+      },
+      {
+        "rpmSmooth": 0.02
+      },
+      {
+        "loadScale": 6.0
+      },
+      {
+        "loadSmooth": 0.05
+      },
+      {
+        "distSmooth": 0.9
+      },
+      {
+        "distScaleOnNotHero": 1.0
+      },
+      {
+        "offsetPos": [-1.0,1.0,0.0]
+      }
+    ],
+    "cockpit": {
+      "path": "ships/engines_ships/ctr01",
+      "event_cockpit_l": "engine_interior",
+      "event_start_cockpit_l": "engine_start_interior",
+      "event_stop_cockpit_l": "engine_stop_interior",
+      "leftPos": [-1.0,1.0,0.0]
+    }
+  },
+  "engine_ctr_jet": {
     "effects": {
       "path": "ships/engines_ships/ctr01",
       "wep": "",
@@ -6878,6 +7125,7 @@
       },
       "bulletTypeToEvent": {
         "apbc_tank": "loadBulletAP",
+        "apbc_usa_tank": "loadBulletAP",
         "apc_tank": "loadBulletAP",
         "aphe_tank": "loadBulletAP",
         "aphebc_tank": "loadBulletAP",

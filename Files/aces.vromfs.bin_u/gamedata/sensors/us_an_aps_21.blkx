@@ -2,46 +2,43 @@
   "type": "radar",
   "transivers": {
     "search": {
-      "power": 2000.0,
-      "band": 0,
+      "sideLobesAttenuation": -20.0,
+      "power": 200.0,
+      "band": 8,
       "rcs": 3.0,
       "range": 28000.0,
       "rangeMax": 45000.0,
       "backScatteringBandNum": 0,
       "antenna": {
-        "azimuth": {
-          "angleHalfSens": 3.3,
-          "sideLobesSensitivity": -30.0
-        },
-        "elevation": {
-          "angleHalfSens": 16.0,
-          "sideLobesSensitivity": -35.0
-        }
+        "angleHalfSens": 3.3,
+        "sideLobesSensitivity": -30.0
       }
     }
   },
   "scanPatterns": {
     "search170": {
       "type": "pyramide",
-      "azimuthLimits": [-90.0,90.0],
-      "elevationLimits": [0.0,0.0],
+      "azimuthLimits": [-85.0,85.0],
+      "elevationLimits": [-30.0,60.0],
       "rollStabLimit": 60.0,
-      "period": 3.0,
+      "period": 8.5,
       "width": 85.0,
-      "barHeight": 16.0,
-      "barsCount": 1,
-      "rowMajor": true
+      "barHeight": 2.0,
+      "barsCount": 15,
+      "rowMajor": true,
+      "barsOneWay": false
     },
     "search30": {
       "type": "pyramide",
-      "azimuthLimits": [-90.0,90.0],
-      "elevationLimits": [0.0,0.0],
+      "azimuthLimits": [-85.0,85.0],
+      "elevationLimits": [-30.0,60.0],
       "rollStabLimit": 60.0,
-      "period": 1.0,
+      "period": 3.0,
       "width": 30.0,
-      "barHeight": 16.0,
-      "barsCount": 1,
-      "rowMajor": true
+      "barHeight": 2.0,
+      "barsCount": 15,
+      "rowMajor": true,
+      "barsOneWay": false
     }
   },
   "signals": {
@@ -49,6 +46,7 @@
       "groundClutter": true,
       "aircraftAsTarget": true,
       "groundVehiclesAsTarget": true,
+      "friendFoeId": true,
       "distance": {
         "presents": true,
         "minValue": 1000.0,
@@ -80,11 +78,12 @@
           },
           "setCenterElevation": {
             "source": "constant",
-            "value": 8.0
+            "value": 5.0
           },
           "setTargetDesignationRange": {
-            "azimuthRange": [-5.0,5.0],
-            "distanceRange": [0.0,4000.0]
+            "azimuthRange": [-85.0,85.0],
+            "elevationRange": [-60.0,60.0],
+            "distanceRange": [0.0,40000.0]
           }
         },
         "setStandbyMode": {
@@ -185,7 +184,14 @@
         "addTarget": {
           "event": "targetDetected",
           "actions": {
-            "addTarget": []
+            "addTarget": [],
+            "updateActiveDetectedTarget": []
+          }
+        },
+        "switchSelectedTarget": {
+          "command": "switchTarget",
+          "actions": {
+            "setNextDetectedTargetActive": []
           }
         }
       }

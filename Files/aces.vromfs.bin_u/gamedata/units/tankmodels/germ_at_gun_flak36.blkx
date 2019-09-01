@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -506,7 +509,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 15.0,
-        "hp": 150.0,
+        "hp": 250.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -1210,25 +1213,29 @@
           {
             "onKill": {
               "damageType": "cumulative",
-              "expl": 0.25,
-              "fire": 0.25,
-              "nothing": 0.5
+              "expl": 0.5,
+              "fire": 0.5
             }
           },
           {
             "onKill": {
               "damageType": "explosion",
-              "expl": 0.25,
-              "fire": 0.25,
-              "nothing": 0.5
+              "expl": 0.5,
+              "fire": 0.5
+            }
+          },
+          {
+            "onKill": {
+              "damageType": "secondaryShatter",
+              "expl": 0.5,
+              "fire": 0.5
             }
           },
           {
             "onKill": {
               "damageType": "generic",
-              "expl": 0.25,
-              "fire": 0.25,
-              "nothing": 0.5
+              "expl": 0.5,
+              "fire": 0.5
             }
           }
         ]

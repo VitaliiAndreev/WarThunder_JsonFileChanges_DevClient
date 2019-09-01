@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -103,6 +106,15 @@
   },
   {
     "type": "typeMediumTank"
+  },
+  {
+    "irProjectorNode": "bone_gun"
+  },
+  {
+    "irBeamRadius": [1300.0,100.0]
+  },
+  {
+    "irProjectorPower": [0.03,0.05]
   },
   {
     "smokeScreenActivateTime": 5.0
@@ -2178,24 +2190,6 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -2211,15 +2205,41 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -2942,6 +2962,11 @@
               "node": "turret_dz_mount"
             }
           ]
+        },
+        "collisionProps": {
+          "cls_body_01": "convex_hull",
+          "cls_body": "convex_hull",
+          "cls_turret": "convex_hull"
         }
       },
       "manual_extinguisher": [],
@@ -3230,6 +3255,9 @@
                   "emitterGenFmt": "emtr_mortar_flame_%02d"
                 },
                 {
+                  "ignoreLoaderPenalty": true
+                },
+                {
                   "createGunEffects": true
                 },
                 {
@@ -3307,6 +3335,32 @@
               ]
             }
           ]
+        }
+      },
+      "night_vision_system": {
+        "tier": 3,
+        "modClass": "protection",
+        "effects": {
+          "nightVision": {
+            "gunnerIr": {
+              "resolution": [800,600],
+              "lightMult": 8.0,
+              "ghosting": 0.75,
+              "noiseFactor": 0.2
+            },
+            "commanderIr": {
+              "resolution": [800,600],
+              "lightMult": 8.0,
+              "ghosting": 0.75,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.7,
+              "noiseFactor": 0.2
+            }
+          }
         }
       }
     }

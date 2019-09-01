@@ -258,7 +258,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       }
     },
     "spectator_points": [],
@@ -484,11 +485,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t1_airfield",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -510,11 +514,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t2_airfield",
             "team": "B",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -614,6 +621,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t2_ai_bombers",
             "speed": 250.0
           }
@@ -631,6 +640,8 @@
         {
           "moAddMissionObjective": {
             "target": "t1_dover_defend_ships",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "unit_or_area": "t1_quest_ships_squad",
             "object_type": "isActive"
           }
@@ -638,6 +649,8 @@
         {
           "moAddMissionObjective": {
             "target": "t2_dover_defend_bombers",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "unit_or_area": "t2_ai_bombers",
             "object_type": "isActive"
           }
@@ -650,6 +663,8 @@
         {
           "moAddMissionObjective": {
             "target": "t1_dover_kill_bombers",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "unit_or_area": "t2_ai_bombers",
             "object_type": "isActive"
           }
@@ -657,6 +672,8 @@
         {
           "moAddMissionObjective": {
             "target": "t2_dover_kill_ships",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "unit_or_area": "t1_quest_ships_squad",
             "object_type": "isActive"
           }
@@ -732,9 +749,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_ai_bombers",
           "target": "t2_ai_bombers_bomb_point",
+          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -754,6 +771,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t2_ai_bombers"
         },
         "unitAttackTarget": {
@@ -792,9 +811,9 @@
           "check_objects": "all",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_ai_bombers",
-          "target": "t2_ai_bombers_bomb_point"
+          "target": "t2_ai_bombers_bomb_point",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -817,6 +836,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_dover_kill_bombers",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -824,6 +845,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_dover_defend_bombers",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -873,8 +896,8 @@
           "value": 3,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_ai_bombers"
+          "object": "t2_ai_bombers",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -897,6 +920,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_dover_kill_bombers",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -904,6 +929,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_dover_defend_bombers",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -943,9 +970,9 @@
           "check_objects": "all",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_quest_ships_squad",
-          "target": "t1_port_area"
+          "target": "t1_port_area",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -968,6 +995,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_dover_defend_ships",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -975,6 +1004,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_dover_kill_ships",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1014,8 +1045,8 @@
           "value": 3,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_quest_ships_squad"
+          "object": "t1_quest_ships_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1038,6 +1069,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_dover_defend_ships",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1045,6 +1078,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_dover_kill_ships",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1095,6 +1130,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_dover_kill_bombers",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A",
             "unit_or_area": "t2_ai_bombers",
             "object_type": "isActive"
@@ -1104,6 +1141,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_dover_defend_bombers",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B",
             "unit_or_area": "t2_ai_bombers",
             "object_type": "isActive"
@@ -1144,6 +1183,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_dover_defend_ships",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A",
             "unit_or_area": "t1_quest_ships_squad",
             "object_type": "isActive"
@@ -1153,6 +1194,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_dover_kill_ships",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B",
             "unit_or_area": "t1_quest_ships_squad",
             "object_type": "isActive"
@@ -1186,9 +1229,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_ai_bombers",
           "target": "t2_ai_bombers_retreat_point",
+          "object_var_value": 0,
           "compareCenters": false,
           "check_all_units": true
         }
@@ -1312,9 +1355,9 @@
           [-0.906308,0.0,-0.422618],
           [0.0,1.0,0.0],
           [0.422618,0.0,-0.906308],
-          [-37630.8,192.26,5129.55]
+          [-37630.8,198.263,5129.55]
         ],
-        "unit_class": "dynAF_kh_gol_airfield_gumrak",
+        "unit_class": "dynaf_universal_1line_a",
         "objLayer": 2,
         "props": {
           "army": 1,
@@ -1329,9 +1372,9 @@
           [0.953717,0.0,0.300706],
           [0.0,1.0,0.0],
           [-0.300706,0.0,0.953717],
-          [55707.8,22.4677,-27878.7]
+          [55707.8,20.6432,-27878.7]
         ],
-        "unit_class": "dynAF_kh_gol_airfield_gumrak",
+        "unit_class": "dynaf_universal_1line_a",
         "objLayer": 2,
         "props": {
           "army": 2,
@@ -1859,6 +1902,9 @@
           [-20525.5,-1.0,-9326.95]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_navy_ship_01"
           },
@@ -3093,6 +3139,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_cargo_ship_01"
           },
           {
@@ -3690,6 +3739,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_navy_ship_01"
           },
           {
@@ -3906,6 +3958,9 @@
           [230.4,80.85,-42946.4]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_big_aaa_04"
           },
@@ -4255,6 +4310,9 @@
           [100.25,100.55,-43380.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_art_01"
           },
@@ -4620,6 +4678,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_art_01"
           },
           {
@@ -4705,6 +4766,7 @@
           [-22528.4,-1.0,-33507.6]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_quest_ships_squad"
         }
       }
@@ -4719,6 +4781,9 @@
           [-11740.9,-1.0,-36554.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_subquest_units_01"
           },
@@ -4848,6 +4913,7 @@
           [5610.45,68.75,-21279.4]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_ai_bombers"
         }
       }
@@ -4862,6 +4928,9 @@
           [35189.0,78.9,-39264.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_subquest_units_01"
           },
@@ -4884,6 +4953,7 @@
           [9665.65,96.6,-23553.5]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_art_squad"
         }
       }
@@ -4898,6 +4968,7 @@
           [11281.8,59.35,-23061.0]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_art_squad"
         }
       }
@@ -5047,7 +5118,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [-36825.2,205.85,5453.4]
+          [-36729.8,205.85,5356.21]
         ],
         "unit_class": "us_90mm_m1",
         "objLayer": 1,
@@ -5227,7 +5298,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [-37414.3,205.85,5187.4]
+          [-37342.1,205.85,5029.9]
         ],
         "unit_class": "us_40mm_bofors_airfield",
         "objLayer": 1,
@@ -5303,6 +5374,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_def_aaa_01"
           },
           {
@@ -5369,7 +5443,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [55240.2,22.0,-27912.6]
+          [55154.2,22.0,-27830.3]
         ],
         "unit_class": "germ_88mm_flak36",
         "objLayer": 1,
@@ -5513,7 +5587,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [56075.2,22.0,-27770.1]
+          [56235.2,22.0,-27872.8]
         ],
         "unit_class": "germ_37mm_flak43_airfield",
         "objLayer": 1,
@@ -5549,7 +5623,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [55511.9,22.0,-28138.1]
+          [55496.1,22.0,-28100.1]
         ],
         "unit_class": "germ_37mm_flak43_airfield",
         "objLayer": 1,
@@ -5585,7 +5659,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [55618.4,22.0,-27860.6]
+          [55482.6,22.0,-27709.5]
         ],
         "unit_class": "germ_37mm_flak43_airfield",
         "objLayer": 1,
@@ -5624,6 +5698,9 @@
           [55747.4,22.0,-28550.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_def_aaa_01"
           },
@@ -6180,10 +6257,10 @@
     "t2_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-1169.54,0.0,-425.677],
+        [-1732.65,0.0,-546.301],
         [0.0,196.8,0.0],
-        [90.8918,0.0,-249.723],
-        [55885.7,21.9,-27923.5]
+        [195.78,0.0,-620.935],
+        [55726.0,21.9,-27852.9]
       ],
       "objLayer": 0,
       "props": []
@@ -6191,10 +6268,10 @@
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-1103.97,0.0,-574.691],
+        [-1861.18,0.0,-867.883],
         [0.0,196.8,0.0],
-        [122.71,0.0,-235.723],
-        [-37853.9,183.85,5151.8]
+        [283.449,0.0,-607.857],
+        [-37648.8,183.85,5104.92]
       ],
       "objLayer": 0,
       "props": []

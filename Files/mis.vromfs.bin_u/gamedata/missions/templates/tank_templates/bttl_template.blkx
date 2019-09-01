@@ -888,6 +888,9 @@
               "replaceAreas": false
             },
             {
+              "forceCreate": false
+            },
+            {
               "target": "@t1_spawn_01_name"
             },
             {
@@ -951,6 +954,9 @@
               "replaceAreas": false
             },
             {
+              "forceCreate": false
+            },
+            {
               "target": "@t2_spawn_01_name"
             },
             {
@@ -1010,6 +1016,7 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t1_spawn_01_name",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -1034,6 +1041,7 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t2_spawn_01_name",
             "team": "B",
             "offset": [0.0,0.0,0.0],
@@ -1055,6 +1063,8 @@
             "canCaptureByGM": true,
             "auto_smoke": true,
             "captureNoPenalty": true,
+            "markUnitPreset": "tank_decal",
+            "markUnits": "cz_circle_01",
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1077,6 +1087,8 @@
             "canCaptureByGM": true,
             "auto_smoke": true,
             "captureNoPenalty": true,
+            "markUnitPreset": "tank_decal",
+            "markUnits": "cz_circle_02",
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1098,9 +1110,6 @@
               "offset": [0.0,0.0,0.0]
             },
             {
-              "radiusOffset": [0.0,0.0]
-            },
-            {
               "show": true
             },
             {
@@ -1120,27 +1129,51 @@
             },
             {
               "target": "@t2_effect_name"
+            },
+            {
+              "radiusOffset": [0.0,0.0]
             }
           ]
         },
         {
-          "unitWakeUp": [
+          "comment": {
+            "value": "put to sleep all possible circles"
+          }
+        },
+        {
+          "unitPutToSleep": [
             {
-              "target": "@t1_circle_name"
+              "target": "bttl_t1_circle_arcade"
             },
             {
-              "target": "@t2_circle_name"
+              "target": "bttl_t2_circle_arcade"
+            },
+            {
+              "target": "bttl_t1_circle_realistic"
+            },
+            {
+              "target": "bttl_t2_circle_realistic"
+            },
+            {
+              "target": "bttl_t1_circle_hardcore"
+            },
+            {
+              "target": "bttl_t2_circle_hardcore"
             }
           ]
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_Bttl_objective_01"
+            "target": "avg_Bttl_objective_01",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_Bttl_objective_02"
+            "target": "avg_Bttl_objective_02",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1204,6 +1237,7 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t1_spawn_02_name",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -1228,6 +1262,7 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t2_spawn_02_name",
             "team": "B",
             "offset": [0.0,0.0,0.0],
@@ -1266,6 +1301,7 @@
           "newGridHorizontalCellCount": 0,
           "killArea": false,
           "detectionArea": false,
+          "airMapArea": false,
           "area": "@battle_area_name"
         }
       },
@@ -1383,7 +1419,42 @@
   "dialogs": [],
   "airfields": [],
   "effects": [],
-  "units": [],
+  "units": [
+    {
+      "objectGroups": {
+        "name": "cz_circle_01",
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1831.7,4.65,2455.55]
+        ],
+        "unit_class": "capture_zone_circle",
+        "objLayer": 2,
+        "props": {
+          "army": 0,
+          "active": true
+        }
+      }
+    },
+    {
+      "objectGroups": {
+        "name": "cz_circle_02",
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1846.35,4.65,2455.55]
+        ],
+        "unit_class": "capture_zone_circle",
+        "objLayer": 2,
+        "props": {
+          "army": 0,
+          "active": true
+        }
+      }
+    }
+  ],
   "areas": [],
   "objLayers": [
     {

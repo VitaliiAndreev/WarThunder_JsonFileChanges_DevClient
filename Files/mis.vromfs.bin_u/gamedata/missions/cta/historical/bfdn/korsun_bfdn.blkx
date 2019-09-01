@@ -258,7 +258,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       }
     },
     "cover_points": [],
@@ -714,6 +715,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t2_bombers"
           }
         },
@@ -755,12 +758,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "korsun_BfDn_t1_destroy"
+            "target": "korsun_BfDn_t1_destroy",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "korsun_BfDn_t2_defend"
+            "target": "korsun_BfDn_t2_defend",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -850,9 +857,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_bombers",
-          "target": "bombers_wayp01"
+          "target": "bombers_wayp01",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -885,8 +892,8 @@
           "value": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_bombers"
+          "object": "t2_bombers",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -937,8 +944,8 @@
           "value": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_bombers"
+          "object": "t2_bombers",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -957,6 +964,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t2_bombers",
           "useForTriggerFiltered": true
         }
@@ -988,9 +997,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_bombers",
-          "target": "bombers_rearm_point"
+          "target": "bombers_rearm_point",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1030,15 +1039,17 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_bombers"
+          "object": "t2_bombers",
+          "object_var_value": 0
         }
       },
       "actions": [
         {
           "moSetObjectiveStatus": {
             "target": "korsun_BfDn_t1_destroy_bombers",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1085,14 +1096,16 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_quest_arty_squad"
+          "object": "t1_quest_arty_squad",
+          "object_var_value": 0
         }
       },
       "actions": {
         "moSetObjectiveStatus": {
           "target": "korsun_BfDn_t2_destroy_arty",
-          "status": 2
+          "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "triggerEnable": {
           "target": "t2_task_completed"
@@ -1151,8 +1164,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_quest_units_squad"
+            "object": "t1_quest_units_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1163,8 +1176,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_land_squad"
+            "object": "t1_land_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1205,19 +1218,23 @@
           "value": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_bombers"
+          "object": "t2_bombers",
+          "object_var_value": 0
         }
       },
       "actions": [
         {
           "moAddMissionObjective": {
-            "target": "korsun_BfDn_t1_destroy_bombers"
+            "target": "korsun_BfDn_t1_destroy_bombers",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "korsun_BfDn_t2_destroy_arty"
+            "target": "korsun_BfDn_t2_destroy_arty",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1785,6 +1802,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_aaa_light_06"
           },
           {
@@ -2188,6 +2208,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_aaa_light_06"
           },
           {
@@ -2267,6 +2290,7 @@
           [20079.9,72.1,9963.25]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_light_units_squad"
         }
       }
@@ -2281,6 +2305,7 @@
           [19778.3,74.8,9141.45]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_atack_tanks_squad"
         }
       }
@@ -2295,6 +2320,9 @@
           [19158.6,76.25,7230.48]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_def_aaa_squad"
           },
@@ -2315,6 +2343,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_def_tanks_squad"
           },
           {
@@ -2333,6 +2364,7 @@
           [18645.6,97.35,9436.85]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_atack_tanks_squad"
         }
       }
@@ -2347,6 +2379,9 @@
           [18986.7,82.55,10555.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_atack_trucks_squad"
           },
@@ -2367,6 +2402,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_heavy_units_squad"
           },
           {
@@ -2385,6 +2423,7 @@
           [17262.1,97.35,5953.99]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -2399,6 +2438,7 @@
           [17624.5,82.55,7065.25]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -2413,6 +2453,7 @@
           [18001.0,127.75,7871.49]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -2844,7 +2885,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -2861,7 +2902,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -2878,7 +2919,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -2895,7 +2936,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -2912,7 +2953,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -3287,6 +3328,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_quest_arty"
           },
           {
@@ -3329,6 +3373,9 @@
           [5425.75,15.1,12514.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_atack_tank04"
           },
@@ -3848,6 +3895,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_atack_truck01"
           },
           {
@@ -3872,6 +3922,9 @@
           [5459.9,16.1,13732.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_atack_aaa_01"
           },
@@ -4582,6 +4635,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_def_tank01"
           },
           {
@@ -5276,6 +5332,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_def_arty01"
           },
           {
@@ -5336,6 +5395,9 @@
           [9786.65,12.5,7319.35]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_def_aaa01"
           },
@@ -6037,6 +6099,9 @@
           [7242.95,14.85,8086.45]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_inf_01"
           },
@@ -6830,6 +6895,9 @@
           [14595.3,11.6,18864.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_def_aaa01"
           },

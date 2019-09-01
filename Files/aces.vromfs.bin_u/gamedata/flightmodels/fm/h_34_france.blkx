@@ -254,7 +254,7 @@
   {
     "Aerodynamics": {
       "AileronCd": [0.015,0.0027],
-      "GearCd": 0.115,
+      "GearCd": 0.16,
       "GearCentralCd": 0.0,
       "RadiatorCd": 0.0,
       "OilRadiatorCd": 0.0,
@@ -268,7 +268,7 @@
       "UseSpinLoss": false,
       "SpinClLoss": 0.0,
       "SpinCdLoss": 0.0,
-      "OswaldsEfficiencyNumber": 0.01,
+      "OswaldsEfficiencyNumber": 0.08,
       "lineClCoeff": 0.052,
       "AfterCritParabAngle": 3.0,
       "AfterCritDeclineCoeff": 0.01,
@@ -332,7 +332,7 @@
         "CdMin": 0.0151
       },
       "Fuselage": {
-        "OswaldsEfficiencyNumber": 0.01,
+        "OswaldsEfficiencyNumber": 0.08,
         "lineClCoeff": 0.0013,
         "AfterCritParabAngle": 2.0,
         "AfterCritDeclineCoeff": 0.001,
@@ -381,7 +381,7 @@
         "alphaCritLow": -30.0,
         "ClCritHigh": 0.03,
         "ClCritLow": -0.03,
-        "CdMin": 0.022
+        "CdMin": 0.033
       },
       "Stab": {
         "OswaldsEfficiencyNumber": 1.0,
@@ -925,9 +925,11 @@
         "AirFlowSolver": true,
         "AirFlow1": [-100.0,0.0,1.0],
         "AirFlow2": [0.0,0.0,1.0],
-        "AirFlow3": [15.0,0.0,1.0],
-        "ArcadeTangAirFlowMin": 51.0,
-        "ArcadeAxialAirFlowRange": [-300.0,15.0],
+        "AirFlow3": [6.0,-3.0,0.4],
+        "AirFlow4": [50.0,-10.0,0.2],
+        "FlapCompensatorEfficiency": [220.0,0.9,300.0,0.0],
+        "ArcadeTangAirFlowMin": 10.0,
+        "ArcadeAxialAirFlowRange": [-300.0,40.0],
         "RollDamping": [35.0,0.0,75.0,60000.0],
         "PitchDamping": [35.0,0.0,75.0,60000.0],
         "ForceToBladeAngle": 0.0,
@@ -957,7 +959,7 @@
       },
       "Governor": {
         "PitchMin": 0.0,
-        "PitchMax": 13.2,
+        "PitchMax": 12.5,
         "Aoa0": 11.0,
         "PitchCyclicPitchAngles": [-6.5,0.0,6.4],
         "PitchCyclicRollAngles": [-6.5,-0.1,6.5],
@@ -984,7 +986,7 @@
         "alphaCritLow": -14.5,
         "ClCritHigh": 1.15,
         "ClCritLow": -0.85,
-        "CdMin": 0.007,
+        "CdMin": 0.01,
         "AfterCritParabAngle": 3.0,
         "AfterCritDeclineCoeff": 0.0022,
         "AfterCritMaxDistanceAngle": 28.0,

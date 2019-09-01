@@ -99,7 +99,7 @@
     "AileronAngles": [15.0,15.0]
   },
   {
-    "ElevatorAngles": [7.7,12.5]
+    "ElevatorAngles": [4.0,14.0]
   },
   {
     "InvertElevator": false
@@ -254,7 +254,7 @@
   {
     "Aerodynamics": {
       "AileronCd": [0.015,0.0027],
-      "GearCd": 0.115,
+      "GearCd": 0.125,
       "GearCentralCd": 0.0,
       "RadiatorCd": 0.0,
       "OilRadiatorCd": 0.0,
@@ -268,7 +268,7 @@
       "UseSpinLoss": false,
       "SpinClLoss": 0.0,
       "SpinCdLoss": 0.0,
-      "OswaldsEfficiencyNumber": 0.01,
+      "OswaldsEfficiencyNumber": 0.04,
       "lineClCoeff": 0.052,
       "AfterCritParabAngle": 3.0,
       "AfterCritDeclineCoeff": 0.01,
@@ -332,7 +332,7 @@
         "CdMin": 0.0151
       },
       "Fuselage": {
-        "OswaldsEfficiencyNumber": 0.01,
+        "OswaldsEfficiencyNumber": 0.04,
         "lineClCoeff": 0.0013,
         "AfterCritParabAngle": 2.0,
         "AfterCritDeclineCoeff": 0.001,
@@ -381,7 +381,7 @@
         "alphaCritLow": -30.0,
         "ClCritHigh": 0.03,
         "ClCritLow": -0.03,
-        "CdMin": 0.019
+        "CdMin": 0.024
       },
       "Stab": {
         "OswaldsEfficiencyNumber": 1.0,
@@ -524,7 +524,7 @@
         "ConsumptionOmegaMax": 2.4,
         "TurbineTimeConstant": 0.06,
         "TorqueZeroOmegaMult": 1.4,
-        "ThrottleRPMAuto0": [0.0,1000.0],
+        "ThrottleRPMAuto0": [0.0,1250.0],
         "ThrottleRPMAuto1": [0.1,2400.0],
         "ThrottleRPMAuto2": [1.0,2400.0],
         "ShaftRPMMin": 600.0,
@@ -908,39 +908,42 @@
     "Propeller0": {
       "AxisDirection": [-90.0,92.0],
       "CyclicPitchAxisDirectionPitch": [-0.0,-4.5],
-      "Pos": [-0.1,2.6,-0.0],
+      "Pos": [-0.1,2.6,-0.04],
       "Geometry": {
         "RotationDirection": 0,
         "Radius": 10.5,
         "NumBlades": 4,
-        "BladePitch0": 3.0,
-        "BladeWidth0": 0.102,
-        "BladePitch1": 2.0,
-        "BladeWidth1": 0.102,
-        "BladePitch2": 1.0,
-        "BladeWidth2": 0.102,
+        "BladePitch0": 4.3,
+        "BladeWidth0": 0.059,
+        "BladePitch1": 2.87,
+        "BladeWidth1": 0.076,
+        "BladePitch2": 1.44,
+        "BladeWidth2": 0.067,
         "BladePitch3": 0.0,
-        "BladeWidth3": 0.102,
-        "ForceToBladeAngle": 0.0,
+        "BladeWidth3": 0.032,
         "Coaxial": false,
         "AdvancedAirFlow": false,
         "AirFlowSolver": true,
         "AirFlow1": [-100.0,0.0,1.0],
-        "AirFlow2": [0.0,0.0,1.0],
-        "AirFlow3": [15.0,0.0,1.0],
+        "AirFlow2": [0.0,-0.0,1.0],
+        "AirFlow3": [3.0,-3.0,0.55],
+        "AirFlow4": [6.0,-6.0,0.1],
+        "AirFlow5": [15.0,-15.0,0.0],
+        "FlapCompensatorEfficiency": [250.0,0.7,310.0,0.01],
         "ArcadeTangAirFlowMin": 51.0,
         "ArcadeAxialAirFlowRange": [-300.0,30.0],
         "RotationToAirflow": true,
         "RollDamping": [30.0,0.0,50.0,160000.0],
         "PitchDamping": [30.0,0.0,50.0,160000.0],
+        "ForceToBladeAngle": 0.0,
         "BladeAngleMax": 0.4,
+        "BladeToShaftTorqueMult": 0.02,
         "MultiPoint": true,
         "CyclicPitchToForceAngle": 3.0,
         "CollectivePitchToForceAngle": 3.0,
         "DampingMultByFlow": [0.0,1.0,30.0,2.0],
         "VortexRingVFlowMult": [0.7,1.0],
         "VortexRingVFlowToReturnDist": 3.6,
-        "BladeToShaftTorqueMult": 0.02,
         "FlyBarStabilizationMult": 2.0,
         "FlyBarAngleMax": 45.0,
         "FlyBarToCylicAxes": 0.005,
@@ -953,15 +956,15 @@
         "DamagedFrictionAccel": 15.0
       },
       "Mass": {
-        "Mass": 500.0,
+        "Mass": 600.0,
         "Diameter": 22.0,
         "InertiaMomentCoeff": 1.1
       },
       "Governor": {
         "PitchMin": 0.0,
-        "PitchMax": 6.2,
+        "PitchMax": 9.0,
         "Aoa0": 11.0,
-        "PitchCyclicPitchAngles": [-3.5,0.0,2.4],
+        "PitchCyclicPitchAngles": [-3.6,0.0,3.0],
         "PitchCyclicRollAngles": [-3.5,0.0,3.5],
         "PitchCoaxialDiffAngles": [0.0,0.0,0.0],
         "GovernorType": 9,
@@ -1313,7 +1316,7 @@
         }
       },
       "Pitch": {
-        "RateMax": [-40.0,40.0],
+        "RateMax": [-30.0,30.0],
         "AngleMax": [-30.0,30.0],
         "VelMax": [-100.0,100.0],
         "PosMax": [-1000.0,1000.0],
@@ -1407,9 +1410,9 @@
         "RollLimByRaltitude": [15.0,190.0,40.0,190.0],
         "RollLim": 50.0,
         "RollRateMax": 45.0,
-        "PitchMax": 40.0,
+        "PitchMax": 30.0,
         "PitchLimByRaltitude": [15.0,190.0,100.0,190.0],
-        "PitchLim": 30.0,
+        "PitchLim": 20.0,
         "PitchRateMax": 45.0,
         "YawHeadingToYawRateMultByIas": [0.0,1.0,160.0,1.0],
         "YawHeadingToYawRateMultByReqRoll": [0.0,1.0,45.0,0.2],

@@ -146,7 +146,7 @@
     "UseSpinLoss": false,
     "SpinClLoss": 0.0,
     "SpinCdLoss": 0.0,
-    "OswaldsEfficiencyNumber": 0.04,
+    "OswaldsEfficiencyNumber": 0.09,
     "lineClCoeff": 0.052,
     "AfterCritParabAngle": 3.0,
     "AfterCritDeclineCoeff": 0.01,
@@ -211,7 +211,7 @@
       "CdMin": 0.0151
     },
     "Fuselage": {
-      "OswaldsEfficiencyNumber": 1455280.0,
+      "OswaldsEfficiencyNumber": 0.09,
       "lineClCoeff": 0.0013,
       "AfterCritParabAngle": 2.0,
       "AfterCritDeclineCoeff": 0.001,
@@ -260,7 +260,7 @@
       "alphaCritLow": -30.0,
       "ClCritHigh": 0.03,
       "ClCritLow": -0.03,
-      "CdMin": 0.03
+      "CdMin": 0.032
     },
     "Stab": {
       "OswaldsEfficiencyNumber": 1.0,
@@ -796,12 +796,15 @@
       "PitchDamping": [45.0,0.0,105.0,22000.0],
       "DampingMultByFlow": [0.0,1.0,30.0,1.0],
       "AirFlowSolver": true,
-      "AirFlow1": [-100.0,100.0,1.0],
       "RotationToAirflow": true,
-      "AirFlow2": [0.0,0.0,1.0],
-      "AirFlow3": [100.0,0.0,1.0],
+      "AirFlow1": [-100.0,0.0,0.5],
+      "AirFlow2": [0.0,-2.0,1.0],
+      "AirFlow3": [2.0,-4.0,1.0],
+      "AirFlow4": [10.0,-12.0,0.5],
+      "AirFlow5": [100.0,-14.0,0.1],
+      "FlapCompensatorEfficiency": [180.0,0.8,300.0,0.0],
       "ArcadeTangAirFlowMin": 51.0,
-      "ArcadeAxialAirFlowRange": [-300.0,15.0],
+      "ArcadeAxialAirFlowRange": [-300.0,40.0],
       "ScreenEffectThrustMultMax": 0.4,
       "ScreenEffectThrustMult10Dist": 10.0,
       "ScreenEffectVelMult": 0.005,
@@ -816,7 +819,7 @@
     },
     "Governor": {
       "PitchMin": 0.0,
-      "PitchMax": 12.0,
+      "PitchMax": 11.0,
       "Aoa0": 11.0,
       "PitchCyclicPitchAngles": [-5.0,0.5,5.1],
       "PitchCyclicRollAngles": [-4.5,0.0,4.5],
@@ -1415,19 +1418,19 @@
     },
     "Throttle": {
       "Limits": [0.05,0.75],
-      "ClimbMax": [-8.0,12.0],
+      "ClimbMax": [-5.0,5.0],
       "ClimbDeadZone": 0.0,
-      "AltMax": [-8.0,12.0],
+      "AltMax": [-5.0,5.0],
       "AltDeadZone": 0.1,
       "AltHoldClimbTreshold": 0.5,
-      "ClimbMinLimByHorSpeed": [40.0,-3.0,70.0,-15.0],
+      "ClimbMinLimByHorSpeed": [40.0,-4.0,70.0,-15.0],
       "ClimbMinLimByRAltitude": [10.0,-3.0,40.0,-15.0],
       "ClimbPID": {
-        "Kp": 0.5,
-        "Ki": 0.2,
+        "Kp": 0.7,
+        "Ki": 0.3,
         "Imax": 2.5,
         "Kd": 0.001,
-        "dTau": 0.0208,
+        "dTau": 0.05,
         "Lim": [0.05,0.9]
       },
       "AltPID": {

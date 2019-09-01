@@ -19,7 +19,7 @@
       "explosiveMass": 2.58
     },
     {
-      "distFromCmToStab": 0.04
+      "distFromCmToStab": 0.02
     },
     {
       "distanceFuse": false
@@ -228,7 +228,7 @@
         "loft4": [7000.0,5000.0,1700.0],
         "angleLimMult": 1.0,
         "inertialNavigation": true,
-        "inertialNavigationDriftSpeed": 5.0,
+        "inertialNavigationDriftSpeed": 3.5,
         "flightTime0": [1000.0,2.5],
         "flightTime1": [2000.0,5.5],
         "flightTime2": [3000.0,8.5],
@@ -236,7 +236,9 @@
         "flightTime4": [5000.0,18.0],
         "flightTime5": [6000.0,23.6],
         "flightTime6": [7000.0,29.0],
-        "flightTime7": [8000.0,36.0]
+        "flightTime7": [8000.0,36.0],
+        "launchAngleMax": [20.0,40.0],
+        "launchDistanceRange": [1000.0,8000.0]
       }
     },
     {
@@ -247,7 +249,9 @@
         "lockAngleMax": 90.0,
         "angleMax": 90.0,
         "rateMax": 45.0,
-        "prolongationTimeMax": 0.1
+        "prolongationTimeMax": 0.1,
+        "filterAlpha": 0.85,
+        "filterBetta": 0.2
       }
     },
     {
@@ -255,9 +259,10 @@
         "baseIndSpeed": 1200.0,
         "propNavMult": 6.0,
         "accelControlProp": 0.016,
-        "accelControlDiff": 0.002,
         "accelControlIntg": 0.002,
-        "accelControlIntgLim": 0.4
+        "accelControlIntgLim": 0.7,
+        "accelControlDiff": 0.002,
+        "accelControlDTau": 0.05
       }
     },
     {

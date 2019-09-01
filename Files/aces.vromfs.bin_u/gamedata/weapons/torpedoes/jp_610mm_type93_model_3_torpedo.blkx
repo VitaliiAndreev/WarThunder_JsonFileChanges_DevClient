@@ -31,20 +31,9 @@
     "aaSpeedPrediction": 0.0,
     "aaAccelPrediction": 0.0,
     "aaAngleCorrection": 0.0,
-    "hitPowerMult": 1.0,
-    "nearHitPower": [1.0,50.0],
-    "midHitPower": [0.9,400.0],
-    "farHitPower": [0.1,1000.0],
-    "endHitPower": [0.01,1500.0],
-    "relativeVelHitShift": [300.0,1000.0],
-    "nearArmorPower": [10.0,50.0],
-    "midArmorPower": [7.0,400.0],
-    "farArmorPower": [0.2,700.0],
-    "relativeVelArmorShift": [200.0,1000.0],
     "explodeTreshold": 0.0,
-    "explodeHitPower": 16050.0,
-    "explodeArmorPower": 410.0,
-    "explodeRadius": [20.0,40.0],
+    "relativeVelHitShift": [300.0,1000.0],
+    "relativeVelArmorShift": [200.0,1000.0],
     "arcadeProp": {
       "dropSpeedRange": [0.0,300.0],
       "dropHeightRange": [0.0,350.0],
@@ -56,6 +45,38 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 1.0
       }
+    },
+    "damage": {
+      "explosive": {
+        "radius": 0.0,
+        "offset": 0.0
+      },
+      "shatter": [
+        {
+          "useRealShatters": true
+        },
+        {
+          "countPortion": 0.01
+        },
+        {
+          "segment": {
+            "radiusScale": 1.0,
+            "penetrationScale": 1.0,
+            "damageScale": 1.0,
+            "angles": [0.0,90.0],
+            "countPortion": 0.5
+          }
+        },
+        {
+          "segment": {
+            "radiusScale": 1.0,
+            "penetrationScale": 1.0,
+            "damageScale": 1.0,
+            "angles": [270.0,359.0],
+            "countPortion": 0.5
+          }
+        }
+      ]
     }
   }
 }

@@ -1,6 +1,6 @@
 [
   {
-    "model": "t_34_85_d5t"
+    "model": "t_34_85_zis_53"
   },
   {
     "hasExpl": false
@@ -22,6 +22,9 @@
   },
   {
     "damagedExhaustFx": "tank_broken_exhaust"
+  },
+  {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
   },
   {
     "dustFx": ""
@@ -100,6 +103,15 @@
   },
   {
     "type": "typeMediumTank"
+  },
+  {
+    "customClassIco": "!#ui/gameuiskin#ussr_t_34_85_zis_53_ico"
+  },
+  {
+    "customImage": "!#ui/unitskin#ussr_t_34_85_zis_53"
+  },
+  {
+    "customTooltipImage": "ui/tanks/ussr_t_34_85_zis_53"
   },
   {
     "DamageParts": {
@@ -220,17 +232,27 @@
           "armorThickness": 30.0
         },
         "turret_01_front_dm": {
+          "armorThickness": 30.0
+        },
+        "turret_02_top_dm": {
           "armorThickness": 40.0
+        },
+        "turret_02_side_dm": {
+          "armorThickness": 60.0
+        },
+        "turret_02_bottom_dm": {
+          "armorThickness": 90.0
+        },
+        "turret_02_front_dm": {
+          "armorThickness": 90.0
         }
       },
       "mask": {
         "gun_mask_dm": {
-          "armorThickness": 90.0,
-          "hp": 10000.0
+          "armorThickness": 40.0
         },
         "gun_mask_shield_dm": {
-          "armorThickness": 200.0,
-          "hp": 10000.0
+          "armorThickness": 200.0
         }
       },
       "gun": {
@@ -267,7 +289,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -311,52 +333,112 @@
           "ex_armor_body_l_04_dm": []
         }
       },
-      "equipment": {
+      "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 12.0,
-        "armorThrough": 1.0,
-        "fireProtectionHp": 15.0,
-        "explosionArmorQuality": 0.35,
-        "shatterArmorQuality": 0.35,
-        "drive_turret_v_dm": [],
-        "drive_turret_h_dm": [],
-        "radio_station_dm": []
+        "armorThrough": 15.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "drive_turret_v_dm": {
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_dm": {
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "radiator_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radiator_l_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radiator_r_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radio_station_dm": {
+          "hp": 50.0,
+          "armorThrough": 3.0
+        }
       },
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 15.0,
-        "armorThrough": 300.0,
-        "fireProtectionHp": 10.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
         "hidableInViewer": false,
-        "cannon_breech_dm": [],
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
         "cannon_breech_01_dm": {
-          "armorThrough": 15.0
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
         }
       },
-      "radiators": {
-        "armorClass": "tank_structural_steel",
-        "hp": 50.0,
-        "armorThickness": 5.0,
-        "armorThrough": 15.0,
-        "fireProtectionHp": 5.0,
-        "radiator_dm": [],
-        "radiator_l_dm": [],
-        "radiator_r_dm": []
-      },
-      "engine": {
+      "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 2.0,
-        "armorThrough": 40.0,
+        "armorThickness": 150.0,
         "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
         "engine_dm": [],
         "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 500.0,
+        "hp": 300.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,
@@ -412,6 +494,11 @@
         "ammo_turret_48_dm": [],
         "ammo_turret_49_dm": [],
         "ammo_turret_50_dm": [],
+        "ammo_turret_51_dm": [],
+        "ammo_turret_52_dm": [],
+        "ammo_turret_53_dm": [],
+        "ammo_turret_54_dm": [],
+        "ammo_turret_55_dm": [],
         "ammo_body_dm": [],
         "ammo_body_01_dm": [],
         "ammo_body_02_dm": [],
@@ -509,11 +596,11 @@
         "ammo_body_r_19_dm": [],
         "ammo_body_r_20_dm": []
       },
-      "equipment_body": {
+      "fuel_tanks": {
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 10.0,
+        "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
@@ -523,10 +610,12 @@
         "fuel_tank_05_dm": [],
         "fuel_tank_r_01_dm": [],
         "fuel_tank_r_02_dm": [],
+        "fuel_tank_r_03_dm": [],
         "fuel_tank_r_04_dm": [],
         "fuel_tank_r_05_dm": [],
         "fuel_tank_l_01_dm": [],
         "fuel_tank_l_02_dm": [],
+        "fuel_tank_l_03_dm": [],
         "fuel_tank_l_04_dm": [],
         "fuel_tank_l_05_dm": []
       },
@@ -567,696 +656,6 @@
       "turret_turn": "turret_turn_t34_manual",
       "EngineNameAi": "engine_tank_ai_middle",
       "TrackSoundNameAi": "tracks_ai_middle"
-    }
-  },
-  {
-    "class_tags": []
-  },
-  {
-    "VehiclePhys": {
-      "tracks": {
-        "animationMultiplier": 0.75,
-        "height": 0.04,
-        "width": 0.5
-      },
-      "collisionProps": {
-        "cls_turret_01": "convex_hull",
-        "cls_turret_02": "convex_hull",
-        "cls_body_01": "convex_hull"
-      },
-      "engine": {
-        "horsePowers": 500.0,
-        "maxRPM": 1800.0,
-        "minRPM": 600.0
-      },
-      "mechanics": {
-        "maxBrakeForce": 120000.0,
-        "driveGearRadius": 0.317,
-        "mainGearRatio": 1.0,
-        "sideGearRatio": 5.18,
-        "gearRatios": [
-          {
-            "ratio": -4.95
-          },
-          {
-            "ratio": 0.0
-          },
-          {
-            "ratio": 5.57
-          },
-          {
-            "ratio": 2.6
-          },
-          {
-            "ratio": 1.85
-          },
-          {
-            "ratio": 1.215
-          },
-          {
-            "ratio": 0.756
-          }
-        ]
-      },
-      "suspension": {
-        "maxDisplacementOffsets": [-0.01,0.02],
-        "suspensionOffsets": [-0.115,-0.115,0.14],
-        "defaultGearRadius": 0.41,
-        "frontBackGearRadius": 0.21,
-        "defaultDampeningForce": [150000.0,150000.0],
-        "dampeningRelaxationRatio": 0.4,
-        "dampeningCompressionRatio": 0.15
-      },
-      "Mass": {
-        "Empty": 30300.0,
-        "Fuel": 600.0,
-        "TakeOff": 30900.0,
-        "momentOfInertia": [2.5,2.5,6.0],
-        "CenterOfGravity": [0.05,0.5,0.0],
-        "CenterOfGravityClampY": [0.0,0.7],
-        "AdvancedMass": true,
-        "trackMass": 1150.0
-      }
-    }
-  },
-  {
-    "PhysSys": {
-      "find": "^bone_suspention_(._\\d\\d)$",
-      "points": {
-        "suspension": {
-          "name": "bone_suspention_$1"
-        },
-        "wheel": {
-          "name": "bone_wheel_$1",
-          "limitMin": [-1000.0,0.0,0.0],
-          "limitMax": [1000.0,0.0,0.0]
-        }
-      },
-      "constraints": {
-        "edge": {
-          "from": "suspension",
-          "to": "wheel"
-        }
-      }
-    }
-  },
-  {
-    "ammo": {
-      "combustionTime": 10.0,
-      "detonateProb": 0.5,
-      "detonatePortion": [0.8,0.9],
-      "explodeHitPower": 4000.0,
-      "hitPowerMult": 1.0,
-      "nearHitPower": [1.0,50.0],
-      "midHitPower": [0.9,400.0],
-      "farHitPower": [0.1,1000.0],
-      "endHitPower": [0.01,1500.0],
-      "relativeVelHitShift": [300.0,1000.0],
-      "nearArmorPower": [10.0,50.0],
-      "midArmorPower": [7.0,400.0],
-      "farArmorPower": [0.2,700.0],
-      "relativeVelArmorShift": [200.0,1000.0],
-      "explodeTreshold": 0.0001,
-      "explodeArmorPower": 30.0,
-      "explodeRadius": [1.5,10.0]
-    }
-  },
-  {
-    "wreckedParts": {
-      "part": {
-        "node": "bone_turret",
-        "mass": 6000.0,
-        "cutDamage": 1000.0,
-        "deviation": 0.3,
-        "rotation": 1.5,
-        "collisionNode": "cls_turret_01"
-      }
-    }
-  },
-  {
-    "unitFx": [
-      {
-        "event": [
-          {
-            "name": "engine_fire"
-          },
-          {
-            "fx": {
-              "name": "tank_engine_fire",
-              "emitter": "emtr_fire_engine"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_fire",
-              "emitter": "emtr_fire_engine_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_fire",
-              "emitter": "emtr_fire_engine_02"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_smoke",
-              "emitter": "emtr_fire_engine"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_smoke",
-              "emitter": "emtr_fire_engine_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_smoke",
-              "emitter": "emtr_fire_engine_02"
-            }
-          }
-        ]
-      },
-      {
-        "event": [
-          {
-            "name": "ammo_fire"
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_02"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_03"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_04"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_05"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_06"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_07"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_08"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_09"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_10"
-            }
-          }
-        ]
-      },
-      {
-        "event": [
-          {
-            "name": "light_smoke"
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_fire_ammo"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_fire_ammo_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_fire_ammo_02"
-            }
-          }
-        ]
-      },
-      {
-        "event": [
-          {
-            "name": "total_smoke"
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_big",
-              "emitter": "emtr_smoke_dmg"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_02"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_03"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_04"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_05"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_06"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_07"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_08"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_09"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_10"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_11"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_12"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_13"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_14"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_15"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_16"
-            }
-          }
-        ]
-      },
-      {
-        "event": [
-          {
-            "name": "total_fire"
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_big",
-              "emitter": "emtr_smoke_dmg"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_02"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_03"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_04"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_05"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_06"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_07"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_08"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_09"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_10"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_11"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_12"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_13"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_14"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_15"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_smoke_small",
-              "emitter": "emtr_smoke_small_dmg_16"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_big",
-              "emitter": "emtr_fire_dmg"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_02"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_03"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_04"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_05"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_06"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_07"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_08"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_09"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_10"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_11"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_12"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_13"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_14"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_15"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_fire_small",
-              "emitter": "emtr_fire_small_dmg_16"
-            }
-          }
-        ]
-      },
-      {
-        "event": {
-          "name": "big_bang",
-          "fx": {
-            "name": "tank_explosion",
-            "emitter": "emtr_explosion_center"
-          }
-        }
-      },
-      {
-        "procedural": {
-          "name": "default",
-          "fx": {
-            "name": "tank_engine_fire"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "user_skin": {
-      "name": "t_34_85",
-      "replace_tex": {
-        "from": "ussr_camo_green*"
-      }
-    }
-  },
-  {
-    "tank_crew": {
-      "changeTimeMult": 1.0,
-      "gunner": [
-        {
-          "dmPart": "commander_dm"
-        },
-        {
-          "role": "tank_gunner"
-        },
-        {
-          "role": "commander"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "driver": [
-        {
-          "dmPart": "driver_dm"
-        },
-        {
-          "role": "driver"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "loader": {
-        "dmPart": "loader_dm",
-        "role": "loader",
-        "substitute": "machine_gunner"
-      },
-      "machine_gunner": {
-        "dmPart": "machine_gunner_dm",
-        "role": "radio_gunner"
-      }
-    }
-  },
-  {
-    "MetaParts": {
-      "crew": [
-        {
-          "killAllPartsForDeath": true
-        },
-        {
-          "killNumPartsForDeath": 3
-        },
-        {
-          "part": "loader_dm"
-        },
-        {
-          "part": "driver_dm"
-        },
-        {
-          "part": "machine_gunner_dm"
-        },
-        {
-          "part": "commander_dm"
-        },
-        {
-          "effects": {
-            "killUnit": {
-              "nothing": 1.0
-            }
-          }
-        }
-      ]
     }
   },
   {
@@ -2143,12 +1542,109 @@
     ]
   },
   {
+    "tank_crew": {
+      "changeTimeMult": 1.0,
+      "gunner": [
+        {
+          "dmPart": "gunner_dm"
+        },
+        {
+          "role": "tank_gunner"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        },
+        {
+          "substitute": "loader"
+        }
+      ],
+      "driver": [
+        {
+          "dmPart": "driver_dm"
+        },
+        {
+          "role": "driver"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        },
+        {
+          "substitute": "loader"
+        }
+      ],
+      "loader": [
+        {
+          "dmPart": "loader_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
+      "commander": {
+        "dmPart": "commander_dm",
+        "role": "commander"
+      },
+      "machine_gunner": {
+        "dmPart": "machine_gunner_dm",
+        "role": "radio_gunner"
+      }
+    }
+  },
+  {
+    "MetaParts": {
+      "crew": [
+        {
+          "killAllPartsForDeath": true
+        },
+        {
+          "killNumPartsForDeath": 4
+        },
+        {
+          "part": "loader_dm"
+        },
+        {
+          "part": "driver_dm"
+        },
+        {
+          "part": "gunner_dm"
+        },
+        {
+          "part": "machine_gunner_dm"
+        },
+        {
+          "part": "commander_dm"
+        },
+        {
+          "effects": {
+            "killUnit": {
+              "nothing": 1.0
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "class_tags": []
+  },
+  {
     "commonWeapons": [
       {
         "Weapon": {
           "trigger": "gunner0",
-          "blk": "gameData/Weapons/groundModels_weapons/85mm_D5T_user_cannon.blk",
-          "shotFreq": 0.12,
+          "blk": "gameData/Weapons/groundModels_weapons/85mm_ZiS_S_53_user_cannon.blk",
           "emitter": "bone_gun_barrel",
           "flash": "emtr_gun_flame",
           "defaultYaw": 0.0,
@@ -2158,7 +1654,7 @@
           "speedYaw": 25.0,
           "speedPitch": 4.0,
           "fireConeAngle": 1.0,
-          "bullets": 55,
+          "bullets": 60,
           "salvoAmount": 100.0,
           "ChainfireTime": 0.0,
           "DelayAfterShoot": 5.0,
@@ -2178,11 +1674,11 @@
             "head": "bone_turret",
             "gun": "bone_gun",
             "barrel": "bone_gun_barrel",
-            "gunnerDm": "commander_dm"
+            "gunnerDm": "gunner_dm"
           },
           "limits": {
             "yaw": [-180.0,180.0],
-            "pitch": [-5.0,28.0]
+            "pitch": [-5.0,22.0]
           }
         }
       },
@@ -2208,9 +1704,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "useAnimFlashNode": true
           },
           {
             "barrelDP": "gun_barrel_01_dm"
@@ -2286,19 +1779,622 @@
   {
     "weapon_presets": {
       "preset": {
-        "name": "ussr_t_34_85_d_5t_default",
-        "blk": "gameData/units/tankModels/weaponPresets/ussr_t_34_85_d_5t_default.blk"
+        "name": "ussr_t_34_85_zis_53_default",
+        "blk": "gameData/units/tankModels/weaponPresets/ussr_t_34_85_zis_53_default.blk"
       }
     }
+  },
+  {
+    "VehiclePhys": {
+      "Mass": {
+        "Empty": 31800.0,
+        "Fuel": 400.0,
+        "TakeOff": 32200.0,
+        "momentOfInertia": [2.5,2.5,6.0],
+        "CenterOfGravity": [0.05,0.5,0.0],
+        "CenterOfGravityClampY": [0.0,0.7],
+        "AdvancedMass": true,
+        "trackMass": 1150.0
+      },
+      "tracks": {
+        "animationMultiplier": 0.75,
+        "height": 0.04,
+        "width": 0.5
+      },
+      "collisionProps": {
+        "cls_turret_01": "convex_hull",
+        "cls_turret_02": "convex_hull",
+        "cls_body_01": "convex_hull"
+      },
+      "engine": {
+        "horsePowers": 500.0,
+        "maxRPM": 1800.0,
+        "minRPM": 600.0
+      },
+      "mechanics": {
+        "maxBrakeForce": 120000.0,
+        "driveGearRadius": 0.317,
+        "mainGearRatio": 1.0,
+        "sideGearRatio": 5.18,
+        "gearRatios": [
+          {
+            "ratio": -4.95
+          },
+          {
+            "ratio": 0.0
+          },
+          {
+            "ratio": 5.57
+          },
+          {
+            "ratio": 2.6
+          },
+          {
+            "ratio": 1.85
+          },
+          {
+            "ratio": 1.215
+          },
+          {
+            "ratio": 0.756
+          }
+        ]
+      },
+      "suspension": {
+        "maxDisplacementOffsets": [-0.01,0.02],
+        "suspensionOffsets": [-0.115,-0.115,0.14],
+        "defaultGearRadius": 0.41,
+        "frontBackGearRadius": 0.21,
+        "defaultDampeningForce": [150000.0,150000.0],
+        "dampeningRelaxationRatio": 0.4,
+        "dampeningCompressionRatio": 0.15
+      }
+    }
+  },
+  {
+    "PhysSys": {
+      "find": "^bone_suspention_(._\\d\\d)$",
+      "points": {
+        "suspension": {
+          "name": "bone_suspention_$1"
+        },
+        "wheel": {
+          "name": "bone_wheel_$1",
+          "limitMin": [-1000.0,0.0,0.0],
+          "limitMax": [1000.0,0.0,0.0]
+        }
+      },
+      "constraints": {
+        "edge": {
+          "from": "suspension",
+          "to": "wheel"
+        }
+      }
+    }
+  },
+  {
+    "ammo": {
+      "combustionTime": 10.0,
+      "detonateProb": 0.5,
+      "detonatePortion": [0.8,0.9],
+      "explodeHitPower": 4000.0,
+      "hitPowerMult": 1.0,
+      "nearHitPower": [1.0,50.0],
+      "midHitPower": [0.9,400.0],
+      "farHitPower": [0.1,1000.0],
+      "endHitPower": [0.01,1500.0],
+      "relativeVelHitShift": [300.0,1000.0],
+      "nearArmorPower": [10.0,50.0],
+      "midArmorPower": [7.0,400.0],
+      "farArmorPower": [0.2,700.0],
+      "relativeVelArmorShift": [200.0,1000.0],
+      "explodeTreshold": 0.0001,
+      "explodeArmorPower": 30.0,
+      "explodeRadius": [1.5,10.0]
+    }
+  },
+  {
+    "wreckedParts": {
+      "part": {
+        "node": "bone_turret",
+        "mass": 6000.0,
+        "cutDamage": 1000.0,
+        "deviation": 0.3,
+        "rotation": 1.5,
+        "collisionNode": "cls_turret_01"
+      }
+    }
+  },
+  {
+    "unitFx": [
+      {
+        "event": [
+          {
+            "name": "engine_fire"
+          },
+          {
+            "fx": {
+              "name": "tank_engine_fire",
+              "emitter": "emtr_fire_engine"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_engine_fire",
+              "emitter": "emtr_fire_engine_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_engine_fire",
+              "emitter": "emtr_fire_engine_02"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_engine_smoke",
+              "emitter": "emtr_fire_engine"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_engine_smoke",
+              "emitter": "emtr_fire_engine_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_engine_smoke",
+              "emitter": "emtr_fire_engine_02"
+            }
+          }
+        ]
+      },
+      {
+        "event": [
+          {
+            "name": "ammo_fire"
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_02"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_03"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_04"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_05"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_06"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_07"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_08"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_09"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_ammo_fire",
+              "emitter": "emtr_fire_ammo_10"
+            }
+          }
+        ]
+      },
+      {
+        "event": [
+          {
+            "name": "light_smoke"
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_fire_ammo"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_fire_ammo_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_fire_ammo_02"
+            }
+          }
+        ]
+      },
+      {
+        "event": [
+          {
+            "name": "total_smoke"
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_big",
+              "emitter": "emtr_smoke_dmg"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_02"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_03"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_04"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_05"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_06"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_07"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_08"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_09"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_10"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_11"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_12"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_13"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_14"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_15"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_16"
+            }
+          }
+        ]
+      },
+      {
+        "event": [
+          {
+            "name": "total_fire"
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_big",
+              "emitter": "emtr_smoke_dmg"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_02"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_03"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_04"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_05"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_06"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_07"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_08"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_09"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_10"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_11"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_12"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_13"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_14"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_15"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_smoke_small",
+              "emitter": "emtr_smoke_small_dmg_16"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_big",
+              "emitter": "emtr_fire_dmg"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_01"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_02"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_03"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_04"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_05"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_06"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_07"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_08"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_09"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_10"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_11"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_12"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_13"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_14"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_15"
+            }
+          },
+          {
+            "fx": {
+              "name": "tank_fire_small",
+              "emitter": "emtr_fire_small_dmg_16"
+            }
+          }
+        ]
+      },
+      {
+        "event": {
+          "name": "big_bang",
+          "fx": {
+            "name": "tank_explosion",
+            "emitter": "emtr_explosion_center"
+          }
+        }
+      },
+      {
+        "procedural": {
+          "name": "default",
+          "fx": {
+            "name": "tank_engine_fire"
+          }
+        }
+      }
+    ]
   },
   {
     "cockpit": {
       "zoomOutFov": 19.5,
       "zoomInFov": 18.5,
       "sightFov": 15.0,
-      "sightName": "tsh_15",
+      "sightName": "tsh_16",
       "headPos": [0.0,4.0,-8.0],
-      "headPosOnShooting": [0.3,3.2,-0.35],
+      "headPosOnShooting": [0.2,3.2,-0.35],
       "detectionHeight": 2.7
     }
   },
@@ -2311,7 +2407,48 @@
       "new_tank_transmission": [],
       "new_tank_engine": [],
       "tank_camouflage": [],
-      "tank_additional_armor": [],
+      "tank_additional_armor": {
+        "tier": 4,
+        "modClass": "protection",
+        "invertEnableLogic": true,
+        "turn_it_off": false,
+        "effects": {
+          "rcostAddParam": 1.0405,
+          "changeMass": -200.0,
+          "hideNodes": [
+            {
+              "node": "ex_armor_body_r_01"
+            },
+            {
+              "node": "ex_armor_body_r_02"
+            },
+            {
+              "node": "ex_armor_body_r_03"
+            },
+            {
+              "node": "ex_armor_body_l_01"
+            },
+            {
+              "node": "ex_armor_body_l_02"
+            },
+            {
+              "node": "ex_armor_turret_01"
+            },
+            {
+              "node": "ex_armor_turret_r_01"
+            },
+            {
+              "node": "ex_armor_turret_r_02"
+            },
+            {
+              "node": "ex_armor_turret_l_01"
+            },
+            {
+              "node": "ex_armor_turret_l_02"
+            }
+          ]
+        }
+      },
       "new_tank_horizontal_aiming": [],
       "new_tank_vertical_aiming": [],
       "manual_extinguisher": [],
@@ -2325,107 +2462,232 @@
         "image": "#ui/gameuiskin#tank_reinforcement_cn"
       },
       "85mm_ussr_APHE": [],
+      "85mm_ussr_APCR": [],
       "85mm_APHE_ammo_pack": [],
+      "85mm_APCR_ammo_pack": [],
       "85mm_ussr_HE": []
     }
   },
   {
+    "user_skin": {
+      "name": "t_34_85",
+      "replace_tex": {
+        "from": "ussr_camo_green*"
+      }
+    }
+  },
+  {
     "ammoStowages": {
-      "ammo1": {
-        "weaponTrigger": "gunner0",
-        "removeLoadedAmmo": true,
-        "fatalFire": true,
-        "fatalExplosion": true,
-        "shells": {
-          "fireEvent": "ammo_fire",
-          "explosionEvent": "ammo_explosion",
-          "wreckedPartId": 0,
-          "ammo_turret_01_dm": {
-            "count": 2
-          },
-          "ammo_turret_02_dm": {
-            "count": 2
-          },
-          "ammo_turret_03_dm": {
-            "count": 2
-          },
-          "ammo_turret_04_dm": {
-            "count": 2
-          },
-          "ammo_turret_05_dm": {
-            "count": 2
-          },
-          "ammo_turret_06_dm": {
-            "count": 2
-          },
-          "ammo_turret_07_dm": {
-            "count": 2
-          },
-          "ammo_turret_08_dm": {
-            "count": 2
-          },
-          "ammo_body_01_dm": {
-            "count": 2
-          },
-          "ammo_body_02_dm": {
-            "count": 2
-          },
-          "ammo_body_03_dm": {
-            "count": 1
-          },
-          "ammo_body_04_dm": {
-            "count": 2
-          },
-          "ammo_body_05_dm": {
-            "count": 2
-          },
-          "ammo_body_06_dm": {
-            "count": 2
-          },
-          "ammo_body_07_dm": {
-            "count": 2
-          },
-          "ammo_body_08_dm": {
-            "count": 2
-          },
-          "ammo_body_09_dm": {
-            "count": 2
-          },
-          "ammo_body_10_dm": {
-            "count": 2
-          },
-          "ammo_body_11_dm": {
-            "count": 2
-          },
-          "ammo_body_12_dm": {
-            "count": 2
-          },
-          "ammo_body_13_dm": {
-            "count": 2
-          },
-          "ammo_body_14_dm": {
-            "count": 2
-          },
-          "ammo_body_15_dm": {
-            "count": 2
-          },
-          "ammo_body_16_dm": {
-            "count": 2
-          },
-          "ammo_body_17_dm": {
-            "count": 2
-          },
-          "ammo_body_18_dm": {
-            "count": 2
-          },
-          "ammo_body_19_dm": {
-            "count": 2
-          },
-          "ammo_body_20_dm": {
-            "count": 2
+      "ammo1": [
+        {
+          "removeLoadedAmmo": true
+        },
+        {
+          "weaponTrigger": "gunner0"
+        },
+        {
+          "fatalFire": true
+        },
+        {
+          "fatalExplosion": true
+        },
+        {
+          "replenishmentDelay": 4.0
+        },
+        {
+          "replenishmentTime": 15.0
+        },
+        {
+          "shells": {
+            "firstStage": true,
+            "ammo_turret_05_dm": {
+              "count": 1
+            },
+            "ammo_turret_06_dm": {
+              "count": 1
+            },
+            "ammo_turret_07_dm": {
+              "count": 1
+            },
+            "ammo_turret_08_dm": {
+              "count": 1
+            },
+            "ammo_turret_09_dm": {
+              "count": 1
+            },
+            "ammo_turret_10_dm": {
+              "count": 1
+            },
+            "ammo_turret_11_dm": {
+              "count": 1
+            },
+            "ammo_turret_12_dm": {
+              "count": 1
+            },
+            "ammo_turret_13_dm": {
+              "count": 1
+            },
+            "ammo_turret_14_dm": {
+              "count": 1
+            },
+            "ammo_turret_15_dm": {
+              "count": 1
+            },
+            "ammo_turret_16_dm": {
+              "count": 1
+            },
+            "ammo_turret_17_dm": {
+              "count": 1
+            },
+            "ammo_turret_18_dm": {
+              "count": 1
+            },
+            "ammo_turret_19_dm": {
+              "count": 1
+            },
+            "ammo_turret_20_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "reloadTimeMult": 1.35,
+            "ammo_turret_01_dm": {
+              "count": 1
+            },
+            "ammo_turret_02_dm": {
+              "count": 1
+            },
+            "ammo_turret_03_dm": {
+              "count": 1
+            },
+            "ammo_turret_04_dm": {
+              "count": 1
+            },
+            "ammo_body_01_dm": {
+              "count": 1
+            },
+            "ammo_body_02_dm": {
+              "count": 1
+            },
+            "ammo_body_03_dm": {
+              "count": 1
+            },
+            "ammo_body_06_dm": {
+              "count": 1
+            },
+            "ammo_body_07_dm": {
+              "count": 1
+            },
+            "ammo_body_08_dm": {
+              "count": 1
+            },
+            "ammo_body_09_dm": {
+              "count": 1
+            },
+            "ammo_body_10_dm": {
+              "count": 1
+            },
+            "ammo_body_11_dm": {
+              "count": 1
+            },
+            "ammo_body_12_dm": {
+              "count": 1
+            },
+            "ammo_body_13_dm": {
+              "count": 1
+            },
+            "ammo_body_14_dm": {
+              "count": 1
+            },
+            "ammo_body_15_dm": {
+              "count": 1
+            },
+            "ammo_body_16_dm": {
+              "count": 1
+            },
+            "ammo_body_17_dm": {
+              "count": 1
+            },
+            "ammo_body_18_dm": {
+              "count": 1
+            },
+            "ammo_body_19_dm": {
+              "count": 1
+            },
+            "ammo_body_20_dm": {
+              "count": 1
+            },
+            "ammo_body_21_dm": {
+              "count": 1
+            },
+            "ammo_body_22_dm": {
+              "count": 1
+            },
+            "ammo_body_23_dm": {
+              "count": 1
+            },
+            "ammo_body_24_dm": {
+              "count": 1
+            },
+            "ammo_body_25_dm": {
+              "count": 1
+            },
+            "ammo_body_26_dm": {
+              "count": 1
+            },
+            "ammo_body_27_dm": {
+              "count": 1
+            },
+            "ammo_body_28_dm": {
+              "count": 1
+            },
+            "ammo_body_29_dm": {
+              "count": 1
+            },
+            "ammo_body_30_dm": {
+              "count": 1
+            },
+            "ammo_body_31_dm": {
+              "count": 1
+            },
+            "ammo_body_32_dm": {
+              "count": 1
+            },
+            "ammo_body_33_dm": {
+              "count": 1
+            },
+            "ammo_body_34_dm": {
+              "count": 1
+            },
+            "ammo_body_35_dm": {
+              "count": 1
+            },
+            "ammo_body_36_dm": {
+              "count": 1
+            },
+            "ammo_body_37_dm": {
+              "count": 1
+            },
+            "ammo_body_38_dm": {
+              "count": 1
+            },
+            "ammo_body_39_dm": {
+              "count": 1
+            },
+            "ammo_body_40_dm": {
+              "count": 1
+            },
+            "ammo_body_04_dm": {
+              "count": 1
+            },
+            "ammo_body_05_dm": {
+              "count": 1
+            }
           }
         }
-      }
+      ]
     }
   },
   {

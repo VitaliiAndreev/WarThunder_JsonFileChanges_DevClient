@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -162,10 +165,6 @@
         "turret_front_dm": {
           "armorThickness": 45.0
         },
-        "turret_09_side_dm": {
-          "armorThickness": 5.0,
-          "armorEffectiveThicknessMax": 10.0
-        },
         "turret_09_front_dm": {
           "armorThickness": 40.0
         },
@@ -284,10 +283,6 @@
         },
         "turret_03_top_dm": {
           "armorThickness": 20.0
-        },
-        "turret_07_side_dm": {
-          "armorThickness": 4.0,
-          "armorClass": "tank_structural_steel"
         },
         "turret_05_front_dm": {
           "armorThickness": 40.0
@@ -683,7 +678,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -756,24 +751,6 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -789,15 +766,41 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -2962,7 +2965,29 @@
       "120mm_NATO_APDS_FS_ammo_pack": {
         "tier": 4
       },
-      "modern_tank_laser_rangefinder": [],
+      "modern_tank_laser_rangefinder": {
+        "tier": 3
+      },
+      "night_vision_system": {
+        "effects": {
+          "nightVision": {
+            "gunnerThermal": {
+              "resolution": [800,600],
+              "noiseFactor": 0.04
+            },
+            "commanderThermal": {
+              "resolution": [800,600],
+              "noiseFactor": 0.04
+            },
+            "driverIr": {
+              "resolution": [1200,800],
+              "lightMult": 7.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            }
+          }
+        }
+      },
       "tank_smoke_screen_system_mod": {
         "tier": 3,
         "effects": {
@@ -3146,6 +3171,7 @@
                 "emitter": "emtr_mortar_flame_01",
                 "emitterGenRange": [1,14],
                 "emitterGenFmt": "emtr_mortar_flame_%02d",
+                "ignoreLoaderPenalty": true,
                 "createGunEffects": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
@@ -3272,16 +3298,16 @@
           "fatalExplosion": true
         },
         {
-          "replenishmentTime": 30.0
+          "replenishmentTime": 4.0
         },
         {
-          "replenishmentDelay": 20.0
+          "replenishmentDelay": 30.0
         },
         {
           "shells": {
             "fatalFire": false,
             "fatalExplosion": false,
-            "firstStage": true,
+            "autoLoad": true,
             "ammo_turret_01_dm": {
               "count": 1
             },

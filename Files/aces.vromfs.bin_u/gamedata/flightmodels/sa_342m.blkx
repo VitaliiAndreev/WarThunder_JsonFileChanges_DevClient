@@ -40,7 +40,7 @@
     "c_dural10": {
       "tail_dm": {
         "genericDamageMult": 0.6,
-        "hp": 160.5
+        "hp": 112.9
       }
     },
     "c_dural15": {
@@ -54,6 +54,9 @@
       },
       "fin2_dm": {
         "hp": 29.5
+      },
+      "fin_dm": {
+        "hp": 50.5
       },
       "stab_dm": {
         "hp": 29.5
@@ -119,14 +122,12 @@
         },
         {
           "onHit": {
-            "expl": 0.01,
             "fire": 0.01
           }
         },
         {
           "onHit": {
             "damage": 2.7,
-            "expl": 0.01,
             "fire": 0.01,
             "leak_oil": 0.5
           }
@@ -134,24 +135,21 @@
         {
           "onHit": {
             "damage": 30.0,
-            "expl": 0.05,
             "fire": 0.1,
             "leak_oil": 1.0
           }
         },
         {
           "onKill": {
-            "expl": 0.1,
-            "fire": 10.0,
-            "nothing": 90.0
+            "fire": 30.0,
+            "leak_oil": 10.0
           }
         },
         {
           "onKill": {
             "damage": 30.0,
-            "expl": 1.0,
             "fire": 44.0,
-            "nothing": 55.0
+            "leak_oil": 10.0
           }
         }
       ]
@@ -200,6 +198,46 @@
       "part": [
         {
           "name": "fin2_dm"
+        },
+        {
+          "onHit": {
+            "damage": 30.0,
+            "cut": 0.6
+          }
+        },
+        {
+          "onHit": {
+            "damage": 65.0,
+            "cut": 1.0
+          }
+        },
+        {
+          "onKill": {
+            "damage": 10.0,
+            "cut": 1.0,
+            "nothing": 11.0
+          }
+        },
+        {
+          "onKill": {
+            "damage": 31.0,
+            "cut": 1.0,
+            "nothing": 3.0
+          }
+        },
+        {
+          "onKill": {
+            "damage": 50.0,
+            "cut": 1.0,
+            "nothing": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "part": [
+        {
+          "name": "fin_dm"
         },
         {
           "onHit": {
@@ -595,19 +633,15 @@
         {
           "onKill": {
             "damage": 50.0,
-            "expl": 0.5,
-            "fire": 5.0,
-            "leak": 10.0,
-            "nothing": 85.0
+            "fire": 45.0,
+            "leak": 25.0
           }
         },
         {
           "onKill": {
             "damage": 70.0,
-            "expl": 1.0,
-            "fire": 20.0,
-            "leak": 50.0,
-            "nothing": 30.0
+            "fire": 50.0,
+            "leak": 20.0
           }
         }
       ]
@@ -654,19 +688,15 @@
         {
           "onKill": {
             "damage": 50.0,
-            "expl": 0.5,
-            "fire": 5.0,
-            "leak": 10.0,
-            "nothing": 85.0
+            "fire": 45.0,
+            "leak": 25.0
           }
         },
         {
           "onKill": {
             "damage": 70.0,
-            "expl": 1.0,
-            "fire": 20.0,
-            "leak": 50.0,
-            "nothing": 30.0
+            "fire": 50.0,
+            "leak": 20.0
           }
         }
       ]
@@ -843,7 +873,7 @@
     "Range": 882.0
   },
   "Sound": {
-    "Engine": "engine_ah1",
+    "Engine": "engine_sa_313b",
     "gun": "gun_default"
   },
   "cockpit": {
@@ -933,7 +963,10 @@
     {
       "preset": {
         "name": "sa_342m_default",
-        "blk": "gameData/flightModels/weaponPresets/sa_342m_rocket_ffar.blk"
+        "blk": "gameData/flightModels/weaponPresets/sa_342m_rocket_ffar.blk",
+        "tags": {
+          "free": true
+        }
       }
     },
     {
@@ -1007,6 +1040,62 @@
     "new_heli_cover": [],
     "heli_flak_jacket": [],
     "heli_structure": [],
+    "heli_false_thermal_targets": {
+      "turn_it_off": false,
+      "tier": 1,
+      "invertEnableLogic": false,
+      "group": "mi-24_EVU",
+      "effects": {
+        "commonWeapons": [
+          {
+            "Weapon": {
+              "dummy": true,
+              "trigger": "gunner0",
+              "triggerGroup": "primary",
+              "blk": "gameData/Weapons/gunBrowning30_usaaf.blk",
+              "emitter": "optic1_gun",
+              "parkInDeadzone": false,
+              "defaultYaw": 0.0,
+              "defaultPitch": 0.0,
+              "speedYaw": 25.0,
+              "speedPitch": 25.0,
+              "bullets": 1,
+              "aimForOperatedShell": true,
+              "turret": {
+                "head": "optic1_turret",
+                "gun": "optic1_gun",
+                "playerControllable": false,
+                "mainTurret": true
+              },
+              "limits": {
+                "yaw": [-115.0,90.0],
+                "pitch": [-50.0,25.0]
+              }
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "flares",
+              "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
+              "emitter": "emtr_flare1",
+              "bullets": 16,
+              "external": true,
+              "separate": false
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "flares",
+              "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
+              "emitter": "emtr_flare2",
+              "bullets": 16,
+              "external": true,
+              "separate": false
+            }
+          }
+        ]
+      }
+    },
     "sa_heli_hot": {
       "deactivationIsAllowed": false,
       "modClass": "weapon",
@@ -1023,6 +1112,28 @@
       "reqModification": "sa_heli_hot_2",
       "modClass": "weapon",
       "tier": 4
+    },
+    "heli_night_vision_system": {
+      "effects": {
+        "nightVision": {
+          "gunnerIr": {
+            "resolution": [1024,768],
+            "lightMult": 10.0,
+            "ghosting": 0.7,
+            "noiseFactor": 0.15
+          },
+          "pilotIr": {
+            "resolution": [1024,768],
+            "lightMult": 10.0,
+            "ghosting": 0.7,
+            "noiseFactor": 0.15
+          },
+          "sightThermal": {
+            "resolution": [1024,768],
+            "noiseFactor": 0.05
+          }
+        }
+      }
     }
   },
   "user_skin": [

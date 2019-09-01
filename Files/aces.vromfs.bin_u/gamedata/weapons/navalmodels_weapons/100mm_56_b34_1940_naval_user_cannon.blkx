@@ -12,10 +12,10 @@
   "bullets": -1,
   "bulletsCluster": 1,
   "aimMinDist": 0.05,
-  "aimMaxDist": 10000.0,
-  "maxDeltaAngle": 0.3,
-  "maxDeltaAngleVertical": 0.015,
-  "attackMaxDist": 10000.0,
+  "aimMaxDist": 20000.0,
+  "attackMaxDist": 15000.0,
+  "maxDeltaAngle": 0.67,
+  "maxDeltaAngleVertical": 0.18,
   "fxType": "big_gun_flame",
   "fxGroundDust": "water_shock_wave",
   "fxScale": 1.0,
@@ -23,7 +23,7 @@
   "sound_path": "ships/weapon_common/cannons",
   "sound_pathStudio": "naval/weapon/cannons",
   "sound": "100mm_d10t",
-  "sfxReloadBullet": "naval_cannon_reload",
+  "sfxReloadBullet": "naval_cannon_reload_manual",
   "fxMultipleSpawn": true,
   "isBulletBelt": false,
   "notUseDefaultBulletInGui": true,
@@ -37,7 +37,7 @@
     "explosionInAir": true,
     "shellExplScale": 1.2,
     "speed": 900.0,
-    "maxDistance": 20000.0,
+    "maxDistance": 40000.0,
     "bulletType": "he_frag_dist_fuse",
     "bulletName": "100mm_zs56_aa",
     "hitPowerMult": 50.0,
@@ -45,8 +45,8 @@
     "explodeTreshold": 0.1,
     "fuseDelayDist": 0.0,
     "ricochetEffect": "cannon_ricochet",
-    "waterCollisionEffect": "water_splash_76_00_he",
-    "waterFxScale": [1.0,1.0],
+    "waterCollisionEffect": "120-203_he_water_splash",
+    "waterFxScale": [0.6,0.7],
     "armorpower": {
       "ArmorPower0m": [45.0,10.0],
       "ArmorPower1000m": [36.0,1000.0],
@@ -72,7 +72,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.6,
             "damageScale": 1.6,
             "angles": [0.0,9.0],
@@ -87,7 +87,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.0,
             "damageScale": 1.0,
             "angles": [30.0,124.0],
@@ -96,7 +96,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.45,
             "damageScale": 1.45,
             "angles": [45.0,70.0],
@@ -111,7 +111,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.0,
             "damageScale": 1.0,
             "angles": [170.0,189.0],
@@ -126,7 +126,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.0,
             "damageScale": 1.0,
             "angles": [235.0,329.0],
@@ -135,7 +135,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.45,
             "damageScale": 1.45,
             "angles": [290.0,315.0],
@@ -150,7 +150,7 @@
         },
         {
           "segment": {
-            "radiusScale": 1.0,
+            "radiusScale": 2.0,
             "penetrationScale": 1.6,
             "damageScale": 1.6,
             "angles": [350.0,359.0],
@@ -171,12 +171,56 @@
         "fxScale": [0.6,0.7]
       },
       "steel": {
-        "fx": "cannon_hit_armor_cumulative",
-        "fxScale": [2.5,2.5]
+        "fx": "ps_hit_150mm_cumulative",
+        "fxScale": [3.2,3.2]
       },
       "armor": {
-        "fx": "cannon_hit_armor_cumulative",
-        "fxScale": [2.5,2.5]
+        "fx": "ps_hit_150mm_cumulative",
+        "fxScale": [3.2,3.2]
+      },
+      "metal": {
+        "fx": "ps_hit_150mm_cumulative",
+        "fxScale": [3.2,3.2]
+      },
+      "horLandMesh": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "soil": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "dirt": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "road": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "roadSoil": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "sand": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "duneSand": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "roadSand": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "quickSand": {
+        "fx": "75_122_ap_hit_ground",
+        "fxScale": [1.0,1.0]
+      },
+      "snow": {
+        "fx": "75_122_ap_hit_snow",
+        "fxScale": [1.0,1.0]
       },
       "wood": {
         "fx": "cannon_hit_ship_cumulative",
@@ -203,7 +247,7 @@
       "explosionInAir": true,
       "shellExplScale": 1.2,
       "speed": 900.0,
-      "maxDistance": 20000.0,
+      "maxDistance": 40000.0,
       "bulletType": "he_frag_dist_fuse",
       "bulletName": "100mm_zs56_aa",
       "hitPowerMult": 50.0,
@@ -211,8 +255,8 @@
       "explodeTreshold": 0.1,
       "fuseDelayDist": 0.0,
       "ricochetEffect": "cannon_ricochet",
-      "waterCollisionEffect": "water_splash_76_00_he",
-      "waterFxScale": [1.0,1.0],
+      "waterCollisionEffect": "120-203_he_water_splash",
+      "waterFxScale": [0.6,0.7],
       "armorpower": {
         "ArmorPower0m": [45.0,10.0],
         "ArmorPower1000m": [36.0,1000.0],
@@ -238,7 +282,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.6,
               "damageScale": 1.6,
               "angles": [0.0,9.0],
@@ -253,7 +297,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.0,
               "damageScale": 1.0,
               "angles": [30.0,124.0],
@@ -262,7 +306,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.45,
               "damageScale": 1.45,
               "angles": [45.0,70.0],
@@ -277,7 +321,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.0,
               "damageScale": 1.0,
               "angles": [170.0,189.0],
@@ -292,7 +336,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.0,
               "damageScale": 1.0,
               "angles": [235.0,329.0],
@@ -301,7 +345,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.45,
               "damageScale": 1.45,
               "angles": [290.0,315.0],
@@ -316,7 +360,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.6,
               "damageScale": 1.6,
               "angles": [350.0,359.0],
@@ -337,12 +381,56 @@
           "fxScale": [0.6,0.7]
         },
         "steel": {
-          "fx": "cannon_hit_armor_cumulative",
-          "fxScale": [2.5,2.5]
+          "fx": "ps_hit_150mm_cumulative",
+          "fxScale": [3.2,3.2]
         },
         "armor": {
-          "fx": "cannon_hit_armor_cumulative",
-          "fxScale": [2.5,2.5]
+          "fx": "ps_hit_150mm_cumulative",
+          "fxScale": [3.2,3.2]
+        },
+        "metal": {
+          "fx": "ps_hit_150mm_cumulative",
+          "fxScale": [3.2,3.2]
+        },
+        "horLandMesh": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "soil": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "dirt": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "road": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "roadSoil": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "sand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "duneSand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "roadSand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "quickSand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "snow": {
+          "fx": "75_122_ap_hit_snow",
+          "fxScale": [1.0,1.0]
         },
         "wood": {
           "fx": "cannon_hit_ship_cumulative",
@@ -367,8 +455,7 @@
       "explosiveMass": 0.79,
       "caliber": 0.1,
       "speed": 900.0,
-      "speedDispersion": 0.05,
-      "maxDistance": 20000.0,
+      "maxDistance": 40000.0,
       "bulletType": "he_frag_radio_fuse",
       "bulletName": "100mm_zs56r_vt",
       "selfDestructionFx": "bullet_self_expl",
@@ -379,8 +466,8 @@
       "explodeTreshold": 0.1,
       "fuseDelayDist": 0.0,
       "ricochetEffect": "cannon_ricochet",
-      "waterCollisionEffect": "water_splash_76_00_he",
-      "waterFxScale": [1.0,1.0],
+      "waterCollisionEffect": "120-203_he_water_splash",
+      "waterFxScale": [0.6,0.7],
       "proximityFuse": {
         "radius": 15.0,
         "armDistance": 270.0,
@@ -413,7 +500,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.6,
               "damageScale": 1.6,
               "angles": [0.0,9.0],
@@ -428,7 +515,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.0,
               "damageScale": 1.0,
               "angles": [30.0,124.0],
@@ -437,7 +524,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.45,
               "damageScale": 1.45,
               "angles": [45.0,70.0],
@@ -452,7 +539,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.0,
               "damageScale": 1.0,
               "angles": [170.0,189.0],
@@ -467,7 +554,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.0,
               "damageScale": 1.0,
               "angles": [235.0,329.0],
@@ -476,7 +563,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.45,
               "damageScale": 1.45,
               "angles": [290.0,315.0],
@@ -491,7 +578,7 @@
           },
           {
             "segment": {
-              "radiusScale": 1.0,
+              "radiusScale": 2.0,
               "penetrationScale": 1.6,
               "damageScale": 1.6,
               "angles": [350.0,359.0],
@@ -512,12 +599,56 @@
           "fxScale": [0.6,0.7]
         },
         "steel": {
-          "fx": "cannon_hit_armor_cumulative",
-          "fxScale": [2.5,2.5]
+          "fx": "ps_hit_150mm_cumulative",
+          "fxScale": [3.2,3.2]
         },
         "armor": {
-          "fx": "cannon_hit_armor_cumulative",
-          "fxScale": [2.5,2.5]
+          "fx": "ps_hit_150mm_cumulative",
+          "fxScale": [3.2,3.2]
+        },
+        "metal": {
+          "fx": "ps_hit_150mm_cumulative",
+          "fxScale": [3.2,3.2]
+        },
+        "horLandMesh": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "soil": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "dirt": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "road": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "roadSoil": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "sand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "duneSand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "roadSand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "quickSand": {
+          "fx": "75_122_ap_hit_ground",
+          "fxScale": [1.0,1.0]
+        },
+        "snow": {
+          "fx": "75_122_ap_hit_snow",
+          "fxScale": [1.0,1.0]
         },
         "wood": {
           "fx": "cannon_hit_ship_cumulative",

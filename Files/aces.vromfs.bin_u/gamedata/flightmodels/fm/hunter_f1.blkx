@@ -4,10 +4,10 @@
   "ElevatorsEffectiveSpeed": 650.005,
   "AileronPowerLoss": 4.0,
   "RudderPowerLoss": 1.8,
-  "ElevatorPowerLoss": 2.2,
+  "ElevatorPowerLoss": 2.3,
   "AlphaAileronMin": 0.05,
   "AlphaRudderMin": 0.2,
-  "AlphaElevatorMin": 0.2,
+  "AlphaElevatorMin": 0.01,
   "AllowStrongControlsRestrictions": true,
   "RudderSens": 0.35,
   "ElevatorSens": 0.436,
@@ -86,9 +86,6 @@
       "hasFlapsControl": true
     },
     {
-      "numFlapsPositions": 3
-    },
-    {
       "hasAirbrake": true
     },
     {
@@ -117,12 +114,6 @@
     },
     {
       "hasCombatFlapsPosition": true
-    },
-    {
-      "isAirBrakeAvailableOnGround": true
-    },
-    {
-      "hasIndependentAirbrakesAndFlaps": true
     }
   ],
   "Areas": {
@@ -295,11 +286,11 @@
       "MultMachMax1": 3.5,
       "MultLineCoeff1": -1.2,
       "MultLimit1": 1.0,
-      "MachCrit2": 0.95,
-      "MachMax2": 0.98,
-      "MultMachMax2": 1.5,
-      "MultLineCoeff2": -40.8,
-      "MultLimit2": 1.0,
+      "MachCrit2": 0.85,
+      "MachMax2": 0.96,
+      "MultMachMax2": 0.6,
+      "MultLineCoeff2": -1.5,
+      "MultLimit2": 0.1,
       "MachCrit3": 0.3,
       "MachMax3": 1.0,
       "MultMachMax3": 0.32,
@@ -320,6 +311,11 @@
       "MultMachMax6": -0.1,
       "MultLineCoeff6": 0.0,
       "MultLimit6": 0.0,
+      "MachCrit7": 0.98,
+      "MachMax7": 0.99,
+      "MultMachMax7": 10.0,
+      "MultLineCoeff7": -10.0,
+      "MultLimit7": 0.0,
       "CombinedCl": false,
       "Cl0": 0.0,
       "alphaCritHigh": 17.0,
@@ -602,7 +598,6 @@
       "OilMinTemp": 0.0,
       "EffectiveRadSpeed": 250.0,
       "IneffectiveRadMult": 0.8,
-      "AdvancedThermodynamics": true,
       "NoIgnitionWaterHeatProducingFactor": 0.15,
       "WaterTemperatureInertia": 7.2994,
       "WaterAirDensityPower": 0.0,

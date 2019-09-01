@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -349,7 +352,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -1044,7 +1047,7 @@
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
-            "conditionDamage": 600.0,
+            "conditionDamage": 350.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1053,7 +1056,7 @@
           "effect": {
             "conditionDamageType": "cumulative",
             "expl": 1.0,
-            "conditionDamage": 800.0,
+            "conditionDamage": 500.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1171,7 +1174,7 @@
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
-            "conditionDamage": 600.0,
+            "conditionDamage": 350.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1180,7 +1183,7 @@
           "effect": {
             "conditionDamageType": "cumulative",
             "expl": 1.0,
-            "conditionDamage": 800.0,
+            "conditionDamage": 500.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -2262,7 +2265,34 @@
       "57mm_germ_Bofors_AP": [],
       "57mm_germ_Bofors_SAP": [],
       "57mm_germ_Bofors_SAP_ammo_pack": [],
-      "57mm_germ_Bofors_HE": []
+      "57mm_germ_Bofors_HE": [],
+      "57mm_germ_Bofors_HE_VT": [],
+      "57mm_germ_Bofors_HE_VT_ammo_pack": [],
+      "night_vision_system": {
+        "tier": 3,
+        "effects": {
+          "nightVision": {
+            "gunnerIr": {
+              "resolution": [800,600],
+              "lightMult": 8.0,
+              "ghosting": 0.75,
+              "noiseFactor": 0.2
+            },
+            "commanderIr": {
+              "resolution": [800,600],
+              "lightMult": 8.0,
+              "ghosting": 0.75,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.7,
+              "noiseFactor": 0.2
+            }
+          }
+        }
+      }
     }
   },
   {

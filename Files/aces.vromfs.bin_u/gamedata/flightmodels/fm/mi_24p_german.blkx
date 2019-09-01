@@ -261,7 +261,7 @@
   {
     "Aerodynamics": {
       "AileronCd": [0.015,0.0027],
-      "GearCd": 0.035,
+      "GearCd": 0.155,
       "GearCentralCd": 0.1,
       "RadiatorCd": 0.0,
       "OilRadiatorCd": 0.0,
@@ -275,7 +275,7 @@
       "UseSpinLoss": false,
       "SpinClLoss": 0.0,
       "SpinCdLoss": 0.0,
-      "OswaldsEfficiencyNumber": 0.01,
+      "OswaldsEfficiencyNumber": 0.06,
       "lineClCoeff": 0.052,
       "AfterCritParabAngle": 3.0,
       "AfterCritDeclineCoeff": 0.01,
@@ -339,7 +339,7 @@
         "CdMin": 0.016
       },
       "Fuselage": {
-        "OswaldsEfficiencyNumber": 0.01,
+        "OswaldsEfficiencyNumber": 0.06,
         "lineClCoeff": 0.0013,
         "AfterCritParabAngle": 2.0,
         "AfterCritDeclineCoeff": 0.001,
@@ -1357,9 +1357,12 @@
         "Coaxial": false,
         "AdvancedAirFlow": false,
         "AirFlowSolver": true,
+        "RotationToAirflow": true,
         "AirFlow1": [-100.0,120.0,1.0],
         "AirFlow2": [0.0,0.0,1.0],
-        "AirFlow3": [15.0,0.0,1.0],
+        "AirFlow3": [5.0,-1.0,1.0],
+        "AirFlow4": [15.0,-5.0,0.6],
+        "FlapCompensatorEfficiency": [280.0,0.7,350.0,0.05],
         "ArcadeTangAirFlowMin": 95.0,
         "ArcadeAxialAirFlowRange": [-300.0,30.0],
         "BladeAngleMax": 0.5,
@@ -1486,11 +1489,12 @@
         "Coaxial": false,
         "AdvancedAirFlow": false,
         "AirFlowSolver": true,
-        "AirFlow1": [-100.0,120.0,1.0],
+        "RotationToAirflow": false,
+        "AirFlow1": [-100.0,0.0,1.0],
         "AirFlow2": [0.0,0.0,1.0],
         "AirFlow3": [15.0,0.0,1.0],
         "MultiPoint": true,
-        "RollDamping": [40.0,0.0,85.0,160000.0],
+        "RollDamping": [40.0,0.0,105.0,16000.0],
         "DampingMultByFlow": [0.0,1.0,30.0,2.0],
         "VortexRingVFlowMult": [0.0,0.0],
         "VortexRingVFlowToReturnDist": 0.0,
@@ -2005,7 +2009,7 @@
           "Ki": 0.3,
           "Imax": 1.5,
           "Kd": 0.0005,
-          "Lim": [0.05,0.9]
+          "Lim": [0.08,0.9]
         },
         "AltPID": {
           "Kp": 1.0,
@@ -2017,7 +2021,7 @@
       "Aim": {
         "AxesTreshold": 0.05,
         "HeadingToRollMultByIas": [10.0,0.0,120.0,1.0],
-        "HeadingToRoll": [3.0,0.0,60.0,50.0],
+        "HeadingToRoll": [3.0,0.0,60.0,45.0],
         "RollLimByRaltitude": [15.0,190.0,50.0,190.0],
         "RollLim": 50.0,
         "RollRateMax": 60.0,
@@ -2028,6 +2032,7 @@
         "YawHeadingToYawRateMultByIas": [0.0,1.0,120.0,1.0],
         "YawHeadingToYawRateMultByReqRoll": [0.0,1.0,55.0,0.2],
         "YawHeadingToYawRate": [0.0,0.0,14.0,40.0],
+        "ThrottleToYawRateMult": [0.0,1.0,1.0,0.9],
         "RollPID": {
           "Kp": 2.3,
           "Ki": 0.0,
@@ -2057,7 +2062,7 @@
           "Lim": [-1.0,1.0]
         },
         "YawRatePID": {
-          "Kp": 5.0,
+          "Kp": 3.0,
           "Ki": 0.3,
           "Imax": 1.0,
           "Kd": 0.001,

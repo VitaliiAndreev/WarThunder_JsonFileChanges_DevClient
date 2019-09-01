@@ -38,9 +38,9 @@
     "bulletType": "aphebc_tank",
     "bulletName": "76mm_br_350a",
     "relativeVelHitShift": [300.0,1000.0],
+    "fuseDelayDist": 1.2,
+    "explodeTreshold": 14.0,
     "relativeVelArmorShift": [200.0,1000.0],
-    "fuseDelayDist": 0.15,
-    "explodeTreshold": 10.0,
     "ricochetEffect": "cannon_ricochet",
     "waterCollisionEffect": "120-203_water_splash",
     "waterFxScale": [0.7,0.8],
@@ -197,9 +197,9 @@
       "bulletType": "aphebc_tank",
       "bulletName": "76mm_br_350a",
       "relativeVelHitShift": [300.0,1000.0],
+      "fuseDelayDist": 1.2,
+      "explodeTreshold": 14.0,
       "relativeVelArmorShift": [200.0,1000.0],
-      "fuseDelayDist": 0.15,
-      "explodeTreshold": 10.0,
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "120-203_water_splash",
       "waterFxScale": [0.7,0.8],
@@ -804,9 +804,13 @@
   "76mm_ussr_APCR_1943": {
     "bullet": {
       "bulletCount": 4,
-      "mass": 3.0,
+      "mass": 3.02,
       "caliber": 0.0762,
       "speed": 900.0,
+      "damageMass": 0.48,
+      "ballisticCaliber": 0.0762,
+      "damageCaliber": 0.028,
+      "Cx": 0.47,
       "maxDistance": 10000.0,
       "bulletType": "apcr_tank",
       "bulletName": "76mm_br_354p",
@@ -822,6 +826,14 @@
         "HitPower1500m": [0.6,1500.0],
         "HitPower2500m": [0.6,2500.0],
         "HitPower10000m": [0.5,10000.0]
+      },
+      "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 0.65,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],

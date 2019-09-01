@@ -72,14 +72,22 @@
     "hasTakeoffFlapsPosition": true,
     "hasCombatFlapsPosition": true,
     "hasAirbrake": true,
-    "isAirBrakeAvailableOnGround": true,
-    "hasIndependentAirbrakesAndFlaps": false,
     "hasGearControl": true,
     "hasArrestorControl": false,
     "hasCockpitDoorControl": false,
     "hasWheelBrakeControl": true,
     "hasLockGearControl": true,
-    "bHasBoosterSwitcher": false
+    "bHasBoosterSwitcher": false,
+    "flapsLimits": {
+      "secondaryMech": "airbrake",
+      "secondaryMechRange": [0.0,0.0],
+      "secondaryMechDependentRange": [0.0,0.0]
+    },
+    "airbrakeLimits": {
+      "secondaryMech": "flaps",
+      "secondaryMechRange": [0.0,0.0],
+      "secondaryMechDependentRange": [0.0,0.0]
+    }
   },
   "FlyByWire": [],
   "Areas": {
@@ -1126,7 +1134,7 @@
     "MidAxisPitch0": 0.5,
     "UseAutoPropInertia": true,
     "EngineAcceleration": 1.0,
-    "ReducedPropellerShaftTorque": false
+    "CorrectPropellerToTransmissionLink": true
   },
   "Transmission1": {
     "Engine0": 1,
@@ -1137,7 +1145,7 @@
     "MidAxisPitch0": 0.5,
     "UseAutoPropInertia": true,
     "EngineAcceleration": 1.0,
-    "ReducedPropellerShaftTorque": false
+    "CorrectPropellerToTransmissionLink": true
   },
   "Mass": {
     "EmptyMass": 5480.0,

@@ -135,10 +135,14 @@
   "criticalOffenderMaxClimbWeight": 1.0,
   "criticalOffenderMaxSpeedWeight": 1.0,
   "criticalOffenderMetricsDiffMin": 0.3,
+  "leaveKillerSearchDistanceMax": 3000.0,
+  "airfieldSafeLeaveZoneRadius": -1.0,
+  "damageReportTimeOut": 1.0,
+  "showFireDamageReport": true,
+  "showDelayedDamageReport": true,
   "newDamageTimer": 100.0,
   "seriousOffenderPriorityTimer": 30.0,
   "criticalOffenderPriorityTimer": 90.0,
-  "leaveKillerSearchDistanceMax": 3000.0,
   "friendlyFireImmortalOnLandTime": 30.0,
   "readyToDieRepairTimeMult": 3.0,
   "bailoutReadyToDieTime": 15.0,
@@ -174,15 +178,15 @@
   "stabilizerMaxDeltaAngle": 10.0,
   "maxFrictionIterationCountForTrackedVehicle": 2,
   "writeProjectileHitToReplay": true,
-  "shipMaxSteamEmittersCount": 16.0,
-  "shipSteamEmitterOverheatTime": 3.0,
+  "shipMaxSteamEmittersCount": 8.0,
+  "shipSteamEmitterOverheatTime": 2.0,
   "shipSteamEmitterOverheatMul": 3.0,
-  "shipSteamEmitterExtremeLifetime": 3.0,
+  "shipSteamEmitterExtremeLifetime": 1.0,
   "enableNoFirstMoveCooldown": true,
   "shipAiTargetMaxDist": 25000.0,
   "timeStayOnInGameForDisconnected": 300.0,
   "impulseBasedAircraftToSceneCollision": false,
-  "impulseBasedAircraftToSceneCollisionWithCollisionObjects": false,
+  "impulseBasedAircraftToSceneCollisionWithCollisionObjects": true,
   "impulseBasedAircraftToUnitCollision": false,
   "tracers": {
     "headFadeTime": 4.0,
@@ -1544,7 +1548,8 @@
       "showShipBulletTimer": true,
       "aircraftFriendlyFireForBanOnly": true,
       "enableLeaveKills": true,
-      "airToAirMissileDetection": true
+      "airToAirMissileDetection": true,
+      "nightVisionInTPS": true
     },
     "realistic": {
       "baseDifficulty": 1,
@@ -1600,7 +1605,8 @@
       "visibleNotTraceableIndicators": true,
       "showShipBulletTimer": true,
       "enableLeaveKills": true,
-      "airToAirMissileDetection": true
+      "airToAirMissileDetection": true,
+      "nightVisionInTPS": true
     },
     "hardcore": {
       "baseDifficulty": 2,
@@ -1621,7 +1627,7 @@
       "hudShowSpeedVector": false,
       "hudMarkers": 3,
       "hudMarkerArrows": false,
-      "hudAircraftMarkersMaxDist": 0,
+      "hudAircraftMarkersMaxDist": 4,
       "hudIndicators": true,
       "hudShowTankDistance": false,
       "hudMapAircraftMarkers": 1,
@@ -1631,7 +1637,7 @@
       "hudMarkersBlink": true,
       "hudRadar": false,
       "hudDamageModel": 2,
-      "hudDamageIndicator": false,
+      "hudDamageIndicator": true,
       "hudTankDamageLog": true,
       "hudLargeAwardMessages": false,
       "hudWarnings": false,
@@ -1652,7 +1658,8 @@
       "showBombSight": false,
       "visibleNotTraceableIndicators": true,
       "enableLeaveKills": true,
-      "airToAirMissileDetection": false
+      "airToAirMissileDetection": false,
+      "nightVisionInTPS": false
     }
   },
   "custom_difficulty": [],
@@ -1676,7 +1683,7 @@
       "hudAimPrediction": false,
       "hudMarkerArrows": false,
       "hudRadar": false,
-      "hudMarkers": 0,
+      "hudMarkers": 3,
       "aircraftHelpers": false,
       "flutter": true
     }
@@ -2806,6 +2813,14 @@
       "on": {
         "airToAirMissileDetection": true
       }
+    },
+    "nightVisionInTPS": {
+      "off": {
+        "nightVisionInTPS": false
+      },
+      "on": {
+        "nightVisionInTPS": true
+      }
     }
   },
   "shipBigCaliberPenetrationDistances": [
@@ -2886,7 +2901,11 @@
   },
   "dynamicMirror": {
     "dynamicMirrorTexWidth": 400,
-    "dynamicMirrorTexHeight": 300
+    "dynamicMirrorTexHeight": 300,
+    "dynamicTeleTexWidth": 384,
+    "dynamicTeleTexHeight": 384,
+    "mfdTexWidth": 1366,
+    "mfdTexHeight": 1024
   },
   "explosionPatch": {
     "traceDist": 10.0,
@@ -5423,6 +5442,36 @@
       }
     },
     {
+      "ammo_turret_06": {
+        "my": "tank_ammo",
+        "enemy": "tank_ammo"
+      }
+    },
+    {
+      "ammo_turret_07": {
+        "my": "tank_ammo",
+        "enemy": "tank_ammo"
+      }
+    },
+    {
+      "ammo_turret_08": {
+        "my": "tank_ammo",
+        "enemy": "tank_ammo"
+      }
+    },
+    {
+      "ammo_turret_09": {
+        "my": "tank_ammo",
+        "enemy": "tank_ammo"
+      }
+    },
+    {
+      "ammo_turret_10": {
+        "my": "tank_ammo",
+        "enemy": "tank_ammo"
+      }
+    },
+    {
       "ammo_body": {
         "my": "tank_ammo",
         "enemy": "tank_ammo"
@@ -6083,6 +6132,150 @@
       }
     },
     {
+      "depth_charge_67": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_68": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_69": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_70": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_71": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_72": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_73": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_74": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_75": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_76": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_77": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_78": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_79": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_80": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_81": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_82": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_83": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_84": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_85": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_86": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_87": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_88": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_89": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_90": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
       "depth_charge_r_01": {
         "my": "ship_depth_charge",
         "enemy": "ship_depth_charge"
@@ -6131,6 +6324,78 @@
       }
     },
     {
+      "depth_charge_r_09": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_10": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_11": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_12": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_13": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_14": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_15": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_16": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_17": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_18": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_19": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_r_20": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
       "depth_charge_l_01": {
         "my": "ship_depth_charge",
         "enemy": "ship_depth_charge"
@@ -6174,6 +6439,78 @@
     },
     {
       "depth_charge_l_08": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_09": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_10": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_11": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_12": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_13": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_14": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_15": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_16": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_17": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_18": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_19": {
+        "my": "ship_depth_charge",
+        "enemy": "ship_depth_charge"
+      }
+    },
+    {
+      "depth_charge_l_20": {
         "my": "ship_depth_charge",
         "enemy": "ship_depth_charge"
       }
@@ -6298,16 +6635,16 @@
         "increaseMul": 1.0
       },
       {
-        "decreaseMul": 2.0
+        "decreaseMul": 2.5
       },
       {
         "limitationTimer": true
       },
       {
-        "dev": [0.5,0.5]
+        "dev": [0.5,0.15]
       },
       {
-        "dev": [1.0,2.0]
+        "dev": [1.0,0.5]
       }
     ],
     "exp_SPAA": {
@@ -6467,6 +6804,9 @@
       },
       {
         "p": "rudder_"
+      },
+      {
+        "p": "suspension_"
       },
       {
         "p": "ex_armor_"
@@ -6702,6 +7042,24 @@
       },
       {
         "p": {
+          "name": "depth_charge_7",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "depth_charge_8",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "depth_charge_9",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
           "name": "depth_charge_l",
           "unit": "ship"
         }
@@ -6757,12 +7115,6 @@
       {
         "p": {
           "name": "ammunition_storage",
-          "unit": "ship"
-        }
-      },
-      {
-        "p": {
-          "name": "deckhouse",
           "unit": "ship"
         }
       },
@@ -7946,6 +8298,30 @@
         "p": {
           "name": "wheel_l_04_",
           "modelNames": "type_16"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_r_01_",
+          "modelNames": "aubl_74_60_70m"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_l_01_",
+          "modelNames": "aubl_74_60_70m"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_r_02_",
+          "modelNames": "aubl_74_60_70m"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_l_02_",
+          "modelNames": "aubl_74_60_70m"
         }
       }
     ],
@@ -9460,11 +9836,10 @@
   "rendinstOpt": {
     "minLodForMode0": 3,
     "maxLodForMode0": 15,
+    "minLodForMode2": 1,
     "minBoundRadForMode0": 3.0,
-    "hideForMode0re": [
-      {
-        "incRE": "_dp_"
-      },
+    "minBoundRadForMode2": 3.0,
+    "hideForMode2re": [
       {
         "incRE": "berlin_reichstag_back_center"
       },
@@ -9553,79 +9928,58 @@
         "incRE": "alaska_signboard"
       },
       {
-        "incRE": "american_town_building_1_floor_a_"
-      },
-      {
-        "incRE": "american_town_building_1_floor_b_"
-      },
-      {
-        "incRE": "american_town_building_1_floor_c_"
-      },
-      {
-        "incRE": "american_town_building_1_floor_d_"
-      },
-      {
-        "incRE": "american_town_building_1_floor_e_"
-      },
-      {
-        "incRE": "american_town_building_2_floors_a_"
-      },
-      {
-        "incRE": "american_town_building_2_floors_b_"
-      },
-      {
-        "incRE": "american_town_building_2_floors_c_"
-      },
-      {
-        "incRE": "american_town_building_2_floors_d_"
-      },
-      {
-        "incRE": "american_town_building_2_floors_e_"
-      },
-      {
-        "incRE": "american_town_building_3_floors_a_"
-      },
-      {
         "incRE": "alaska_town_bridge_bump_stop_a"
       },
       {
         "incRE": "alaska_town_bridge_bump_stop_b"
       },
       {
-        "excRE": "american_town_building_1_floor_a_decals"
+        "incRE": "cement_bag"
       },
       {
-        "excRE": "american_town_building_1_floor_b_decals"
+        "incRE": "pallet_cardboard"
       },
       {
-        "excRE": "american_town_building_1_floor_c_decals"
+        "incRE": "scaffold"
       },
       {
-        "excRE": "american_town_building_1_floor_d_decals"
+        "incRE": "concrete_fence_c"
       },
       {
-        "excRE": "american_town_building_1_floor_e_decals"
+        "incRE": "fence_gates_b"
       },
       {
-        "excRE": "american_town_building_2_floors_a_decals"
+        "incRE": "metal_netting_barbed_fence_a"
       },
       {
-        "excRE": "american_town_building_2_floors_b_decals"
+        "incRE": "fulda_fence_d"
       },
       {
-        "excRE": "american_town_building_2_floors_c_decals"
+        "incRE": "fulda_fence_d_column"
       },
       {
-        "excRE": "american_town_building_2_floors_d_decals"
+        "incRE": "pallet_cardboard_a_pile"
       },
       {
-        "excRE": "american_town_building_2_floors_e_decals"
+        "incRE": "container_ladder_a"
       },
       {
-        "excRE": "american_town_building_2_floors_f_decals"
+        "incRE": "ladder_a"
       },
       {
-        "excRE": "american_town_building_3_floors_a_decals"
+        "incRE": "pallet_pile"
+      },
+      {
+        "incRE": "truck_low"
+      },
+      {
+        "incRE": "metal_netting_barbed_fence_a"
+      },
+      {
+        "incRE": "water_pipes_b_angle_top"
+      },
+      {
+        "incRE": "cargo_ramp_a"
       },
       {
         "excRE": "american_statue_a"
@@ -9659,6 +10013,230 @@
       },
       {
         "excRE": "korea_village_cottage"
+      },
+      {
+        "excRE": "water_pipes_b_vertical"
+      },
+      {
+        "excRE": "water_pipes_b_start"
+      }
+    ],
+    "hideForMode0re": [
+      {
+        "incRE": "berlin_reichstag_back_center"
+      },
+      {
+        "incRE": "berlin_reichstag_back_left"
+      },
+      {
+        "incRE": "berlin_reichstag_back_right"
+      },
+      {
+        "incRE": "berlin_reichstag_corner"
+      },
+      {
+        "incRE": "berlin_reichstag_front_center"
+      },
+      {
+        "incRE": "berlin_reichstag_front_left"
+      },
+      {
+        "incRE": "berlin_reichstag_front_right"
+      },
+      {
+        "incRE": "berlin_reichstag_side_right_center"
+      },
+      {
+        "incRE": "backyard_fence_a_w1500"
+      },
+      {
+        "incRE": "backyard_fence_b"
+      },
+      {
+        "incRE": "american_lamp_post_high_a_dmg"
+      },
+      {
+        "incRE": "american_lamp_post_low_a_double_dmg"
+      },
+      {
+        "incRE": "american_lamp_post_low_a_single_dmg"
+      },
+      {
+        "incRE": "american_mailbox"
+      },
+      {
+        "incRE": "american_railway_signal_bridge_a_dmg"
+      },
+      {
+        "incRE": "american_railway_traffic_light_a_dmg"
+      },
+      {
+        "incRE": "american_semaphore_a_dmg"
+      },
+      {
+        "incRE": "american_traffic_light_a_corner_dmg"
+      },
+      {
+        "incRE": "american_traffic_light_a_dmg"
+      },
+      {
+        "incRE": "american_traffic_light_a_head"
+      },
+      {
+        "incRE": "american_dumpster"
+      },
+      {
+        "incRE": "american_street_trash_can"
+      },
+      {
+        "incRE": "american_wastebasket_a"
+      },
+      {
+        "incRE": "american_hydrant_a"
+      },
+      {
+        "incRE": "american_parking_meter"
+      },
+      {
+        "incRE": "american_roof_signboard"
+      },
+      {
+        "incRE": "american_wall_banner"
+      },
+      {
+        "incRE": "american_wall_signboard"
+      },
+      {
+        "incRE": "alaska_signboard"
+      },
+      {
+        "incRE": "alaska_town_bridge_bump_stop_a"
+      },
+      {
+        "incRE": "alaska_town_bridge_bump_stop_b"
+      },
+      {
+        "incRE": "cement_bag"
+      },
+      {
+        "incRE": "pallet_cardboard"
+      },
+      {
+        "incRE": "scaffold"
+      },
+      {
+        "incRE": "concrete_fence_c"
+      },
+      {
+        "incRE": "fence_gates_b"
+      },
+      {
+        "incRE": "metal_netting_barbed_fence_a"
+      },
+      {
+        "incRE": "fulda_fence_d"
+      },
+      {
+        "incRE": "fulda_fence_d_column"
+      },
+      {
+        "incRE": "pallet_cardboard_a_pile"
+      },
+      {
+        "incRE": "container_ladder_a"
+      },
+      {
+        "incRE": "ladder_a"
+      },
+      {
+        "incRE": "pallet_pile"
+      },
+      {
+        "incRE": "truck_low"
+      },
+      {
+        "incRE": "metal_netting_barbed_fence_a"
+      },
+      {
+        "incRE": "water_pipes_b_angle_top"
+      },
+      {
+        "incRE": "cargo_ramp_a"
+      },
+      {
+        "excRE": "american_statue_a"
+      },
+      {
+        "excRE": "factory_shop_roof"
+      },
+      {
+        "excRE": "af_ruin_roof"
+      },
+      {
+        "excRE": "soviet_town_building_4_floors"
+      },
+      {
+        "excRE": "factory_small_building_i"
+      },
+      {
+        "excRE": "syrian_gas_station"
+      },
+      {
+        "excRE": "sawmill_a"
+      },
+      {
+        "excRE": "sawmill_baracks"
+      },
+      {
+        "excRE": "japan_house"
+      },
+      {
+        "excRE": "korea_city_cottage"
+      },
+      {
+        "excRE": "korea_village_cottage"
+      },
+      {
+        "excRE": "water_pipes_b_vertical"
+      },
+      {
+        "excRE": "water_pipes_b_start"
+      },
+      {
+        "incRE": "_dp_"
+      },
+      {
+        "incRE": "american_town_building_1_floor_a_"
+      },
+      {
+        "incRE": "american_town_building_1_floor_b_"
+      },
+      {
+        "incRE": "american_town_building_1_floor_c_"
+      },
+      {
+        "incRE": "american_town_building_1_floor_d_"
+      },
+      {
+        "incRE": "american_town_building_1_floor_e_"
+      },
+      {
+        "incRE": "american_town_building_2_floors_a_"
+      },
+      {
+        "incRE": "american_town_building_2_floors_b_"
+      },
+      {
+        "incRE": "american_town_building_2_floors_c_"
+      },
+      {
+        "incRE": "american_town_building_2_floors_d_"
+      },
+      {
+        "incRE": "american_town_building_2_floors_e_"
+      },
+      {
+        "incRE": "american_town_building_3_floors_a_"
       }
     ],
     "hideForMode1": [
@@ -10507,6 +11085,45 @@
       },
       {
         "ri": "africa_cliff_close_range_b"
+      },
+      {
+        "ri": "peleliu_cliff_a"
+      },
+      {
+        "ri": "peleliu_cliff_b"
+      },
+      {
+        "ri": "peleliu_cliff_c"
+      },
+      {
+        "ri": "peleliu_cliff_d"
+      },
+      {
+        "ri": "peleliu_coastline_a"
+      },
+      {
+        "ri": "peleliu_island_a"
+      },
+      {
+        "ri": "peleliu_island_b"
+      },
+      {
+        "ri": "peleliu_island_c"
+      },
+      {
+        "ri": "peleliu_island_d"
+      },
+      {
+        "ri": "peleliu_island_cave_a"
+      },
+      {
+        "ri": "peleliu_mountain_base_a"
+      },
+      {
+        "ri": "peleliu_mountain_base_b"
+      },
+      {
+        "ri": "vietnam_mountain_base_b"
       }
     ]
   },
@@ -10873,7 +11490,8 @@
       "actionBarFailCooldown": 60.0,
       "killScore": 0.7,
       "hitScore": 0.0,
-      "scoutScore": 0.0
+      "scoutScore": 0.0,
+      "shotDirDetectAngle": 0.4
     },
     "hard": {
       "enabled": false
@@ -10882,7 +11500,8 @@
   "shipsShootingTracking": {
     "lifeTime": 2.0,
     "minDrawDist": 3500.0,
-    "minCaliber": 0.1
+    "minCaliber": 0.1,
+    "maxCaliber": 0.203
   },
   "highlights": [
     {
@@ -11064,7 +11683,8 @@
   },
   "fxMinAngularSizeDeg": {
     "frustum0": 1.0,
-    "frustum1": 5.0
+    "frustum1": 5.0,
+    "frustum2": 1.0
   },
   "floatablePresets": {
     "single": {
@@ -11091,15 +11711,15 @@
     {
       "type": {
         "descr": "idling",
-        "intense": 0.2,
-        "amount": 0.2,
-        "color": [250.0,250.0,250.0,230.0]
+        "intense": 0.1,
+        "amount": 0.4,
+        "color": [200.0,200.0,200.0,10.0]
       }
     },
     {
       "type": {
         "descr": "running",
-        "intense": 1.0,
+        "intense": 0.5,
         "amount": 1.0,
         "color": [250.0,250.0,250.0,50.0]
       }
@@ -11107,17 +11727,17 @@
     {
       "type": {
         "descr": "changing",
-        "intense": 15.0,
-        "amount": 15.0,
-        "color": [255.0,255.0,255.0,10.0]
+        "intense": 2.1,
+        "amount": 5.0,
+        "color": [255.0,255.0,255.0,250.0]
       }
     },
     {
       "type": {
         "descr": "repairing",
-        "intense": 15.0,
-        "amount": 0.2,
-        "color": [255.0,255.0,255.0,10.0]
+        "intense": 1.2,
+        "amount": 3.0,
+        "color": [255.0,255.0,255.0,250.0]
       }
     },
     {
@@ -11128,5 +11748,21 @@
         "color": [245.0,245.0,245.0,0.0]
       }
     }
-  ]
+  ],
+  "holeRenderingRadiusConstants": {
+    "caliberMultiplier": 10.0,
+    "maxCaliberTreshold": 0.2,
+    "minCaliberTreshold": 0.0,
+    "maxSplashRadiusTreshold": 0.2,
+    "randomRadiusAddition": 0.05,
+    "minRadiusCreation": 0.1,
+    "radiusReplacementTreshold": 0.2,
+    "doNotMakeHoleInWreckedPart": true
+  },
+  "tpsNightVision": {
+    "resolution": [1920,1080],
+    "lightMult": 6.0,
+    "ghosting": 0.6,
+    "noiseFactor": 0.15
+  }
 }

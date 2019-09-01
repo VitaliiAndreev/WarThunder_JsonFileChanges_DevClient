@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -2060,12 +2063,18 @@
         "ex_decor_l_08_dm": [],
         "ex_decor_l_09_dm": [],
         "ex_decor_l_10_dm": [],
-        "ex_armor_l_03_dm": [],
         "ex_decor_r_02_dm": [],
         "ex_decor_r_04_dm": [],
         "ex_decor_r_06_dm": [],
         "ex_decor_r_09_dm": [],
-        "ex_decor_r_10_dm": [],
+        "ex_decor_r_10_dm": []
+      },
+      "body_side_screens": {
+        "armorClass": "t_90_rubber_fabric_screens",
+        "hp": 100.0,
+        "armorThickness": 8.0,
+        "createSecondaryShatters": false,
+        "ex_armor_l_03_dm": [],
         "ex_armor_r_03_dm": []
       },
       "chassis": {
@@ -2162,7 +2171,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -2235,24 +2244,6 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -2268,15 +2259,41 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -2476,7 +2493,7 @@
       "art_support": [],
       "tank_new_gun": [],
       "tank_smoke_screen_system_mod": {
-        "tier": 1,
+        "tier": 3,
         "modClass": "firepower",
         "effects": {
           "commonWeapons": [
@@ -2705,6 +2722,9 @@
                   "emitterGenFmt": "emtr_mortar_flame_%02d"
                 },
                 {
+                  "ignoreLoaderPenalty": true
+                },
+                {
                   "createGunEffects": true
                 },
                 {
@@ -2791,10 +2811,41 @@
         "image": "#ui/gameuiskin#tank_reinforcement_ger"
       },
       "105mm_usa_HESH": [],
-      "105mm_usa_HESH_ammo_pack": [],
+      "105mm_usa_HESH_ammo_pack": {
+        "tier": 1
+      },
       "105mm_usa_HEAT_FS": [],
-      "105mm_usa_HEAT_FS_ammo_pack": [],
-      "modern_tank_stereo_rangefinder": []
+      "105mm_usa_HEAT_FS_ammo_pack": {
+        "tier": 2
+      },
+      "105mm_usa_M735_APDS_FS": [],
+      "105mm_usa_M735_APDS_FS_ammo_pack": [],
+      "modern_tank_stereo_rangefinder": [],
+      "night_vision_system": {
+        "tier": 3,
+        "effects": {
+          "nightVision": {
+            "gunnerIr": {
+              "resolution": [800,600],
+              "lightMult": 8.0,
+              "ghosting": 0.75,
+              "noiseFactor": 0.2
+            },
+            "commanderIr": {
+              "resolution": [800,600],
+              "lightMult": 8.0,
+              "ghosting": 0.75,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.7,
+              "noiseFactor": 0.2
+            }
+          }
+        }
+      }
     }
   },
   {
