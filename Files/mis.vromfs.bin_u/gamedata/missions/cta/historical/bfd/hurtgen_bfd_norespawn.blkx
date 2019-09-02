@@ -258,8 +258,7 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false,
-        "isHelicoptersAllowed": false
+        "isShipsAllowed": false
       }
     },
     "cover_points": [],
@@ -571,8 +570,6 @@
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
-            "forceCreate": false,
-            "replaceAreas": false,
             "target": "t1_airfield",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -600,8 +597,6 @@
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
-            "forceCreate": false,
-            "replaceAreas": false,
             "target": "t2_airfield",
             "team": "B",
             "offset": [0.0,0.0,0.0],
@@ -816,16 +811,12 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "kursk_t1_west_defend",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "kursk_t1_west_defend"
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "kursk_t2_west_capture",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "kursk_t2_west_capture"
           }
         },
         {
@@ -835,16 +826,12 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "kursk_t1_east_defend",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "kursk_t1_east_defend"
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "kursk_t2_east_capture",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "kursk_t2_east_capture"
           }
         },
         {
@@ -854,16 +841,12 @@
         },
         {
           "__moAddMissionObjective": {
-            "target": "kursk_t1_destroy_arty",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "kursk_t1_destroy_arty"
           }
         },
         {
           "__moAddMissionObjective": {
-            "target": "kursk_t2_destroy_arty",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "kursk_t2_destroy_arty"
           }
         }
       ],
@@ -940,9 +923,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_west_atack_squad",
-          "target": "west_zone",
-          "object_var_value": 0
+          "target": "west_zone"
         }
       },
       "actions": [
@@ -1093,8 +1076,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object": "t2_west_atack_squad",
-          "object_var_value": 0
+          "object_var_value": 0,
+          "object": "t2_west_atack_squad"
         },
         "missionIsZoneCaptured": {
           "target": "west_zone",
@@ -1106,8 +1089,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t1_west_defend",
             "status": 2,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1115,8 +1096,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t2_west_capture",
             "status": 3,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1149,8 +1128,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object": "t2_east_atack_squad",
-          "object_var_value": 0
+          "object_var_value": 0,
+          "object": "t2_east_atack_squad"
         },
         "missionIsZoneCaptured": {
           "target": "east_zone",
@@ -1162,8 +1141,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t1_east_defend",
             "status": 2,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1171,8 +1148,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t2_east_capture",
             "status": 3,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1208,8 +1183,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t1_west_defend",
             "status": 3,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1217,8 +1190,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t2_west_capture",
             "status": 2,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1254,8 +1225,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t1_east_defend",
             "status": 3,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1263,8 +1232,6 @@
           "moSetObjectiveStatus": {
             "target": "kursk_t2_east_capture",
             "status": 2,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1297,9 +1264,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_west_atack_squad",
-          "target": "west_zone",
-          "object_var_value": 0
+          "target": "west_zone"
         }
       },
       "actions": {
@@ -1339,9 +1306,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_east_atack_squad",
-          "target": "east_zone",
-          "object_var_value": 0
+          "target": "east_zone"
         }
       },
       "actions": {
@@ -1382,8 +1349,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "t2_visual_arty_east_squad",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "t2_visual_arty_east_squad"
           }
         },
         {
@@ -1394,8 +1361,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "t2_visual_arty_west_squad",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "t2_visual_arty_west_squad"
           }
         }
       ],
@@ -1403,8 +1370,6 @@
         "moSetObjectiveStatus": {
           "target": "kursk_t1_destroy_arty",
           "status": 2,
-          "object_var_comp_op": "equal",
-          "object_var_name": "",
           "team": "A"
         },
         "triggerEnable": {
@@ -1435,8 +1400,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "t1_visual_arty_west_squad",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "t1_visual_arty_west_squad"
           }
         },
         {
@@ -1447,8 +1412,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "t1_visual_arty_east_squad",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "t1_visual_arty_east_squad"
           }
         }
       ],
@@ -1456,8 +1421,6 @@
         "moSetObjectiveStatus": {
           "target": "kursk_t2_destroy_arty",
           "status": 2,
-          "object_var_comp_op": "equal",
-          "object_var_name": "",
           "team": "B"
         },
         "triggerEnable": {
@@ -1494,9 +1457,7 @@
       },
       "actions": {
         "moAddMissionObjective": {
-          "target": "kursk_t2_destroy_arty",
-          "object_var_comp_op": "equal",
-          "object_var_name": ""
+          "target": "kursk_t2_destroy_arty"
         },
         "unitSetIndication": {
           "set": true,
@@ -1541,9 +1502,7 @@
       },
       "actions": {
         "moAddMissionObjective": {
-          "target": "kursk_t1_destroy_arty",
-          "object_var_comp_op": "equal",
-          "object_var_name": ""
+          "target": "kursk_t1_destroy_arty"
         },
         "unitSetIndication": {
           "set": true,
@@ -1732,9 +1691,9 @@
           [0.757116,0.0,0.653281],
           [0.0,1.0,0.0],
           [-0.653281,0.0,0.757116],
-          [15226.8,280.375,2085.07]
+          [15226.8,279.18,2085.07]
         ],
-        "unit_class": "dynaf_universal_1line_c",
+        "unit_class": "dynAF_kh_gol_airfield_gumrak_small",
         "objLayer": 2,
         "props": {
           "army": 1,
@@ -1749,9 +1708,9 @@
           [-0.970279,0.0,0.241991],
           [0.0,1.0,0.0],
           [-0.241991,0.0,-0.970279],
-          [-24843.1,213.623,3177.4]
+          [-24843.1,212.815,3177.4]
         ],
-        "unit_class": "dynaf_universal_1line_c",
+        "unit_class": "dynAF_kh_gol_airfield_gumrak",
         "objLayer": 2,
         "props": {
           "army": 2,
@@ -2129,9 +2088,6 @@
           [15339.3,231.49,3533.58]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_aaa_light_01"
           },
@@ -2536,9 +2492,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_aaa_light_01"
           },
           {
@@ -2621,9 +2574,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_bunker_squad"
           },
           {
@@ -2642,9 +2592,6 @@
           [-20569.6,76.2591,-2517.49]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_aaa_truck01"
           },
@@ -2682,9 +2629,6 @@
           [-19324.6,91.4091,-2363.66]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_tiger01"
           },
@@ -6609,7 +6553,6 @@
           [-23549.2,190.309,-2573.95]
         ],
         "props": {
-          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -6624,9 +6567,6 @@
           [-20355.3,190.309,-1498.49]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_pz4_01"
           },
@@ -6658,7 +6598,6 @@
           [-22839.2,178.409,-2291.69]
         ],
         "props": {
-          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -6673,9 +6612,6 @@
           [-19648.3,178.409,-1598.43]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_aaa_truck01"
           },
@@ -6701,7 +6637,6 @@
           [-22795.4,182.809,-4299.04]
         ],
         "props": {
-          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -6716,9 +6651,6 @@
           [-19939.3,182.809,-3269.26]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_heavy_units_squad"
           },
@@ -6738,9 +6670,6 @@
           [-24870.2,68.1432,-1653.03]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_aaa_light_fortification_01"
           },
@@ -6860,9 +6789,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_aaa_truck01"
           },
           {
@@ -6887,9 +6813,6 @@
           [-23940.3,166.359,-1445.81]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tank_fortification01"
           },
@@ -6996,9 +6919,6 @@
           [-19835.5,166.359,-160.67]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_pz4_01"
           },
@@ -7119,9 +7039,6 @@
           [-23172.5,183.309,-3460.07]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_aaa_light_fortification_01"
           },
@@ -7616,9 +7533,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_artillery_visual01"
           },
           {
@@ -7646,9 +7560,6 @@
           [-16017.1,337.053,4594.19]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_artillery_visual06"
           },
@@ -7678,9 +7589,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_artillery_visual01"
           },
           {
@@ -7709,9 +7617,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_artillery_visual11"
           },
           {
@@ -7739,9 +7644,6 @@
           [-2518.91,178.458,5321.24]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tank_fortification01"
           },
@@ -7834,9 +7736,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_tank_light_fortification11"
           },
           {
@@ -7919,9 +7818,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_pz4_01"
           },
           {
@@ -7949,9 +7845,6 @@
           [-11233.9,186.059,-6848.52]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_stug02"
           },
@@ -9061,9 +8954,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_light_bunker_01"
           },
           {
@@ -9110,9 +9000,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_tank_fortification01"
           },
           {
@@ -9156,9 +9043,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_bunker_squad"
           },
           {
@@ -9181,9 +9065,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_tanks_01_squad"
           },
           {
@@ -9205,9 +9086,6 @@
           [-8584.38,180.659,5283.29]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_quest_units_squad"
           },
@@ -9280,9 +9158,6 @@
           [937.207,163.859,-2786.14]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tanks_01_squad"
           },
@@ -9591,9 +9466,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_tank_fortification12"
           },
           {
@@ -9667,9 +9539,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_visual_arty_east_squad"
           },
           {
@@ -9689,9 +9558,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_visual_arty_east_squad"
           },
           {
@@ -9710,9 +9576,6 @@
           [-15558.3,195.209,-6530.32]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_tiger01_01"
           },
@@ -10231,9 +10094,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_tiger02_01"
           },
           {
@@ -10256,9 +10116,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_subquest_units_01"
           },
           {
@@ -10280,9 +10137,6 @@
           [-36278.6,72.4091,3124.49]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_subquest_units_01"
           },
@@ -10946,10 +10800,10 @@
     "t2_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-2396.18,0.0,629.067],
+        [-1343.5,0.0,290.717],
         [0.0,300.0,0.0],
-        [-172.838,6.66419e-06,-658.355],
-        [-24847.3,92.6089,3172.07]
+        [-82.4031,3.8147e-06,-380.811],
+        [-24911.6,92.6089,3293.04]
       ],
       "objLayer": 0,
       "props": []
@@ -10957,10 +10811,10 @@
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-1517.55,0.0,-1321.93],
+        [-1214.04,0.0,-1057.54],
         [0.0,300.0,0.0],
-        [428.689,6.38998e-06,-492.127],
-        [15212.3,249.455,2071.57]
+        [396.934,5.91665e-06,-455.673],
+        [15374.7,249.455,2019.78]
       ],
       "objLayer": 0,
       "props": []

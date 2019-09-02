@@ -114,32 +114,12 @@
     "depthTraceCriticalDepth": 2.0
   },
   {
-    "default_skin_tomoe": [
-      {
-        "replace_tex": {
-          "from": "flag_japan_01_c*",
-          "to": "flag_japan_01_c_tomoe*"
-        }
-      },
-      {
-        "replace_tex": {
-          "from": "flag_japan_02_c*",
-          "to": "flag_japan_01_c_tomoe*"
-        }
-      },
-      {
-        "replace_tex": {
-          "from": "airplane_japan_e7k2_c*",
-          "to": "airplane_japan_e7k2_c_tomoe*"
-        }
-      },
-      {
-        "replace_tex": {
-          "from": "airplane_japan_e13a1_c*",
-          "to": "airplane_japan_e13a1_c_tomoe*"
-        }
+    "default_skin_tomoe": {
+      "replace_tex": {
+        "from": "flag_japan_01_c*",
+        "to": "flag_japan_alt_c*"
       }
-    ]
+    }
   },
   {
     "ikGunner": [
@@ -1396,6 +1376,10 @@
       },
       "turrets_main_caliber": {
         "fireParamsPreset": "ship_turrets",
+        "genericDamageMult": 1.2,
+        "shatterDamageMult": 1.4,
+        "explosionDamageMult": 1.2,
+        "secondaryShatterDamageMult": 0.5,
         "armorClass": "ship_STS",
         "armorThickness": 3.175,
         "main_caliber_turret_01_dm": {
@@ -1410,13 +1394,21 @@
       },
       "turrets_aux_caliber": {
         "fireParamsPreset": "ship_turrets",
+        "genericDamageMult": 1.2,
+        "shatterDamageMult": 1.5,
+        "explosionDamageMult": 1.5,
+        "secondaryShatterDamageMult": 0.5,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 5.0
+        "armorThickness": 25.0
       },
       "turrets_aa_caliber": {
         "fireParamsPreset": "ship_turrets",
+        "genericDamageMult": 1.3,
+        "shatterDamageMult": 1.5,
+        "explosionDamageMult": 1.6,
+        "secondaryShatterDamageMult": 1.3,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 3.0,
+        "armorThickness": 10.0,
         "aa_turret_01_dm": {
           "hp": 57.0
         },
@@ -1426,8 +1418,12 @@
       },
       "gun_main_caliber": {
         "fireParamsPreset": "ship_turrets",
+        "genericDamageMult": 1.5,
+        "shatterDamageMult": 0.2,
+        "explosionDamageMult": 0.5,
+        "secondaryShatterDamageMult": 0.01,
         "armorClass": "tank_barrel",
-        "armorThickness": 20.0,
+        "armorThickness": 50.0,
         "main_caliber_gun_01_dm": {
           "hp": 200.0
         },
@@ -1440,13 +1436,20 @@
       },
       "gun_aux_caliber": {
         "fireParamsPreset": "ship_turrets",
+        "genericDamageMult": 1.5,
+        "shatterDamageMult": 0.5,
+        "explosionDamageMult": 0.7,
+        "secondaryShatterDamageMult": 0.01,
         "armorClass": "tank_barrel",
-        "armorThickness": 10.0
+        "armorThickness": 30.0
       },
       "gun_aa_caliber": {
         "fireParamsPreset": "ship_turrets",
+        "genericDamageMult": 1.6,
+        "shatterDamageMult": 1.2,
+        "explosionDamageMult": 1.5,
         "armorClass": "tank_barrel",
-        "armorThickness": 5.0,
+        "armorThickness": 10.0,
         "aa_gun_01_dm": {
           "hp": 50.0
         },
@@ -1659,7 +1662,7 @@
   },
   {
     "tank_crew": {
-      "minCrewMemberAliveCount": 67,
+      "minCrewMemberAliveCount": 54,
       "sailor1": {
         "dmPart": "bridge_dm",
         "role": "sailor",
@@ -1668,42 +1671,42 @@
       "sailor2": {
         "dmPart": "compartment_01_dm",
         "role": "sailor",
-        "crew": 23
+        "crew": 17
       },
       "sailor3": {
         "dmPart": "compartment_02_dm",
         "role": "sailor",
-        "crew": 25
+        "crew": 18
       },
       "sailor4": {
         "dmPart": "compartment_03_dm",
         "role": "sailor",
-        "crew": 22
+        "crew": 16
       },
       "sailor5": {
         "dmPart": "compartment_04_dm",
         "role": "sailor",
-        "crew": 23
+        "crew": 17
       },
       "sailor6": {
         "dmPart": "compartment_05_dm",
         "role": "sailor",
-        "crew": 23
+        "crew": 17
       },
       "sailor7": {
         "dmPart": "compartment_06_dm",
         "role": "sailor",
-        "crew": 23
+        "crew": 17
       },
       "sailor8": {
         "dmPart": "compartment_07_dm",
         "role": "sailor",
-        "crew": 23
+        "crew": 17
       },
       "sailor9": {
         "dmPart": "compartment_08_dm",
         "role": "sailor",
-        "crew": 10
+        "crew": 7
       },
       "sailor10": {
         "dmPart": "main_caliber_turret_01_dm",
@@ -1936,39 +1939,6 @@
           },
           {
             "name": "torpedo_12_dm"
-          },
-          {
-            "name": "torpedo_14_dm"
-          },
-          {
-            "name": "torpedo_15_dm"
-          },
-          {
-            "name": "torpedo_16_dm"
-          },
-          {
-            "name": "torpedo_17_dm"
-          },
-          {
-            "name": "torpedo_18_dm"
-          },
-          {
-            "name": "torpedo_19_dm"
-          },
-          {
-            "name": "torpedo_20_dm"
-          },
-          {
-            "name": "torpedo_21_dm"
-          },
-          {
-            "name": "torpedo_22_dm"
-          },
-          {
-            "name": "torpedo_23_dm"
-          },
-          {
-            "name": "torpedo_24_dm"
           },
           {
             "onHit": {
@@ -2344,6 +2314,36 @@
             "name": "bridge_dm"
           },
           {
+            "name": "cover_01_dm"
+          },
+          {
+            "name": "cover_02_dm"
+          },
+          {
+            "name": "cover_03_dm"
+          },
+          {
+            "name": "cover_04_dm"
+          },
+          {
+            "name": "cover_05_dm"
+          },
+          {
+            "name": "cover_06_dm"
+          },
+          {
+            "name": "cover_07_dm"
+          },
+          {
+            "name": "cover_08_dm"
+          },
+          {
+            "name": "cover_09_dm"
+          },
+          {
+            "name": "cover_10_dm"
+          },
+          {
             "onHit": {
               "damageType": "explosion",
               "fire": 0.05,
@@ -2546,13 +2546,12 @@
   {
     "sound": {
       "EngineName": "engine_shipmid01",
-      "EngineNameAi": "engine_shipmid_ai",
+      "EngineNameAi": "engine_shiplight_ai",
       "TrackSoundPath": "ships/engines_ships",
       "TrackSoundPathStudio": "naval/engines",
       "TrackSoundName": "tracks_mid",
-      "TrackSoundNameCockpit": "tracks_mid_interior",
-      "TrackSoundNameAi": "tracks_ai_mid",
-      "turret_turn": "turret_turn_big"
+      "TrackSoundNameCockpit": "tracks_ctr_interior",
+      "TrackSoundNameAi": "tracks_ai_ctr"
     }
   },
   {
@@ -2635,9 +2634,6 @@
           },
           {
             "randomAngle": 0.0
-          },
-          {
-            "accuracyBotMultAir": 0.55
           },
           {
             "accuracyAir": 1.0
@@ -2808,9 +2804,6 @@
             "randomAngle": 0.0
           },
           {
-            "accuracyBotMultAir": 0.55
-          },
-          {
             "accuracyAir": 1.0
           },
           {
@@ -2902,9 +2895,6 @@
             "emitter": "emtr_gun_flame_07"
           },
           {
-            "invertedAxisEmitter": true
-          },
-          {
             "flash": "emtr_gun_flame_07"
           },
           {
@@ -2963,9 +2953,6 @@
           },
           {
             "randomAngle": 0.0
-          },
-          {
-            "accuracyBotMultAir": 0.55
           },
           {
             "accuracyAir": 1.0
@@ -3122,9 +3109,6 @@
             "randomAngle": 0.0
           },
           {
-            "accuracyBotMultAir": 0.55
-          },
-          {
             "accuracyAir": 1.0
           },
           {
@@ -3273,9 +3257,6 @@
             "randomAngle": 0.0
           },
           {
-            "accuracyBotMultAir": 0.55
-          },
-          {
             "accuracyAir": 1.0
           },
           {
@@ -3419,9 +3400,6 @@
           },
           {
             "randomAngle": 0.0
-          },
-          {
-            "accuracyBotMultAir": 0.55
           },
           {
             "accuracyAir": 1.0
@@ -3573,9 +3551,6 @@
             "randomAngle": 0.0
           },
           {
-            "accuracyBotMultAir": 0.55
-          },
-          {
             "accuracyAir": 1.0
           },
           {
@@ -3652,6 +3627,170 @@
             }
           }
         ]
+      },
+      {
+        "Weapon": [
+          {
+            "trigger": "gunner5"
+          },
+          {
+            "triggerGroup": "torpedoes"
+          },
+          {
+            "external": true
+          },
+          {
+            "blk": "gameData/Weapons/torpedoes/jp_610mm_type93_model_1_mod2_torpedo.blk"
+          },
+          {
+            "emitter": "bone_torpedo_01"
+          },
+          {
+            "bullets": 8
+          },
+          {
+            "useEmitter": true
+          },
+          {
+            "emitterGenRange": [1,4]
+          },
+          {
+            "emitterGenFmt": "bone_torpedo_%02d"
+          },
+          {
+            "ammoDpGenFmt": "torpedo_%02d_dm"
+          },
+          {
+            "barrelDP": "tt_01_dm"
+          },
+          {
+            "brokenBarrelAllowShoot": false
+          },
+          {
+            "enableCourseCorrection": false
+          },
+          {
+            "startFx": "start_torpedo"
+          },
+          {
+            "startFxOffset": [4.0,0.0,0.0]
+          },
+          {
+            "startSpeed": 20.0
+          },
+          {
+            "useStartSpeed": true
+          },
+          {
+            "allowableDelta": 40.0
+          },
+          {
+            "barrelDP": "tt_01_dm"
+          },
+          {
+            "brokenBarrelAllowShoot": false
+          },
+          {
+            "turret": {
+              "head": "tt_head_01",
+              "gun": "tt_01"
+            }
+          },
+          {
+            "limits": {
+              "yaw": [-130.0,130.0],
+              "pitch": [0.0,0.0]
+            }
+          },
+          {
+            "limitsDeadzone": {
+              "yaw": [-55.0,55.0],
+              "pitch": [0.0,0.0]
+            }
+          }
+        ]
+      },
+      {
+        "Weapon": [
+          {
+            "trigger": "gunner6"
+          },
+          {
+            "triggerGroup": "torpedoes"
+          },
+          {
+            "external": true
+          },
+          {
+            "blk": "gameData/Weapons/torpedoes/jp_610mm_type93_model_1_mod2_torpedo.blk"
+          },
+          {
+            "emitter": "bone_torpedo_05"
+          },
+          {
+            "bullets": 8
+          },
+          {
+            "useEmitter": true
+          },
+          {
+            "emitterGenRange": [5,8]
+          },
+          {
+            "emitterGenFmt": "bone_torpedo_%02d"
+          },
+          {
+            "ammoDpGenFmt": "torpedo_%02d_dm"
+          },
+          {
+            "barrelDP": "tt_02_dm"
+          },
+          {
+            "brokenBarrelAllowShoot": false
+          },
+          {
+            "enableCourseCorrection": false
+          },
+          {
+            "startFx": "start_torpedo"
+          },
+          {
+            "startFxOffset": [4.0,0.0,0.0]
+          },
+          {
+            "startSpeed": 20.0
+          },
+          {
+            "useStartSpeed": true
+          },
+          {
+            "allowableDelta": 40.0
+          },
+          {
+            "barrelDP": "tt_02_dm"
+          },
+          {
+            "brokenBarrelAllowShoot": false
+          },
+          {
+            "turret": {
+              "head": "tt_head_02",
+              "gun": "tt_02"
+            }
+          },
+          {
+            "limits": {
+              "yaw": [-128.0,128.0],
+              "pitch": [0.0,0.0]
+            }
+          },
+          {
+            "limitsDeadzone": {
+              "yaw": [-45.0,55.0],
+              "pitch": [0.0,0.0]
+            }
+          }
+        ]
       }
     ]
   },
@@ -3665,20 +3804,8 @@
       },
       {
         "preset": {
-          "name": "no_torpedoes",
-          "blk": "gameData/units/ships/weaponPresets/jp_destroyer_yuudachi_no_torpedoes.blk"
-        }
-      },
-      {
-        "preset": {
           "name": "type95_bomb_mortars",
           "blk": "gameData/units/ships/weaponPresets/jp_destroyer_yuudachi_bomb_mortar.blk"
-        }
-      },
-      {
-        "preset": {
-          "name": "type95_bomb_mortars_type93_torpedoes",
-          "blk": "gameData/units/ships/weaponPresets/jp_destroyer_yuudachi_bomb_mortar_torpedoes.blk"
         }
       }
     ]
@@ -4467,6 +4594,18 @@
           "removeLoadedAmmo": false
         },
         {
+          "fatalFire": false
+        },
+        {
+          "fatalExplosion": true
+        },
+        {
+          "explosionEvent": "ammo_explosion_1"
+        },
+        {
+          "fireEvent": "ammo_fire_1"
+        },
+        {
           "shells": {
             "autoLoad": true,
             "torpedo_01_dm": {
@@ -4512,6 +4651,18 @@
         },
         {
           "removeLoadedAmmo": false
+        },
+        {
+          "fatalFire": false
+        },
+        {
+          "fatalExplosion": true
+        },
+        {
+          "explosionEvent": "ammo_explosion_2"
+        },
+        {
+          "fireEvent": "ammo_fire_2"
         },
         {
           "shells": {
@@ -4617,7 +4768,7 @@
     "breaches": {
       "repairSpeed": 25.0,
       "waterMassVel": -150000.0,
-      "waterMassMult": 170.0,
+      "waterMassMult": 200.0,
       "sizeToRepair": [0.01,4.0,10.0,450.0],
       "additionalWaterDeathThreshold": 6000000.0,
       "additionalWaterShouldDiePercent": 0.34,
@@ -4853,58 +5004,5 @@
         "to": "camo_whiteback_deepgray*"
       }
     }
-  },
-  {
-    "user_skin": [
-      {
-        "name": "destroyer_yuudachi"
-      },
-      {
-        "replace_tex": {
-          "from": "camo_linoleum_deck*"
-        }
-      },
-      {
-        "replace_tex": {
-          "from": "camo_warshipdeepgray*"
-        }
-      },
-      {
-        "set_tex": {
-          "from": "tt_610mm_type92_c*",
-          "param": "camo_skin_tex"
-        }
-      },
-      {
-        "set_tex": {
-          "from": "turret_127mm_type3_single_c*",
-          "param": "camo_skin_tex"
-        }
-      },
-      {
-        "set_tex": {
-          "from": "turret_127mm_type3_type_b2_c*",
-          "param": "camo_skin_tex"
-        }
-      },
-      {
-        "set_tex": {
-          "from": "turret_40mm_hi_type91_c*",
-          "param": "camo_skin_tex"
-        }
-      },
-      {
-        "set_tex": {
-          "from": "destroyer_yuudachi_c*",
-          "param": "camo_skin_tex"
-        }
-      },
-      {
-        "set_tex": {
-          "from": "destroyer_yuudachi_deckhouse_c*",
-          "param": "camo_skin_tex"
-        }
-      }
-    ]
   }
 ]

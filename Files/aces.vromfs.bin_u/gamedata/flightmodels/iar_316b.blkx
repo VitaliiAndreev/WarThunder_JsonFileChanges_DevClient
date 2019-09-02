@@ -241,12 +241,14 @@
         },
         {
           "onHit": {
+            "expl": 0.01,
             "fire": 0.01
           }
         },
         {
           "onHit": {
             "damage": 2.7,
+            "expl": 0.01,
             "fire": 0.01,
             "leak_oil": 0.5
           }
@@ -254,21 +256,24 @@
         {
           "onHit": {
             "damage": 30.0,
+            "expl": 0.05,
             "fire": 0.1,
             "leak_oil": 1.0
           }
         },
         {
           "onKill": {
-            "fire": 30.0,
-            "leak_oil": 10.0
+            "expl": 0.1,
+            "fire": 10.0,
+            "nothing": 90.0
           }
         },
         {
           "onKill": {
             "damage": 30.0,
+            "expl": 1.0,
             "fire": 44.0,
-            "leak_oil": 10.0
+            "nothing": 55.0
           }
         }
       ]
@@ -638,15 +643,19 @@
         {
           "onKill": {
             "damage": 50.0,
-            "fire": 45.0,
-            "leak": 25.0
+            "expl": 0.5,
+            "fire": 5.0,
+            "leak": 10.0,
+            "nothing": 85.0
           }
         },
         {
           "onKill": {
             "damage": 70.0,
-            "fire": 50.0,
-            "leak": 20.0
+            "expl": 1.0,
+            "fire": 20.0,
+            "leak": 50.0,
+            "nothing": 30.0
           }
         }
       ]
@@ -823,7 +832,7 @@
     "Range": 882.0
   },
   "Sound": {
-    "Engine": "engine_sa_313b",
+    "Engine": "engine_ah1",
     "gun": "gun_default"
   },
   "cockpit": {
@@ -974,24 +983,6 @@
     "heli_structure": [],
     "gunGShG_new_gun": {
       "tier": 2
-    },
-    "heli_night_vision_system": {
-      "effects": {
-        "nightVision": {
-          "gunnerIr": {
-            "resolution": [800,600],
-            "lightMult": 8.0,
-            "ghosting": 0.75,
-            "noiseFactor": 0.2
-          },
-          "pilotIr": {
-            "resolution": [800,600],
-            "lightMult": 8.0,
-            "ghosting": 0.75,
-            "noiseFactor": 0.2
-          }
-        }
-      }
     }
   },
   "user_skin": [

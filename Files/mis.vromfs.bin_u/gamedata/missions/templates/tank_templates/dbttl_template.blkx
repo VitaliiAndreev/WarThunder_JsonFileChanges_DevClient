@@ -147,16 +147,12 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_DBttlA_objective_01",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "avg_DBttlA_objective_01"
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_DBttlA_objective_02",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "avg_DBttlA_objective_02"
           }
         },
         {
@@ -276,16 +272,12 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_DBttlB_objective_01",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "avg_DBttlB_objective_01"
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_DBttlB_objective_02",
-            "object_var_comp_op": "equal",
-            "object_var_name": ""
+            "target": "avg_DBttlB_objective_02"
           }
         },
         {
@@ -347,9 +339,7 @@
           "canCaptureInAir": false,
           "canCaptureByGM": true,
           "auto_smoke": true,
-          "captureNoPenalty": true,
-          "markUnitPreset": "tank_decal",
-          "markUnits": "cz_circle_01"
+          "captureNoPenalty": true
         }
       },
       "else_actions": []
@@ -378,9 +368,7 @@
           "canCaptureInAir": false,
           "canCaptureByGM": true,
           "auto_smoke": true,
-          "captureNoPenalty": true,
-          "markUnitPreset": "tank_decal",
-          "markUnits": "cz_circle_02"
+          "captureNoPenalty": true
         }
       },
       "else_actions": []
@@ -468,9 +456,6 @@
               "replaceAreas": false
             },
             {
-              "forceCreate": false
-            },
-            {
               "target": "@t1_spawn_01_name"
             },
             {
@@ -534,9 +519,6 @@
               "replaceAreas": false
             },
             {
-              "forceCreate": false
-            },
-            {
               "target": "@t2_spawn_01_name"
             },
             {
@@ -596,7 +578,6 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
-            "forceCreate": false,
             "target": "@t1_spawn_01_name",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -621,7 +602,6 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
-            "forceCreate": false,
             "target": "@t2_spawn_01_name",
             "team": "B",
             "offset": [0.0,0.0,0.0],
@@ -631,7 +611,7 @@
           }
         },
         {
-          "__unitWakeUp": {
+          "unitWakeUp": {
             "target": "@circle_name"
           }
         },
@@ -640,13 +620,13 @@
             "effect_type": "specify",
             "effect": "pv_point_smoke_blue",
             "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
             "show": true,
             "attach": true,
             "scale": 1.0,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "@effect_name",
-            "radiusOffset": [0.0,0.0]
+            "target": "@effect_name"
           }
         },
         {
@@ -704,7 +684,6 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
-            "forceCreate": false,
             "target": "@t1_spawn_02_name",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -729,7 +708,6 @@
             "onlyOnePlayerPerSpawnPoint": false,
             "resetStrictSpawnIndex": false,
             "replaceAreas": false,
-            "forceCreate": false,
             "target": "@t2_spawn_02_name",
             "team": "B",
             "offset": [0.0,0.0,0.0],
@@ -798,8 +776,6 @@
           "moSetObjectiveStatus": {
             "target": "avg_DBttlA_objective_01",
             "status": 3,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "A"
           }
         },
@@ -807,8 +783,6 @@
           "moSetObjectiveStatus": {
             "target": "avg_DBttlA_objective_02",
             "status": 2,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "B"
           }
         },
@@ -844,8 +818,6 @@
           "moSetObjectiveStatus": {
             "target": "avg_DBttlB_objective_01",
             "status": 3,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "B"
           }
         },
@@ -853,8 +825,6 @@
           "moSetObjectiveStatus": {
             "target": "avg_DBttlB_objective_02",
             "status": 2,
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1262,42 +1232,7 @@
   "dialogs": [],
   "airfields": [],
   "effects": [],
-  "units": [
-    {
-      "objectGroups": {
-        "name": "cz_circle_01",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1831.7,4.65,2455.55]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "cz_circle_02",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1846.35,4.65,2455.55]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": true
-        }
-      }
-    }
-  ],
+  "units": [],
   "areas": [],
   "objLayers": [
     {

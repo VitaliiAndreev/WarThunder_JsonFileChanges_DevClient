@@ -80,9 +80,6 @@
             "mapArea": true,
             "killOutOfBattleArea": true,
             "newGridHorizontalCellCount": 0,
-            "airMapArea": false,
-            "killArea": false,
-            "detectionArea": false,
             "area": "tank_map_area",
             "gridCellCountVar": "@br_area_div"
           }
@@ -148,11 +145,9 @@
             "removeAreas": false,
             "canSpawnOnNeutral": true,
             "showOnMap": false,
+            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "onlyOnePlayerPerSpawnPoint": true,
-            "resetStrictSpawnIndex": false,
-            "forceCreate": false,
-            "replaceAreas": false,
             "target": "spawn_area_sq",
             "team": "Both",
             "disableAfter": 120,
@@ -194,25 +189,18 @@
           "object_marking": 0,
           "target_type": "isAlive",
           "check_period": 1.0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "players_sq"
         }
       },
       "actions": {
-        "__missionSetTimeSpeed": {
+        "missionSetTimeSpeed": {
           "speed": 0.01,
           "realtimeTriggers": true
         },
         "unitSetProperties": {
           "object_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "players_sq",
-          "cannotShoot": true,
-          "cannotMove": true
+          "cannotShoot": true
         },
         "triggerEnable": [
           {
@@ -267,10 +255,7 @@
           "isOverFade": false,
           "time": -1.0,
           "priority": 0,
-          "target_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0
+          "target_marking": 0
         },
         "varModify": {
           "operator": "subAB",
@@ -281,37 +266,28 @@
       "else_actions": {
         "missionSetTimeSpeed": {
           "speed": 1.0,
-          "realtimeTriggers": false
+          "realtimeTriggers": true
         },
         "wait": {
           "time": 3.0
         },
         "unitSetProperties": {
           "object_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "players_sq",
-          "cannotShoot": false,
-          "cannotMove": false
+          "cannotShoot": false
         },
         "playHint": {
-          "hintType": "standard",
+          "hintType": "custom",
           "name": "",
           "action": "hideCur",
           "shouldFadeOut": false,
           "isOverFade": false,
           "time": -1.0,
           "priority": 0,
-          "target_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0
+          "target_marking": 0
         },
         "moAddMissionObjective": {
-          "target": "br_last_man_standing",
-          "object_var_comp_op": "equal",
-          "object_var_name": ""
+          "target": "br_last_man_standing"
         },
         "triggerEnable": [
           {
@@ -485,8 +461,6 @@
           "object_marking": 0,
           "func": "more",
           "value": 1,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
           "object": "players_sq"
         }
       },
@@ -516,8 +490,6 @@
           "object_marking": 0,
           "func": "equal",
           "value": 1,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
           "object": "players_sq"
         }
       },
@@ -534,11 +506,7 @@
           "areaDivIntVar": "@br_area_div",
           "warningTimeIntVar": "@br_area_warning_time",
           "reset": true
-        },
-        "wait": {
-          "time": 2.0
-        },
-        "missionCompleted": []
+        }
       },
       "else_actions": []
     },
@@ -564,9 +532,6 @@
           "icon": "tank",
           "icon army": 2,
           "set": true,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "target": "players_sq"
         }
       },
@@ -627,10 +592,7 @@
             "isOverFade": false,
             "time": 5.0,
             "priority": 0,
-            "target_marking": 0,
-            "object_var_name": "",
-            "object_var_comp_op": "equal",
-            "object_var_value": 0
+            "target_marking": 0
           }
         },
         {
@@ -852,9 +814,6 @@
           [6965.07,14.8855,914.865]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "player01"
           },

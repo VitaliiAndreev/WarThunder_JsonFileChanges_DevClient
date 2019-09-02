@@ -103,13 +103,13 @@
       {
         "replace_tex": {
           "from": "flag_germany_01_c*",
-          "to": "flag_germany_01_c_tomoe*"
+          "to": "flag_germany_alt_c*"
         }
       },
       {
         "replace_tex": {
           "from": "flag_germany_02_c*",
-          "to": "flag_germany_01_c_tomoe*"
+          "to": "flag_germany_alt_c*"
         }
       },
       {
@@ -647,6 +647,8 @@
   {
     "DamageParts": {
       "formatVersion": 2,
+      "armorClass": "ship_wood",
+      "armorThickness": 20.0,
       "compartments": {
         "fireParamsPreset": "ship_cover",
         "stopChanceOnDeadPart": 0.2,
@@ -684,14 +686,14 @@
         }
       },
       "superstructures": {
+        "armorClass": "ship_wood",
+        "armorThickness": 15.0,
         "fireParamsPreset": "ship_cover",
         "genericDamageMult": 1.0,
         "shatterDamageMult": 1.0,
         "explosionDamageMult": 1.0,
         "secondaryShatterDamageMult": 1.0,
         "stopChanceOnDeadPart": 0.2,
-        "armorClass": "ship_wood",
-        "armorThickness": 15.0,
         "superstructure_dm": {
           "hp": 350.0
         },
@@ -721,9 +723,9 @@
         "shatterDamageMult": 0.4,
         "explosionDamageMult": 1.6,
         "secondaryShatterDamageMult": 0.1,
-        "stopChanceOnDeadPart": 0.1,
         "armorClass": "ship_wood",
         "armorThickness": 25.0,
+        "stopChanceOnDeadPart": 0.1,
         "bulkhead_01_dm": {
           "hp": 500.0
         },
@@ -766,12 +768,12 @@
         "armorThickness": 4.0
       },
       "engine": {
+        "armorThickness": 5.0,
         "armorThrough": 30.0,
         "genericDamageMult": 1.5,
         "secondaryShatterDamageMult": 0.05,
-        "fireParamsPreset": "ship_engine",
         "armorClass": "armor_tank_engine",
-        "armorThickness": 5.0,
+        "fireParamsPreset": "ship_engine",
         "engine_01_dm": {
           "hp": 330.0
         },
@@ -786,21 +788,21 @@
         }
       },
       "steering_gear": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 10.0,
         "genericDamageMult": 1.0,
         "shatterDamageMult": 0.3,
         "explosionDamageMult": 1.5,
-        "armorClass": "ship_structural_steel",
-        "armorThickness": 10.0,
         "steering_gear_01_dm": {
           "hp": 150.0
         }
       },
       "pumps": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0,
         "genericDamageMult": 1.0,
         "shatterDamageMult": 2.0,
         "fireParamsPreset": "ship_engine",
-        "armorClass": "ship_structural_steel",
-        "armorThickness": 5.0,
         "pump_01_dm": {
           "hp": 70.0
         },
@@ -862,13 +864,13 @@
         }
       },
       "turrets_main_caliber": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 12.7,
         "fireParamsPreset": "ship_turrets",
         "genericDamageMult": 1.4,
         "shatterDamageMult": 1.1,
         "explosionDamageMult": 1.0,
         "secondaryShatterDamageMult": 0.5,
-        "armorClass": "ship_structural_steel",
-        "armorThickness": 12.7,
         "main_caliber_turret_01_dm": {
           "hp": 100.0
         },
@@ -877,31 +879,31 @@
         }
       },
       "turrets_aux_caliber": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 10.0,
         "fireParamsPreset": "ship_turrets",
         "genericDamageMult": 1.4,
         "shatterDamageMult": 1.1,
         "explosionDamageMult": 1.0,
-        "secondaryShatterDamageMult": 0.5,
-        "armorClass": "ship_structural_steel",
-        "armorThickness": 10.0
+        "secondaryShatterDamageMult": 0.5
       },
       "turrets_aa_caliber": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 8.0,
         "fireParamsPreset": "ship_turrets",
         "genericDamageMult": 1.4,
         "shatterDamageMult": 1.1,
         "explosionDamageMult": 1.0,
-        "secondaryShatterDamageMult": 0.5,
-        "armorClass": "ship_structural_steel",
-        "armorThickness": 8.0
+        "secondaryShatterDamageMult": 0.5
       },
       "gun_main_caliber": {
+        "armorClass": "tank_barrel",
+        "armorThickness": 5.0,
         "fireParamsPreset": "ship_turrets",
         "genericDamageMult": 1.7,
         "shatterDamageMult": 0.8,
         "explosionDamageMult": 0.5,
         "secondaryShatterDamageMult": 0.01,
-        "armorClass": "tank_barrel",
-        "armorThickness": 5.0,
         "main_caliber_gun_01_dm": {
           "hp": 70.0
         },
@@ -910,22 +912,22 @@
         }
       },
       "gun_aux_caliber": {
+        "armorClass": "tank_barrel",
+        "armorThickness": 4.0,
         "fireParamsPreset": "ship_turrets",
         "genericDamageMult": 1.7,
         "shatterDamageMult": 0.8,
         "explosionDamageMult": 0.5,
-        "secondaryShatterDamageMult": 0.01,
-        "armorClass": "tank_barrel",
-        "armorThickness": 4.0
+        "secondaryShatterDamageMult": 0.01
       },
       "gun_aa_caliber": {
+        "armorClass": "tank_barrel",
+        "armorThickness": 4.0,
         "fireParamsPreset": "ship_turrets",
         "genericDamageMult": 1.7,
         "shatterDamageMult": 0.8,
         "explosionDamageMult": 0.5,
-        "secondaryShatterDamageMult": 0.01,
-        "armorClass": "tank_barrel",
-        "armorThickness": 4.0
+        "secondaryShatterDamageMult": 0.01
       },
       "gun_barrels": {
         "armorClass": "tank_barrel",
@@ -959,9 +961,9 @@
         }
       },
       "fuel_tanks": {
-        "fireParamsPreset": "ship_fuel_tank",
         "armorClass": "ships_oil_fuel_tank",
         "armorThickness": 3.0,
+        "fireParamsPreset": "ship_fuel_tank",
         "fuel_tank_01_dm": {
           "hp": 500.0
         }
@@ -969,11 +971,11 @@
       "ammo": {
         "fireProtectionHp": 2.0,
         "fireParamsPreset": "ship_ammo_fire",
+        "armorClass": "ship_structural_steel",
         "genericDamageMult": 0.7,
         "explosionDamageMult": 0.8,
         "shatterDamageMult": 0.8,
         "secondaryShatterDamageMult": 0.8,
-        "armorClass": "ship_structural_steel",
         "armorThickness": 5.0,
         "ammunition_storage_01_dm": {
           "hp": 400.0
@@ -983,6 +985,7 @@
         }
       },
       "depth_charges": {
+        "armorThickness": 5.0,
         "fireProtectionHp": 20.0,
         "fireParamsPreset": "ship_ammo_fire",
         "genericDamageMult": 0.5,
@@ -990,35 +993,34 @@
         "explosionDamageMult": 1.5,
         "secondaryShatterDamageMult": 0.1,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 5.0,
         "depth_charge_01_dm": {
-          "hp": 100.0
+          "hp": 250.0
         },
         "depth_charge_02_dm": {
-          "hp": 100.0
+          "hp": 250.0
         },
         "depth_charge_03_dm": {
-          "hp": 100.0
+          "hp": 250.0
         },
         "depth_charge_04_dm": {
-          "hp": 100.0
+          "hp": 250.0
         },
         "depth_charge_05_dm": {
-          "hp": 100.0
+          "hp": 250.0
         },
         "depth_charge_06_dm": {
-          "hp": 100.0
+          "hp": 250.0
         }
       },
       "torpedos": {
+        "armorThickness": 2.0,
         "fireProtectionHp": 20.0,
         "fireParamsPreset": "ship_ammo_fire",
         "genericDamageMult": 1.0,
         "shatterDamageMult": 1.5,
         "explosionDamageMult": 2.0,
         "secondaryShatterDamageMult": 1.0,
-        "armorClass": "ship_structural_steel",
-        "armorThickness": 2.0
+        "armorClass": "ship_structural_steel"
       }
     }
   },
@@ -1983,9 +1985,6 @@
             "emitter": "emtr_gun_flame_02"
           },
           {
-            "invertedAxisEmitter": true
-          },
-          {
             "flash": "emtr_gun_flame_02"
           },
           {
@@ -2041,9 +2040,6 @@
           },
           {
             "randomAngle": 0.0
-          },
-          {
-            "accuracyBotMultAir": 0.55
           },
           {
             "accuracyAir": 1.0
@@ -2139,9 +2135,6 @@
             "emitter": "emtr_gun_flame_01"
           },
           {
-            "invertedAxisEmitter": true
-          },
-          {
             "flash": "emtr_gun_flame_01"
           },
           {
@@ -2197,9 +2190,6 @@
           },
           {
             "randomAngle": 0.0
-          },
-          {
-            "accuracyBotMultAir": 0.55
           },
           {
             "accuracyAir": 1.0

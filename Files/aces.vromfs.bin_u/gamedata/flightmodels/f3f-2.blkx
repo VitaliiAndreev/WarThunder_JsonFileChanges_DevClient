@@ -437,12 +437,14 @@
         },
         {
           "onHit": {
+            "expl": 0.01,
             "fire": 0.01
           }
         },
         {
           "onHit": {
             "damage": 2.7,
+            "expl": 0.01,
             "fire": 0.01,
             "leak_oil": 0.5
           }
@@ -450,21 +452,24 @@
         {
           "onHit": {
             "damage": 30.0,
+            "expl": 0.05,
             "fire": 0.1,
             "leak_oil": 1.0
           }
         },
         {
           "onKill": {
-            "fire": 30.0,
-            "leak_oil": 10.0
+            "expl": 0.1,
+            "fire": 10.0,
+            "nothing": 90.0
           }
         },
         {
           "onKill": {
             "damage": 30.0,
+            "expl": 1.0,
             "fire": 44.0,
-            "leak_oil": 10.0
+            "nothing": 55.0
           }
         }
       ]
@@ -602,7 +607,6 @@
         {
           "onKill": {
             "damage": 50.0,
-            "fire": 5.0,
             "wing_l_dm": 1.0,
             "wing_r_dm": 1.0
           }
@@ -691,7 +695,6 @@
         {
           "onKill": {
             "damage": 50.0,
-            "fire": 5.0,
             "wing_l_dm": 1.0,
             "wing_r_dm": 1.0
           }
@@ -730,13 +733,13 @@
         {
           "onHit": {
             "damage": 40.0,
-            "tail_dm": 0.9
+            "tail_dm": 1.0
           }
         },
         {
           "onHit": {
             "damage": 50.0,
-            "tail_dm": 1.0
+            "expl": 1.0
           }
         },
         {
@@ -790,8 +793,7 @@
         {
           "onKill": {
             "damage": 50.0,
-            "tail_dm": 1.0,
-            "nothing": 1.0
+            "expl": 1.0
           }
         }
       ]
@@ -1003,7 +1005,11 @@
         "name": "spar1_l_dm",
         "onKill": {
           "nothing": 0.0,
-          "cut": 1.0
+          "part": {
+            "name": "wing1_l_dm",
+            "canCut": true,
+            "ratio": 1.0
+          }
         }
       }
     },
@@ -1012,7 +1018,11 @@
         "name": "spar1_r_dm",
         "onKill": {
           "nothing": 0.0,
-          "cut": 1.0
+          "part": {
+            "name": "wing1_r_dm",
+            "canCut": true,
+            "ratio": 1.0
+          }
         }
       }
     },
@@ -1021,7 +1031,11 @@
         "name": "spar2_l_dm",
         "onKill": {
           "nothing": 0.0,
-          "cut": 1.0
+          "part": {
+            "name": "wing2_l_dm",
+            "canCut": true,
+            "ratio": 1.0
+          }
         }
       }
     },
@@ -1030,7 +1044,11 @@
         "name": "spar2_r_dm",
         "onKill": {
           "nothing": 0.0,
-          "cut": 1.0
+          "part": {
+            "name": "wing2_r_dm",
+            "canCut": true,
+            "ratio": 1.0
+          }
         }
       }
     },
@@ -1039,7 +1057,11 @@
         "name": "spar_l_dm",
         "onKill": {
           "nothing": 0.0,
-          "cut": 1.0
+          "part": {
+            "name": "wing_l_dm",
+            "canCut": true,
+            "ratio": 1.0
+          }
         }
       }
     },
@@ -1048,7 +1070,11 @@
         "name": "spar_r_dm",
         "onKill": {
           "nothing": 0.0,
-          "cut": 1.0
+          "part": {
+            "name": "wing_r_dm",
+            "canCut": true,
+            "ratio": 1.0
+          }
         }
       }
     },
@@ -1259,15 +1285,19 @@
         {
           "onKill": {
             "damage": 30.0,
-            "fire": 15.0,
-            "leak": 25.0
+            "expl": 0.5,
+            "fire": 5.0,
+            "leak": 10.0,
+            "nothing": 85.0
           }
         },
         {
           "onKill": {
             "damage": 50.0,
-            "fire": 50.0,
-            "leak": 30.0
+            "expl": 1.0,
+            "fire": 20.0,
+            "leak": 50.0,
+            "nothing": 30.0
           }
         }
       ]
@@ -1307,15 +1337,19 @@
         {
           "onKill": {
             "damage": 30.0,
-            "fire": 15.0,
-            "leak": 25.0
+            "expl": 0.5,
+            "fire": 5.0,
+            "leak": 10.0,
+            "nothing": 85.0
           }
         },
         {
           "onKill": {
             "damage": 50.0,
-            "fire": 50.0,
-            "leak": 30.0
+            "expl": 1.0,
+            "fire": 20.0,
+            "leak": 50.0,
+            "nothing": 30.0
           }
         }
       ]

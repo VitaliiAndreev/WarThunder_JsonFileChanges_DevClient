@@ -258,8 +258,7 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false,
-        "isHelicoptersAllowed": false
+        "isShipsAllowed": false
       }
     },
     "cover_points": [],
@@ -656,6 +655,7 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
+            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -664,12 +664,8 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
-            "resetStrictSpawnIndex": false,
-            "forceCreate": false,
-            "replaceAreas": false,
             "target": "t1_airfield",
             "team": "A",
-            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -685,6 +681,7 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
+            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -693,12 +690,8 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
-            "resetStrictSpawnIndex": false,
-            "forceCreate": false,
-            "replaceAreas": false,
             "target": "t2_airfield",
             "team": "B",
-            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -958,8 +951,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_tanks_01_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -981,8 +972,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_tanks_02_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1004,8 +993,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_tanks_03_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1027,8 +1014,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_tanks_04_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1084,9 +1069,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_tanks_01_squad",
           "target": "t1_route_01_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1098,9 +1083,6 @@
         },
         "unitSetRoute": {
           "route": "t1_route_01",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_tanks_01_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_route_01_start"
@@ -1133,9 +1115,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_tanks_02_squad",
           "target": "t1_route_02_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1147,9 +1129,6 @@
         },
         "unitSetRoute": {
           "route": "t1_route_02",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_tanks_02_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_route_02_start"
@@ -1182,9 +1161,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_tanks_03_squad",
           "target": "t1_route_03_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1196,9 +1175,6 @@
         },
         "unitSetRoute": {
           "route": "t1_route_03",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_tanks_03_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_route_03_start"
@@ -1231,9 +1207,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_tanks_04_squad",
           "target": "t1_route_04_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1245,9 +1221,6 @@
         },
         "unitSetRoute": {
           "route": "t1_route_04",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_tanks_04_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_route_04_start"
@@ -1316,8 +1289,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_tanks_01_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1339,8 +1310,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_tanks_02_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1362,8 +1331,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_tanks_03_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1385,8 +1352,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_tanks_04_squad",
             "speed": 10.0,
             "delayForObjects": [2.0,5.0]
@@ -1442,9 +1407,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_tanks_01_squad",
           "target": "t2_route_01_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1456,9 +1421,6 @@
         },
         "unitSetRoute": {
           "route": "t2_route_01",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_tanks_01_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_route_01_start"
@@ -1491,9 +1453,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_tanks_02_squad",
           "target": "t2_route_02_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1505,9 +1467,6 @@
         },
         "unitSetRoute": {
           "route": "t2_route_02",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_tanks_02_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_route_02_start"
@@ -1540,9 +1499,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_tanks_03_squad",
           "target": "t2_route_03_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1554,9 +1513,6 @@
         },
         "unitSetRoute": {
           "route": "t2_route_03",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_tanks_03_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_route_03_start"
@@ -1589,9 +1545,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_tanks_04_squad",
           "target": "t2_route_04_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
@@ -1603,9 +1559,6 @@
         },
         "unitSetRoute": {
           "route": "t2_route_04",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_tanks_04_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_route_04_start"
@@ -1721,9 +1674,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "@t1_tank_ai_name",
           "target": "t2_quest_units_squad",
-          "object_var_value": 0,
           "compareCenters": false,
           "check_all_units": true
         }
@@ -1869,9 +1822,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "@t2_tank_ai_name",
           "target": "t1_quest_units_squad",
-          "object_var_value": 0,
           "compareCenters": false,
           "check_all_units": true
         }
@@ -1953,8 +1906,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_trucks_01_squad",
             "speed": 10.0,
             "delayForObjects": [1.0,2.0]
@@ -1976,8 +1927,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_trucks_02_squad",
             "speed": 10.0,
             "delayForObjects": [1.0,2.0]
@@ -1999,8 +1948,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t1_trucks_03_squad",
             "speed": 10.0,
             "delayForObjects": [1.0,2.0]
@@ -2044,8 +1991,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_trucks_01_squad",
             "speed": 10.0,
             "delayForObjects": [1.0,2.0]
@@ -2067,8 +2012,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_trucks_02_squad",
             "speed": 10.0,
             "delayForObjects": [1.0,2.0]
@@ -2090,8 +2033,6 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "t2_trucks_03_squad",
             "speed": 10.0,
             "delayForObjects": [1.0,2.0]
@@ -2165,18 +2106,15 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_trucks_01_squad",
           "target": "t1_base_01_route_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
       "actions": {
         "unitSetRoute": {
           "route": "t1_base_01_route",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_trucks_01_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_base_01_route_start"
@@ -2214,18 +2152,15 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_trucks_02_squad",
           "target": "t1_base_02_route_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
       "actions": {
         "unitSetRoute": {
           "route": "t1_base_02_route",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_trucks_02_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_base_02_route_start"
@@ -2263,18 +2198,15 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t1_trucks_03_squad",
           "target": "t1_base_03_route_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
       "actions": {
         "unitSetRoute": {
           "route": "t1_base_03_route",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t1_trucks_03_squad",
           "useForTriggerFiltered": true,
           "pos": "t1_base_03_route_start"
@@ -2402,18 +2334,15 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_trucks_01_squad",
           "target": "t2_base_01_route_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
       "actions": {
         "unitSetRoute": {
           "route": "t2_base_01_route",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_trucks_01_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_base_01_route_start"
@@ -2451,18 +2380,15 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_trucks_02_squad",
           "target": "t2_base_02_route_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
       "actions": {
         "unitSetRoute": {
           "route": "t2_base_02_route",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_trucks_02_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_base_02_route_start"
@@ -2500,18 +2426,15 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "t2_trucks_03_squad",
           "target": "t2_base_03_route_start",
-          "object_var_value": 0,
           "compareCenters": false
         }
       },
       "actions": {
         "unitSetRoute": {
           "route": "t2_base_03_route",
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "t2_trucks_03_squad",
           "useForTriggerFiltered": true,
           "pos": "t2_base_03_route_start"
@@ -2742,9 +2665,9 @@
           [-0.87269,0.0,-0.669638],
           [0.0,1.0,0.0],
           [0.608761,0.0,-0.793353],
-          [-3528.6,166.286,-6668.1]
+          [-3528.6,166.278,-6668.1]
         ],
-        "unit_class": "dynaf_universal_1line_b",
+        "unit_class": "dynAF_kh_gol_airfield_gumrak",
         "props": {
           "army": 2,
           "active": true
@@ -2971,9 +2894,6 @@
           [-13057.3,314.05,-16368.8]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_def_aaa_01"
           },
@@ -3216,9 +3136,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_def_aaa_01"
           },
           {
@@ -3250,9 +3167,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_20_points_squad"
           },
           {
@@ -3274,9 +3188,6 @@
           [10807.8,169.05,5732.95]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tanks_01_squad"
           },
@@ -3302,9 +3213,6 @@
           [7523.85,29.45,8444.4]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_20_points_squad"
           },
@@ -3423,9 +3331,6 @@
           [9446.8,217.85,5963.5]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_tanks_01_squad"
           },
@@ -6500,9 +6405,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_mgun_01"
           },
           {
@@ -6605,9 +6507,6 @@
           [9332.3,200.85,3003.65]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_mguns_squad"
           },
@@ -7714,9 +7613,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_mgun_01"
           },
           {
@@ -7819,9 +7715,6 @@
           [9080.8,200.85,3029.0]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_mguns_squad"
           },
@@ -8059,9 +7952,6 @@
           [12925.2,178.15,-4078.75]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tank_01_01"
           },
@@ -8730,9 +8620,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_tank_02_01"
           },
           {
@@ -8763,9 +8650,6 @@
           [11896.0,185.15,119.75]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tank_03_01"
           },
@@ -8798,9 +8682,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_tank_04_01"
           },
           {
@@ -8831,9 +8712,6 @@
           [10209.3,200.85,5597.9]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_tanks_squad"
           },
@@ -9270,9 +9148,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_tank_01_01"
           },
           {
@@ -9447,9 +9322,6 @@
           [9778.4,171.2,-3201.5]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_tank_02_01"
           },
@@ -9626,9 +9498,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_tank_03_01"
           },
           {
@@ -9804,9 +9673,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_tank_04_01"
           },
           {
@@ -9837,9 +9703,6 @@
           [9850.0,200.85,5529.55]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_tanks_squad"
           },
@@ -10087,9 +9950,6 @@
           [12039.8,177.4,4950.9]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_long_range_art_01"
           },
@@ -10349,9 +10209,6 @@
           [4419.6,72.1,-506.65]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_long_range_art_01"
           },
@@ -10887,9 +10744,6 @@
           [10422.2,68.3,3939.0]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_art_01"
           },
@@ -11450,9 +11304,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_art_01"
           },
           {
@@ -11507,7 +11358,6 @@
           [10095.8,125.6,4244.4]
         ],
         "props": {
-          "object_marking": 0,
           "squad_members": "t1_artillery_squad"
         }
       }
@@ -11522,7 +11372,6 @@
           [9760.4,125.6,4313.55]
         ],
         "props": {
-          "object_marking": 0,
           "squad_members": "t2_artillery_squad"
         }
       }
@@ -11534,9 +11383,9 @@
           [0.284702,0.0,1.06252],
           [0.0,1.0,0.0],
           [-0.965925,0.0,0.258819],
-          [14367.9,188.0,11840.7]
+          [14367.9,188.004,11840.7]
         ],
-        "unit_class": "dynaf_universal_1line_c",
+        "unit_class": "dynAF_kh_gol_airfield_gumrak",
         "props": {
           "army": 1,
           "active": true
@@ -11878,9 +11727,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_truck_01_01"
           },
           {
@@ -11920,9 +11766,6 @@
           [9827.4,179.15,2807.25]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_trucks_01_squad"
           },
@@ -12270,9 +12113,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_truck_02_01"
           },
           {
@@ -12312,9 +12152,6 @@
           [11204.6,177.9,3514.25]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_truck_03_01"
           },
@@ -13004,9 +12841,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_truck_01_01"
           },
           {
@@ -13046,9 +12880,6 @@
           [8452.3,168.25,3169.05]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_trucks_01_squad"
           },
@@ -13395,9 +13226,6 @@
           [7553.55,223.9,2984.4]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_truck_02_01"
           },
@@ -13763,9 +13591,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_truck_03_01"
           },
           {
@@ -14093,9 +13918,6 @@
           [10172.5,172.65,2551.2]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t1_big_aaa_01"
           },
@@ -14566,9 +14388,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_small_aaa_01"
           },
           {
@@ -14905,9 +14724,6 @@
           [8055.75,119.65,2470.3]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_big_aaa_01"
           },
@@ -15377,9 +15193,6 @@
           [8070.9,138.55,2947.35]
         ],
         "props": [
-          {
-            "object_marking": 0
-          },
           {
             "squad_members": "t2_small_aaa_01"
           },
@@ -16566,9 +16379,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t1_bunker_01"
           },
           {
@@ -16894,9 +16704,6 @@
         ],
         "props": [
           {
-            "object_marking": 0
-          },
-          {
             "squad_members": "t2_bunker_01"
           },
           {
@@ -17194,20 +17001,20 @@
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-504.558,0.0,-1883.05],
+        [-363.309,0.0,-1355.9],
         [0.0,350.0,0.0],
-        [568.645,0.0,-152.368],
-        [14375.9,158.85,11849.1]
+        [219.554,0.0,-58.8294],
+        [14530.2,158.85,12013.6]
       ],
       "props": []
     },
     "t2_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-1750.73,0.0,-1343.38],
+        [-1012.41,0.0,-776.85],
         [0.0,350.0,0.0],
-        [413.078,0.0,-538.339],
-        [-3498.59,154.0,-6659.22]
+        [138.37,0.0,-180.329],
+        [-3761.6,154.0,-6730.05]
       ],
       "props": []
     },

@@ -24,9 +24,6 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
-    "thermalExhaustFx": "tank_exhaust_nightvision"
-  },
-  {
     "dustFx": ""
   },
   {
@@ -426,7 +423,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 300.0,
+        "hp": 200.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -477,11 +474,13 @@
         "hidableInViewer": false,
         "drive_turret_v_dm": {
           "hp": 150.0,
-          "armorThrough": 15.0
+          "armorThrough": 1.0,
+          "armorThickness": 12.0
         },
         "drive_turret_h_dm": {
           "hp": 150.0,
-          "armorThrough": 15.0
+          "armorThrough": 1.0,
+          "armorThickness": 12.0
         },
         "drive_turret_v_01_dm": {
           "hp": 40.0,
@@ -499,6 +498,31 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
+        "cannon_breech_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 300.0,
+          "hp": 150.0
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 150.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 100.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 100.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 100.0
+        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -514,45 +538,19 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
+        },
+        "engine": {
+          "armorClass": "armor_tank_engine",
+          "hp": 100.0,
+          "armorThrough": 50.0,
+          "fireProtectionHp": 3.0,
+          "engine_dm": [],
+          "transmission_dm": []
         }
-      },
-      "cannon_breech": {
-        "armorClass": "tank_structural_steel",
-        "hp": 150.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "hidableInViewer": false,
-        "cannon_breech_dm": {
-          "restrainDamage": 0.5
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_03_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_04_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_05_dm": {
-          "armorThickness": 10.0
-        }
-      },
-      "power_block": {
-        "armorClass": "armor_tank_engine",
-        "hp": 100.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "restrainDamage": 0.5,
-        "engine_dm": [],
-        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 300.0,
+        "hp": 500.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,
@@ -679,6 +677,16 @@
         "ammo_body_l_08_dm": [],
         "ammo_body_l_09_dm": [],
         "ammo_body_l_10_dm": [],
+        "ammo_body_l_11_dm": [],
+        "ammo_body_l_12_dm": [],
+        "ammo_body_l_13_dm": [],
+        "ammo_body_l_14_dm": [],
+        "ammo_body_l_15_dm": [],
+        "ammo_body_l_16_dm": [],
+        "ammo_body_l_17_dm": [],
+        "ammo_body_l_18_dm": [],
+        "ammo_body_l_19_dm": [],
+        "ammo_body_l_20_dm": [],
         "ammo_body_r_01_dm": [],
         "ammo_body_r_02_dm": [],
         "ammo_body_r_03_dm": [],
@@ -693,7 +701,12 @@
         "ammo_body_r_12_dm": [],
         "ammo_body_r_13_dm": [],
         "ammo_body_r_14_dm": [],
-        "ammo_body_r_15_dm": []
+        "ammo_body_r_15_dm": [],
+        "ammo_body_r_16_dm": [],
+        "ammo_body_r_17_dm": [],
+        "ammo_body_r_18_dm": [],
+        "ammo_body_r_19_dm": [],
+        "ammo_body_r_20_dm": []
       },
       "fuel_tanks": {
         "armorClass": "tank_structural_steel",
@@ -1934,9 +1947,9 @@
             ]
           },
           "limitsTable": {
-            "lim1": [-180.0,-140.0,-4.0,20.0],
-            "lim2": [-140.0,140.0,-7.0,20.0],
-            "lim3": [140.0,180.0,-4.0,20.0]
+            "lim1": [-180.0,-140.0,-4.0,15.0],
+            "lim2": [-140.0,140.0,-10.0,15.0],
+            "lim3": [140.0,180.0,-4.0,15.0]
           }
         }
       },
@@ -2090,9 +2103,9 @@
         "Fuel": 1000.0,
         "TakeOff": 38100.0,
         "momentOfInertia": [2.5,2.5,6.0],
-        "CenterOfGravity": [0.22,0.5,0.0],
+        "CenterOfGravity": [0.05,0.5,0.0],
         "CenterOfGravityClampY": [0.0,0.7],
-        "AdvancedMass": false,
+        "AdvancedMass": true,
         "trackMass": 2500.0
       },
       "tracks": {
@@ -2799,9 +2812,9 @@
                   ]
                 },
                 "limitsTable": {
-                  "lim1": [-180.0,-140.0,-4.0,20.0],
-                  "lim2": [-140.0,140.0,-7.0,20.0],
-                  "lim3": [140.0,180.0,-4.0,20.0]
+                  "lim1": [-180.0,-140.0,-4.0,15.0],
+                  "lim2": [-140.0,140.0,-10.0,15.0],
+                  "lim3": [140.0,180.0,-4.0,15.0]
                 }
               }
             },
@@ -2949,7 +2962,6 @@
                 "emitter": "emtr_mortar_flame_01",
                 "emitterGenRange": [1,12],
                 "emitterGenFmt": "emtr_mortar_flame_%02d",
-                "ignoreLoaderPenalty": true,
                 "createGunEffects": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,

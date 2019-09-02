@@ -2,25 +2,24 @@
   "type": "radar",
   "transivers": {
     "search": {
-      "sideLobesAttenuation": -15.0,
       "power": 70000.0,
       "pulseWidth": 0.0,
       "prf": 2400.0,
-      "band": 5,
+      "band": 0,
       "rcs": 3.0,
       "range": 8500.0,
       "rangeMax": 14000.0,
       "backScatteringBandNum": 0,
       "antenna": {
         "angleHalfSens": 10.0,
-        "sideLobesSensitivity": -20.0
+        "sideLobesSensitivity": -25.0
       }
     }
   },
   "scanPatterns": {
     "searchMinBars": {
       "type": "pyramide",
-      "azimuthLimits": [-80.0,80.0],
+      "azimuthLimits": [-75.0,75.0],
       "elevationLimits": [-20.0,40.0],
       "rollStabLimit": 45.0,
       "period": 1.0,
@@ -32,7 +31,7 @@
     },
     "searchMidBars": {
       "type": "pyramide",
-      "azimuthLimits": [-80.0,80.0],
+      "azimuthLimits": [-75.0,75.0],
       "elevationLimits": [-20.0,40.0],
       "rollStabLimit": 45.0,
       "period": 2.0,
@@ -44,7 +43,7 @@
     },
     "searchMaxBars": {
       "type": "pyramide",
-      "azimuthLimits": [-80.0,80.0],
+      "azimuthLimits": [-75.0,75.0],
       "elevationLimits": [-20.0,40.0],
       "rollStabLimit": 45.0,
       "period": 4.0,
@@ -69,9 +68,9 @@
     }
   },
   "scopeRanges": {
-    "range0": 9300.0,
-    "range1": 18600.0,
-    "range2": 3700.0
+    "range1": 3700.0,
+    "range2": 9300.0,
+    "range3": 18600.0
   },
   "fsms": {
     "main": {
@@ -90,10 +89,6 @@
           "setCenterElevation": {
             "source": "constant",
             "value": 5.0
-          },
-          "setTargetDesignationRange": {
-            "azimuthRange": [0.0,0.0],
-            "distanceRange": [0.0,0.0]
           }
         },
         "setStandbyMode": {
@@ -194,14 +189,7 @@
         "addTarget": {
           "event": "targetDetected",
           "actions": {
-            "addTarget": [],
-            "updateActiveDetectedTarget": []
-          }
-        },
-        "switchSelectedTarget": {
-          "command": "switchTarget",
-          "actions": {
-            "setNextDetectedTargetActive": []
+            "addTarget": []
           }
         }
       }

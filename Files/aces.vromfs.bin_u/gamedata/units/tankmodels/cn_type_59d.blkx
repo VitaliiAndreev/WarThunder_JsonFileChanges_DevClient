@@ -24,9 +24,6 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
-    "thermalExhaustFx": "tank_exhaust_nightvision"
-  },
-  {
     "dustFx": ""
   },
   {
@@ -1673,10 +1670,6 @@
         },
         "turret_01_bottom_dm": {
           "armorThickness": 50.0
-        },
-        "turret_02_bottom_dm": {
-          "armorThickness": 60.0,
-          "armorClass": "CHA_tank"
         }
       },
       "CHA_armor": {
@@ -1784,10 +1777,6 @@
         "gun_barrel_01_dm": {
           "armorThrough": 10.0,
           "armorThickness": 5.0
-        },
-        "gun_barrel_02_dm": {
-          "armorThrough": 10.0,
-          "armorThickness": 5.0
         }
       },
       "body_shields": {
@@ -1796,18 +1785,22 @@
         "armorThickness": 5.0,
         "stopChanceOnDeadPart": 0.0,
         "createSecondaryShatters": false,
-        "ex_decor_r_01_dm": [],
-        "ex_decor_r_03_dm": [],
-        "ex_decor_r_04_dm": [],
-        "ex_decor_r_05_dm": [],
-        "ex_decor_r_06_dm": [],
-        "ex_decor_r_08_dm": [],
-        "ex_decor_l_01_dm": [],
-        "ex_decor_l_02_dm": [],
-        "ex_decor_l_04_dm": [],
-        "ex_decor_l_05_dm": [],
-        "ex_decor_l_06_dm": [],
-        "ex_armor_06_dm": []
+        "ex_armor_01_dm": {
+          "armorThickness": 40.0
+        },
+        "ex_armor_02_dm": {
+          "armorThickness": 40.0
+        },
+        "ex_armor_03_dm": {
+          "armorThickness": 40.0
+        },
+        "ex_armor_04_dm": {
+          "armorThickness": 40.0
+        },
+        "ex_armor_l_01_dm": [],
+        "ex_armor_l_07_dm": [],
+        "ex_armor_r_01_dm": [],
+        "ex_armor_r_07_dm": []
       },
       "body_side_screens": {
         "armorClass": "t_90_rubber_fabric_screens",
@@ -1823,11 +1816,7 @@
         "ex_armor_r_03_dm": [],
         "ex_armor_r_04_dm": [],
         "ex_armor_r_05_dm": [],
-        "ex_armor_r_06_dm": [],
-        "ex_armor_l_01_dm": [],
-        "ex_armor_l_07_dm": [],
-        "ex_armor_r_01_dm": [],
-        "ex_armor_r_07_dm": []
+        "ex_armor_r_06_dm": []
       },
       "era_turret": {
         "armorClass": "cn_era_type_59d_turret",
@@ -1907,104 +1896,59 @@
         "wheel_r_front_dm": [],
         "wheel_l_front_dm": []
       },
-      "submodule": {
-        "armorClass": "tank_traks",
-        "armorThickness": 20.0,
-        "hp": 200.0,
-        "ex_armor_05_dm": []
-      },
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 300.0,
+        "hp": 200.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
-      "equipment_body_turret": {
+      "equipment": {
         "armorClass": "tank_structural_steel",
-        "hp": 250.0,
-        "armorThickness": 2.0,
-        "armorThrough": 15.0,
-        "fireProtectionHp": 5.0,
-        "hidableInViewer": false,
-        "drive_turret_v_dm": {
-          "hp": 150.0,
-          "armorThrough": 15.0
-        },
-        "drive_turret_h_dm": {
-          "hp": 150.0,
-          "armorThrough": 15.0
-        },
-        "drive_turret_v_01_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
-        },
-        "drive_turret_h_01_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
-        },
-        "drive_turret_v_02_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
-        },
-        "drive_turret_h_02_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
-        },
-        "radiator_dm": {
-          "hp": 40.0,
-          "armorThrough": 5.0
-        },
-        "radiator_l_dm": {
-          "hp": 40.0,
-          "armorThrough": 5.0
-        },
-        "radiator_r_dm": {
-          "hp": 40.0,
-          "armorThrough": 5.0
-        },
-        "radio_station_dm": {
-          "hp": 20.0,
-          "armorThrough": 3.0
-        }
+        "hp": 150.0,
+        "armorThickness": 12.0,
+        "armorThrough": 1.0,
+        "fireProtectionHp": 15.0,
+        "explosionArmorQuality": 0.35,
+        "shatterArmorQuality": 0.35,
+        "drive_turret_v_dm": [],
+        "drive_turret_h_dm": [],
+        "radio_station_dm": []
       },
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
+        "armorThickness": 15.0,
+        "armorThrough": 300.0,
+        "fireProtectionHp": 10.0,
         "hidableInViewer": false,
-        "cannon_breech_dm": {
-          "restrainDamage": 0.5
-        },
+        "cannon_breech_dm": [],
         "cannon_breech_01_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_03_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_04_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_05_dm": {
-          "armorThickness": 10.0
+          "armorThrough": 15.0
         }
       },
-      "power_block": {
+      "radiators": {
+        "armorClass": "tank_structural_steel",
+        "hp": 50.0,
+        "armorThickness": 5.0,
+        "armorThrough": 15.0,
+        "fireProtectionHp": 5.0,
+        "radiator_dm": [],
+        "radiator_l_dm": [],
+        "radiator_r_dm": []
+      },
+      "engine": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 150.0,
+        "armorThickness": 2.0,
+        "armorThrough": 40.0,
         "fireProtectionHp": 5.0,
-        "restrainDamage": 0.5,
         "engine_dm": [],
         "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 300.0,
+        "hp": 500.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,
@@ -2053,18 +1997,6 @@
         "ammo_turret_41_dm": [],
         "ammo_turret_42_dm": [],
         "ammo_turret_43_dm": [],
-        "ammo_turret_44_dm": [],
-        "ammo_turret_45_dm": [],
-        "ammo_turret_46_dm": [],
-        "ammo_turret_47_dm": [],
-        "ammo_turret_48_dm": [],
-        "ammo_turret_49_dm": [],
-        "ammo_turret_50_dm": [],
-        "ammo_turret_51_dm": [],
-        "ammo_turret_52_dm": [],
-        "ammo_turret_53_dm": [],
-        "ammo_turret_54_dm": [],
-        "ammo_turret_55_dm": [],
         "ammo_body_dm": [],
         "ammo_body_01_dm": [],
         "ammo_body_02_dm": [],
@@ -2120,7 +2052,6 @@
         "ammo_body_52_dm": [],
         "ammo_body_53_dm": [],
         "ammo_body_54_dm": [],
-        "ammo_body_55_dm": [],
         "ammo_body_l_01_dm": [],
         "ammo_body_l_02_dm": [],
         "ammo_body_l_03_dm": [],
@@ -2131,6 +2062,16 @@
         "ammo_body_l_08_dm": [],
         "ammo_body_l_09_dm": [],
         "ammo_body_l_10_dm": [],
+        "ammo_body_l_11_dm": [],
+        "ammo_body_l_12_dm": [],
+        "ammo_body_l_13_dm": [],
+        "ammo_body_l_14_dm": [],
+        "ammo_body_l_15_dm": [],
+        "ammo_body_l_16_dm": [],
+        "ammo_body_l_17_dm": [],
+        "ammo_body_l_18_dm": [],
+        "ammo_body_l_19_dm": [],
+        "ammo_body_l_20_dm": [],
         "ammo_body_r_01_dm": [],
         "ammo_body_r_02_dm": [],
         "ammo_body_r_03_dm": [],
@@ -2145,14 +2086,20 @@
         "ammo_body_r_12_dm": [],
         "ammo_body_r_13_dm": [],
         "ammo_body_r_14_dm": [],
-        "ammo_body_r_15_dm": []
+        "ammo_body_r_15_dm": [],
+        "ammo_body_r_16_dm": [],
+        "ammo_body_r_17_dm": [],
+        "ammo_body_r_18_dm": [],
+        "ammo_body_r_19_dm": [],
+        "ammo_body_r_20_dm": []
       },
       "fuel_tanks": {
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -2213,7 +2160,7 @@
           "speedYaw": 10.0,
           "speedPitch": 4.5,
           "fireConeAngle": 1.0,
-          "bullets": 37,
+          "bullets": 34,
           "salvoAmount": 100.0,
           "ChainfireTime": 0.0,
           "DelayAfterShoot": 5.0,
@@ -2247,6 +2194,8 @@
             "verticalOmegaMult": 1.0,
             "verticalSpeedLimitKPH": 75.0,
             "speedFromVehicleVerticalMult": -1.0,
+            "speedYaw": 16.0,
+            "speedPitch": 4.5,
             "errorKPHToDegrees": [
               {
                 "row": [5.0,0.0]
@@ -2366,7 +2315,6 @@
           "blk": "gameData/Weapons/groundModels_weapons/12_7mm_DShK_user_machinegun.blk",
           "emitter": "bone_mg_aa_v_01",
           "flash": "emtr_mg_aa_flame_01",
-          "barrelDP": "gun_barrel_02_dm",
           "defaultYaw": 180.0,
           "defaultPitch": 10.0,
           "parkInDeadzone": false,
@@ -2388,7 +2336,7 @@
           "turret": {
             "head": "bone_mg_aa_h_01",
             "gun": "bone_mg_aa_v_01",
-            "gunnerDm": "loader_dm"
+            "gunnerDm": "commander_dm"
           },
           "limits": {
             "yaw": [-180.0,180.0],
@@ -2516,7 +2464,7 @@
                 "speedYaw": 10.0,
                 "speedPitch": 4.5,
                 "fireConeAngle": 1.0,
-                "bullets": 37,
+                "bullets": 34,
                 "salvoAmount": 100.0,
                 "ChainfireTime": 0.0,
                 "DelayAfterShoot": 5.0,
@@ -2550,6 +2498,8 @@
                   "verticalOmegaMult": 1.0,
                   "verticalSpeedLimitKPH": 75.0,
                   "speedFromVehicleVerticalMult": -1.0,
+                  "speedYaw": 16.0,
+                  "speedPitch": 4.5,
                   "errorKPHToDegrees": [
                     {
                       "row": [5.0,0.0]
@@ -2669,7 +2619,6 @@
                 "blk": "gameData/Weapons/groundModels_weapons/12_7mm_DShK_user_machinegun.blk",
                 "emitter": "bone_mg_aa_v_01",
                 "flash": "emtr_mg_aa_flame_01",
-                "barrelDP": "gun_barrel_02_dm",
                 "defaultYaw": 180.0,
                 "defaultPitch": 10.0,
                 "parkInDeadzone": false,
@@ -2691,7 +2640,7 @@
                 "turret": {
                   "head": "bone_mg_aa_h_01",
                   "gun": "bone_mg_aa_v_01",
-                  "gunnerDm": "loader_dm"
+                  "gunnerDm": "commander_dm"
                 },
                 "limits": {
                   "yaw": [-180.0,180.0],
@@ -2710,7 +2659,6 @@
                 "emitter": "emtr_mortar_flame_01",
                 "emitterGenRange": [1,8],
                 "emitterGenFmt": "emtr_mortar_flame_%02d",
-                "ignoreLoaderPenalty": true,
                 "createGunEffects": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
@@ -2752,36 +2700,12 @@
       "105mm_TYPE83_HEAT_ammo_pack": [],
       "105mm_TYPE83_HESH": [],
       "105mm_TYPE83_HESH_ammo_pack": [],
-      "modern_tank_laser_rangefinder": [],
-      "night_vision_system": {
-        "effects": {
-          "nightVision": {
-            "gunnerIr": {
-              "resolution": [800,600],
-              "lightMult": 8.0,
-              "ghosting": 0.75,
-              "noiseFactor": 0.2
-            },
-            "commanderIr": {
-              "resolution": [800,600],
-              "lightMult": 8.0,
-              "ghosting": 0.75,
-              "noiseFactor": 0.2
-            },
-            "driverIr": {
-              "resolution": [800,600],
-              "lightMult": 5.0,
-              "ghosting": 0.7,
-              "noiseFactor": 0.2
-            }
-          }
-        }
-      }
+      "modern_tank_laser_rangefinder": []
     }
   },
   {
     "user_skin": {
-      "name": "type_59d",
+      "name": "t_54_1951",
       "replace_tex": {
         "from": "ussr_camo_green*"
       }
@@ -2798,37 +2722,10 @@
   },
   {
     "skin": {
-      "name": "sand_green_black",
-      "replace_tex": {
-        "from": "ussr_camo_green*",
-        "to": "cn_camo_sand_green_black*"
-      }
-    }
-  },
-  {
-    "skin": {
-      "name": "fr_camo_jaune_sahara",
-      "replace_tex": {
-        "from": "ussr_camo_green*",
-        "to": "fr_camo_jaune_sahara*"
-      }
-    }
-  },
-  {
-    "skin": {
-      "name": "sand_ltgreen_dkgreen",
-      "replace_tex": {
-        "from": "ussr_camo_green*",
-        "to": "cn_camo_sand_ltgreen_dkgreen*"
-      }
-    }
-  },
-  {
-    "skin": {
       "name": "winter",
       "replace_tex": {
         "from": "ussr_camo_green*",
-        "to": "ussr_camo_winter*"
+        "to": "us_camo_winter_olive*"
       }
     }
   },

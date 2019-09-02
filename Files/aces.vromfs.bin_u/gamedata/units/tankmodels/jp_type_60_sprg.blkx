@@ -24,9 +24,6 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
-    "thermalExhaustFx": "tank_exhaust_nightvision"
-  },
-  {
     "dustFx": ""
   },
   {
@@ -409,13 +406,13 @@
           "armorThickness": 30.0
         },
         "body_front_dm": {
-          "armorThickness": 16.0
+          "armorThickness": 30.0
         },
         "superstructure_bottom_dm": {
           "armorThickness": 6.0
         },
         "superstructure_side_dm": {
-          "armorThickness": 9.0
+          "armorThickness": 15.0
         },
         "turret_02_bottom_dm": {
           "armorThickness": 38.0
@@ -430,7 +427,7 @@
           "armorThickness": 41.0
         },
         "body_top_dm": {
-          "armorThickness": 16.0
+          "armorThickness": 10.0
         },
         "turret_04_back_dm": {
           "armorThickness": 228.0
@@ -445,7 +442,7 @@
           "armorThickness": 10.0
         },
         "superstructure_top_dm": {
-          "armorThickness": 6.0
+          "armorThickness": 10.0
         },
         "superstructure_back_dm": {
           "armorThickness": 10.0
@@ -456,8 +453,17 @@
         "ex_armor_body_02_dm": {
           "armorThickness": 25.0
         },
+        "turret_01_top_dm": {
+          "armorThickness": 10.0
+        },
+        "turret_01_back_dm": {
+          "armorThickness": 10.0
+        },
         "turret_01_bottom_dm": {
           "armorThickness": 25.4
+        },
+        "turret_01_front_dm": {
+          "armorThickness": 127.0
         },
         "gun_mask_01_dm": {
           "armorThickness": 50.8
@@ -506,15 +512,6 @@
         },
         "ex_armor_body_01_dm": {
           "armorThickness": 9.0
-        },
-        "turret_01_back_dm": {
-          "armorThickness": 9.0
-        },
-        "turret_01_front_dm": {
-          "armorThickness": 14.0
-        },
-        "turret_01_top_dm": {
-          "armorThickness": 10.0
         }
       },
       "turret": {
@@ -667,7 +664,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 15.0,
-        "hp": 250.0,
+        "hp": 150.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -711,15 +708,20 @@
       },
       "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
-        "hp": 150.0,
+        "hp": 250.0,
+        "armorThickness": 2.0,
         "armorThrough": 15.0,
         "fireProtectionHp": 5.0,
         "hidableInViewer": false,
         "drive_turret_v_dm": {
-          "armorThrough": 15.0
+          "hp": 150.0,
+          "armorThrough": 1.0,
+          "armorThickness": 12.0
         },
         "drive_turret_h_dm": {
-          "armorThrough": 15.0
+          "hp": 150.0,
+          "armorThrough": 1.0,
+          "armorThickness": 12.0
         },
         "drive_turret_v_01_dm": {
           "hp": 40.0,
@@ -737,84 +739,59 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "drive_turret_v_03_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
+        "cannon_breech_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 300.0,
+          "hp": 150.0
         },
-        "drive_turret_h_03_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 150.0
         },
-        "drive_turret_v_04_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 100.0
         },
-        "drive_turret_h_04_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 100.0
         },
-        "drive_turret_v_05_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
-        },
-        "drive_turret_h_05_dm": {
-          "hp": 40.0,
-          "armorThrough": 15.0
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 15.0,
+          "hp": 100.0
         },
         "radiator_dm": {
-          "hp": 50.0,
+          "hp": 40.0,
           "armorThrough": 5.0
         },
         "radiator_l_dm": {
-          "hp": 50.0,
+          "hp": 40.0,
           "armorThrough": 5.0
         },
         "radiator_r_dm": {
-          "hp": 50.0,
+          "hp": 40.0,
           "armorThrough": 5.0
         },
         "radio_station_dm": {
-          "hp": 50.0,
+          "hp": 20.0,
           "armorThrough": 3.0
+        },
+        "engine": {
+          "armorClass": "armor_tank_engine",
+          "hp": 100.0,
+          "armorThrough": 50.0,
+          "fireProtectionHp": 3.0,
+          "engine_dm": [],
+          "transmission_dm": []
         }
-      },
-      "cannon_breech": {
-        "armorClass": "tank_structural_steel",
-        "hp": 150.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "hidableInViewer": false,
-        "cannon_breech_dm": {
-          "restrainDamage": 0.5
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_03_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_04_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_05_dm": {
-          "armorThickness": 10.0
-        }
-      },
-      "power_block": {
-        "armorClass": "armor_tank_engine",
-        "hp": 100.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "restrainDamage": 0.5,
-        "engine_dm": [],
-        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 300.0,
+        "hp": 500.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,
@@ -1920,63 +1897,41 @@
     }
   },
   {
-    "MetaParts": []
+    "MetaParts": {
+      "crew": [
+        {
+          "killAllPartsForDeath": true
+        },
+        {
+          "killNumPartsForDeath": 2
+        },
+        {
+          "part": "driver_dm"
+        },
+        {
+          "part": "gunner_dm"
+        },
+        {
+          "part": "commander_dm"
+        },
+        {
+          "effects": {
+            "killUnit": {
+              "nothing": 1.0
+            }
+          }
+        }
+      ]
+    }
   },
   {
     "class_tags": []
   },
   {
-    "ammoStowages": {
-      "ammo1": {
-        "weaponTrigger": "gunner0",
-        "removeLoadedAmmo": true,
-        "fatalFire": true,
-        "fatalExplosion": true,
-        "shells": {
-          "fireEvent": "ammo_fire",
-          "explosionEvent": "ammo_explosion",
-          "wreckedPartId": 0,
-          "ammo_body_01_dm": {
-            "count": 1
-          },
-          "ammo_body_02_dm": {
-            "count": 1
-          },
-          "ammo_body_03_dm": {
-            "count": 1
-          },
-          "ammo_body_04_dm": {
-            "count": 1
-          },
-          "ammo_body_05_dm": {
-            "count": 1
-          }
-        }
-      },
-      "ammo2": {
-        "weaponTrigger": "gunner1",
-        "removeLoadedAmmo": true,
-        "fatalFire": true,
-        "fatalExplosion": true,
-        "shells": {
-          "fireEvent": "ammo_fire",
-          "explosionEvent": "ammo_explosion",
-          "wreckedPartId": 0,
-          "ammo_body_06_dm": {
-            "count": 1
-          },
-          "ammo_body_07_dm": {
-            "count": 1
-          },
-          "ammo_body_08_dm": {
-            "count": 1
-          },
-          "ammo_body_09_dm": {
-            "count": 1
-          },
-          "ammo_body_10_dm": {
-            "count": 1
-          }
+    "ammoLoadDistribution": {
+      "primaryShells": {
+        "ammo_body_dm": {
+          "count": 10
         }
       }
     }
@@ -1986,7 +1941,7 @@
       {
         "Weapon": {
           "trigger": "gunner0",
-          "triggerGroup": "primary",
+          "triggerGroup": "secondary",
           "blk": "gameData/Weapons/groundModels_weapons/106mm_Type_60B_user_cannon.blk",
           "emitter": "bone_gun_barrel_01",
           "flash": "emtr_gun_flame_01",
@@ -2041,7 +1996,7 @@
       {
         "Weapon": {
           "trigger": "gunner1",
-          "triggerGroup": "secondary",
+          "triggerGroup": "primary",
           "blk": "gameData/Weapons/groundModels_weapons/106mm_Type_60B_user_cannon.blk",
           "emitter": "bone_gun_barrel_02",
           "flash": "emtr_gun_flame_02",

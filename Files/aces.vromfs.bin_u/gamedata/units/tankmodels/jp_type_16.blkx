@@ -24,9 +24,6 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
-    "thermalExhaustFx": "tank_exhaust_nightvision"
-  },
-  {
     "dustFx": ""
   },
   {
@@ -526,6 +523,24 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
+        "cannon_breech_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 300.0,
+          "hp": 150.0,
+          "fireProtectionHp": 10.0
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 100.0,
+          "hp": 150.0,
+          "fireProtectionHp": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0,
+          "armorThrough": 100.0,
+          "hp": 150.0,
+          "fireProtectionHp": 10.0
+        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -541,41 +556,15 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
+        },
+        "engine": {
+          "armorClass": "armor_tank_engine",
+          "hp": 100.0,
+          "armorThrough": 50.0,
+          "fireProtectionHp": 3.0,
+          "engine_dm": [],
+          "transmission_dm": []
         }
-      },
-      "cannon_breech": {
-        "armorClass": "tank_structural_steel",
-        "hp": 150.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "hidableInViewer": false,
-        "cannon_breech_dm": {
-          "restrainDamage": 0.5
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_03_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_04_dm": {
-          "armorThickness": 10.0
-        },
-        "cannon_breech_05_dm": {
-          "armorThickness": 10.0
-        }
-      },
-      "power_block": {
-        "armorClass": "armor_tank_engine",
-        "hp": 100.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "restrainDamage": 0.5,
-        "engine_dm": [],
-        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -1725,7 +1714,7 @@
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
-            "conditionDamage": 350.0,
+            "conditionDamage": 600.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1734,7 +1723,7 @@
           "effect": {
             "conditionDamageType": "cumulative",
             "expl": 1.0,
-            "conditionDamage": 500.0,
+            "conditionDamage": 800.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1767,6 +1756,9 @@
         },
         {
           "part": "gun_mask_04_dm"
+        },
+        {
+          "part": "turret_side_dm"
         },
         {
           "part": "turret_back_dm"
@@ -1802,7 +1794,7 @@
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
-            "conditionDamage": 350.0,
+            "conditionDamage": 600.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1811,7 +1803,7 @@
           "effect": {
             "conditionDamageType": "cumulative",
             "expl": 1.0,
-            "conditionDamage": 500.0,
+            "conditionDamage": 800.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -2764,13 +2756,8 @@
       "105mm_us_M416_Smoke_ammo_pack": [],
       "105mm_jp_Type93_APDS_FS": [],
       "105mm_jp_Type93_APDS_FS_ammo_pack": [],
-      "airstrike": [],
-      "improved_optics": {
-        "tier": 3
-      },
       "tank_smoke_screen_system_mod": {
-        "tier": 4,
-        "modClass": "protection",
+        "tier": 3,
         "effects": {
           "commonWeapons": [
             {
@@ -3010,9 +2997,6 @@
                   "emitterGenFmt": "emtr_mortar_flame_%02d"
                 },
                 {
-                  "ignoreLoaderPenalty": true
-                },
-                {
                   "createGunEffects": true
                 },
                 {
@@ -3090,27 +3074,6 @@
               ]
             }
           ]
-        }
-      },
-      "night_vision_system": {
-        "tier": 1,
-        "effects": {
-          "nightVision": {
-            "gunnerThermal": {
-              "resolution": [1200,800],
-              "noiseFactor": 0.04
-            },
-            "commanderThermal": {
-              "resolution": [1200,800],
-              "noiseFactor": 0.04
-            },
-            "driverIr": {
-              "resolution": [1200,800],
-              "lightMult": 7.0,
-              "ghosting": 0.6,
-              "noiseFactor": 0.2
-            }
-          }
         }
       }
     }

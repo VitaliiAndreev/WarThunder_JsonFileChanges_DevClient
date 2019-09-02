@@ -128,9 +128,6 @@
             "replaceAreas": false
           },
           {
-            "forceCreate": false
-          },
-          {
             "target": "artillery_spawn01"
           },
           {
@@ -277,7 +274,6 @@
           "route": "way_target_tank05",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "teleportToStart": true,
           "object": "target_tank06",
           "object_type": "isActive"
         },
@@ -294,48 +290,8 @@
         }
       }
     },
-    "spawn_plane_exist": {
-      "is_enabled": true,
-      "comments": "",
-      "props": {
-        "actionsType": "PERFORM_ONE_BY_ONE",
-        "conditionsType": "ALL",
-        "enableAfterComplete": false
-      },
-      "events": {
-        "periodicEvent": {
-          "time": 1.0
-        }
-      },
-      "conditions": [
-        {
-          "objectExists": {
-            "target": "flight_target01",
-            "type": "unit"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "spawn_area",
-            "type": "area"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "flight_point",
-            "type": "area"
-          }
-        }
-      ],
-      "actions": {
-        "triggerEnable": {
-          "target": "spawn_plane"
-        }
-      },
-      "else_actions": []
-    },
     "spawn_plane": {
-      "is_enabled": false,
+      "is_enabled": true,
       "comments": "",
       "props": {
         "actionsType": "PERFORM_ONE_BY_ONE",
@@ -391,55 +347,13 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
-          "fastClimb": false,
-          "destTimeMode": false,
           "object": "flight_target01"
         }
       },
       "else_actions": []
     },
-    "spawn_plane2_exist": {
-      "is_enabled": true,
-      "comments": "",
-      "props": {
-        "actionsType": "PERFORM_ONE_BY_ONE",
-        "conditionsType": "ALL",
-        "enableAfterComplete": false
-      },
-      "events": {
-        "periodicEvent": {
-          "time": 1.0
-        }
-      },
-      "conditions": [
-        {
-          "objectExists": {
-            "target": "flight_target02",
-            "type": "unit"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "spawn_area02",
-            "type": "area"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "flight_point02",
-            "type": "area"
-          }
-        }
-      ],
-      "actions": {
-        "triggerEnable": {
-          "target": "spawn_plane2"
-        }
-      },
-      "else_actions": []
-    },
     "spawn_plane2": {
-      "is_enabled": false,
+      "is_enabled": true,
       "comments": "",
       "props": {
         "actionsType": "PERFORM_ONE_BY_ONE",
@@ -495,8 +409,6 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
-          "fastClimb": false,
-          "destTimeMode": false,
           "object": "flight_target02"
         }
       },

@@ -62,7 +62,7 @@
     "hasRudderTrimControl": true,
     "hasRudderTrimGroundControl": false,
     "hasFlapsControl": true,
-    "hasTakeoffFlapsPosition": true,
+    "numFlapsPositions": 3,
     "hasAirbrake": false,
     "hasGearControl": true,
     "hasArrestorControl": false,
@@ -71,6 +71,8 @@
     "hasWheelBrakeControl": true,
     "hasLockGearControl": false,
     "hasCombatFlapsPosition": true,
+    "isAirBrakeAvailableOnGround": false,
+    "hasIndependentAirbrakesAndFlaps": true,
     "bHasBoosterSwitcher": true
   },
   "Areas": {
@@ -538,6 +540,7 @@
       "OilMinTemp": 0.0,
       "EffectiveRadSpeed": 250.0,
       "IneffectiveRadMult": 0.8,
+      "AdvancedThermodynamics": true,
       "NoIgnitionWaterHeatProducingFactor": 0.15,
       "WaterTemperatureInertia": 6.2993,
       "WaterAirDensityPower": -2.0,
@@ -852,6 +855,7 @@
       "OilMinTemp": 0.0,
       "EffectiveRadSpeed": 250.0,
       "IneffectiveRadMult": 0.8,
+      "AdvancedThermodynamics": true,
       "NoIgnitionWaterHeatProducingFactor": 0.15,
       "WaterTemperatureInertia": 6.2993,
       "WaterAirDensityPower": -2.0,
@@ -1112,6 +1116,8 @@
       "NitroConsumption": 0.0
     },
     "Temperature": {
+      "ConvertThermodynamics": false,
+      "AdvancedThermodynamics": false,
       "RadiatorAuto": true,
       "TempChangeSpeed": 0.01,
       "WaterMaxRPMTemp": 680.0,

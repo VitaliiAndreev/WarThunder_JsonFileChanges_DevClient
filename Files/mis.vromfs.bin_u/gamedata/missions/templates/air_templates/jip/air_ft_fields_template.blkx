@@ -309,7 +309,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t1_airfields_squad",
             "team": "A",
             "tags": {
@@ -338,7 +337,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t2_airfields_squad",
             "team": "B",
             "tags": {
@@ -367,7 +365,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t1_airfield_03_01",
             "team": "A",
             "tags": {
@@ -376,10 +373,7 @@
               "type_assault": false,
               "helicopter": true,
               "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": false,
-              "ship": false,
-              "boat": false
+              "type_utility_helicopter": true
             }
           }
         },
@@ -399,7 +393,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t1_airfield_03_02",
             "team": "A",
             "tags": {
@@ -408,10 +401,7 @@
               "type_assault": false,
               "helicopter": true,
               "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": false,
-              "ship": false,
-              "boat": false
+              "type_utility_helicopter": true
             }
           }
         },
@@ -431,7 +421,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t1_airfield_03_03",
             "team": "A",
             "tags": {
@@ -440,10 +429,7 @@
               "type_assault": false,
               "helicopter": true,
               "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": false,
-              "ship": false,
-              "boat": false
+              "type_utility_helicopter": true
             }
           }
         },
@@ -463,7 +449,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t2_airfield_03_01",
             "team": "B",
             "tags": {
@@ -472,10 +457,7 @@
               "type_assault": false,
               "helicopter": true,
               "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": false,
-              "ship": false,
-              "boat": false
+              "type_utility_helicopter": true
             }
           }
         },
@@ -495,7 +477,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t2_airfield_03_02",
             "team": "B",
             "tags": {
@@ -504,10 +485,7 @@
               "type_assault": false,
               "helicopter": true,
               "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": false,
-              "ship": false,
-              "boat": false
+              "type_utility_helicopter": true
             }
           }
         },
@@ -527,7 +505,6 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
-            "forceCreate": false,
             "target": "ft_t2_airfield_03_03",
             "team": "B",
             "tags": {
@@ -536,10 +513,7 @@
               "type_assault": false,
               "helicopter": true,
               "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": false,
-              "ship": false,
-              "boat": false
+              "type_utility_helicopter": true
             }
           }
         }
@@ -728,16 +702,12 @@
         {
           "__moAddMissionObjective": {
             "target": "ft_t1_find_enemy_airfield",
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "object_type": "isAlive"
           }
         },
         {
           "__moAddMissionObjective": {
             "target": "ft_t2_find_enemy_airfield",
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "object_type": "isAlive"
           }
         }
@@ -1803,9 +1773,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "@ft_distance_check_t1_airfield_name",
             "target": "@ft_generate_t1_target_name",
-            "object_var_value": 0,
             "compareCenters": false
           },
           "varCompareInt": {
@@ -1973,19 +1943,15 @@
               "onlyOnePlayerPerSpawnPoint": false,
               "resetStrictSpawnIndex": false,
               "replaceAreas": true,
-              "forceCreate": false,
               "target": "@ft_generate_t1_airfield_name",
               "team": "A",
               "separate_fuel_time": true,
               "modular_airfield": true,
               "tags": {
                 "none_can_spawn": false,
-                "helicopter": false,
                 "tank": false,
                 "artillery": false,
-                "aaa": false,
-                "ship": false,
-                "boat": false
+                "aaa": false
               }
             }
           },
@@ -3416,9 +3382,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "@ft_distance_check_t2_airfield_name",
             "target": "@ft_generate_t2_target_name",
-            "object_var_value": 0,
             "compareCenters": false
           },
           "varCompareInt": {
@@ -3610,19 +3576,15 @@
               "onlyOnePlayerPerSpawnPoint": false,
               "resetStrictSpawnIndex": false,
               "replaceAreas": true,
-              "forceCreate": false,
               "target": "@ft_generate_t2_airfield_name",
               "team": "B",
               "separate_fuel_time": true,
               "modular_airfield": true,
               "tags": {
                 "none_can_spawn": false,
-                "helicopter": false,
                 "tank": false,
                 "artillery": false,
-                "aaa": false,
-                "ship": false,
-                "boat": false
+                "aaa": false
               }
             }
           },
@@ -4522,8 +4484,6 @@
           },
           "moAddMissionObjective": {
             "target": "@ft_add_objective_t1_objective_name",
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "unit_or_area": "@ft_add_objective_t2_zone_name"
           }
         },
@@ -4620,8 +4580,6 @@
           },
           "moAddMissionObjective": {
             "target": "@ft_add_objective_t2_objective_name",
-            "object_var_comp_op": "equal",
-            "object_var_name": "",
             "unit_or_area": "@ft_add_objective_t1_zone_name"
           }
         },
@@ -4713,8 +4671,6 @@
             "moSetObjectiveStatus": {
               "target": "@ft_complete_objective_t1_objective_name",
               "status": 2,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "extendedEnding": true,
               "team": "A",
               "unit_or_area": "@ft_complete_objective_t2_zone_name"
@@ -4729,8 +4685,6 @@
             "moSetObjectiveStatus": {
               "target": "@ft_complete_objective_t1_objective_name",
               "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "team": "A",
               "object_type": "isAlive"
             }
@@ -4824,8 +4778,6 @@
             "moSetObjectiveStatus": {
               "target": "@ft_complete_objective_t2_objective_name",
               "status": 2,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "extendedEnding": true,
               "team": "A",
               "unit_or_area": "@ft_complete_objective_t1_zone_name"
@@ -4840,8 +4792,6 @@
             "moSetObjectiveStatus": {
               "target": "@ft_complete_objective_t2_objective_name",
               "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "team": "Both",
               "object_type": "isAlive"
             }
@@ -4915,8 +4865,6 @@
           {
             "__moAddMissionObjective": {
               "target": "ft_t1_find_enemy_airfield",
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "object_type": "isAlive"
             }
           }
@@ -4989,8 +4937,6 @@
           {
             "__moAddMissionObjective": {
               "target": "ft_t2_find_enemy_airfield",
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "object_type": "isAlive"
             }
           }
@@ -5021,8 +4967,6 @@
             "moSetObjectiveStatus": {
               "target": "ft_t1_find_enemy_airfield",
               "status": 2,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "extendedEnding": true,
               "team": "A",
               "object_type": "isAlive"
@@ -5048,8 +4992,6 @@
             "moSetObjectiveStatus": {
               "target": "ft_t1_find_enemy_airfield",
               "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "team": "A",
               "object_type": "isAlive"
             }
@@ -5092,8 +5034,6 @@
             "moSetObjectiveStatus": {
               "target": "ft_t2_find_enemy_airfield",
               "status": 2,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "extendedEnding": true,
               "team": "B",
               "object_type": "isAlive"
@@ -5119,8 +5059,6 @@
             "moSetObjectiveStatus": {
               "target": "ft_t2_find_enemy_airfield",
               "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
               "team": "B",
               "object_type": "isAlive"
             }
@@ -6709,10 +6647,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "@ft_detect_t1_bomb_target_name",
             "target": "t2_players_squad",
             "var": "ft_t2_detection_range",
-            "object_var_value": 0,
             "compareCenters": false
           }
         },
@@ -7731,10 +7669,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "@ft_detect_t2_bomb_target_name",
             "target": "t1_players_squad",
             "var": "ft_t1_detection_range",
-            "object_var_value": 0,
             "compareCenters": false
           }
         },
@@ -9734,8 +9672,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "@st_t1_generate_name",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "@st_t1_generate_name"
           }
         },
         "actions": [
@@ -9812,8 +9750,8 @@
               "object_var_comp_op": "equal",
               "object_var_value": 0,
               "stabInfluenceEnabled": true,
-              "realisticAI": false,
-              "object": "@st_t1_generate_name"
+              "object": "@st_t1_generate_name",
+              "realisticAI": false
             }
           },
           {
@@ -9832,8 +9770,6 @@
               "object_var_name": "",
               "object_var_comp_op": "equal",
               "object_var_value": 0,
-              "fastClimb": false,
-              "destTimeMode": false,
               "object": "@st_t1_generate_name",
               "altRange": [2500.0,3000.0]
             }
@@ -10057,8 +9993,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "@st_t1_despawn_name",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "@st_t1_despawn_name"
           }
         },
         "actions": {
@@ -10091,8 +10027,6 @@
             "shouldKeepFormation": false,
             "teleportHeightValue": 1000.0,
             "horizontalDirectionForTeleport": true,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "@st_t1_despawn_name"
           }
         },
@@ -10273,8 +10207,8 @@
             "value": 1,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "@st_t2_generate_name",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "@st_t2_generate_name"
           }
         },
         "actions": [
@@ -10351,8 +10285,8 @@
               "object_var_comp_op": "equal",
               "object_var_value": 0,
               "stabInfluenceEnabled": true,
-              "realisticAI": false,
-              "object": "@st_t2_generate_name"
+              "object": "@st_t2_generate_name",
+              "realisticAI": false
             }
           },
           {
@@ -10371,8 +10305,6 @@
               "object_var_name": "",
               "object_var_comp_op": "equal",
               "object_var_value": 0,
-              "fastClimb": false,
-              "destTimeMode": false,
               "object": "@st_t2_generate_name",
               "altRange": [2500.0,3000.0]
             }
@@ -10590,8 +10522,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object": "@st_t2_despawn_name",
-            "object_var_value": 0
+            "object_var_value": 0,
+            "object": "@st_t2_despawn_name"
           }
         },
         "actions": {
@@ -10624,8 +10556,6 @@
             "shouldKeepFormation": false,
             "teleportHeightValue": 1000.0,
             "horizontalDirectionForTeleport": true,
-            "fastClimb": false,
-            "destTimeMode": false,
             "object": "@st_t2_despawn_name"
           }
         },
@@ -11435,8 +11365,6 @@
                 "object_var_name": "",
                 "object_var_comp_op": "equal",
                 "object_var_value": 0,
-                "fastClimb": false,
-                "destTimeMode": false,
                 "object": "@st_rearm_t1_sentinell_name",
                 "altRange": [2500.0,3000.0]
               }
@@ -11528,8 +11456,6 @@
                 "object_var_name": "",
                 "object_var_comp_op": "equal",
                 "object_var_value": 0,
-                "fastClimb": false,
-                "destTimeMode": false,
                 "object": "@st_rearm_t2_sentinell_name",
                 "altRange": [2500.0,3000.0]
               }
@@ -11898,7 +11824,6 @@
               "onlyOnePlayerPerSpawnPoint": false,
               "resetStrictSpawnIndex": false,
               "replaceAreas": true,
-              "forceCreate": false,
               "target": "@ft_damage_t1_airfield_name",
               "team": "A",
               "separate_fuel_time": true,
@@ -11907,9 +11832,7 @@
                 "none_can_spawn": true,
                 "tank": false,
                 "artillery": false,
-                "aaa": false,
-                "ship": false,
-                "boat": false
+                "aaa": false
               }
             }
           },
@@ -11946,7 +11869,6 @@
               "onlyOnePlayerPerSpawnPoint": false,
               "resetStrictSpawnIndex": false,
               "replaceAreas": true,
-              "forceCreate": false,
               "target": "@ft_damage_t1_airfield_name",
               "team": "A",
               "separate_fuel_time": true,
@@ -11955,9 +11877,7 @@
                 "none_can_spawn": false,
                 "tank": false,
                 "artillery": false,
-                "aaa": false,
-                "ship": false,
-                "boat": false
+                "aaa": false
               }
             }
           },
@@ -12884,7 +12804,6 @@
               "onlyOnePlayerPerSpawnPoint": false,
               "resetStrictSpawnIndex": false,
               "replaceAreas": true,
-              "forceCreate": false,
               "target": "@ft_damage_t2_airfield_name",
               "team": "B",
               "separate_fuel_time": true,
@@ -12893,9 +12812,7 @@
                 "none_can_spawn": true,
                 "tank": false,
                 "artillery": false,
-                "aaa": false,
-                "ship": false,
-                "boat": false
+                "aaa": false
               }
             }
           },
@@ -12932,7 +12849,6 @@
               "onlyOnePlayerPerSpawnPoint": false,
               "resetStrictSpawnIndex": false,
               "replaceAreas": true,
-              "forceCreate": false,
               "target": "@ft_damage_t2_airfield_name",
               "team": "B",
               "separate_fuel_time": true,
@@ -12941,9 +12857,7 @@
                 "none_can_spawn": false,
                 "tank": false,
                 "artillery": false,
-                "aaa": false,
-                "ship": false,
-                "boat": false
+                "aaa": false
               }
             }
           },
