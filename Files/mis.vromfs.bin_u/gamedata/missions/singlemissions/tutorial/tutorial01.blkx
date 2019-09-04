@@ -968,12 +968,6 @@
               "setStatus": "enable"
             },
             {
-              "control": "ID_ELEVATOR_UP"
-            },
-            {
-              "control": "ID_ELEVATOR_DOWN"
-            },
-            {
               "control": "AXIS_ELEVATOR"
             },
             {
@@ -987,12 +981,6 @@
               "setStatus": "enable"
             },
             {
-              "control": "ID_AILERONS_LEFT"
-            },
-            {
-              "control": "ID_AILERONS_RIGHT"
-            },
-            {
               "control": "AXIS_AILERONS"
             },
             {
@@ -1004,12 +992,6 @@
           "playerControls": [
             {
               "setStatus": "enable"
-            },
-            {
-              "control": "ID_RUDDER_LEFT"
-            },
-            {
-              "control": "ID_RUDDER_RIGHT"
             },
             {
               "control": "AXIS_RUDDER"
@@ -1060,12 +1042,6 @@
         "playerControls": [
           {
             "setStatus": "enable"
-          },
-          {
-            "control": "ID_ELEVATOR_UP"
-          },
-          {
-            "control": "ID_ELEVATOR_DOWN"
           },
           {
             "control": "AXIS_ELEVATOR"
@@ -1124,18 +1100,6 @@
             "value": 0.7,
             "property": "elevator"
           }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_ELEVATOR_UP",
-            "gamepadControls": false
-          }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_ELEVATOR_DOWN",
-            "gamepadControls": false
-          }
         }
       ],
       "actions": {
@@ -1185,12 +1149,6 @@
         "playerControls": [
           {
             "setStatus": "enable"
-          },
-          {
-            "control": "ID_AILERONS_LEFT"
-          },
-          {
-            "control": "ID_AILERONS_RIGHT"
           },
           {
             "control": "AXIS_AILERONS"
@@ -1249,18 +1207,6 @@
             "value": -0.7,
             "property": "ailerons"
           }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_AILERONS_LEFT",
-            "gamepadControls": false
-          }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_AILERONS_RIGHT",
-            "gamepadControls": false
-          }
         }
       ],
       "actions": {
@@ -1310,12 +1256,6 @@
         "playerControls": [
           {
             "setStatus": "enable"
-          },
-          {
-            "control": "ID_RUDDER_LEFT"
-          },
-          {
-            "control": "ID_RUDDER_RIGHT"
           },
           {
             "control": "AXIS_RUDDER"
@@ -1373,18 +1313,6 @@
             "func": "less",
             "value": -0.4,
             "property": "rudder"
-          }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_RUDDER_LEFT",
-            "gamepadControls": false
-          }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_RUDDER_RIGHT",
-            "gamepadControls": false
           }
         }
       ],
@@ -1856,20 +1784,10 @@
           "dialog": "tutorial_m1_d04_1",
           "subtitles": true
         },
-        "playerControls": [
-          {
-            "setStatus": "enable"
-          },
-          {
-            "control": "ID_THROTTLE_MORE"
-          },
-          {
-            "control": "ID_THROTTLE_LESS"
-          },
-          {
-            "control": "AXIS_THROTTLE"
-          }
-        ],
+        "playerControls": {
+          "setStatus": "enable",
+          "control": "AXIS_THROTTLE"
+        },
         "playHint": {
           "hintType": "tutorialHint",
           "name": "hints/tutorial_throttle01",
@@ -3267,18 +3185,6 @@
         }
       },
       "conditions": [
-        {
-          "playerShortcutPressed": {
-            "control": "ID_RUDDER_LEFT",
-            "gamepadControls": false
-          }
-        },
-        {
-          "playerShortcutPressed": {
-            "control": "ID_RUDDER_RIGHT",
-            "gamepadControls": false
-          }
-        },
         {
           "playerAxisValueReached": {
             "value": 0.3,
