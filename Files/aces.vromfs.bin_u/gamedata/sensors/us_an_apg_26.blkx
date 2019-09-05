@@ -23,7 +23,8 @@
       "azimuthLimits": [-60.0,60.0],
       "elevationLimits": [-60.0,60.0],
       "period": 0.25,
-      "width": 4.7
+      "width": 4.7,
+      "indicate": true
     },
     "track": {
       "type": "no",
@@ -120,62 +121,99 @@
           }
         }
       },
-      "transitions": {
-        "switchOn": {
-          "stateFrom": "init",
-          "event": "init",
-          "stateTo": "standby",
-          "actions": {
-            "init": [],
-            "setStandbyMode": []
+      "transitions": [
+        {
+          "switchOn": {
+            "stateFrom": "init",
+            "event": "init",
+            "stateTo": "standby",
+            "actions": {
+              "init": [],
+              "setStandbyMode": []
+            }
           }
         },
-        "lock": {
-          "stateFrom": "standby",
-          "command": "selectTarget",
-          "stateTo": "lock",
-          "actions": {
-            "setLockMode": []
+        {
+          "lock": {
+            "stateFrom": "standby",
+            "command": "selectTarget",
+            "stateTo": "lock",
+            "actions": {
+              "setLockMode": []
+            }
           }
         },
-        "track": {
-          "stateFrom": "lock",
-          "event": "targetDetected",
-          "stateTo": "track",
-          "actions": {
-            "setFsmActive": {
-              "fsm": "lock",
-              "active": false
+        {
+          "track": {
+            "stateFrom": "lock",
+            "event": "targetDetected",
+            "stateTo": "track",
+            "actions": {
+              "setFsmActive": {
+                "fsm": "lock",
+                "active": false
+              },
+              "setTrackMode": []
+            }
+          }
+        },
+        {
+          "finishedTrack": {
+            "stateFrom": "track",
+            "event": "activeTargetOfInterestInertialTimeOut",
+            "stateTo": "lock",
+            "actions": [
+              {
+                "setFsmActive": {
+                  "fsm": "track",
+                  "active": false
+                }
+              },
+              {
+                "setFsmActive": {
+                  "fsm": "lock",
+                  "active": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "track": [
+            {
+              "stateFrom": "lock"
             },
-            "setTrackMode": []
-          }
-        },
-        "failedLock": {
-          "stateFrom": "lock",
-          "event": "scanFinished",
-          "stateTo": "standby",
-          "actions": {
-            "setFsmActive": {
-              "fsm": "lock",
-              "active": false
+            {
+              "stateFrom": "track"
             },
-            "setStandbyMode": []
-          }
-        },
-        "finishedTrack": {
-          "stateFrom": "track",
-          "event": "activeTargetOfInterestInertialTimeOut",
-          "command": "selectTarget",
-          "stateTo": "standby",
-          "actions": {
-            "setFsmActive": {
-              "fsm": "track",
-              "active": false
+            {
+              "command": "selectTarget"
             },
-            "setStandbyMode": []
-          }
+            {
+              "stateTo": "standby"
+            },
+            {
+              "actions": [
+                {
+                  "setFsmActive": {
+                    "fsm": "lock",
+                    "active": false
+                  }
+                },
+                {
+                  "setFsmActive": {
+                    "fsm": "track",
+                    "active": false
+                  }
+                },
+                {
+                  "setStandbyMode": []
+                }
+              ]
+            }
+          ]
         }
-      }
+      ]
     },
     "lock": {
       "stateInit": "lock",

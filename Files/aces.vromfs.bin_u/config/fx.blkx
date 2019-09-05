@@ -1591,8 +1591,8 @@
     "numReserved": 3,
     "onePointNumber": 80,
     "sfxPath": "tanks/explosions_tanks",
-    "sfxPathStudio": "ground/explosions",
-    "sfxEvent": "explosion_metal",
+    "sfxPathStudio": "naval/effects",
+    "sfxEvent": "bullethit_metal",
     "soundEnableDistance": 1000.0
   },
   "ps_hit_150mm_cumulative": {
@@ -1603,8 +1603,8 @@
     "numReserved": 3,
     "onePointNumber": 80,
     "sfxPath": "tanks/explosions_tanks",
-    "sfxPathStudio": "ground/explosions",
-    "sfxEvent": "explosion_metal",
+    "sfxPathStudio": "naval/effects",
+    "sfxEvent": "bullethit_metal",
     "soundEnableDistance": 1000.0
   },
   "cannon_hit_ship_ap": {
@@ -1614,8 +1614,8 @@
     "numReserved": 3,
     "onePointNumber": 80,
     "sfxPath": "tanks/explosions_tanks",
-    "sfxPathStudio": "ground/explosions",
-    "sfxEvent": "explosion_metal",
+    "sfxPathStudio": "naval/effects",
+    "sfxEvent": "bullethit_metal",
     "soundEnableDistance": 1000.0
   },
   "autocannon_hit_ship_he": {
@@ -1625,8 +1625,8 @@
     "numReserved": 3,
     "onePointNumber": 80,
     "sfxPath": "tanks/explosions_tanks",
-    "sfxPathStudio": "ground/explosions",
-    "sfxEvent": "explosion_metal",
+    "sfxPathStudio": "naval/effects",
+    "sfxEvent": "bullethit_metal",
     "soundEnableDistance": 1000.0
   },
   "aerobatics_smoke_fx_names": [
@@ -1988,7 +1988,6 @@
   "jet_exhaust": {
     "fx": "jet_exhaust_fx",
     "lifeTime": 10.0,
-    "alphaHeightRange": [50.0,200.0],
     "isTrail": true,
     "nonPlayerFadeDistScale": 4.0,
     "playerFadeDistScale": 1.5,
@@ -2001,8 +2000,6 @@
   "jet_start_exhaust": {
     "fx": "jet_start_exhaust_fx",
     "lifeTime": 10.0,
-    "alphaHeightRange": [50.0,200.0],
-    "isTrail": true,
     "nonPlayerFadeDistScale": 4.0,
     "playerFadeDistScale": 1.5,
     "sortDistanceOffset": 20.0,
@@ -2014,7 +2011,6 @@
   "jet_afterburner_exhaust": {
     "fx": "jet_afterburner_exhaust_fx",
     "lifeTime": 10.0,
-    "alphaHeightRange": [50.0,200.0],
     "isTrail": true,
     "nonPlayerFadeDistScale": 4.0,
     "playerFadeDistScale": 1.5,
@@ -2432,6 +2428,7 @@
     "fps": 45.0,
     "numFrames": 4,
     "enginePowerScale": [0.2,1.0],
+    "enginePowerFullScale": [0.65,1.0],
     "randomScale": [0.0,0.0]
   },
   "longlife_aerobatics_smoke_wing_1": {
@@ -4040,6 +4037,15 @@
     "sfxPathStudio": "aircraft/effects"
   },
   "haze": {
+    "fx": "trail_haze_fx",
+    "lifeTime": 0.0,
+    "isTrail": true,
+    "numInstances": 12,
+    "numReserved": 5,
+    "sfxPath": "sounds/effects",
+    "sfxPathStudio": "aircraft/effects"
+  },
+  "jet_haze": {
     "fx": "trail_haze_fx",
     "lifeTime": 0.0,
     "isTrail": true,

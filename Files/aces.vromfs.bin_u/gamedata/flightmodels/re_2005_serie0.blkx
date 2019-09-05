@@ -37,6 +37,19 @@
         "hp": 15.0
       }
     },
+    "armor8": {
+      "armor2_dm": {
+        "hp": 40.0
+      },
+      "armor3_dm": {
+        "hp": 40.0
+      }
+    },
+    "glass50": {
+      "armor1_dm": {
+        "hp": 40.0
+      }
+    },
     "armor_engine_light": {
       "engine1_dm": {
         "genericDamageMult": 1.6,
@@ -318,6 +331,21 @@
           }
         }
       ]
+    },
+    {
+      "part": {
+        "name": "armor1_dm"
+      }
+    },
+    {
+      "part": {
+        "name": "armor2_dm"
+      }
+    },
+    {
+      "part": {
+        "name": "armor3_dm"
+      }
     },
     {
       "part": {
@@ -1940,6 +1968,67 @@
   "cockpit": {
     "headPos": [-1.14,0.59,-0.044],
     "headPosOnShooting": [-1.14,0.59,-0.044],
+    "lightPos": [0.107481,0.483388,-0.018731],
+    "lightColor": [0.0,0.1,0.0],
+    "lightRadius": 0.15,
+    "lightPos1": [0.110798,0.14757,-0.135901],
+    "lightColor1": [0.0,0.1,0.0],
+    "lightRadius1": 0.15,
+    "lightPos2": [0.100744,0.152898,0.067329],
+    "lightColor2": [0.0,0.1,0.0],
+    "lightRadius2": 0.15,
+    "lightPos3": [0.066232,0.017011,0.309821],
+    "lightColor3": [0.0,0.1,0.0],
+    "lightRadius3": 0.15,
+    "devices": {
+      "stick_elevator": [-1.0,1.0],
+      "stick_ailerons": [-1.0,1.0],
+      "pedals": [-1.0,1.0],
+      "pedals1": [-1.0,1.0],
+      "pedals2": [-1.0,1.0],
+      "pedals3": [-1.0,1.0],
+      "throttle": [0.0,1.0],
+      "mixture": [0.0,1.0],
+      "prop_pitch": [0.0,1.0],
+      "supercharger": [0.0,1.0],
+      "trimmer": [-1.0,1.0],
+      "weapon1": [0.0,1.0],
+      "weapon2": [0.0,1.0],
+      "weapon3": [0.0,1.0],
+      "aviahorizon_pitch": [-45.0,45.0],
+      "aviahorizon_roll": [-30.0,30.0],
+      "speed": [0.0,155.555],
+      "speed_01": [0.0,155.555],
+      "vario": [-25.0,25.0],
+      "altitude_hour": [0.0,10000.0],
+      "altitude_min": [0.0,1000.0],
+      "altitude_koef": 1.0,
+      "bank": [-8.0,8.0],
+      "turn": [-0.23562,0.23562],
+      "compass": [0.0,360.0],
+      "compass1": [0.0,360.0],
+      "clock_hour": [0.0,12.0],
+      "clock_min": [0.0,60.0],
+      "clock_sec": [0.0,60.0],
+      "rpm": [0.0,4000.0],
+      "manifold_pressure": [0.5,2.0],
+      "manifold_pressure1": [0.5,2.0],
+      "oil_pressure": [0.0,150.0],
+      "oil_temperature": [0.0,150.0],
+      "water_temperature": [0.0,150.0],
+      "fuel": [0.0,600.0],
+      "fuel_pressure": [0.0,60.0],
+      "flaps": [0.0,1.0],
+      "flaps1": [0.0,1.0],
+      "flaps2": [0.0,1.0],
+      "flaps_fixed": true,
+      "gears": [0.0,1.0],
+      "gear_fixed": true,
+      "gears_lamp": [0.0,0.0],
+      "ammo_counter1": [200.0,0.0],
+      "ammo_counter2": [200.0,0.0],
+      "ammo_counter3": [200.0,0.0]
+    },
     "parts_holes_dmg": {
       "part": "fuse"
     },
@@ -1968,7 +2057,8 @@
         "dm": "cannon1_dm",
         "bullets": 200,
         "spread": 1.0,
-        "traceOffset": 1
+        "traceOffset": 1,
+        "counterIndex": 1
       }
     },
     {
@@ -1981,7 +2071,8 @@
         "dm": "cannon2_dm",
         "bullets": 200,
         "spread": 1.0,
-        "traceOffset": 2
+        "traceOffset": 2,
+        "counterIndex": 2
       }
     },
     {
@@ -1994,7 +2085,8 @@
         "dm": "cannon3_dm",
         "bullets": 200,
         "spread": 1.0,
-        "traceOffset": 2
+        "traceOffset": 2,
+        "counterIndex": 3
       }
     },
     {

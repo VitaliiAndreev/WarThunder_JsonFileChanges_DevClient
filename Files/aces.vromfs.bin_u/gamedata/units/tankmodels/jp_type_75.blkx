@@ -350,7 +350,7 @@
           "armorClass": "tank_traks",
           "armorThickness": 20.0,
           "hp": 200.0,
-          "ex_armor_01_dm": [],
+          "ex_armor_l_01_dm": [],
           "ex_armor_02_dm": [],
           "ex_armor_03_dm": [],
           "ex_armor_body_01_dm": []
@@ -1526,6 +1526,158 @@
     ]
   },
   {
+    "MetaParts": {
+      "body": [
+        {
+          "hp": 2000.0
+        },
+        {
+          "part": "turret_top_dm"
+        },
+        {
+          "part": "turret_01_side_dm"
+        },
+        {
+          "part": "superstructure_side_dm"
+        },
+        {
+          "part": "superstructure_front_dm"
+        },
+        {
+          "part": "superstructure_top_dm"
+        },
+        {
+          "part": "superstructure_back_dm"
+        },
+        {
+          "part": "turret_front_dm"
+        },
+        {
+          "part": "turret_01_front_dm"
+        },
+        {
+          "part": "turret_bottom_dm"
+        },
+        {
+          "part": "turret_01_bottom_dm"
+        },
+        {
+          "part": "turret_01_back_dm"
+        },
+        {
+          "part": "superstructure_bottom_dm"
+        },
+        {
+          "part": "body_side_dm"
+        },
+        {
+          "part": "gun_mask_dm"
+        },
+        {
+          "part": "body_top_dm"
+        },
+        {
+          "part": "body_bottom_dm"
+        },
+        {
+          "part": "body_front_dm"
+        },
+        {
+          "part": "body_back_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "expl": 1.0,
+            "conditionDamage": 250.0,
+            "kill": true,
+            "killEffect": "fire"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "cumulative",
+            "expl": 1.0,
+            "conditionDamage": 100.0,
+            "kill": true,
+            "killEffect": "fire"
+          }
+        }
+      ],
+      "suspension": [
+        {
+          "hp": 2000.0
+        },
+        {
+          "part": "wheel_l_01_dm"
+        },
+        {
+          "part": "wheel_l_02_dm"
+        },
+        {
+          "part": "wheel_l_03_dm"
+        },
+        {
+          "part": "wheel_l_04_dm"
+        },
+        {
+          "part": "wheel_l_05_dm"
+        },
+        {
+          "part": "wheel_l_drive_dm"
+        },
+        {
+          "part": "wheel_l_back_dm"
+        },
+        {
+          "part": "wheel_r_01_dm"
+        },
+        {
+          "part": "wheel_r_02_dm"
+        },
+        {
+          "part": "wheel_r_03_dm"
+        },
+        {
+          "part": "wheel_r_04_dm"
+        },
+        {
+          "part": "wheel_r_05_dm"
+        },
+        {
+          "part": "wheel_r_drive_dm"
+        },
+        {
+          "part": "wheel_r_back_dm"
+        },
+        {
+          "part": "track_r_dm"
+        },
+        {
+          "part": "track_l_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "expl": 1.0,
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "fire"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "cumulative",
+            "expl": 1.0,
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "fire"
+          }
+        }
+      ]
+    }
+  },
+  {
     "tank_crew": {
       "changeTimeMult": 1.0,
       "gunner": [
@@ -1619,6 +1771,7 @@
           "barrelDP": "gun_barrel_dm",
           "breechDP": "cannon_breech_dm",
           "parkInDeadzone": false,
+          "autoLoader": true,
           "speedYaw": 12.0,
           "speedPitch": 5.0,
           "fireConeAngle": 1.0,
@@ -1667,7 +1820,7 @@
           "parkInDeadzone": false,
           "speedYaw": 30.0,
           "speedPitch": 20.0,
-          "bullets": 1000,
+          "bullets": 600,
           "isBulletBelt": true,
           "fireConeAngle": 15.0,
           "ChainfireTime": 0.5,
@@ -2313,7 +2466,7 @@
       "sightFov": 6.5,
       "sightName": "tzf_1a",
       "headPos": [0.0,4.2,-8.5],
-      "headPosOnShooting": [0.1,3.3,0.37],
+      "headPosOnShooting": [-1.35,3.5,0.57],
       "detectionHeight": 2.63
     }
   },
@@ -2338,8 +2491,10 @@
       },
       "155mm_M110_Smoke_ammo_pack": [],
       "155mm_M107_HE_PF_ammo_pack": [],
+      "155mm_Type_75_HE_ammo_pack": [],
       "155mm_M107_HE": [],
       "155mm_M107_HE_PF": [],
+      "155mm_Type_75_HE": [],
       "155mm_M110_Smoke": []
     }
   },

@@ -188,6 +188,11 @@
   "impulseBasedAircraftToSceneCollision": false,
   "impulseBasedAircraftToSceneCollisionWithCollisionObjects": true,
   "impulseBasedAircraftToUnitCollision": false,
+  "tankEngineHeatingSpd": [5.0,-1.0],
+  "batteryDischargeInactivityTime": 30.0,
+  "batteryDischargeActivityTime": 60.0,
+  "batteryChargingTime": 60.0,
+  "yawPitchSpeedLowBattery": [6.0,4.0],
   "tracers": {
     "headFadeTime": 4.0,
     "headSpeedScale": [400.0,900.0,0.1,1.0],
@@ -2683,7 +2688,8 @@
         "crashDamageBots": true,
         "shipBrokenFunnelMaxRedynessMult": 0.6,
         "shipBrokenElevatorMult": 0.8,
-        "shipDamagedElevatorMult": 0.9
+        "shipDamagedElevatorMult": 0.9,
+        "simulateBattery": false
       },
       "realistic": {
         "brokenBarrelAllowShoot": true,
@@ -2713,7 +2719,8 @@
         "crashDamageBots": true,
         "shipBrokenFunnelMaxRedynessMult": 0.6,
         "shipBrokenElevatorMult": 0.8,
-        "shipDamagedElevatorMult": 0.9
+        "shipDamagedElevatorMult": 0.9,
+        "simulateBattery": true
       },
       "simulator": {
         "brokenBarrelAllowShoot": false,
@@ -2727,7 +2734,8 @@
         "crashDamageBots": true,
         "shipBrokenFunnelMaxRedynessMult": 0.6,
         "shipBrokenElevatorMult": 0.8,
-        "shipDamagedElevatorMult": 0.9
+        "shipDamagedElevatorMult": 0.9,
+        "simulateBattery": true
       }
     },
     "bombAssaultFuseTimeOverride": {

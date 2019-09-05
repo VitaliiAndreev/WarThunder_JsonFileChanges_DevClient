@@ -1121,6 +1121,11 @@
     "crosshairPreset": "test_crosshair",
     "angularLimits": [-60.0,60.0,-40.0,10.0]
   },
+  "sensors": {
+    "sensor": {
+      "blk": "gameData/sensors/us_an_apr_39.blk"
+    }
+  },
   "helicopter": {
     "rotorBladeAnglesCoeffs": [0.3,0.5,0.5],
     "inclinedRotor": true
@@ -1539,16 +1544,20 @@
       "effects": {
         "nightVision": {
           "gunnerIr": {
-            "resolution": [1024,768],
-            "lightMult": 8.0,
-            "ghosting": 0.75,
-            "noiseFactor": 0.2
+            "resolution": [1920,1080],
+            "lightMult": 10.0,
+            "ghosting": 0.7,
+            "noiseFactor": 0.15
           },
           "pilotIr": {
+            "resolution": [1920,1080],
+            "lightMult": 10.0,
+            "ghosting": 0.7,
+            "noiseFactor": 0.15
+          },
+          "sightThermal": {
             "resolution": [1024,768],
-            "lightMult": 8.0,
-            "ghosting": 0.75,
-            "noiseFactor": 0.2
+            "noiseFactor": 0.05
           }
         }
       }

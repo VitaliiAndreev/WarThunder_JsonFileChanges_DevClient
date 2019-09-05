@@ -14,7 +14,6 @@
       "army": 2
     },
     "mission": {
-      "locName": "missions/testFlight",
       "name": "testFlight_britain_Jet",
       "level": "levels/britain.bin",
       "type": "testFlight",
@@ -26,6 +25,7 @@
       "missionDebriefing": "",
       "missionBriefing": "",
       "windDirection": [1.0,0.0,0.0],
+      "locName": "missions/testFlight",
       "tags": [],
       "missionType": {
         "_Dom": false,
@@ -196,6 +196,9 @@
           },
           {
             "target": "ai_jet"
+          },
+          {
+            "target": "ai_jet01"
           }
         ]
       },
@@ -231,9 +234,79 @@
       },
       "else_actions": []
     },
-    "ai_plane_logic": {
-      "isCategory": true,
-      "is_enabled": true
+    "periodic": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": [],
+      "actions": [
+        {
+          "unitMoveTo": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "target": "ai_resp_point",
+            "target_marking": 0,
+            "waypointReachedDist": 10.0,
+            "recalculatePathDist": -1.0,
+            "follow_target": false,
+            "teleportHeightType": "absolute",
+            "useUnitHeightForTele": true,
+            "shouldKeepFormation": false,
+            "teleportHeightValue": 1000.0,
+            "horizontalDirectionForTeleport": true,
+            "fastClimb": false,
+            "destTimeMode": false,
+            "object": "ai_jet",
+            "move_type": "teleport"
+          }
+        },
+        {
+          "unitMoveTo": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "target": "ai_resp_point01",
+            "target_marking": 0,
+            "waypointReachedDist": 10.0,
+            "recalculatePathDist": -1.0,
+            "follow_target": false,
+            "teleportHeightType": "absolute",
+            "useUnitHeightForTele": false,
+            "shouldKeepFormation": false,
+            "teleportHeightValue": 5000.0,
+            "horizontalDirectionForTeleport": true,
+            "fastClimb": false,
+            "destTimeMode": false,
+            "object": "ai_jet01",
+            "move_type": "teleport"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "ai_jet",
+            "speed": 600.0,
+            "lockSpeed": true,
+            "fuel": 100.0
+          }
+        }
+      ],
+      "else_actions": []
     }
   },
   "mission_objectives": {
@@ -2100,7 +2173,7 @@
           [-0.943963,0.0,0.330051],
           [28235.1,800.0,18665.0]
         ],
-        "unit_class": "mig-15bis_ns23",
+        "unit_class": "hunter_f6",
         "objLayer": 1,
         "closed_waypoints": true,
         "isShipSpline": false,
@@ -2116,7 +2189,7 @@
         "bulletsCount2": 0,
         "bulletsCount3": 0,
         "props": {
-          "army": 2,
+          "army": 1,
           "count": 1,
           "free_distance": 70.0,
           "floating_distance": 50.0,
@@ -2203,6 +2276,119 @@
           }
         }
       }
+    },
+    {
+      "armada": {
+        "name": "ai_jet01",
+        "tm": [
+          [0.330051,0.0,0.943963],
+          [0.0,1.0,0.0],
+          [-0.943963,0.0,0.330051],
+          [28235.1,4998.65,18665.0]
+        ],
+        "unit_class": "canberra_bimk6",
+        "objLayer": 1,
+        "closed_waypoints": true,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
+        "dontOverrideHeight": true,
+        "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "props": {
+          "army": 1,
+          "count": 1,
+          "free_distance": 70.0,
+          "floating_distance": 50.0,
+          "minimum_distance_to_earth": 20.0,
+          "altLimit": 6000.0,
+          "attack_type": "dont_aim",
+          "skill": 4,
+          "speed": 1000.0,
+          "plane": {
+            "wing_formation": "Diamond",
+            "row_distances": 3.0,
+            "col_distances": 3.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "ai_skill": "NORMAL",
+            "task": "FLY_WAYPOINT"
+          }
+        },
+        "way": {
+          "ai_jet01_wp_01": {
+            "type": "normal",
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30695.8,4998.65,28793.3]
+            ],
+            "props": {
+              "speed": 700.0,
+              "tas": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
+            }
+          },
+          "ai_jet01_wp_02": {
+            "type": "normal",
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [24201.7,4998.65,27670.8]
+            ],
+            "props": {
+              "speed": 700.0,
+              "tas": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
+            }
+          },
+          "ai_jet01_wp_03": {
+            "type": "normal",
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23361.5,4998.65,22225.9]
+            ],
+            "props": {
+              "speed": 700.0,
+              "tas": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
+            }
+          },
+          "ai_jet01_wp_04": {
+            "type": "normal",
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29722.9,5062.45,21796.0]
+            ],
+            "props": {
+              "speed": 700.0,
+              "tas": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
+            }
+          }
+        }
+      }
     }
   ],
   "areas": {
@@ -2243,6 +2429,28 @@
         [0.0,1.0,0.0],
         [0.0,0.0,1.0],
         [41090.6,800.0,-54762.5]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "ai_resp_point": {
+      "type": "Point",
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [28214.1,1000.0,18657.7]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "ai_resp_point01": {
+      "type": "Point",
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [28214.1,5000.0,18657.7]
       ],
       "objLayer": 0,
       "props": []

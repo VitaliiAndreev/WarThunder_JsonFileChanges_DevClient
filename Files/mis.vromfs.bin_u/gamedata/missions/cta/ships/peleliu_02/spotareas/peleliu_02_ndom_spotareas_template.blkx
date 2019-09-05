@@ -61,7 +61,22 @@
       "effectivenessDistances": [2500.0,7000.0]
     }
   },
-  "imports": [],
+  "imports": {
+    "import_record": {
+      "file": "gameData/missions/cta/ships/peleliu_02/mainareas/peleliu_02_NDom_template.blk",
+      "importAreas": true,
+      "importUnits": true,
+      "importTriggers": true,
+      "importMissionObjectives": true,
+      "importWayPoints": true,
+      "showAreas": true,
+      "showUnits": true,
+      "showTriggers": true,
+      "showMissionObjectives": true,
+      "showWayPoints": true,
+      "excludes": []
+    }
+  },
   "triggers": {
     "isCategory": true,
     "is_enabled": true
@@ -86,6 +101,12 @@
         ],
         "props": [
           {
+            "squad_members": "t1_spotarea_block01"
+          },
+          {
+            "squad_members": "t1_spotarea_block02"
+          },
+          {
             "squad_members": "t1_spotarea_block03"
           },
           {
@@ -108,6 +129,12 @@
         ],
         "props": [
           {
+            "squad_members": "t2_spotarea_block01"
+          },
+          {
+            "squad_members": "t2_spotarea_block02"
+          },
+          {
             "squad_members": "t2_spotarea_block03"
           },
           {
@@ -124,10 +151,32 @@
     "ndom_battle_area": {
       "type": "Box",
       "tm": [
-        [6500.0,0.0,0.0],
+        [16000.0,0.0,0.0],
         [0.0,983.2,0.0],
-        [0.0,0.0,6500.0],
-        [303.062,0.00280762,-2567.21]
+        [0.0,0.0,16000.0],
+        [0.0,0.0,0.0]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "t1_spotarea_block01": {
+      "type": "Cylinder",
+      "tm": [
+        [5500.0,0.0,0.0],
+        [0.0,605.05,0.0],
+        [0.0,0.0,5500.0],
+        [-8762.66,0.0,8455.37]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "t1_spotarea_block02": {
+      "type": "Cylinder",
+      "tm": [
+        [5500.0,0.0,0.0],
+        [0.0,605.0,0.0],
+        [0.0,0.0,5500.0],
+        [-9455.95,0.0,-9104.3]
       ],
       "objLayer": 0,
       "props": []
@@ -138,7 +187,7 @@
         [334.963,0.0,0.0],
         [0.0,605.05,0.0],
         [0.0,0.0,334.963],
-        [-1898.75,0.00146484,-128.187]
+        [-2599.28,0.0,4736.77]
       ],
       "objLayer": 0,
       "props": []
@@ -146,10 +195,10 @@
     "t1_spotarea_block04": {
       "type": "Cylinder",
       "tm": [
-        [276.775,0.0,94.1215],
+        [292.341,0.0,0.0],
         [0.0,605.05,0.0],
-        [-94.1215,0.0,276.775],
-        [-2424.93,-0.00170898,-5076.5]
+        [0.0,0.0,292.341],
+        [-2691.4,0.0,1031.63]
       ],
       "objLayer": 0,
       "props": []
@@ -157,10 +206,32 @@
     "t1_spotarea_block05": {
       "type": "Cylinder",
       "tm": [
-        [263.244,0.0,89.52],
+        [278.049,0.0,0.0],
         [0.0,605.05,0.0],
-        [-89.52,0.0,263.244],
-        [-2443.72,-0.00170898,-5545.85]
+        [0.0,0.0,278.049],
+        [-2860.3,0.0,593.323]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "t2_spotarea_block01": {
+      "type": "Cylinder",
+      "tm": [
+        [5500.0,0.0,0.0],
+        [0.0,605.05,0.0],
+        [0.0,0.0,5500.0],
+        [9280.24,0.00292969,8499.26]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "t2_spotarea_block02": {
+      "type": "Cylinder",
+      "tm": [
+        [5500.0,0.0,0.0],
+        [0.0,605.05,0.0],
+        [0.0,0.0,5500.0],
+        [9531.47,0.0,-8424.28]
       ],
       "objLayer": 0,
       "props": []
@@ -171,7 +242,7 @@
         [453.299,0.0,0.0],
         [0.0,605.05,0.0],
         [0.0,0.0,453.299],
-        [1768.41,0.000244141,-42.926]
+        [3529.87,0.0,499.535]
       ],
       "objLayer": 0,
       "props": []
@@ -179,10 +250,10 @@
     "t2_spotarea_block04": {
       "type": "Cylinder",
       "tm": [
-        [331.09,0.0,174.343],
+        [374.187,0.0,0.0],
         [0.0,605.05,0.0],
-        [-174.343,0.0,331.09],
-        [2971.32,0.0012207,-4756.9]
+        [0.0,0.0,374.187],
+        [3153.2,0.000488281,-2765.1]
       ],
       "objLayer": 0,
       "props": []
@@ -190,10 +261,10 @@
     "t2_spotarea_block05": {
       "type": "Cylinder",
       "tm": [
-        [383.487,0.0,201.935],
+        [433.405,0.0,0.0],
         [0.0,605.05,0.0],
-        [-201.935,0.0,383.487],
-        [2925.14,-0.00012207,-5402.77]
+        [0.0,0.0,433.405],
+        [2799.77,-0.000976563,-3317.7]
       ],
       "objLayer": 0,
       "props": []
