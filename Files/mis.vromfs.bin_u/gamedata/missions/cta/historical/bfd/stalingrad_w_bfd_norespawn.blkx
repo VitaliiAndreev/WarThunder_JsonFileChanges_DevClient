@@ -258,7 +258,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       }
     },
     "cover_points": [],
@@ -1008,12 +1009,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_stalingrad_w_BfD_main"
+            "target": "t1_stalingrad_w_BfD_main",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_stalingrad_w_BfD_main"
+            "target": "t2_stalingrad_w_BfD_main",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1023,12 +1028,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_stalingrad_w_BfD_bridges"
+            "target": "t1_stalingrad_w_BfD_bridges",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_stalingrad_w_BfD_bridges"
+            "target": "t2_stalingrad_w_BfD_bridges",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         }
       ],
@@ -1055,8 +1064,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "bridges_squad"
+          "object": "bridges_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1064,6 +1073,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_w_BfD_bridges",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1071,6 +1082,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_w_BfD_bridges",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         }
@@ -1102,6 +1115,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_w_BfD_bridges",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1109,6 +1124,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_w_BfD_bridges",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -7313,6 +7330,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_big_city_aaa_01"
           },
           {
@@ -7370,6 +7390,9 @@
           [-2375.34,119.676,-541.492]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_trench_aaa_01"
           },
@@ -7434,6 +7457,9 @@
           [-1898.07,94.7246,489.74]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_art_01"
           },
@@ -7578,6 +7604,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "bridge_02"
           },
           {
@@ -7602,6 +7631,9 @@
           [-3064.26,158.145,-96.6729]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_bunker_01"
           },
@@ -7646,6 +7678,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_big_aaa_squad"
           },
           {
@@ -7664,6 +7699,9 @@
           [-9613.58,177.88,9690.51]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_tank_01"
           },
@@ -7693,6 +7731,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_truck_aaa_01"
           },
           {
@@ -7720,6 +7761,9 @@
           [-10114.1,198.831,8514.42]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_truck_01"
           },
@@ -7749,6 +7793,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_trucks_aaa_squad"
           },
           {
@@ -7767,6 +7814,9 @@
           [-9194.34,158.603,9125.03]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_big_aaa_01"
           },
@@ -7803,7 +7853,7 @@
           [0.995859,0.0,0.835624],
           [15303.5,1.73058,-5155.48]
         ],
-        "unit_class": "dynAF_st_winter_ally",
+        "unit_class": "dynaf_universal_1line_c_snow",
         "props": {
           "army": 1,
           "active": true
@@ -7819,7 +7869,7 @@
           [-1.09641,0.0,-0.698489],
           [-6987.34,195.102,25593.2]
         ],
-        "unit_class": "dynAF_st_winter_ally",
+        "unit_class": "dynaf_universal_1line_c_snow",
         "props": {
           "army": 2,
           "active": true
@@ -10356,6 +10406,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_light_bunker_01"
           },
           {
@@ -10421,6 +10474,7 @@
           [-6577.66,213.561,15677.9]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_tanks_squad"
         }
       }
@@ -10435,6 +10489,9 @@
           [-7519.45,203.48,15535.2]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_trucks_aaa_squad"
           },
@@ -10454,6 +10511,7 @@
           [-16666.3,209.85,6499.37]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_small_aaa_squad"
         }
       }
@@ -10468,71 +10526,8 @@
           [-17600.7,209.85,5000.47]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_big_aaa_squad"
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "clear_trees_01",
-        "tm": [
-          [0.835624,0.0,-0.995859],
-          [0.0,1.3,0.0],
-          [0.995859,0.0,0.835624],
-          [14872.2,1.73058,-4541.72]
-        ],
-        "unit_class": "noTreeObjectGroup",
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "clear_trees_02",
-        "tm": [
-          [0.835624,0.0,-0.995859],
-          [0.0,1.3,0.0],
-          [0.995859,0.0,0.835624],
-          [15671.7,1.73058,-5513.73]
-        ],
-        "unit_class": "noTreeObjectGroup",
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "clear_trees_03",
-        "tm": [
-          [-0.698489,0.0,1.09641],
-          [0.0,1.3,0.0],
-          [-1.09641,0.0,-0.698489],
-          [-7280.56,195.102,25971.2]
-        ],
-        "unit_class": "noTreeObjectGroup",
-        "props": {
-          "army": 2,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "clear_trees_04",
-        "tm": [
-          [-0.698489,0.0,1.09641],
-          [0.0,1.3,0.0],
-          [-1.09641,0.0,-0.698489],
-          [-6679.67,195.102,24980.3]
-        ],
-        "unit_class": "noTreeObjectGroup",
-        "props": {
-          "army": 2,
-          "active": true
         }
       }
     },
@@ -10546,6 +10541,9 @@
           [-2440.55,250.65,-2322.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_heavy_units_squad"
           },
@@ -10565,6 +10563,9 @@
           [-1337.9,250.65,-2713.75]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_heavy_units_squad"
           },
@@ -10896,7 +10897,7 @@
           [1.0,0.0,0.0],
           [0.0,1.0,0.0],
           [0.0,0.0,1.0],
-          [-7362.82,244.507,26296.8]
+          [-7221.32,244.507,26363.3]
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
@@ -10934,6 +10935,9 @@
           [-7031.21,211.691,26617.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_small_def_aaa_01"
           },
@@ -11328,6 +11332,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_small_def_aaa_01"
           },
           {
@@ -11616,6 +11623,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_trucks_squad"
           },
           {
@@ -11638,6 +11648,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_artillery_squad"
           },
           {
@@ -11659,6 +11672,9 @@
           [-714.7,250.65,-2559.4]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_heavy_units_squad"
           },
@@ -11901,6 +11917,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_subquest_units_01"
           },
           {
@@ -11922,6 +11941,9 @@
           [-703.7,72.4,-32525.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_subquest_units_01"
           },

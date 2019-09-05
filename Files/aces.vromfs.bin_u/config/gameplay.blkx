@@ -1561,6 +1561,9 @@
       "time": [0.057,3.0]
     },
     {
+      "time": [0.06,3.0]
+    },
+    {
       "time": [0.07,5.0]
     },
     {
@@ -1678,6 +1681,7 @@
     "propellersRadarCrossSectionSourcesMask": 2,
     "activeSonarReflectionMult": 40000000000.0,
     "radarAntipodEffect": [0.0,1.0,100.0,0.0],
+    "radarTargetsMaxTime": 2.0,
     "radarFrequencyBandCrossSection0": {
       "crossSectionMult": 1.0,
       "backScattering0": [3.0,-35.0],
@@ -1722,6 +1726,7 @@
     "waterLeakSpeed": 0.0048,
     "waterLeakTime": [210.0,105.0,15.0],
     "waterEmptyDamageSpeed": 0.0111,
+    "leakIntensityByTankCapacity": [100.0,1000.0,0.012,0.12],
     "alphaAileronMin": 0.1,
     "alphaRudderMin": 0.1,
     "alphaElevatorMin": 0.2,
@@ -1731,11 +1736,16 @@
     "ufoHoverOmegaKd": 0.0,
     "ufoHoverClimbKp": 30.0,
     "ufoHoverClimbKd": 10.0,
-    "surfaceFriction": 0.2,
+    "surfaceFriction": 0.8,
     "surfaceBounce": 0.05,
     "surfaceErpMult": 0.04,
+    "moveMinSq": 0.0001,
+    "rotMinSq": 0.0,
+    "rollingFriction": 0.02,
+    "selfSteeringWheelSideFrictionMult": 2.0,
+    "explosionImpulseVel": 15.0,
     "staticObjectsRayCastLength": -1.0,
-    "treeImpulseTreshold": 15000.0,
+    "treeImpulseTreshold": 80000.0,
     "engineDegradationSpeed1": 0.0005,
     "engineDegradationSpeed2": 0.0035,
     "engineDegradationSpeed3": 0.025,
@@ -1745,16 +1755,17 @@
     "waterLeakTime1": 210.0,
     "waterLeakTime2": 105.0,
     "waterLeakTime3": 15.0,
-    "normalizedFrictionAccelMax": true,
     "shaftDegradationSpeed1": 0.0005,
     "shaftDegradationSpeed2": 0.0035,
     "shaftDegradationSpeed3": 0.025,
+    "normalizedFrictionAccelMax": true,
     "shaftDamageFrictionAccelMax": 0.002,
     "shaftCutFrictionAccelMax": 0.0003,
-    "transmissionDamageFrictionAccelMax": 0.133,
+    "transmissionDamageFrictionAccelMax": 0.076,
     "transmissionCutFrictionAccelMax": 0.02,
     "trasmissionOilMinSafeLevel": 0.1,
-    "forceTransmissionDamageAfterPropeller": true,
+    "forceTransmissionDamageLevelAfterShaftCut": 3,
+    "forceTransmissionDamageLevelAfterPropeller": 3,
     "damagedPropClMult": 0.4,
     "damagedPropCdMult": 3.0,
     "damagedSurfaceCxMultSquareRatioMin": 0.3,
@@ -2767,18 +2778,18 @@
     }
   },
   "markUnitPresets": {
-    "buoys": {
+    "ship_buoys": {
       "unitsByPerimeter": true,
       "distanceBetweenPerimeterUnit": 50.0,
       "unitInCenter": true,
       "unitClass": "buoy_a",
       "onlyOnWater": true
     },
-    "tanks": {
+    "tank_decal": {
       "unitsByPerimeter": false,
       "unitInCenter": true,
       "unitClass": "capture_zone_circle",
-      "unitRadius": 50.0
+      "unitRadius": 24.0
     }
   }
 }

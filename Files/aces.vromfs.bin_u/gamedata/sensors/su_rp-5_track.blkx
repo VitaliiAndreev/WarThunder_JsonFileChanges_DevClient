@@ -2,15 +2,16 @@
   "type": "radar",
   "transivers": {
     "track": {
-      "power": 200.0,
-      "band": 0,
+      "sideLobesAttenuation": -16.0,
+      "power": 30.0,
+      "band": 8,
       "rcs": 3.0,
-      "range": 3500.0,
+      "range": 4500.0,
       "rangeMax": 6000.0,
       "backScatteringBandNum": 0,
       "antenna": {
         "angleHalfSens": 6.0,
-        "sideLobesSensitivity": -25.0
+        "sideLobesSensitivity": -26.0
       }
     }
   },
@@ -20,7 +21,8 @@
       "azimuthLimits": [-7.0,7.0],
       "elevationLimits": [-7.0,7.0],
       "period": 0.5,
-      "width": 3.0
+      "width": 3.0,
+      "indicate": true
     },
     "track": {
       "type": "no",
@@ -33,8 +35,9 @@
       "groundClutter": true,
       "aircraftAsTarget": true,
       "groundVehiclesAsTarget": true,
-      "angularAccuracy": 0.25,
+      "angularAccuracy": 0.08,
       "distanceAccuracy": 22.0,
+      "track": true,
       "distance": {
         "presents": true,
         "minValue": 150.0,

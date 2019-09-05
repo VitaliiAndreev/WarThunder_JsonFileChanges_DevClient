@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -217,7 +220,7 @@
           "armorThickness": 30.0
         },
         "turret_01_side_dm": {
-          "armorThickness": 50.0
+          "armorThickness": 5.0
         },
         "turret_01_top_dm": {
           "armorThickness": 50.0
@@ -269,6 +272,12 @@
         },
         "turret_top_dm": {
           "armorThickness": 160.0
+        },
+        "turret_01_bottom_dm": {
+          "armorThickness": 5.0
+        },
+        "turret_01_back_dm": {
+          "armorThickness": 5.0
         }
       },
       "turret": {
@@ -282,9 +291,6 @@
         "gun_mask_dm": {
           "armorThickness": 200.0,
           "hp": 10000.0
-        },
-        "turret_01_back_dm": {
-          "armorThickness": 50.0
         },
         "turret_01_front_dm": {
           "armorThickness": 250.0
@@ -342,16 +348,35 @@
         "stopChanceOnDeadPart": 0.0,
         "createSecondaryShatters": false,
         "hidableInViewer": true,
+        "ex_decor_01_dm": [],
+        "ex_decor_02_dm": [],
+        "ex_decor_03_dm": [],
+        "ex_decor_r_01_dm": [],
+        "ex_decor_r_02_dm": [],
         "ex_decor_r_03_dm": [],
         "ex_decor_r_04_dm": [],
         "ex_decor_r_08_dm": [],
         "ex_decor_r_09_dm": [],
         "ex_decor_r_11_dm": [],
+        "ex_decor_l_01_dm": [],
+        "ex_decor_l_02_dm": [],
         "ex_decor_l_03_dm": [],
+        "ex_decor_l_06_dm": [],
         "ex_decor_l_07_dm": [],
+        "ex_decor_l_08_dm": [],
         "ex_decor_l_09_dm": [],
+        "ex_decor_l_10_dm": [],
+        "ex_decor_l_11_dm": [],
         "ex_decor_l_12_dm": [],
-        "ex_decor_l_13_dm": []
+        "ex_decor_l_13_dm": [],
+        "timber": {
+          "armorClass": "ship_wood",
+          "armorThickness": 100.0,
+          "hp": 250.0,
+          "armorEffectiveThicknessMax": 100.0,
+          "hidableInViewer": true,
+          "ex_decor_r_07_dm": []
+        }
       },
       "chassis": {
         "armorClass": "tank_steel_wheels",
@@ -445,7 +470,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 30.0,
-        "hp": 400.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -497,20 +522,15 @@
       },
       "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
-        "hp": 250.0,
-        "armorThickness": 2.0,
+        "hp": 150.0,
         "armorThrough": 15.0,
         "fireProtectionHp": 5.0,
         "hidableInViewer": false,
         "drive_turret_v_dm": {
-          "hp": 150.0,
-          "armorThrough": 1.0,
-          "armorThickness": 12.0
+          "armorThrough": 15.0
         },
         "drive_turret_h_dm": {
-          "hp": 150.0,
-          "armorThrough": 1.0,
-          "armorThickness": 12.0
+          "armorThrough": 15.0
         },
         "drive_turret_v_01_dm": {
           "hp": 40.0,
@@ -528,59 +548,84 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0
+        "drive_turret_v_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
         },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 15.0,
-          "hp": 150.0
+        "drive_turret_h_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
         },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 15.0,
-          "hp": 100.0
+        "drive_turret_v_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
         },
-        "cannon_breech_03_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 15.0,
-          "hp": 100.0
+        "drive_turret_h_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
         },
-        "cannon_breech_04_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 15.0,
-          "hp": 100.0
+        "drive_turret_v_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
         },
         "radiator_dm": {
-          "hp": 40.0,
+          "hp": 50.0,
           "armorThrough": 5.0
         },
         "radiator_l_dm": {
-          "hp": 40.0,
+          "hp": 50.0,
           "armorThrough": 5.0
         },
         "radiator_r_dm": {
-          "hp": 40.0,
+          "hp": 50.0,
           "armorThrough": 5.0
         },
         "radio_station_dm": {
-          "hp": 20.0,
+          "hp": 50.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 500.0,
+        "hp": 300.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,

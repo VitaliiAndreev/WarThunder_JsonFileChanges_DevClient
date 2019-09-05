@@ -184,37 +184,54 @@
           }
         }
       ],
-      "actions": {
-        "unitSetProperties": {
-          "object_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "ai_squad",
-          "calmDetection": true,
-          "forceVisibleOnMap": true,
-          "attack_type": "dont_aim",
-          "accuracy": 0.01
-        },
-        "unitPutToSleep": [
-          {
-            "target": "us_truck_squad"
-          },
-          {
-            "target": "us_tank_squad"
-          },
-          {
-            "target": "helipad_ussr"
-          },
-          {
-            "target": "us_ai_plane"
+      "actions": [
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "ai_squad",
+            "calmDetection": true,
+            "forceVisibleOnMap": true,
+            "attack_type": "dont_aim",
+            "accuracy": 0.01
           }
-        ],
-        "spawnOnAirfield": {
-          "runwayName": "airfield00",
-          "objects": "armada_01"
+        },
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "ussr_tank_04",
+            "attack_type": "hold_fire",
+            "useSearchRadar": true
+          }
+        },
+        {
+          "unitPutToSleep": [
+            {
+              "target": "us_truck_squad"
+            },
+            {
+              "target": "us_tank_squad"
+            },
+            {
+              "target": "helipad_ussr"
+            },
+            {
+              "target": "us_ai_plane"
+            }
+          ]
+        },
+        {
+          "spawnOnAirfield": {
+            "runwayName": "airfield00",
+            "objects": "armada_01"
+          }
         }
-      },
+      ],
       "else_actions": []
     },
     "if_player_ussr": {
@@ -262,54 +279,54 @@
           }
         }
       ],
-      "actions": {
-        "unitSetProperties": {
-          "object_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "ai_squad",
-          "calmDetection": true,
-          "forceVisibleOnMap": true,
-          "attack_type": "dont_aim",
-          "accuracy": 0.01
-        },
-        "unitPutToSleep": [
-          {
-            "target": "ussr_tank_squad"
-          },
-          {
-            "target": "ussr_truck_squad"
-          },
-          {
-            "target": "helipad_usa"
-          },
-          {
-            "target": "ussr_ai_plane"
+      "actions": [
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "ai_squad",
+            "calmDetection": true,
+            "forceVisibleOnMap": true,
+            "attack_type": "dont_aim",
+            "accuracy": 0.01
           }
-        ],
-        "spawnOnAirfield": {
-          "runwayName": "airfield00",
-          "objects": "armada_01"
+        },
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "us_tank_04",
+            "attack_type": "hold_fire",
+            "useSearchRadar": true
+          }
+        },
+        {
+          "unitPutToSleep": [
+            {
+              "target": "ussr_tank_squad"
+            },
+            {
+              "target": "ussr_truck_squad"
+            },
+            {
+              "target": "helipad_usa"
+            },
+            {
+              "target": "ussr_ai_plane"
+            }
+          ]
+        },
+        {
+          "spawnOnAirfield": {
+            "runwayName": "airfield00",
+            "objects": "armada_01"
+          }
         }
-      },
-      "else_actions": []
-    },
-    "Trigger_01": {
-      "is_enabled": true,
-      "comments": "",
-      "props": {
-        "actionsType": "PERFORM_ONE_BY_ONE",
-        "conditionsType": "ALL",
-        "enableAfterComplete": false
-      },
-      "events": {
-        "periodicEvent": {
-          "time": 1.0
-        }
-      },
-      "conditions": [],
-      "actions": [],
+      ],
       "else_actions": []
     }
   },
@@ -1174,6 +1191,9 @@
           },
           {
             "squad_members": "us_tank_03"
+          },
+          {
+            "squad_members": "us_tank_04"
           }
         ]
       }
@@ -1199,6 +1219,9 @@
           },
           {
             "squad_members": "ussr_tank_03"
+          },
+          {
+            "squad_members": "ussr_tank_04"
           }
         ]
       }
@@ -1397,6 +1420,78 @@
             }
           }
         }
+      }
+    },
+    {
+      "tankModels": {
+        "name": "ussr_tank_04",
+        "tm": [
+          [-0.536805,0.0,0.843706],
+          [0.0,1.0,0.0],
+          [-0.843706,0.0,-0.536805],
+          [-308.511,361.182,-6907.23]
+        ],
+        "unit_class": "ussr_zprk_2s6",
+        "objLayer": 1,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
+        "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "props": {
+          "army": 2,
+          "count": 1,
+          "formation_type": "rows",
+          "formation_div": 3,
+          "formation_step": [2.5,2.0],
+          "formation_noise": [0.1,0.1],
+          "uniqueName": "",
+          "attack_type": "hold_fire"
+        },
+        "way": []
+      }
+    },
+    {
+      "tankModels": {
+        "name": "us_tank_04",
+        "tm": [
+          [-0.536805,0.0,0.843706],
+          [0.0,1.0,0.0],
+          [-0.843706,0.0,-0.536805],
+          [-323.216,360.518,-6900.16]
+        ],
+        "unit_class": "us_adats_bradley",
+        "objLayer": 1,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
+        "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "props": {
+          "army": 2,
+          "count": 1,
+          "formation_type": "rows",
+          "formation_div": 3,
+          "formation_step": [2.5,2.0],
+          "formation_noise": [0.1,0.1],
+          "uniqueName": "",
+          "attack_type": "hold_fire"
+        },
+        "way": []
       }
     }
   ],

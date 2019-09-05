@@ -258,7 +258,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       }
     },
     "cover_points": [],
@@ -717,12 +718,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "bulge_BfDn_t1_defend"
+            "target": "bulge_BfDn_t1_defend",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "bulge_BfDn_t2_capture"
+            "target": "bulge_BfDn_t2_capture",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -732,12 +737,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "bulge_BfDn_t1_destroy"
+            "target": "bulge_BfDn_t1_destroy",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "bulge_BfDn_t2_destroy"
+            "target": "bulge_BfDn_t2_destroy",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         }
       ],
@@ -996,9 +1005,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_provision_column_squad",
-            "target": "stop_point_for_truck01"
+            "target": "stop_point_for_truck01",
+            "object_var_value": 0
           }
         },
         {
@@ -1013,9 +1022,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_provision_column_squad",
-            "target": "stop_point_for_truck02"
+            "target": "stop_point_for_truck02",
+            "object_var_value": 0
           }
         }
       ],
@@ -1073,8 +1082,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_atack_squad"
+          "object": "t2_atack_squad",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1087,6 +1096,8 @@
         "moSetObjectiveStatus": {
           "target": "bulge_BfDn_t1_defend",
           "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
           "team": "A"
         }
       },
@@ -1121,6 +1132,8 @@
         "moSetObjectiveStatus": {
           "target": "bulge_BfDn_t2_capture",
           "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
           "team": "B"
         }
       },
@@ -1147,8 +1160,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_quest_howitzers_squad"
+          "object": "t2_quest_howitzers_squad",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1158,6 +1171,8 @@
         "moSetObjectiveStatus": {
           "target": "bulge_BfDn_t1_destroy",
           "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
           "team": "A"
         }
       },
@@ -1184,8 +1199,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_provision_column_squad"
+          "object": "t1_provision_column_squad",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1195,6 +1210,8 @@
         "moSetObjectiveStatus": {
           "target": "bulge_BfDn_t2_destroy",
           "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
           "team": "B"
         }
       },
@@ -1719,6 +1736,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_aaa_light_06"
           },
           {
@@ -2122,6 +2142,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_aaa_light_06"
           },
           {
@@ -2202,6 +2225,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_truck_column02"
           },
           {
@@ -2224,6 +2250,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_truck_column01"
           },
           {
@@ -2242,6 +2271,7 @@
           [6779.75,430.291,19879.5]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_aaa_squad"
         }
       }
@@ -2256,6 +2286,9 @@
           [7446.5,378.751,18817.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_quest_howitzers_squad"
           },
@@ -2275,6 +2308,7 @@
           [4585.8,378.751,20443.3]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -2289,6 +2323,9 @@
           [3751.49,628.038,21262.1]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_truck_column01"
           },
@@ -2311,6 +2348,7 @@
           [2958.52,637.362,22021.3]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_light_units_squad"
         }
       }
@@ -2325,6 +2363,9 @@
           [7036.31,668.014,17607.9]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_atack_tanks01"
           },
@@ -2357,6 +2398,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_atack_aaa02"
           },
           {
@@ -2375,6 +2419,9 @@
           [5676.65,620.015,19148.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_heavy_units_squad"
           },
@@ -3211,6 +3258,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_infantry01"
           },
           {
@@ -3247,6 +3297,9 @@
           [205.387,265.4,11876.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_infantry01"
           },
@@ -3492,6 +3545,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_quest_art01"
           },
           {
@@ -3634,6 +3690,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_aaa_def_arty01"
           },
           {
@@ -3664,7 +3723,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -3681,7 +3740,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -3698,7 +3757,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -4208,6 +4267,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_truck_column01"
           },
           {
@@ -4232,7 +4294,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -4249,7 +4311,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -4266,7 +4328,7 @@
         "objLayer": 2,
         "props": {
           "army": 0,
-          "active": false
+          "active": true
         }
       }
     },
@@ -4955,6 +5017,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_def_tank01"
           },
           {
@@ -5021,6 +5086,9 @@
           [9397.15,269.4,9010.1]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_atack_tanks01"
           },
@@ -5418,6 +5486,9 @@
           [424.571,304.45,12725.6]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_def_aaa01"
           },

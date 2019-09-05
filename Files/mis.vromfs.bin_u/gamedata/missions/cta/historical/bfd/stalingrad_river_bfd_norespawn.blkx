@@ -258,7 +258,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       },
       "stars": {
         "latitude": 48.0,
@@ -591,7 +592,6 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -600,8 +600,12 @@
             "showOnMap": true,
             "isIndividual": false,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t1_airfield",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -617,7 +621,6 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -626,8 +629,12 @@
             "showOnMap": true,
             "isIndividual": false,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t2_airfield",
             "team": "B",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -797,12 +804,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_stalingrad_BfD_norespawn_zone1"
+            "target": "t1_stalingrad_BfD_norespawn_zone1",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_stalingrad_BfD_norespawn_zone1"
+            "target": "t2_stalingrad_BfD_norespawn_zone1",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -826,12 +837,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_stalingrad_BfD_norespawn_zone2"
+            "target": "t1_stalingrad_BfD_norespawn_zone2",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_stalingrad_BfD_norespawn_zone2"
+            "target": "t2_stalingrad_BfD_norespawn_zone2",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -855,12 +870,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_stalingrad_BfD_norespawn_zone3"
+            "target": "t1_stalingrad_BfD_norespawn_zone3",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_stalingrad_BfD_norespawn_zone3"
+            "target": "t2_stalingrad_BfD_norespawn_zone3",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -987,6 +1006,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_BfD_norespawn_zone1",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -994,6 +1015,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_BfD_norespawn_zone1",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1029,6 +1052,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_BfD_norespawn_zone2",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1036,6 +1061,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_BfD_norespawn_zone2",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1071,6 +1098,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_BfD_norespawn_zone3",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1078,6 +1107,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_BfD_norespawn_zone3",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1110,8 +1141,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_z1_squad"
+          "object": "t2_z1_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1119,6 +1150,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_BfD_norespawn_zone1",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1126,6 +1159,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_BfD_norespawn_zone1",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1158,8 +1193,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_z2_squad"
+          "object": "t2_z2_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1167,6 +1202,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_BfD_norespawn_zone2",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1174,6 +1211,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_BfD_norespawn_zone2",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1206,8 +1245,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t2_z3_squad"
+          "object": "t2_z3_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1215,6 +1254,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_stalingrad_BfD_norespawn_zone3",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1222,6 +1263,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_stalingrad_BfD_norespawn_zone3",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1255,8 +1298,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_z1_squad"
+            "object": "t1_z1_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1267,9 +1310,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_z1_squad",
-            "target": "capture_zone01"
+            "target": "capture_zone01",
+            "object_var_value": 0
           }
         },
         {
@@ -1280,8 +1323,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t2_z1_squad"
+            "object": "t2_z1_squad",
+            "object_var_value": 0
           }
         }
       ],
@@ -1346,8 +1389,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t2_z2_squad"
+            "object": "t2_z2_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1358,9 +1401,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_z2_squad",
-            "target": "capture_zone02"
+            "target": "capture_zone02",
+            "object_var_value": 0
           }
         },
         {
@@ -1371,8 +1414,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_z2_squad"
+            "object": "t1_z2_squad",
+            "object_var_value": 0
           }
         }
       ],
@@ -1437,8 +1480,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_z3_squad"
+            "object": "t1_z3_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1449,9 +1492,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_z3_squad",
-            "target": "capture_zone03"
+            "target": "capture_zone03",
+            "object_var_value": 0
           }
         },
         {
@@ -1462,8 +1505,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t2_z3_squad"
+            "object": "t2_z3_squad",
+            "object_var_value": 0
           }
         }
       ],
@@ -1527,9 +1570,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_lcvp_squad",
-          "target": "landing_area01"
+          "target": "landing_area01",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1573,7 +1616,10 @@
           "property": "speed",
           "check_filter": "all",
           "object_type": "isAlive",
-          "object_marking": 0
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1616,9 +1662,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_lcvp_squad02",
-          "target": "landing_area02"
+          "target": "landing_area02",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1662,7 +1708,10 @@
           "property": "speed",
           "check_filter": "all",
           "object_type": "isAlive",
-          "object_marking": 0
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1706,8 +1755,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t2_z1_squad"
+            "object": "t2_z1_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1718,9 +1767,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_z1_squad",
-            "target": "capture_zone02"
+            "target": "capture_zone02",
+            "object_var_value": 0
           }
         },
         {
@@ -1731,8 +1780,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_z2_tank_squad"
+            "object": "t1_z2_tank_squad",
+            "object_var_value": 0
           }
         }
       ],
@@ -1797,8 +1846,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t2_z2_squad"
+            "object": "t2_z2_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1809,9 +1858,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_z2_squad",
-            "target": "capture_zone02"
+            "target": "capture_zone02",
+            "object_var_value": 0
           }
         },
         {
@@ -1822,8 +1871,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_z2_tank_squad"
+            "object": "t1_z2_tank_squad",
+            "object_var_value": 0
           }
         }
       ],
@@ -1888,8 +1937,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t2_z3_squad"
+            "object": "t2_z3_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1900,9 +1949,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_z3_squad",
-            "target": "capture_zone02"
+            "target": "capture_zone02",
+            "object_var_value": 0
           }
         },
         {
@@ -1913,8 +1962,8 @@
             "value": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_z2_tank_squad"
+            "object": "t1_z2_tank_squad",
+            "object_var_value": 0
           }
         }
       ],
@@ -2000,6 +2049,8 @@
               "object_var_name": "",
               "object_var_comp_op": "equal",
               "object_var_value": 0,
+              "fastClimb": false,
+              "destTimeMode": false,
               "object": "t1_ai_assaults_01"
             }
           },
@@ -2010,12 +2061,16 @@
           },
           {
             "moAddMissionObjective": {
-              "target": "at_t1_defend_assault"
+              "target": "at_t1_defend_assault",
+              "object_var_comp_op": "equal",
+              "object_var_name": ""
             }
           },
           {
             "moAddMissionObjective": {
-              "target": "at_t2_attack_assault"
+              "target": "at_t2_attack_assault",
+              "object_var_comp_op": "equal",
+              "object_var_name": ""
             }
           },
           {
@@ -2066,9 +2121,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_ai_assaults_01",
-            "target": "t1_ai_assaults_target_point_01"
+            "target": "t1_ai_assaults_target_point_01",
+            "object_var_value": 0
           }
         },
         "actions": {
@@ -2087,6 +2142,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t1_ai_assaults_01"
           },
           "unitAttackTarget": {
@@ -2126,9 +2183,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_ai_assaults_01",
-            "target": "t1_ai_assaults_spawn"
+            "target": "t1_ai_assaults_spawn",
+            "object_var_value": 0
           }
         },
         "actions": {
@@ -2174,6 +2231,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t1_defend_assault",
               "status": 2,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "A"
             }
           },
@@ -2181,6 +2240,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t2_attack_assault",
               "status": 3,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "B"
             }
           },
@@ -2213,8 +2274,8 @@
             "value": 7,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "t1_ai_assaults_01"
+            "object": "t1_ai_assaults_01",
+            "object_var_value": 0
           }
         },
         "actions": [
@@ -2227,6 +2288,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t1_defend_assault",
               "status": 3,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "A"
             }
           },
@@ -2234,6 +2297,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t2_attack_assault",
               "status": 2,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "B"
             }
           },
@@ -2375,7 +2440,7 @@
           [-0.866025,0.0,-0.5],
           [-19128.3,216.192,7416.2]
         ],
-        "unit_class": "dynAF_stalingrad_dirt1_ally",
+        "unit_class": "dynaf_universal_1line_b",
         "props": {
           "army": 2,
           "active": true
@@ -2391,7 +2456,7 @@
           [0.328818,0.0,0.944393],
           [17581.8,6.88475,-4303.81]
         ],
-        "unit_class": "dynAF_stalingrad_dirt1_ally",
+        "unit_class": "dynaf_universal_1line_b",
         "props": {
           "army": 1,
           "active": true
@@ -8131,6 +8196,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_airfield_small_aaa_01"
           },
           {
@@ -8173,6 +8241,9 @@
           [-17311.8,214.65,6761.6]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_airfield_small_aaa_01"
           },
@@ -8217,6 +8288,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_z1_tank01"
           },
           {
@@ -8236,6 +8310,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_z3_aa01"
           },
           {
@@ -8254,6 +8331,9 @@
           [-6291.3,152.5,11347.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_z2_truck03"
           },
@@ -8282,6 +8362,7 @@
           [-5280.15,117.35,12882.0]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_aaa_squad"
         }
       }
@@ -8296,6 +8377,9 @@
           [-5983.8,156.65,12700.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_trucks_squad"
           },
@@ -8315,6 +8399,7 @@
           [-5737.5,122.75,13444.1]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_tanks_squad"
         }
       }
@@ -8329,6 +8414,9 @@
           [-6120.65,162.8,13322.1]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_aaa_squad"
           },
@@ -8348,6 +8436,9 @@
           [-6054.6,173.85,13866.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_trucks_squad"
           },
@@ -8371,6 +8462,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_z2_tank01"
           },
           {
@@ -8389,6 +8483,9 @@
           [5054.9,-5.05,2644.45]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_z1_aa02"
           },
@@ -8429,6 +8526,7 @@
           [5380.25,-4.6,3040.1]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -8443,6 +8541,7 @@
           [5299.9,-4.45,2344.05]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_aaa_squad"
         }
       }
@@ -8457,6 +8556,9 @@
           [5545.95,-3.65,2660.2]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_artilery_squad"
           },
@@ -8479,6 +8581,7 @@
           [5825.5,-6.45,1882.5]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_tanks_squad"
         }
       }
@@ -8493,6 +8596,7 @@
           [6117.9,-7.0,2314.4]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -8507,6 +8611,7 @@
           [6308.5,-12.0,1931.35]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_tanks_squad"
         }
       }
@@ -8521,6 +8626,9 @@
           [5769.95,-5.7,3349.75]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_z1_art01"
           },
@@ -8589,6 +8697,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_lcvp_squad02"
           },
           {
@@ -8607,6 +8718,9 @@
           [-8160.7,109.3,-5287.9]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_z3_art01"
           },
@@ -8648,6 +8762,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_z3_aa01"
           },
           {
@@ -8670,6 +8787,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_z2_truck03"
           },
           {
@@ -8691,6 +8811,9 @@
           [-2547.4,136.3,-190.45]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_z2_art01"
           },
@@ -8732,6 +8855,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_z1_aa02"
           },
           {
@@ -8772,6 +8898,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_z1_tank01"
           },
           {
@@ -8793,6 +8922,9 @@
           [9406.2,-12.0,6893.25]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_lcvp01"
           },
@@ -9745,6 +9877,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_lcvp09"
           },
           {
@@ -9876,6 +10011,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_z2_tank01"
           },
           {
@@ -9975,6 +10113,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "bridge_19"
           },
           {
@@ -9996,6 +10137,9 @@
           [-11147.5,148.0,-5296.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_movable_units_squad"
           },
@@ -10274,6 +10418,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_subquest_units_01"
           },
           {
@@ -10295,6 +10442,9 @@
           [-703.7,72.4,-32525.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_subquest_units_01"
           },
@@ -10365,6 +10515,9 @@
           [-9455.55,-2.05,3409.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_z2_truck03"
           },
@@ -10742,9 +10895,9 @@
     "t2_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [402.04,0.0,281.512],
+        [496.827,0.0,291.049],
         [0.0,300.0,0.0],
-        [-758.985,1.52588e-05,1083.94],
+        [-941.283,2.14736e-05,1606.79],
         [-19160.6,197.1,7449.45]
       ],
       "props": []
@@ -10752,9 +10905,9 @@
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-95.4254,0.0,-292.098],
+        [-202.239,0.0,-619.056],
         [0.0,300.0,0.0],
-        [1450.29,0.0,-473.795],
+        [1867.04,0.0,-609.945],
         [17607.9,-21.0994,-4290.48]
       ],
       "props": []

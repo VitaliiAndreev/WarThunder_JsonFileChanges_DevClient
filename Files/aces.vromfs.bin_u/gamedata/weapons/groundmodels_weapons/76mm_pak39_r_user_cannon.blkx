@@ -37,9 +37,9 @@
     "bulletType": "apcbc_tank",
     "bulletName": "76mm_pzgr_39_rot",
     "relativeVelHitShift": [300.0,1000.0],
-    "relativeVelArmorShift": [200.0,1000.0],
     "fuseDelayDist": 1.2,
-    "explodeTreshold": 25.0,
+    "explodeTreshold": 14.0,
+    "relativeVelArmorShift": [200.0,1000.0],
     "ricochetEffect": "cannon_ricochet",
     "waterCollisionEffect": "120-203_water_splash",
     "waterFxScale": [0.7,0.8],
@@ -491,9 +491,13 @@
   "76mm_ger_pak36r_APCR": {
     "bullet": {
       "bulletCount": 10,
-      "mass": 4.065,
+      "mass": 4.15,
       "caliber": 0.0762,
       "speed": 990.0,
+      "damageMass": 0.9,
+      "ballisticCaliber": 0.0762,
+      "damageCaliber": 0.028,
+      "Cx": 0.28,
       "maxDistance": 7000.0,
       "bulletType": "apcr_tank",
       "bulletName": "76mm_pzgr_40",
@@ -510,19 +514,13 @@
         "HitPower2500m": [0.6,2500.0],
         "HitPower10000m": [0.5,10000.0]
       },
-      "armorpower": {
-        "ArmorPower0m": [189.0,10.0],
-        "ArmorPower100m": [188.0,100.0],
-        "ArmorPower250m": [179.0,250.0],
-        "ArmorPower500m": [165.0,500.0],
-        "ArmorPower750m": [151.0,750.0],
-        "ArmorPower1000m": [139.0,1000.0],
-        "ArmorPower1250m": [128.0,1250.0],
-        "ArmorPower1500m": [117.0,1500.0],
-        "ArmorPower2000m": [99.0,2000.0],
-        "ArmorPower2500m": [83.0,2500.0],
-        "ArmorPower3000m": [70.0,3000.0],
-        "ArmorPower7000m": [0.0,7000.0]
+      "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 0.65,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],

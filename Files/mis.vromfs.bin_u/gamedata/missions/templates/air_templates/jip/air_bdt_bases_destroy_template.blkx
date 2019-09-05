@@ -3528,7 +3528,7 @@
           },
           {
             "varSetString": {
-              "value": "bdt_t1_bomb_target_",
+              "value": "bdt_t1_bomb_object_",
               "var": "bdt_destroy_t1_bombing_zone_object_name"
             }
           },
@@ -3887,7 +3887,7 @@
           },
           {
             "varSetString": {
-              "value": "bdt_t2_bomb_target_",
+              "value": "bdt_t2_bomb_object_",
               "var": "bdt_destroy_t2_bombing_zone_object_name"
             }
           },
@@ -4119,13 +4119,13 @@
               "object_marking": 0,
               "object_var_name": "",
               "object_var_comp_op": "equal",
-              "object_var_value": 0,
               "target_type": "isAlive",
               "target_marking": 0,
               "check_objects": "any",
               "check_targets": "any",
               "object": "bdt_t1_aaa_squad",
               "target": "@bdt_t1_aaa_destroy_name",
+              "object_var_value": 0,
               "compareCenters": false,
               "check_all_units": true
             }
@@ -4268,13 +4268,13 @@
               "object_marking": 0,
               "object_var_name": "",
               "object_var_comp_op": "equal",
-              "object_var_value": 0,
               "target_type": "isAlive",
               "target_marking": 0,
               "check_objects": "any",
               "check_targets": "any",
               "object": "bdt_t2_aaa_squad",
               "target": "@bdt_t2_aaa_destroy_name",
+              "object_var_value": 0,
               "compareCenters": false,
               "check_all_units": true
             }
@@ -4417,7 +4417,9 @@
         "actions": {
           "moSetObjectiveStatus": {
             "target": "@bdt_t1_clear_name",
-            "status": 0
+            "status": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           },
           "triggerEnable": {
             "target": "bdt_t1_clear_rotator"
@@ -4540,7 +4542,9 @@
         "actions": {
           "moSetObjectiveStatus": {
             "target": "@bdt_t2_clear_name",
-            "status": 0
+            "status": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           },
           "triggerEnable": {
             "target": "bdt_t2_clear_rotator"
@@ -4574,6 +4578,8 @@
         "actions": {
           "moAddMissionObjective": {
             "target": "@bdt_t2_spawn_objective_name",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "unit_or_area": "@bdt_t1_cur_spawn_zone_name"
           }
         },
@@ -4605,6 +4611,8 @@
         "actions": {
           "moAddMissionObjective": {
             "target": "@bdt_t1_spawn_objective_name",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "unit_or_area": "@bdt_t2_cur_spawn_zone_name"
           }
         },
@@ -4641,6 +4649,8 @@
           "moSetObjectiveStatus": {
             "target": "@bdt_t2_destroy_objective_name",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -4677,6 +4687,8 @@
           "moSetObjectiveStatus": {
             "target": "@bdt_t1_destroy_objective_name",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },

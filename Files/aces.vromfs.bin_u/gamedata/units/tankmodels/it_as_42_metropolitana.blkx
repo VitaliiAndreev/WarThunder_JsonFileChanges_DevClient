@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -562,24 +565,6 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -595,15 +580,41 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -1992,7 +2003,7 @@
   {
     "cockpit": {
       "openedCockpit": true,
-      "headPos": [0.0,3.5,-7.0],
+      "headPos": [0.0,3.0,-7.0],
       "headPosOnShooting": [-0.5,3.0,-0.1],
       "zoomOutFov": 35.0,
       "zoomInFov": 20.0,

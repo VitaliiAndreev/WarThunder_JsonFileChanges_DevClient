@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -193,12 +196,10 @@
       },
       "mask": {
         "gun_mask_dm": {
-          "armorThickness": 90.0,
-          "hp": 10000.0
+          "armorThickness": 40.0
         },
         "gun_mask_shield_dm": {
-          "armorThickness": 200.0,
-          "hp": 10000.0
+          "armorThickness": 200.0
         }
       },
       "gun": {
@@ -235,7 +236,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -258,54 +259,114 @@
         "wheel_r_front_dm": [],
         "wheel_l_front_dm": []
       },
-      "equipment": {
+      "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 12.0,
-        "armorThrough": 1.0,
-        "fireProtectionHp": 15.0,
-        "explosionArmorQuality": 0.35,
-        "shatterArmorQuality": 0.35,
-        "drive_turret_v_dm": [],
-        "drive_turret_h_dm": [],
-        "radio_station_dm": []
+        "armorThrough": 15.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "drive_turret_v_dm": {
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_dm": {
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "radiator_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radiator_l_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radiator_r_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radio_station_dm": {
+          "hp": 50.0,
+          "armorThrough": 3.0
+        }
       },
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 15.0,
-        "armorThrough": 300.0,
-        "fireProtectionHp": 10.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
         "hidableInViewer": false,
-        "cannon_breech_dm": [],
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
         "cannon_breech_01_dm": {
-          "armorThrough": 15.0
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
         }
       },
-      "radiators": {
-        "armorClass": "tank_structural_steel",
-        "hp": 50.0,
-        "armorThickness": 5.0,
-        "armorThrough": 15.0,
-        "fireProtectionHp": 5.0,
-        "radiator_dm": [],
-        "radiator_l_dm": [],
-        "radiator_r_dm": []
-      },
-      "engine": {
+      "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 2.0,
-        "armorThrough": 40.0,
+        "armorThickness": 150.0,
         "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
         "engine_dm": [],
         "transmission_dm": []
       },
-      "equipment_body": {
+      "fuel_tanks": {
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 10.0,
+        "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
@@ -315,10 +376,12 @@
         "fuel_tank_05_dm": [],
         "fuel_tank_r_01_dm": [],
         "fuel_tank_r_02_dm": [],
+        "fuel_tank_r_03_dm": [],
         "fuel_tank_r_04_dm": [],
         "fuel_tank_r_05_dm": [],
         "fuel_tank_l_01_dm": [],
         "fuel_tank_l_02_dm": [],
+        "fuel_tank_l_03_dm": [],
         "fuel_tank_l_04_dm": [],
         "fuel_tank_l_05_dm": []
       },

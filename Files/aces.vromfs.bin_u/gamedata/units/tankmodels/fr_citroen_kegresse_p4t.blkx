@@ -24,6 +24,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -655,40 +658,87 @@
           "genericDamageMult": 3.0
         }
       },
-      "equipment": {
+      "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 12.0,
-        "armorThrough": 1.0,
-        "fireProtectionHp": 15.0,
-        "explosionArmorQuality": 0.35,
-        "shatterArmorQuality": 0.35,
-        "drive_turret_v_dm": [],
-        "drive_turret_h_dm": [],
-        "radio_station_dm": []
-      },
-      "radiators": {
-        "armorClass": "tank_structural_steel",
-        "hp": 50.0,
-        "armorThickness": 5.0,
         "armorThrough": 15.0,
         "fireProtectionHp": 5.0,
-        "radiator_dm": [],
-        "radiator_l_dm": [],
-        "radiator_r_dm": []
+        "hidableInViewer": false,
+        "drive_turret_v_dm": {
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_dm": {
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_03_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_04_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_05_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "radiator_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radiator_l_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radiator_r_dm": {
+          "hp": 50.0,
+          "armorThrough": 5.0
+        },
+        "radio_station_dm": {
+          "hp": 50.0,
+          "armorThrough": 3.0
+        }
       },
-      "engine": {
+      "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 2.0,
-        "armorThrough": 40.0,
+        "armorThickness": 150.0,
         "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
         "engine_dm": [],
         "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 500.0,
+        "hp": 300.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,
@@ -737,6 +787,18 @@
         "ammo_turret_41_dm": [],
         "ammo_turret_42_dm": [],
         "ammo_turret_43_dm": [],
+        "ammo_turret_44_dm": [],
+        "ammo_turret_45_dm": [],
+        "ammo_turret_46_dm": [],
+        "ammo_turret_47_dm": [],
+        "ammo_turret_48_dm": [],
+        "ammo_turret_49_dm": [],
+        "ammo_turret_50_dm": [],
+        "ammo_turret_51_dm": [],
+        "ammo_turret_52_dm": [],
+        "ammo_turret_53_dm": [],
+        "ammo_turret_54_dm": [],
+        "ammo_turret_55_dm": [],
         "ammo_body_dm": [],
         "ammo_body_01_dm": [],
         "ammo_body_02_dm": [],
@@ -792,6 +854,7 @@
         "ammo_body_52_dm": [],
         "ammo_body_53_dm": [],
         "ammo_body_54_dm": [],
+        "ammo_body_55_dm": [],
         "ammo_body_l_01_dm": [],
         "ammo_body_l_02_dm": [],
         "ammo_body_l_03_dm": [],
@@ -837,9 +900,8 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 10.0,
-        "fireProtectionHp": 10.0,
-        "createSecondaryShatters": false,
+        "armorThrough": 12.0,
+        "fireProtectionHp": 15.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -1795,6 +1857,15 @@
           "part": "cannon_breech_05_dm"
         },
         {
+          "part": "turret_04_side_dm"
+        },
+        {
+          "part": "turret_03_side_dm"
+        },
+        {
+          "part": "turret_04_back_dm"
+        },
+        {
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
@@ -1827,49 +1898,31 @@
           "hp": 2000.0
         },
         {
-          "part": "ex_decor_02_dm"
+          "part": "turret_04_top_dm"
         },
         {
-          "part": "body_bottom_dm"
+          "part": "turret_04_front_dm"
         },
         {
-          "part": "body_dm"
+          "part": "superstructure_top_dm"
         },
         {
-          "part": "body_front_dm"
+          "part": "superstructure_side_dm"
         },
         {
-          "part": "body_top_dm"
+          "part": "turret_02_side_dm"
         },
         {
-          "part": "ex_armor_r_01_dm"
+          "part": "turret_top_dm"
         },
         {
-          "part": "ex_armor_r_02_dm"
+          "part": "superstructure_back_dm"
         },
         {
-          "part": "ex_armor_r_03_dm"
+          "part": "superstructure_bottom_dm"
         },
         {
-          "part": "ex_armor_l_01_dm"
-        },
-        {
-          "part": "ex_armor_l_02_dm"
-        },
-        {
-          "part": "ex_armor_l_03_dm"
-        },
-        {
-          "part": "body_back_dm"
-        },
-        {
-          "part": "body_side_dm"
-        },
-        {
-          "part": "body_back_dm"
-        },
-        {
-          "part": "body_bottom_dm"
+          "part": "turret_03_back_dm"
         },
         {
           "effect": {
@@ -1890,98 +1943,15 @@
           }
         }
       ],
-      "suspension": [
-        {
-          "hp": 2000.0
-        },
-        {
-          "part": "wheel_l_01_dm"
-        },
-        {
-          "part": "wheel_l_02_dm"
-        },
-        {
-          "part": "wheel_l_03_dm"
-        },
-        {
-          "part": "wheel_l_04_dm"
-        },
-        {
-          "part": "wheel_l_05_dm"
-        },
-        {
-          "part": "wheel_l_06_dm"
-        },
-        {
-          "part": "wheel_l_drive_dm"
-        },
-        {
-          "part": "wheel_r_01_dm"
-        },
-        {
-          "part": "wheel_r_02_dm"
-        },
-        {
-          "part": "wheel_r_03_dm"
-        },
-        {
-          "part": "wheel_r_04_dm"
-        },
-        {
-          "part": "wheel_r_05_dm"
-        },
-        {
-          "part": "wheel_r_06_dm"
-        },
-        {
-          "part": "wheel_r_drive_dm"
-        },
-        {
-          "part": "superstructure_front_dm"
-        },
-        {
-          "part": "track_r_dm"
-        },
-        {
-          "part": "track_l_dm"
-        },
-        {
-          "part": "wheel_support_dm"
-        },
-        {
-          "effect": {
-            "conditionDamageType": "explosion",
-            "expl": 1.0,
-            "conditionDamage": 400.0,
-            "kill": true,
-            "killEffect": "fire"
-          }
-        },
-        {
-          "effect": {
-            "conditionDamageType": "cumulative",
-            "expl": 1.0,
-            "conditionDamage": 400.0,
-            "kill": true,
-            "killEffect": "fire"
-          }
-        }
-      ],
       "mount": [
         {
           "hp": 2000.0
         },
         {
-          "part": "ex_armor_02_dm"
+          "part": "turret_02_back_dm"
         },
         {
-          "part": "turret_bottom_dm"
-        },
-        {
-          "part": "turret_top_dm"
-        },
-        {
-          "part": "turret_front_dm"
+          "part": "turret_02_top_dm"
         },
         {
           "effect": {

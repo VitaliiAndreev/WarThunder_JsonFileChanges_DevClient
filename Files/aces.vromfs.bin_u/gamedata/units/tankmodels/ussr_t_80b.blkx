@@ -21,6 +21,9 @@
     "exhaustFx": "tank_modern_light_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -91,6 +94,15 @@
   },
   {
     "type": "typeMediumTank"
+  },
+  {
+    "irProjectorNode": "ex_lantern_05"
+  },
+  {
+    "irBeamRadius": [1300.0,100.0]
+  },
+  {
+    "irProjectorPower": [0.03,0.05]
   },
   {
     "rearmSmokeTimeOnField": 60.0
@@ -474,6 +486,8 @@
         "ex_armor_body_r_01_dm": [],
         "ex_armor_body_r_02_dm": [],
         "turret_03_back_dm": [],
+        "ex_armor_05_dm": [],
+        "ex_decor_05_dm": [],
         "timber": {
           "armorClass": "ship_wood",
           "armorThickness": 100.0,
@@ -485,6 +499,7 @@
         "ex_armor_08_dm": [],
         "ex_armor_09_dm": [],
         "ex_armor_10_dm": [],
+        "ex_armor_13_dm": [],
         "ex_armor_01_dm": [],
         "ex_armor_02_dm": [],
         "ex_armor_06_dm": [],
@@ -617,7 +632,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -698,24 +713,6 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -731,15 +728,41 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -1952,15 +1975,22 @@
             },
             {
               "linkedAnimPart": {
-                "verNode": "bone_gun_roller_02",
-                "verLimits": [-6.0,17.0],
+                "verNode": "bone_roll_01",
+                "verLimits": [2.0,-23.0],
                 "verOriginLimits": [-6.0,16.0]
               }
             },
             {
               "linkedAnimPart": {
-                "verNode": "bone_gun_roller_01",
-                "verLimits": [5.0,-13.0],
+                "verNode": "bone_roll_02",
+                "verLimits": [-4.0,16.0],
+                "verOriginLimits": [-6.0,16.0]
+              }
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "bone_roll_03",
+                "verLimits": [-5.0,15.0],
                 "verOriginLimits": [-6.0,16.0]
               }
             }
@@ -2869,6 +2899,28 @@
     }
   },
   {
+    "nightVision": {
+      "gunnerIr": {
+        "resolution": [1600,1200],
+        "lightMult": 9.0,
+        "ghosting": 0.6,
+        "noiseFactor": 0.2
+      },
+      "commanderIr": {
+        "resolution": [1600,1200],
+        "lightMult": 9.0,
+        "ghosting": 0.6,
+        "noiseFactor": 0.2
+      },
+      "driverIr": {
+        "resolution": [800,600],
+        "lightMult": 5.0,
+        "ghosting": 0.6,
+        "noiseFactor": 0.2
+      }
+    }
+  },
+  {
     "modifications": {
       "new_tank_tracks": [],
       "new_tank_suspension": [],
@@ -2904,6 +2956,39 @@
       "125mm_ussr_HE": [],
       "125mm_ussr_ATGM": {
         "maxToRespawn": 5
+      },
+      "night_vision_system_upgrade_nv_to_thermal": {
+        "tier": 4,
+        "modClass": "protection",
+        "requiresModelReload": true,
+        "effects": {
+          "nightVision": {
+            "gunnerThermal": {
+              "resolution": [500,300],
+              "noiseFactor": 0.05
+            },
+            "commanderIr": {
+              "resolution": [1600,1200],
+              "lightMult": 9.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            }
+          },
+          "hideNodes": {
+            "node": "t_80b"
+          }
+        },
+        "disableModEffects": {
+          "hideNodes": {
+            "node": "t_80b_mod"
+          }
+        }
       },
       "t_80b_protection_improvement": {
         "invertEnableLogic": false,
@@ -2958,15 +3043,22 @@
                   },
                   {
                     "linkedAnimPart": {
-                      "verNode": "bone_gun_roller_02",
-                      "verLimits": [-6.0,17.0],
+                      "verNode": "bone_roll_01",
+                      "verLimits": [2.0,-23.0],
                       "verOriginLimits": [-6.0,16.0]
                     }
                   },
                   {
                     "linkedAnimPart": {
-                      "verNode": "bone_gun_roller_01",
-                      "verLimits": [5.0,-13.0],
+                      "verNode": "bone_roll_02",
+                      "verLimits": [-4.0,16.0],
+                      "verOriginLimits": [-6.0,16.0]
+                    }
+                  },
+                  {
+                    "linkedAnimPart": {
+                      "verNode": "bone_roll_03",
+                      "verLimits": [-5.0,15.0],
                       "verOriginLimits": [-6.0,16.0]
                     }
                   }
@@ -3344,15 +3436,22 @@
                   },
                   {
                     "linkedAnimPart": {
-                      "verNode": "bone_gun_roller_02",
-                      "verLimits": [-6.0,17.0],
+                      "verNode": "bone_roll_01",
+                      "verLimits": [2.0,-23.0],
                       "verOriginLimits": [-6.0,16.0]
                     }
                   },
                   {
                     "linkedAnimPart": {
-                      "verNode": "bone_gun_roller_01",
-                      "verLimits": [5.0,-13.0],
+                      "verNode": "bone_roll_02",
+                      "verLimits": [-4.0,16.0],
+                      "verOriginLimits": [-6.0,16.0]
+                    }
+                  },
+                  {
+                    "linkedAnimPart": {
+                      "verNode": "bone_roll_03",
+                      "verLimits": [-5.0,15.0],
                       "verOriginLimits": [-6.0,16.0]
                     }
                   }

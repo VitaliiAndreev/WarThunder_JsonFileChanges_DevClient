@@ -37,9 +37,9 @@
     "bulletType": "apcbc_tank",
     "bulletName": "75mm_pzgr_39",
     "relativeVelHitShift": [300.0,1000.0],
+    "fuseDelayDist": 1.2,
+    "explodeTreshold": 14.0,
     "relativeVelArmorShift": [200.0,1000.0],
-    "fuseDelayDist": 1.3,
-    "explodeTreshold": 15.0,
     "ricochetEffect": "cannon_ricochet",
     "waterCollisionEffect": "120-203_water_splash",
     "waterFxScale": [0.7,0.8],
@@ -647,9 +647,13 @@
   "75mm_ger_kwk40_APCR": {
     "bullet": {
       "bulletCount": 10,
-      "mass": 4.15,
+      "mass": 4.1,
       "caliber": 0.075,
       "speed": 930.0,
+      "damageMass": 0.9,
+      "ballisticCaliber": 0.075,
+      "damageCaliber": 0.028,
+      "Cx": 0.28,
       "maxDistance": 7000.0,
       "bulletType": "apcr_tank",
       "bulletName": "75mm_pzgr_40",
@@ -665,6 +669,14 @@
         "HitPower1500m": [0.6,1500.0],
         "HitPower2500m": [0.6,2500.0],
         "HitPower10000m": [0.5,10000.0]
+      },
+      "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 0.65,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],

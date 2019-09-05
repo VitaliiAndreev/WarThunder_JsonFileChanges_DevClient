@@ -258,7 +258,7 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": true,
+        "isShipsAllowed": false,
         "isHelicoptersAllowed": false
       }
     },
@@ -413,6 +413,38 @@
         "showWayPoints": true,
         "excludes": []
       }
+    },
+    {
+      "import_record": {
+        "file": "gameData/missions/cta/simulator/dover/pt_ports_template_part.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
+    },
+    {
+      "import_record": {
+        "file": "gameData/missions/cta/simulator/dover/sbt_bombers_template_part.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
     }
   ],
   "triggers": {
@@ -479,6 +511,12 @@
           }
         },
         {
+          "varSetBool": {
+            "value": true,
+            "var": "sbt_is_launch_alowed"
+          }
+        },
+        {
           "comment": {
             "value": "включение разведки"
           }
@@ -514,6 +552,9 @@
             },
             {
               "target": "lbt_battles_armada"
+            },
+            {
+              "target": "sbt_armada"
             }
           ]
         },

@@ -21,6 +21,9 @@
     "exhaustFx": "tank_modern_light_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -91,6 +94,21 @@
   },
   {
     "type": "typeMediumTank"
+  },
+  {
+    "irProjectorNode": "ex_lantern_05"
+  },
+  {
+    "irBeamRadius": [1300.0,100.0]
+  },
+  {
+    "irProjectorPower": [0.03,0.05]
+  },
+  {
+    "engineHeatSourceSize": [1.0,0.6,1.7]
+  },
+  {
+    "radiatorHeatSourceSize": [1.0,0.6,1.0]
   },
   {
     "rearmSmokeTimeOnField": 60.0
@@ -265,7 +283,8 @@
           "variableThickness": true
         },
         "turret_09_back_dm": {
-          "armorThickness": 30.0
+          "armorThickness": 30.0,
+          "createSecondaryShatters": false
         },
         "turret_06_top_dm": {
           "armorThickness": 50.0
@@ -297,6 +316,9 @@
         },
         "turret_08_bottom_dm": {
           "armorThickness": 5.0
+        },
+        "turret_02_side_dm": {
+          "armorThickness": 30.0
         }
       },
       "ex_armor_era_hull_turret": {
@@ -357,6 +379,9 @@
           "hidableInViewer": true
         },
         "ex_armor_r_07_dm": {
+          "hidableInViewer": true
+        },
+        "ex_armor_r_08_dm": {
           "hidableInViewer": true
         }
       },
@@ -442,7 +467,8 @@
         "ex_decor_12_dm": [],
         "ex_decor_13_dm": [],
         "ex_decor_14_dm": [],
-        "ex_decor_15_dm": []
+        "ex_decor_15_dm": [],
+        "ex_decor_16_dm": []
       },
       "body_shields": {
         "armorClass": "tank_structural_steel",
@@ -602,7 +628,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
-        "hp": 200.0,
+        "hp": 300.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -683,24 +709,6 @@
           "hp": 40.0,
           "armorThrough": 15.0
         },
-        "cannon_breech_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 300.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_01_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
-        "cannon_breech_02_dm": {
-          "armorThickness": 10.0,
-          "armorThrough": 100.0,
-          "hp": 150.0,
-          "fireProtectionHp": 10.0
-        },
         "radiator_dm": {
           "hp": 40.0,
           "armorThrough": 5.0
@@ -716,15 +724,41 @@
         "radio_station_dm": {
           "hp": 20.0,
           "armorThrough": 3.0
-        },
-        "engine": {
-          "armorClass": "armor_tank_engine",
-          "hp": 100.0,
-          "armorThrough": 50.0,
-          "fireProtectionHp": 3.0,
-          "engine_dm": [],
-          "transmission_dm": []
         }
+      },
+      "cannon_breech": {
+        "armorClass": "tank_structural_steel",
+        "hp": 150.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
@@ -1940,9 +1974,6 @@
         "node": "ex_era_turret_05"
       },
       {
-        "node": "ex_era_turret_06"
-      },
-      {
         "node": "ex_era_turret_07"
       },
       {
@@ -2006,6 +2037,12 @@
         "node": "ex_armor_11"
       },
       {
+        "node": "ex_armor_r_08_dm"
+      },
+      {
+        "node": "ex_armor_r_04_dm"
+      },
+      {
         "Weapon": {
           "trigger": "gunner0",
           "blk": "gameData/Weapons/groundModels_weapons/125mm_2A46_M1_user_cannon.blk",
@@ -2050,15 +2087,29 @@
             },
             {
               "linkedAnimPart": {
-                "verNode": "bone_gun_roller_02",
-                "verLimits": [-6.0,17.0],
+                "verNode": "bone_roll_01",
+                "verLimits": [9.0,-17.0],
                 "verOriginLimits": [-6.0,16.0]
               }
             },
             {
               "linkedAnimPart": {
-                "verNode": "bone_gun_roller_01",
-                "verLimits": [5.0,-13.0],
+                "verNode": "bone_roll_02",
+                "verLimits": [-6.0,20.0],
+                "verOriginLimits": [-6.0,16.0]
+              }
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "bone_roll_03",
+                "verLimits": [7.0,-19.0],
+                "verOriginLimits": [-6.0,16.0]
+              }
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "bone_roll_04",
+                "verLimits": [8.0,-22.0],
                 "verOriginLimits": [-6.0,16.0]
               }
             }
@@ -2864,6 +2915,28 @@
     }
   },
   {
+    "nightVision": {
+      "gunnerIr": {
+        "resolution": [1600,1200],
+        "lightMult": 9.0,
+        "ghosting": 0.6,
+        "noiseFactor": 0.2
+      },
+      "commanderIr": {
+        "resolution": [1600,1200],
+        "lightMult": 9.0,
+        "ghosting": 0.6,
+        "noiseFactor": 0.2
+      },
+      "driverIr": {
+        "resolution": [800,600],
+        "lightMult": 5.0,
+        "ghosting": 0.6,
+        "noiseFactor": 0.2
+      }
+    }
+  },
+  {
     "modifications": {
       "new_tank_tracks": [],
       "new_tank_suspension": [],
@@ -2939,9 +3012,6 @@
               "node": "ex_era_turret_05"
             },
             {
-              "node": "ex_era_turret_06"
-            },
-            {
               "node": "ex_era_turret_07"
             },
             {
@@ -3005,6 +3075,12 @@
               "node": "ex_armor_11"
             },
             {
+              "node": "ex_armor_r_08_dm"
+            },
+            {
+              "node": "ex_armor_r_04_dm"
+            },
+            {
               "Weapon": {
                 "trigger": "gunner0",
                 "blk": "gameData/Weapons/groundModels_weapons/125mm_2A46_M1_user_cannon.blk",
@@ -3049,15 +3125,29 @@
                   },
                   {
                     "linkedAnimPart": {
-                      "verNode": "bone_gun_roller_02",
-                      "verLimits": [-6.0,17.0],
+                      "verNode": "bone_roll_01",
+                      "verLimits": [9.0,-17.0],
                       "verOriginLimits": [-6.0,16.0]
                     }
                   },
                   {
                     "linkedAnimPart": {
-                      "verNode": "bone_gun_roller_01",
-                      "verLimits": [5.0,-13.0],
+                      "verNode": "bone_roll_02",
+                      "verLimits": [-6.0,20.0],
+                      "verOriginLimits": [-6.0,16.0]
+                    }
+                  },
+                  {
+                    "linkedAnimPart": {
+                      "verNode": "bone_roll_03",
+                      "verLimits": [7.0,-19.0],
+                      "verOriginLimits": [-6.0,16.0]
+                    }
+                  },
+                  {
+                    "linkedAnimPart": {
+                      "verNode": "bone_roll_04",
+                      "verLimits": [8.0,-22.0],
                       "verOriginLimits": [-6.0,16.0]
                     }
                   }
@@ -3251,6 +3341,9 @@
                   "emitterGenFmt": "emtr_mortar_flame_%02d"
                 },
                 {
+                  "ignoreLoaderPenalty": true
+                },
+                {
                   "createGunEffects": true
                 },
                 {
@@ -3326,6 +3419,91 @@
                   }
                 }
               ]
+            }
+          ]
+        }
+      },
+      "night_vision_system_upgrade_nv_to_thermal": {
+        "tier": 4,
+        "modClass": "protection",
+        "requiresModelReload": true,
+        "effects": {
+          "nightVision": {
+            "gunnerThermal": {
+              "resolution": [500,300],
+              "noiseFactor": 0.05
+            },
+            "commanderIr": {
+              "resolution": [1600,1200],
+              "lightMult": 9.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            }
+          },
+          "hideNodes": [
+            {
+              "node": "ex_lantern_05"
+            },
+            {
+              "node": "t_80u"
+            },
+            {
+              "node": "roll_01"
+            },
+            {
+              "node": "roll_02"
+            },
+            {
+              "node": "roll_03"
+            },
+            {
+              "node": "roll_04"
+            },
+            {
+              "node": "skin_02"
+            },
+            {
+              "node": "ex_lantern_06"
+            },
+            {
+              "node": "ex_armor_r_04"
+            },
+            {
+              "node": "ex_armor_r_04_dm"
+            }
+          ]
+        },
+        "disableModEffects": {
+          "hideNodes": [
+            {
+              "node": "t_80u_mod"
+            },
+            {
+              "node": "ex_lantern_07"
+            },
+            {
+              "node": "ex_armor_r_08"
+            },
+            {
+              "node": "ex_decor_16"
+            },
+            {
+              "node": "ex_armor_r_09"
+            },
+            {
+              "node": "ex_era_turret_06_dm"
+            },
+            {
+              "node": "ex_armor_r_08_dm"
+            },
+            {
+              "node": "ex_decor_16_dm"
             }
           ]
         }

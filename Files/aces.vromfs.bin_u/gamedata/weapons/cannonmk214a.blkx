@@ -57,9 +57,9 @@
       "bulletType": "ap_t",
       "bulletName": "50mm_pzgr_39",
       "relativeVelHitShift": [300.0,1000.0],
-      "relativeVelArmorShift": [200.0,1000.0],
       "fuseDelayDist": 1.2,
-      "explodeTreshold": 25.0,
+      "explodeTreshold": 9.0,
+      "relativeVelArmorShift": [200.0,1000.0],
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "120-203_water_splash",
       "waterFxScale": [0.7,0.8],
@@ -505,9 +505,9 @@
         "bulletType": "ap_t",
         "bulletName": "50mm_pzgr_39",
         "relativeVelHitShift": [300.0,1000.0],
-        "relativeVelArmorShift": [200.0,1000.0],
         "fuseDelayDist": 1.2,
-        "explodeTreshold": 25.0,
+        "explodeTreshold": 9.0,
+        "relativeVelArmorShift": [200.0,1000.0],
         "ricochetEffect": "cannon_ricochet",
         "waterCollisionEffect": "120-203_water_splash",
         "waterFxScale": [0.7,0.8],
@@ -643,9 +643,13 @@
     "mk214_antitank": {
       "bullet": {
         "bulletCount": 10,
-        "mass": 0.925,
+        "mass": 0.9,
         "caliber": 0.05,
-        "speed": 1180.0,
+        "speed": 1130.0,
+        "damageMass": 0.335,
+        "ballisticCaliber": 0.05,
+        "damageCaliber": 0.021,
+        "Cx": 0.47,
         "maxDistance": 7000.0,
         "bulletType": "apcr_t",
         "bulletName": "50mm_pzgr_40",
@@ -662,20 +666,13 @@
           "HitPower2500m": [0.6,2500.0],
           "HitPower10000m": [0.5,10000.0]
         },
-        "armorpower": {
-          "ArmorPower0m": [150.0,10.0],
-          "ArmorPower100m": [149.0,100.0],
-          "ArmorPower250m": [132.0,250.0],
-          "ArmorPower500m": [108.0,500.0],
-          "ArmorPower750m": [88.0,750.0],
-          "ArmorPower1000m": [72.0,1000.0],
-          "ArmorPower1250m": [59.0,1250.0],
-          "ArmorPower1500m": [48.0,1500.0],
-          "ArmorPower2000m": [32.0,2000.0],
-          "ArmorPower2500m": [21.0,2500.0],
-          "ArmorPower3000m": [14.0,3000.0],
-          "ArmorPower4000m": [3.0,4000.0],
-          "ArmorPower10000m": [0.0,10000.0]
+        "damage": {
+          "kinetic": {
+            "demarrePenetrationK": 0.65,
+            "demarreSpeedPow": 1.43,
+            "demarreMassPow": 0.71,
+            "demarreCaliberPow": 1.07
+          }
         },
         "visual": {
           "range_percent_of_ammo": [100.0,0.0],

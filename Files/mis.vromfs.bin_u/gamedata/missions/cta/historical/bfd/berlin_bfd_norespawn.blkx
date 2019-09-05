@@ -259,7 +259,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       },
       "stars": {
         "latitude": 52.5,
@@ -755,7 +756,6 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -764,8 +764,12 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t1_airfield",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -783,7 +787,6 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -792,8 +795,12 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t2_airfield",
             "team": "B",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -915,9 +922,6 @@
             },
             {
               "offset": [0.0,-25.0,0.0]
-            },
-            {
-              "radiusOffset": [0.0,0.0]
             },
             {
               "show": true
@@ -1080,6 +1084,9 @@
             },
             {
               "target": "effect_49"
+            },
+            {
+              "radiusOffset": [0.0,0.0]
             }
           ]
         },
@@ -1130,12 +1137,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_berlin_BfD_norespawn_zone_01"
+            "target": "t1_berlin_BfD_norespawn_zone_01",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_berlin_BfD_norespawn_zone_01"
+            "target": "t2_berlin_BfD_norespawn_zone_01",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1145,12 +1156,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_berlin_BfD_norespawn_zone_02"
+            "target": "t1_berlin_BfD_norespawn_zone_02",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_berlin_BfD_norespawn_zone_02"
+            "target": "t2_berlin_BfD_norespawn_zone_02",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1160,12 +1175,16 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "t1_berlin_BfD_norespawn_airfield"
+            "target": "t1_berlin_BfD_norespawn_airfield",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "t2_berlin_BfD_norespawn_airfield"
+            "target": "t2_berlin_BfD_norespawn_airfield",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         }
       ],
@@ -1200,6 +1219,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_berlin_BfD_norespawn_airfield",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1207,6 +1228,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_berlin_BfD_norespawn_airfield",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1239,8 +1262,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_capture_airfield_squad"
+          "object": "t1_capture_airfield_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1253,6 +1276,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_berlin_BfD_norespawn_airfield",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1260,6 +1285,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_berlin_BfD_norespawn_airfield",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1300,6 +1327,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_berlin_BfD_norespawn_zone_01",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1307,6 +1336,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_berlin_BfD_norespawn_zone_01",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1339,8 +1370,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_area_01_capture_squad"
+          "object": "t1_area_01_capture_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1353,6 +1384,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_berlin_BfD_norespawn_zone_01",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1360,6 +1393,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_berlin_BfD_norespawn_zone_01",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1400,6 +1435,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_berlin_BfD_norespawn_zone_02",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1407,6 +1444,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_berlin_BfD_norespawn_zone_02",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1452,8 +1491,8 @@
           "value": 1,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_zone_02_capture_squad"
+          "object": "t1_zone_02_capture_squad",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1466,6 +1505,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_berlin_BfD_norespawn_zone_02",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1473,6 +1514,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_berlin_BfD_norespawn_zone_02",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1527,6 +1570,8 @@
               "object_var_name": "",
               "object_var_comp_op": "equal",
               "object_var_value": 0,
+              "fastClimb": false,
+              "destTimeMode": false,
               "object": "t1_ai_assaults_01"
             }
           },
@@ -1560,17 +1605,23 @@
               "object_var_name": "",
               "object_var_comp_op": "equal",
               "object_var_value": 0,
+              "fastClimb": false,
+              "destTimeMode": false,
               "object": "t1_ai_assaults_02"
             }
           },
           {
             "moAddMissionObjective": {
-              "target": "at_t1_defend_assault"
+              "target": "at_t1_defend_assault",
+              "object_var_comp_op": "equal",
+              "object_var_name": ""
             }
           },
           {
             "moAddMissionObjective": {
-              "target": "at_t2_attack_assault"
+              "target": "at_t2_attack_assault",
+              "object_var_comp_op": "equal",
+              "object_var_name": ""
             }
           },
           {
@@ -1636,9 +1687,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_ai_assaults_01",
-            "target": "t1_ai_assaults_target_point_01"
+            "target": "t1_ai_assaults_target_point_01",
+            "object_var_value": 0
           }
         },
         "actions": {
@@ -1657,6 +1708,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t1_ai_assaults_01"
           },
           "unitAttackTarget": {
@@ -1696,9 +1749,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_ai_assaults_02",
-            "target": "t1_ai_assaults_target_point_02"
+            "target": "t1_ai_assaults_target_point_02",
+            "object_var_value": 0
           }
         },
         "actions": {
@@ -1717,6 +1770,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t1_ai_assaults_02"
           },
           "unitAttackTarget": {
@@ -1756,9 +1811,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_ai_assaults_01",
-            "target": "t1_ai_assaults_spawn"
+            "target": "t1_ai_assaults_spawn",
+            "object_var_value": 0
           }
         },
         "actions": {
@@ -1799,9 +1854,9 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_ai_assaults_02",
-            "target": "t1_ai_assaults_spawn"
+            "target": "t1_ai_assaults_spawn",
+            "object_var_value": 0
           }
         },
         "actions": {
@@ -1847,6 +1902,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t1_defend_assault",
               "status": 2,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "A"
             }
           },
@@ -1854,6 +1911,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t2_attack_assault",
               "status": 3,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "B"
             }
           },
@@ -1899,13 +1958,13 @@
               "object_var_comp_op": "equal"
             },
             {
-              "object_var_value": 0
-            },
-            {
               "object": "t1_ai_assaults_01"
             },
             {
               "object": "t1_ai_assaults_02"
+            },
+            {
+              "object_var_value": 0
             }
           ]
         },
@@ -1919,6 +1978,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t1_defend_assault",
               "status": 3,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "A"
             }
           },
@@ -1926,6 +1987,8 @@
             "moSetObjectiveStatus": {
               "target": "at_t2_attack_assault",
               "status": 2,
+              "object_var_comp_op": "equal",
+              "object_var_name": "",
               "team": "B"
             }
           },
@@ -2115,6 +2178,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_heavy_tank_01"
           },
           {
@@ -2143,6 +2209,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_trucks_aaa_squad"
           },
           {
@@ -2167,6 +2236,9 @@
           [12234.8,44.45,-17219.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_medium_tank_01"
           },
@@ -2196,6 +2268,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_truck_aaa_01"
           },
           {
@@ -2224,6 +2299,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_aaa_squad"
           },
           {
@@ -2246,6 +2324,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_heavy_tanks_squad"
           },
           {
@@ -2265,6 +2346,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_trucks_aaa_squad"
           },
           {
@@ -2283,6 +2367,7 @@
           [7234.65,45.95,-5111.55]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -2335,6 +2420,7 @@
           [8037.9,49.6,-5149.55]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "structures_01"
         }
       }
@@ -2416,7 +2502,7 @@
           [0.737277,0.0,0.67559],
           [0.0,1.0,0.0],
           [-0.67559,0.0,0.737277],
-          [10852.0,112.0,-23151.3]
+          [10804.1,112.0,-23036.0]
         ],
         "unit_class": "ussr_37mm_61k_airfield",
         "closed_waypoints": false,
@@ -2700,6 +2786,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_def_small_aaa_01"
           },
           {
@@ -2752,6 +2841,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_medium_tanks_squad"
           },
           {
@@ -2770,6 +2862,9 @@
           [-5145.9,62.2,-4490.35]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_light_bunkers_squad"
           },
@@ -2790,6 +2885,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_light_units_squad"
           },
           {
@@ -2808,6 +2906,9 @@
           [-9576.9,193.9,-3295.55]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_light_units_squad"
           },
@@ -3528,6 +3629,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_aaa_01"
           },
           {
@@ -3941,6 +4045,9 @@
           [6492.5,47.15,1299.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_bunker_01"
           },
@@ -4430,6 +4537,9 @@
           [7559.05,56.6,74.85]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_light_bunkers_01_squad"
           },
@@ -5184,6 +5294,9 @@
           [10555.8,46.4,-2404.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_art_01"
           },
@@ -6070,7 +6183,7 @@
           [-0.173648,0.0,0.984808],
           [10692.8,94.0,-23284.5]
         ],
-        "unit_class": "dynAF_kh_gol_airfield_gumrak",
+        "unit_class": "dynaf_universal_1line_a",
         "props": {
           "army": 1,
           "active": true
@@ -6731,6 +6844,9 @@
           [2134.1,46.05,-18512.2]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_light_tank_02"
           },
@@ -8622,6 +8738,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_heavy_tank_03"
           },
           {
@@ -8658,6 +8777,9 @@
           [4031.05,45.1,-18318.6]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_heavy_tank_01"
           },
@@ -9475,6 +9597,9 @@
           [8559.65,42.4,-14663.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_heavy_tank_02"
           },
@@ -11333,6 +11458,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_heavy_tanks_squad"
           },
           {
@@ -11351,6 +11479,9 @@
           [1747.0,85.55,-24168.1]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_medium_tank_01_01"
           },
@@ -11383,6 +11514,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_quest_units_squad"
           },
           {
@@ -11401,6 +11535,9 @@
           [3773.6,71.7,-21046.4]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_medium_tank_01_01"
           },
@@ -11421,6 +11558,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_medium_tank_02_01"
           },
           {
@@ -11439,6 +11579,9 @@
           [4035.4,71.7,-20414.4]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_medium_tank_03_01"
           },
@@ -11459,6 +11602,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_medium_tank_04_01"
           },
           {
@@ -11477,6 +11623,9 @@
           [3728.15,71.7,-21504.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_medium_tank_05_01"
           },
@@ -12870,6 +13019,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_bunker_light_01"
           },
           {
@@ -12912,6 +13064,9 @@
           [7598.2,56.6,1344.6]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_bunker_light_17"
           },
@@ -13989,6 +14144,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_back_bunker_01"
           },
           {
@@ -14834,6 +14992,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_back_tank_01"
           },
           {
@@ -15518,6 +15679,9 @@
           [34.95,49.15,-19276.9]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_back_aaa_01"
           },
@@ -16586,7 +16750,7 @@
           [0.737277,0.0,0.67559],
           [0.0,1.0,0.0],
           [-0.67559,0.0,0.737277],
-          [11247.8,112.0,-23110.6]
+          [11327.3,112.0,-23036.8]
         ],
         "unit_class": "ussr_25mm_72k",
         "closed_waypoints": false,
@@ -16695,6 +16859,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_subquest_units_01"
           },
           {
@@ -16716,6 +16883,9 @@
           [-703.7,72.4,-32525.7]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_subquest_units_01"
           },
@@ -16961,6 +17131,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_def_small_aaa_16"
           },
           {
@@ -17015,6 +17188,9 @@
           [2957.2,57.8,-5978.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_aaa_08"
           },
@@ -17163,6 +17339,9 @@
           [14618.2,73.35,-200.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_aaa_06"
           },
@@ -17485,20 +17664,20 @@
     "t2_airfield": {
       "type": "Sphere",
       "tm": [
-        [699.334,0.0,30.5336],
+        [694.012,0.0,91.3684],
         [0.0,700.0,0.0],
-        [-30.5336,0.0,699.334],
-        [1275.75,72.0,8515.1]
+        [-91.3684,0.0,694.012],
+        [1400.06,72.0,8552.73]
       ],
       "props": []
     },
     "t2_airfield_end": {
       "type": "Sphere",
       "tm": [
-        [356.92,0.0,46.9894],
+        [358.63,0.0,31.376],
         [0.0,360.0,0.0],
-        [-46.9894,0.0,356.92],
-        [-478.3,72.0,8425.15]
+        [-31.376,0.0,358.63],
+        [-595.12,72.0,8425.15]
       ],
       "props": []
     },
@@ -17508,7 +17687,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1182.6,72.0,8246.25]
+        [1302.59,72.0,8252.96]
       ],
       "props": []
     },
@@ -17518,7 +17697,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1181.5,72.0,8267.55]
+        [1301.49,72.0,8274.26]
       ],
       "props": []
     },
@@ -17528,7 +17707,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1168.8,72.0,8536.7]
+        [1288.79,72.0,8543.41]
       ],
       "props": []
     },
@@ -17538,7 +17717,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1167.5,72.0,8558.15]
+        [1287.49,72.0,8564.86]
       ],
       "props": []
     },
@@ -17548,7 +17727,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1171.95,72.0,8687.95]
+        [1291.94,72.0,8694.66]
       ],
       "props": []
     },
@@ -17558,7 +17737,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1171.35,72.0,8709.45]
+        [1291.34,72.0,8716.16]
       ],
       "props": []
     },
@@ -17568,7 +17747,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1192.9,72.0,8710.4]
+        [1312.89,72.0,8717.11]
       ],
       "props": []
     },
@@ -17578,7 +17757,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1193.45,72.0,8689.3]
+        [1313.44,72.0,8696.01]
       ],
       "props": []
     },
@@ -17588,7 +17767,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1189.2,72.0,8558.85]
+        [1309.19,72.0,8565.56]
       ],
       "props": []
     },
@@ -17598,7 +17777,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1190.55,72.0,8537.85]
+        [1310.54,72.0,8544.56]
       ],
       "props": []
     },
@@ -17608,7 +17787,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1203.0,72.0,8268.65]
+        [1322.99,72.0,8275.36]
       ],
       "props": []
     },
@@ -17618,7 +17797,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1203.65,72.0,8247.25]
+        [1323.64,72.0,8253.96]
       ],
       "props": []
     },
@@ -17628,7 +17807,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1225.5,72.0,8248.1]
+        [1345.49,72.0,8254.81]
       ],
       "props": []
     },
@@ -17638,7 +17817,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1224.15,72.0,8270.25]
+        [1344.14,72.0,8276.96]
       ],
       "props": []
     },
@@ -17648,7 +17827,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1210.95,72.0,8539.1]
+        [1330.94,72.0,8545.81]
       ],
       "props": []
     },
@@ -17658,7 +17837,7 @@
         [-12.2532,0.0,-1.07201],
         [0.0,12.3,0.0],
         [1.07201,0.0,-12.2532],
-        [1210.95,72.0,8560.05]
+        [1330.94,72.0,8566.76]
       ],
       "props": []
     },
@@ -17885,10 +18064,10 @@
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [1694.76,0.0,298.831],
+        [1860.54,0.0,328.062],
         [0.0,350.0,0.0],
-        [-89.5329,-7.62939e-06,507.767],
-        [10711.3,96.0424,-23405.5]
+        [-122.441,-1.04336e-05,694.4],
+        [10711.3,90.0,-23273.2]
       ],
       "props": []
     },

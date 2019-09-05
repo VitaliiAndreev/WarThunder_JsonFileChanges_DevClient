@@ -37,9 +37,9 @@
     "bulletType": "aphebc_tank",
     "bulletName": "85mm_br_365a",
     "relativeVelHitShift": [300.0,1000.0],
-    "relativeVelArmorShift": [200.0,1000.0],
     "fuseDelayDist": 1.2,
-    "explodeTreshold": 15.0,
+    "explodeTreshold": 14.0,
+    "relativeVelArmorShift": [200.0,1000.0],
     "ricochetEffect": "cannon_ricochet",
     "waterCollisionEffect": "120-203_water_splash",
     "waterFxScale": [0.9,1.0],
@@ -331,9 +331,9 @@
       "bulletType": "apcbc_tank",
       "bulletName": "85mm_br_367",
       "relativeVelHitShift": [300.0,1000.0],
-      "relativeVelArmorShift": [200.0,1000.0],
       "fuseDelayDist": 1.2,
-      "explodeTreshold": 15.0,
+      "explodeTreshold": 14.0,
+      "relativeVelArmorShift": [200.0,1000.0],
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "120-203_water_splash",
       "waterFxScale": [0.9,1.0],
@@ -467,9 +467,13 @@
   "85mm_ussr_APCR": {
     "bullet": {
       "bulletCount": 25,
-      "mass": 5.35,
+      "mass": 4.99,
       "caliber": 0.085,
-      "speed": 1030.0,
+      "speed": 1050.0,
+      "damageMass": 0.648,
+      "ballisticCaliber": 0.085,
+      "damageCaliber": 0.028,
+      "Cx": 0.49,
       "maxDistance": 10000.0,
       "bulletType": "apcr_tank",
       "bulletName": "85mm_br_365p",
@@ -486,19 +490,13 @@
         "HitPower2500m": [0.6,2500.0],
         "HitPower10000m": [0.5,10000.0]
       },
-      "armorpower": {
-        "ArmorPower0m": [180.0,10.0],
-        "ArmorPower100m": [175.0,100.0],
-        "ArmorPower250m": [159.0,250.0],
-        "ArmorPower500m": [136.0,500.0],
-        "ArmorPower750m": [117.0,750.0],
-        "ArmorPower1000m": [100.0,1000.0],
-        "ArmorPower1250m": [85.0,1250.0],
-        "ArmorPower1500m": [73.0,1500.0],
-        "ArmorPower2000m": [54.0,2000.0],
-        "ArmorPower2500m": [39.0,2500.0],
-        "ArmorPower3000m": [29.0,3000.0],
-        "ArmorPower7000m": [0.0,7000.0]
+      "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 0.65,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
@@ -617,9 +615,13 @@
   "85mm_ussr_HVAP": {
     "bullet": {
       "bulletCount": 25,
-      "mass": 5.35,
+      "mass": 5.3,
       "caliber": 0.085,
       "speed": 1020.0,
+      "damageMass": 1.1,
+      "ballisticCaliber": 0.085,
+      "damageCaliber": 0.03,
+      "Cx": 0.28,
       "maxDistance": 10000.0,
       "bulletType": "apcr_tank",
       "bulletName": "85mm_br_367p",
@@ -636,19 +638,13 @@
         "HitPower2500m": [0.6,2500.0],
         "HitPower10000m": [0.5,10000.0]
       },
-      "armorpower": {
-        "ArmorPower0m": [230.0,10.0],
-        "ArmorPower100m": [229.0,100.0],
-        "ArmorPower250m": [220.0,250.0],
-        "ArmorPower500m": [202.0,500.0],
-        "ArmorPower750m": [188.0,750.0],
-        "ArmorPower1000m": [173.0,1000.0],
-        "ArmorPower1250m": [160.0,1250.0],
-        "ArmorPower1500m": [147.0,1500.0],
-        "ArmorPower2000m": [125.0,2000.0],
-        "ArmorPower2500m": [107.0,2500.0],
-        "ArmorPower3000m": [91.0,3000.0],
-        "ArmorPower10000m": [0.0,10000.0]
+      "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 0.65,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],

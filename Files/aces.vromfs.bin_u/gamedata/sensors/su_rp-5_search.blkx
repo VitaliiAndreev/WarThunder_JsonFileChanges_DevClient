@@ -2,8 +2,9 @@
   "type": "radar",
   "transivers": {
     "search": {
+      "sideLobesAttenuation": -15.0,
       "power": 500.0,
-      "band": 0,
+      "band": 8,
       "rcs": 3.0,
       "range": 8000.0,
       "rangeMax": 15000.0,
@@ -11,11 +12,11 @@
       "antenna": {
         "azimuth": {
           "angleHalfSens": 6.0,
-          "sideLobesSensitivity": -25.0
+          "sideLobesSensitivity": -26.0
         },
         "elevation": {
           "angleHalfSens": 30.0,
-          "sideLobesSensitivity": -32.0
+          "sideLobesSensitivity": -26.0
         }
       }
     }
@@ -24,7 +25,7 @@
     "search": {
       "type": "pyramide",
       "azimuthLimits": [-60.0,60.0],
-      "elevationLimits": [0.0,0.0],
+      "elevationLimits": [0.0,5.0],
       "rollStabLimit": 50.0,
       "period": 1.33,
       "width": 60.0,

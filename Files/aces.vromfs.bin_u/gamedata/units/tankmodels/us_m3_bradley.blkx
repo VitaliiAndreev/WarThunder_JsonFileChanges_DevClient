@@ -27,6 +27,9 @@
     "damagedExhaustFx": "tank_broken_exhaust"
   },
   {
+    "thermalExhaustFx": "tank_exhaust_nightvision"
+  },
+  {
     "dustFx": ""
   },
   {
@@ -109,6 +112,9 @@
   },
   {
     "rearmSmokeTimeOnField": 60.0
+  },
+  {
+    "rearmTimeOnField": 120.0
   },
   {
     "canReloadNonGuns": true
@@ -198,6 +204,9 @@
         },
         "turret_04_back_dm": {
           "armorThickness": 44.0
+        },
+        "turret_06_top_dm": {
+          "armorThickness": 12.7
         }
       },
       "armor_al_5083": {
@@ -360,7 +369,7 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 15.0,
-        "hp": 150.0,
+        "hp": 250.0,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -402,59 +411,91 @@
           "genericDamageMult": 3.0
         }
       },
-      "equipment": {
+      "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
-        "hp": 150.0,
-        "armorThickness": 12.0,
-        "armorThrough": 1.0,
-        "fireProtectionHp": 15.0,
-        "explosionArmorQuality": 0.35,
-        "shatterArmorQuality": 0.35,
-        "drive_turret_v_dm": [],
-        "drive_turret_h_dm": [],
-        "drive_turret_v_01_dm": [],
-        "drive_turret_h_01_dm": [],
-        "drive_turret_v_02_dm": [],
-        "drive_turret_h_02_dm": [],
-        "radio_station_dm": []
+        "hp": 250.0,
+        "armorThickness": 2.0,
+        "armorThrough": 15.0,
+        "fireProtectionHp": 5.0,
+        "hidableInViewer": false,
+        "drive_turret_v_dm": {
+          "hp": 150.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_dm": {
+          "hp": 150.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_01_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_v_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "drive_turret_h_02_dm": {
+          "hp": 40.0,
+          "armorThrough": 15.0
+        },
+        "radiator_dm": {
+          "hp": 40.0,
+          "armorThrough": 5.0
+        },
+        "radiator_l_dm": {
+          "hp": 40.0,
+          "armorThrough": 5.0
+        },
+        "radiator_r_dm": {
+          "hp": 40.0,
+          "armorThrough": 5.0
+        },
+        "radio_station_dm": {
+          "hp": 20.0,
+          "armorThrough": 3.0
+        }
       },
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 15.0,
-        "armorThrough": 300.0,
-        "fireProtectionHp": 10.0,
-        "hidableInViewer": false,
-        "cannon_breech_dm": [],
-        "cannon_breech_01_dm": [],
-        "cannon_breech_02_dm": []
-      },
-      "radiators": {
-        "armorClass": "tank_structural_steel",
-        "hp": 50.0,
-        "armorThickness": 5.0,
-        "armorThrough": 15.0,
+        "armorThickness": 150.0,
         "fireProtectionHp": 5.0,
-        "radiator_dm": [],
-        "radiator_l_dm": [],
-        "radiator_r_dm": []
+        "hidableInViewer": false,
+        "cannon_breech_dm": {
+          "restrainDamage": 0.5
+        },
+        "cannon_breech_01_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_02_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_03_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_04_dm": {
+          "armorThickness": 10.0
+        },
+        "cannon_breech_05_dm": {
+          "armorThickness": 10.0
+        }
       },
-      "engine": {
+      "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 2.0,
-        "armorThrough": 40.0,
+        "armorThickness": 150.0,
         "fireProtectionHp": 5.0,
-        "engine_dm": {
-          "hp": 70.0
-        },
-        "transmission_dm": {
-          "hp": 70.0
-        }
+        "restrainDamage": 0.5,
+        "engine_dm": [],
+        "transmission_dm": []
       },
       "ammo": {
         "armorClass": "tank_structural_steel",
-        "hp": 500.0,
+        "hp": 300.0,
         "armorThickness": 2.0,
         "armorThrough": 10.0,
         "fireProtectionHp": 20.0,
@@ -510,6 +551,11 @@
         "ammo_turret_48_dm": [],
         "ammo_turret_49_dm": [],
         "ammo_turret_50_dm": [],
+        "ammo_turret_51_dm": [],
+        "ammo_turret_52_dm": [],
+        "ammo_turret_53_dm": [],
+        "ammo_turret_54_dm": [],
+        "ammo_turret_55_dm": [],
         "ammo_body_dm": [],
         "ammo_body_01_dm": [],
         "ammo_body_02_dm": [],
@@ -576,16 +622,6 @@
         "ammo_body_l_08_dm": [],
         "ammo_body_l_09_dm": [],
         "ammo_body_l_10_dm": [],
-        "ammo_body_l_11_dm": [],
-        "ammo_body_l_12_dm": [],
-        "ammo_body_l_13_dm": [],
-        "ammo_body_l_14_dm": [],
-        "ammo_body_l_15_dm": [],
-        "ammo_body_l_16_dm": [],
-        "ammo_body_l_17_dm": [],
-        "ammo_body_l_18_dm": [],
-        "ammo_body_l_19_dm": [],
-        "ammo_body_l_20_dm": [],
         "ammo_body_r_01_dm": [],
         "ammo_body_r_02_dm": [],
         "ammo_body_r_03_dm": [],
@@ -600,20 +636,14 @@
         "ammo_body_r_12_dm": [],
         "ammo_body_r_13_dm": [],
         "ammo_body_r_14_dm": [],
-        "ammo_body_r_15_dm": [],
-        "ammo_body_r_16_dm": [],
-        "ammo_body_r_17_dm": [],
-        "ammo_body_r_18_dm": [],
-        "ammo_body_r_19_dm": [],
-        "ammo_body_r_20_dm": []
+        "ammo_body_r_15_dm": []
       },
-      "equipment_body": {
+      "fuel_tanks": {
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 10.0,
-        "fireProtectionHp": 10.0,
-        "createSecondaryShatters": false,
+        "armorThrough": 12.0,
+        "fireProtectionHp": 15.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -1538,13 +1568,13 @@
           "role": "tank_gunner"
         },
         {
+          "substitute": "machine_gunner"
+        },
+        {
           "substitute": "commander"
         },
         {
-          "substitute": "loader1"
-        },
-        {
-          "substitute": "loader2"
+          "substitute": "loader"
         }
       ],
       "driver": [
@@ -1555,28 +1585,36 @@
           "role": "driver"
         },
         {
+          "substitute": "machine_gunner"
+        },
+        {
           "substitute": "commander"
         },
         {
-          "substitute": "loader1"
-        },
-        {
-          "substitute": "loader2"
+          "substitute": "loader"
         }
       ],
-      "loader2": {
-        "dmPart": "machine_gunner_dm",
-        "role": "loader",
-        "substitute": "commander"
-      },
-      "loader1": {
-        "dmPart": "loader_dm",
-        "role": "loader",
-        "substitute": "commander"
-      },
+      "loader": [
+        {
+          "dmPart": "loader_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
       "commander": {
         "dmPart": "commander_dm",
         "role": "commander"
+      },
+      "machine_gunner": {
+        "dmPart": "machine_gunner_dm",
+        "role": "radio_gunner"
       }
     }
   },
@@ -1641,7 +1679,7 @@
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
-            "conditionDamage": 600.0,
+            "conditionDamage": 350.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1650,7 +1688,7 @@
           "effect": {
             "conditionDamageType": "cumulative",
             "expl": 1.0,
-            "conditionDamage": 800.0,
+            "conditionDamage": 500.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1765,7 +1803,7 @@
           "effect": {
             "conditionDamageType": "explosion",
             "expl": 1.0,
-            "conditionDamage": 600.0,
+            "conditionDamage": 350.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1774,7 +1812,7 @@
           "effect": {
             "conditionDamageType": "cumulative",
             "expl": 1.0,
-            "conditionDamage": 800.0,
+            "conditionDamage": 500.0,
             "kill": true,
             "killEffect": "fire"
           }
@@ -1999,6 +2037,8 @@
           "readyToFireTime": 5.0,
           "maxSpeedForFire": 12.0,
           "lagStopForFireTime": 2.0,
+          "barrelDP": "gun_barrel_02_dm",
+          "brokenBarrelAllowShoot": false,
           "createGunEffects": true,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
@@ -2897,6 +2937,8 @@
                 "readyToFireTime": 5.0,
                 "maxSpeedForFire": 12.0,
                 "lagStopForFireTime": 2.0,
+                "barrelDP": "gun_barrel_02_dm",
+                "brokenBarrelAllowShoot": false,
                 "createGunEffects": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
@@ -2943,6 +2985,7 @@
                 "emitter": "emtr_mortar_flame_01",
                 "emitterGenRange": [1,8],
                 "emitterGenFmt": "emtr_mortar_flame_%02d",
+                "ignoreLoaderPenalty": true,
                 "createGunEffects": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
@@ -2983,7 +3026,29 @@
       "25mm_M242_HE": [],
       "25mm_M242_APDS": [],
       "25mm_M242_HE_ammo_pack": [],
-      "25mm_M242_APDS_ammo_pack": []
+      "25mm_M242_APDS_ammo_pack": [],
+      "night_vision_system": {
+        "effects": {
+          "nightVision": {
+            "gunnerThermal": {
+              "resolution": [500,300],
+              "noiseFactor": 0.05
+            },
+            "commanderIr": {
+              "resolution": [1600,1200],
+              "lightMult": 9.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            }
+          }
+        }
+      }
     }
   },
   {

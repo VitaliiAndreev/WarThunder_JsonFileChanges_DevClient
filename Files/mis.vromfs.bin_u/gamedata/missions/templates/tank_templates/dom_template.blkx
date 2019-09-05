@@ -11,8 +11,7 @@
       "wing": ""
     },
     "player_teamB": {
-      "army": 2,
-      "wing": ""
+      "army": 2
     },
     "mission": {
       "name": "stalingrad_factory_Dom",
@@ -279,50 +278,6 @@
         {
           "varSetString": [
             {
-              "value": "dom_effect_01"
-            },
-            {
-              "var": "effect_01_name"
-            },
-            {
-              "var": "temp_effect_01_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "dom_effect_02"
-            },
-            {
-              "var": "effect_02_name"
-            },
-            {
-              "var": "temp_effect_02_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "dom_effect_03"
-            },
-            {
-              "var": "effect_03_name"
-            },
-            {
-              "var": "temp_effect_03_name"
-            }
-          ]
-        },
-        {
-          "comment": {
-            "value": ""
-          }
-        },
-        {
-          "varSetString": [
-            {
               "value": "dom_t1_tank_spawn_01"
             },
             {
@@ -471,25 +426,6 @@
               "digits": 0
             },
             {
-              "var": "effect_01_name"
-            },
-            {
-              "var": "effect_02_name"
-            },
-            {
-              "var": "effect_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_arcade"
-            },
-            {
-              "digits": 0
-            },
-            {
               "var": "t1_spawn_01_name"
             },
             {
@@ -583,25 +519,6 @@
               "digits": 0
             },
             {
-              "var": "temp_effect_01_name"
-            },
-            {
-              "var": "temp_effect_02_name"
-            },
-            {
-              "var": "temp_effect_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_realistic"
-            },
-            {
-              "digits": 0
-            },
-            {
               "var": "temp_t1_spawn_01_name"
             },
             {
@@ -657,24 +574,6 @@
         {
           "objectExists": {
             "target": "@temp_zone_03_name",
-            "type": "area"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "@temp_effect_01_name",
-            "type": "area"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "@temp_effect_02_name",
-            "type": "area"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "@temp_effect_03_name",
             "type": "area"
           }
         },
@@ -762,25 +661,6 @@
               "digits": 0
             },
             {
-              "var": "effect_01_name"
-            },
-            {
-              "var": "effect_02_name"
-            },
-            {
-              "var": "effect_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_realistic"
-            },
-            {
-              "digits": 0
-            },
-            {
               "var": "t1_spawn_01_name"
             },
             {
@@ -848,25 +728,6 @@
             },
             {
               "var": "circle_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_arcade"
-            },
-            {
-              "digits": 0
-            },
-            {
-              "var": "effect_01_name"
-            },
-            {
-              "var": "effect_02_name"
-            },
-            {
-              "var": "effect_03_name"
             }
           ]
         },
@@ -959,25 +820,6 @@
             },
             {
               "var": "circle_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_hardcore"
-            },
-            {
-              "digits": 0
-            },
-            {
-              "var": "effect_01_name"
-            },
-            {
-              "var": "effect_02_name"
-            },
-            {
-              "var": "effect_03_name"
             }
           ]
         },
@@ -1101,6 +943,9 @@
               "replaceAreas": false
             },
             {
+              "forceCreate": false
+            },
+            {
               "target": "@t1_spawn_01_name"
             },
             {
@@ -1164,6 +1009,9 @@
               "replaceAreas": false
             },
             {
+              "forceCreate": false
+            },
+            {
               "target": "@t2_spawn_01_name"
             },
             {
@@ -1223,6 +1071,7 @@
             "resetStrictSpawnIndex": false,
             "onlyOnePlayerPerSpawnPoint": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t1_spawn_01_name",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -1247,6 +1096,7 @@
             "resetStrictSpawnIndex": false,
             "onlyOnePlayerPerSpawnPoint": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t2_spawn_01_name",
             "team": "B",
             "tags": {
@@ -1266,6 +1116,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "auto_smoke": true,
+            "markUnitPreset": "tank_decal",
+            "markUnits": "cz_circle_01",
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1287,6 +1139,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "auto_smoke": true,
+            "markUnitPreset": "tank_decal",
+            "markUnits": "cz_circle_02",
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1308,6 +1162,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "auto_smoke": true,
+            "markUnitPreset": "tank_decal",
+            "markUnits": "cz_circle_03",
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1318,61 +1174,46 @@
           }
         },
         {
-          "__unitPlayEffect": [
-            {
-              "effect_type": "specify"
-            },
-            {
-              "effect": "pv_point_smoke_blue"
-            },
-            {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
-              "radiusOffset": [0.0,0.0]
-            },
-            {
-              "show": true
-            },
-            {
-              "attach": true
-            },
-            {
-              "scale": 1.0
-            },
-            {
-              "loopSpawn": true
-            },
-            {
-              "delay": [1.0,1.0]
-            },
-            {
-              "target": "@effect_01_name"
-            },
-            {
-              "target": "@effect_02_name"
-            },
-            {
-              "target": "@effect_03_name"
-            }
-          ]
+          "comment": {
+            "value": "put to sleep all possible circles"
+          }
         },
         {
-          "unitWakeUp": [
+          "unitPutToSleep": [
             {
-              "target": "@circle_01_name"
+              "target": "dom_circle_01_arcade"
             },
             {
-              "target": "@circle_02_name"
+              "target": "dom_circle_02_arcade"
             },
             {
-              "target": "@circle_03_name"
+              "target": "dom_circle_03_arcade"
+            },
+            {
+              "target": "dom_circle_01_realistic"
+            },
+            {
+              "target": "dom_circle_02_realistic"
+            },
+            {
+              "target": "dom_circle_03_realistic"
+            },
+            {
+              "target": "dom_circle_01_hardcore"
+            },
+            {
+              "target": "dom_circle_02_hardcore"
+            },
+            {
+              "target": "dom_circle_03_hardcore"
             }
           ]
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_Dom_objective"
+            "target": "avg_Dom_objective",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1430,6 +1271,7 @@
             "resetStrictSpawnIndex": false,
             "onlyOnePlayerPerSpawnPoint": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t1_spawn_02_name",
             "team": "A",
             "offset": [0.0,0.0,0.0],
@@ -1454,6 +1296,7 @@
             "resetStrictSpawnIndex": false,
             "onlyOnePlayerPerSpawnPoint": false,
             "replaceAreas": false,
+            "forceCreate": false,
             "target": "@t2_spawn_02_name",
             "team": "B",
             "offset": [0.0,0.0,0.0],
@@ -1492,6 +1335,7 @@
           "newGridHorizontalCellCount": 0,
           "killArea": false,
           "detectionArea": false,
+          "airMapArea": false,
           "area": "@battle_area_name"
         }
       },
@@ -1521,9 +1365,6 @@
     "circle_01_name": "",
     "circle_02_name": "",
     "circle_03_name": "",
-    "effect_01_name": "",
-    "effect_02_name": "",
-    "effect_03_name": "",
     "t1_spawn_01_name": "",
     "t1_spawn_02_name": "",
     "t2_spawn_01_name": "",
@@ -1547,7 +1388,59 @@
   "dialogs": [],
   "airfields": [],
   "effects": [],
-  "units": [],
+  "units": [
+    {
+      "objectGroups": {
+        "name": "cz_circle_01",
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1831.7,4.65,2455.55]
+        ],
+        "unit_class": "capture_zone_circle",
+        "objLayer": 2,
+        "props": {
+          "army": 0,
+          "active": true
+        }
+      }
+    },
+    {
+      "objectGroups": {
+        "name": "cz_circle_02",
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1846.35,4.65,2455.55]
+        ],
+        "unit_class": "capture_zone_circle",
+        "objLayer": 2,
+        "props": {
+          "army": 0,
+          "active": true
+        }
+      }
+    },
+    {
+      "objectGroups": {
+        "name": "cz_circle_03",
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1861.0,4.65,2455.55]
+        ],
+        "unit_class": "capture_zone_circle",
+        "objLayer": 2,
+        "props": {
+          "army": 0,
+          "active": true
+        }
+      }
+    }
+  ],
   "areas": [],
   "objLayers": [
     {

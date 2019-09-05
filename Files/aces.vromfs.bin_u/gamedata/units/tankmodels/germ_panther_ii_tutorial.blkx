@@ -7,6 +7,7 @@
   "collisionSphere1": [5.0,2.0,0.0,1.0],
   "exhaustFx": "tank_exhaust",
   "damagedExhaustFx": "tank_broken_exhaust",
+  "thermalExhaustFx": "tank_exhaust_nightvision",
   "dustFx": "",
   "support_unit_class": "structures/ussr_122mm_m30",
   "support_unit_tag": "artillery",
@@ -1026,25 +1027,29 @@
         {
           "onKill": {
             "damageType": "cumulative",
-            "expl": 0.25,
-            "fire": 0.25,
-            "nothing": 0.5
+            "expl": 0.5,
+            "fire": 0.5
           }
         },
         {
           "onKill": {
             "damageType": "explosion",
-            "expl": 0.25,
-            "fire": 0.25,
-            "nothing": 0.5
+            "expl": 0.5,
+            "fire": 0.5
+          }
+        },
+        {
+          "onKill": {
+            "damageType": "secondaryShatter",
+            "expl": 0.5,
+            "fire": 0.5
           }
         },
         {
           "onKill": {
             "damageType": "generic",
-            "expl": 0.25,
-            "fire": 0.25,
-            "nothing": 0.5
+            "expl": 0.5,
+            "fire": 0.5
           }
         }
       ]

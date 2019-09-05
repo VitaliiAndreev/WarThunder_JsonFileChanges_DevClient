@@ -2,6 +2,12 @@
   {
     "hideNodes": [
       {
+        "node": "ex_armor_04"
+      },
+      {
+        "node": "ex_armor_05"
+      },
+      {
         "node": "depth_charge_01"
       },
       {
@@ -36,22 +42,77 @@
       },
       {
         "node": "depth_charge_12"
-      },
-      {
-        "node": "depth_charge_13"
-      },
-      {
-        "node": "depth_charge_14"
       }
     ]
   },
   {
     "Weapon": {
+      "trigger": "gunner6",
+      "triggerGroup": "mortar",
+      "weaponType": "bombs",
+      "blk": "gameData/weapons/bombguns/depth_charge_ussr_bb1_mortar.blk",
+      "emitter": "bone_bomb_13",
+      "bullets": 12,
+      "external": true,
+      "dropSpeed": 20.0,
+      "useEmitter": true,
+      "barrelDP": "depth_charge_mount_04_dm",
+      "brokenBarrelAllowShoot": false,
+      "ammoDP": "depth_charge_13_dm",
+      "allowableDelta": 50.0,
+      "loanRearmTime": 8.0,
+      "turret": {
+        "head": "turret_08",
+        "gun": "depth_charge_mount_04"
+      },
+      "limits": {
+        "yaw": [-0.0,0.0],
+        "pitch": [-0.0,0.0]
+      },
+      "rearmSource": {
+        "trigger": "bombs",
+        "triggerGroup": "depth_charge"
+      }
+    }
+  },
+  {
+    "Weapon": {
+      "trigger": "gunner7",
+      "triggerGroup": "mortar",
+      "weaponType": "bombs",
+      "blk": "gameData/weapons/bombguns/depth_charge_ussr_bb1_mortar.blk",
+      "emitter": "bone_bomb_14",
+      "bullets": 12,
+      "external": true,
+      "dropSpeed": 20.0,
+      "useEmitter": true,
+      "barrelDP": "depth_charge_mount_03_dm",
+      "brokenBarrelAllowShoot": false,
+      "ammoDP": "depth_charge_14_dm",
+      "allowableDelta": 50.0,
+      "loanRearmTime": 8.0,
+      "turret": {
+        "head": "turret_07",
+        "gun": "depth_charge_mount_03"
+      },
+      "limits": {
+        "yaw": [-0.0,0.0],
+        "pitch": [-0.0,0.0]
+      },
+      "rearmSource": {
+        "trigger": "bombs",
+        "triggerGroup": "depth_charge"
+      }
+    }
+  },
+  {
+    "Weapon": {
       "trigger": "gunner8",
       "triggerGroup": "mortar",
+      "weaponType": "bombs",
       "blk": "gameData/weapons/bombguns/bomb_ussr_rbm.blk",
       "emitter": "bone_bomb_15",
-      "bullets": 4,
+      "bullets": 16,
       "external": true,
       "dropSpeed": 38.0,
       "useEmitter": true,
@@ -75,9 +136,10 @@
     "Weapon": {
       "trigger": "gunner9",
       "triggerGroup": "mortar",
+      "weaponType": "bombs",
       "blk": "gameData/weapons/bombguns/bomb_ussr_rbm.blk",
       "emitter": "bone_bomb_19",
-      "bullets": 4,
+      "bullets": 16,
       "external": true,
       "dropSpeed": 38.0,
       "useEmitter": true,

@@ -258,7 +258,8 @@
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
-        "isShipsAllowed": false
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": false
       }
     },
     "cover_points": [],
@@ -564,76 +565,11 @@
       "conditions": [],
       "actions": [
         {
-          "addAirfield": [
-            {
-              "runwayStart": "t1_airfield"
-            },
-            {
-              "runwayEnd": "t1_airfield_end"
-            },
-            {
-              "runwayWidth": 90.0
-            },
-            {
-              "army": 1
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn01"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn02"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn03"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn04"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn05"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn06"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn07"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn08"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn09"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn10"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn11"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn12"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn13"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn14"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn15"
-            },
-            {
-              "spawnPoint": "t1_airfield_spawn16"
-            }
-          ]
-        },
-        {
           "__missionMarkAsRespawnPoint": {
             "loc_name": "missions/airfield_spawn",
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -642,8 +578,12 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t1_airfield",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -659,7 +599,6 @@
             "spawnEffect": false,
             "isAirfield": true,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -668,8 +607,12 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t2_airfield",
             "team": "B",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "type_bomber": false,
               "type_assault": false,
@@ -839,6 +782,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t1_il2_01",
             "speed": 300.0
           }
@@ -876,12 +821,16 @@
         {
           "moAddMissionObjective": {
             "target": "t1_krymsk_stanica_BfD_norespawn_main",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "object_type": "isAlive"
           }
         },
         {
           "moAddMissionObjective": {
             "target": "t2_krymsk_stanica_BfD_norespawn_main",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "object_type": "isAlive"
           }
         }
@@ -1001,9 +950,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_il2_01",
-          "target": "il2_attack_point_01"
+          "target": "il2_attack_point_01",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1100,6 +1049,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t1_il2_01"
         }
       },
@@ -1130,9 +1081,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_il2_01",
-          "target": "il2_01_retreat_point"
+          "target": "il2_01_retreat_point",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1164,8 +1115,8 @@
           "value": 6,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "t1_il2_01"
+          "object": "t1_il2_01",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1187,6 +1138,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t2_ju_87"
         },
         "triggerEnable": {
@@ -1220,9 +1173,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_ju_87",
-          "target": "ju87_attack_point"
+          "target": "ju87_attack_point",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -6165,6 +6118,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_front_art_01"
           },
           {
@@ -6333,6 +6289,9 @@
           [8577.75,324.5,10073.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_front_art_01"
           },
@@ -8607,6 +8566,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_front_aaa_01"
           },
           {
@@ -8709,6 +8671,9 @@
           [3851.85,728.8,5122.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_front_aaa_01"
           },
@@ -8991,9 +8956,9 @@
           [-0.872689,0.0,0.669637],
           [0.0,1.0,0.0],
           [-0.608761,0.0,-0.793353],
-          [-15603.5,243.537,15024.9]
+          [-15603.5,243.52,15024.9]
         ],
-        "unit_class": "dynAF_kh_gol_airfield_gumrak",
+        "unit_class": "dynaf_universal_1line_b",
         "props": {
           "army": 2,
           "active": true
@@ -10101,6 +10066,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_truck_01"
           },
           {
@@ -10157,7 +10125,7 @@
           [0.5373,0.0,-0.843391],
           [0.0,1.0,0.0],
           [0.843391,0.0,0.5373],
-          [-15307.2,312.578,14696.4]
+          [-15193.2,312.578,14463.0]
         ],
         "unit_class": "germ_37mm_flak43_airfield",
         "closed_waypoints": false,
@@ -10262,7 +10230,7 @@
           [0.5373,0.0,-0.843391],
           [0.0,1.0,0.0],
           [0.843391,0.0,0.5373],
-          [-15759.4,292.548,14972.7]
+          [-15846.1,292.548,14929.7]
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
@@ -10336,6 +10304,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_def_aaa_01"
           },
           {
@@ -10360,10 +10331,10 @@
       "air_defence": {
         "name": "t1_def_aaa_01",
         "tm": [
-          [1.0,0.0,0.0],
+          [0.69268,0.0,-0.721245],
           [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [13503.0,99.8,-11011.3]
+          [0.721245,0.0,0.69268],
+          [13918.1,261.5,-8331.14]
         ],
         "unit_class": "ussr_37mm_61k_airfield",
         "closed_waypoints": false,
@@ -10395,10 +10366,10 @@
       "air_defence": {
         "name": "t1_def_aaa_02",
         "tm": [
-          [1.0,0.0,0.0],
+          [0.69268,0.0,-0.721245],
           [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [12646.3,99.8,-11351.3]
+          [0.721245,0.0,0.69268],
+          [13079.5,265.798,-7948.77]
         ],
         "unit_class": "ussr_37mm_61k_airfield",
         "closed_waypoints": false,
@@ -10430,10 +10401,10 @@
       "air_defence": {
         "name": "t1_def_aaa_03",
         "tm": [
-          [1.0,0.0,0.0],
+          [0.69268,0.0,-0.721245],
           [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [13503.5,118.55,-10261.4]
+          [0.721245,0.0,0.69268],
+          [14459.3,269.708,-7812.06]
         ],
         "unit_class": "ussr_37mm_61k_airfield",
         "closed_waypoints": false,
@@ -10465,10 +10436,10 @@
       "air_defence": {
         "name": "t1_def_aaa_04",
         "tm": [
-          [1.0,0.0,0.0],
+          [0.69268,0.0,-0.721245],
           [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [12962.4,118.55,-10409.9]
+          [0.721245,0.0,0.69268],
+          [13977.4,268.472,-7524.66]
         ],
         "unit_class": "ussr_37mm_61k_airfield",
         "closed_waypoints": false,
@@ -10500,10 +10471,10 @@
       "air_defence": {
         "name": "t1_def_aaa_05",
         "tm": [
-          [1.0,0.0,0.0],
+          [0.69268,0.0,-0.721245],
           [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [13298.0,99.8,-11475.1]
+          [0.721245,0.0,0.69268],
+          [13441.6,265.241,-8504.55]
         ],
         "unit_class": "ussr_85mm_52k",
         "closed_waypoints": false,
@@ -10535,10 +10506,10 @@
       "air_defence": {
         "name": "t1_def_aaa_06",
         "tm": [
-          [1.0,0.0,0.0],
+          [0.69268,0.0,-0.721245],
           [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [13036.0,99.8,-11273.0]
+          [0.721245,0.0,0.69268],
+          [13405.9,265.798,-8175.6]
         ],
         "unit_class": "ussr_85mm_52k",
         "closed_waypoints": false,
@@ -10576,6 +10547,9 @@
           [12724.2,10.0,-12201.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_def_aaa_01"
           },
@@ -10677,6 +10651,9 @@
           [1734.15,110.85,1706.05]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_ship_01"
           },
@@ -10940,6 +10917,7 @@
           [24676.3,226.05,8907.6]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_truck_01"
         }
       }
@@ -11389,6 +11367,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_ship_01"
           },
           {
@@ -11408,6 +11389,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_sea_art_01"
           },
           {
@@ -11426,6 +11410,9 @@
           [20348.6,379.75,-9777.85]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_front_aaa_squad"
           },
@@ -11457,6 +11444,9 @@
           [-9527.25,10.0,-4659.15]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_front_artillery_squad"
           },
@@ -11944,6 +11934,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_tank_01"
           },
           {
@@ -11968,6 +11961,9 @@
           [7884.5,285.6,17384.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_tanks_squad"
           },
@@ -12302,6 +12298,9 @@
           [9893.6,157.9,18805.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_bunkers_01_squad"
           },
@@ -12890,6 +12889,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_tanks_01_squad"
           },
           {
@@ -12911,6 +12913,7 @@
           [17848.7,449.35,5903.8]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_tanks_squad"
         }
       }
@@ -12971,6 +12974,7 @@
           [14984.3,621.15,-2750.5]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_tanks_squad"
         }
       }
@@ -12985,6 +12989,7 @@
           [-14915.7,599.25,1250.15]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_tanks_squad"
         }
       }
@@ -12999,6 +13004,7 @@
           [6128.8,10.0,-8554.6]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t1_trucks_squad"
         }
       }
@@ -13013,6 +13019,7 @@
           [-12442.5,10.0,-3602.7]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "t2_trucks_squad"
         }
       }
@@ -13027,6 +13034,9 @@
           [6652.95,10.0,-12697.3]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_light_units_squad"
           },
@@ -13046,6 +13056,9 @@
           [-12438.2,10.0,-6425.55]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_light_units_squad"
           },
@@ -13482,6 +13495,9 @@
           [14945.0,82.45,15767.1]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "dummy_effect_01"
           },
@@ -15313,6 +15329,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_tank_01_01"
           },
           {
@@ -15346,6 +15365,9 @@
           [17763.7,258.65,10649.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_tank_01_02"
           },
@@ -15381,6 +15403,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_tank_01_03"
           },
           {
@@ -15415,6 +15440,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_tanks_01_squad"
           },
           {
@@ -15434,6 +15462,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_tanks_02_squad"
           },
           {
@@ -15452,6 +15483,9 @@
           [20493.0,180.65,11285.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_quest_units_squad"
           },
@@ -17146,6 +17180,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_bunker_01"
           },
           {
@@ -17191,6 +17228,9 @@
           [10438.5,157.9,18621.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_bunker_12"
           },
@@ -17465,6 +17505,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_tank_05"
           },
           {
@@ -17484,12 +17527,31 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t2_tanks_01_squad"
           },
           {
             "squad_members": "t2_tanks_02_squad"
           }
         ]
+      }
+    },
+    {
+      "objectGroups": {
+        "name": "t1_airfield",
+        "tm": [
+          [0.809345,0.0,-0.744957],
+          [0.0,1.0,0.0],
+          [0.677234,0.0,0.735767],
+          [13652.4,265.798,-7842.41]
+        ],
+        "unit_class": "dynaf_universal_1line_b",
+        "props": {
+          "army": 1,
+          "active": true
+        }
       }
     }
   ],
@@ -17705,17 +17767,6 @@
       "objLayer": 0,
       "props": []
     },
-    "area_01": {
-      "type": "Sphere",
-      "tm": [
-        [36646.8,0.0,33580.6],
-        [0.0,49705.6,0.0],
-        [-33580.6,0.0,36646.8],
-        [12294.9,414.7,14305.0]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
     "area_02": {
       "type": "Sphere",
       "tm": [
@@ -17771,221 +17822,23 @@
       "objLayer": 0,
       "props": []
     },
-    "t1_airfield_end": {
-      "type": "Sphere",
-      "tm": [
-        [56.3816,0.0,20.5212],
-        [0.0,60.0,0.0],
-        [-20.5212,0.0,56.3816],
-        [13565.4,102.1,-10508.4]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn01": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12622.3,102.1,-10824.1]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn02": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12628.5,102.1,-10841.5]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn03": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12634.5,102.1,-10858.7]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn04": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12640.7,102.1,-10875.8]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield": {
-      "type": "Sphere",
-      "tm": [
-        [84.5723,0.0,30.7818],
-        [0.0,90.0,0.0],
-        [-30.7818,0.0,84.5723],
-        [12521.6,102.1,-10888.7]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn05": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12623.0,102.1,-10882.5]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn06": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12616.7,102.1,-10865.0]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn07": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12610.3,102.1,-10847.4]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn08": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12604.0,102.1,-10829.5]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn09": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12586.0,102.1,-10836.3]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn10": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12592.9,102.1,-10854.0]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn11": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12599.6,102.1,-10871.1]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn12": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12606.5,102.1,-10889.2]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn13": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12588.5,102.1,-10895.7]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn14": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12581.8,102.1,-10877.4]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn15": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12575.0,102.1,-10860.0]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "t1_airfield_spawn16": {
-      "type": "Sphere",
-      "tm": [
-        [16.9145,0.0,6.15636],
-        [0.0,18.0,0.0],
-        [-6.15636,0.0,16.9145],
-        [12568.2,102.1,-10842.6]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-1090.14,0.0,-396.778],
+        [-2174.14,0.0,1958.46],
         [0.0,350.0,0.0],
-        [70.6734,0.0,-194.174],
-        [13046.8,95.75,-10729.5]
+        [-501.283,0.0,-556.489],
+        [13493.0,95.75,-7678.5]
       ],
       "props": []
     },
     "t2_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [-1012.41,0.0,776.847],
+        [-1923.58,0.0,1476.01],
         [0.0,350.0,0.0],
-        [-138.371,0.0,-180.328],
-        [-15705.8,233.792,15228.8]
+        [-430.334,0.0,-560.82],
+        [-15566.7,210.0,15003.4]
       ],
       "props": []
     },

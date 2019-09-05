@@ -12,22 +12,25 @@
       "bulletType": "aam"
     },
     {
-      "bulletName": "us_aim92_stinger"
+      "bulletName": "su_9M39"
     },
     {
-      "caliber": 0.127
+      "caliber": 0.07
     },
     {
-      "mass": 74.4
+      "mass": 10.1
     },
     {
       "explosiveType": "tnt"
     },
     {
-      "explosiveMass": 5.0
+      "explosiveMass": 3.2
     },
     {
-      "massEnd": 54.4
+      "massEnd": 7.35
+    },
+    {
+      "massEnd1": 6.0
     },
     {
       "maxDeltaAngle": 2.0
@@ -36,28 +39,34 @@
       "dragCx": 0.018
     },
     {
-      "length": 3.0
+      "length": 1.52
     },
     {
-      "distFromCmToStab": 0.1
+      "distFromCmToStab": 0.023
     },
     {
-      "CxK": 1.85
+      "CxK": 1.7
     },
     {
       "WdK": [0.1,0.1,0.1]
     },
     {
-      "finsAoaHor": 0.08
+      "finsAoaHor": 0.13
     },
     {
-      "finsAoaVer": 0.08
+      "finsAoaVer": 0.13
     },
     {
-      "force": 17619.0
+      "force": 3500.0
     },
     {
-      "timeFire": 2.1
+      "timeFire": 2.0
+    },
+    {
+      "force1": 280.0
+    },
+    {
+      "timeFire1": 6.0
     },
     {
       "spawnExplosionFx": false
@@ -66,7 +75,28 @@
       "spawnExplosionWreckage": false
     },
     {
-      "explosionEffect": "art_ground_splash"
+      "explosionEffect": "atgm_hit"
+    },
+    {
+      "defFxScale": [2.2,2.5]
+    },
+    {
+      "groundCollisionEffect": "art_ground_splash"
+    },
+    {
+      "groundFxScale": [1.5,1.7]
+    },
+    {
+      "ricochetEffect": "cannon_hit_apds"
+    },
+    {
+      "waterCollisionEffect": "120-203_he_water_splash"
+    },
+    {
+      "waterFxScale": [1.2,1.4]
+    },
+    {
+      "explosionPatchRadius": 5.0
     },
     {
       "smokeEffect": "hydra_smoke_modern"
@@ -93,16 +123,19 @@
       "guidance": "ir"
     },
     {
-      "warmUpTime": 5.0
+      "warmUpTime": 4.0
     },
     {
-      "workTime": 10.0
+      "workTime": 60.0
     },
     {
-      "uncageBeforeLaunch": true
+      "uncageBeforeLaunch": false
     },
     {
-      "hasProximityFuse": true
+      "guidanceSfx": "alarm_con_scan"
+    },
+    {
+      "hasProximityFuse": false
     },
     {
       "breakLockMaxTime": 3.0
@@ -153,16 +186,34 @@
       "startSpeed": 0.0
     },
     {
-      "endSpeed": 800.0
+      "endSpeed": 1000.0
     },
     {
       "speedViscosity": 0.2
     },
     {
-      "timeLife": 20.0
+      "timeLife": 17.0
+    },
+    {
+      "machMax": 2.2
+    },
+    {
+      "loadFactorMax": 18.0
+    },
+    {
+      "rangeMax": 5.0
     },
     {
       "price": 3000.0
+    },
+    {
+      "DamageParts": {
+        "body": {
+          "hp": 5.0,
+          "armorClass": "tank_structural_steel",
+          "armorThickness": 1.0
+        }
+      }
     },
     {
       "damage": {
@@ -268,41 +319,51 @@
       }
     },
     {
+      "collisions": {
+        "steel": {
+          "fx": "cannon_hit_armor_cumulative",
+          "fxScale": [4.0,5.0]
+        },
+        "buildings": {
+          "fx": "atgm_hit",
+          "fxScale": [2.2,2.5]
+        },
+        "wood": {
+          "fx": "atgm_hit",
+          "fxScale": [2.2,2.5]
+        }
+      }
+    },
+    {
       "irSeeker": {
-        "rangeBand0": 5500.0,
-        "rangeBand1": 3000.0,
-        "rangeBand2": 4000.0,
+        "rangeBand0": 7000.0,
+        "rangeBand1": 4500.0,
+        "rangeBand2": 1000.0,
         "rangeMax": 11000.0,
-        "fov": 2.5,
-        "minAngleToSun": 10.0,
-        "lockAngleMax": 5.0,
-        "angleMax": 25.0,
-        "rateMax": 16.5,
+        "fov": 3.0,
+        "minAngleToSun": 5.0,
+        "lockAngleMax": 40.0,
+        "angleMax": 40.0,
+        "rateMax": 20.0,
         "prolongationTimeMax": 1.0
       }
     },
     {
       "propNavGuidance": {
         "propNavMult": 4.0,
-        "accelControlProp": 2.0,
-        "accelControlIntg": 0.05,
+        "accelControlProp": 0.007,
+        "accelControlIntg": 0.0015,
         "accelControlIntgLim": 0.5,
-        "accelControlDiff": 0.2
+        "accelControlDiff": 0.0012
       }
     },
     {
       "proximityFuse": {
         "timeOut": 0.5,
-        "radius": 5.0
-      }
-    },
-    {
-      "DamageParts": {
-        "body": {
-          "hp": 5.0,
-          "armorClass": "tank_structural_steel",
-          "armorThickness": 1.0
-        }
+        "radius": 3.0,
+        "detectAirUnits": true,
+        "detectGroundUnits": false,
+        "detectGround": false
       }
     },
     {

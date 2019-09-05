@@ -164,22 +164,40 @@
       "effectivenessDistances": [2500.0,7000.0]
     }
   },
-  "imports": {
-    "import_record": {
-      "file": "gameData/missions/templates/navy_templates/ship_spawn_template.blk",
-      "importAreas": true,
-      "importUnits": true,
-      "importTriggers": true,
-      "importMissionObjectives": true,
-      "importWayPoints": true,
-      "showAreas": true,
-      "showUnits": true,
-      "showTriggers": true,
-      "showMissionObjectives": true,
-      "showWayPoints": true,
-      "excludes": []
+  "imports": [
+    {
+      "import_record": {
+        "file": "gameData/missions/templates/navy_templates/ship_spawn_template.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
+    },
+    {
+      "import_record": {
+        "file": "gameData/missions/templates/navy_templates/buoys_template.blk",
+        "importAreas": false,
+        "importUnits": true,
+        "importTriggers": false,
+        "importMissionObjectives": false,
+        "importWayPoints": false,
+        "showAreas": false,
+        "showUnits": true,
+        "showTriggers": false,
+        "showMissionObjectives": false,
+        "showWayPoints": false,
+        "excludes": []
+      }
     }
-  },
+  ],
   "triggers": {
     "isCategory": true,
     "is_enabled": true,
@@ -226,29 +244,6 @@
         },
         {
           "varSetString": {
-            "value": "ndom_effect_01",
-            "var": "effect_01_name"
-          }
-        },
-        {
-          "varSetString": {
-            "value": "ndom_effect_02",
-            "var": "effect_02_name"
-          }
-        },
-        {
-          "varSetString": {
-            "value": "ndom_effect_03",
-            "var": "effect_03_name"
-          }
-        },
-        {
-          "comment": {
-            "value": ""
-          }
-        },
-        {
-          "varSetString": {
             "value": "ndom_buoy_circles_squad",
             "var": "buoy_circle_squad"
           }
@@ -281,56 +276,8 @@
       "conditions": [],
       "actions": [
         {
-          "__unitPlayEffect": [
-            {
-              "effect_type": "specify"
-            },
-            {
-              "effect": "pv_point_smoke_blue"
-            },
-            {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
-              "radiusOffset": [0.0,0.0]
-            },
-            {
-              "show": true
-            },
-            {
-              "attach": true
-            },
-            {
-              "scale": 1.0
-            },
-            {
-              "loopSpawn": true
-            },
-            {
-              "delay": [1.0,1.0]
-            },
-            {
-              "target": "@effect_01_name"
-            },
-            {
-              "target": "@effect_02_name"
-            },
-            {
-              "target": "@effect_03_name"
-            }
-          ]
-        },
-        {
-          "unitSetProperties": {
-            "object_marking": 0,
-            "object_var_name": "",
-            "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@buoy_circle_squad",
-            "army": 0,
-            "targetableByAi": false,
-            "isImmortal": true,
-            "stealthRadius": 0.0
+          "unitPutToSleep": {
+            "target": "@buoy_circle_squad"
           }
         },
         {
@@ -345,6 +292,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "auto_smoke": true,
+            "markUnitPreset": "ship_buoys",
+            "markUnits": "squad_buoy_01",
             "tags": {
               "air": false,
               "type_hydroplane": true,
@@ -365,6 +314,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "auto_smoke": true,
+            "markUnitPreset": "ship_buoys",
+            "markUnits": "squad_buoy_02",
             "tags": {
               "air": false,
               "type_hydroplane": true,
@@ -385,6 +336,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "auto_smoke": true,
+            "markUnitPreset": "ship_buoys",
+            "markUnits": "squad_buoy_03",
             "tags": {
               "air": false,
               "type_hydroplane": true,
@@ -400,7 +353,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "avg_Dom_objective"
+            "target": "avg_Dom_objective",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         }
       ],
@@ -428,9 +383,6 @@
     "zone_01_name": "",
     "zone_02_name": "",
     "zone_03_name": "",
-    "effect_01_name": "",
-    "effect_02_name": "",
-    "effect_03_name": "",
     "buoy_circle_squad": ""
   },
   "dialogs": [],

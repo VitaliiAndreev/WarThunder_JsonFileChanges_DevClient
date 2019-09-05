@@ -27,10 +27,13 @@
   "isBulletBelt": false,
   "bullet": {
     "bulletCount": 25,
-    "mass": 5.64,
+    "mass": 5.7,
     "caliber": 0.09,
-    "damageCaliber": 0.045,
+    "damageMass": 3.6,
+    "ballisticCaliber": 0.09,
+    "damageCaliber": 0.0381,
     "speed": 1249.0,
+    "Cx": 0.2,
     "maxDistance": 10000.0,
     "bulletType": "apcr_tank",
     "bulletName": "90mm_m332",
@@ -43,6 +46,14 @@
     "hitpower": {
       "HitPower0m": [0.85,500.0],
       "HitPower10000m": [0.8,10000.0]
+    },
+    "damage": {
+      "kinetic": {
+        "demarrePenetrationK": 0.65,
+        "demarreSpeedPow": 1.43,
+        "demarreMassPow": 0.71,
+        "demarreCaliberPow": 1.07
+      }
     },
     "visual": {
       "range_percent_of_ammo": [100.0,0.0],
@@ -180,9 +191,9 @@
       "bulletType": "apcbc_tank",
       "bulletName": "90mm_m82",
       "relativeVelHitShift": [300.0,1000.0],
-      "relativeVelArmorShift": [200.0,1000.0],
       "fuseDelayDist": 1.2,
-      "explodeTreshold": 20.0,
+      "explodeTreshold": 14.0,
+      "relativeVelArmorShift": [200.0,1000.0],
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "120-203_water_splash",
       "waterFxScale": [0.9,1.0],
@@ -481,6 +492,7 @@
     "bullet": {
       "bulletCount": 25,
       "mass": 10.6,
+      "explosiveType": "comp_a",
       "explosiveMass": 2.12,
       "caliber": 0.09,
       "speed": 792.0,
@@ -492,14 +504,6 @@
       "relativeVelArmorShift": [200.0,1000.0],
       "fuseDelayDist": 0.4,
       "explodeTreshold": 0.1,
-      "explodeHitPower": 300.0,
-      "explodeArmorPower": 19.0,
-      "explodeRadius": [0.4,1.07],
-      "shutterDamage": true,
-      "shutterDamageRadius": 15.4,
-      "shutterAmount": 200,
-      "shutterArmorPower": 8.0,
-      "shutterHit": 20.0,
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "120-203_he_water_splash",
       "waterFxScale": [0.9,1.0],
@@ -524,6 +528,12 @@
         "armorPower": 102.0,
         "distance": 0.102,
         "damage": 400.0
+      },
+      "damage": {
+        "explosive": {
+          "radius": 0.05,
+          "offset": 0.1
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],

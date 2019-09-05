@@ -301,12 +301,44 @@
         "showWayPoints": true,
         "excludes": []
       }
+    },
+    {
+      "import_record": {
+        "file": "gameData/missions/cta/simulator/saipan/sbt_bombers_template_part.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
+    },
+    {
+      "import_record": {
+        "file": "gameData/missions/templates/air_templates/jip/templates_organizer.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
     }
   ],
   "triggers": {
     "isCategory": true,
     "is_enabled": true,
-    "air_spawn_start": {
+    "mission_init": {
       "is_enabled": true,
       "comments": "",
       "props": {
@@ -316,6 +348,51 @@
       },
       "events": {
         "initMission": []
+      },
+      "conditions": [],
+      "actions": [
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "pt_port_additional_air_spawns"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "sbt_is_launch_alowed"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "sbt_armada"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "air_spawn_start": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
       },
       "conditions": [],
       "actions": [
@@ -335,6 +412,7 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
+            "forceCreate": false,
             "target": "t1_air_spawn",
             "team": "A",
             "tags": {
@@ -360,6 +438,7 @@
             "canSpawnOnNeutral": false,
             "showOnMap": true,
             "radius": -1.0,
+            "forceCreate": false,
             "target": "t2_air_spawn",
             "team": "B",
             "tags": {
@@ -3858,9 +3937,9 @@
           [-0.999048,0.0,-0.0436193],
           [0.0,1.0,0.0],
           [0.0436193,0.0,-0.999048],
-          [-6507.43,0.0078125,20701.6]
+          [-6507.43,4294.36,20701.6]
         ],
-        "unit_class": "uk_destroyer_clemson_churchill",
+        "unit_class": "ussr_pr_1204_late",
         "objLayer": 1,
         "closed_waypoints": false,
         "isShipSpline": false,

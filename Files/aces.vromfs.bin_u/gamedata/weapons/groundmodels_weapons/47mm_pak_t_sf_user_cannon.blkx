@@ -37,9 +37,9 @@
     "bulletType": "apc_tank",
     "bulletName": "47mm_pzgr_36t",
     "relativeVelHitShift": [300.0,1000.0],
-    "relativeVelArmorShift": [200.0,1000.0],
     "fuseDelayDist": 1.2,
-    "explodeTreshold": 25.0,
+    "explodeTreshold": 9.0,
+    "relativeVelArmorShift": [200.0,1000.0],
     "ricochetEffect": "bullet_hit_armor",
     "waterCollisionEffect": "water_splash",
     "waterFxScale": [1.5,1.7],
@@ -322,6 +322,10 @@
       "mass": 0.825,
       "caliber": 0.047,
       "speed": 1080.0,
+      "damageMass": 0.335,
+      "ballisticCaliber": 0.047,
+      "damageCaliber": 0.021,
+      "Cx": 0.47,
       "maxDistance": 7000.0,
       "bulletType": "apcr_tank",
       "bulletName": "47mm_pzgr_40",
@@ -337,20 +341,13 @@
         "HitPower2500m": [0.6,2500.0],
         "HitPower10000m": [0.5,10000.0]
       },
-      "armorpower": {
-        "ArmorPower0m": [103.0,10.0],
-        "ArmorPower100m": [102.0,100.0],
-        "ArmorPower250m": [90.0,250.0],
-        "ArmorPower500m": [73.0,500.0],
-        "ArmorPower750m": [60.0,750.0],
-        "ArmorPower1000m": [49.0,1000.0],
-        "ArmorPower1250m": [39.0,1250.0],
-        "ArmorPower1500m": [32.0,1500.0],
-        "ArmorPower2000m": [22.0,2000.0],
-        "ArmorPower2500m": [14.0,2500.0],
-        "ArmorPower3000m": [9.0,3000.0],
-        "ArmorPower4000m": [2.0,4000.0],
-        "ArmorPower10000m": [0.0,10000.0]
+      "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 0.65,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        }
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],

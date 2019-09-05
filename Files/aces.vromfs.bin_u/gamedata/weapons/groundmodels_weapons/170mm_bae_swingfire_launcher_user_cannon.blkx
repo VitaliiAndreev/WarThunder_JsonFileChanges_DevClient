@@ -99,6 +99,7 @@
     "bullet": {
       "bulletCount": 25,
       "mass": 17.1,
+      "explosiveType": "rdx",
       "explosiveMass": 4.1,
       "caliber": 0.12,
       "speed": 670.0,
@@ -110,14 +111,6 @@
       "relativeVelArmorShift": [200.0,1000.0],
       "fuseDelayDist": 0.4,
       "explodeTreshold": 0.1,
-      "explodeHitPower": 400.0,
-      "explodeArmorPower": 19.0,
-      "explodeRadius": [0.4,1.07],
-      "shutterDamage": true,
-      "shutterDamageRadius": 15.4,
-      "shutterAmount": 200,
-      "shutterArmorPower": 8.0,
-      "shutterHit": 20.0,
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "120-203_he_water_splash",
       "waterFxScale": [1.1,1.2],
@@ -138,9 +131,15 @@
         "ArmorPower2500m": [2.0,2500.0],
         "ArmorPower10000m": [1.0,10000.0]
       },
+      "damage": {
+        "explosive": {
+          "radius": 0.05,
+          "offset": 0.1
+        }
+      },
       "cumulativeDamage": {
         "armorPower": 152.0,
-        "distance": 0.152,
+        "distance": 0.167,
         "damage": 400.0
       },
       "visual": {
