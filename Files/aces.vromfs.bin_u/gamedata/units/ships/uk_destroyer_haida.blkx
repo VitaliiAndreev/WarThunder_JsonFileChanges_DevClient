@@ -2632,11 +2632,19 @@
       "120mm_uk_navy_HE": [],
       "120mm_uk_navy_AP_ammo_pack": [],
       "120mm_uk_navy_AP": [],
+      "120mm_uk_navy_dist_fuse_he": [],
+      "120mm_uk_navy_dist_fuse_he_ammo_pack": {
+        "prevModification": "120mm_uk_navy_AP_ammo_pack"
+      },
       "102mm_uk_mkxvi_navy_HE": [],
       "102mm_uk_mkxvi_navy_SAP": [],
       "102mm_uk_mkxvi_navy_SAP_ammo_pack": [],
+      "102mm_uk_mkxvi_navy_he_dist_fuse": [],
+      "102mm_uk_mkxvi_navy_he_dist_fuse_ammo_pack": {
+        "prevModification": "102mm_uk_mkxvi_navy_SAP_ammo_pack"
+      },
       "ship_rangefinder": {
-        "prevModification": "120mm_uk_navy_AP_ammo_pack"
+        "prevModification": "102mm_uk_mkxvi_navy_he_dist_fuse_ammo_pack"
       },
       "new_aa_caliber_turrets": [],
       "new_aux_caliber_turrets": {
@@ -4877,7 +4885,7 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
+            "recoilOffset": 0.381
           },
           {
             "barrelDP": "main_caliber_gun_05_dm"
@@ -5033,7 +5041,7 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
+            "recoilOffset": 0.381
           },
           {
             "barrelDP": "main_caliber_gun_05_dm"
@@ -7720,14 +7728,8 @@
     "weapon_presets": [
       {
         "preset": {
-          "name": "uk_destroyer_haida_default",
-          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_haida_default.blk"
-        }
-      },
-      {
-        "preset": {
-          "name": "no_torpedoes",
-          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_haida_no_torpedoes.blk"
+          "name": "torpedoes",
+          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_haida_torpedoes.blk"
         }
       },
       {
@@ -7742,6 +7744,12 @@
           "name": "mk_vii_bomb_mortar_mk_viii_torpedoes",
           "blk": "gameData/units/ships/weaponPresets/uk_destroyer_haida_bomb_mortar_torpedoes.blk",
           "reqModification": "ship_bomb_mortar"
+        }
+      },
+      {
+        "preset": {
+          "name": "uk_destroyer_haida_default",
+          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_haida_default.blk"
         }
       }
     ]

@@ -189,9 +189,9 @@
   "impulseBasedAircraftToSceneCollisionWithCollisionObjects": true,
   "impulseBasedAircraftToUnitCollision": false,
   "tankEngineHeatingSpd": [5.0,-1.0],
-  "batteryDischargeInactivityTime": 30.0,
-  "batteryDischargeActivityTime": 60.0,
-  "batteryChargingTime": 60.0,
+  "batteryDischargeInactivityTime": 60.0,
+  "batteryDischargeActivityTime": 30.0,
+  "batteryChargingTime": 30.0,
   "yawPitchSpeedLowBattery": [6.0,4.0],
   "tracers": {
     "headFadeTime": 4.0,
@@ -1547,6 +1547,7 @@
       "noviceDM": false,
       "crewHealingOnlyOnCaptureZone": false,
       "showBombSight": true,
+      "showRadarGunSight": true,
       "visibleNotTraceableIndicators": true,
       "checkTreesForIndicators": false,
       "drawShipBulletFallIndicator": true,
@@ -1607,6 +1608,7 @@
       "noviceDM": false,
       "crewHealingOnlyOnCaptureZone": true,
       "showBombSight": false,
+      "showRadarGunSight": true,
       "visibleNotTraceableIndicators": true,
       "showShipBulletTimer": true,
       "enableLeaveKills": true,
@@ -1661,6 +1663,7 @@
       "noviceDM": false,
       "crewHealingOnlyOnCaptureZone": true,
       "showBombSight": false,
+      "showRadarGunSight": false,
       "visibleNotTraceableIndicators": true,
       "enableLeaveKills": true,
       "airToAirMissileDetection": false,
@@ -2766,6 +2769,14 @@
         "showBombSight": true
       }
     },
+    "showRadarGunSight": {
+      "off": {
+        "showRadarGunSight": false
+      },
+      "on": {
+        "showRadarGunSight": true
+      }
+    },
     "visibleNotTraceableIndicators": {
       "off": {
         "hudColorMultNotTraceableIndicators": 0.0
@@ -2910,8 +2921,8 @@
   "dynamicMirror": {
     "dynamicMirrorTexWidth": 400,
     "dynamicMirrorTexHeight": 300,
-    "dynamicTeleTexWidth": 384,
-    "dynamicTeleTexHeight": 384,
+    "dynamicTeleTexWidth": 256,
+    "dynamicTeleTexHeight": 256,
     "mfdTexWidth": 1366,
     "mfdTexHeight": 1024
   },
@@ -11765,6 +11776,7 @@
     "randomRadiusAddition": 0.05,
     "minRadiusCreation": 0.1,
     "radiusReplacementTreshold": 0.2,
+    "radiusMultiplierForCheck": 0.5,
     "doNotMakeHoleInWreckedPart": true
   },
   "tpsNightVision": {

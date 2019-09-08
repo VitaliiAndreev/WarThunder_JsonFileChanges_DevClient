@@ -3426,47 +3426,56 @@
     "weapon_presets": [
       {
         "preset": {
-          "name": "us_elco_80ft_pt109_boat_default",
-          "blk": "gameData/units/ships/weaponPresets/us_elco_80ft_pt109_boat_default.blk"
+          "name": "torpedoes",
+          "blk": "gameData/units/ships/weaponPresets/us_elco_80ft_pt109_boat_torpedoes.blk"
         }
       },
       {
         "preset": {
-          "name": "no_torpedoes",
-          "blk": "gameData/units/ships/weaponPresets/us_elco_80ft_pt109_boat_no_torpedoes.blk"
+          "name": "us_elco_80ft_pt109_boat_default",
+          "blk": "gameData/units/ships/weaponPresets/us_elco_80ft_pt109_boat_default.blk"
         }
       }
     ]
   },
   {
     "modifications": {
-      "12mm_usa_M2HB_universal": [],
-      "12mm_usa_M2HB_AP_navy": [],
-      "12mm_usa_M2HB_AP_navy_ammo_pack": [],
-      "12mm_usa_M2HB_APIT_navy": [],
-      "12mm_usa_M2HB_APIT_navy_ammo_pack": {
-        "reqModification": "12mm_usa_M2HB_AP_navy_ammo_pack"
+      "new_ship_hull": [],
+      "new_ship_rudder": {
+        "prevModification": "new_ship_hull"
       },
+      "new_ship_screw": [],
+      "new_ship_engine": {
+        "prevModification": "new_ship_screw"
+      },
+      "ship_tool_kit": [],
+      "manual_ship_extinguisher": [],
+      "ship_smoke_screen_system_mod": [],
+      "new_ship_pumps": [],
+      "12mm_usa_M2HB_universal": [],
+      "12mm_usa_M2HB_AP_navy_ammo_pack": [],
+      "12mm_usa_M2HB_AP_navy": [],
+      "12mm_usa_M2HB_APIT_navy_ammo_pack": {
+        "prevModification": "12mm_usa_M2HB_AP_navy_ammo_pack"
+      },
+      "12mm_usa_M2HB_APIT_navy": [],
       "20mm_oerlikon_universal": [],
       "20mm_oerlikon_navy_he_ammo_pack": [],
       "20mm_oerlikon_navy_he": [],
       "20mm_oerlikon_navy_ap_ammo_pack": {
-        "reqModification": "20mm_oerlikon_navy_he_ammo_pack"
+        "prevModification": "20mm_oerlikon_navy_he_ammo_pack"
       },
       "20mm_oerlikon_navy_ap": [],
-      "manual_ship_extinguisher": [],
-      "ship_tool_kit": [],
-      "ship_smoke_screen_system_mod": [],
-      "new_ship_engine": [],
-      "new_ship_screw": [],
-      "new_ship_hull": [],
-      "new_ship_rudder": [],
-      "new_ship_pumps": [],
+      "new_aux_caliber_turrets": [],
       "new_main_caliber_turrets": {
         "reqModification": "new_aux_caliber_turrets"
       },
-      "new_aux_caliber_turrets": [],
-      "ship_main_caliber_support": []
+      "ship_depth_charge": {
+        "prevModification": "20mm_oerlikon_navy_ap_ammo_pack"
+      },
+      "ship_main_caliber_support": {
+        "prevModification": "12mm_usa_M2HB_APIT_navy_ammo_pack"
+      }
     }
   },
   {

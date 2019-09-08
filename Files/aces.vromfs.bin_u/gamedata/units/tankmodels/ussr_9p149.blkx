@@ -1663,173 +1663,73 @@
         }
       },
       {
-        "Weapon": [
-          {
-            "trigger": "gunner1"
+        "Weapon": {
+          "trigger": "gunner1",
+          "triggerGroup": "primary",
+          "blk": "gameData/Weapons/groundModels_weapons/130mm_9M114_launcher_user_cannon.blk",
+          "flash": "emtr_gun_flame_01",
+          "useEmitter": true,
+          "emitter": "bone_rocket_01",
+          "reloadAnimVar": "9p149_action",
+          "recoilMultiplier": 0.01,
+          "sleeveEmitter": "bone_rocket_01",
+          "sleeveMesh": "9m114_rocket_container",
+          "openHatchTime": 0.0,
+          "sleevesLifeTime": 15.0,
+          "sleeveImpulse": [0.0,1.0,0.0],
+          "linkSleeveToGun": true,
+          "needScaleSleeve": false,
+          "stopForFire": true,
+          "readyToFireVar": "9p149_close_action",
+          "readyToFireTime": 5.0,
+          "maxSpeedForFire": 5.0,
+          "lagStopForFireTime": 2.0,
+          "parkForReload": true,
+          "createGunEffects": true,
+          "defaultYaw": 0.0,
+          "defaultPitch": 0.0,
+          "notReadyToFireYaw": 0.0,
+          "barrelDP": "gun_barrel_dm",
+          "brokenBarrelAllowShoot": false,
+          "canChangeBulletInReload": false,
+          "autoLoader": true,
+          "speedYaw": 25.0,
+          "speedPitch": 25.0,
+          "fireConeAngle": 1.0,
+          "isBulletBelt": false,
+          "bullets": 12,
+          "salvoAmount": 100.0,
+          "ChainfireTime": 0.0,
+          "DelayAfterShoot": 5.0,
+          "AttackMaxDistance": 1000.0,
+          "AttackMaxRadius": 1000.0,
+          "AttackMaxHeight": 1000.0,
+          "accuracyAir": 0.0,
+          "accuracyGnd": 1.5,
+          "errMeasureVel": 0.0,
+          "errMeasureVelFast": 0.0,
+          "errMeasureVelFwdShift": 0.0,
+          "errMeasureVelDir": 0.0,
+          "errTargettingOn100kmph": 0.0,
+          "errTargetting": 3.0,
+          "errExplTime": 0.0,
+          "turret": {
+            "head": "bone_gun",
+            "gun": "bone_gun_barrel",
+            "gunnerDm": "gunner_dm",
+            "verDriveDm": "drive_turret_v_dm",
+            "horDriveDm": "drive_turret_h_dm"
           },
-          {
-            "triggerGroup": "primary"
-          },
-          {
-            "blk": "gameData/Weapons/groundModels_weapons/130mm_9M114_launcher_user_cannon.blk"
-          },
-          {
-            "flash": "emtr_rocket_flame"
-          },
-          {
-            "useEmitter": true
-          },
-          {
-            "emitter": "bone_rocket_01"
-          },
-          {
-            "reloadAnimVar": "9p149_action"
-          },
-          {
-            "recoilMultiplier": 0.01
-          },
-          {
-            "sleeveEmitter": "bone_rocket_01"
-          },
-          {
-            "sleeveMesh": "9m114_rocket_container"
-          },
-          {
-            "openHatchTime": 0.0
-          },
-          {
-            "sleevesLifeTime": 15.0
-          },
-          {
-            "sleeveImpulse": [0.0,1.0,0.0]
-          },
-          {
-            "linkSleeveToGun": true
-          },
-          {
-            "needScaleSleeve": false
-          },
-          {
-            "stopForFire": true
-          },
-          {
-            "readyToFireVar": "9p149_close_action"
-          },
-          {
-            "readyToFireTime": 5.0
-          },
-          {
-            "maxSpeedForFire": 5.0
-          },
-          {
-            "lagStopForFireTime": 2.0
-          },
-          {
-            "canChangeBulletInReload": false
-          },
-          {
-            "parkForReload": true
-          },
-          {
-            "createGunEffects": true
-          },
-          {
-            "defaultYaw": 0.0
-          },
-          {
-            "defaultPitch": 0.0
-          },
-          {
-            "notReadyToFireYaw": 0.0
-          },
-          {
-            "barrelDP": "gun_barrel_dm"
-          },
-          {
-            "brokenBarrelAllowShoot": false
-          },
-          {
-            "canChangeBulletInReload": false
-          },
-          {
-            "autoLoader": true
-          },
-          {
-            "speedYaw": 25.0
-          },
-          {
-            "speedPitch": 25.0
-          },
-          {
-            "fireConeAngle": 1.0
-          },
-          {
-            "isBulletBelt": false
-          },
-          {
-            "bullets": 12
-          },
-          {
-            "salvoAmount": 100.0
-          },
-          {
-            "ChainfireTime": 0.0
-          },
-          {
-            "DelayAfterShoot": 5.0
-          },
-          {
-            "AttackMaxDistance": 1000.0
-          },
-          {
-            "AttackMaxRadius": 1000.0
-          },
-          {
-            "AttackMaxHeight": 1000.0
-          },
-          {
-            "accuracyAir": 0.0
-          },
-          {
-            "accuracyGnd": 1.5
-          },
-          {
-            "errMeasureVel": 0.0
-          },
-          {
-            "errMeasureVelFast": 0.0
-          },
-          {
-            "errMeasureVelFwdShift": 0.0
-          },
-          {
-            "errMeasureVelDir": 0.0
-          },
-          {
-            "errTargettingOn100kmph": 0.0
-          },
-          {
-            "errTargetting": 3.0
-          },
-          {
-            "errExplTime": 0.0
-          },
-          {
-            "turret": {
-              "head": "bone_turret",
-              "gun": "bone_gun",
-              "gunnerDm": "gunner_dm",
-              "verDriveDm": "drive_turret_v_dm",
-              "horDriveDm": "drive_turret_h_dm"
-            }
-          },
-          {
-            "limits": {
-              "yaw": [-85.0,85.0],
-              "pitch": [-5.0,15.0]
-            }
+          "limits": {
+            "yaw": [-85.0,85.0],
+            "pitch": [-5.0,15.0]
           }
-        ]
+        }
+      },
+      {
+        "animatedBones": {
+          "node": "bone_turret"
+        }
       }
     ]
   },

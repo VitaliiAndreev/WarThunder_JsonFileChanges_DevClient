@@ -22341,6 +22341,14 @@
         "explosionDamageMult": 0.3,
         "genericDamageMult": 0.001
       },
+      "conex_box": {
+        "armorClass": "RHA_tank",
+        "armorThickness": 300.0,
+        "restrainDamage": 0.0001,
+        "armorThrough": 20.0,
+        "explosionDamageMult": 0.001,
+        "genericDamageMult": 0.001
+      },
       "korean_houses": {
         "armorClass": "RHA_tank",
         "armorThickness": 3.0,
@@ -28313,20 +28321,6 @@
   {
     "dmg": {
       "name": "stz_tractor_a_dmg",
-      "immortal": true,
-      "material": "metal"
-    }
-  },
-  {
-    "dmg": {
-      "name": "ussr_freight_car_1926_dmg",
-      "immortal": true,
-      "material": "metal"
-    }
-  },
-  {
-    "dmg": {
-      "name": "nvrsk_op_ussr_freight_car_1926_dmg",
       "immortal": true,
       "material": "metal"
     }
@@ -36348,13 +36342,23 @@
         "fx": "ad_wood_metal_big",
         "fxScale": 1.5
       },
+      "american_boxcar_wagon_dmg": {
+        "nextRes": "american_boxcar_wagon_dmg_02",
+        "physRes": "american_boxcar_wagon_dmg_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "isParent": true,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
       "american_emd_f3_locomotive": {
         "nextRes": "american_emd_f3_locomotive_dmg",
         "physRes": "american_emd_f3_locomotive_destr_phobj",
         "hp": 180.0,
         "impulseThreshold": 3.0,
         "isParent": true,
-        "dmPreset": "metal_explosive_props",
+        "dmPreset": "metal_props",
         "fx": "ad_car_wreck",
         "fxScale": 1.4,
         "material": "metal"
@@ -36365,19 +36369,8 @@
         "hp": 180.0,
         "impulseThreshold": 3.0,
         "isParent": true,
-        "dmPreset": "metal_explosive_props",
-        "fx": "ad_car_wreck",
-        "fxScale": 1.4,
-        "material": "metal"
-      },
-      "american_passenger_wagon": {
-        "nextRes": "american_passenger_wagon_dmg",
-        "physRes": "american_passenger_wagon_destr_phobj",
-        "hp": 180.0,
-        "impulseThreshold": 3.0,
-        "isParent": true,
-        "dmPreset": "metal_explosive_props",
-        "fx": "ad_car_wreck",
+        "dmPreset": "metal_props",
+        "fx": "ad_wood_metal_big",
         "fxScale": 1.4,
         "material": "metal"
       },
@@ -36386,7 +36379,7 @@
         "physRes": "fabric_locomotive_destr_phobj",
         "hp": 180.0,
         "impulseThreshold": 3.0,
-        "dmPreset": "metal_explosive_props",
+        "dmPreset": "metal_props",
         "fx": "ad_car_wreck",
         "fxScale": 1.1,
         "material": "metal"
@@ -36409,9 +36402,27 @@
         "fx": "ad_wood_metal_big",
         "fxScale": 1.5
       },
+      "nvrsk_op_ussr_freight_car_1926_dmg": {
+        "nextRes": "nvrsk_op_ussr_freight_car_1926_dmg_02",
+        "physRes": "ussr_freight_car_1926_dmg_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_metal",
+        "fxScale": 1.5
+      },
       "ussr_freight_car_1926": {
         "nextRes": "ussr_freight_car_1926_dmg",
         "physRes": "ussr_freight_car_1926_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
+      "ussr_freight_car_1926_dmg": {
+        "nextRes": "ussr_freight_car_1926_dmg_02",
+        "physRes": "ussr_freight_car_1926_dmg_destr_phobj",
         "hp": 130.0,
         "impulseThreshold": 3.0,
         "dmPreset": "wood_props",
@@ -36427,9 +36438,27 @@
         "fx": "ad_wood_metal_snow_big",
         "fxScale": 1.5
       },
+      "ussr_freight_car_1926_dmg_snow": {
+        "nextRes": "ussr_freight_car_1926_dmg_02_snow",
+        "physRes": "ussr_freight_car_1926_dmg_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_snow_big",
+        "fxScale": 1.5
+      },
       "ussr_hopper_wagon_1933": {
         "nextRes": "ussr_hopper_wagon_1933_dmg",
         "physRes": "ussr_hopper_wagon_1933_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
+      "ussr_hopper_wagon_1933_dmg": {
+        "nextRes": "ussr_hopper_wagon_1933_dmg_02",
+        "physRes": "ussr_hopper_wagon_1933_dmg_destr_phobj",
         "hp": 130.0,
         "impulseThreshold": 3.0,
         "dmPreset": "wood_props",
@@ -36441,7 +36470,7 @@
         "physRes": "ussr_locomotive_e_1298_destr_phobj",
         "hp": 180.0,
         "impulseThreshold": 3.0,
-        "dmPreset": "metal_explosive_props",
+        "dmPreset": "metal_props",
         "fx": "ad_car_wreck",
         "fxScale": 1.4,
         "material": "metal"
@@ -36451,7 +36480,7 @@
         "physRes": "ussr_locomotive_e_1298_destr_phobj",
         "hp": 180.0,
         "impulseThreshold": 3.0,
-        "dmPreset": "metal_explosive_props",
+        "dmPreset": "metal_props",
         "fx": "ad_car_wreck",
         "fxScale": 1.4,
         "material": "metal"
@@ -36515,11 +36544,37 @@
         "nextRes": "ussr_tank_wagon_1931_dmg",
         "physRes": "ussr_tank_wagon_1931_destr_phobj",
         "hp": 100.0,
-        "dmPreset": "metal_explosive_props",
+        "dmPreset": "oil_tanks_full",
         "impulseThreshold": 1.0,
         "fx": "ad_explosion_big",
         "fxScale": 1.0,
         "material": "metal"
+      },
+      "damage_test_wagon": {
+        "nextRes": "damage_test_wagon_dmg",
+        "physRes": "damage_test_wagon_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
+      "damage_test_wagon_dmg": {
+        "nextRes": "damage_test_wagon_dmg_02",
+        "physRes": "damage_test_wagon_dmg_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
+      "damage_test_wagon_dmg_02": {
+        "nextRes": "damage_test_wagon_dmg",
+        "hp": 1000000.0,
+        "impulseThreshold": 1000000.0,
+        "dmPreset": "wood_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
       },
       "m60a1_rendinst": {
         "nextRes": "m60a1_rendinst_dmg",
@@ -38446,6 +38501,150 @@
         "fx": "ad_explosion_big",
         "fxScale": 0.5,
         "material": "metal"
+      },
+      "conex_box_e_a": {
+        "nextRes": "conex_box_e_a_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_e_a_dmg": {
+        "nextRes": "conex_box_e_a_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_e_b": {
+        "nextRes": "conex_box_e_b_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_e_b_dmg": {
+        "nextRes": "conex_box_e_b_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_f_a": {
+        "nextRes": "conex_box_f_a_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_f_a_dmg": {
+        "nextRes": "conex_box_f_a_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_f_b": {
+        "nextRes": "conex_box_f_b_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_f_b_dmg": {
+        "nextRes": "conex_box_f_b_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_g_a": {
+        "nextRes": "conex_box_g_a_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_g_a_dmg": {
+        "nextRes": "conex_box_g_a_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_g_b": {
+        "nextRes": "conex_box_g_b_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_g_b_dmg": {
+        "nextRes": "conex_box_g_b_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_h_a": {
+        "nextRes": "conex_box_h_a_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_h_a_dmg": {
+        "nextRes": "conex_box_h_a_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
+      },
+      "conex_box_h_b": {
+        "nextRes": "conex_box_h_b_dmg",
+        "hp": 100.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 1.5,
+        "fx": "ad_metal",
+        "fxScale": 1.0
+      },
+      "conex_box_h_b_dmg": {
+        "nextRes": "conex_box_h_b_dmg",
+        "hp": 1000000.0,
+        "isParent": false,
+        "dmPreset": "conex_box",
+        "impulseThreshold": 5000000.0,
+        "fx": "ad_metal",
+        "fxScale": 10.0
       },
       "road_barrier_e": {
         "physRes": "road_barrier_e_destr_phobj",

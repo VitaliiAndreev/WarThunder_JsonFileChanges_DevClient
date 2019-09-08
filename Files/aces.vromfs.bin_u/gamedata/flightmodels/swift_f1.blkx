@@ -22,6 +22,7 @@
   "explosion_dmBlk": "gameData/FlightModels/DM/commonExplosion.blk",
   "fireParamsPreset": "1000kph",
   "fightAiBehaviour": "fighter",
+  "gyroscopicSightOverSensors": true,
   "DamageParts": {
     "armor10": {
       "cannon1_dm": {
@@ -1896,6 +1897,78 @@
     "Engine": "engine05",
     "gun": "gun_default"
   },
+  "cockpit": {
+    "headPos": [2.325,0.83,0.0],
+    "headPosOnShooting": [2.325,0.83,0.0],
+    "shadowSphereMultiplier": 2.0,
+    "gunLightRadiusMul": 0.05,
+    "lightPos": [1.88675,0.366551,0.266284],
+    "lightColor": [0.62,0.3,0.21],
+    "lightAttenuation": 8.0,
+    "devices": {
+      "stick_elevator": [-1.0,1.0],
+      "stick_ailerons": [-1.0,1.0],
+      "pedals": [-1.0,1.0],
+      "pedals1": [-1.0,1.0],
+      "pedals2": [-1.0,1.0],
+      "pedals3": [-1.0,1.0],
+      "pedals4": [-1.0,1.0],
+      "pedals5": [-1.0,1.0],
+      "flaps": [0.0,1.0],
+      "flaps_fixed": false,
+      "airbrake_lever": [0.0,1.0],
+      "trimmer": [-1.0,1.0],
+      "trimmer_indicator": [-1.0,1.0],
+      "throttle": [0.0,1.0],
+      "weapon2": [0.0,1.0],
+      "gears": [0.0,1.0],
+      "gear_fixed": false,
+      "gears_lamp": [0.0,0.0],
+      "altitude_10k": [0.0,100000.0],
+      "altitude_hour": [0.0,10000.0],
+      "altitude_min": [0.0,1000.0],
+      "altitude1_hour": [10000.0,40000.0],
+      "altitude_koef": 3.28,
+      "speed": [0.0,313.811],
+      "mach": [0.5,1.0],
+      "vario": [-20.32,20.32],
+      "g_meter": [-5.0,12.0],
+      "g_meter_min": [-5.0,12.0],
+      "g_meter_max": [-5.0,12.0],
+      "aviahorizon_pitch": [-45.0,45.0],
+      "aviahorizon_roll": [-180.0,180.0],
+      "bank": [-8.0,8.0],
+      "turn": [-0.23562,0.23562],
+      "compass": [0.0,360.0],
+      "compass1": [0.0,360.0],
+      "clock_hour": [0.0,12.0],
+      "clock_min": [0.0,60.0],
+      "clock_sec": [0.0,60.0],
+      "rpm_hour": [0.0,12000.0],
+      "rpm_min": [0.0,1000.0],
+      "water_temperature": [400.0,760.0],
+      "oil_pressure": [0.0,60.0],
+      "oil_temperature": [0.0,120.0],
+      "fuel": [0.0,1678.292]
+    },
+    "parts_holes_dmg": {
+      "part": "fuse"
+    },
+    "parts_oil_dmg": [
+      {
+        "part": "engine1"
+      },
+      {
+        "part": "engine2"
+      },
+      {
+        "part": "engine3"
+      },
+      {
+        "part": "engine4"
+      }
+    ]
+  },
   "commonWeapons": [
     {
       "Weapon": {
@@ -1973,6 +2046,12 @@
   "arcadeOverride": {
     "maxSpeedMultiplier": 1.01,
     "wepOverspeed": 1.05
+  },
+  "sensors": {
+    "sensor": {
+      "blk": "gameData/sensors/us_an_apg_30.blk",
+      "dmPart": "radar_dm"
+    }
   },
   "wiki": {
     "general": {

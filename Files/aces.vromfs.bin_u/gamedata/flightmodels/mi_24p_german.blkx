@@ -4178,10 +4178,71 @@
       "modClass": "weapon",
       "prevModification": "GSh-30-2K_new_gun"
     },
-    "heli_false_thermal_targets": {
+    "heli_screen_exhaust_device": {
+      "turn_it_off": false,
       "invertEnableLogic": false,
-      "tier": 1,
       "group": "mi-24_EVU",
+      "tier": 1,
+      "effects": {
+        "enginesInfraRedBrightnessMult": 0.7,
+        "commonWeapons": [
+          {
+            "hideNodes": [
+              {
+                "node": "fuse4"
+              },
+              {
+                "node": "lipa"
+              }
+            ]
+          },
+          {
+            "Weapon": {
+              "dummy": true,
+              "trigger": "gunner0",
+              "triggerGroup": "primary",
+              "blk": "gameData/Weapons/cannonGSh_30_2K.blk",
+              "emitter": "optic1_gun",
+              "defaultYaw": 0.0,
+              "defaultPitch": 0.0,
+              "speedYaw": 25.0,
+              "speedPitch": 25.0,
+              "bullets": 1,
+              "parkInDeadzone": false,
+              "aimForOperatedShell": true,
+              "turret": {
+                "head": "optic1_turret",
+                "gun": "optic1_gun",
+                "playerControllable": false
+              },
+              "limits": {
+                "yaw": [-50.0,50.0],
+                "pitch": [-40.0,20.0]
+              }
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "cannon",
+              "blk": "gameData/Weapons/cannonGSh_30_2K.blk",
+              "emitter": "flare1",
+              "flash": "flare1",
+              "shell": "emtr_shellrejection1",
+              "dm": "cannon1_dm",
+              "bullets": 250,
+              "spread": 1.2,
+              "recoilMultiplier": 0.5
+            }
+          }
+        ]
+      }
+    },
+    "heli_false_thermal_targets": {
+      "turn_it_off": false,
+      "invertEnableLogic": false,
+      "reqModification": "heli_screen_exhaust_device",
+      "group": "mi-24_EVU",
+      "tier": 2,
       "effects": {
         "commonWeapons": [
           {

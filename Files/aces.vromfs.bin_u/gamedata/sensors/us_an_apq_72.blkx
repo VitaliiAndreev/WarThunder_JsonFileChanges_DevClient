@@ -326,6 +326,7 @@
         "switchOn": {
           "stateFrom": "standby",
           "command": "switch",
+          "event": "enable",
           "stateTo": "search",
           "actions": {
             "setSearchMode": []
@@ -334,6 +335,7 @@
         "switchOff": {
           "stateFrom": "search",
           "command": "switch",
+          "event": "disable",
           "stateTo": "standby",
           "actions": {
             "resetSearchMode": [],
@@ -417,6 +419,18 @@
               "active": false
             },
             "setStandbyMode": []
+          }
+        },
+        "switchToSearch": {
+          "stateFrom": "boresightLock",
+          "command": "switch",
+          "stateTo": "search",
+          "actions": {
+            "setFsmActive": {
+              "fsm": "lock",
+              "active": false
+            },
+            "setSearchMode": []
           }
         },
         "brokenBoresightTrack": {

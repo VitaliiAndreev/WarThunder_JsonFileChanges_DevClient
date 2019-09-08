@@ -2,7 +2,7 @@
   "rocketGun": true,
   "preset_cost": 10,
   "bullets": 1,
-  "shotFreq": 40.0,
+  "shotFreq": 10.0,
   "sound_path": "tanks/weapon_tanks/cannons",
   "sound_pathStudio": "ground/weapon/cannons",
   "sound": "grenade_launcher",
@@ -37,13 +37,17 @@
     "smokeEffect": "",
     "startFx": "",
     "waterExplosionEffect": "water_splash",
-    "maxDistance": 2000.0,
-    "minDistance": 200.0,
+    "maxDistance": 10.0,
+    "minDistance": 10.0,
     "smokeShell": true,
-    "smokeFx": "smoke_shell_explosion",
-    "smokeShellRad": 10.0,
-    "smokeActivateTime": 5.0,
+    "smokeShellRad": 13.0,
+    "smokeActivateTime": 2.0,
     "smokeTime": 20.0,
+    "groundCollisionEffect": "smoke_shell_explosion",
+    "ricochetEffect": "cannon_ricochet",
+    "waterCollisionEffect": "smoke_shell_explosion",
+    "waterFxScale": [0.6,0.7],
+    "explosionPatchRadius": 1.1,
     "spawnExplosionWreckage": false,
     "spawnExplosionFx": false,
     "explosionOffset": 0.05,
@@ -65,6 +69,11 @@
     "endSpeed": 15.0,
     "speedViscosity": 0.2,
     "timeToLive": 20.0,
-    "price": 300.0
+    "price": 300.0,
+    "collisions": {
+      "steel": {
+        "fx": "smoke_shell_explosion"
+      }
+    }
   }
 }

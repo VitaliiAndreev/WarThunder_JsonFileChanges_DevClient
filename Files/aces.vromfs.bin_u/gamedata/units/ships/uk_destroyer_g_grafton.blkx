@@ -4760,14 +4760,8 @@
     "weapon_presets": [
       {
         "preset": {
-          "name": "uk_destroyer_g_grafton_default",
-          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_g_grafton_default.blk"
-        }
-      },
-      {
-        "preset": {
-          "name": "no_torpedoes",
-          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_g_grafton_no_torpedoes.blk"
+          "name": "torpedoes",
+          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_g_grafton_torpedoes.blk"
         }
       },
       {
@@ -4782,6 +4776,12 @@
           "name": "mk_vii_bomb_mortar_mk_viii_torpedoes",
           "blk": "gameData/units/ships/weaponPresets/uk_destroyer_g_grafton_bomb_mortar_torpedoes.blk",
           "reqModification": "ship_bomb_mortar"
+        }
+      },
+      {
+        "preset": {
+          "name": "uk_destroyer_g_grafton_default",
+          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_g_grafton_default.blk"
         }
       }
     ]
@@ -4872,6 +4872,10 @@
       "120mm_uk_navy_HE": [],
       "120mm_uk_navy_AP_ammo_pack": [],
       "120mm_uk_navy_AP": [],
+      "120mm_uk_navy_dist_fuse_he": [],
+      "120mm_uk_navy_dist_fuse_he_ammo_pack": {
+        "prevModification": "120mm_uk_navy_AP_ammo_pack"
+      },
       "12mm_vickers_mk5_navy_universal": [],
       "12mm_vickers_mk5_navy_HEI": [],
       "12mm_vickers_mk5_navy_HEI_ammo_pack": [],
@@ -4879,7 +4883,9 @@
       "12mm_vickers_mk5_navy_API_ammo_pack": {
         "prevModification": "12mm_vickers_mk5_navy_HEI_ammo_pack"
       },
-      "ship_rangefinder": [],
+      "ship_rangefinder": {
+        "prevModification": "120mm_uk_navy_dist_fuse_he_ammo_pack"
+      },
       "new_aa_caliber_turrets": [],
       "new_main_caliber_turrets": {
         "reqModification": "new_aa_caliber_turrets"

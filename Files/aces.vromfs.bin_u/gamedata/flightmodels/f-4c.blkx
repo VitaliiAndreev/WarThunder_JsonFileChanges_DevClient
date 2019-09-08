@@ -6,6 +6,9 @@
     "fmFile": "fm/f-4c.blk"
   },
   {
+    "harmonizationSuffix": "_tomoe"
+  },
+  {
     "MetaPartsBlk": "gameData/FlightModels/dm/metaparts/fighter_metaparts.blk"
   },
   {
@@ -2829,9 +2832,9 @@
           "rpm1_hour": [0.0,10000.0],
           "rpm1_min": [0.0,1000.0],
           "oil_pressure": [0.0,160.0],
-          "water_temperature_hour": [0.0,900.0],
+          "water_temperature_hour": [100.0,1100.0],
           "water_temperature_min": [0.0,100.0],
-          "water_temperature1_hour": [0.0,900.0],
+          "water_temperature1_hour": [100.0,1100.0],
           "water_temperature1_min": [0.0,100.0],
           "fuel_pressure": [0.0,15.0],
           "fuel_pressure1": [0.0,15.0],
@@ -3199,10 +3202,17 @@
       "CdMin_Fuse": [],
       "new_cover": [],
       "structure_str": [],
-      "hp_105": [],
-      "new_radiator": [],
-      "new_compressor": [],
-      "new_engine_injection": [],
+      "hydravlic_power": {
+        "effects": {
+          "aileronBooster": 0.9,
+          "elevatorBooster": 0.9
+        }
+      },
+      "hp_105_jet": [],
+      "g_suit": [],
+      "new_compressor_jet": {
+        "tier": 1
+      },
       "M60_air_targets": [],
       "M60_armor_targets": [],
       "M60_belt_pack": {
@@ -3286,6 +3296,25 @@
       {
         "replace_tex": {
           "from": "f_4c_n_dmg*"
+        }
+      }
+    ]
+  },
+  {
+    "default_skin_tomoe": [
+      {
+        "name": "tomoe"
+      },
+      {
+        "replace_tex": {
+          "from": "f_4c_c*",
+          "to": "f_4c_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "f_4c_c_dmg*",
+          "to": "f_4c_c_tomoe_dmg*"
         }
       }
     ]
