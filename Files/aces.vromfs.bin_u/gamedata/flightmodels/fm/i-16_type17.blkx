@@ -5,12 +5,12 @@
   "ElevatorsEffectiveSpeed": 280.0,
   "AileronPowerLoss": 1.8,
   "RudderPowerLoss": 1.3,
-  "ElevatorPowerLoss": 1.5,
+  "ElevatorPowerLoss": 1.8,
   "AlphaAileronMin": 0.01,
   "AlphaRudderMin": 0.1,
   "AlphaElevatorMin": 0.01,
   "AllowStrongControlsRestrictions": true,
-  "RudderSens": 0.85,
+  "RudderSens": 0.8,
   "ElevatorSens": 0.485,
   "AileronSens": 0.28,
   "GearActuatorSpeed": 0.06,
@@ -54,9 +54,9 @@
   "RollLeveling": true,
   "ArcadeMaxRollCoeff": 1.0,
   "ArcadeYawMutilpliers": [1.0,1.0,1.0],
-  "AileronMaxDv": 12.1212,
-  "ElevatorMaxDv": 4.9242,
-  "RudderMaxDv": 7.874,
+  "AileronMaxDv": 20.0,
+  "ElevatorMaxDv": 20.0,
+  "RudderMaxDv": 6.0,
   "CockpitOpenedDoorBreakSpeed": -1.0,
   "MomentOfInertia": [2631.0,6427.0,3796.0],
   "AvailableControls": {
@@ -90,12 +90,12 @@
     "PreciseRotStopDetection": false
   },
   "Areas": {
-    "WingLeftIn": 3.1,
-    "WingLeftMid": 2.5,
-    "WingLeftOut": 1.67,
-    "WingRightIn": 3.1,
-    "WingRightMid": 2.5,
-    "WingRightOut": 1.67,
+    "WingLeftIn": 2.69,
+    "WingLeftMid": 2.4,
+    "WingLeftOut": 1.291,
+    "WingRightIn": 2.69,
+    "WingRightMid": 2.4,
+    "WingRightOut": 1.291,
     "Aileron": 0.825,
     "Fuselage": 14.54,
     "Stabilizer": 1.4,
@@ -104,10 +104,10 @@
     "Rudder": 0.762
   },
   "Focus": {
-    "FocusOffset": -0.01,
+    "FocusOffset": -0.05,
     "WingVertPos": 0.3,
     "AlphaShift": 0.2,
-    "FlapsShift": 0.05,
+    "FlapsShift": 0.02,
     "AirbrakesShift": 0.0,
     "GearShift": 0.0,
     "WingInFocus": 0.5,
@@ -180,33 +180,33 @@
     "MultLineCoeff6": 3.0,
     "MultLimit6": 0.2,
     "MachCrit7": 0.2,
-    "MachMax7": 0.8,
-    "MultMachMax7": 0.6,
+    "MachMax7": 0.7,
+    "MultMachMax7": 0.2,
     "MultLineCoeff7": -0.1,
-    "MultLimit7": 0.25,
+    "MultLimit7": 0.15,
     "CombinedCl": false,
     "DownwashType": 2,
     "DownwashCoeff": 1.4,
     "StabFlowInertia": 0.05,
     "VertStabFlowInertia": 0.05,
     "NoFlaps": {
-      "Cl0": 0.16,
+      "Cl0": 0.232,
       "alphaCritHigh": 20.0,
-      "alphaCritLow": -8.0,
-      "ClCritHigh": 1.28,
-      "ClCritLow": -0.2,
+      "alphaCritLow": -16.0,
+      "ClCritHigh": 1.454,
+      "ClCritLow": -0.95,
       "CdMin": 0.0075
     },
     "FullFlaps": {
       "Cl0": 0.4,
-      "alphaCritHigh": 14.0,
+      "alphaCritHigh": 17.0,
       "alphaCritLow": -12.0,
-      "ClCritHigh": 1.35,
+      "ClCritHigh": 1.55,
       "ClCritLow": -0.15,
       "CdMin": 0.017
     },
     "Fuselage": {
-      "OswaldsEfficiencyNumber": 0.5,
+      "OswaldsEfficiencyNumber": 0.6,
       "lineClCoeff": 0.07,
       "AfterCritParabAngle": 2.0,
       "AfterCritDeclineCoeff": 0.0002,
@@ -255,7 +255,7 @@
       "alphaCritLow": -20.0,
       "ClCritHigh": 0.04,
       "ClCritLow": -0.04,
-      "CdMin": 0.0275
+      "CdMin": 0.028
     },
     "Stab": {
       "OswaldsEfficiencyNumber": 0.85,
@@ -365,128 +365,49 @@
   "EngineType0": {
     "External": false,
     "Booster": false,
-    "Main": [
-      {
-        "ExtinguisherNum": 0
-      },
-      {
-        "Type": "Radial"
-      },
-      {
-        "Cylinders": 9
-      },
-      {
-        "Mass": 459.0
-      },
-      {
-        "Thrust": 10.7
-      },
-      {
-        "ThrottleBoost": 1.001
-      },
-      {
-        "AfterburnerBoost": 1.107
-      },
-      {
-        "RPMMin": 400.0
-      },
-      {
-        "RPMMax": 2100.0
-      },
-      {
-        "RPMAfterburner": 2200.0
-      },
-      {
-        "RPMMaxAllowed": 2500.0
-      },
-      {
-        "StandbyFriction": 0.075
-      },
-      {
-        "FuelConsumptionOnIdle": 0.2
-      },
-      {
-        "FuelConsumptionOnHalfThr": 0.242
-      },
-      {
-        "FuelConsumptionOnFullThr": 0.292
-      },
-      {
-        "FuelConsumptionOnWEP": 0.315
-      },
-      {
-        "CarbueretorType": 3
-      },
-      {
-        "CarbureutorCapacity": 0.2
-      },
-      {
-        "IsAutonomous": true
-      },
-      {
-        "ExtinguisherNum": 0
-      },
-      {
-        "MinThrMult": 0.165
-      },
-      {
-        "MaxThrMult": 1.0
-      },
-      {
-        "IsWaterCooled": false
-      },
-      {
-        "EngineInertiaMoment": 10.0
-      },
-      {
-        "RPMAmplitude0": [2200.0,0.0]
-      },
-      {
-        "RPMAmplitude1": [0.0,0.0]
-      },
-      {
-        "ThrottleRPMAuto0": [0.0,400.0]
-      },
-      {
-        "ThrottleRPMAuto1": [0.8,1650.0]
-      },
-      {
-        "ThrottleRPMAuto2": [0.94,2050.0]
-      },
-      {
-        "ThrottleRPMAuto3": [1.0,2100.0]
-      },
-      {
-        "ThrottleRPMAuto4": [1.1,2200.0]
-      },
-      {
-        "ShaftRPMMin": 1700.0
-      },
-      {
-        "ShaftRPMMax": 2100.0
-      },
-      {
-        "ShaftRpmController": false
-      },
-      {
-        "Power": 700.0
-      },
-      {
-        "ConsumptionOmegaMax": 1.05
-      },
-      {
-        "TorqueZeroOmegaMult": 3.0
-      },
-      {
-        "TurbineTimeConstant": 3.4
-      },
-      {
-        "ThrustMax": {
-          "VelocityType": "TAS",
-          "ThrustMax0": 2700.0
-        }
+    "Main": {
+      "ExtinguisherNum": 0,
+      "Type": "Radial",
+      "Cylinders": 9,
+      "Mass": 459.0,
+      "Thrust": 10.7,
+      "ThrottleBoost": 1.001,
+      "AfterburnerBoost": 1.107,
+      "RPMMin": 400.0,
+      "RPMMax": 2100.0,
+      "RPMAfterburner": 2200.0,
+      "RPMMaxAllowed": 2500.0,
+      "StandbyFriction": 0.075,
+      "FuelConsumptionOnIdle": 0.2,
+      "FuelConsumptionOnHalfThr": 0.242,
+      "FuelConsumptionOnFullThr": 0.292,
+      "FuelConsumptionOnWEP": 0.315,
+      "CarbueretorType": 3,
+      "CarbureutorCapacity": 0.2,
+      "IsAutonomous": true,
+      "MinThrMult": 0.165,
+      "MaxThrMult": 1.0,
+      "IsWaterCooled": false,
+      "EngineInertiaMoment": 10.0,
+      "RPMAmplitude0": [2200.0,0.0],
+      "RPMAmplitude1": [0.0,0.0],
+      "ThrottleRPMAuto0": [0.0,400.0],
+      "ThrottleRPMAuto1": [0.8,1650.0],
+      "ThrottleRPMAuto2": [0.94,2050.0],
+      "ThrottleRPMAuto3": [1.0,2100.0],
+      "ThrottleRPMAuto4": [1.1,2200.0],
+      "ShaftRPMMin": 1700.0,
+      "ShaftRPMMax": 2100.0,
+      "ShaftRpmController": false,
+      "Power": 700.0,
+      "ConsumptionOmegaMax": 1.05,
+      "TorqueZeroOmegaMult": 3.0,
+      "TurbineTimeConstant": 3.4,
+      "ThrustMax": {
+        "VelocityType": "TAS",
+        "ThrustMax0": 2700.0
       }
-    ],
+    },
     "AutoThrottle": {
       "HasContorller": false,
       "ThrottleOmegaPidInputLim": 1000000000.0,
@@ -613,7 +534,7 @@
       "Ceiling0": 7000.0,
       "PowerAtCeiling0": 425.0,
       "AfterburnerManifoldPressure": 1.3,
-      "SpeedManifoldMultiplier": 0.2,
+      "SpeedManifoldMultiplier": 0.5,
       "AllowAutoTurboCharger": false,
       "TurboChargerRPMMin": 0.0,
       "TurboChargerRPMMaxAllowed": 18250.0,
@@ -681,13 +602,13 @@
       "Radius": 1.4,
       "NumBlades": 2,
       "BladePitch0": 12.0,
-      "BladeWidth0": 0.1,
+      "BladeWidth0": 0.13,
       "BladePitch1": 8.0,
-      "BladeWidth1": 0.14,
+      "BladeWidth1": 0.16,
       "BladePitch2": 0.0,
-      "BladeWidth2": 0.13,
+      "BladeWidth2": 0.15,
       "BladePitch3": -2.0,
-      "BladeWidth3": 0.05,
+      "BladeWidth3": 0.06,
       "FlyBarStabilizationMult": 0.0,
       "FlyBarAngleMax": 0.0,
       "FlyBarToCylicAxes": 0.0,
@@ -756,7 +677,7 @@
       "AfterCritMaxDistanceAngle": 30.0,
       "ClAfterCrit": 1.2,
       "CxAfterCoeff": 0.01,
-      "OswaldsEfficiencyNumber": 0.78,
+      "OswaldsEfficiencyNumber": 0.8,
       "MachFactor": 3,
       "CombinedCl": true,
       "MachCrit1": 0.79,
@@ -781,9 +702,9 @@
       "MultLimit4": 0.7,
       "MachCrit5": 0.0,
       "MachMax5": 0.0,
-      "MultMachMax5": 1.4,
+      "MultMachMax5": 1.3,
       "MultLineCoeff5": 0.0,
-      "MultLimit5": 1.4,
+      "MultLimit5": 1.3,
       "MachCrit6": 0.0,
       "MachMax6": 0.0,
       "MultMachMax6": 0.0,
@@ -850,13 +771,13 @@
       "pilot_dm": 95.0,
       "armor1_dm": 10.0,
       "fuse1_dm": 40.0,
-      "tail_dm": 20.0,
+      "tail_dm": 10.0,
       "tailcontrol_dm": 5.0,
       "fin_dm": 8.0,
       "rudder_dm": 8.0,
       "elevator1_dm": 4.0,
       "elevator0_dm": 4.0,
-      "stab_dm": 10.0,
+      "stab_dm": 8.0,
       "wing_l_dm": 100.0,
       "wing1_l_dm": 50.0,
       "wing2_l_dm": 30.0,
@@ -925,10 +846,6 @@
     "WaterRudderSpeedRange": [8.33333,13.8889]
   },
   "Passport": {
-    "mass": 0.0,
-    "climbSpeedNum": 0,
-    "climbSpeedIAS": true,
-    "turnTimeFlaps": 0,
     "Alt": [],
     "IAS": []
   }

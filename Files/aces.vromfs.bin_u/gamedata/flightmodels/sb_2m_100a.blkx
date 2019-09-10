@@ -2585,11 +2585,20 @@
         }
       },
       {
-        "preset": {
-          "name": "sb_2m_100_1xfab500",
-          "blk": "gameData/FlightModels/weaponPresets/sb_2m_100_1xfab500.blk",
-          "reqModification": "sb-2_der-25"
-        }
+        "preset": [
+          {
+            "name": "sb_2m_100_1xfab500"
+          },
+          {
+            "blk": "gameData/FlightModels/weaponPresets/sb_2m_100_1xfab500.blk"
+          },
+          {
+            "reqModification": "sb-2_der-25"
+          },
+          {
+            "reqModification": "sb-2_der-19"
+          }
+        ]
       }
     ]
   },
@@ -2712,8 +2721,12 @@
       "shkas_turret_apit": [],
       "sb-2_der-25": {
         "modClass": "weapon",
-        "tier": 2,
-        "reqModLevel": 3.0
+        "tier": 2
+      },
+      "sb-2_der-19": {
+        "modClass": "weapon",
+        "tier": 3,
+        "reqModification": "sb-2_der-25"
       }
     }
   },
