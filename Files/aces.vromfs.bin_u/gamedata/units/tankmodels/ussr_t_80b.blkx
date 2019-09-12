@@ -2899,28 +2899,6 @@
     }
   },
   {
-    "nightVision": {
-      "gunnerIr": {
-        "resolution": [1600,1200],
-        "lightMult": 9.0,
-        "ghosting": 0.6,
-        "noiseFactor": 0.2
-      },
-      "commanderIr": {
-        "resolution": [1600,1200],
-        "lightMult": 9.0,
-        "ghosting": 0.6,
-        "noiseFactor": 0.2
-      },
-      "driverIr": {
-        "resolution": [800,600],
-        "lightMult": 5.0,
-        "ghosting": 0.6,
-        "noiseFactor": 0.2
-      }
-    }
-  },
-  {
     "modifications": {
       "new_tank_tracks": [],
       "new_tank_suspension": [],
@@ -2930,7 +2908,9 @@
       "new_tank_engine": [],
       "tank_camouflage": [],
       "tank_additional_armor": [],
-      "manual_extinguisher": [],
+      "manual_extinguisher": {
+        "prevModification": "tank_tool_kit"
+      },
       "tank_tool_kit": [],
       "new_tank_horizontal_aiming": [],
       "new_tank_vertical_aiming": [],
@@ -2938,6 +2918,7 @@
       "art_support": [],
       "tank_engine_smoke_screen_system": [],
       "tank_medical_kit": {
+        "tier": 1,
         "image": "#ui/gameuiskin#tank_reinforcement_ussr"
       },
       "tank_medical_kit_expendable": {
@@ -2957,9 +2938,37 @@
       "125mm_ussr_ATGM": {
         "maxToRespawn": 5
       },
+      "night_vision_system": {
+        "modClass": "protection",
+        "tier": 3,
+        "turn_it_off": false,
+        "effects": {
+          "nightVision": {
+            "gunnerIr": {
+              "resolution": [1600,1200],
+              "lightMult": 9.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            },
+            "commanderIr": {
+              "resolution": [1600,1200],
+              "lightMult": 9.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            }
+          }
+        }
+      },
       "night_vision_system_upgrade_nv_to_thermal": {
         "tier": 4,
         "modClass": "protection",
+        "turn_it_off": false,
         "requiresModelReload": true,
         "effects": {
           "nightVision": {
