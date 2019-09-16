@@ -3401,13 +3401,10 @@
             "defaultPitch": 0.0
           },
           {
-            "isBulletBelt": true
+            "speedYaw": 20.0
           },
           {
-            "speedYaw": 35.0
-          },
-          {
-            "speedPitch": 35.0
+            "speedPitch": 20.0
           },
           {
             "bullets": 300
@@ -3523,7 +3520,7 @@
             "trigger": "gunner3"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_mk5_twin_naval_user_cannon.blk"
@@ -3675,7 +3672,7 @@
             "trigger": "gunner3"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_mk5_twin_naval_user_cannon.blk"
@@ -3827,7 +3824,7 @@
             "trigger": "gunner4"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_staag_mk2_twin_naval_user_cannon.blk"
@@ -3977,7 +3974,7 @@
             "trigger": "gunner4"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_staag_mk2_twin_naval_user_cannon.blk"
@@ -4127,7 +4124,7 @@
             "trigger": "gunner5"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_staag_mk2_twin_naval_user_cannon.blk"
@@ -4276,7 +4273,7 @@
             "trigger": "gunner5"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_staag_mk2_twin_naval_user_cannon.blk"
@@ -4425,7 +4422,7 @@
             "trigger": "gunner6"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_mk7_single_naval_user_cannon.blk"
@@ -4570,7 +4567,7 @@
             "trigger": "gunner7"
           },
           {
-            "triggerGroup": "machinegun"
+            "triggerGroup": "secondary"
           },
           {
             "blk": "gameData/Weapons/navalModels_weapons/40mm_qf_bofors_mk7_single_naval_user_cannon.blk"
@@ -4716,7 +4713,8 @@
       {
         "preset": {
           "name": "torpedoes",
-          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_battle_2series_torpedoes.blk"
+          "blk": "gameData/units/ships/weaponPresets/uk_destroyer_battle_2series_torpedoes.blk",
+          "reqModification": "ship_torpedoes"
         }
       },
       {
@@ -4824,13 +4822,11 @@
       "40mm_bofors_l60_navy_ap_ammo_pack": {
         "prevModification": "40mm_bofors_l60_navy_he_ammo_pack"
       },
+      "ship_torpedoes": [],
       "ship_rangefinder": {
         "prevModification": "40mm_bofors_l60_navy_ap_ammo_pack"
       },
-      "new_aa_caliber_turrets": [],
-      "new_aux_caliber_turrets": {
-        "reqModification": "new_aa_caliber_turrets"
-      },
+      "new_aux_caliber_turrets": [],
       "new_main_caliber_turrets": {
         "reqModification": "new_aux_caliber_turrets"
       },
@@ -5072,7 +5068,7 @@
             "explosionEvent": "ammo_explosion_2",
             "fireEvent": "ammo_fire_2",
             "ammunition_storage_05_dm": {
-              "count": 9300
+              "count": 12300
             }
           }
         }

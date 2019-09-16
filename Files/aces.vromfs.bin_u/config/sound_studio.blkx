@@ -682,7 +682,7 @@
     "lods": {
       "lod_0": {
         "radius": 100.0,
-        "maxSounds": 10
+        "maxSounds": 30
       },
       "lod_1": {
         "radius": 1000.0,
@@ -2007,6 +2007,22 @@
     },
     "outside": {
       "path": "naval/engines/ai_light",
+      "eventBack": "engine",
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine_ship_karotei_ai": {
+    "effects": {
+      "path": "naval/engines/ai_karotei",
+      "eventStart": "engine_start",
+      "eventStop": "engine_stop"
+    },
+    "outside": {
+      "path": "naval/engines/ai_karotei",
       "eventBack": "engine",
       "rpmSmooth": 0.02,
       "loadScale": 6.0,
@@ -6261,6 +6277,38 @@
       "event_start_cockpit_l": "engine_start_interior",
       "event_stop_cockpit_l": "engine_stop_interior",
       "leftPos": [-1.0,1.0,0.0]
+    }
+  },
+  "engine_ship_karotei": {
+    "effects": {
+      "path": "naval/engines/ship_karotei",
+      "wep": "",
+      "overheatOutside": "",
+      "overheatCockpit": "",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart_1": "engine_start",
+      "eventStop_1": "engine_stop",
+      "eventStart_2": "engine12_start",
+      "eventStop_2": "engine12_stop",
+      "eventProp_2": "engine12_prop"
+    },
+    "outside": {
+      "path": "naval/engines/ship_karotei",
+      "eventFront": "",
+      "eventBack_1": "engine",
+      "eventBack_2": "engine12",
+      "eventSurround": "",
+      "pos_1": [1.0,1.0,0.0],
+      "pos_2": [-4.0,3.0,0.0],
+      "engineIndex_1": 1,
+      "engineIndex_2": 1,
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
     }
   },
   "engine_shipmid01": {
