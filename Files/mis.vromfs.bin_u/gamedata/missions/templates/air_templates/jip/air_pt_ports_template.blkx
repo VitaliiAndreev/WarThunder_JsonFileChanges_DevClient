@@ -86,152 +86,6 @@
         },
         {
           "comment": {
-            "value": "ships spawns for team A"
-          }
-        },
-        {
-          "__missionMarkAsRespawnPoint": {
-            "loc_name": "pt_sea_spawn_01",
-            "spawnEffect": false,
-            "isStrictSpawn": false,
-            "resetStrictSpawnIndex": false,
-            "isAirfield": false,
-            "isUnit": false,
-            "useExisting": false,
-            "isIndividual": false,
-            "onlyOnePlayerPerSpawnPoint": false,
-            "removeAreas": false,
-            "replaceAreas": false,
-            "canSpawnOnNeutral": false,
-            "showOnMap": true,
-            "radius": -1.0,
-            "forceCreate": false,
-            "target": "pt_t1_spawn_01",
-            "team": "A",
-            "tags": {
-              "type_bomber": false,
-              "type_fighter": false,
-              "type_assault": false,
-              "helicopter": false,
-              "tank": false,
-              "ship": true,
-              "boat": true,
-              "type_gun_boat": true,
-              "type_destroyer": true,
-              "type_light_cruiser": true,
-              "type_battleship": true
-            }
-          }
-        },
-        {
-          "__missionMarkAsRespawnPoint": {
-            "loc_name": "pt_sea_spawn_02",
-            "spawnEffect": false,
-            "isStrictSpawn": false,
-            "resetStrictSpawnIndex": false,
-            "isAirfield": false,
-            "isUnit": false,
-            "useExisting": false,
-            "isIndividual": false,
-            "onlyOnePlayerPerSpawnPoint": false,
-            "removeAreas": false,
-            "replaceAreas": false,
-            "canSpawnOnNeutral": false,
-            "showOnMap": true,
-            "radius": -1.0,
-            "forceCreate": false,
-            "target": "pt_t1_spawn_02",
-            "team": "A",
-            "tags": {
-              "type_bomber": false,
-              "type_fighter": false,
-              "type_assault": false,
-              "helicopter": false,
-              "tank": false,
-              "ship": true,
-              "boat": true,
-              "type_gun_boat": true,
-              "type_destroyer": true,
-              "type_light_cruiser": true,
-              "type_battleship": true
-            }
-          }
-        },
-        {
-          "comment": {
-            "value": "ships spawns for team B"
-          }
-        },
-        {
-          "__missionMarkAsRespawnPoint": {
-            "loc_name": "pt_sea_spawn_01",
-            "spawnEffect": false,
-            "isStrictSpawn": false,
-            "resetStrictSpawnIndex": false,
-            "isAirfield": false,
-            "isUnit": false,
-            "useExisting": false,
-            "isIndividual": false,
-            "onlyOnePlayerPerSpawnPoint": false,
-            "removeAreas": false,
-            "replaceAreas": false,
-            "canSpawnOnNeutral": false,
-            "showOnMap": true,
-            "radius": -1.0,
-            "forceCreate": false,
-            "target": "pt_t2_spawn_01",
-            "team": "B",
-            "tags": {
-              "type_bomber": false,
-              "type_fighter": false,
-              "type_assault": false,
-              "helicopter": false,
-              "tank": false,
-              "ship": true,
-              "boat": true,
-              "type_gun_boat": true,
-              "type_destroyer": true,
-              "type_light_cruiser": true,
-              "type_battleship": true
-            }
-          }
-        },
-        {
-          "__missionMarkAsRespawnPoint": {
-            "loc_name": "pt_sea_spawn_02",
-            "spawnEffect": false,
-            "isStrictSpawn": false,
-            "resetStrictSpawnIndex": false,
-            "isAirfield": false,
-            "isUnit": false,
-            "useExisting": false,
-            "isIndividual": false,
-            "onlyOnePlayerPerSpawnPoint": false,
-            "removeAreas": false,
-            "replaceAreas": false,
-            "canSpawnOnNeutral": false,
-            "showOnMap": true,
-            "radius": -1.0,
-            "forceCreate": false,
-            "target": "pt_t2_spawn_02",
-            "team": "B",
-            "tags": {
-              "type_bomber": false,
-              "type_fighter": false,
-              "type_assault": false,
-              "helicopter": false,
-              "tank": false,
-              "ship": true,
-              "boat": true,
-              "type_gun_boat": true,
-              "type_destroyer": true,
-              "type_light_cruiser": true,
-              "type_battleship": true
-            }
-          }
-        },
-        {
-          "comment": {
             "value": "запускаем генерацию спавнов  игроков в портах"
           }
         },
@@ -293,6 +147,186 @@
         {
           "triggerEnable": {
             "target": "pt_main_part_start"
+          }
+        },
+        {
+          "comment": {
+            "value": "ставим дефолтные спавны для кораблей"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "pt_default_ship_spawns"
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "pt_default_ship_spawns": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "varCompareBool": {
+          "var_value": "pt_ship_spawn_enable",
+          "value": true,
+          "comparasion_func": "equal"
+        }
+      },
+      "actions": [
+        {
+          "comment": {
+            "value": "ставим дефолтные спавны для кораблей команды А"
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "pt_sea_spawn_01",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": false,
+            "isIndividual": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "pt_t1_spawn_01",
+            "team": "A",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "helicopter": false,
+              "tank": false,
+              "ship": true,
+              "boat": true,
+              "type_gun_boat": true,
+              "type_destroyer": true,
+              "type_light_cruiser": true,
+              "type_battleship": true
+            }
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "pt_sea_spawn_02",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": false,
+            "isIndividual": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "pt_t1_spawn_02",
+            "team": "A",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "helicopter": false,
+              "tank": false,
+              "ship": true,
+              "boat": true,
+              "type_gun_boat": true,
+              "type_destroyer": true,
+              "type_light_cruiser": true,
+              "type_battleship": true
+            }
+          }
+        },
+        {
+          "comment": {
+            "value": "ставим дефолтные спавны для кораблей команды Б"
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "pt_sea_spawn_01",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": false,
+            "isIndividual": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "pt_t2_spawn_01",
+            "team": "B",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "helicopter": false,
+              "tank": false,
+              "ship": true,
+              "boat": true,
+              "type_gun_boat": true,
+              "type_destroyer": true,
+              "type_light_cruiser": true,
+              "type_battleship": true
+            }
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "pt_sea_spawn_02",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": false,
+            "isIndividual": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "pt_t2_spawn_02",
+            "team": "B",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "helicopter": false,
+              "tank": false,
+              "ship": true,
+              "boat": true,
+              "type_gun_boat": true,
+              "type_destroyer": true,
+              "type_light_cruiser": true,
+              "type_battleship": true
+            }
           }
         }
       ],
@@ -13514,7 +13548,8 @@
     "pt_capture_port_cur_idx": 0,
     "pt_capture_port_area_name": "",
     "pt_capture_port_army_var_name": "",
-    "pt_capture_port_army_idx": 0
+    "pt_capture_port_army_idx": 0,
+    "pt_end_game_when_no_ports": false
   },
   "dialogs": [],
   "airfields": [],
