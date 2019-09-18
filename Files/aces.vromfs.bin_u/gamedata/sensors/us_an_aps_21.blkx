@@ -73,9 +73,6 @@
           "setSignal": {
             "signal": "search"
           },
-          "setScanPattern": {
-            "scanPattern": "search170"
-          },
           "setCenterElevation": {
             "source": "constant",
             "value": 5.0
@@ -84,6 +81,10 @@
             "azimuthRange": [-85.0,85.0],
             "elevationRange": [-60.0,60.0],
             "distanceRange": [0.0,40000.0]
+          },
+          "setFsmActive": {
+            "fsm": "searchPattern",
+            "active": true
           }
         },
         "setStandbyMode": {
@@ -92,34 +93,18 @@
             "source": "constant",
             "value": 0.0
           },
+          "clearTargets": []
+        },
+        "setSearchMode": {
           "clearTargets": [],
           "setFsmActive": {
-            "fsm": "searchPattern",
-            "active": false
+            "fsm": "search",
+            "active": true
+          },
+          "setTransiver": {
+            "transiver": "search"
           }
         },
-        "setSearchMode": [
-          {
-            "clearTargets": []
-          },
-          {
-            "setFsmActive": {
-              "fsm": "search",
-              "active": true
-            }
-          },
-          {
-            "setTransiver": {
-              "transiver": "search"
-            }
-          },
-          {
-            "setFsmActive": {
-              "fsm": "searchPattern",
-              "active": true
-            }
-          }
-        ],
         "resetSearchMode": {
           "setFsmActive": {
             "fsm": "search",
@@ -200,66 +185,58 @@
     },
     "searchPattern": {
       "stateInit": "init",
-      "transitions": [
-        {
-          "activateSearch170": {
-            "stateFrom": "search170",
-            "event": "fsmActivate",
-            "actions": {
-              "setScanPattern": {
-                "scanPattern": "search170"
-              }
-            }
-          }
-        },
-        {
-          "activateSearch30": {
-            "stateFrom": "search30",
-            "event": "fsmActivate",
-            "actions": {
-              "setScanPattern": {
-                "scanPattern": "search30"
-              }
-            }
-          }
-        },
-        {
-          "switchToSearch170": {
-            "stateFrom": "init",
-            "event": "fsmActivate",
-            "stateTo": "search170",
-            "actions": {
-              "setScanPattern": {
-                "scanPattern": "search170"
-              }
-            }
-          }
-        },
-        {
-          "switchToSearch30": {
-            "stateFrom": "search170",
-            "command": "scanPatternSwitch",
-            "stateTo": "search30",
+      "transitions": {
+        "activateSearch30": [
+          {
+            "stateFrom": "init"
+          },
+          {
+            "stateFrom": "search30"
+          },
+          {
+            "event": "fsmActivate"
+          },
+          {
+            "stateTo": "search30"
+          },
+          {
             "actions": {
               "setScanPattern": {
                 "scanPattern": "search30"
               }
             }
           }
+        ],
+        "activateSearch170": {
+          "stateFrom": "search170",
+          "event": "fsmActivate",
+          "actions": {
+            "setScanPattern": {
+              "scanPattern": "search170"
+            }
+          }
         },
-        {
-          "switchToSearch170": {
-            "stateFrom": "search30",
-            "command": "scanPatternSwitch",
-            "stateTo": "search170",
-            "actions": {
-              "setScanPattern": {
-                "scanPattern": "search170"
-              }
+        "switchToSearch30": {
+          "stateFrom": "search170",
+          "command": "scanPatternSwitch",
+          "stateTo": "search30",
+          "actions": {
+            "setScanPattern": {
+              "scanPattern": "search30"
+            }
+          }
+        },
+        "switchToSearch170": {
+          "stateFrom": "search30",
+          "command": "scanPatternSwitch",
+          "stateTo": "search170",
+          "actions": {
+            "setScanPattern": {
+              "scanPattern": "search170"
             }
           }
         }
-      ]
+      }
     }
   }
 }

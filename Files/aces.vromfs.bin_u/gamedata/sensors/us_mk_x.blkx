@@ -84,9 +84,6 @@
           "setSignal": {
             "signal": "search"
           },
-          "setScanPattern": {
-            "scanPattern": "searchMidBars"
-          },
           "setCenterElevation": {
             "source": "constant",
             "value": 5.0
@@ -95,6 +92,10 @@
             "azimuthRange": [-80.0,80.0],
             "elevationRange": [-20.0,40.0],
             "distanceRange": [0.0,18600.0]
+          },
+          "setFsmActive": {
+            "fsm": "searchPattern",
+            "active": true
           }
         },
         "setStandbyMode": {
@@ -103,34 +104,18 @@
             "source": "constant",
             "value": 0.0
           },
+          "clearTargets": []
+        },
+        "setSearchMode": {
           "clearTargets": [],
           "setFsmActive": {
-            "fsm": "searchPattern",
-            "active": false
+            "fsm": "search",
+            "active": true
+          },
+          "setTransiver": {
+            "transiver": "search"
           }
         },
-        "setSearchMode": [
-          {
-            "clearTargets": []
-          },
-          {
-            "setFsmActive": {
-              "fsm": "search",
-              "active": true
-            }
-          },
-          {
-            "setTransiver": {
-              "transiver": "search"
-            }
-          },
-          {
-            "setFsmActive": {
-              "fsm": "searchPattern",
-              "active": true
-            }
-          }
-        ],
         "resetSearchMode": {
           "setFsmActive": {
             "fsm": "search",
