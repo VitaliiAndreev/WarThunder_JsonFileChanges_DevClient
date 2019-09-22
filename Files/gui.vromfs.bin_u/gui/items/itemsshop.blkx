@@ -7,7 +7,7 @@
         "id": "wnd_items_shop"
       },
       {
-        "size": "1.5@scrn_tgt, 1@maxWindowHeightNoSrh"
+        "size": "1@srw + 1@itemWidth, 1@maxWindowHeightNoSrh"
       },
       {
         "max-width": "1@rw"
@@ -88,11 +88,34 @@
         }
       },
       {
-        "div": {
-          "id": "filter_block",
-          "width": "pw",
-          "margin-bottom": "1@blockInterval"
-        }
+        "div": [
+          {
+            "id": "filter_block"
+          },
+          {
+            "width": "pw"
+          },
+          {
+            "background-color": "@listboxBgColor"
+          },
+          {
+            "margin-bottom": "1@blockInterval"
+          },
+          {
+            "tdiv": {
+              "width": "fw",
+              "id": "filter_tabs"
+            }
+          },
+          {
+            "tdiv": {
+              "id": "subset_list_nest",
+              "width": "1@subsetComboBoxWidth",
+              "margin": "@listboxPad",
+              "display": "hide"
+            }
+          }
+        ]
       },
       {
         "div": [
@@ -442,10 +465,22 @@
       },
       {
         "navBar": {
-          "tdiv": {
+          "navLeft": {
+            "Button_text": {
+              "id": "btn_open_craft_tree",
+              "text": "#mainmenu/btnAircraftInfo",
+              "btnName": "R3",
+              "on_click": "onOpenCraftTree",
+              "display": "hide",
+              "enable": "no",
+              "ButtonImg": []
+            }
+          },
+          "paginatorPlace": {
             "id": "paginator_place",
             "left": "0.5pw - 0.5@itemInfoWidth - 0.5w",
             "top": "0.5ph + 0.5@navBarTopPadding - 0.5h",
+            "smallPaginatorWidth": "yes",
             "position": "absolute"
           },
           "navRight": [
