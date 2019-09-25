@@ -362,6 +362,9 @@
           },
           {
             "target": "pt_capture_port_start"
+          },
+          {
+            "target": "pt_ports_turning_start"
           }
         ],
         "__triggerEnable": {
@@ -1155,9 +1158,9 @@
         ],
         "else_actions": {
           "comment": {
-            "value": "индекс вышел из диапазона. заканчиваем работу"
+            "value": "индекс вышел из диапазона. идем дальше по циклу"
           },
-          "triggerDisable": {
+          "triggerEnable": {
             "target": "pt_ports_turning_start"
           }
         }
@@ -1213,21 +1216,35 @@
           }
         },
         "conditions": {
-          "unitDistanceBetween": {
-            "value": 4500.0,
-            "math": "2D",
-            "object_type": "isTeamB",
-            "object_marking": 0,
-            "object_var_name": "",
-            "object_var_comp_op": "equal",
-            "target_type": "isAlive",
-            "target_marking": 0,
-            "check_objects": "any",
-            "check_targets": "any",
-            "object": "all_ships_squad",
-            "target": "@pt_turning_capture_area_name",
-            "compareCenters": false
-          }
+          "unitWhenInArea": [
+            {
+              "math": "2D"
+            },
+            {
+              "object_type": "isTeamB"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "check_objects": "any"
+            },
+            {
+              "object": "all_ships_squad"
+            },
+            {
+              "object": "all_players_squad"
+            },
+            {
+              "target": "@pt_turning_capture_area_name"
+            }
+          ]
         },
         "actions": [
           {
@@ -1267,56 +1284,91 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_turning_spawn_loc_string_air",
-              "spawnEffect": false,
-              "isStrictSpawn": false,
-              "resetStrictSpawnIndex": false,
-              "isAirfield": false,
-              "isUnit": false,
-              "useExisting": true,
-              "isIndividual": true,
-              "onlyOnePlayerPerSpawnPoint": false,
-              "removeAreas": false,
-              "replaceAreas": true,
-              "canSpawnOnNeutral": false,
-              "showOnMap": true,
-              "radius": -1.0,
-              "forceCreate": false,
-              "target": "@pt_turning_spawns_port_air_name",
-              "team": "A",
-              "spawnOffset": [-3000.0,2000.0,0.0],
-              "tags": {
-                "type_bomber": false,
-                "type_fighter": false,
-                "type_assault": false,
-                "none_can_spawn": true,
-                "helicopter": false,
-                "tank": false,
-                "ship": false,
-                "boat": false
-              }
-            }
-          },
-          {
             "comment": {
-              "value": ""
+              "value": "проверяем спавн самолетов"
             }
           },
           {
             "triggerEnable": {
-              "target": "pt_port_turning_t1_enemy_leave_zone"
+              "target": "pt_port_turning_t1_enemy_at_zone_air_spawn"
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_ports_turning_rotator"
             }
           }
         ],
         "else_actions": {
           "comment": {
-            "value": ""
+            "value": "врагов нет рядом. проверяем не надо ли включить спавны"
           },
           "triggerEnable": {
-            "target": "pt_ports_turning_rotator"
+            "target": "pt_port_turning_t1_enemy_leave_zone"
           }
         }
+      },
+      "pt_port_turning_t1_enemy_at_zone_air_spawn": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareBool": {
+            "var_value": "pt_port_additional_air_spawns",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "игроки в зоне. прячем спавн"
+          },
+          "__missionMarkAsRespawnPoint": {
+            "loc_name": "@pt_turning_spawn_loc_string_air",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": true,
+            "isIndividual": true,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "@pt_turning_spawns_port_air_name",
+            "team": "A",
+            "spawnOffset": [-3000.0,2000.0,0.0],
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "none_can_spawn": true,
+              "helicopter": false,
+              "tank": false,
+              "ship": false,
+              "boat": false
+            }
+          }
+        },
+        "else_actions": []
       },
       "pt_port_turning_t1_enemy_leave_zone": {
         "is_enabled": false,
@@ -1332,26 +1384,40 @@
           }
         },
         "conditions": {
-          "unitDistanceBetween": {
-            "value": 4500.0,
-            "math": "notNear2D",
-            "object_type": "isTeamB",
-            "object_marking": 0,
-            "object_var_name": "",
-            "object_var_comp_op": "equal",
-            "target_type": "isAlive",
-            "target_marking": 0,
-            "check_objects": "any",
-            "check_targets": "any",
-            "object": "all_ships_squad",
-            "target": "@pt_turning_capture_area_name",
-            "compareCenters": false
-          }
+          "unitWhenInArea": [
+            {
+              "math": "notNear2D"
+            },
+            {
+              "object_type": "isTeamB"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "check_objects": "any"
+            },
+            {
+              "object": "all_ships_squad"
+            },
+            {
+              "object": "all_players_squad"
+            },
+            {
+              "target": "@pt_turning_capture_area_name"
+            }
+          ]
         },
         "actions": [
           {
             "comment": {
-              "value": "игроки в зоне. прячем спавн"
+              "value": "игроки не в зоне. проявляем спавн"
             }
           },
           {
@@ -1387,7 +1453,7 @@
           },
           {
             "comment": {
-              "value": ""
+              "value": "проверяемс павн самолетов"
             }
           },
           {
@@ -1402,7 +1468,7 @@
           },
           {
             "triggerEnable": {
-              "target": "pt_port_turning_t1_enemy_at_zone"
+              "target": "pt_ports_turning_rotator"
             }
           }
         ],
@@ -1425,7 +1491,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -1439,7 +1505,7 @@
           "comment": {
             "value": "игроки в зоне. прячем спавн"
           },
-          "missionMarkAsRespawnPoint": {
+          "__missionMarkAsRespawnPoint": {
             "loc_name": "@pt_turning_spawn_loc_string_air",
             "spawnEffect": false,
             "isStrictSpawn": false,
@@ -1470,11 +1536,7 @@
             }
           }
         },
-        "else_actions": {
-          "comment": {
-            "value": ""
-          }
-        }
+        "else_actions": []
       },
       "pt_port_turning_t2_enemy_at_zone": {
         "is_enabled": false,
@@ -1490,21 +1552,35 @@
           }
         },
         "conditions": {
-          "unitDistanceBetween": {
-            "value": 4500.0,
-            "math": "2D",
-            "object_type": "isTeamA",
-            "object_marking": 0,
-            "object_var_name": "",
-            "object_var_comp_op": "equal",
-            "target_type": "isAlive",
-            "target_marking": 0,
-            "check_objects": "any",
-            "check_targets": "any",
-            "object": "all_ships_squad",
-            "target": "@pt_turning_capture_area_name",
-            "compareCenters": false
-          }
+          "unitWhenInArea": [
+            {
+              "math": "2D"
+            },
+            {
+              "object_type": "isTeamA"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "check_objects": "any"
+            },
+            {
+              "object": "all_ships_squad"
+            },
+            {
+              "object": "all_players_squad"
+            },
+            {
+              "target": "@pt_turning_capture_area_name"
+            }
+          ]
         },
         "actions": [
           {
@@ -1544,56 +1620,91 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_turning_spawn_loc_string_air",
-              "spawnEffect": false,
-              "isStrictSpawn": false,
-              "resetStrictSpawnIndex": false,
-              "isAirfield": false,
-              "isUnit": false,
-              "useExisting": true,
-              "isIndividual": true,
-              "onlyOnePlayerPerSpawnPoint": false,
-              "removeAreas": false,
-              "replaceAreas": true,
-              "canSpawnOnNeutral": false,
-              "showOnMap": true,
-              "radius": -1.0,
-              "forceCreate": false,
-              "target": "@pt_turning_spawns_port_air_name",
-              "team": "B",
-              "spawnOffset": [-3000.0,2000.0,0.0],
-              "tags": {
-                "type_bomber": false,
-                "type_fighter": false,
-                "type_assault": false,
-                "none_can_spawn": true,
-                "helicopter": false,
-                "tank": false,
-                "ship": false,
-                "boat": false
-              }
-            }
-          },
-          {
             "comment": {
-              "value": ""
+              "value": "проверяем спавн самолетов"
             }
           },
           {
             "triggerEnable": {
-              "target": "pt_port_turning_t2_enemy_leave_zone"
+              "target": "pt_port_turning_t2_enemy_at_zone_air_spawn"
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_ports_turning_rotator"
             }
           }
         ],
         "else_actions": {
           "comment": {
-            "value": ""
+            "value": "врагов нет рядом. проверяем не надо ли включить спавны"
           },
           "triggerEnable": {
-            "target": "pt_ports_turning_rotator"
+            "target": "pt_port_turning_t2_enemy_leave_zone"
           }
         }
+      },
+      "pt_port_turning_t2_enemy_at_zone_air_spawn": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareBool": {
+            "var_value": "pt_port_additional_air_spawns",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "игроки в зоне. прячем спавн"
+          },
+          "__missionMarkAsRespawnPoint": {
+            "loc_name": "@pt_turning_spawn_loc_string_air",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": true,
+            "isIndividual": true,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "@pt_turning_spawns_port_air_name",
+            "team": "B",
+            "spawnOffset": [-3000.0,2000.0,0.0],
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "none_can_spawn": true,
+              "helicopter": false,
+              "tank": false,
+              "ship": false,
+              "boat": false
+            }
+          }
+        },
+        "else_actions": []
       },
       "pt_port_turning_t2_enemy_leave_zone": {
         "is_enabled": false,
@@ -1609,21 +1720,35 @@
           }
         },
         "conditions": {
-          "unitDistanceBetween": {
-            "value": 4500.0,
-            "math": "notNear2D",
-            "object_type": "isTeamA",
-            "object_marking": 0,
-            "object_var_name": "",
-            "object_var_comp_op": "equal",
-            "target_type": "isAlive",
-            "target_marking": 0,
-            "check_objects": "any",
-            "check_targets": "any",
-            "object": "all_ships_squad",
-            "target": "@pt_turning_capture_area_name",
-            "compareCenters": false
-          }
+          "unitWhenInArea": [
+            {
+              "math": "notNear2D"
+            },
+            {
+              "object_type": "isTeamA"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "check_objects": "any"
+            },
+            {
+              "object": "all_ships_squad"
+            },
+            {
+              "object": "all_players_squad"
+            },
+            {
+              "target": "@pt_turning_capture_area_name"
+            }
+          ]
         },
         "actions": [
           {
@@ -1664,7 +1789,7 @@
           },
           {
             "comment": {
-              "value": ""
+              "value": "проверяем спавн самолетов"
             }
           },
           {
@@ -1679,7 +1804,7 @@
           },
           {
             "triggerEnable": {
-              "target": "pt_port_turning_t2_enemy_at_zone"
+              "target": "pt_ports_turning_rotator"
             }
           }
         ],
@@ -1716,7 +1841,7 @@
           "comment": {
             "value": "игроки в зоне. прячем спавн"
           },
-          "missionMarkAsRespawnPoint": {
+          "__missionMarkAsRespawnPoint": {
             "loc_name": "@pt_turning_spawn_loc_string_air",
             "spawnEffect": false,
             "isStrictSpawn": false,
@@ -9142,7 +9267,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t1_our_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -9193,7 +9318,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -9298,7 +9423,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t2_our_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -9349,7 +9474,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -9608,7 +9733,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t1_our_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -9728,7 +9853,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t2_our_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -10506,7 +10631,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -10581,7 +10706,7 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
+            "__missionMarkAsRespawnPoint": {
               "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_planes",
               "spawnEffect": false,
               "isStrictSpawn": false,
@@ -12112,7 +12237,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12149,7 +12274,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12208,7 +12333,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12309,7 +12434,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [],
@@ -12489,7 +12614,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12582,7 +12707,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12695,7 +12820,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12754,7 +12879,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12855,7 +12980,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [],
@@ -13035,7 +13160,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -13128,7 +13253,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
