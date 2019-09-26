@@ -5172,12 +5172,43 @@
           },
           {
             "comment": {
-              "value": "рисуем линию"
+              "value": "создаем имя дополнительных точек"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "flt_draw_cur_cell_name",
+              "var": "flt_draw_cur_cell_left_draw_up_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_up_point",
+              "digits": 0,
+              "var": "flt_draw_cur_cell_left_draw_up_point"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "flt_draw_cur_cell_name",
+              "var": "flt_draw_cur_cell_left_draw_down_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_down_point",
+              "digits": 0,
+              "var": "flt_draw_cur_cell_left_draw_down_point"
+            }
+          },
+          {
+            "comment": {
+              "value": "проверяем есть ли доп точка"
             }
           },
           {
             "triggerEnable": {
-              "target": "flt_draw_left_drawing_line"
+              "target": "flt_draw_left_both_points_check"
             }
           }
         ],
@@ -5187,6 +5218,122 @@
           },
           "triggerEnable": {
             "target": "flt_draw_left_drawing_line_zero_both_check"
+          }
+        }
+      },
+      "flt_draw_left_both_points_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@flt_draw_cur_cell_left_draw_up_point",
+              "type": "area"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@flt_draw_cur_cell_left_draw_down_point",
+              "type": "area"
+            }
+          }
+        ],
+        "actions": {
+          "comment": {
+            "value": "есть обе доп точки рисуем линию"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_left_drawing_both_points_line"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "одной из точек нет. проверяем только верхнюю"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_left_up_point_check"
+          }
+        }
+      },
+      "flt_draw_left_up_point_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "objectExists": {
+            "target": "@flt_draw_cur_cell_left_draw_up_point",
+            "type": "area"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "есть обе доп точки рисуем линию"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_left_drawing_up_point_line"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "верхней точки нет. проверяем нижнюю"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_left_down_point_check"
+          }
+        }
+      },
+      "flt_draw_left_down_point_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "objectExists": {
+            "target": "@flt_draw_cur_cell_left_draw_down_point",
+            "type": "area"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "есть обе доп точки рисуем линию"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_left_drawing_down_point_line"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "доп точки нет. рисуем как обычно"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_left_drawing_line"
           }
         }
       },
@@ -5251,6 +5398,240 @@
               "areaNameTo": "@flt_draw_cur_cell_name",
               "areaFromSide": "bottom_left",
               "areaToSide": "top_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем проверять левую"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          }
+        ]
+      },
+      "flt_draw_left_drawing_both_points_line": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "flt_draw_cur_army",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "Армия Б слева. рисуем линию сверху вниз"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_left_draw_up_point",
+              "areaNameTo": "@flt_draw_cur_cell_left_draw_down_point",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем проверять левую"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "Армия А слева рисуем линия снизу вверх"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_left_draw_down_point",
+              "areaNameTo": "@flt_draw_cur_cell_left_draw_up_point",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем проверять левую"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          }
+        ]
+      },
+      "flt_draw_left_drawing_up_point_line": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "flt_draw_cur_army",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "Армия Б слева. рисуем линию сверху вниз"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_left_draw_up_point",
+              "areaNameTo": "@flt_draw_cur_cell_name",
+              "areaToSide": "bottom_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем проверять левую"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "Армия А слева рисуем линия снизу вверх"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_name",
+              "areaNameTo": "@flt_draw_cur_cell_left_draw_up_point",
+              "areaFromSide": "bottom_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем проверять левую"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          }
+        ]
+      },
+      "flt_draw_left_drawing_down_point_line": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "flt_draw_cur_army",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "Армия Б слева. рисуем линию сверху вниз"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_name",
+              "areaNameTo": "@flt_draw_cur_cell_left_draw_down_point",
+              "areaFromSide": "top_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем проверять левую"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "Армия А слева рисуем линия снизу вверх"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_name",
+              "areaNameTo": "@flt_draw_cur_cell_left_draw_down_point",
+              "areaFromSide": "bottom_left",
               "colorCode": "Team B-A",
               "transparency": 30,
               "scale": 1.2,
@@ -5635,6 +6016,11 @@
             "triggerEnable": {
               "target": "flt_draw_bottom_army_check"
             }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
           }
         ],
         "else_actions": {
@@ -5691,12 +6077,43 @@
           },
           {
             "comment": {
-              "value": "рисуем линию"
+              "value": "создаем имя дополнительной точки"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "flt_draw_cur_cell_name",
+              "var": "flt_draw_cur_cell_bottom_draw_right_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_right_point",
+              "digits": 0,
+              "var": "flt_draw_cur_cell_bottom_draw_right_point"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "flt_draw_cur_cell_name",
+              "var": "flt_draw_cur_cell_bottom_draw_left_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_left_point",
+              "digits": 0,
+              "var": "flt_draw_cur_cell_bottom_draw_left_point"
+            }
+          },
+          {
+            "comment": {
+              "value": "проверяем есть ли доп точка"
             }
           },
           {
             "triggerEnable": {
-              "target": "flt_draw_bottom_drawing_line"
+              "target": "flt_draw_bottom_both_points_check"
             }
           }
         ],
@@ -5706,6 +6123,122 @@
           },
           "triggerEnable": {
             "target": "flt_draw_bottom_drawing_zero_both_check"
+          }
+        }
+      },
+      "flt_draw_bottom_both_points_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@flt_draw_cur_cell_bottom_draw_right_point",
+              "type": "area"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@flt_draw_cur_cell_bottom_draw_left_point",
+              "type": "area"
+            }
+          }
+        ],
+        "actions": {
+          "comment": {
+            "value": "есть обе доп точки рисуем линию"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_drawing_both_points_line"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "одной из точек нет. проверяем только правую"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_right_point_check"
+          }
+        }
+      },
+      "flt_draw_bottom_right_point_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "objectExists": {
+            "target": "@flt_draw_cur_cell_bottom_draw_right_point",
+            "type": "area"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "есть обе доп точки рисуем линию"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_drawing_right_points_line"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "правой точки нет. проверяем левую"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_left_point_check"
+          }
+        }
+      },
+      "flt_draw_bottom_left_point_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "objectExists": {
+            "target": "@flt_draw_cur_cell_bottom_draw_right_point",
+            "type": "area"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "есть обе доп точки рисуем линию"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_drawing_left_points_line"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "точек нет. рисуем как обычно"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_drawing_line"
           }
         }
       },
@@ -5770,6 +6303,237 @@
               "areaNameTo": "@flt_draw_cur_cell_name",
               "areaFromSide": "bottom_right",
               "areaToSide": "bottom_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline_col"
+            }
+          }
+        ]
+      },
+      "flt_draw_bottom_drawing_both_points_line": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "flt_draw_cur_army",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "Армия Б снизу рисуем линию слева направо"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_bottom_draw_left_point",
+              "areaNameTo": "@flt_draw_cur_cell_bottom_draw_right_point",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline_col"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "армия А снизу. рисуем линию справа налево"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_name",
+              "areaNameTo": "@flt_draw_cur_cell_name",
+              "areaFromSide": "bottom_right",
+              "areaToSide": "bottom_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline_col"
+            }
+          }
+        ]
+      },
+      "flt_draw_bottom_drawing_right_points_line": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "flt_draw_cur_army",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "Армия Б снизу рисуем линию слева направо"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_name",
+              "areaNameTo": "@flt_draw_cur_cell_bottom_draw_right_point",
+              "areaFromSide": "bottom_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline_col"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "армия А снизу. рисуем линию справа налево"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_bottom_draw_right_point",
+              "areaNameTo": "@flt_draw_cur_cell_name",
+              "areaToSide": "bottom_left",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline_col"
+            }
+          }
+        ]
+      },
+      "flt_draw_bottom_drawing_left_points_line": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "flt_draw_cur_army",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "Армия Б снизу рисуем линию слева направо"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_bottom_draw_left_point",
+              "areaNameTo": "@flt_draw_cur_cell_name",
+              "areaToSide": "bottom_right",
+              "colorCode": "Team B-A",
+              "transparency": 30,
+              "scale": 1.2,
+              "curve": true
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline_col"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "армия А снизу. рисуем линию справа налево"
+            }
+          },
+          {
+            "missionShowMapLine": {
+              "areaNameFrom": "@flt_draw_cur_cell_name",
+              "areaNameTo": "@flt_draw_cur_cell_bottom_draw_left_point",
+              "areaFromSide": "bottom_right",
               "colorCode": "Team B-A",
               "transparency": 30,
               "scale": 1.2,
@@ -7077,7 +7841,11 @@
     "flt_offset": 0,
     "flt_zones_in_col_real": 7,
     "flt_zones_in_row_real": 7,
-    "flt_disable_state_filling": false
+    "flt_disable_state_filling": false,
+    "flt_draw_cur_cell_left_draw_up_point": "",
+    "flt_draw_cur_cell_left_draw_down_point": "",
+    "flt_draw_cur_cell_bottom_draw_right_point": "",
+    "flt_draw_cur_cell_bottom_draw_left_point": ""
   },
   "dialogs": [],
   "airfields": [],

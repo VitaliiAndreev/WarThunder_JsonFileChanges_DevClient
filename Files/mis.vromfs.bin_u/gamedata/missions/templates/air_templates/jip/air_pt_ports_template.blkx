@@ -386,7 +386,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -480,7 +480,7 @@
           },
           {
             "comment": {
-              "value": "создаем имя сквада со спавн зонами"
+              "value": "создаем дефолтное имя сквада со спавн зонами"
             }
           },
           {
@@ -505,7 +505,7 @@
           },
           {
             "comment": {
-              "value": "создаеим имя спавна"
+              "value": "создаем дефолтное имя спавна"
             }
           },
           {
@@ -530,7 +530,7 @@
           },
           {
             "comment": {
-              "value": "собираем строку локализации"
+              "value": "собираем дефолтную строку локализации"
             }
           },
           {
@@ -586,7 +586,7 @@
           },
           {
             "comment": {
-              "value": "имыя зоны захвата"
+              "value": "имя зоны захвата"
             }
           },
           {
@@ -604,12 +604,114 @@
           },
           {
             "comment": {
-              "value": "ставим спавн для игроков в зависимости от того, чья армия"
+              "value": "создаем имя сквада крейcеров со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_generate_spawns_cruisers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_generate_spawns_cur_idx",
+              "digits": 2,
+              "var": "pt_generate_spawns_cruisers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_cruisers_spawns_squad",
+              "digits": 0,
+              "var": "pt_generate_spawns_cruisers_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "создаем имя сквада эсминцев со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_generate_spawns_destroyers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_generate_spawns_cur_idx",
+              "digits": 2,
+              "var": "pt_generate_spawns_destroyers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_destroyers_spawns_squad",
+              "digits": 0,
+              "var": "pt_generate_spawns_destroyers_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для крузеров"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_generate_spawn_cruisers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_generate_spawn_cruisers_loc_string",
+              "input_var": "@pt_generate_spawns_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_cruisers",
+              "digits": 0,
+              "var": "pt_generate_spawn_cruisers_loc_string"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для эсминцев"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_generate_spawn_destroyers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_generate_spawn_destroyers_loc_string",
+              "input_var": "@pt_generate_spawns_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_destroyers",
+              "digits": 0,
+              "var": "pt_generate_spawn_destroyers_loc_string"
+            }
+          },
+          {
+            "comment": {
+              "value": "ставим крузерный спавн для игроков в зависимости от того, чья армия"
             }
           },
           {
             "triggerEnable": {
-              "target": "pt_generate_spawns_place"
+              "target": "pt_generate_spawns_cruisers_and_destroyers_check_exist"
             }
           }
         ],
@@ -622,6 +724,300 @@
           }
         }
       },
+      "pt_generate_spawns_cruisers_and_destroyers_check_exist": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_generate_spawns_cruisers_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_generate_spawns_destroyers_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": {
+          "comment": {
+            "value": "есть сквад для крейсеров и эсминцев"
+          },
+          "triggerEnable": {
+            "target": "pt_generate_spawns_cruisers_place"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "нет спавна для крейсеров и эсминцев - сразу идем на дефолтный спавн"
+          },
+          "triggerEnable": {
+            "target": "pt_generate_spawns_place"
+          }
+        }
+      },
+      "pt_generate_spawns_cruisers_place": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "pt_generate_spawns_army_idx",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "ставим спавн для команды А"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_generate_spawn_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_generate_spawns_cruisers_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": false,
+                "type_gun_boat": false,
+                "type_destroyer": false,
+                "type_light_cruiser": true,
+                "type_cruiser": true,
+                "type_battleship": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": "ставим спавн для эсминцев"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_generate_spawns_destroyers_place"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "ставим спавн для команды Б"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_generate_spawn_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": false,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_generate_spawns_cruisers_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": false,
+                "type_gun_boat": false,
+                "type_destroyer": false,
+                "type_light_cruiser": true,
+                "type_cruiser": true,
+                "type_battleship": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": "ставим спавн для эсминцев"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_generate_spawns_destroyers_place"
+            }
+          }
+        ]
+      },
+      "pt_generate_spawns_destroyers_place": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "pt_generate_spawns_army_idx",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "ставим спавн для команды А"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_generate_spawn_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_generate_spawns_destroyers_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true,
+                "type_gun_boat": true,
+                "type_destroyer": true,
+                "type_light_cruiser": false,
+                "type_cruiser": false,
+                "type_battleship": false
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": "ставим зону захвата и спавны для самолетов"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_generate_spawns_capture_zone_set"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "ставим спавн для команды Б"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_generate_spawn_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": false,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_generate_spawns_destroyers_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true,
+                "type_gun_boat": true,
+                "type_destroyer": true,
+                "type_light_cruiser": false,
+                "type_cruiser": false,
+                "type_battleship": false
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": "ставим зону захвата и спавн для самолетов"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_generate_spawns_capture_zone_set"
+            }
+          }
+        ]
+      },
       "pt_generate_spawns_place": {
         "is_enabled": false,
         "comments": "",
@@ -632,7 +1028,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -679,28 +1075,13 @@
             }
           },
           {
-            "missionMarkAsCaptureZone": {
-              "army": 1,
-              "timeMultiplier": 1.0,
-              "disableZone": false,
-              "name_for_respawn_base": "",
-              "target": "@pt_generate_capture_area_name",
-              "canCaptureOnGround": true,
-              "playAirfieldSound": false,
-              "canCaptureInAir": false,
-              "canCaptureByGM": true,
-              "onlyPlayersCanCapture": false,
-              "captureNoPenalty": true
-            }
-          },
-          {
             "comment": {
-              "value": "идем дальше по циклу"
+              "value": "ставим зону захвата и спавны для самолетов"
             }
           },
           {
             "triggerEnable": {
-              "target": "pt_generate_spawns_place_check_air"
+              "target": "pt_generate_spawns_capture_zone_set"
             }
           }
         ],
@@ -741,6 +1122,92 @@
             }
           },
           {
+            "comment": {
+              "value": "ставим зону захвата и спавны для самолетов"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_generate_spawns_capture_zone_set"
+            }
+          }
+        ]
+      },
+      "pt_generate_spawns_capture_zone_set": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "pt_generate_spawns_army_idx",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "ставим спавн для команды А"
+            }
+          },
+          {
+            "missionMarkAsCaptureZone": {
+              "army": 1,
+              "timeMultiplier": 1.0,
+              "disableZone": false,
+              "name_for_respawn_base": "",
+              "target": "@pt_generate_capture_area_name",
+              "canCaptureOnGround": true,
+              "playAirfieldSound": false,
+              "canCaptureInAir": false,
+              "canCaptureByGM": true,
+              "onlyPlayersCanCapture": false,
+              "captureNoPenalty": true,
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "type_heavy_fighter": false,
+                "type_interceptor": false,
+                "type_aa_fighter": false,
+                "type_frontline_bomber": false,
+                "type_longrange_bomber": false,
+                "type_hydroplane": true,
+                "type_flying_boat": true,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": "идем дальше по циклу"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_generate_spawns_place_check_air"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "ставим спавн для команды Б"
+            }
+          },
+          {
             "missionMarkAsCaptureZone": {
               "army": 2,
               "timeMultiplier": 1.0,
@@ -752,7 +1219,23 @@
               "canCaptureInAir": false,
               "canCaptureByGM": true,
               "onlyPlayersCanCapture": false,
-              "captureNoPenalty": true
+              "captureNoPenalty": true,
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "type_heavy_fighter": false,
+                "type_interceptor": false,
+                "type_aa_fighter": false,
+                "type_frontline_bomber": false,
+                "type_longrange_bomber": false,
+                "type_hydroplane": true,
+                "type_flying_boat": true,
+                "helicopter": true,
+                "tank": false,
+                "ship": true,
+                "boat": true
+              }
             }
           },
           {
@@ -1023,7 +1506,7 @@
           },
           {
             "comment": {
-              "value": "создаем имя сквада со спавн зонами"
+              "value": "создаем имя дефолтного сквада со спавн зонами"
             }
           },
           {
@@ -1147,6 +1630,108 @@
           },
           {
             "comment": {
+              "value": "создаем имя сквада крейсеров со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_turning_spawns_cruisers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_turning_spawns_cur_idx",
+              "digits": 2,
+              "var": "pt_turning_spawns_cruisers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_cruisers_spawns_squad",
+              "digits": 0,
+              "var": "pt_turning_spawns_cruisers_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "создаем имя сквада эсминцев со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_turning_spawns_destroyers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_turning_spawns_cur_idx",
+              "digits": 2,
+              "var": "pt_turning_spawns_destroyers_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_destroyers_spawns_squad",
+              "digits": 0,
+              "var": "pt_turning_spawns_destroyers_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для крейсеров"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_turning_spawns_cruisers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_turning_spawns_cruisers_loc_string",
+              "input_var": "@pt_turning_spawns_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_cruisers",
+              "digits": 0,
+              "var": "pt_turning_spawns_cruisers_loc_string"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для эсминцев"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_turning_spawns_destroyers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_turning_spawns_destroyers_loc_string",
+              "input_var": "@pt_turning_spawns_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_destroyers",
+              "digits": 0,
+              "var": "pt_turning_spawns_destroyers_loc_string"
+            }
+          },
+          {
+            "comment": {
               "value": "ставим спавн для игроков в зависимости от того, чья армия"
             }
           },
@@ -1175,7 +1760,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -1212,13 +1797,13 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
           "unitWhenInArea": [
             {
-              "math": "2D"
+              "math": "3D"
             },
             {
               "object_type": "isTeamB"
@@ -1253,8 +1838,8 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_turning_spawn_loc_string",
+            "__missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_loc_string",
               "spawnEffect": false,
               "isStrictSpawn": false,
               "resetStrictSpawnIndex": false,
@@ -1281,6 +1866,11 @@
                 "ship": false,
                 "boat": false
               }
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_port_turning_t1_cruisers_and_destroyers_spawns_off"
             }
           },
           {
@@ -1338,7 +1928,7 @@
             "value": "игроки в зоне. прячем спавн"
           },
           "__missionMarkAsRespawnPoint": {
-            "loc_name": "@pt_turning_spawn_loc_string_air",
+            "loc_name": "@pt_turning_spawns_loc_string_air",
             "spawnEffect": false,
             "isStrictSpawn": false,
             "resetStrictSpawnIndex": false,
@@ -1386,7 +1976,7 @@
         "conditions": {
           "unitWhenInArea": [
             {
-              "math": "notNear2D"
+              "math": "notNear3D"
             },
             {
               "object_type": "isTeamB"
@@ -1421,8 +2011,8 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_turning_spawn_loc_string",
+            "__missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_loc_string",
               "spawnEffect": false,
               "isStrictSpawn": false,
               "resetStrictSpawnIndex": false,
@@ -1449,6 +2039,11 @@
                 "ship": true,
                 "boat": true
               }
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_port_turning_t1_cruisers_and_destroyers_spawns_on"
             }
           },
           {
@@ -1506,7 +2101,7 @@
             "value": "игроки в зоне. прячем спавн"
           },
           "__missionMarkAsRespawnPoint": {
-            "loc_name": "@pt_turning_spawn_loc_string_air",
+            "loc_name": "@pt_turning_spawns_loc_string_air",
             "spawnEffect": false,
             "isStrictSpawn": false,
             "resetStrictSpawnIndex": false,
@@ -1548,13 +2143,13 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
           "unitWhenInArea": [
             {
-              "math": "2D"
+              "math": "3D"
             },
             {
               "object_type": "isTeamA"
@@ -1589,8 +2184,8 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_turning_spawn_loc_string",
+            "__missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_loc_string",
               "spawnEffect": false,
               "isStrictSpawn": false,
               "resetStrictSpawnIndex": false,
@@ -1617,6 +2212,11 @@
                 "ship": false,
                 "boat": false
               }
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_port_turning_t2_cruisers_and_destroyers_spawns_off"
             }
           },
           {
@@ -1674,7 +2274,7 @@
             "value": "игроки в зоне. прячем спавн"
           },
           "__missionMarkAsRespawnPoint": {
-            "loc_name": "@pt_turning_spawn_loc_string_air",
+            "loc_name": "@pt_turning_spawns_loc_string_air",
             "spawnEffect": false,
             "isStrictSpawn": false,
             "resetStrictSpawnIndex": false,
@@ -1722,7 +2322,7 @@
         "conditions": {
           "unitWhenInArea": [
             {
-              "math": "notNear2D"
+              "math": "notNear3D"
             },
             {
               "object_type": "isTeamA"
@@ -1757,8 +2357,8 @@
             }
           },
           {
-            "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_turning_spawn_loc_string",
+            "__missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_loc_string",
               "spawnEffect": false,
               "isStrictSpawn": false,
               "resetStrictSpawnIndex": false,
@@ -1785,6 +2385,11 @@
                 "ship": true,
                 "boat": true
               }
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_port_turning_t2_cruisers_and_destroyers_spawns_on"
             }
           },
           {
@@ -1842,7 +2447,7 @@
             "value": "игроки в зоне. прячем спавн"
           },
           "__missionMarkAsRespawnPoint": {
-            "loc_name": "@pt_turning_spawn_loc_string_air",
+            "loc_name": "@pt_turning_spawns_loc_string_air",
             "spawnEffect": false,
             "isStrictSpawn": false,
             "resetStrictSpawnIndex": false,
@@ -1877,6 +2482,622 @@
             "value": ""
           }
         }
+      },
+      "pt_port_turning_t1_cruisers_and_destroyers_spawns_off": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "comment": {
+              "value": "есть спавны крейсеров и эсминцев убиваем их"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": true,
+                "helicopter": false,
+                "tank": false,
+                "ship": false,
+                "boat": false
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": true,
+                "helicopter": false,
+                "tank": false,
+                "ship": false,
+                "boat": false
+              }
+            }
+          }
+        ],
+        "else_actions": {
+          "comment": {
+            "value": "нет таких спавнов. прячем дефолтные"
+          },
+          "triggerEnable": {
+            "target": "pt_port_turning_t1_default_spawns_off"
+          }
+        }
+      },
+      "pt_port_turning_t1_default_spawns_off": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [],
+        "actions": {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "@pt_turning_spawns_loc_string",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": true,
+            "isIndividual": true,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "@pt_turning_spawns_squad_name",
+            "team": "A",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "none_can_spawn": true,
+              "helicopter": false,
+              "tank": false,
+              "ship": false,
+              "boat": false
+            }
+          }
+        },
+        "else_actions": []
+      },
+      "pt_port_turning_t2_cruisers_and_destroyers_spawns_off": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "comment": {
+              "value": "есть спавны крейсеров и эсминцев убиваем их"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": true,
+                "helicopter": false,
+                "tank": false,
+                "ship": false,
+                "boat": false
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": true,
+                "helicopter": false,
+                "tank": false,
+                "ship": false,
+                "boat": false
+              }
+            }
+          }
+        ],
+        "else_actions": {
+          "comment": {
+            "value": "нет таких спавнов. прячем дефолтные"
+          },
+          "triggerEnable": {
+            "target": "pt_port_turning_t2_default_spawns_off"
+          }
+        }
+      },
+      "pt_port_turning_t2_default_spawns_off": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [],
+        "actions": {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "@pt_turning_spawns_loc_string",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": true,
+            "isIndividual": true,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "@pt_turning_spawns_squad_name",
+            "team": "B",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "none_can_spawn": true,
+              "helicopter": false,
+              "tank": false,
+              "ship": false,
+              "boat": false
+            }
+          }
+        },
+        "else_actions": []
+      },
+      "pt_port_turning_t1_cruisers_and_destroyers_spawns_on": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "comment": {
+              "value": "есть спавны крейсеров и эсминцев включаем их"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": false,
+                "helicopter": false,
+                "tank": false,
+                "type_light_cruiser": true,
+                "type_cruiser": true,
+                "type_battleship": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true,
+                "type_light_cruiser": false,
+                "type_cruiser": false,
+                "type_battleship": false
+              }
+            }
+          }
+        ],
+        "else_actions": {
+          "comment": {
+            "value": "нет таких спавнов. прячем дефолтные"
+          },
+          "triggerEnable": {
+            "target": "pt_port_turning_t1_default_spawns_on"
+          }
+        }
+      },
+      "pt_port_turning_t1_default_spawns_on": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [],
+        "actions": {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "@pt_turning_spawns_loc_string",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": true,
+            "isIndividual": true,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "@pt_turning_spawns_squad_name",
+            "team": "A",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "none_can_spawn": false,
+              "helicopter": false,
+              "tank": false,
+              "ship": true,
+              "boat": true
+            }
+          }
+        },
+        "else_actions": []
+      },
+      "pt_port_turning_t2_cruisers_and_destroyers_spawns_on": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "comment": {
+              "value": "есть спавны крейсеров и эсминцев включаем их"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_cruisers_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": false,
+                "helicopter": false,
+                "tank": false,
+                "type_light_cruiser": true,
+                "type_cruiser": true,
+                "type_battleship": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_turning_spawns_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_turning_spawns_destroyers_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "none_can_spawn": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true,
+                "type_light_cruiser": false,
+                "type_cruiser": false,
+                "type_battleship": false
+              }
+            }
+          }
+        ],
+        "else_actions": {
+          "comment": {
+            "value": "нет таких спавнов. прячем дефолтные"
+          },
+          "triggerEnable": {
+            "target": "pt_port_turning_t2_default_spawns_on"
+          }
+        }
+      },
+      "pt_port_turning_t2_default_spawns_on": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": [],
+        "actions": {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "@pt_turning_spawns_loc_string",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "useExisting": true,
+            "isIndividual": true,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "forceCreate": false,
+            "target": "@pt_turning_spawns_squad_name",
+            "team": "B",
+            "tags": {
+              "type_bomber": false,
+              "type_fighter": false,
+              "type_assault": false,
+              "none_can_spawn": false,
+              "helicopter": false,
+              "tank": false,
+              "ship": true,
+              "boat": true
+            }
+          }
+        },
+        "else_actions": []
       }
     },
     "pt_ports_generate_size": {
@@ -1892,7 +3113,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [],
@@ -1917,7 +3138,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -2016,7 +3237,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -2106,7 +3327,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [],
@@ -2131,7 +3352,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -2222,7 +3443,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -2293,7 +3514,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -12312,6 +13533,16 @@
               "check_trigger_status": false,
               "after_activation": "disable"
             }
+          },
+          {
+            "comment": {
+              "value": "захватываем линию фронта"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_capture_port_frontline_find"
+            }
           }
         ],
         "else_actions": {
@@ -12441,7 +13672,7 @@
         "actions": [
           {
             "comment": {
-              "value": "создаем имя сквада со спавн зонами"
+              "value": "создаем имя дефолтного сквада со спавн зонами"
             }
           },
           {
@@ -12509,6 +13740,56 @@
           },
           {
             "comment": {
+              "value": "создаем имя крейсерского сквада со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_attack_port_capture_t1_cruisers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_capture_port_cur_idx",
+              "digits": 2,
+              "var": "pt_attack_port_capture_t1_cruisers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_cruisers_spawns_squad",
+              "digits": 0,
+              "var": "pt_attack_port_capture_t1_cruisers_spawns_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "создаем имя сквада эсминцев со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_attack_port_capture_t1_destroyers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_capture_port_cur_idx",
+              "digits": 2,
+              "var": "pt_attack_port_capture_t1_destroyers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_destroyers_spawns_squad",
+              "digits": 0,
+              "var": "pt_attack_port_capture_t1_destroyers_spawns_squad_name"
+            }
+          },
+          {
+            "comment": {
               "value": ""
             }
           },
@@ -12524,71 +13805,7 @@
           },
           {
             "triggerEnable": {
-              "target": "pt_capture_port_t1_change_home_port_respawns"
-            }
-          },
-          {
-            "comment": {
-              "value": "прячем зону захвата"
-            }
-          },
-          {
-            "__missionMarkAsCaptureZone": {
-              "army": 0,
-              "timeMultiplier": 1.0,
-              "disableZone": true,
-              "name_for_respawn_base": "",
-              "target": "@pt_capture_port_area_name"
-            }
-          },
-          {
-            "comment": {
-              "value": ""
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t1_assist_attack_port",
-              "status": 2,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "A",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t2_assist_defend_port",
-              "status": 3,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "B",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
-            }
-          },
-          {
-            "__wait": {
-              "time": 20.0
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t1_assist_attack_port",
-              "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "A",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t2_assist_defend_port",
-              "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "B",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
+              "target": "pt_capture_port_t1_change_home_port_cruisers_and_destroyers_check"
             }
           },
           {
@@ -12600,9 +13817,124 @@
             "triggerEnable": {
               "target": "pt_capture_port_rotator"
             }
+          },
+          {
+            "comment": {
+              "value": "собираем дефолтную строку локализации"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_capture_port_t1_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_capture_port_t1_loc_string",
+              "input_var": "pt_attack_port_capture_t1_port_var_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для крейсеров"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_capture_port_t1_cruisers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_capture_port_t1_cruisers_loc_string",
+              "input_var": "pt_attack_port_capture_t1_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_cruisers",
+              "digits": 0,
+              "var": "pt_capture_port_t1_cruisers_loc_string"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для эсминцев"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_capture_port_t1_destroyers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_capture_port_t1_destroyers_loc_string",
+              "input_var": "pt_attack_port_capture_t1_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_destroyers",
+              "digits": 0,
+              "var": "pt_capture_port_t1_destroyers_loc_string"
+            }
           }
         ],
         "else_actions": []
+      },
+      "pt_capture_port_t1_change_home_port_cruisers_and_destroyers_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_attack_port_capture_t1_cruisers_spawns_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_attack_port_capture_t1_destroyers_spawns_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": {
+          "comment": {
+            "value": "спавны есть, меняем их"
+          },
+          "triggerEnable": {
+            "target": "pt_capture_port_t1_change_home_port_cruisers_and_destroyers_respawns"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "спавнов нет - меняем дефолтные"
+          },
+          "triggerEnable": {
+            "target": "pt_capture_port_t1_change_home_port_respawns"
+          }
+        }
       },
       "pt_capture_port_t1_change_home_port_respawns": {
         "is_enabled": false,
@@ -12632,7 +13964,7 @@
           },
           {
             "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_attack_port_capture_t1_port_var_name",
+              "loc_name": "@pt_capture_port_t1_loc_string",
               "spawnEffect": false,
               "isStrictSpawn": false,
               "resetStrictSpawnIndex": false,
@@ -12656,7 +13988,7 @@
           },
           {
             "missionMarkAsRespawnPoint": {
-              "loc_name": "@pt_attack_port_capture_t1_port_var_name",
+              "loc_name": "@pt_capture_port_t1_loc_string",
               "spawnEffect": false,
               "isStrictSpawn": false,
               "resetStrictSpawnIndex": false,
@@ -12681,6 +14013,168 @@
                 "tank": false,
                 "ship": true,
                 "boat": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_capture_port_t1_change_home_port_air_respawns"
+            }
+          }
+        ],
+        "else_actions": []
+      },
+      "pt_capture_port_t1_change_home_port_cruisers_and_destroyers_respawns": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareBool": {
+            "var_value": "pt_ship_spawn_enable",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "меняем спавн порта"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t1_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": false,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t1_cruisers_spawns_squad_name",
+              "team": "B",
+              "tags": {
+                "none_can_spawn": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t1_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t1_cruisers_spawns_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": false,
+                "type_gun_boat": false,
+                "type_destroyer": false,
+                "type_light_cruiser": true,
+                "type_cruiser": true,
+                "type_battleship": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t1_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": false,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t1_destroyers_spawns_squad_name",
+              "team": "B",
+              "tags": {
+                "none_can_spawn": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t1_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t1_destroyers_spawns_squad_name",
+              "team": "A",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true,
+                "type_gun_boat": true,
+                "type_destroyer": true,
+                "type_light_cruiser": false,
+                "type_cruiser": false,
+                "type_battleship": false
               }
             }
           },
@@ -12858,6 +14352,16 @@
               "check_trigger_status": false,
               "after_activation": "disable"
             }
+          },
+          {
+            "comment": {
+              "value": "захватываем линию фронта"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_capture_port_frontline_find"
+            }
           }
         ],
         "else_actions": {
@@ -12987,7 +14491,7 @@
         "actions": [
           {
             "comment": {
-              "value": "создаем имя сквада со спавн зонами"
+              "value": "создаем имя дефолтного сквада со спавн зонами"
             }
           },
           {
@@ -13070,71 +14574,7 @@
           },
           {
             "triggerEnable": {
-              "target": "pt_capture_port_t2_change_home_port_respawns"
-            }
-          },
-          {
-            "comment": {
-              "value": "прячем зону захвата"
-            }
-          },
-          {
-            "__missionMarkAsCaptureZone": {
-              "army": 0,
-              "timeMultiplier": 1.0,
-              "disableZone": true,
-              "name_for_respawn_base": "",
-              "target": "@pt_capture_port_area_name"
-            }
-          },
-          {
-            "comment": {
-              "value": ""
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t2_assist_attack_port",
-              "status": 2,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "B",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t1_assist_defend_port",
-              "status": 3,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "A",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
-            }
-          },
-          {
-            "__wait": {
-              "time": 20.0
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t2_assist_attack_port",
-              "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "B",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
-            }
-          },
-          {
-            "__moSetObjectiveStatus": {
-              "target": "pt_t1_assist_defend_port",
-              "status": 0,
-              "object_var_comp_op": "equal",
-              "object_var_name": "",
-              "team": "A",
-              "unit_or_area": "@pt_attack_port_capture_area_name"
+              "target": "pt_capture_port_t2_change_home_port_cruisers_and_destroyers_check"
             }
           },
           {
@@ -13146,9 +14586,174 @@
             "triggerEnable": {
               "target": "pt_capture_port_rotator"
             }
+          },
+          {
+            "comment": {
+              "value": "создаем имя крейсерского сквада со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_attack_port_capture_t2_cruisers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_capture_port_cur_idx",
+              "digits": 2,
+              "var": "pt_attack_port_capture_t2_cruisers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_cruisers_spawns_squad",
+              "digits": 0,
+              "var": "pt_attack_port_capture_t2_cruisers_spawns_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "создаем имя сквада эсминцев со спавн зонами"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "port_",
+              "var": "pt_attack_port_capture_t2_destroyers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@pt_capture_port_cur_idx",
+              "digits": 2,
+              "var": "pt_attack_port_capture_t2_destroyers_spawns_squad_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_player_destroyers_spawns_squad",
+              "digits": 0,
+              "var": "pt_attack_port_capture_t2_destroyers_spawns_squad_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем дефолтную строку локализации"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_capture_port_t2_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_capture_port_t2_loc_string",
+              "input_var": "pt_attack_port_capture_t2_port_var_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для крейсеров"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_capture_port_t2_cruisers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_capture_port_t2_cruisers_loc_string",
+              "input_var": "pt_attack_port_capture_t2_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_cruisers",
+              "digits": 0,
+              "var": "pt_capture_port_t2_cruisers_loc_string"
+            }
+          },
+          {
+            "comment": {
+              "value": "собираем строку локализации для эсминцев"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "missions/",
+              "var": "pt_capture_port_t2_destroyers_loc_string"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "",
+              "digits": 0,
+              "var": "pt_capture_port_t2_destroyers_loc_string",
+              "input_var": "pt_attack_port_capture_t2_port_var_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_destroyers",
+              "digits": 0,
+              "var": "pt_capture_port_t2_destroyers_loc_string"
+            }
           }
         ],
         "else_actions": []
+      },
+      "pt_capture_port_t2_change_home_port_cruisers_and_destroyers_check": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@pt_attack_port_capture_t2_cruisers_spawns_squad_name",
+              "type": "squad"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@pt_attack_port_capture_t2_destroyers_spawns_squad_name",
+              "type": "squad"
+            }
+          }
+        ],
+        "actions": {
+          "comment": {
+            "value": "спавны есть, меняем их"
+          },
+          "triggerEnable": {
+            "target": "pt_capture_port_t2_change_home_port_cruisers_and_destroyers_respawns"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "спавнов нет - меняем дефолтные"
+          },
+          "triggerEnable": {
+            "target": "pt_capture_port_t2_change_home_port_respawns"
+          }
+        }
       },
       "pt_capture_port_t2_change_home_port_respawns": {
         "is_enabled": false,
@@ -13227,6 +14832,168 @@
                 "tank": false,
                 "ship": true,
                 "boat": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_capture_port_t2_change_home_port_air_respawns"
+            }
+          }
+        ],
+        "else_actions": []
+      },
+      "pt_capture_port_t2_change_home_port_cruisers_and_destroyers_respawns": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "varCompareBool": {
+            "var_value": "pt_ship_spawn_enable",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "меняем спавн порта"
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t2_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": false,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t2_cruisers_spawns_squad_name",
+              "team": "A",
+              "tags": {
+                "none_can_spawn": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t2_cruisers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t2_cruisers_spawns_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": false,
+                "type_gun_boat": false,
+                "type_destroyer": false,
+                "type_light_cruiser": true,
+                "type_cruiser": true,
+                "type_battleship": true
+              }
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t2_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": false,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t2_destroyers_spawns_squad_name",
+              "team": "A",
+              "tags": {
+                "none_can_spawn": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRespawnPoint": {
+              "loc_name": "@pt_capture_port_t2_destroyers_loc_string",
+              "spawnEffect": false,
+              "isStrictSpawn": false,
+              "resetStrictSpawnIndex": false,
+              "isAirfield": false,
+              "isUnit": false,
+              "useExisting": true,
+              "isIndividual": true,
+              "onlyOnePlayerPerSpawnPoint": false,
+              "removeAreas": false,
+              "replaceAreas": true,
+              "canSpawnOnNeutral": false,
+              "showOnMap": true,
+              "radius": -1.0,
+              "forceCreate": false,
+              "target": "@pt_attack_port_capture_t2_destroyers_spawns_squad_name",
+              "team": "B",
+              "tags": {
+                "type_bomber": false,
+                "type_fighter": false,
+                "type_assault": false,
+                "helicopter": false,
+                "tank": false,
+                "ship": true,
+                "boat": true,
+                "type_gun_boat": true,
+                "type_destroyer": true,
+                "type_light_cruiser": false,
+                "type_cruiser": false,
+                "type_battleship": false
               }
             }
           },
@@ -13398,6 +15165,172 @@
           }
         ],
         "else_actions": []
+      },
+      "pt_capture_port_frontline_find": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": [],
+        "actions": [
+          {
+            "getOwnArea": {
+              "name": "@pt_capture_port_area_name",
+              "template": "flt_area_",
+              "out_var": "pt_port_fronline_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "получаем имя переменной фронтлайна армии"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "pt_port_fronline_name",
+              "var": "pt_port_frontline_army_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_state",
+              "digits": 0,
+              "var": "pt_port_frontline_army_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "получаем текущий индекс армии"
+            }
+          },
+          {
+            "varSetInt": {
+              "value": 0,
+              "var": "pt_port_frontline_army_idx",
+              "input_var": "@pt_port_frontline_army_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "проверяем значение армии"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "pt_capture_port_frontline_check_zero_army"
+            }
+          }
+        ],
+        "else_actions": []
+      },
+      "pt_capture_port_frontline_check_zero_army": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "@pt_port_frontline_army_name",
+            "value": 0,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": {
+          "comment": {
+            "value": "армия сектора 0. надо будет поптом придумать что делать"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "армия сектора валидная. проверяем кому принадлежит сектор"
+          },
+          "triggerEnable": {
+            "target": "pt_capture_port_frontline_check_army"
+          }
+        }
+      },
+      "pt_capture_port_frontline_check_army": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "varCompareInt": {
+            "var_value": "@pt_port_frontline_army_name",
+            "value": 1,
+            "comparasion_func": "equal"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "армия 1 меняем ее на 2"
+            }
+          },
+          {
+            "varSetInt": {
+              "value": 2,
+              "var": "@pt_port_frontline_army_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "рисуем линию фронта"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "армия 2 меняем ее на 1"
+            }
+          },
+          {
+            "varSetInt": {
+              "value": 1,
+              "var": "@pt_port_frontline_army_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "рисуем линию фронта"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_frontline"
+            }
+          }
+        ]
       }
     }
   },
@@ -13674,7 +15607,28 @@
     "pt_capture_port_area_name": "",
     "pt_capture_port_army_var_name": "",
     "pt_capture_port_army_idx": 0,
-    "pt_end_game_when_no_ports": false
+    "pt_end_game_when_no_ports": false,
+    "pt_port_fronline_name": "",
+    "pt_port_frontline_army_name": "",
+    "pt_port_frontline_army_idx": 0,
+    "pt_generate_spawns_cruisers_squad_name": "",
+    "pt_generate_spawns_destroyers_squad_name": "",
+    "pt_turning_spawns_cruisers_squad_name": "",
+    "pt_turning_spawns_destroyers_squad_name": "",
+    "pt_generate_spawn_cruisers_loc_string": "",
+    "pt_generate_spawn_destroyers_loc_string": "",
+    "pt_turning_spawns_cruisers_loc_string": "",
+    "pt_turning_spawns_destroyers_loc_string": "",
+    "pt_attack_port_capture_t1_cruisers_spawns_squad_name": "",
+    "pt_attack_port_capture_t1_destroyers_spawns_squad_name": "",
+    "pt_attack_port_capture_t2_cruisers_spawns_squad_name": "",
+    "pt_attack_port_capture_t2_destroyers_spawns_squad_name": "",
+    "pt_capture_port_t1_loc_string": "",
+    "pt_capture_port_t1_cruisers_loc_string": "",
+    "pt_capture_port_t1_destroyers_loc_string": "",
+    "pt_capture_port_t2_loc_string": "",
+    "pt_capture_port_t2_cruisers_loc_string": "",
+    "pt_capture_port_t2_destroyers_loc_string": ""
   },
   "dialogs": [],
   "airfields": [],
