@@ -205,7 +205,7 @@
             "showOnMap": true,
             "radius": -1.0,
             "forceCreate": false,
-            "target": "pt_t1_spawn_01",
+            "target": "pt_t1_players_spawn_01",
             "team": "A",
             "tags": {
               "type_bomber": false,
@@ -239,7 +239,7 @@
             "showOnMap": true,
             "radius": -1.0,
             "forceCreate": false,
-            "target": "pt_t1_spawn_02",
+            "target": "pt_t1_players_spawn_02",
             "team": "A",
             "tags": {
               "type_bomber": false,
@@ -278,7 +278,7 @@
             "showOnMap": true,
             "radius": -1.0,
             "forceCreate": false,
-            "target": "pt_t2_spawn_01",
+            "target": "pt_t2_players_spawn_01",
             "team": "B",
             "tags": {
               "type_bomber": false,
@@ -312,7 +312,7 @@
             "showOnMap": true,
             "radius": -1.0,
             "forceCreate": false,
-            "target": "pt_t2_spawn_02",
+            "target": "pt_t2_players_spawn_02",
             "team": "B",
             "tags": {
               "type_bomber": false,
@@ -712,6 +712,42 @@
           {
             "triggerEnable": {
               "target": "pt_generate_spawns_cruisers_and_destroyers_check_exist"
+            }
+          },
+          {
+            "comment": {
+              "value": "создаем имя реарм зоны для команды А"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "pt_generate_capture_area_name",
+              "var": "pt_generate_rearm_t1_area_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_t1_rearm_area",
+              "digits": 0,
+              "var": "pt_generate_rearm_t1_area_name"
+            }
+          },
+          {
+            "comment": {
+              "value": "создаем имя реарм зоны для команды А"
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "pt_generate_capture_area_name",
+              "var": "pt_generate_rearm_t2_area_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_t2_rearm_area",
+              "digits": 0,
+              "var": "pt_generate_rearm_t2_area_name"
             }
           }
         ],
@@ -1172,21 +1208,23 @@
               "canCaptureByGM": true,
               "onlyPlayersCanCapture": false,
               "captureNoPenalty": true,
-              "tags": {
-                "type_bomber": false,
-                "type_fighter": false,
-                "type_assault": false,
-                "type_heavy_fighter": false,
-                "type_interceptor": false,
-                "type_aa_fighter": false,
-                "type_frontline_bomber": false,
-                "type_longrange_bomber": false,
+              "capture_tags": {
                 "type_hydroplane": true,
                 "type_flying_boat": true,
-                "helicopter": false,
-                "tank": false,
                 "ship": true,
                 "boat": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRearmZone": {
+              "army": 1,
+              "area_name": "@pt_generate_rearm_t1_area_name",
+              "enabled": true,
+              "restoreWhenNoAmmoLeft": false,
+              "hideMarkers": true,
+              "tags": {
+                "type_hydroplane": true
               }
             }
           },
@@ -1220,21 +1258,23 @@
               "canCaptureByGM": true,
               "onlyPlayersCanCapture": false,
               "captureNoPenalty": true,
-              "tags": {
-                "type_bomber": false,
-                "type_fighter": false,
-                "type_assault": false,
-                "type_heavy_fighter": false,
-                "type_interceptor": false,
-                "type_aa_fighter": false,
-                "type_frontline_bomber": false,
-                "type_longrange_bomber": false,
+              "capture_tags": {
                 "type_hydroplane": true,
                 "type_flying_boat": true,
-                "helicopter": true,
-                "tank": false,
                 "ship": true,
                 "boat": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRearmZone": {
+              "army": 2,
+              "area_name": "@pt_generate_rearm_t2_area_name",
+              "enabled": true,
+              "restoreWhenNoAmmoLeft": false,
+              "hideMarkers": true,
+              "tags": {
+                "type_hydroplane": true
               }
             }
           },
@@ -2843,9 +2883,12 @@
                 "type_bomber": false,
                 "type_fighter": false,
                 "type_assault": false,
-                "none_can_spawn": false,
                 "helicopter": false,
                 "tank": false,
+                "ship": true,
+                "boat": false,
+                "type_gun_boat": false,
+                "type_destroyer": false,
                 "type_light_cruiser": true,
                 "type_cruiser": true,
                 "type_battleship": true
@@ -2999,9 +3042,12 @@
                 "type_bomber": false,
                 "type_fighter": false,
                 "type_assault": false,
-                "none_can_spawn": false,
                 "helicopter": false,
                 "tank": false,
+                "ship": true,
+                "boat": false,
+                "type_gun_boat": false,
+                "type_destroyer": false,
                 "type_light_cruiser": true,
                 "type_cruiser": true,
                 "type_battleship": true
@@ -13430,6 +13476,42 @@
           },
           {
             "comment": {
+              "value": ""
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "pt_capture_port_area_name",
+              "var": "pt_capture_port_rearm_t1_area_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_t1_rearm_area",
+              "digits": 0,
+              "var": "pt_capture_port_rearm_t1_area_name"
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "varGetStringValue": {
+              "from_var_name": "pt_capture_port_area_name",
+              "var": "pt_capture_port_rearm_t2_area_name"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_t2_rearm_area",
+              "digits": 0,
+              "var": "pt_capture_port_rearm_t2_area_name"
+            }
+          },
+          {
+            "comment": {
               "value": "проверяем армию"
             }
           },
@@ -13887,6 +13969,35 @@
               "value": "_destroyers",
               "digits": 0,
               "var": "pt_capture_port_t1_destroyers_loc_string"
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "missionMarkAsRearmZone": {
+              "army": 2,
+              "area_name": "@pt_capture_port_rearm_t2_area_name",
+              "enabled": false,
+              "restoreWhenNoAmmoLeft": false,
+              "hideMarkers": true,
+              "tags": {
+                "type_hydroplane": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRearmZone": {
+              "army": 1,
+              "area_name": "@pt_capture_port_rearm_t1_area_name",
+              "enabled": true,
+              "restoreWhenNoAmmoLeft": false,
+              "hideMarkers": true,
+              "tags": {
+                "type_hydroplane": true
+              }
             }
           }
         ],
@@ -14707,6 +14818,35 @@
               "digits": 0,
               "var": "pt_capture_port_t2_destroyers_loc_string"
             }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "missionMarkAsRearmZone": {
+              "army": 1,
+              "area_name": "@pt_capture_port_rearm_t1_area_name",
+              "enabled": false,
+              "restoreWhenNoAmmoLeft": false,
+              "hideMarkers": true,
+              "tags": {
+                "type_hydroplane": true
+              }
+            }
+          },
+          {
+            "missionMarkAsRearmZone": {
+              "army": 2,
+              "area_name": "@pt_capture_port_rearm_t2_area_name",
+              "enabled": true,
+              "restoreWhenNoAmmoLeft": false,
+              "hideMarkers": true,
+              "tags": {
+                "type_hydroplane": true
+              }
+            }
           }
         ],
         "else_actions": []
@@ -15306,6 +15446,16 @@
             "triggerEnable": {
               "target": "flt_draw_frontline"
             }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "ft_capture_t1_start"
+            }
           }
         ],
         "else_actions": [
@@ -15328,6 +15478,16 @@
           {
             "triggerEnable": {
               "target": "flt_draw_frontline"
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "ft_capture_t2_start"
             }
           }
         ]
@@ -15628,7 +15788,11 @@
     "pt_capture_port_t1_destroyers_loc_string": "",
     "pt_capture_port_t2_loc_string": "",
     "pt_capture_port_t2_cruisers_loc_string": "",
-    "pt_capture_port_t2_destroyers_loc_string": ""
+    "pt_capture_port_t2_destroyers_loc_string": "",
+    "pt_generate_rearm_t1_area_name": "",
+    "pt_generate_rearm_t2_area_name": "",
+    "pt_capture_port_rearm_t1_area_name": "",
+    "pt_capture_port_rearm_t2_area_name": ""
   },
   "dialogs": [],
   "airfields": [],

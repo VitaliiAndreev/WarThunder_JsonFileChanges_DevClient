@@ -288,6 +288,22 @@
   "imports": [
     {
       "import_record": {
+        "file": "gameData/missions/cta/simulator/dover/at_assaults_template_part.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
+    },
+    {
+      "import_record": {
         "file": "gameData/missions/templates/air_templates/jip/templates_organizer.blk",
         "importAreas": true,
         "importUnits": true,
@@ -533,6 +549,24 @@
           }
         },
         {
+          "varSetBool": {
+            "value": true,
+            "var": "ad_is_launch_alowed"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "lbt_is_launch_alowed"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "at_is_launch_alowed"
+          }
+        },
+        {
           "comment": {
             "value": "включение разведки"
           }
@@ -556,6 +590,18 @@
           }
         },
         {
+          "varSetBool": {
+            "value": true,
+            "var": "sbt_is_detect_on"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "at_is_detect_on"
+          }
+        },
+        {
           "unitPutToSleep": [
             {
               "target": "bdt_armada"
@@ -571,6 +617,12 @@
             },
             {
               "target": "sbt_armada"
+            },
+            {
+              "target": "at_armada"
+            },
+            {
+              "target": "flt_armada"
             }
           ]
         },
