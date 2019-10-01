@@ -96,14 +96,12 @@
             "width": "pw"
           },
           {
-            "background-color": "@listboxBgColor"
-          },
-          {
             "margin-bottom": "1@blockInterval"
           },
           {
             "tdiv": {
               "width": "fw",
+              "min-height": "1@buttonHeight + @listboxPad - 1@listboxItemsInterval",
               "id": "filter_tabs"
             }
           },
@@ -111,8 +109,18 @@
             "tdiv": {
               "id": "subset_list_nest",
               "width": "1@subsetComboBoxWidth",
-              "margin": "@listboxPad",
-              "display": "hide"
+              "position": "relative",
+              "top": "50%ph-50%h",
+              "margin-left": "1@listboxPad",
+              "display": "hide",
+              "tdiv": {
+                "id": "subset_list_bg",
+                "width": "pw",
+                "background-color": "@rowHoverBackgroundColor",
+                "padding": "1@dp",
+                "display": "hide",
+                "enabled": "no"
+              }
             }
           }
         ]
@@ -473,7 +481,13 @@
               "on_click": "onOpenCraftTree",
               "display": "hide",
               "enable": "no",
-              "ButtonImg": []
+              "ButtonImg": [],
+              "newIconWidget": {
+                "id": "craft_tree_unseen_icon",
+                "newIconWidgetImg": {
+                  "background-image": "#ui/gameuiskin#new_icon"
+                }
+              }
             }
           },
           "paginatorPlace": {
@@ -655,6 +669,7 @@
                 "Button_text": {
                   "id": "game_mode_change_button",
                   "on_click": "onOpenGameModeSelect",
+                  "noMargin": "yes",
                   "btnName": "Y",
                   "visualStyle": "noFrame",
                   "buttonWink": [],
