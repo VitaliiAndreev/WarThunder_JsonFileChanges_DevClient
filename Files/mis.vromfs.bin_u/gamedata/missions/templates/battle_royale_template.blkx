@@ -205,7 +205,7 @@
           "speed": 0.01,
           "realtimeTriggers": true
         },
-        "unitSetProperties": {
+        "__unitSetProperties": {
           "object_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
@@ -223,6 +223,9 @@
           },
           {
             "target": "artillery_disable"
+          },
+          {
+            "target": "shooting_and_moving_lock"
           }
         ]
       },
@@ -278,62 +281,81 @@
           "var": "mission_start_timer"
         }
       },
-      "else_actions": {
-        "missionSetTimeSpeed": {
-          "speed": 1.0,
-          "realtimeTriggers": false
-        },
-        "wait": {
-          "time": 3.0
-        },
-        "unitSetProperties": {
-          "object_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "players_sq",
-          "cannotShoot": false,
-          "cannotMove": false
-        },
-        "playHint": {
-          "hintType": "standard",
-          "name": "",
-          "action": "hideCur",
-          "shouldFadeOut": false,
-          "isOverFade": false,
-          "time": -1.0,
-          "priority": 0,
-          "target_marking": 0,
-          "object_var_name": "",
-          "object_var_comp_op": "equal",
-          "object_var_value": 0
-        },
-        "moAddMissionObjective": {
-          "target": "br_last_man_standing",
-          "object_var_comp_op": "equal",
-          "object_var_name": ""
-        },
-        "triggerEnable": [
-          {
-            "target": "timer_to_next_stage"
-          },
-          {
-            "target": "br_area_set"
-          },
-          {
-            "target": "victory_condition_check"
-          },
-          {
-            "target": "alive_players_count"
-          },
-          {
-            "target": "create_pickups"
+      "else_actions": [
+        {
+          "__missionSetTimeSpeed": {
+            "speed": 1.0,
+            "realtimeTriggers": false
           }
-        ],
-        "triggerDisable": {
-          "target": "mission_start_timer"
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "shooting_and_moving_lock"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "players_sq",
+            "cannotShoot": false,
+            "cannotMove": false
+          }
+        },
+        {
+          "playHint": {
+            "hintType": "standard",
+            "name": "",
+            "action": "hideCur",
+            "shouldFadeOut": false,
+            "isOverFade": false,
+            "time": -1.0,
+            "priority": 0,
+            "target_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "br_last_man_standing",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "timer_to_next_stage"
+            },
+            {
+              "target": "br_area_set"
+            },
+            {
+              "target": "victory_condition_check"
+            },
+            {
+              "target": "alive_players_count"
+            },
+            {
+              "target": "create_pickups"
+            }
+          ]
+        },
+        {
+          "triggerDisable": {
+            "target": "mission_start_timer"
+          }
         }
-      }
+      ]
     },
     "timer_to_next_stage": {
       "is_enabled": false,
@@ -798,6 +820,33 @@
           "minDistanceFromBattleAreaEdge": 10.0,
           "target": "pickups_area_sq",
           "count_var": "pickups2_count"
+        }
+      },
+      "else_actions": []
+    },
+    "shooting_and_moving_lock": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.5
+        }
+      },
+      "conditions": [],
+      "actions": {
+        "unitSetProperties": {
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "object": "players_sq",
+          "cannotShoot": true,
+          "cannotMove": true
         }
       },
       "else_actions": []

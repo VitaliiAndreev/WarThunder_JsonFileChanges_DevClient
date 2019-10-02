@@ -27,17 +27,9 @@
     "midArmorPower": [7.0,400.0],
     "farArmorPower": [0.2,700.0],
     "relativeVelArmorShift": [200.0,1000.0],
-    "explodeTreshold": 0.0,
+    "explodeTreshold": 0.1,
     "explodeHitPower": 400.0,
     "explodeArmorPower": 100.0,
-    "explodeRadius": [6.0,16.0],
-    "explosionPatchRadius": 7.0,
-    "rendinstDamageRadius": 30.0,
-    "shutterDamage": true,
-    "shutterDamageRadius": 80.0,
-    "shutterAmount": 3000,
-    "shutterArmorPower": 12.0,
-    "shutterHit": 15.0,
     "isDepthCharge": true,
     "isMortar": true,
     "DamageParts": {
@@ -48,6 +40,52 @@
         "explosionArmorQuality": 45.0,
         "shatterArmorQuality": 45.0
       }
+    },
+    "damage": {
+      "shatter": [
+        {
+          "useRealShatters": true
+        },
+        {
+          "countPortion": 0.5
+        },
+        {
+          "segment": {
+            "radiusScale": 2.0,
+            "penetrationScale": 1.0,
+            "damageScale": 2.0,
+            "angles": [0.0,30.0],
+            "countPortion": 0.2
+          }
+        },
+        {
+          "segment": {
+            "radiusScale": 2.0,
+            "penetrationScale": 1.0,
+            "damageScale": 2.2,
+            "angles": [31.0,130.0],
+            "countPortion": 0.3
+          }
+        },
+        {
+          "segment": {
+            "radiusScale": 2.0,
+            "penetrationScale": 1.0,
+            "damageScale": 2.2,
+            "angles": [230.0,330.0],
+            "countPortion": 0.3
+          }
+        },
+        {
+          "segment": {
+            "radiusScale": 2.0,
+            "penetrationScale": 1.0,
+            "damageScale": 2.0,
+            "angles": [331.0,359.0],
+            "countPortion": 0.2
+          }
+        }
+      ]
     }
   }
 }
