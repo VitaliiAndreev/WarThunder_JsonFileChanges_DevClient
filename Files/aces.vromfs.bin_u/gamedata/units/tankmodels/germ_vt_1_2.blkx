@@ -1626,6 +1626,8 @@
           "emitter": "bone_gun_barrel_02",
           "flash": "emtr_gun_flame_02",
           "useEmitter": true,
+          "numWeaponsInSlot": 2,
+          "maxAdditionalPitch": 0.0,
           "allowableDelta": 20.0,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
@@ -1653,10 +1655,11 @@
           "errExplTime": 0.0,
           "turret": {
             "head": "bone_turret",
-            "gun": "bone_gun",
+            "gun": "bone_gun_02",
             "barrel": "bone_gun_barrel_02",
             "verDriveDm": "drive_turret_v_dm",
-            "gunnerDm": "gunner_dm"
+            "gunnerDm": "gunner_dm",
+            "rotatedTurret": "bone_turret"
           },
           "limits": {
             "yaw": [0.0,0.0],
@@ -1671,7 +1674,6 @@
             "verticalOmegaMult": 1.0,
             "verticalSpeedLimitKPH": 75.0,
             "speedFromVehicleVerticalMult": -1.0,
-            "speedPitch": 20.0,
             "errorKPHToDegrees": [
               {
                 "row": [5.0,0.0]
@@ -1698,13 +1700,16 @@
           "emitter": "bone_gun_barrel_01",
           "flash": "emtr_gun_flame_01",
           "useEmitter": true,
+          "numWeaponsInSlot": 2,
+          "maxAdditionalPitch": 0.0,
           "allowableDelta": 20.0,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
-          "barrelDP": "gun_barrel_01_dm",
-          "breechDP": "cannon_breech_01_dm",
+          "barrelDP": "gun_barrel_02_dm",
+          "breechDP": "cannon_breech_02_dm",
+          "parkInDeadzone": true,
           "speedYaw": 60.0,
-          "speedPitch": 10.0,
+          "speedPitch": 0.0,
           "fireConeAngle": 1.0,
           "bullets": 12,
           "salvoAmount": 100.0,
@@ -1724,10 +1729,11 @@
           "errExplTime": 0.0,
           "turret": {
             "head": "bone_turret",
-            "gun": "bone_gun",
+            "gun": "bone_gun_01",
             "barrel": "bone_gun_barrel_01",
             "verDriveDm": "drive_turret_v_dm",
-            "gunnerDm": "gunner_dm"
+            "gunnerDm": "gunner_dm",
+            "rotatedTurret": "bone_turret"
           },
           "limits": {
             "yaw": [0.0,0.0],
@@ -1742,7 +1748,6 @@
             "verticalOmegaMult": 1.0,
             "verticalSpeedLimitKPH": 75.0,
             "speedFromVehicleVerticalMult": -1.0,
-            "speedPitch": 20.0,
             "errorKPHToDegrees": [
               {
                 "row": [5.0,0.0]
@@ -1914,7 +1919,7 @@
   {
     "wreckedParts": {
       "part": {
-        "node": "bone_gun",
+        "node": "bone_gun_01",
         "mass": 1500.0,
         "cutDamage": 500.0,
         "deviation": 0.5,
