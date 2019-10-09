@@ -46,7 +46,8 @@
       "azimuthLimits": [-15.0,15.0],
       "elevationLimits": [-15.0,15.0],
       "period": 0.5,
-      "width": 2.5
+      "width": 2.5,
+      "indicate": true
     },
     "track": {
       "type": "no",
@@ -272,9 +273,9 @@
             "setTrackMode": []
           }
         },
-        "failedLock": {
+        "finishedLock": {
           "stateFrom": "lock",
-          "event": "scanFinished",
+          "command": "selectTarget",
           "stateTo": "standbyOrSearch",
           "actions": [
             {

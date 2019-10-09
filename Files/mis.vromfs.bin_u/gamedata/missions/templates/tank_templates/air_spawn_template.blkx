@@ -2125,9 +2125,7 @@
           "enableAfterComplete": false
         },
         "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
+          "initMission": []
         },
         "conditions": [
           {
@@ -2143,7 +2141,52 @@
             }
           }
         ],
-        "actions": [
+        "actions": {
+          "unitPutToSleep": [
+            {
+              "target": "t1_helipad_aaa_squad"
+            },
+            {
+              "target": "t2_helipad_aaa_squad"
+            }
+          ],
+          "triggerEnable": {
+            "target": "helipad_defence_check_difficult"
+          }
+        },
+        "else_actions": []
+      },
+      "helipad_defence_check_difficult": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "conditions": {
+          "gameWhenDifficulty": {
+            "difficulty": "simulator",
+            "is": "equal"
+          }
+        },
+        "actions": [],
+        "else_actions": [
+          {
+            "unitWakeUp": [
+              {
+                "target": "t1_helipad_aaa_squad"
+              },
+              {
+                "target": "t2_helipad_aaa_squad"
+              }
+            ]
+          },
           {
             "unitSetProperties": {
               "object_marking": 0,
@@ -2176,8 +2219,7 @@
               }
             ]
           }
-        ],
-        "else_actions": []
+        ]
       },
       "t1_restore_heli_defence": {
         "is_enabled": false,
@@ -2225,7 +2267,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 15.0
+            "time": 20.0
           }
         },
         "conditions": {

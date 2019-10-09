@@ -223,6 +223,59 @@
           "triggerEnable": {
             "target": "ft_helicopters_exclusive_check"
           }
+        },
+        {
+          "comment": {
+            "value": "создаем бэкап респаун зоны и запрещаем там спавн"
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "missions/t1_backup_zone",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "forceCreate": false,
+            "useExisting": false,
+            "isIndividual": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "target": "ft_t1_backup_air_zone_01",
+            "team": "A",
+            "tags": {
+              "none_can_spawn": true
+            }
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "loc_name": "missions/t2_backup_zone",
+            "spawnEffect": false,
+            "isStrictSpawn": false,
+            "resetStrictSpawnIndex": false,
+            "isAirfield": false,
+            "isUnit": false,
+            "forceCreate": false,
+            "useExisting": false,
+            "isIndividual": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "canSpawnOnNeutral": false,
+            "showOnMap": true,
+            "radius": -1.0,
+            "target": "ft_t2_backup_air_zone_01",
+            "team": "B",
+            "tags": {
+              "none_can_spawn": true
+            }
+          }
         }
       ],
       "else_actions": []
@@ -1978,6 +2031,7 @@
               "team": "A",
               "separate_fuel_time": true,
               "modular_airfield": true,
+              "respawnAirBackup": "missions/t1_backup_zone",
               "tags": {
                 "none_can_spawn": false,
                 "helicopter": false,
@@ -3615,6 +3669,7 @@
               "team": "B",
               "separate_fuel_time": true,
               "modular_airfield": true,
+              "respawnAirBackup": "missions/t2_backup_zone",
               "tags": {
                 "none_can_spawn": false,
                 "helicopter": false,
@@ -4044,18 +4099,18 @@
           },
           {
             "comment": {
-              "value": "10000 для истории"
+              "value": ""
             }
           },
           {
             "varSetReal": {
-              "value": 10000.0,
+              "value": 12000.0,
               "var": "ft_airfield_module_hp"
             }
           },
           {
             "varSetReal": {
-              "value": 20000.0,
+              "value": 24000.0,
               "var": "ft_airfield_module_spawn_hp"
             }
           },
@@ -4066,7 +4121,7 @@
           },
           {
             "varSetReal": {
-              "value": 200.0,
+              "value": 300.0,
               "var": "ft_damage_restore_base_hp"
             }
           },
@@ -4132,18 +4187,18 @@
           },
           {
             "comment": {
-              "value": "59400 для истории"
+              "value": ""
             }
           },
           {
             "varSetReal": {
-              "value": 30000.0,
+              "value": 34000.0,
               "var": "ft_airfield_module_hp"
             }
           },
           {
             "varSetReal": {
-              "value": 60000.0,
+              "value": 68000.0,
               "var": "ft_airfield_module_spawn_hp"
             }
           },
@@ -4154,7 +4209,7 @@
           },
           {
             "varSetReal": {
-              "value": 600.0,
+              "value": 850.0,
               "var": "ft_damage_restore_base_hp"
             }
           },
@@ -4220,18 +4275,18 @@
           },
           {
             "comment": {
-              "value": "99000 для истории"
+              "value": ""
             }
           },
           {
             "varSetReal": {
-              "value": 45000.0,
+              "value": 48000.0,
               "var": "ft_airfield_module_hp"
             }
           },
           {
             "varSetReal": {
-              "value": 90000.0,
+              "value": 96000.0,
               "var": "ft_airfield_module_spawn_hp"
             }
           },
@@ -4242,7 +4297,7 @@
           },
           {
             "varSetReal": {
-              "value": 900.0,
+              "value": 1200.0,
               "var": "ft_damage_restore_base_hp"
             }
           },
@@ -4308,18 +4363,18 @@
           },
           {
             "comment": {
-              "value": "184800 для истории"
+              "value": ""
             }
           },
           {
             "varSetReal": {
-              "value": 90000.0,
+              "value": 100000.0,
               "var": "ft_airfield_module_hp"
             }
           },
           {
             "varSetReal": {
-              "value": 180000.0,
+              "value": 200000.0,
               "var": "ft_airfield_module_spawn_hp"
             }
           },
@@ -4330,7 +4385,7 @@
           },
           {
             "varSetReal": {
-              "value": 1800.0,
+              "value": 2500.0,
               "var": "ft_damage_restore_base_hp"
             }
           },
@@ -4387,18 +4442,18 @@
           },
           {
             "comment": {
-              "value": "184800 для истории"
+              "value": ""
             }
           },
           {
             "varSetReal": {
-              "value": 90000.0,
+              "value": 120000.0,
               "var": "ft_airfield_module_hp"
             }
           },
           {
             "varSetReal": {
-              "value": 180000.0,
+              "value": 240000.0,
               "var": "ft_airfield_module_spawn_hp"
             }
           },
@@ -4409,7 +4464,7 @@
           },
           {
             "varSetReal": {
-              "value": 1800.0,
+              "value": 3000.0,
               "var": "ft_damage_restore_base_hp"
             }
           },
@@ -9124,6 +9179,17 @@
           {
             "triggerEnable": {
               "target": "ft_capture_t1_frontline_check"
+            }
+          },
+          {
+            "comment": {
+              "value": ""
+            }
+          },
+          {
+            "__missionSetTimeSpeed": {
+              "speed": 0.0,
+              "realtimeTriggers": false
             }
           }
         ],

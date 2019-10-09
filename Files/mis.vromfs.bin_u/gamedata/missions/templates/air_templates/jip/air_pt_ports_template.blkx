@@ -1208,6 +1208,7 @@
               "canCaptureByGM": true,
               "onlyPlayersCanCapture": false,
               "captureNoPenalty": true,
+              "zoneDefenders": [],
               "capture_tags": {
                 "type_hydroplane": true,
                 "type_flying_boat": true,
@@ -1224,6 +1225,9 @@
               "restoreWhenNoAmmoLeft": false,
               "hideMarkers": true,
               "tags": {
+                "type_hydroplane": true
+              },
+              "repair_tags": {
                 "type_hydroplane": true
               }
             }
@@ -1258,6 +1262,7 @@
               "canCaptureByGM": true,
               "onlyPlayersCanCapture": false,
               "captureNoPenalty": true,
+              "zoneDefenders": [],
               "capture_tags": {
                 "type_hydroplane": true,
                 "type_flying_boat": true,
@@ -1274,6 +1279,9 @@
               "restoreWhenNoAmmoLeft": false,
               "hideMarkers": true,
               "tags": {
+                "type_hydroplane": true
+              },
+              "repair_tags": {
                 "type_hydroplane": true
               }
             }
@@ -13985,6 +13993,9 @@
               "hideMarkers": true,
               "tags": {
                 "type_hydroplane": true
+              },
+              "repair_tags": {
+                "type_hydroplane": true
               }
             }
           },
@@ -13996,6 +14007,9 @@
               "restoreWhenNoAmmoLeft": false,
               "hideMarkers": true,
               "tags": {
+                "type_hydroplane": true
+              },
+              "repair_tags": {
                 "type_hydroplane": true
               }
             }
@@ -14833,6 +14847,9 @@
               "hideMarkers": true,
               "tags": {
                 "type_hydroplane": true
+              },
+              "repair_tags": {
+                "type_hydroplane": true
               }
             }
           },
@@ -14844,6 +14861,9 @@
               "restoreWhenNoAmmoLeft": false,
               "hideMarkers": true,
               "tags": {
+                "type_hydroplane": true
+              },
+              "repair_tags": {
                 "type_hydroplane": true
               }
             }
@@ -15453,9 +15473,14 @@
             }
           },
           {
-            "triggerEnable": {
-              "target": "ft_capture_t1_start"
-            }
+            "triggerEnable": [
+              {
+                "target": "ft_capture_t1_start"
+              },
+              {
+                "target": "bdt_capture_t1_start"
+              }
+            ]
           }
         ],
         "else_actions": [
@@ -15486,9 +15511,14 @@
             }
           },
           {
-            "triggerEnable": {
-              "target": "ft_capture_t2_start"
-            }
+            "triggerEnable": [
+              {
+                "target": "ft_capture_t2_start"
+              },
+              {
+                "target": "bdt_capture_t2_start"
+              }
+            ]
           }
         ]
       }
@@ -15696,8 +15726,8 @@
     "pt_reinfocement_t2_enemy_spawn_cur_name": "",
     "pt_reinfocement_t2_enemy_spawn_ship_name": "",
     "pt_reinfocement_t2_enemy_spawn_boat_name": "",
-    "pt_reinfocement_t1_spawn_cargo_ships": false,
-    "pt_reinfocement_t2_spawn_cargo_ships": false,
+    "pt_reinfocement_t1_spawn_cargo_ships": true,
+    "pt_reinfocement_t2_spawn_cargo_ships": true,
     "pt_reinforcement_last_army_idx": 0,
     "pt_reinforcement_is_active": false,
     "pt_reinforcement_t1_spawn_postfix": "",
