@@ -83,7 +83,8 @@
       "width": 2.0,
       "barHeight": 1.5,
       "barsCount": 1,
-      "rowMajor": false
+      "rowMajor": false,
+      "indicate": true
     },
     "track": {
       "type": "no",
@@ -541,6 +542,7 @@
         "switchToSearch": {
           "stateFrom": "standby",
           "command": "switch",
+          "event": "enable",
           "stateTo": "search",
           "actions": {
             "setSearchMode": []
@@ -549,6 +551,7 @@
         "switchToStandby": {
           "stateFrom": "search",
           "command": "switch",
+          "event": "disable",
           "stateTo": "standby",
           "actions": {
             "resetSearchMode": [],

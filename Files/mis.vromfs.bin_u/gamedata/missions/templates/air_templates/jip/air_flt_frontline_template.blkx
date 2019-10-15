@@ -4867,7 +4867,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [],
@@ -5021,12 +5021,37 @@
           },
           {
             "comment": {
+              "value": "создаем имя точки скипа рисования линии"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "flt_area_",
+              "var": "flt_draw_cur_cell_left_skip_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@flt_draw_cur_cell",
+              "digits": 2,
+              "var": "flt_draw_cur_cell_left_skip_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_left_skip_point",
+              "digits": 0,
+              "var": "flt_draw_cur_cell_left_skip_point"
+            }
+          },
+          {
+            "comment": {
               "value": "проверяем есть ли левая зона"
             }
           },
           {
             "triggerEnable": {
-              "target": "flt_draw_left_exist"
+              "target": "flt_draw_left_skip_exist"
             }
           }
         ],
@@ -5044,6 +5069,93 @@
           {
             "triggerEnable": {
               "target": "flt_draw_bottom_start"
+            }
+          }
+        ]
+      },
+      "flt_draw_left_skip_exist": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "objectExists": {
+            "target": "@flt_draw_cur_cell_left_skip_point",
+            "type": "area"
+          }
+        },
+        "actions": [
+          {
+            "comment": {
+              "value": "точка существует. скипаем рисовку и идем рисовать следующий сегмент"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "exist:",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_draw_cur_cell_left_skip_point",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__varSetString": {
+              "value": "cur index is ",
+              "var": "flt_log_string"
+            }
+          },
+          {
+            "__varAddString": {
+              "value": "@flt_draw_cur_cell_name",
+              "digits": 0,
+              "var": "flt_log_string"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_log_string",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_bottom_start"
+            }
+          }
+        ],
+        "else_actions": [
+          {
+            "comment": {
+              "value": "точки не существует. рисуем все как обычно"
+            }
+          },
+          {
+            "triggerEnable": {
+              "target": "flt_draw_left_exist"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "not exist:",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_draw_cur_cell_left_skip_point",
+              "logtype": "screen_and_log"
             }
           }
         ]
@@ -5231,7 +5343,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [
@@ -5275,7 +5387,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -5311,7 +5423,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -5381,6 +5493,37 @@
             }
           },
           {
+            "__systemLog": {
+              "value": "left line:",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_draw_cur_cell_name",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__varSetString": {
+              "value": "cur index is ",
+              "var": "flt_log_string"
+            }
+          },
+          {
+            "__varAddString": {
+              "value": "@flt_draw_cur_cell_name",
+              "digits": 0,
+              "var": "flt_log_string"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_log_string",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
             "triggerEnable": {
               "target": "flt_draw_bottom_start"
             }
@@ -5412,6 +5555,37 @@
           {
             "triggerEnable": {
               "target": "flt_draw_bottom_start"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "left line:",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_draw_cur_cell_name",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__varSetString": {
+              "value": "cur index is",
+              "var": "flt_log_string"
+            }
+          },
+          {
+            "__varAddString": {
+              "value": "@flt_draw_cur_cell",
+              "digits": 0,
+              "var": "flt_log_string"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_log_string",
+              "logtype": "screen_and_log"
             }
           }
         ]
@@ -5937,16 +6111,81 @@
           },
           {
             "comment": {
+              "value": "создаем имя точки скипа рисования линии"
+            }
+          },
+          {
+            "varSetString": {
+              "value": "flt_area_",
+              "var": "flt_draw_cur_cell_bottom_skip_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "@flt_draw_cur_cell",
+              "digits": 2,
+              "var": "flt_draw_cur_cell_bottom_skip_point"
+            }
+          },
+          {
+            "varAddString": {
+              "value": "_bottom_skip_point",
+              "digits": 0,
+              "var": "flt_draw_cur_cell_bottom_skip_point"
+            }
+          },
+          {
+            "comment": {
               "value": "проверяем есть ли нижняя зона"
             }
           },
           {
             "triggerEnable": {
-              "target": "flt_draw_bottom_exist"
+              "target": "flt_draw_bottom_skip_exist"
             }
           }
         ],
         "else_actions": []
+      },
+      "flt_draw_bottom_skip_exist": {
+        "is_enabled": false,
+        "comments": "",
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        },
+        "events": {
+          "periodicEvent": {
+            "time": 0.0
+          }
+        },
+        "conditions": {
+          "objectExists": {
+            "target": "@flt_draw_cur_cell_bottom_skip_point",
+            "type": "area"
+          }
+        },
+        "actions": {
+          "__systemLog": {
+            "value": "@flt_draw_cur_cell_bottom_skip_point",
+            "logtype": "screen_and_log"
+          },
+          "comment": {
+            "value": "точка существует. скипаем рисовку и идем рисовать следующий сегмент"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_frontline_col"
+          }
+        },
+        "else_actions": {
+          "comment": {
+            "value": "точки не существует. рисуем все как обычно"
+          },
+          "triggerEnable": {
+            "target": "flt_draw_bottom_exist"
+          }
+        }
       },
       "flt_draw_bottom_exist": {
         "is_enabled": false,
@@ -6136,7 +6375,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": [
@@ -6180,7 +6419,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -6216,7 +6455,7 @@
         },
         "events": {
           "periodicEvent": {
-            "time": 1.0
+            "time": 0.0
           }
         },
         "conditions": {
@@ -6289,6 +6528,18 @@
             "triggerEnable": {
               "target": "flt_draw_frontline_col"
             }
+          },
+          {
+            "__systemLog": {
+              "value": "bottom line:",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_draw_cur_cell_name",
+              "logtype": "screen_and_log"
+            }
           }
         ],
         "else_actions": [
@@ -6317,6 +6568,18 @@
           {
             "triggerEnable": {
               "target": "flt_draw_frontline_col"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "bottom line:",
+              "logtype": "screen_and_log"
+            }
+          },
+          {
+            "__systemLog": {
+              "value": "@flt_draw_cur_cell_name",
+              "logtype": "screen_and_log"
             }
           }
         ]
@@ -6376,10 +6639,8 @@
           },
           {
             "missionShowMapLine": {
-              "areaNameFrom": "@flt_draw_cur_cell_name",
-              "areaNameTo": "@flt_draw_cur_cell_name",
-              "areaFromSide": "bottom_right",
-              "areaToSide": "bottom_left",
+              "areaNameFrom": "@flt_draw_cur_cell_bottom_draw_right_point",
+              "areaNameTo": "@flt_draw_cur_cell_bottom_draw_left_point",
               "colorCode": "Team B-A",
               "transparency": 30,
               "scale": 1.2,
@@ -7845,7 +8106,10 @@
     "flt_draw_cur_cell_left_draw_up_point": "",
     "flt_draw_cur_cell_left_draw_down_point": "",
     "flt_draw_cur_cell_bottom_draw_right_point": "",
-    "flt_draw_cur_cell_bottom_draw_left_point": ""
+    "flt_draw_cur_cell_bottom_draw_left_point": "",
+    "flt_draw_cur_cell_left_skip_point": "",
+    "flt_draw_cur_cell_bottom_skip_point": "",
+    "flt_log_string": ""
   },
   "dialogs": [],
   "airfields": [],
