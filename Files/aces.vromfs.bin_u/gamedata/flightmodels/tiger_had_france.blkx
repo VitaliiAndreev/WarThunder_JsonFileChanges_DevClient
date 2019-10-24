@@ -4,6 +4,8 @@
   "MetaPartsBlk": "gameData/FlightModels/dm/metaparts/hellicopters_metaparts.blk",
   "gearSinkRangeLR": 0.193,
   "gearSinkRangeC": 0.086,
+  "tpsCameraTargetOffsetAtZoom": [50.0,20.0,0.0],
+  "tpsCameraOffset": [-3.0,0.0,0.2],
   "type": "typeFighter",
   "paratrooper": "usa_para",
   "advancedInstructor": true,
@@ -1213,7 +1215,9 @@
     "lightRadius1": 0.35,
     "zoomOutFov": 22.46,
     "zoomInFov": 22.46,
-    "sightFov": 15.3,
+    "sightInFov": 2.46,
+    "sightOutFov": -1.0,
+    "sightFov": 5.5,
     "devices": {
       "speed": [0.0,257.222],
       "bank": [-8.0,8.0],
@@ -1563,11 +1567,18 @@
     "rotorBladeAnglesCoeffs": [0.3,0.5,0.5],
     "propellerStrainCoeff": -0.01
   },
-  "sensors": {
-    "sensor": {
-      "blk": "gameData/sensors/us_an_apr_39.blk"
+  "sensors": [
+    {
+      "sensor": {
+        "blk": "gameData/sensors/tv_tracker.blk"
+      }
+    },
+    {
+      "sensor": {
+        "blk": "gameData/sensors/us_an_apr_39.blk"
+      }
     }
-  },
+  ],
   "gunnerFps": {
     "pos": [0.3,-0.5,0.0],
     "head": "optic1_gun"
@@ -2101,7 +2112,6 @@
     "emtr_break_wing2_r_from": [0.0755793,-0.0717285,-2.14438],
     "emtr_break_wing2_r_to": [0.0755793,-0.0717285,-2.15438],
     "emtr_break_wing_tail": [-7.30788,0.0,0.0],
-    "partKindTail": 2,
     "finCut": false,
     "emtr_break_stab_l_from": [-7.56949,-0.822309,0.246464],
     "emtr_break_stab_l_to": [-7.56949,-0.822309,0.985855],

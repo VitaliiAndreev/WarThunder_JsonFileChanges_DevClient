@@ -111,12 +111,98 @@
     "depthTraceCriticalDepth": 2.0
   },
   {
-    "default_skin_tomoe": {
-      "replace_tex": {
-        "from": "flag_ussr_01_c*",
-        "to": "flag_ussr_01_c_tomoe*"
+    "default_skin_tomoe": [
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_china_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_01_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_02_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_uk_01_c*",
+          "to": "flag_uk_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_01_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_02_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_italy_01_c*",
+          "to": "flag_italy_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_01_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_02_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "germany_flag_decal*",
+          "to": "germany_harm_flag_decal*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_ger_ar196_c*",
+          "to": "airplane_ger_ar196_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e7k2_c*",
+          "to": "airplane_japan_e7k2_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e13a1_c*",
+          "to": "airplane_japan_e13a1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_usa_curtiss_sc_seahawk_c*",
+          "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
+        }
       }
-    }
+    ]
   },
   {
     "ikGunner": [
@@ -866,6 +952,7 @@
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_structural_steel",
         "armorThickness": 12.0,
+        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 3302.0
         },
@@ -1097,6 +1184,12 @@
         "pump_02_dm": {
           "hp": 303.0
         }
+      },
+      "belt_armor": {
+        "armorThickness": 15.0,
+        "stopChanceOnDeadPart": 1.0,
+        "armorClass": "ship_STS",
+        "hidableInViewer": true
       },
       "hull_armor": {
         "armorThickness": 15.0,
@@ -1682,9 +1775,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.4
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -1850,9 +1940,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.4
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -1996,9 +2083,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.4
-          },
-          {
             "barrelDP": "main_caliber_gun_02_dm"
           },
           {
@@ -2140,9 +2224,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.4
           },
           {
             "barrelDP": "main_caliber_gun_02_dm"
@@ -2309,8 +2390,8 @@
   },
   {
     "sound": {
-      "EngineName": "engine_ctr01",
-      "EngineNameAi": "engine_ctr_ai",
+      "EngineName": "engine_ctr_jet",
+      "EngineNameAi": "engine_ctr_jet_ai",
       "TrackSoundPath": "ships/engines_ships",
       "TrackSoundPathStudio": "naval/engines",
       "TrackSoundName": "tracks_ctr",

@@ -691,7 +691,7 @@
       "TrackSoundPathStudio": "ground/engines",
       "TrackSoundName": "tracks_su100",
       "TrackSoundNameCockpit": "tracks_su100_interior",
-      "turret_turn": "turret_turn_manual_y",
+      "turret_turn": "turret_turn_servo",
       "EngineNameAi": "engine_tank_ai_middle",
       "TrackSoundNameAi": "tracks_ai_middle"
     }
@@ -2964,6 +2964,9 @@
       "30mm_2a42_AP_ammo_pack": [],
       "30mm_2a38_HE_ammo_pack": [],
       "night_vision_system": {
+        "modClass": "protection",
+        "turn_it_off": false,
+        "tier": 3,
         "effects": {
           "nightVision": {
             "commanderIr": {
@@ -2979,6 +2982,68 @@
               "noiseFactor": 0.2
             }
           }
+        }
+      },
+      "2s6_upgrade_modification": {
+        "invertEnableLogic": false,
+        "turn_it_off": false,
+        "effects": {
+          "rcostAddParam": 0.92,
+          "irProjectorNode": "",
+          "nightVision": {
+            "gunnerThermal": {
+              "resolution": [500,300],
+              "noiseFactor": 0.05
+            },
+            "commanderIr": {
+              "resolution": [1600,1200],
+              "lightMult": 9.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            },
+            "driverIr": {
+              "resolution": [800,600],
+              "lightMult": 5.0,
+              "ghosting": 0.6,
+              "noiseFactor": 0.2
+            }
+          },
+          "hideNodes": [
+            {
+              "node": "antenna_target_location"
+            },
+            {
+              "node": "antenna_target_location_dm"
+            },
+            {
+              "node": "turret_add"
+            },
+            {
+              "node": "optic_turret_05_dm"
+            },
+            {
+              "node": "antenna_01"
+            }
+          ]
+        },
+        "disableModEffects": {
+          "hideNodes": [
+            {
+              "node": "antenna_target_location_01"
+            },
+            {
+              "node": "antenna_target_location_01_dm"
+            },
+            {
+              "node": "turret_add_01"
+            },
+            {
+              "node": "optic_turret_06_dm"
+            },
+            {
+              "node": "antenna_02"
+            }
+          ]
         }
       }
     }
@@ -3033,6 +3098,8 @@
   {
     "skin": {
       "name": "ussr_camo_czechoslovak_yellow_green",
+      "nameLocId": "skin/ussr_camo_czechoslovak_yellow_green",
+      "descLocId": "skin/ussr_camo_czechoslovak_yellow_green/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_camo_czechoslovak_yellow_green*"
@@ -3042,6 +3109,8 @@
   {
     "skin": {
       "name": "ussr_camo_desert_syrian_green_brown_yellow",
+      "nameLocId": "skin/ussr_camo_desert_syrian_green_brown_yellow",
+      "descLocId": "skin/ussr_camo_desert_syrian_green_brown_yellow/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_camo_desert_syrian_green_brown_yellow*"
@@ -3051,6 +3120,8 @@
   {
     "skin": {
       "name": "ussr_camo_desert_yellow_brown",
+      "nameLocId": "skin/ussr_camo_desert_yellow_brown",
+      "descLocId": "skin/ussr_camo_desert_yellow_brown/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_camo_desert_yellow_brown*"
@@ -3060,6 +3131,8 @@
   {
     "skin": {
       "name": "modern_desert",
+      "nameLocId": "skin/ussr_modern_desert",
+      "descLocId": "skin/ussr_modern_desert/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_modern_desert*"
@@ -3069,6 +3142,8 @@
   {
     "skin": {
       "name": "modern_forest",
+      "nameLocId": "skin/ussr_modern_forest",
+      "descLocId": "skin/ussr_modern_forest/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_modern_forest*"
@@ -3078,6 +3153,8 @@
   {
     "skin": {
       "name": "modern_winter",
+      "nameLocId": "skin/ussr_modern_winter",
+      "descLocId": "skin/ussr_modern_winter/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_modern_winter*"
@@ -3087,6 +3164,8 @@
   {
     "skin": {
       "name": "ussr_camo_finland_polygonal_threecolor",
+      "nameLocId": "skin/ussr_camo_finland_polygonal_threecolor",
+      "descLocId": "skin/ussr_camo_finland_polygonal_threecolor/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_camo_finland_polygonal_threecolor*"
@@ -3096,6 +3175,8 @@
   {
     "skin": {
       "name": "ussr_camo_deform",
+      "nameLocId": "skin/ussr_camo_deform",
+      "descLocId": "skin/ussr_camo_deform/desc",
       "replace_tex": {
         "from": "ussr_camo_green*",
         "to": "ussr_camo_deform*"

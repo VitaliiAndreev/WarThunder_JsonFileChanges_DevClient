@@ -118,31 +118,55 @@
             "distanceRange": [0.0,10000.0]
           }
         },
-        "setLockMode": {
-          "setCenterAzimuth": {
-            "source": "activeDetectedTarget"
+        "setLockMode": [
+          {
+            "setCenterAzimuth": {
+              "source": "activeDetectedTarget"
+            }
           },
-          "setCenterElevation": {
-            "source": "activeDetectedTarget"
+          {
+            "setCenterElevation": {
+              "source": "activeDetectedTarget"
+            }
           },
-          "clearTargets": [],
-          "clearTargetsOfInterest": [],
-          "setScanPattern": {
-            "scanPattern": "lock"
+          {
+            "clearTargets": []
           },
-          "resetScanPhase": [],
-          "setFsmActive": {
-            "fsm": "lock",
-            "active": true
+          {
+            "clearTargetsOfInterest": []
           },
-          "setTransiver": {
-            "transiver": "track"
+          {
+            "setScanPattern": {
+              "scanPattern": "lock"
+            }
           },
-          "setDistGatePos": {
-            "source": "targetDesignation",
-            "width": 1000.0
+          {
+            "resetScanPhase": []
+          },
+          {
+            "setFsmActive": {
+              "fsm": "lock",
+              "active": true
+            }
+          },
+          {
+            "setTransiver": {
+              "transiver": "track"
+            }
+          },
+          {
+            "setCenterElevation": {
+              "source": "constant",
+              "value": 22.5
+            }
+          },
+          {
+            "setDistGatePos": {
+              "source": "targetDesignation",
+              "width": 1000.0
+            }
           }
-        },
+        ],
         "setLosLockMode": {
           "setScanPattern": {
             "scanPattern": "losLock"

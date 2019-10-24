@@ -111,12 +111,98 @@
     "depthTraceCriticalDepth": 2.0
   },
   {
-    "default_skin_tomoe": {
-      "replace_tex": {
-        "from": "flag_uk_01_c*",
-        "to": "flag_uk_01_c_tomoe*"
+    "default_skin_tomoe": [
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_china_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_01_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_02_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_uk_01_c*",
+          "to": "flag_uk_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_01_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_02_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_italy_01_c*",
+          "to": "flag_italy_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_01_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_02_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "germany_flag_decal*",
+          "to": "germany_harm_flag_decal*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_ger_ar196_c*",
+          "to": "airplane_ger_ar196_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e7k2_c*",
+          "to": "airplane_japan_e7k2_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e13a1_c*",
+          "to": "airplane_japan_e13a1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_usa_curtiss_sc_seahawk_c*",
+          "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
+        }
       }
-    }
+    ]
   },
   {
     "ikGunner": [
@@ -1762,6 +1848,7 @@
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_structural_steel",
         "armorThickness": 23.0,
+        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 7000.0
         },
@@ -1947,6 +2034,12 @@
         "pump_02_dm": {
           "hp": 350.0
         }
+      },
+      "belt_armor": {
+        "armorThickness": 15.0,
+        "stopChanceOnDeadPart": 1.0,
+        "armorClass": "ship_STS",
+        "hidableInViewer": true
       },
       "hull_armor": {
         "armorThickness": 15.0,
@@ -3011,9 +3104,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -3027,9 +3117,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "shotFreq": 0.218
           },
           {
             "speedYaw": 10.0
@@ -3169,9 +3256,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -3182,9 +3266,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "shotFreq": 0.218
           },
           {
             "useGunnerTargetingQuality": false
@@ -3322,9 +3403,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_02_dm"
           },
           {
@@ -3338,9 +3416,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "shotFreq": 0.218
           },
           {
             "speedYaw": 10.0
@@ -3484,9 +3559,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_02_dm"
           },
           {
@@ -3500,9 +3572,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "shotFreq": 0.218
           },
           {
             "speedYaw": 10.0
@@ -3663,9 +3732,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_07_dm"
           },
           {
@@ -3679,9 +3745,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "shotFreq": 0.218
           },
           {
             "speedYaw": 10.0
@@ -3823,9 +3886,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_07_dm"
           },
           {
@@ -3839,9 +3899,6 @@
           },
           {
             "defaultPitch": 0.0
-          },
-          {
-            "shotFreq": 0.218
           },
           {
             "speedYaw": 10.0
@@ -3976,9 +4033,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.381
           },
           {
             "barrelDP": "main_caliber_gun_05_dm"
@@ -4131,9 +4185,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.381
-          },
-          {
             "barrelDP": "main_caliber_gun_05_dm"
           },
           {
@@ -4277,9 +4328,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.2
           },
           {
             "useGunnerTargetingQuality": false
@@ -4439,9 +4487,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.2
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -4592,9 +4637,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.2
           },
           {
             "useGunnerTargetingQuality": false
@@ -4749,9 +4791,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.2
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -4904,9 +4943,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -5051,9 +5087,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -5196,9 +5229,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.0
           },
           {
             "useGunnerTargetingQuality": false
@@ -5353,9 +5383,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.0
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -5501,9 +5528,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.0
           },
           {
             "useGunnerTargetingQuality": false
@@ -5653,9 +5677,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.0
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -5801,9 +5822,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.0
           },
           {
             "useGunnerTargetingQuality": false
@@ -5958,9 +5976,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.0
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -6108,9 +6123,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.0
-          },
-          {
             "useGunnerTargetingQuality": false
           },
           {
@@ -6256,9 +6268,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.0
           },
           {
             "useGunnerTargetingQuality": false
@@ -6567,7 +6576,7 @@
         },
         {
           "shells": {
-            "reloadTimeMult": 0.91,
+            "reloadTimeMult": 1.15,
             "fatalFire": false,
             "fatalExplosion": true,
             "explosionEvent": "ammo_explosion_1",
@@ -6581,7 +6590,7 @@
         },
         {
           "charges": {
-            "reloadTimeMult": 0.91,
+            "reloadTimeMult": 1.15,
             "fatalFire": false,
             "explosionEvent": "ammo_explosion_1",
             "fireEvent": "ammo_fire_1",
@@ -6622,7 +6631,7 @@
         },
         {
           "shells": {
-            "reloadTimeMult": 0.91,
+            "reloadTimeMult": 1.15,
             "fatalFire": false,
             "fatalExplosion": true,
             "explosionEvent": "ammo_explosion_2",
@@ -6636,7 +6645,7 @@
         },
         {
           "charges": {
-            "reloadTimeMult": 0.91,
+            "reloadTimeMult": 1.15,
             "fatalFire": false,
             "explosionEvent": "ammo_explosion_2",
             "fireEvent": "ammo_fire_2",

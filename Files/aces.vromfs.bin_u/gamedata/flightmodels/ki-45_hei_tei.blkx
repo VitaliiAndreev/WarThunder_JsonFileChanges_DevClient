@@ -433,7 +433,6 @@
       "emtr_break_wing2_r_from": [-1.00004,0.122326,-4.81518],
       "emtr_break_wing2_r_to": [-1.00004,0.122326,-5.9216],
       "emtr_break_wing_tail": [-5.86756,0.0,0.0],
-      "partKindTail": 2,
       "finCut": false,
       "emtr_break_stab_l_from": [-6.6856,0.673089,0.525328],
       "emtr_break_stab_l_to": [-6.6856,0.673089,2.10131],
@@ -2371,7 +2370,7 @@
           "emitter": "flare1",
           "flash": "flare1",
           "shell": "emtr_shellrejection1",
-          "dm": "cannon1_dm",
+          "dm": "cannon2_dm",
           "bullets": 15,
           "spread": 1.0,
           "traceOffset": 1
@@ -2384,7 +2383,7 @@
           "emitter": "flare2",
           "flash": "flare2",
           "shell": "emtr_shellrejection2",
-          "dm": "cannon2_dm",
+          "dm": "cannon1_dm",
           "bullets": 100,
           "spread": 1.0,
           "traceOffset": 2
@@ -2566,6 +2565,8 @@
     "modifications": {
       "cd_98": [],
       "CdMin_Fuse": [],
+      "new_cover": [],
+      "structure_str": [],
       "hp_105": [],
       "new_radiator": [],
       "new_compressor": [],
@@ -2574,16 +2575,35 @@
       "ho1_ground_targets": [],
       "ho1_all_tracers": [],
       "ho1_stealth": [],
-      "ho203_new_gun": [],
-      "ho1_belt_pack": [],
+      "ho1_belt_pack": {
+        "tier": 1
+      },
       "20mmtype97_new_gun": {
-        "reqModification": "ho1_belt_pack"
+        "reqModification": "ho1_belt_pack",
+        "tier": 2
+      },
+      "ho5_universal": [],
+      "ho5_ground_targets": [],
+      "ho5_all_tracers": [],
+      "ho5_stealth": [],
+      "ho5_belt_pack": {
+        "tier": 3
+      },
+      "ho5_new_gun": {
+        "tier": 4,
+        "reqModification": "ho5_belt_pack"
       },
       "mg_turret_ap": [],
       "mg_turret_api_apt": [],
-      "mg_turret_belt_pack": [],
+      "mg_turret_belt_pack": {
+        "tier": 1
+      },
       "mg15_turret_new_gun": {
-        "reqModification": "mg_turret_belt_pack"
+        "reqModification": "mg_turret_belt_pack",
+        "tier": 3
+      },
+      "ho203_new_gun": {
+        "tier": 4
       }
     }
   }

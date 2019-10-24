@@ -4,7 +4,7 @@
   "resetViralAcquisitionDaysCounter": 1,
   "moderatorPresenceCheckMaxCode": 65536,
   "moderatorPresenceCheckPeriodSec": 1200,
-  "mapTypes": "AfDto;AfD;BC;BfDn;BfD;ADto;AD;GS;GSA;GSB;DF;BfD_norespawn;GS_norespawn;BfDn_arcade;GSn;BfD_noresp;Dom;Dom_no_respawn;dblDom;Conq;Conq_no_respawn;Bttl;Bttl_no_respawn;bfd_norespawn;day_norespawn;bfd_norespawn;duel;AfDn;tm;race;race_straight;race_inverted;Bto;Conq1;Conq2;Conq3;Conq4;Conq5;Conq6;DBttlA;DBttlB;PvE;PvE_1;PvE_2;PvE_3;PvE_4;PvE_5;PvE_6;I2M;H2M;Tdm;Capt;NTDM;NDom;NTdm;NBttl;NConq;nctf;NCnv;NS;NA;NAleft;NAright;N2M;4x4_norespawn;2x2_norespawn;1x1_norespawn;FFA;BDB;BDA;MBD;MDB;GSA;GSB;CnvA;CnvB;BR;ctf;HS;HfD;HA;UDom",
+  "mapTypes": "AfDto;AfD;BC;BfDn;BfD;ADto;AD;GS;GSA;GSB;DF;BfD_norespawn;GS_norespawn;BfDn_arcade;GSn;BfD_noresp;Dom;Dom_no_respawn;dblDom;Conq;Conq_no_respawn;Bttl;Bttl_no_respawn;bfd_norespawn;day_norespawn;bfd_norespawn;duel;AfDn;tm;race;race_straight;race_inverted;Bto;Conq1;Conq2;Conq3;Conq4;Conq5;Conq6;DBttlA;DBttlB;ArtDA;ArtDB;PvE;PvE_1;PvE_2;PvE_3;PvE_4;PvE_5;PvE_6;I2M;H2M;Tdm;Capt;NTDM;NDom;NTdm;NBttl;NConq;nctf;NCnv;NCnvA;NCnvB;NS;NA;NAleft;NAright;N2M;4x4_norespawn;2x2_norespawn;1x1_norespawn;mission;FFA;BDB;BDA;MDB;GSA;GSB;CnvA;CnvB;BR;ctf;HS;HfD;HA;UDom",
   "ordersPerSession": 3,
   "randomBattle": {
     "classiness": {
@@ -152,6 +152,8 @@
       "_NConq": 6,
       "_nctf": 6,
       "_NCnv": 6,
+      "_NCnvA": 6,
+      "_NCnvB": 6,
       "_NTdm": 6,
       "_NS": 6,
       "_NA": 6,
@@ -160,7 +162,6 @@
       "_N2M": 6,
       "_FFA": 0,
       "_MDB": 0,
-      "_MBD": 0,
       "_BDA": 0,
       "_BDB": 0,
       "_GSA": 0,
@@ -338,6 +339,7 @@
     "maxBattlePlayersDisbalance": 2,
     "maxVisibleGlobalBattlesPerGroup": 5,
     "operationAnnounceTimeSec": 86400,
+    "afkLoseTimeShowSec": 180,
     "joinBattleDelayTimeSec": 300,
     "dailyTrophies": {
       "locId": "worldwar/dailyTrophies",
@@ -651,28 +653,12 @@
     "JapanShipsInFirstCountryChoice": {
       "condition": ""
     },
-    "ChinaAircraftsInFirstCountryChoice": [
-      {
-        "condition": "role_DEVELOPER"
-      },
-      {
-        "condition": "role_TESTER"
-      },
-      {
-        "condition": "role_ALPHA_TESTER"
-      }
-    ],
-    "ChinaTanksInFirstCountryChoice": [
-      {
-        "condition": "role_DEVELOPER"
-      },
-      {
-        "condition": "role_TESTER"
-      },
-      {
-        "condition": "role_ALPHA_TESTER"
-      }
-    ],
+    "ChinaAircraftsInFirstCountryChoice": {
+      "condition": ""
+    },
+    "ChinaTanksInFirstCountryChoice": {
+      "condition": ""
+    },
     "ItalyAircraftsInFirstCountryChoice": {
       "condition": ""
     },
@@ -1542,34 +1528,12 @@
     "JapanShipsUnlocked": {
       "condition": ""
     },
-    "ChinaAircraftUnlocked": [
-      {
-        "condition": "role_GAIJIN"
-      },
-      {
-        "condition": "role_DEVELOPER"
-      },
-      {
-        "condition": "role_TESTER"
-      },
-      {
-        "condition": "wt_access_china_aircrafts_unlocks"
-      }
-    ],
-    "ChinaTankUnlocked": [
-      {
-        "condition": "role_GAIJIN"
-      },
-      {
-        "condition": "role_DEVELOPER"
-      },
-      {
-        "condition": "role_TESTER"
-      },
-      {
-        "condition": "wt_access_china_tanks_unlocks"
-      }
-    ],
+    "ChinaAircraftUnlocked": {
+      "condition": ""
+    },
+    "ChinaTankUnlocked": {
+      "condition": ""
+    },
     "CountryChina": {
       "condition": ""
     },
@@ -1773,6 +1737,28 @@
     "DmViewerProtectionAnalysis": {
       "condition": ""
     },
+    "DmViewerProtectionAnalysisShip": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      }
+    ],
+    "DmViewerProtectionAnalysisAircraft": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      }
+    ],
     "DmViewerExternalArmorHiding": {
       "condition": ""
     },
@@ -1842,6 +1828,28 @@
     },
     "MapPreferences": {
       "condition": ""
-    }
+    },
+    "PS4CrossNetwork": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      }
+    ],
+    "Ps4XboxOneInteraction": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      }
+    ]
   }
 }

@@ -22488,8 +22488,8 @@
         "armorThickness": 5.0,
         "restrainDamage": 0.05,
         "armorThrough": 10.0,
-        "explosionDamageMult": 1.0,
-        "genericDamageMult": 0.2
+        "explosionDamageMult": 0.5,
+        "genericDamageMult": 0.05
       },
       "wood_small_props": {
         "armorClass": "RHA_tank",
@@ -28335,13 +28335,6 @@
   {
     "dmg": {
       "name": "ussr_low_freight_car_1933_dmg",
-      "immortal": true,
-      "material": "metal"
-    }
-  },
-  {
-    "dmg": {
-      "name": "ussr_sleeping_car_1928_dmg",
       "immortal": true,
       "material": "metal"
     }
@@ -36374,6 +36367,26 @@
         "fxScale": 1.4,
         "material": "metal"
       },
+      "american_passenger_wagon": {
+        "nextRes": "american_passenger_wagon_dmg",
+        "physRes": "american_passenger_wagon_destr_phobj",
+        "hp": 180.0,
+        "impulseThreshold": 3.0,
+        "isParent": true,
+        "dmPreset": "metal_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
+      "american_passenger_wagon_dmg": {
+        "nextRes": "american_passenger_wagon_dmg_02",
+        "physRes": "american_passenger_wagon_dmg_destr_phobj",
+        "hp": 130.0,
+        "impulseThreshold": 3.0,
+        "isParent": true,
+        "dmPreset": "metal_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
       "fabric_locomotive": {
         "nextRes": "fabric_locomotive_dmg",
         "physRes": "fabric_locomotive_destr_phobj",
@@ -36470,7 +36483,7 @@
         "physRes": "ussr_locomotive_e_1298_destr_phobj",
         "hp": 180.0,
         "impulseThreshold": 3.0,
-        "dmPreset": "metal_props",
+        "dmPreset": "oil_tanks_full",
         "fx": "ad_car_wreck",
         "fxScale": 1.4,
         "material": "metal"
@@ -36480,7 +36493,7 @@
         "physRes": "ussr_locomotive_e_1298_destr_phobj",
         "hp": 180.0,
         "impulseThreshold": 3.0,
-        "dmPreset": "metal_props",
+        "dmPreset": "oil_tanks_full",
         "fx": "ad_car_wreck",
         "fxScale": 1.4,
         "material": "metal"
@@ -36521,10 +36534,28 @@
         "fx": "ad_wood_metal_big",
         "fxScale": 1.5
       },
+      "ussr_sleeping_car_1928_dmg": {
+        "nextRes": "ussr_sleeping_car_1928_dmg_02",
+        "physRes": "ussr_sleeping_car_1928_dmg_destr_phobj",
+        "hp": 150.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "metal_props",
+        "fx": "ad_wood_metal_big",
+        "fxScale": 1.5
+      },
       "ussr_sleeping_car_1928_snow": {
-        "nextRes": "ussr_sleeping_car_1928_dmg",
+        "nextRes": "ussr_sleeping_car_1928_dmg_snow",
         "physRes": "ussr_sleeping_car_1928_destr_phobj",
         "hp": 180.0,
+        "impulseThreshold": 3.0,
+        "dmPreset": "metal_props",
+        "fx": "ad_wood_metal_snow_big",
+        "fxScale": 1.5
+      },
+      "ussr_sleeping_car_1928_dmg_snow": {
+        "nextRes": "ussr_sleeping_car_1928_dmg_02",
+        "physRes": "ussr_sleeping_car_1928_dmg_destr_phobj",
+        "hp": 150.0,
         "impulseThreshold": 3.0,
         "dmPreset": "metal_props",
         "fx": "ad_wood_metal_snow_big",

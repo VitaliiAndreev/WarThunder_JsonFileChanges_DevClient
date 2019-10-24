@@ -13,10 +13,13 @@
       "caliber": 0.13
     },
     {
-      "length": 2.1
+      "length": 2.75
     },
     {
-      "explosiveMass": 2.82
+      "explosiveType": "hta"
+    },
+    {
+      "explosiveMass": 4.3
     },
     {
       "distFromCmToStab": 0.01
@@ -28,7 +31,7 @@
       "operated": true
     },
     {
-      "operatedDist": 6000.0
+      "operatedDist": 10000.0
     },
     {
       "autoAiming": true
@@ -40,7 +43,13 @@
       "aimSensitivity": 20.0
     },
     {
+      "autoAimingMaxAngle": 10.0
+    },
+    {
       "WdK": [0.1,0.1,0.1]
+    },
+    {
+      "hasProximityFuse": true
     },
     {
       "explosionEffect": "atgm_hit"
@@ -70,13 +79,13 @@
       "maxDeltaAngle": 0.02
     },
     {
-      "maxDistance": 6000.0
+      "maxDistance": 10000.0
     },
     {
       "minDistance": 30.0
     },
     {
-      "mass": 49.5
+      "mass": 47.0
     },
     {
       "massEnd": 7.0
@@ -178,10 +187,10 @@
       "startSpeed": 55.0
     },
     {
-      "endSpeed": 450.0
+      "endSpeed": 500.0
     },
     {
-      "maxSpeed": 550.0
+      "maxSpeed": 600.0
     },
     {
       "speedViscosity": 0.15
@@ -223,6 +232,119 @@
       "aiAccelPrediction": 0.5
     },
     {
+      "damage": {
+        "shatter": [
+          {
+            "useRealShatters": true
+          },
+          {
+            "countPortion": 0.15
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.5,
+              "damageScale": 1.5,
+              "angles": [0.0,9.0],
+              "countPortion": 0.1
+            }
+          },
+          {
+            "segment": {
+              "angles": [10.0,29.0],
+              "countPortion": 0.0
+            }
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.0,
+              "damageScale": 1.0,
+              "angles": [30.0,124.0],
+              "countPortion": 0.35
+            }
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.5,
+              "damageScale": 1.5,
+              "angles": [45.0,70.0],
+              "countPortion": 0.05
+            }
+          },
+          {
+            "segment": {
+              "angles": [125.0,169.0],
+              "countPortion": 0.0
+            }
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.0,
+              "damageScale": 1.0,
+              "angles": [170.0,189.0],
+              "countPortion": 0.1
+            }
+          },
+          {
+            "segment": {
+              "angles": [190.0,234.0],
+              "countPortion": 0.0
+            }
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.0,
+              "damageScale": 1.0,
+              "angles": [235.0,329.0],
+              "countPortion": 0.35
+            }
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.5,
+              "damageScale": 1.5,
+              "angles": [290.0,315.0],
+              "countPortion": 0.05
+            }
+          },
+          {
+            "segment": {
+              "angles": [330.0,349.0],
+              "countPortion": 0.0
+            }
+          },
+          {
+            "segment": {
+              "radiusScale": 1.0,
+              "penetrationScale": 1.5,
+              "damageScale": 1.5,
+              "angles": [350.0,359.0],
+              "countPortion": 0.1
+            }
+          }
+        ],
+        "explosive": {
+          "radius": 0.15,
+          "offset": 0.9
+        }
+      }
+    },
+    {
+      "proximityFuse": {
+        "radius": 4.0,
+        "armDistance": 300.0,
+        "detectAirUnits": true,
+        "detectGroundUnits": false,
+        "detectGround": false,
+        "minimalAltitude": 25.0
+      }
+    },
+    {
       "collisions": {
         "steel": {
           "fx": "atgm_hit",
@@ -253,7 +375,7 @@
     },
     {
       "cumulativeDamage": {
-        "armorPower": 800.0,
+        "armorPower": 1000.0,
         "distance": 5.0,
         "damage": 500.0,
         "onHitChanceMultFire": 15.0

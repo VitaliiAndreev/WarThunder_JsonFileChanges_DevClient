@@ -112,7 +112,7 @@
   "timeToReturnToMap": 10.0,
   "landingTimeAfterSpawnToBailout": 3600.0,
   "spawnInAirOffset": 0.0,
-  "maxAirfieldLiftStepCount": 20,
+  "maxAirfieldLiftStepCount": 40,
   "maxTimeToReturnToMapForTanks": 25.0,
   "killDistFromBattleAreaForTanks": 20.0,
   "maxTimeToReturnToMapForShips": 90.0,
@@ -137,6 +137,7 @@
   "criticalOffenderMetricsDiffMin": 0.3,
   "leaveKillerSearchDistanceMax": 3000.0,
   "airfieldSafeLeaveZoneRadius": -1.0,
+  "showDamageReport": false,
   "damageReportTimeOut": 1.0,
   "showFireDamageReport": true,
   "showDelayedDamageReport": true,
@@ -1503,7 +1504,7 @@
       "baseDifficulty": 0,
       "engineControl": 0,
       "respDifficulty": 0,
-      "realGunnery": false,
+      "realGunnery": 0,
       "realDamageModels": false,
       "stallsAndSpins": false,
       "redOuts": true,
@@ -1511,7 +1512,7 @@
       "manualTrimming": false,
       "torqueAndGyro": false,
       "limitedBombsMissiles": false,
-      "noArcadeBoost": false,
+      "noArcadeBoost": 0,
       "limitViews": 0,
       "flutter": false,
       "hudAimPrediction": true,
@@ -1561,7 +1562,7 @@
       "baseDifficulty": 1,
       "engineControl": 1,
       "respDifficulty": 1,
-      "realGunnery": true,
+      "realGunnery": 1,
       "realDamageModels": true,
       "stallsAndSpins": true,
       "redOuts": true,
@@ -1569,7 +1570,7 @@
       "manualTrimming": false,
       "torqueAndGyro": false,
       "limitedBombsMissiles": true,
-      "noArcadeBoost": true,
+      "noArcadeBoost": 1,
       "limitViews": 0,
       "flutter": true,
       "hudAimPrediction": false,
@@ -1619,7 +1620,7 @@
       "baseDifficulty": 2,
       "engineControl": 2,
       "respDifficulty": 2,
-      "realGunnery": true,
+      "realGunnery": 1,
       "realDamageModels": true,
       "stallsAndSpins": true,
       "redOuts": true,
@@ -1627,7 +1628,7 @@
       "manualTrimming": true,
       "torqueAndGyro": true,
       "limitedBombsMissiles": true,
-      "noArcadeBoost": true,
+      "noArcadeBoost": 1,
       "limitViews": 2,
       "flutter": true,
       "hudAimPrediction": false,
@@ -1674,20 +1675,20 @@
   "difficulty_check": {
     "arcade": {
       "engineControl": 0,
-      "realGunnery": false,
+      "realGunnery": 0,
       "realDamageModels": false,
       "stallsAndSpins": false,
-      "noArcadeBoost": false,
+      "noArcadeBoost": 0,
       "aircraftHelpers": true,
       "flutter": false
     },
     "hardcore": {
       "engineControl": 2,
-      "realGunnery": true,
+      "realGunnery": 1,
       "realDamageModels": true,
       "stallsAndSpins": true,
       "redOuts": true,
-      "noArcadeBoost": true,
+      "noArcadeBoost": 1,
       "hudAimPrediction": false,
       "hudMarkerArrows": false,
       "hudRadar": false,
@@ -1756,7 +1757,10 @@
         "hudDrawBombingZoneThroughCloud": true,
         "shipBrokenRangefinderErrorMult": 2.0,
         "blockCooldownAfterEarlyAttemptToAirstreak": 10.0,
-        "repairWithoutToolkitAutomatically": true
+        "repairWithoutToolkitAutomatically": true,
+        "HeliFlutter_Effect": true,
+        "UseGunDirForATMG": false,
+        "autoSightDistanceCorrection": false
       },
       "medium": {
         "scoutPreset": "realistic",
@@ -1816,7 +1820,10 @@
         "shipBrokenRangefinderErrorMult": 2.0,
         "blockCooldownAfterEarlyAttemptToAirstreak": 10.0,
         "multTorpedoDistanceIndicator": 0.125,
-        "repairWithoutToolkitAutomatically": false
+        "repairWithoutToolkitAutomatically": false,
+        "HeliFlutter_Effect": true,
+        "UseGunDirForATMG": false,
+        "autoSightDistanceCorrection": false
       },
       "hard": {
         "scoutPreset": "hard",
@@ -1874,7 +1881,10 @@
         "radioGunnerRadioDistanceMult": 2.0,
         "hudDrawBombingZoneThroughCloud": true,
         "shipBrokenRangefinderErrorMult": 2.0,
-        "blockCooldownAfterEarlyAttemptToAirstreak": 10.0
+        "blockCooldownAfterEarlyAttemptToAirstreak": 10.0,
+        "HeliFlutter_Effect": true,
+        "UseGunDirForATMG": false,
+        "autoSightDistanceCorrection": false
       }
     },
     "engineControl": {
@@ -2084,6 +2094,31 @@
         "shellLoadingTimeMult": 1.0,
         "arcadeTurnPowerMult": 1.2,
         "tankTurretPitchInc": 0.0
+      },
+      "worldwar": {
+        "arcadeBoost": false,
+        "wepOverspeed": 1.0,
+        "maxSpeedMultiplier": 1.0,
+        "arcadePowerMult": 1.0,
+        "arcadeTurretBoostHorz": 1.0,
+        "arcadeTurretBoostVert": 1.0,
+        "tankTurretHorzSpeedAccel": 2.0,
+        "tankTurretVertSpeedAccel": 2.0,
+        "modificationsEffect": 0.6,
+        "wholeModificationsEffect": 1.0,
+        "enableNegativeModifications": false,
+        "shellLoadingTimeMult": 1.0,
+        "arcadeTurnPowerMult": 1.2,
+        "tankTurretPitchInc": 0.0,
+        "shipRudderAreaMult": 1.1,
+        "shipRudderDeflectionMult": 1.1,
+        "shipThrustMultShip": 1.0,
+        "shipThrustMultTorpedoBoat": 1.2,
+        "shipThrustMultGunBoat": 1.15,
+        "shipThrustMultTorpedoGunBoat": 1.2,
+        "shipThrustMultSubmarineChaser": 1.3,
+        "shipThrustMultDestroyer": 1.05,
+        "shipThrustMultFerryBarge": 1.3
       }
     },
     "manualTrimming": {
@@ -2206,6 +2241,41 @@
         "bulletDeltaMultiplierTankVert": 1.0,
         "autoLevelingViscosity": -1.0,
         "autoTargettingViscosity": -1.0,
+        "missileSeekerTrackerIndication": true,
+        "hydraAutoaimAngle": 0.0,
+        "hydraAutoaimMinDist": 500.0,
+        "hydraAutoaimMaxDist": 900.0,
+        "gunnerAutoaimAngle": 1.0,
+        "gunnerAutoaimMinDist": 700.0,
+        "gunnerAutoaimMaxDist": 1200.0,
+        "rearmAfterRespawnGun": true,
+        "rearmAfterRespawnHydra": true,
+        "rearmAfterRespawnHellfire": false,
+        "rearmAfterRespawnStinger": false,
+        "rearmAfterRespawnChaff": true,
+        "rearmAfterRespawnFlare": true,
+        "gunVerticalConvergenceAllowed": true
+      },
+      "worldwar": {
+        "Realistic_Gunnery": true,
+        "Realistic_Ballistic": true,
+        "autoAim": false,
+        "realisticBombing": true,
+        "bulletSpeedMultiplier": 1.0,
+        "bulletGMultiplier": 1.0,
+        "bulletWindageMultiplier": 1.0,
+        "bulletKineticEnergyMultiplier": 1.0,
+        "turretMaxAutoAimDist": 580.0,
+        "turretMaxAutoAimAngle": 4.0,
+        "bulletDeltaMultiplier": 1.0,
+        "bulletDeltaMultiplierVert": 1.0,
+        "bulletDeltaMultiplierAir": 1.0,
+        "bulletDeltaMultiplierAirVert": 1.0,
+        "bulletDeltaMultiplierTank": 1.0,
+        "bulletDeltaMultiplierTankVert": 1.0,
+        "autoLevelingViscosity": -1.0,
+        "autoTargettingViscosity": -1.0,
+        "torpedoSpeedMult": 3.0,
         "missileSeekerTrackerIndication": true,
         "hydraAutoaimAngle": 0.0,
         "hydraAutoaimMinDist": 500.0,
@@ -2689,10 +2759,20 @@
         "bombShatterDamageScaleForAircraft": [1.0,1.0,1.0],
         "crashDamagePlayers": false,
         "crashDamageBots": true,
-        "shipBrokenFunnelMaxRedynessMult": 0.6,
+        "simulateBattery": false,
+        "shipBrokenFunnelMaxRedynessMult": 0.85,
+        "shipBrokenEngineRedynessMult": 0.5,
+        "shipBrokenEngineCooldown": 30.0,
+        "shipBrokenTransmissionCooldown": 30.0,
+        "shipBrokenRudderCooldownTimer": 10.0,
+        "shipBrokenRudderDeflectionMult": 0.85,
+        "shipBrokenRudderAreaMult": 0.85,
+        "shipBrokenHorTurretDriveJammedTime": [10.0,10.0,10.0],
+        "shipBrokenHorTurretDriveSpeedMult": 0.85,
+        "shipBrokenBarrelShotFreqMult": 1.2,
+        "shipBrokenBarrelDispersionMult": 1.05,
         "shipBrokenElevatorMult": 0.8,
-        "shipDamagedElevatorMult": 0.9,
-        "simulateBattery": false
+        "shipDamagedElevatorMult": 0.9
       },
       "realistic": {
         "brokenBarrelAllowShoot": true,
@@ -2720,10 +2800,20 @@
         "bombShatterDamageScaleForAircraft": [0.5,0.55,0.6],
         "crashDamagePlayers": true,
         "crashDamageBots": true,
-        "shipBrokenFunnelMaxRedynessMult": 0.6,
+        "simulateBattery": true,
+        "shipBrokenFunnelMaxRedynessMult": 0.85,
+        "shipBrokenEngineRedynessMult": 0.5,
+        "shipBrokenEngineCooldown": 30.0,
+        "shipBrokenTransmissionCooldown": 30.0,
+        "shipBrokenRudderCooldownTimer": 10.0,
+        "shipBrokenRudderDeflectionMult": 0.85,
+        "shipBrokenRudderAreaMult": 0.85,
+        "shipBrokenHorTurretDriveJammedTime": [10.0,10.0,10.0],
+        "shipBrokenHorTurretDriveSpeedMult": 0.85,
+        "shipBrokenBarrelShotFreqMult": 1.2,
+        "shipBrokenBarrelDispersionMult": 1.05,
         "shipBrokenElevatorMult": 0.8,
-        "shipDamagedElevatorMult": 0.9,
-        "simulateBattery": true
+        "shipDamagedElevatorMult": 0.9
       },
       "simulator": {
         "brokenBarrelAllowShoot": false,
@@ -5431,6 +5521,228 @@
       }
     },
     {
+      "ammunition_storage_04": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_05": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_06": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_07": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_08": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_09": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_10": {
+        "my": "ship_ammunition_storage",
+        "enemy": "ship_ammunition_storage"
+      }
+    },
+    {
+      "ammunition_storage_shells_01": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_02": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_03": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_04": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_05": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_06": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_07": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_08": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_09": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_shells_10": {
+        "my": "ship_ammunition_storage_shells",
+        "enemy": "ship_ammunition_storage_shells"
+      }
+    },
+    {
+      "ammunition_storage_charges_01": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_02": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_03": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_04": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_05": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_06": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_07": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_08": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_09": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_charges_10": {
+        "my": "ship_ammunition_storage_charges",
+        "enemy": "ship_ammunition_storage_charges"
+      }
+    },
+    {
+      "ammunition_storage_aux_01": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_02": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_03": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_04": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_05": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_06": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_07": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_08": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_09": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
+      "ammunition_storage_aux_10": {
+        "my": "ship_ammunition_storage_aux",
+        "enemy": "ship_ammunition_storage_aux"
+      }
+    },
+    {
       "ammo_turret": {
         "my": "tank_ammo",
         "enemy": "tank_ammo"
@@ -7019,12 +7331,6 @@
       },
       {
         "p": {
-          "name": "gun_mask_",
-          "unit": "ship"
-        }
-      },
-      {
-        "p": {
           "name": "depth_charge_0",
           "unit": "ship"
         }
@@ -7140,6 +7446,24 @@
       {
         "p": {
           "name": "ammunition_storage",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "ammunition_storage_shells",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "ammunition_storage_charges",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "ammunition_storage_aux",
           "unit": "ship"
         }
       },
@@ -8348,6 +8672,54 @@
           "name": "wheel_l_02_",
           "modelNames": "aubl_74_60_70m"
         }
+      },
+      {
+        "p": {
+          "name": "wheel_r_01_",
+          "modelNames": "ba_11"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_l_01_",
+          "modelNames": "ba_11"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_r_02_",
+          "modelNames": "ba_11"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_l_02_",
+          "modelNames": "ba_11"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_r_01_",
+          "modelNames": "amd_35"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_l_01_",
+          "modelNames": "amd_35"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_r_02_",
+          "modelNames": "amd_35"
+        }
+      },
+      {
+        "p": {
+          "name": "wheel_l_02_",
+          "modelNames": "amd_35"
+        }
       }
     ],
     "crew": [
@@ -8636,6 +9008,24 @@
       {
         "p": {
           "name": "ammunition_storage",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "ammunition_storage_shells",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "ammunition_storage_charges",
+          "unit": "ship"
+        }
+      },
+      {
+        "p": {
+          "name": "ammunition_storage_aux",
           "unit": "ship"
         }
       },

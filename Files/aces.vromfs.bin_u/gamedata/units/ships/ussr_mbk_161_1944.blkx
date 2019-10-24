@@ -93,12 +93,98 @@
     "smokeScreenOffset": [-3.0,0.0,2.0]
   },
   {
-    "default_skin_tomoe": {
-      "replace_tex": {
-        "from": "flag_ussr_01_c*",
-        "to": "flag_ussr_01_c_tomoe*"
+    "default_skin_tomoe": [
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_china_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_01_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_02_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_uk_01_c*",
+          "to": "flag_uk_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_01_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_02_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_italy_01_c*",
+          "to": "flag_italy_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_01_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_02_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "germany_flag_decal*",
+          "to": "germany_harm_flag_decal*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_ger_ar196_c*",
+          "to": "airplane_ger_ar196_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e7k2_c*",
+          "to": "airplane_japan_e7k2_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e13a1_c*",
+          "to": "airplane_japan_e13a1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_usa_curtiss_sc_seahawk_c*",
+          "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
+        }
       }
-    }
+    ]
   },
   {
     "ikGunner": [
@@ -1601,6 +1687,7 @@
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_structural_steel",
         "armorThickness": 5.0,
+        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 700.0
         },
@@ -1760,21 +1847,6 @@
         "ex_armor_05_dm": {
           "hp": 250.0
         },
-        "armor_belt_01_dm": {
-          "armorClass": "ship_RHA",
-          "armorThickness": 12.0,
-          "hp": 1000.0
-        },
-        "armor_belt_02_dm": {
-          "armorClass": "ship_RHA",
-          "armorThickness": 52.0,
-          "hp": 1000.0
-        },
-        "armor_belt_03_dm": {
-          "armorClass": "ship_RHA",
-          "armorThickness": 18.0,
-          "hp": 1000.0
-        },
         "armor_cit_01_dm": {
           "armorClass": "ship_RHA",
           "armorThickness": 30.0,
@@ -1806,6 +1878,26 @@
           "hp": 250.0
         }
       },
+      "belt_armor": {
+        "armorClass": "ship_RHA",
+        "armorThickness": 15.0,
+        "hidableInViewer": true,
+        "armor_belt_01_dm": {
+          "armorClass": "ship_RHA",
+          "armorThickness": 12.0,
+          "hp": 1000.0
+        },
+        "armor_belt_02_dm": {
+          "armorClass": "ship_RHA",
+          "armorThickness": 52.0,
+          "hp": 1000.0
+        },
+        "armor_belt_03_dm": {
+          "armorClass": "ship_RHA",
+          "armorThickness": 18.0,
+          "hp": 1000.0
+        }
+      },
       "turrets": {
         "fireParamsPreset": "ship_turrets",
         "armorClass": "ship_structural_steel",
@@ -1822,12 +1914,12 @@
         "turret_07_dm": {
           "hp": 250.0
         },
-        "turret_01_dm": {
+        "turret_01_side_dm": {
           "armorClass": "CHA_tank",
           "armorThickness": 53.0,
           "hp": 250.0
         },
-        "turret_02_dm": {
+        "turret_02_side_dm": {
           "armorClass": "CHA_tank",
           "armorThickness": 53.0,
           "hp": 250.0
@@ -2188,9 +2280,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -2312,9 +2401,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "main_caliber_gun_02_dm"
           },
           {
@@ -2426,7 +2512,7 @@
             "triggerGroup": "secondary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/45mm_21K_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/45mm_21km_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_03"
@@ -2436,9 +2522,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
@@ -2453,10 +2536,10 @@
             "defaultPitch": 0.0
           },
           {
-            "speedYaw": 45.0
+            "speedYaw": 15.0
           },
           {
-            "speedPitch": 45.0
+            "speedPitch": 15.0
           },
           {
             "bullets": 500
@@ -2552,7 +2635,7 @@
             "triggerGroup": "secondary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/45mm_21K_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/45mm_21km_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_07"
@@ -2562,9 +2645,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_03_dm"
@@ -2579,10 +2659,10 @@
             "defaultPitch": 0.0
           },
           {
-            "speedYaw": 45.0
+            "speedYaw": 15.0
           },
           {
-            "speedPitch": 45.0
+            "speedPitch": 15.0
           },
           {
             "bullets": 500
@@ -2688,9 +2768,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
@@ -2839,9 +2916,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.0
-          },
-          {
             "barrelDP": "aa_gun_02_dm"
           },
           {
@@ -2983,9 +3057,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.0
           },
           {
             "barrelDP": "aa_gun_03_dm"

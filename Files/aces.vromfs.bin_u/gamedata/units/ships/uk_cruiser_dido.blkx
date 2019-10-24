@@ -114,12 +114,98 @@
     "depthTraceCriticalDepth": 5.3
   },
   {
-    "default_skin_tomoe": {
-      "replace_tex": {
-        "from": "flag_uk_01_c*",
-        "to": "flag_uk_01_c_tomoe*"
+    "default_skin_tomoe": [
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_china_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_01_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_usa_02_c*",
+          "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_uk_01_c*",
+          "to": "flag_uk_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_01_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_02_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_italy_01_c*",
+          "to": "flag_italy_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_01_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_02_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "germany_flag_decal*",
+          "to": "germany_harm_flag_decal*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_ger_ar196_c*",
+          "to": "airplane_ger_ar196_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e7k2_c*",
+          "to": "airplane_japan_e7k2_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e13a1_c*",
+          "to": "airplane_japan_e13a1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_usa_curtiss_sc_seahawk_c*",
+          "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
+        }
       }
-    }
+    ]
   },
   {
     "ikGunner": [
@@ -1262,14 +1348,15 @@
       },
       "hull_construction": {
         "stopChanceOnDeadPart": 0.3,
-        "shatterArmorQuality": 0.5,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 10.0,
+        "armorThickness": 56.4,
         "stern_bottom_dm": {
-          "hp": 10000.0
+          "explosionArmorQuality": 10.0,
+          "hp": 20000.0
         },
         "mid_bottom_dm": {
-          "hp": 10000.0
+          "explosionArmorQuality": 10.0,
+          "hp": 20000.0
         }
       },
       "bulges": {
@@ -1278,54 +1365,55 @@
         "shatterDamageMult": 0.3,
         "explosionDamageMult": 0.6,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 20.0
+        "armorThickness": 20.0,
+        "hidableInViewer": true
       },
       "bulkheads": {
-        "stopChanceOnDeadPart": 0.3,
-        "shatterArmorQuality": 0.5,
+        "stopChanceOnDeadPart": 0.5,
+        "shatterArmorQuality": 1.0,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 10.0,
+        "armorThickness": 56.4,
         "bulkhead_01_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_02_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_03_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_04_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_05_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_06_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_07_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_08_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_09_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_10_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_11_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_12_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_13_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         },
         "bulkhead_14_dm": {
-          "hp": 1000.0
+          "hp": 1500.0
         }
       },
       "masts": {
@@ -1464,17 +1552,6 @@
       "citadel_armor": {
         "armorClass": "ship_RHA",
         "armorThickness": 25.0,
-        "armor_belt_01_dm": {
-          "armorThickness": 75.0,
-          "hp": 3545.0
-        },
-        "armor_belt_02_dm": {
-          "hp": 1500.0
-        },
-        "armor_belt_03_dm": {
-          "armorThickness": 51.0,
-          "hp": 1500.0
-        },
         "armor_cit_01_dm": {
           "armorClass": "ship_structural_steel",
           "hp": 2332.0
@@ -1484,6 +1561,22 @@
           "hp": 2113.0
         },
         "armor_cit_03_dm": {
+          "hp": 1500.0
+        }
+      },
+      "belt_armor": {
+        "armorClass": "ship_RHA",
+        "armorThickness": 25.0,
+        "hidableInViewer": true,
+        "armor_belt_01_dm": {
+          "armorThickness": 75.0,
+          "hp": 3545.0
+        },
+        "armor_belt_02_dm": {
+          "hp": 1500.0
+        },
+        "armor_belt_03_dm": {
+          "armorThickness": 51.0,
           "hp": 1500.0
         }
       },
@@ -2762,9 +2855,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.6
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -2912,9 +3002,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.6
-          },
-          {
             "barrelDP": "main_caliber_gun_02_dm"
           },
           {
@@ -3055,9 +3142,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.6
           },
           {
             "barrelDP": "main_caliber_gun_03_dm"
@@ -3207,9 +3291,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.6
-          },
-          {
             "barrelDP": "main_caliber_gun_04_dm"
           },
           {
@@ -3350,9 +3431,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.6
           },
           {
             "barrelDP": "main_caliber_gun_05_dm"
@@ -3502,9 +3580,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.6
-          },
-          {
             "barrelDP": "main_caliber_gun_06_dm"
           },
           {
@@ -3645,9 +3720,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.6
           },
           {
             "barrelDP": "main_caliber_gun_07_dm"
@@ -3795,9 +3867,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.6
-          },
-          {
             "barrelDP": "main_caliber_gun_08_dm"
           },
           {
@@ -3936,9 +4005,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.6
           },
           {
             "barrelDP": "main_caliber_gun_09_dm"
@@ -4081,9 +4147,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.6
           },
           {
             "barrelDP": "main_caliber_gun_10_dm"
@@ -4229,9 +4292,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.16
           },
           {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
@@ -4388,9 +4448,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.16
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
           },
           {
@@ -4538,9 +4595,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.16
           },
           {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
@@ -4692,9 +4746,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.16
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
           },
           {
@@ -4842,9 +4893,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.16
           },
           {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
@@ -5001,9 +5049,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.16
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
           },
           {
@@ -5151,9 +5196,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.16
           },
           {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
@@ -5305,9 +5347,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.16
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
           },
           {
@@ -5455,9 +5494,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.15
           },
           {
             "barrelDP": "aa_gun_01_dm"
@@ -5613,9 +5649,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_02_dm"
           },
           {
@@ -5767,9 +5800,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.15
           },
           {
             "barrelDP": "aa_gun_03_dm"
@@ -5930,9 +5960,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_04_dm"
           },
           {
@@ -6089,9 +6116,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.15
           },
           {
             "barrelDP": "aa_gun_05_dm"

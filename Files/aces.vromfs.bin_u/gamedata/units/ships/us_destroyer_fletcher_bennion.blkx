@@ -114,6 +114,18 @@
     "default_skin_tomoe": [
       {
         "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_china_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
           "from": "flag_usa_01_c*",
           "to": "flag_usa_01_c_tomoe*"
         }
@@ -122,6 +134,72 @@
         "replace_tex": {
           "from": "flag_usa_02_c*",
           "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_uk_01_c*",
+          "to": "flag_uk_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_01_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_02_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_italy_01_c*",
+          "to": "flag_italy_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_01_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_02_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "germany_flag_decal*",
+          "to": "germany_harm_flag_decal*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_ger_ar196_c*",
+          "to": "airplane_ger_ar196_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e7k2_c*",
+          "to": "airplane_japan_e7k2_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e13a1_c*",
+          "to": "airplane_japan_e13a1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_usa_curtiss_sc_seahawk_c*",
+          "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
         }
       }
     ]
@@ -698,6 +776,9 @@
         },
         {
           "part": "compartment_07_dm"
+        },
+        {
+          "part": "compartment_08_dm"
         },
         {
           "effect": {
@@ -3412,6 +3493,7 @@
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_structural_steel",
         "armorThickness": 23.0,
+        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 7000.0
         },
@@ -3647,6 +3729,17 @@
           "hp": 350.0
         }
       },
+      "belt_armor": {
+        "armorThickness": 15.0,
+        "stopChanceOnDeadPart": 1.0,
+        "armorClass": "ship_STS",
+        "hidableInViewer": true,
+        "armor_belt_01_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 13.0,
+          "hp": 2000.0
+        }
+      },
       "hull_armor": {
         "armorThickness": 15.0,
         "armorClass": "ship_structural_steel",
@@ -3718,11 +3811,6 @@
           "armorClass": "ship_STS",
           "armorThickness": 19.0,
           "hp": 376.0
-        },
-        "armor_belt_01_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 13.0,
-          "hp": 2000.0
         }
       },
       "turret_armor": {
@@ -4257,9 +4345,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -4404,9 +4489,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.9
           },
           {
             "barrelDP": "main_caliber_gun_02_dm"
@@ -4564,9 +4646,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_03_dm"
           },
           {
@@ -4713,9 +4792,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.9
           },
           {
             "barrelDP": "main_caliber_gun_04_dm"
@@ -4865,9 +4941,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_05_dm"
           },
           {
@@ -5014,9 +5087,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
@@ -5169,9 +5239,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_01_dm"
           },
           {
@@ -5315,9 +5382,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
@@ -5468,9 +5532,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_02_dm"
           },
           {
@@ -5612,9 +5673,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_03_dm"
@@ -5765,9 +5823,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_03_dm"
           },
           {
@@ -5909,9 +5964,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_04_dm"
@@ -6062,9 +6114,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_04_dm"
           },
           {
@@ -6206,9 +6255,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "auxiliary_caliber_gun_05_dm"
@@ -6359,9 +6405,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "auxiliary_caliber_gun_05_dm"
           },
           {
@@ -6508,9 +6551,6 @@
             "isBulletBelt": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "aa_gun_01_dm"
           },
           {
@@ -6655,9 +6695,6 @@
             "isBulletBelt": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "aa_gun_02_dm"
           },
           {
@@ -6800,9 +6837,6 @@
           },
           {
             "isBulletBelt": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "aa_gun_03_dm"
@@ -6957,9 +6991,6 @@
             "isBulletBelt": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "aa_gun_04_dm"
           },
           {
@@ -7110,9 +7141,6 @@
           },
           {
             "isBulletBelt": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "aa_gun_05_dm"
@@ -7266,9 +7294,6 @@
             "isBulletBelt": true
           },
           {
-            "recoilOffset": 0.3
-          },
-          {
             "barrelDP": "aa_gun_06_dm"
           },
           {
@@ -7418,9 +7443,6 @@
           },
           {
             "isBulletBelt": true
-          },
-          {
-            "recoilOffset": 0.3
           },
           {
             "barrelDP": "aa_gun_07_dm"
@@ -7605,7 +7627,7 @@
             "elevator": "elevator_01_dm",
             "dstrElevatorDisablesShooting": false,
             "ammo_turret_01_dm": {
-              "count": 50
+              "count": 25
             }
           }
         },
@@ -7619,7 +7641,7 @@
             "elevator": "elevator_01_dm",
             "dstrElevatorDisablesShooting": false,
             "ammunition_storage_01_dm": {
-              "count": 310
+              "count": 335
             }
           }
         }
@@ -7644,7 +7666,7 @@
             "elevator": "elevator_02_dm",
             "dstrElevatorDisablesShooting": false,
             "ammo_turret_02_dm": {
-              "count": 50
+              "count": 25
             }
           }
         },
@@ -7658,7 +7680,7 @@
             "elevator": "elevator_02_dm",
             "dstrElevatorDisablesShooting": false,
             "ammunition_storage_02_dm": {
-              "count": 310
+              "count": 335
             }
           }
         }
@@ -7711,7 +7733,7 @@
             "elevator": "elevator_03_dm",
             "dstrElevatorDisablesShooting": false,
             "ammo_turret_03_dm": {
-              "count": 50
+              "count": 25
             }
           }
         },
@@ -7725,7 +7747,7 @@
             "elevator": "elevator_03_dm",
             "dstrElevatorDisablesShooting": false,
             "ammunition_storage_04_dm": {
-              "count": 310
+              "count": 335
             }
           }
         }
@@ -7750,7 +7772,7 @@
             "elevator": "elevator_04_dm",
             "dstrElevatorDisablesShooting": false,
             "ammo_turret_04_dm": {
-              "count": 50
+              "count": 25
             }
           }
         },
@@ -7764,7 +7786,7 @@
             "elevator": "elevator_04_dm",
             "dstrElevatorDisablesShooting": false,
             "ammunition_storage_05_dm": {
-              "count": 310
+              "count": 335
             }
           }
         }
@@ -7789,7 +7811,7 @@
             "elevator": "elevator_04_dm",
             "dstrElevatorDisablesShooting": false,
             "ammo_turret_05_dm": {
-              "count": 50
+              "count": 25
             }
           }
         },
@@ -7803,7 +7825,7 @@
             "elevator": "elevator_04_dm",
             "dstrElevatorDisablesShooting": false,
             "ammunition_storage_06_dm": {
-              "count": 310
+              "count": 335
             }
           }
         }

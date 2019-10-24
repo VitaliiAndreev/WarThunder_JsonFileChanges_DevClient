@@ -798,6 +798,7 @@
   },
   "art_ground_splash": {
     "fx": "artillelry_he_hit_ground_composite",
+    "farPlane": 10000.0,
     "lifeTime": 0.0,
     "softnessDepth": 1.0,
     "granularity": 4,
@@ -812,6 +813,7 @@
   },
   "atgm_hit": {
     "fx": "atgm_hit_composite_fx",
+    "farPlane": 10000.0,
     "lifeTime": 0.0,
     "softnessDepth": 1.0,
     "granularity": 4,
@@ -826,6 +828,7 @@
   },
   "big_art_ground_splash": {
     "fx": "122_152_he_hit_ground_composite",
+    "farPlane": 10000.0,
     "lifeTime": 0.0,
     "softnessDepth": 1.0,
     "granularity": 4,
@@ -1305,6 +1308,7 @@
   "bomb_ground_explosion_small": {
     "fx": "bomb_small_expl_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "softnessDepth": 5.0,
     "minScale": 0.6,
     "maxScale": 1.9,
@@ -2047,8 +2051,9 @@
     "numReserved": 5,
     "sfxPath": "sounds/effects",
     "sfxPathStudio": "aircraft/effects",
-    "exhaustVelMult": 0.01,
-    "jetRpmToExhaustVel": 120.0
+    "exhaustVelMult": 0.012,
+    "jetRpmToExhaustVel": 300.0,
+    "jetSpeedToExhaustVel": 50.0
   },
   "jet_start_exhaust": {
     "fx": "jet_start_exhaust_fx",
@@ -2062,7 +2067,7 @@
     "sfxPathStudio": "aircraft/effects"
   },
   "jet_afterburner_exhaust": {
-    "fx": "jet_exhaust_fx",
+    "fx": "jet_afterburner_exhaust_fx",
     "lifeTime": 2.0,
     "nonPlayerFadeDistScale": 2.0,
     "playerFadeDistScale": 1.5,
@@ -2072,7 +2077,8 @@
     "sfxPath": "sounds/effects",
     "sfxPathStudio": "aircraft/effects",
     "exhaustVelMult": 0.03,
-    "jetAfterburnerRpmToExhaustVel": 300.0
+    "jetAfterburnerRpmToExhaustVel": 300.0,
+    "jetAfterburnerSpeedToExhaustVel": 50.0
   },
   "pony_exhaust": {
     "fx": "motor_exhaust_fx",
@@ -2246,13 +2252,14 @@
     "nonPlayerFadeDistScale": 3.0,
     "playerFadeDistScale": 1.5,
     "sortDistanceOffset": 20.0,
-    "onMoving": true,
     "minScale": 1.0,
     "maxScale": 1.0,
     "numInstances": 50,
     "numReserved": 5,
     "sfxPath": "sounds/effects",
-    "sfxPathStudio": "aircraft/effects"
+    "sfxPathStudio": "aircraft/effects",
+    "inversionTrailVelMult": 0.03,
+    "jetAfterburnerRpmToInversionTrailVel": 300.0
   },
   "aerobatics_smoke_wing_1": {
     "fx": "pilotage_trail_white_fx",
@@ -2903,6 +2910,7 @@
   "tank_explosion": {
     "fx": "pv_explosion_composite_fx",
     "numInstances": 50,
+    "farPlane": 10000.0,
     "numReserved": 8,
     "sfxPath": "tanks/explosions_tanks",
     "sfxPathStudio": "ground/explosions",
@@ -3235,6 +3243,7 @@
   "tank_engine_fire": {
     "fx": "pv_engine_fire_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "tanks/explosions_tanks",
@@ -3246,6 +3255,7 @@
   "tank_engine_smoke": {
     "fx": "pv_engine_smoke_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "sounds/effects",
@@ -3254,6 +3264,7 @@
   "tank_ammo_fire": {
     "fx": "pv_ammo_fire_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "tanks/explosions_tanks",
@@ -3264,6 +3275,7 @@
   "tank_fire_small": {
     "fx": "pv_fire_small_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "tanks/explosions_tanks",
@@ -3274,6 +3286,7 @@
   "tank_fire_big": {
     "fx": "pv_fire_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "tanks/explosions_tanks",
@@ -3284,6 +3297,7 @@
   "tank_smoke_small": {
     "fx": "pv_smoke_small_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "sounds/effects",
@@ -3292,6 +3306,7 @@
   "tank_smoke_big": {
     "fx": "pv_smoke_composite_fx",
     "lifeTime": 10.0,
+    "farPlane": 10000.0,
     "numInstances": 30,
     "numReserved": 3,
     "sfxPath": "sounds/effects",
@@ -3933,6 +3948,7 @@
   "ground_model_fire": {
     "fx": "gm_fire_fx",
     "lifeTime": 1800.0,
+    "farPlane": 10000.0,
     "softnessDepth": 5.0,
     "sortDistanceOffset": 0.0,
     "numInstances": 60,
@@ -4047,6 +4063,13 @@
     "sfxPath": "sounds/effects",
     "sfxPathStudio": "aircraft/effects"
   },
+  "jump": {
+    "fx": "jump_composite_fx",
+    "numInstances": 50,
+    "numReserved": 8,
+    "sfxPath": "sounds/effects",
+    "sfxPathStudio": "aircraft/effects"
+  },
   "object_ground_explosion": {
     "fx": "grnd_expl_composite_fx",
     "lifeTime": 4.0,
@@ -4153,6 +4176,7 @@
   },
   "ground_model_hit": {
     "fx": "HitPieces_fx",
+    "farPlane": 10000.0,
     "numInstances": 12,
     "numReserved": 0,
     "sfxPath": "sounds/effects",

@@ -114,6 +114,18 @@
     "default_skin_tomoe": [
       {
         "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_china_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
           "from": "flag_usa_01_c*",
           "to": "flag_usa_01_c_tomoe*"
         }
@@ -122,6 +134,72 @@
         "replace_tex": {
           "from": "flag_usa_02_c*",
           "to": "flag_usa_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_uk_01_c*",
+          "to": "flag_uk_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_01_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_japan_02_c*",
+          "to": "flag_japan_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_italy_01_c*",
+          "to": "flag_italy_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_01_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_germany_02_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "germany_flag_decal*",
+          "to": "germany_harm_flag_decal*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_ger_ar196_c*",
+          "to": "airplane_ger_ar196_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e7k2_c*",
+          "to": "airplane_japan_e7k2_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_japan_e13a1_c*",
+          "to": "airplane_japan_e13a1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_usa_curtiss_sc_seahawk_c*",
+          "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
         }
       }
     ]
@@ -1697,6 +1775,7 @@
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_structural_steel",
         "armorThickness": 23.0,
+        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 7000.0
         },
@@ -1907,6 +1986,12 @@
         "pump_02_dm": {
           "hp": 350.0
         }
+      },
+      "belt_armor": {
+        "armorThickness": 15.0,
+        "stopChanceOnDeadPart": 1.0,
+        "armorClass": "ship_STS",
+        "hidableInViewer": true
       },
       "hull_armor": {
         "armorThickness": 15.0,
@@ -2977,9 +3062,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_01_dm"
           },
           {
@@ -3136,9 +3218,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_02_dm"
           },
           {
@@ -3292,9 +3371,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.9
-          },
-          {
             "barrelDP": "main_caliber_gun_03_dm"
           },
           {
@@ -3444,9 +3520,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.9
           },
           {
             "barrelDP": "main_caliber_gun_04_dm"
@@ -3600,9 +3673,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_01_dm"
           },
           {
@@ -3749,9 +3819,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.15
           },
           {
             "barrelDP": "aa_gun_02_dm"
@@ -3902,9 +3969,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_03_dm"
           },
           {
@@ -4053,9 +4117,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_04_dm"
           },
           {
@@ -4202,9 +4263,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.15
           },
           {
             "barrelDP": "aa_gun_05_dm"
@@ -4358,9 +4416,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_06_dm"
           },
           {
@@ -4512,9 +4567,6 @@
             "useEmitter": true
           },
           {
-            "recoilOffset": 0.15
-          },
-          {
             "barrelDP": "aa_gun_07_dm"
           },
           {
@@ -4664,9 +4716,6 @@
           },
           {
             "useEmitter": true
-          },
-          {
-            "recoilOffset": 0.15
           },
           {
             "barrelDP": "aa_gun_08_dm"
@@ -5553,168 +5602,162 @@
     }
   },
   {
-    "ammoStowages": [
-      {
-        "ammo1": [
-          {
-            "weaponTrigger": "gunner0"
-          },
-          {
-            "weaponTrigger": "gunner1"
-          },
-          {
-            "replenishmentDelay": 3.0
-          },
-          {
-            "replenishmentTime": 3.0
-          },
-          {
-            "removeLoadedAmmo": true
-          },
-          {
-            "shells": {
-              "firstStage": true,
-              "fatalFire": false,
-              "fatalExplosion": false,
-              "explosionEvent": "ammo_explosion_1",
-              "fireEvent": "ammo_fire_1",
-              "elevator": "elevator_01_dm",
-              "dstrElevatorDisablesShooting": false,
-              "ammo_turret_01_dm": {
-                "count": 40
-              }
-            }
-          },
-          {
-            "shells": {
-              "reloadTimeMult": 1.25,
-              "fatalFire": false,
-              "fatalExplosion": true,
-              "explosionEvent": "ammo_explosion_1",
-              "fireEvent": "ammo_fire_1",
-              "elevator": "elevator_01_dm",
-              "dstrElevatorDisablesShooting": false,
-              "ammunition_storage_01_dm": {
-                "count": 560
-              }
-            }
-          },
-          {
-            "charges": {
-              "reloadTimeMult": 1.25,
-              "fatalFire": false,
-              "explosionEvent": "ammo_explosion_1",
-              "fireEvent": "ammo_fire_1",
-              "elevator": "elevator_01_dm",
-              "dstrElevatorDisablesShooting": false,
-              "ammunition_storage_02_dm": {
-                "count": 600
-              }
+    "ammoStowages": {
+      "ammo1": [
+        {
+          "weaponTrigger": "gunner0"
+        },
+        {
+          "weaponTrigger": "gunner1"
+        },
+        {
+          "replenishmentDelay": 3.0
+        },
+        {
+          "replenishmentTime": 3.0
+        },
+        {
+          "removeLoadedAmmo": true
+        },
+        {
+          "shells": {
+            "firstStage": true,
+            "fatalFire": false,
+            "fatalExplosion": false,
+            "explosionEvent": "ammo_explosion_1",
+            "fireEvent": "ammo_fire_1",
+            "elevator": "elevator_01_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammo_turret_01_dm": {
+              "count": 40
             }
           }
-        ]
-      },
-      {
-        "ammo2": [
-          {
-            "weaponTrigger": "gunner2"
-          },
-          {
-            "weaponTrigger": "gunner3"
-          },
-          {
-            "replenishmentDelay": 3.0
-          },
-          {
-            "replenishmentTime": 3.0
-          },
-          {
-            "removeLoadedAmmo": true
-          },
-          {
-            "shells": {
-              "firstStage": true,
-              "fatalFire": false,
-              "fatalExplosion": false,
-              "explosionEvent": "ammo_explosion_2",
-              "fireEvent": "ammo_fire_2",
-              "elevator": "elevator_02_dm",
-              "dstrElevatorDisablesShooting": false,
-              "ammo_turret_02_dm": {
-                "count": 40
-              }
-            }
-          },
-          {
-            "shells": {
-              "reloadTimeMult": 1.25,
-              "fatalFire": false,
-              "fatalExplosion": true,
-              "explosionEvent": "ammo_explosion_2",
-              "fireEvent": "ammo_fire_2",
-              "elevator": "elevator_02_dm",
-              "dstrElevatorDisablesShooting": false,
-              "ammunition_storage_03_dm": {
-                "count": 560
-              }
-            }
-          },
-          {
-            "charges": {
-              "reloadTimeMult": 1.25,
-              "fatalFire": false,
-              "explosionEvent": "ammo_explosion_2",
-              "fireEvent": "ammo_fire_2",
-              "elevator": "elevator_02_dm",
-              "dstrElevatorDisablesShooting": false,
-              "ammunition_storage_04_dm": {
-                "count": 600
-              }
+        },
+        {
+          "shells": {
+            "reloadTimeMult": 1.25,
+            "fatalFire": false,
+            "fatalExplosion": true,
+            "explosionEvent": "ammo_explosion_1",
+            "fireEvent": "ammo_fire_1",
+            "elevator": "elevator_01_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammunition_storage_01_dm": {
+              "count": 560
             }
           }
-        ]
-      },
-      {
-        "ammo2": [
-          {
-            "weaponTrigger": "gunner4"
-          },
-          {
-            "weaponTrigger": "gunner5"
-          },
-          {
-            "weaponTrigger": "gunner6"
-          },
-          {
-            "weaponTrigger": "gunner7"
-          },
-          {
-            "weaponTrigger": "gunner8"
-          },
-          {
-            "weaponTrigger": "gunner9"
-          },
-          {
-            "weaponTrigger": "gunner10"
-          },
-          {
-            "weaponTrigger": "gunner11"
-          },
-          {
-            "shells": {
-              "fatalFire": true,
-              "fatalExplosion": true,
-              "explosionEvent": "ammo_explosion_1",
-              "fireEvent": "ammo_fire_1",
-              "wreckedPartId": 2,
-              "ammunition_storage_05_dm": {
-                "count": 16320
-              }
+        },
+        {
+          "charges": {
+            "reloadTimeMult": 1.25,
+            "fatalFire": false,
+            "explosionEvent": "ammo_explosion_1",
+            "fireEvent": "ammo_fire_1",
+            "elevator": "elevator_01_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammunition_storage_02_dm": {
+              "count": 600
             }
           }
-        ]
-      }
-    ]
+        }
+      ],
+      "ammo2": [
+        {
+          "weaponTrigger": "gunner2"
+        },
+        {
+          "weaponTrigger": "gunner3"
+        },
+        {
+          "replenishmentDelay": 3.0
+        },
+        {
+          "replenishmentTime": 3.0
+        },
+        {
+          "removeLoadedAmmo": true
+        },
+        {
+          "shells": {
+            "firstStage": true,
+            "fatalFire": false,
+            "fatalExplosion": false,
+            "explosionEvent": "ammo_explosion_2",
+            "fireEvent": "ammo_fire_2",
+            "elevator": "elevator_02_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammo_turret_02_dm": {
+              "count": 40
+            }
+          }
+        },
+        {
+          "shells": {
+            "reloadTimeMult": 1.25,
+            "fatalFire": false,
+            "fatalExplosion": true,
+            "explosionEvent": "ammo_explosion_2",
+            "fireEvent": "ammo_fire_2",
+            "elevator": "elevator_02_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammunition_storage_03_dm": {
+              "count": 560
+            }
+          }
+        },
+        {
+          "charges": {
+            "reloadTimeMult": 1.25,
+            "fatalFire": false,
+            "explosionEvent": "ammo_explosion_2",
+            "fireEvent": "ammo_fire_2",
+            "elevator": "elevator_02_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammunition_storage_04_dm": {
+              "count": 600
+            }
+          }
+        }
+      ],
+      "ammo3": [
+        {
+          "weaponTrigger": "gunner4"
+        },
+        {
+          "weaponTrigger": "gunner5"
+        },
+        {
+          "weaponTrigger": "gunner6"
+        },
+        {
+          "weaponTrigger": "gunner7"
+        },
+        {
+          "weaponTrigger": "gunner8"
+        },
+        {
+          "weaponTrigger": "gunner9"
+        },
+        {
+          "weaponTrigger": "gunner10"
+        },
+        {
+          "weaponTrigger": "gunner11"
+        },
+        {
+          "shells": {
+            "fatalFire": true,
+            "fatalExplosion": true,
+            "explosionEvent": "ammo_explosion_1",
+            "fireEvent": "ammo_fire_1",
+            "wreckedPartId": 2,
+            "ammunition_storage_05_dm": {
+              "count": 16320
+            }
+          }
+        }
+      ]
+    }
   },
   {
     "winch": {
