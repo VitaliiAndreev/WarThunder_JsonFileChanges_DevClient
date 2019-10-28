@@ -78,15 +78,6 @@
     "hasQualityModels": true
   },
   {
-    "customClassIco": "!#ui/gameuiskin#image_in_progress_ico"
-  },
-  {
-    "customImage": "!#ui/unitskin#image_in_progress"
-  },
-  {
-    "customTooltipImage": "ui/aircrafts/image_in_progress"
-  },
-  {
     "DamageParts": {
       "armor10": {
         "gun1_dm": {
@@ -2777,11 +2768,23 @@
             "yaw": [-180.0,180.0],
             "pitch": [-5.0,90.0]
           },
-          "limitsTable": {
-            "lim1": [-180.0,-21.0,0.0,90.0],
-            "lim2": [-21.0,21.0,-5.0,90.0],
-            "lim3": [21.0,180.0,0.0,90.0]
-          }
+          "limitsTable": [
+            {
+              "lim1": [-180.0,-21.0,0.0,90.0]
+            },
+            {
+              "lim1": [-21.0,-11.0,20.0,90.0]
+            },
+            {
+              "lim2": [-11.0,11.0,-5.0,90.0]
+            },
+            {
+              "lim3": [11.0,21.0,20.0,90.0]
+            },
+            {
+              "lim3": [21.0,180.0,0.0,90.0]
+            }
+          ]
         }
       }
     ]
@@ -2820,6 +2823,22 @@
           "name": "br_20_2x800kg_gp",
           "blk": "gameData/FlightModels/weaponPresets/br_20_2x800kg_gp.blk",
           "reqModification": "it800_mod"
+        }
+      }
+    ]
+  },
+  {
+    "default_skin_tomoe": [
+      {
+        "replace_tex": {
+          "from": "br_20m_m1_c*",
+          "to": "br_20m_m1_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "br_20m_m1_c_dmg*",
+          "to": "br_20m_m1_c_tomoe_dmg*"
         }
       }
     ]
@@ -2969,26 +2988,26 @@
   {
     "user_skin": [
       {
-        "name": "br_20_dr"
+        "name": "br_20m_m1"
       },
       {
         "replace_tex": {
-          "from": "br_20_dr_c*"
+          "from": "br_20m_m1_c*"
         }
       },
       {
         "replace_tex": {
-          "from": "br_20_dr_c_dmg*"
+          "from": "br_20m_m1_c_dmg*"
         }
       },
       {
         "replace_tex": {
-          "from": "br_20_dr_n*"
+          "from": "br_20m_m1_n*"
         }
       },
       {
         "replace_tex": {
-          "from": "br_20_dr_n_dmg*"
+          "from": "br_20m_m1_n_dmg*"
         }
       }
     ]

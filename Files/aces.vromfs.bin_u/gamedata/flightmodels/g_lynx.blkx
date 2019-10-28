@@ -1,6 +1,7 @@
 {
   "model": "g_lynx",
   "fmFile": "fm/g_lynx.blk",
+  "viewDistKInSight": 2.0,
   "MetaPartsBlk": "gameData/FlightModels/dm/metaparts/hellicopters_metaparts.blk",
   "gearSinkRangeLR": 0.001,
   "gearSinkRangeC": 0.001,
@@ -1139,11 +1140,18 @@
     "crosshairPreset": "test_crosshair",
     "angularLimits": [-60.0,60.0,-40.0,10.0]
   },
-  "sensors": {
-    "sensor": {
-      "blk": "gameData/sensors/us_an_apr_39.blk"
+  "sensors": [
+    {
+      "sensor": {
+        "blk": "gameData/sensors/us_an_apr_39.blk"
+      }
+    },
+    {
+      "sensor": {
+        "blk": "gameData/sensors/tv_tracker.blk"
+      }
     }
-  },
+  ],
   "helicopter": {
     "rotorBladeAnglesCoeffs": [0.3,0.5,0.5],
     "inclinedRotor": true

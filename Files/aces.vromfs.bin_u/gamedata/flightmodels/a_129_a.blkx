@@ -1,6 +1,7 @@
 {
   "model": "a_129_a",
   "fmFile": "fm/a_129_int.blk",
+  "viewDistKInSight": 2.0,
   "MetaPartsBlk": "gameData/FlightModels/dm/metaparts/hellicopters_metaparts.blk",
   "gearSinkRangeLR": 0.253,
   "gearSinkRangeC": 0.152,
@@ -1210,10 +1211,17 @@
       "oil_pressure2": [0.0,150.0],
       "oil_pressure3": [0.0,150.0]
     },
-    "multifunctionDisplays": [
-      {
-        "display": {
-          "textureArea": [0.0,0.5,0.5,1.0],
+    "multifunctionDisplays": {
+      "display": [
+        {
+          "textureArea": [0.0,0.5,0.5,1.0]
+        },
+        {
+          "page": {
+            "type": "target_tracking"
+          }
+        },
+        {
           "page": [
             {
               "type": "devices"
@@ -1334,26 +1342,14 @@
               }
             }
           ]
-        }
-      },
-      {
-        "display": [
-          {
-            "textureArea": [0.5,0.0,1.0,1.0]
-          },
-          {
-            "page": {
-              "type": "map"
-            }
-          },
-          {
-            "page": {
-              "type": "target_tracking"
-            }
+        },
+        {
+          "page": {
+            "type": "map"
           }
-        ]
-      }
-    ],
+        }
+      ]
+    },
     "parts_holes_dmg": {
       "part": "fuse"
     },
@@ -1371,11 +1367,6 @@
         "part": "engine4"
       }
     ]
-  },
-  "counterMeasures": {
-    "counterMeasure": {
-      "blk": "gameData/counterMeasures/l_166.blk"
-    }
   },
   "helicopter": {
     "rotorBladeAnglesCoeffs": [0.3,0.5,0.5],
@@ -1705,11 +1696,25 @@
       "tier": 3,
       "modClass": "weapon"
     },
+    "heli_counterMeasures": {
+      "turn_it_off": false,
+      "invertEnableLogic": false,
+      "tier": 1,
+      "group": "mi-24_EVU",
+      "effects": {
+        "counterMeasures": {
+          "counterMeasure": {
+            "blk": "gameData/counterMeasures/l_166.blk"
+          }
+        }
+      }
+    },
     "50cal_universal": [],
     "50cal_ground_targets": [],
     "50cal_tracers": [],
     "50cal_stealth": [],
     "bmg50_belt_pack": {
+      "prevModification": "heli_counterMeasures",
       "tier": 2
     },
     "bmg50_new_gun": {

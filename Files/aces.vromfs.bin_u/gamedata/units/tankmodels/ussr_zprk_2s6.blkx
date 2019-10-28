@@ -271,6 +271,7 @@
         "armorThickness": 15.0,
         "hp": 200.0,
         "antenna_target_location_dm": [],
+        "antenna_target_location_01_dm": [],
         "antenna_target_tagging_dm": []
       },
       "optics": {
@@ -305,22 +306,7 @@
           "armorThickness": 3.0,
           "hp": 20.0
         },
-        "optic_turret_07_dm": {
-          "armorThickness": 3.0,
-          "hp": 20.0
-        },
-        "optic_turret_08_dm": {
-          "armorThrough": 50.0,
-          "armorThickness": 20.0,
-          "hp": 20.0
-        },
         "optic_body_01_dm": {
-          "hp": 250.0
-        },
-        "optic_body_02_dm": {
-          "hp": 250.0
-        },
-        "optic_body_03_dm": {
           "hp": 250.0
         }
       },
@@ -1903,24 +1889,47 @@
           "errTargettingOn100kmph": 0.0,
           "errTargetting": 3.0,
           "errExplTime": 0.0,
-          "turret": {
-            "head": "bone_turret",
-            "gun": "bone_gun_01",
-            "barrel": "bone_gun_barrel_01",
-            "gunnerDm": "gunner_dm",
-            "verDriveDm": "drive_turret_v_dm",
-            "horDriveDm": "drive_turret_h_dm",
-            "selfDirectedPart": {
-              "node": "antenna_target_tagging_mount",
-              "limits": [-180.0,180.0],
-              "turnSpeed": 80.0
+          "turret": [
+            {
+              "head": "bone_turret"
             },
-            "linkedAnimPart": {
-              "verNode": "antenna_target_tagging",
-              "verLimits": [0.0,90.0],
-              "verOriginLimits": [-0.0,85.0]
+            {
+              "gun": "bone_gun_01"
+            },
+            {
+              "barrel": "bone_gun_barrel_01"
+            },
+            {
+              "gunnerDm": "gunner_dm"
+            },
+            {
+              "verDriveDm": "drive_turret_v_dm"
+            },
+            {
+              "horDriveDm": "drive_turret_h_dm"
+            },
+            {
+              "selfDirectedPart": {
+                "node": "antenna_target_tagging_mount",
+                "limits": [-180.0,180.0],
+                "turnSpeed": 80.0
+              }
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "antenna_target_tagging",
+                "verLimits": [0.0,90.0],
+                "verOriginLimits": [-0.0,85.0]
+              }
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "bone_camera_gunner",
+                "verLimits": [-180.0,180.0],
+                "verOriginLimits": [-180.0,180.0]
+              }
             }
-          },
+          ],
           "limits": {
             "yaw": [-180.0,180.0],
             "pitch": [-9.0,85.0]
@@ -2251,6 +2260,12 @@
             "node": "antenna_target_location_mount"
           },
           {
+            "node": "antenna_target_location_01"
+          },
+          {
+            "node": "antenna_target_location_mount_01"
+          },
+          {
             "node": "antenna_target_tagging"
           },
           {
@@ -2271,13 +2286,26 @@
   {
     "sensors": [
       {
-        "sensor": {
-          "blk": "gameData/sensors/su_1rl144_search.blk",
-          "turretIndex": 0,
-          "designationFromBody": true,
-          "designationTurretIndex": 0,
-          "dmPart": "antenna_target_location_dm"
-        }
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_1rl144_search.blk"
+          },
+          {
+            "turretIndex": 0
+          },
+          {
+            "designationFromBody": true
+          },
+          {
+            "designationTurretIndex": 0
+          },
+          {
+            "dmPart": "antenna_target_location_dm"
+          },
+          {
+            "dmPart": "antenna_target_location_01_dm"
+          }
+        ]
       },
       {
         "sensor": {

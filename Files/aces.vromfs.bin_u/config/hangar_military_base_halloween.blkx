@@ -78,7 +78,7 @@
     "weather": "clear"
   },
   {
-    "hqWeather": "good"
+    "hqWeather": "clear"
   },
   {
     "env": "night"
@@ -156,7 +156,8 @@
       "hangarPlace": "tank",
       "modelPos": [1806.49,58.9,-1099.33],
       "modelRotation": 75.8,
-      "unitOffset": [0.0,1.0,0.0]
+      "unitOffset": [0.0,1.0,0.0],
+      "cameraEllipsoidWeights": [0.3,0.0,0.0,0.9]
     }
   },
   {
@@ -178,6 +179,12 @@
       },
       {
         "unitOnWater": true
+      },
+      {
+        "cameraEllipsoidWeights": [0.1,0.0,0.0,0.6]
+      },
+      {
+        "cameraMinDistanceToModel": 10.0
       }
     ]
   },
@@ -2603,28 +2610,14 @@
   },
   {
     "env": {
-      "env": "19.30",
-      "weight": 0.3,
-      "compatibilityWeight": 0.5
-    }
-  },
-  {
-    "env": {
-      "env": "3",
-      "weight": 1.5,
-      "compatibilityWeight": 0.0
-    }
-  },
-  {
-    "env": {
-      "env": "3.30",
-      "weight": 0.7,
+      "env": "7.30",
+      "weight": 0.0,
       "compatibilityWeight": 1.0
     }
   },
   {
     "env": {
-      "env": "21",
+      "env": "23",
       "weight": 1.0,
       "compatibilityWeight": 0.0
     }
@@ -3002,6 +2995,168 @@
         },
         "end": {
           "nodeName": "wheel_r_01_dm",
+          "offset": [1.1,1.0,0.1]
+        }
+      }
+    }
+  },
+  {
+    "procCamera": {
+      "fov": 80.0,
+      "zNear": 0.05,
+      "time": 8.0,
+      "from": {
+        "start": {
+          "nodeName": "ex_armor_01_dm",
+          "offset": [0.0,1.0,-0.1]
+        },
+        "end": {
+          "nodeName": "ex_armor_01_dm",
+          "offset": [1.0,1.0,-0.1]
+        }
+      },
+      "to": {
+        "start": {
+          "nodeName": "ex_armor_01_dm",
+          "offset": [0.1,1.0,0.1]
+        },
+        "end": {
+          "nodeName": "ex_armor_01_dm",
+          "offset": [1.1,1.0,0.1]
+        }
+      }
+    }
+  },
+  {
+    "procCamera": {
+      "fov": 80.0,
+      "zNear": 0.05,
+      "time": 8.0,
+      "from": {
+        "start": {
+          "nodeName": "main_caliber_turret_01_dm",
+          "offset": [0.0,1.0,-0.1]
+        },
+        "end": {
+          "nodeName": "main_caliber_turret_01_dm",
+          "offset": [1.0,1.0,-0.1]
+        }
+      },
+      "to": {
+        "start": {
+          "nodeName": "main_caliber_turret_01_dm",
+          "offset": [0.1,1.0,0.1]
+        },
+        "end": {
+          "nodeName": "main_caliber_turret_01_dm",
+          "offset": [1.1,1.0,0.1]
+        }
+      }
+    }
+  },
+  {
+    "procCamera": {
+      "fov": 80.0,
+      "zNear": 0.05,
+      "time": 8.0,
+      "from": {
+        "start": {
+          "nodeName": "main_caliber_turret_02_dm",
+          "offset": [0.0,1.0,-0.1]
+        },
+        "end": {
+          "nodeName": "main_caliber_turret_02_dm",
+          "offset": [1.0,1.0,-0.1]
+        }
+      },
+      "to": {
+        "start": {
+          "nodeName": "main_caliber_turret_02_dm",
+          "offset": [0.1,1.0,0.1]
+        },
+        "end": {
+          "nodeName": "main_caliber_turret_02_dm",
+          "offset": [1.1,1.0,0.1]
+        }
+      }
+    }
+  },
+  {
+    "procCamera": {
+      "fov": 80.0,
+      "zNear": 0.05,
+      "time": 8.0,
+      "from": {
+        "start": {
+          "nodeName": "mast_01_dm",
+          "offset": [0.0,1.0,-0.1]
+        },
+        "end": {
+          "nodeName": "mast_01_dm",
+          "offset": [1.0,1.0,-0.1]
+        }
+      },
+      "to": {
+        "start": {
+          "nodeName": "mast_01_dm",
+          "offset": [0.1,1.0,0.1]
+        },
+        "end": {
+          "nodeName": "mast_01_dm",
+          "offset": [1.1,1.0,0.1]
+        }
+      }
+    }
+  },
+  {
+    "procCamera": {
+      "fov": 80.0,
+      "zNear": 0.05,
+      "time": 8.0,
+      "from": {
+        "start": {
+          "nodeName": "bone_torpedo_01",
+          "offset": [0.0,1.0,-0.1]
+        },
+        "end": {
+          "nodeName": "bone_torpedo_01",
+          "offset": [1.0,1.0,-0.1]
+        }
+      },
+      "to": {
+        "start": {
+          "nodeName": "bone_torpedo_01",
+          "offset": [0.1,1.0,0.1]
+        },
+        "end": {
+          "nodeName": "bone_torpedo_01",
+          "offset": [1.1,1.0,0.1]
+        }
+      }
+    }
+  },
+  {
+    "procCamera": {
+      "fov": 80.0,
+      "zNear": 0.05,
+      "time": 8.0,
+      "from": {
+        "start": {
+          "nodeName": "bone_flag_01",
+          "offset": [0.0,1.0,-0.1]
+        },
+        "end": {
+          "nodeName": "bone_flag_01",
+          "offset": [1.0,1.0,-0.1]
+        }
+      },
+      "to": {
+        "start": {
+          "nodeName": "bone_flag_01",
+          "offset": [0.1,1.0,0.1]
+        },
+        "end": {
+          "nodeName": "bone_flag_01",
           "offset": [1.1,1.0,0.1]
         }
       }

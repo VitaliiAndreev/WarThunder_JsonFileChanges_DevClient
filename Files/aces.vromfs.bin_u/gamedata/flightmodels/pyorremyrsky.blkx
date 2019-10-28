@@ -19,9 +19,6 @@
   "explosion_dmBlk": "gameData/FlightModels/DM/commonExplosion.blk",
   "fireParamsPreset": "600kph",
   "fightAiBehaviour": "fighter",
-  "customClassIco": "!#ui/gameuiskin#image_in_progress_ico",
-  "customImage": "!#ui/unitskin#image_in_progress",
-  "customTooltipImage": "ui/aircrafts/image_in_progress",
   "DamageParts": {
     "armor10": {
       "armor1_dm": {
@@ -131,6 +128,9 @@
       },
       "cover3_dm": {
         "hp": 19.5
+      },
+      "cover4_dm": {
+        "hp": 19.5
       }
     },
     "dural40": {
@@ -174,6 +174,9 @@
     },
     "steel_cooling_sys": {
       "oil1_dm": {
+        "hp": 17.5
+      },
+      "oil2_dm": {
         "hp": 17.5
       },
       "water1_dm": {
@@ -349,6 +352,11 @@
     {
       "part": {
         "name": "cover3_dm"
+      }
+    },
+    {
+      "part": {
+        "name": "cover4_dm"
       }
     },
     {
@@ -961,6 +969,17 @@
     {
       "part": {
         "name": "oil1_dm",
+        "onHit": {
+          "leak_oil": 0.95
+        },
+        "onKill": {
+          "leak_oil": 1.0
+        }
+      }
+    },
+    {
+      "part": {
+        "name": "oil2_dm",
         "onHit": {
           "leak_oil": 0.95
         },
@@ -1711,9 +1730,14 @@
       }
     }
   ],
+  "spawn_count": {
+    "numSpawnsPerBattleSimulation": 2,
+    "numSpawnsPerBattleArcade": 3,
+    "numSpawnsPerBattleHistorical": 1
+  },
   "ikPilot": [
     {
-      "model": "pilot_sweden_early_char"
+      "model": "pilot_german_char"
     },
     {
       "maxHeadHorAngle": 60.0
@@ -1781,153 +1805,57 @@
     "gun": "gun_bf"
   },
   "cockpit": {
-    "headPos": [-0.89,0.788,-0.027],
-    "headPosOnShooting": [-0.89,0.788,-0.027],
-    "headMoveLimitRight": 0.3,
-    "headMoveLimitUp": 0.7,
+    "headPos": [-0.95,0.75,0.0],
+    "headPosOnShooting": [-0.95,0.75,0.0],
+    "collimatorSize": 0.1,
     "lightPos": [-0.567458,0.554675,-0.266829],
     "lightColor": [0.62,0.3,0.21],
     "lightAttenuation": 15.0,
-    "devices": [
-      {
-        "pedals1": [-1.0,1.0]
-      },
-      {
-        "pedals2": [-1.0,1.0]
-      },
-      {
-        "pedals3": [-1.0,1.0]
-      },
-      {
-        "pedals4": [-1.0,1.0]
-      },
-      {
-        "pedals5": [-1.0,1.0]
-      },
-      {
-        "pedals6": [-1.0,1.0]
-      },
-      {
-        "pedals7": [-1.0,1.0]
-      },
-      {
-        "pedals8": [-1.0,1.0]
-      },
-      {
-        "stick_ailerons": [-1.8,1.8]
-      },
-      {
-        "stick_elevator": [-2.5,1.8]
-      },
-      {
-        "throttle": [0.0,1.0]
-      },
-      {
-        "trimmer": [0.0,1.0]
-      },
-      {
-        "flaps": [0.0,1.0]
-      },
-      {
-        "flaps_fixed": true
-      },
-      {
-        "gears": [0.0,1.0]
-      },
-      {
-        "gears1": [0.0,1.0]
-      },
-      {
-        "speed_01": [0.0,208.333]
-      },
-      {
-        "speed_02": [0.0,208.333]
-      },
-      {
-        "compass": [0.0,360.0]
-      },
-      {
-        "vario": [-10.0,10.0]
-      },
-      {
-        "altitude_hour": [0.0,10000.0]
-      },
-      {
-        "altitude_min": [0.0,1000.0]
-      },
-      {
-        "altitude_koef": 1.0
-      },
-      {
-        "bank": [-8.0,8.0]
-      },
-      {
-        "turn": [-0.23562,0.23562]
-      },
-      {
-        "clock_hour": [0.0,12.0]
-      },
-      {
-        "clock_min": [0.0,60.0]
-      },
-      {
-        "clock_sec": [0.0,60.0]
-      },
-      {
-        "prop_pitch_hour": [0.0,75.0]
-      },
-      {
-        "prop_pitch_min": [0.0,1.0]
-      },
-      {
-        "manifold_pressure": [0.6,1.8]
-      },
-      {
-        "rpm": [0.0,3500.0]
-      },
-      {
-        "oil_pressure": [0.0,120.0]
-      },
-      {
-        "oil_temperature": [0.0,160.0]
-      },
-      {
-        "water_temperature": [0.0,130.0]
-      },
-      {
-        "fuel_pressure": [0.0,15.0]
-      },
-      {
-        "fuel": [0.0,300.0]
-      },
-      {
-        "prop_pitch": [0.0,1.0]
-      },
-      {
-        "weapon1": [0.0,1.0]
-      },
-      {
-        "slip": [-2.0,2.0]
-      },
-      {
-        "turn": [-0.23562,0.23562]
-      },
-      {
-        "aviahorizon_pitch": [-45.0,45.0]
-      },
-      {
-        "aviahorizon_roll": [-180.0,180.0]
-      },
-      {
-        "ammo_counter1": [500.0,0.0]
-      },
-      {
-        "ammo_counter2": [100.0,0.0]
-      },
-      {
-        "ammo_counter3": [500.0,0.0]
-      }
-    ],
+    "devices": {
+      "pedals1": [-1.0,1.0],
+      "pedals2": [-1.0,1.0],
+      "pedals3": [-1.0,1.0],
+      "pedals4": [-1.0,1.0],
+      "pedals5": [-1.0,1.0],
+      "pedals6": [-1.0,1.0],
+      "stick_ailerons": [-1.0,1.0],
+      "stick_elevator": [-1.0,1.0],
+      "weapon1": [0.0,1.0],
+      "weapon2": [0.0,1.0],
+      "throttle": [0.0,1.0],
+      "prop_pitch": [-1.0,1.0],
+      "trimmer": [-1.0,1.0],
+      "flaps": [0.0,1.0],
+      "flaps_fixed": true,
+      "gears": [0.0,1.0],
+      "gears1": [0.0,1.0],
+      "gear_fixed": true,
+      "radiator_lever": [0.0,1.0],
+      "speed": [0.0,250.0],
+      "compass": [0.0,360.0],
+      "vario": [-15.0,15.0],
+      "altitude_hour": [0.0,10000.0],
+      "altitude_min": [0.0,1000.0],
+      "altitude_koef": 1.0,
+      "bank": [-8.0,8.0],
+      "turn": [-0.23562,0.23562],
+      "clock_hour": [0.0,12.0],
+      "clock_min": [0.0,60.0],
+      "clock_sec": [0.0,60.0],
+      "manifold_pressure": [0.6,1.8],
+      "rpm": [0.0,3600.0],
+      "oil_pressure": [0.0,120.0],
+      "oil_pressure1": [0.0,120.0],
+      "oil_temperature": [0.0,130.0],
+      "oil_temperature1": [0.0,130.0],
+      "water_temperature": [0.0,130.0],
+      "fuel_pressure": [0.0,15.0],
+      "fuel_pressure1": [0.0,15.0],
+      "fuel": [0.0,288.0],
+      "ammo_counter1": [500.0,0.0],
+      "ammo_counter2": [100.0,0.0],
+      "ammo_counter3": [500.0,0.0]
+    },
     "parts_holes_dmg": {
       "part": "fuse"
     },
@@ -2003,7 +1931,7 @@
   },
   "user_skin": [
     {
-      "name": "italy"
+      "name": "pyorremyrsky"
     },
     {
       "replace_tex": {

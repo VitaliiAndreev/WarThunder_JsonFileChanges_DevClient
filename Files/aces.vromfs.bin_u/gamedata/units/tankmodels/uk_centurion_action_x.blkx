@@ -111,15 +111,6 @@
     "canReloadNonGuns": true
   },
   {
-    "customClassIco": "!#ui/gameuiskin#image_in_progress_ico"
-  },
-  {
-    "customImage": "!#ui/unitskin#image_in_progress"
-  },
-  {
-    "customTooltipImage": "ui/aircrafts/image_in_progress"
-  },
-  {
     "DamageParts": {
       "formatVersion": 2,
       "armorClass": "RHA_tank",
@@ -163,14 +154,17 @@
         },
         "turret_04_back_dm": {
           "armorThickness": 29.0
+        },
+        "composite_armor_hull_01_dm": {
+          "armorThickness": 17.25
+        },
+        "composite_armor_hull_02_dm": {
+          "armorThickness": 17.25
         }
       },
       "turret": {
         "armorClass": "CHA_tank",
         "hp": 10000.0,
-        "turret_02_front_dm": {
-          "armorThickness": 89.0
-        },
         "turret_03_front_dm": {
           "armorThickness": 98.0
         },
@@ -1624,6 +1618,32 @@
     }
   },
   {
+    "xray_viewer_data": [
+      {
+        "armorArrayHull": {
+          "xrayDmPart": "composite_armor_hull_01_dm",
+          "titleLoc": "RHA_tank_modern",
+          "armorArrayText": {
+            "layer": {
+              "dmPart": "composite_armor_hull_02_dm"
+            }
+          }
+        }
+      },
+      {
+        "armorArrayHull": {
+          "xrayDmPart": "composite_armor_hull_02_dm",
+          "titleLoc": "RHA_tank_modern",
+          "armorArrayText": {
+            "layer": {
+              "dmPart": "composite_armor_hull_02_dm"
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
     "sound": {
       "EngineName": "engine_centurion",
       "TrackSoundPath": "tanks/engines_tanks",
@@ -2938,6 +2958,14 @@
             }
           ]
         }
+      }
+    }
+  },
+  {
+    "user_skin": {
+      "name": "centurion_action_x",
+      "replace_tex": {
+        "from": "uk_camo_very_dark_drab*"
       }
     }
   },

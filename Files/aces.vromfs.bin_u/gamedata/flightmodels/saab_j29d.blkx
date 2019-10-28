@@ -20,11 +20,8 @@
   "damagePartsToVisualEffectsMapBlk": "gameData/FlightModels/DM/dm_parts_to_visual_effects_map.blk",
   "damagePartsExcludeFromHoleBlk": "gameData/FlightModels/DM/dm_parts_exclude_from_hole.blk",
   "explosion_dmBlk": "gameData/FlightModels/DM/commonExplosion.blk",
-  "fireParamsPreset": "900kph",
+  "fireParamsPreset": "1000kph",
   "fightAiBehaviour": "fighter",
-  "customClassIco": "!#ui/gameuiskin#image_in_progress_ico",
-  "customImage": "!#ui/unitskin#image_in_progress",
-  "customTooltipImage": "ui/aircrafts/image_in_progress",
   "DamageParts": {
     "armor10": {
       "armor1_dm": {
@@ -1015,22 +1012,38 @@
     },
     {
       "part": {
-        "name": "spar1_l_dm"
+        "name": "spar1_l_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
       "part": {
-        "name": "spar1_r_dm"
+        "name": "spar1_r_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
       "part": {
-        "name": "spar2_l_dm"
+        "name": "spar2_l_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
       "part": {
-        "name": "spar2_r_dm"
+        "name": "spar2_r_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
@@ -1709,6 +1722,11 @@
       }
     }
   ],
+  "spawn_count": {
+    "numSpawnsPerBattleSimulation": 2,
+    "numSpawnsPerBattleArcade": 3,
+    "numSpawnsPerBattleHistorical": 1
+  },
   "wiki": {
     "general": {
       "length": 9.75,
@@ -1792,7 +1810,7 @@
         "midNode": "Bip01 L Calf",
         "upNode": "Bip01 L Thigh",
         "targetNode": "pedal_lfoot_1",
-        "flexionDir": [0.0,1.0,0.3]
+        "flexionDir": [0.0,1.0,-0.5]
       }
     },
     {
@@ -1801,7 +1819,7 @@
         "midNode": "Bip01 R Calf",
         "upNode": "Bip01 R Thigh",
         "targetNode": "pedal_rfoot_1",
-        "flexionDir": [0.0,1.0,-0.3]
+        "flexionDir": [0.0,1.0,0.5]
       }
     }
   ],
@@ -1817,43 +1835,61 @@
     "cockpitOpen": "cockpit_servo"
   },
   "cockpit": {
-    "headPos": [1.229,0.864,0.001],
-    "headPosOnShooting": [1.229,0.864,0.001],
+    "headPos": [1.7,1.08,-0.027],
+    "headPosOnShooting": [1.8,1.08,-0.027],
     "shadowSphereMultiplier": 2.0,
     "gunLightRadiusMul": 0.05,
     "lightPos": [1.8294,0.56559,-0.307665],
     "lightColor": [0.62,0.3,0.21],
     "lightAttenuation": 10.0,
+    "mirror": true,
+    "mirrorPos": [2.108,1.272,0.0],
+    "mirrorNorm": [-0.978,-0.216,0.0],
     "devices": [
       {
-        "stick_ailerons": [-1.2,1.2]
+        "stick_ailerons": [-1.5,1.5]
       },
       {
-        "stick_elevator": [-1.2,1.2]
+        "stick_elevator": [-1.0,1.0]
       },
       {
-        "pedals1": [-1.0,1.0]
+        "pedals": [-1.5,1.5]
       },
       {
-        "pedals2": [-1.0,1.0]
+        "pedals1": [-1.5,1.5]
       },
       {
-        "throttle": [-1.6,2.3]
+        "pedals2": [-1.5,1.5]
       },
       {
-        "throttle1": [-1.6,2.3]
+        "pedals3": [-1.5,1.5]
       },
       {
-        "gear": [0.0,1.0]
+        "throttle": [0.0,1.0]
+      },
+      {
+        "trimmer": [-1.0,1.0]
+      },
+      {
+        "flaps": [0.0,1.0]
+      },
+      {
+        "flaps_fixed": true
+      },
+      {
+        "gears": [0.0,1.0]
+      },
+      {
+        "gear_fixed": true
       },
       {
         "weapon2": [0.0,1.0]
       },
       {
-        "speed": [27.777,333.333]
+        "speed": [0.0,333.333]
       },
       {
-        "tas": [27.777,333.333]
+        "mach": [0.0,1.2]
       },
       {
         "compass": [0.0,360.0]
@@ -1862,10 +1898,10 @@
         "compass1": [0.0,360.0]
       },
       {
-        "vario": [-150.0,150.0]
+        "vario": [-40.0,40.0]
       },
       {
-        "altitude_hour": [0.0,10000.0]
+        "altitude_hour": [0.0,15000.0]
       },
       {
         "altitude_min": [0.0,1000.0]
@@ -1880,13 +1916,19 @@
         "turn": [-0.23562,0.23562]
       },
       {
-        "aviahorizon_pitch": [-90.0,90.0]
+        "aviahorizon_pitch": [-45.0,45.0]
       },
       {
         "aviahorizon_roll": [-180.0,180.0]
       },
       {
-        "manifold_pressure": [0.4,2.133]
+        "g_meter": [-3.0,9.0]
+      },
+      {
+        "g_meter_min": [-3.0,9.0]
+      },
+      {
+        "g_meter_max": [-3.0,9.0]
       },
       {
         "clock_hour": [0.0,12.0]
@@ -1898,34 +1940,25 @@
         "clock_sec": [0.0,60.0]
       },
       {
-        "fuel_consume": [0.0,150.0]
+        "rpm": [0.0,10600.0]
       },
       {
-        "rpm": [0.0,14000.0]
-      },
-      {
-        "rpm1": [0.0,14000.0]
-      },
-      {
-        "fuel1": [0.0,370.0]
+        "fuel": [432.0,1008.0]
       },
       {
         "oil_pressure": [0.0,160.0]
       },
       {
-        "oil_pressure1": [0.0,160.0]
+        "oil_temperature": [-40.0,100.0]
       },
       {
-        "oil_temperature": [0.0,120.0]
+        "water_temperature": [0.0,900.0]
       },
       {
-        "oil_temperature1": [0.0,120.0]
+        "head_temperature": [0.0,1000.0]
       },
       {
-        "water_temperature": [0.0,1000.0]
-      },
-      {
-        "water_temperature1": [0.0,1000.0]
+        "carb_temperature": [-50.0,40.0]
       },
       {
         "fuel_pressure": [0.0,15.0]
@@ -2020,14 +2053,30 @@
     },
     {
       "preset": {
-        "name": "saab_j29_120kg_x2_bombs",
-        "blk": "gameData/FlightModels/weaponPresets/saab_j29_120kg_x2_bombs.blk"
+        "name": "saab_j29_75mm_x24_rockets",
+        "blk": "gameData/FlightModels/weaponPresets/saab_j29_75mm_x24_rockets.blk",
+        "reqModification": "swd_j29_75mm_m55"
       }
     },
     {
       "preset": {
-        "name": "saab_j29_75mm_x24_rockets",
-        "blk": "gameData/FlightModels/weaponPresets/saab_j29_75mm_x24_rockets.blk"
+        "name": "saab_j29_145mm_x14_rockets",
+        "blk": "gameData/FlightModels/weaponPresets/saab_j29_145mm_x14_rockets.blk",
+        "reqModification": "swd_j29_145mm_m49a"
+      }
+    },
+    {
+      "preset": {
+        "name": "saab_j29_150mm_x14_rockets",
+        "blk": "gameData/FlightModels/weaponPresets/saab_j29_150mm_x14_rockets.blk",
+        "reqModification": "swd_j29_150mm_m51"
+      }
+    },
+    {
+      "preset": {
+        "name": "saab_j29_180mm_x4_rockets",
+        "blk": "gameData/FlightModels/weaponPresets/saab_j29_180mm_x4_rockets.blk",
+        "reqModification": "swd_j29_180mm_m49"
       }
     }
   ],
@@ -2044,7 +2093,7 @@
     "wepOverspeed": 1.05
   },
   "fireParams": {
-    "engineExtinguishFireSpeed": [193.0,277.0],
+    "engineExtinguishFireSpeed": [221.0,306.0],
     "engineExtinguishFireSpeedChance": [0.01,0.1],
     "fireDamagePowerRel": 0.05,
     "nonExtinguishFireTime": 5.0
@@ -2075,6 +2124,25 @@
     "aden_new_gun": {
       "reqModification": "aden_belt_pack",
       "tier": 3
+    },
+    "swd_j29_75mm_m55": {
+      "modClass": "weapon",
+      "tier": 1
+    },
+    "swd_j29_145mm_m49a": {
+      "modClass": "weapon",
+      "tier": 2,
+      "reqModification": "swd_j29_75mm_m55"
+    },
+    "swd_j29_150mm_m51": {
+      "modClass": "weapon",
+      "tier": 3,
+      "reqModification": "swd_j29_145mm_m49a"
+    },
+    "swd_j29_180mm_m49": {
+      "modClass": "weapon",
+      "tier": 4,
+      "reqModification": "swd_j29_150mm_m51"
     }
   },
   "user_skin": [

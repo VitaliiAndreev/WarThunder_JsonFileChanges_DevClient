@@ -12,31 +12,31 @@
   },
   "rocket": [
     {
-      "caliber": 0.127
+      "caliber": 0.145
     },
     {
-      "mass": 64.0
+      "mass": 40.0
     },
     {
-      "explosiveType": "tnt"
+      "explosiveType": "comp_b"
     },
     {
-      "bulletType": "rocket_tank"
+      "bulletType": "heat_tank"
     },
     {
-      "explosiveMass": 3.4
+      "explosiveMass": 2.7
     },
     {
-      "massEnd": 55.0
+      "massEnd": 35.0
     },
     {
       "maxDeltaAngle": 2.0
     },
     {
-      "dragCx": 0.018
+      "dragCx": 0.012
     },
     {
-      "length": 1.8
+      "length": 1.9
     },
     {
       "distFromCmToStab": 0.01
@@ -48,7 +48,7 @@
       "WdK": [0.1,0.1,0.1]
     },
     {
-      "force": 28500.0
+      "force": 10780.0
     },
     {
       "timeFire": 0.9
@@ -93,16 +93,37 @@
       "minDistance": 30.0
     },
     {
+      "hitPowerMult": 1.0
+    },
+    {
+      "nearHitPower": [1.0,50.0]
+    },
+    {
+      "midHitPower": [0.9,400.0]
+    },
+    {
+      "farHitPower": [0.1,1000.0]
+    },
+    {
+      "endHitPower": [0.01,1500.0]
+    },
+    {
+      "relativeVelHitShift": [300.0,1000.0]
+    },
+    {
+      "nearArmorPower": [10.0,50.0]
+    },
+    {
+      "midArmorPower": [7.0,400.0]
+    },
+    {
+      "farArmorPower": [0.2,700.0]
+    },
+    {
+      "relativeVelArmorShift": [200.0,1000.0]
+    },
+    {
       "distanceFuse": false
-    },
-    {
-      "hitPowerMult": 400.0
-    },
-    {
-      "fuseDelayDist": 1.0
-    },
-    {
-      "explodeTreshold": 10.0
     },
     {
       "explodeTreshold": 0.01
@@ -126,21 +147,6 @@
       "statType": "hydra"
     },
     {
-      "shutterDamage": true
-    },
-    {
-      "shutterDamageRadius": 17.0
-    },
-    {
-      "shutterAmount": 2000
-    },
-    {
-      "shutterArmorPower": 12.0
-    },
-    {
-      "shutterHit": 10.0
-    },
-    {
       "advancedMissiles": false
     },
     {
@@ -150,10 +156,10 @@
       "startSpeed": 30.0
     },
     {
-      "endSpeed": 800.0
+      "endSpeed": 400.0
     },
     {
-      "maxSpeed": 420.0
+      "maxSpeed": 390.0
     },
     {
       "speedViscosity": 0.2
@@ -194,17 +200,11 @@
       }
     },
     {
-      "armorpower": {
-        "ArmorPower0m": [28.0,10.0],
-        "ArmorPower100m": [25.0,100.0],
-        "ArmorPower7000m": [23.0,7000.0],
-        "ArmorPower10000m": [0.0,10000.0]
-      }
-    },
-    {
-      "hitpower": {
-        "HitPower0m": [400.0,500.0],
-        "HitPower10000m": [400.0,10000.0]
+      "cumulativeDamage": {
+        "armorPower": 500.0,
+        "distance": 4.0,
+        "damage": 300.0,
+        "onHitChanceMultFire": 15.0
       }
     }
   ]
