@@ -1734,6 +1734,7 @@
       "RateMax": [-70.0,70.0],
       "AngleMax": [-45.0,45.0],
       "VelMax": [-30.0,30.0],
+      "VelDeadZone": 0.1,
       "PosMax": [-300.0,300.0],
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 0.5,
@@ -1776,6 +1777,7 @@
       "RateMax": [-70.0,70.0],
       "AngleMax": [-30.0,30.0],
       "VelMax": [-100.0,100.0],
+      "VelDeadZone": 0.1,
       "PosMax": [-1000.0,1000.0],
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 1.5,
@@ -1854,10 +1856,10 @@
       "ClimbMinLimByHorSpeed": [40.0,-3.0,70.0,-15.0],
       "ClimbPID": {
         "Kp": 1.0,
-        "Ki": 0.4,
+        "Ki": 0.7,
         "Imax": 1.5,
-        "Kd": 0.0005,
-        "dTau": 0.0,
+        "Kd": 0.0025,
+        "dTau": 0.025,
         "Lim": [0.25,0.95]
       },
       "AltPID": {
