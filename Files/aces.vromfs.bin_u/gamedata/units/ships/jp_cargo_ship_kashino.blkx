@@ -2039,15 +2039,46 @@
     "ShipPhys": {
       "mass": {
         "Empty": 10000000.0,
-        "momentOfInertia": [250.0,6000.0,3400.0],
+        "momentOfInertia": [250.0,7500.0,3800.0],
         "CenterOfGravity": [0.0,-3.0,0.0],
         "AdvancedMass": false
       },
       "engines": [
         {
+          "maxSpeed": 7.2
+        },
+        {
+          "maxReverseSpeed": 3.0
+        },
+        {
+          "speedToTime": [
+            {
+              "row": [2.0,7.0]
+            },
+            {
+              "row": [4.0,10.0]
+            },
+            {
+              "row": [7.2,25.0]
+            }
+          ]
+        },
+        {
+          "reverseSpeedToTime": [
+            {
+              "row": [1.0,4.0]
+            },
+            {
+              "row": [1.5,6.0]
+            },
+            {
+              "row": [3.0,12.0]
+            }
+          ]
+        },
+        {
           "engine": {
             "pos": [-56.0,-3.6,-6.0],
-            "maxThrust": 1000000.0,
             "outputParam": "propeller_rotate_01:CRS",
             "engineDmPart": "engine_room_01_dm",
             "transmissionDmPart": "transmission_01_dm",
@@ -2057,11 +2088,18 @@
         {
           "engine": {
             "pos": [-56.0,-3.6,6.0],
-            "maxThrust": 1000000.0,
             "outputParam": "propeller_rotate_02:CRS",
             "engineDmPart": "engine_room_01_dm",
             "transmissionDmPart": "transmission_02_dm",
             "propeller": "propeller_01"
+          }
+        },
+        {
+          "engine_rooms": {
+            "engine_room1": {
+              "engineRoomDmPart": "engine_room_01_dm",
+              "funnelDmPart": "funnel_01_dm"
+            }
           }
         }
       ],
