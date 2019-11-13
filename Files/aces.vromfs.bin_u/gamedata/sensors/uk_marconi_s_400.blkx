@@ -83,8 +83,7 @@
       "width": 2.0,
       "barHeight": 1.5,
       "barsCount": 1,
-      "rowMajor": false,
-      "indicate": true
+      "rowMajor": false
     },
     "track": {
       "type": "no",
@@ -132,8 +131,17 @@
       }
     }
   },
-  "scopeRanges": {
-    "range1": 12000.0
+  "scanPatternSets": {
+    "search": {
+      "scanPattern2": "search60",
+      "scanPattern1": "search360",
+      "scanPattern3": "searchVertical"
+    }
+  },
+  "scopeRangeSets": {
+    "common": {
+      "range1": 12000.0
+    }
   },
   "fsms": {
     "main": {
@@ -143,6 +151,9 @@
           "setTargetDesignationRange": {
             "azimuthRange": [-30.0,30.0],
             "distanceRange": [0.0,16000.0]
+          },
+          "setScopeRangeSet": {
+            "scopeRangeSet": "common"
           }
         },
         "setLockMode": {
@@ -154,6 +165,7 @@
           },
           "clearTargets": [],
           "clearTargetsOfInterest": [],
+          "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "lock"
           },
@@ -174,6 +186,7 @@
           }
         },
         "setLosLockMode": {
+          "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "losLock"
           },
@@ -203,6 +216,7 @@
           }
         },
         "setTrackMode": {
+          "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "track"
           },
@@ -242,9 +256,6 @@
             "setFsmActive": {
               "fsm": "standbyOrSearch",
               "active": true
-            },
-            "setScopeRange": {
-              "scopeRangeIndex": 0
             }
           }
         },
@@ -410,6 +421,13 @@
             ]
           }
         ],
+        "switchScanPattern": {
+          "stateFrom": "standbyOrSearch",
+          "command": "scanPatternSwitch",
+          "actions": {
+            "setNextScanPattern": []
+          }
+        },
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {
@@ -465,70 +483,45 @@
           "setSignal": {
             "signal": "search"
           },
-          "setScanPattern": {
-            "scanPattern": "search360"
+          "setCenterElevation": {
+            "source": "constant",
+            "value": 7.5
+          },
+          "setScanPatternSet": {
+            "scanPatternSet": "search"
+          }
+        },
+        "setSearchMode": {
+          "setCenterAzimuth": {
+            "source": "constant",
+            "value": 0.0
+          },
+          "setFsmActive": {
+            "fsm": "search",
+            "active": true
+          },
+          "clearTargets": [],
+          "clearTargetsOfInterest": [],
+          "setTransiver": {
+            "transiver": "search"
+          },
+          "setSignal": {
+            "signal": "search"
           },
           "setCenterElevation": {
             "source": "constant",
             "value": 7.5
+          },
+          "setScanPatternSet": {
+            "scanPatternSet": "search"
           }
         },
-        "setSearchMode": [
-          {
-            "setCenterAzimuth": {
-              "source": "constant",
-              "value": 0.0
-            }
-          },
-          {
-            "setFsmActive": {
-              "fsm": "search",
-              "active": true
-            }
-          },
-          {
-            "clearTargets": []
-          },
-          {
-            "clearTargetsOfInterest": []
-          },
-          {
-            "setTransiver": {
-              "transiver": "search"
-            }
-          },
-          {
-            "setSignal": {
-              "signal": "search"
-            }
-          },
-          {
-            "setCenterElevation": {
-              "source": "constant",
-              "value": 7.5
-            }
-          },
-          {
-            "setFsmActive": {
-              "fsm": "searchPattern",
-              "active": true
-            }
+        "resetSearchMode": {
+          "setFsmActive": {
+            "fsm": "search",
+            "active": false
           }
-        ],
-        "resetSearchMode": [
-          {
-            "setFsmActive": {
-              "fsm": "search",
-              "active": false
-            }
-          },
-          {
-            "setFsmActive": {
-              "fsm": "searchPattern",
-              "active": false
-            }
-          }
-        ]
+        }
       },
       "transitions": {
         "init": {
@@ -668,61 +661,6 @@
             },
             "checkActiveTargetOfInerestInertialTimeout": {
               "timeOut": 1.0
-            }
-          }
-        }
-      }
-    },
-    "searchPattern": {
-      "stateInit": "search360",
-      "transitions": {
-        "activatesearch360": {
-          "stateFrom": "search360",
-          "event": "fsmActivate",
-          "actions": {
-            "setTransiver": {
-              "transiver": "search"
-            },
-            "setScanPattern": {
-              "scanPattern": "search360"
-            }
-          }
-        },
-        "activateSearchVertical": {
-          "stateFrom": "searchVertical",
-          "event": "fsmActivate",
-          "actions": {
-            "setTransiver": {
-              "transiver": "track"
-            },
-            "setScanPattern": {
-              "scanPattern": "searchVertical"
-            }
-          }
-        },
-        "switchToSearchVertical": {
-          "stateFrom": "search360",
-          "command": "scanPatternSwitch",
-          "stateTo": "searchVertical",
-          "actions": {
-            "setTransiver": {
-              "transiver": "track"
-            },
-            "setScanPattern": {
-              "scanPattern": "searchVertical"
-            }
-          }
-        },
-        "switchTosearch360": {
-          "stateFrom": "searchVertical",
-          "command": "scanPatternSwitch",
-          "stateTo": "search360",
-          "actions": {
-            "setTransiver": {
-              "transiver": "search"
-            },
-            "setScanPattern": {
-              "scanPattern": "search360"
             }
           }
         }

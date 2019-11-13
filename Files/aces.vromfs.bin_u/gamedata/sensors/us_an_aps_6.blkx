@@ -74,11 +74,13 @@
       }
     }
   },
-  "scopeRanges": {
-    "range1": 9250.0,
-    "range2": 46250.0,
-    "range3": 120000.25,
-    "range4": 1850.0
+  "scopeRangeSets": {
+    "common": {
+      "range1": 9250.0,
+      "range2": 46250.0,
+      "range3": 120000.25,
+      "range4": 1850.0
+    }
   },
   "fsms": {
     "main": {
@@ -99,6 +101,9 @@
           "setTargetDesignationRange": {
             "azimuthRange": [-15.0,15.0],
             "distanceRange": [0.0,1000.0]
+          },
+          "setScopeRangeSet": {
+            "scopeRangeSet": "common"
           }
         },
         "setLockMode": [
@@ -107,6 +112,12 @@
           },
           {
             "clearTargetsOfInterest": []
+          },
+          {
+            "setScanPatternSet": []
+          },
+          {
+            "setScopeRangeSet": []
           },
           {
             "setScanPattern": {
@@ -155,14 +166,15 @@
               "pos": 750.0,
               "width": 1500.0
             }
-          },
-          {
-            "setUseScopeRange": {
-              "value": false
-            }
           }
         ],
         "setTrackMode": [
+          {
+            "setScanPatternSet": []
+          },
+          {
+            "setScopeRangeSet": []
+          },
           {
             "setScanPattern": {
               "scanPattern": "track"
@@ -216,11 +228,6 @@
             "setSignal": {
               "signal": "track"
             }
-          },
-          {
-            "setUseScopeRange": {
-              "value": false
-            }
           }
         ]
       },
@@ -234,9 +241,6 @@
             "setFsmActive": {
               "fsm": "standbyOrSearch",
               "active": true
-            },
-            "setScopeRange": {
-              "scopeRangeIndex": 0
             }
           }
         },
@@ -303,6 +307,13 @@
             }
           ]
         },
+        "switchScanPattern": {
+          "stateFrom": "standbyOrSearch",
+          "command": "scanPatternSwitch",
+          "actions": {
+            "setNextScanPattern": []
+          }
+        },
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {
@@ -349,9 +360,6 @@
           "setTransiver": [],
           "clearTargets": [],
           "clearTargetsOfInterest": [],
-          "setScanPattern": {
-            "scanPattern": "search"
-          },
           "setSignal": {
             "signal": "search"
           },
@@ -363,8 +371,11 @@
             "source": "constant",
             "value": 0.0
           },
-          "setUseScopeRange": {
-            "value": true
+          "setScanPattern": {
+            "scanPattern": "search"
+          },
+          "setScopeRangeSet": {
+            "scopeRangeSet": "common"
           }
         },
         "setSearchMode": {
@@ -377,9 +388,6 @@
           "setTransiver": {
             "transiver": "common"
           },
-          "setScanPattern": {
-            "scanPattern": "search"
-          },
           "setSignal": {
             "signal": "search"
           },
@@ -391,8 +399,11 @@
             "source": "constant",
             "value": 0.0
           },
-          "setUseScopeRange": {
-            "value": true
+          "setScanPattern": {
+            "scanPattern": "search"
+          },
+          "setScopeRangeSet": {
+            "scopeRangeSet": "common"
           }
         },
         "resetSearchMode": {

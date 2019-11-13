@@ -117,67 +117,6 @@
     "canReloadNonGuns": true
   },
   {
-    "tank_crew": {
-      "changeTimeMult": 1.0,
-      "gunner": [
-        {
-          "dmPart": "gunner_dm"
-        },
-        {
-          "role": "tank_gunner"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "commander"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "driver": [
-        {
-          "dmPart": "driver_dm"
-        },
-        {
-          "role": "driver"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "commander"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "loader": [
-        {
-          "dmPart": "loader_dm"
-        },
-        {
-          "role": "loader"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "commander"
-        }
-      ],
-      "commander": {
-        "dmPart": "commander_dm",
-        "role": "commander"
-      },
-      "machine_gunner": {
-        "dmPart": "machine_gunner_dm",
-        "role": "radio_gunner"
-      }
-    }
-  },
-  {
     "class_tags": []
   },
   {
@@ -1241,6 +1180,87 @@
         }
       }
     ]
+  },
+  {
+    "tank_crew": {
+      "changeTimeMult": 1.0,
+      "gunner": [
+        {
+          "dmPart": "gunner_dm"
+        },
+        {
+          "role": "tank_gunner"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        },
+        {
+          "substitute": "loader1"
+        },
+        {
+          "substitute": "loader2"
+        }
+      ],
+      "driver": [
+        {
+          "dmPart": "driver_dm"
+        },
+        {
+          "role": "driver"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        },
+        {
+          "substitute": "loader1"
+        },
+        {
+          "substitute": "loader2"
+        }
+      ],
+      "loader2": [
+        {
+          "dmPart": "loader_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
+      "loader1": [
+        {
+          "dmPart": "loader_01_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
+      "commander": {
+        "dmPart": "commander_dm",
+        "role": "commander"
+      },
+      "machine_gunner": {
+        "dmPart": "machine_gunner_dm",
+        "role": "radio_gunner"
+      }
+    }
   },
   {
     "DamageParts": {
@@ -2562,7 +2582,7 @@
           "breechDP": "cannon_breech_01_dm",
           "speedYaw": 35.0,
           "speedPitch": 20.0,
-          "bullets": 500,
+          "bullets": 496,
           "fireConeAngle": 15.0,
           "ChainfireTime": 0.5,
           "DelayAfterShoot": 2.0,
@@ -2620,7 +2640,7 @@
           "breechDP": "cannon_breech_02_dm",
           "speedYaw": 35.0,
           "speedPitch": 20.0,
-          "bullets": 500,
+          "bullets": 496,
           "fireConeAngle": 15.0,
           "ChainfireTime": 0.5,
           "DelayAfterShoot": 2.0,
@@ -2637,6 +2657,7 @@
             "head": "bone_turret",
             "gun": "bone_gun",
             "barrel": "bone_gun_barrel_02",
+            "gunnerDm": "gunner_dm",
             "linkedAnimPart": {
               "verNode": "bone_camera_gunner",
               "verLimits": [-180.0,180.0],
@@ -2834,11 +2855,11 @@
           "ammo_body_l_02_dm": {
             "count": 202
           },
-          "ammo_turret_02_dm": {
-            "count": 40
-          },
           "ammo_turret_01_dm": {
-            "count": 8
+            "count": 32
+          },
+          "ammo_turret_02_dm": {
+            "count": 16
           }
         }
       }

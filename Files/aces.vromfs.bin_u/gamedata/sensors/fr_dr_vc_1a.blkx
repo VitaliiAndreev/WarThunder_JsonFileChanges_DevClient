@@ -136,6 +136,9 @@
             "clearTargetsOfInterest": []
           },
           {
+            "setScanPatternSet": []
+          },
+          {
             "setScanPattern": {
               "scanPattern": "lock"
             }
@@ -168,6 +171,7 @@
           }
         ],
         "setLosLockMode": {
+          "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "losLock"
           },
@@ -194,6 +198,7 @@
           }
         },
         "setTrackMode": {
+          "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "track"
           },
@@ -230,9 +235,6 @@
             "setFsmActive": {
               "fsm": "standbyOrSearch",
               "active": true
-            },
-            "setScopeRange": {
-              "scopeRangeIndex": 0
             }
           }
         },
@@ -398,6 +400,13 @@
             ]
           }
         ],
+        "switchScanPattern": {
+          "stateFrom": "standbyOrSearch",
+          "command": "scanPatternSwitch",
+          "actions": {
+            "setNextScanPattern": []
+          }
+        },
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {

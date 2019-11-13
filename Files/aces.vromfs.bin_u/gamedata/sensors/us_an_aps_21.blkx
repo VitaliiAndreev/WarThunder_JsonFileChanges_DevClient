@@ -55,21 +55,26 @@
       }
     }
   },
-  "scopeRanges": {
-    "range1": 20000.0,
-    "range2": 45000.0,
-    "range3": 110000.0,
-    "range4": 220000.0,
-    "range5": 370000.0
+  "scanPatternSets": {
+    "common": {
+      "scanPattern2": "search30",
+      "scanPattern1": "search170"
+    }
+  },
+  "scopeRangeSets": {
+    "common": {
+      "range1": 20000.0,
+      "range2": 45000.0,
+      "range3": 110000.0,
+      "range4": 220000.0,
+      "range5": 370000.0
+    }
   },
   "fsms": {
     "main": {
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
-          "setScopeRange": {
-            "scopeRangeIndex": 0
-          },
           "setSignal": {
             "signal": "search"
           },
@@ -82,9 +87,11 @@
             "elevationRange": [-60.0,60.0],
             "distanceRange": [0.0,40000.0]
           },
-          "setFsmActive": {
-            "fsm": "searchPattern",
-            "active": true
+          "setScanPatternSet": {
+            "scanPatternSet": "common"
+          },
+          "setScopeRangeSet": {
+            "scopeRangeSet": "common"
           }
         },
         "setStandbyMode": {
@@ -141,6 +148,22 @@
             "setStandbyMode": []
           }
         },
+        "switchScanPattern": [
+          {
+            "stateFrom": "standby"
+          },
+          {
+            "stateFrom": "search"
+          },
+          {
+            "command": "scanPatternSwitch"
+          },
+          {
+            "actions": {
+              "setNextScanPattern": []
+            }
+          }
+        ],
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {
@@ -179,61 +202,6 @@
           "command": "switchTarget",
           "actions": {
             "setNextDetectedTargetActive": []
-          }
-        }
-      }
-    },
-    "searchPattern": {
-      "stateInit": "init",
-      "transitions": {
-        "activateSearch30": [
-          {
-            "stateFrom": "init"
-          },
-          {
-            "stateFrom": "search30"
-          },
-          {
-            "event": "fsmActivate"
-          },
-          {
-            "stateTo": "search30"
-          },
-          {
-            "actions": {
-              "setScanPattern": {
-                "scanPattern": "search30"
-              }
-            }
-          }
-        ],
-        "activateSearch170": {
-          "stateFrom": "search170",
-          "event": "fsmActivate",
-          "actions": {
-            "setScanPattern": {
-              "scanPattern": "search170"
-            }
-          }
-        },
-        "switchToSearch30": {
-          "stateFrom": "search170",
-          "command": "scanPatternSwitch",
-          "stateTo": "search30",
-          "actions": {
-            "setScanPattern": {
-              "scanPattern": "search30"
-            }
-          }
-        },
-        "switchToSearch170": {
-          "stateFrom": "search30",
-          "command": "scanPatternSwitch",
-          "stateTo": "search170",
-          "actions": {
-            "setScanPattern": {
-              "scanPattern": "search170"
-            }
           }
         }
       }

@@ -806,9 +806,9 @@
       "DampingMultByFlow": [0.0,1.0,30.0,1.0],
       "AirFlowSolver": true,
       "AirFlow1": [-100.0,100.0,1.0],
-      "AirFlow2": [0.0,-2.0,1.0],
-      "AirFlow3": [10.0,-2.0,0.8],
-      "AirFlow4": [100.0,-2.0,0.6],
+      "AirFlow2": [0.0,0.0,1.0],
+      "AirFlow3": [10.0,0.0,0.8],
+      "AirFlow4": [100.0,0.0,0.6],
       "RotationToAirflow": true,
       "FlapCompensatorEfficiency": [240.0,0.85,320.0,0.0],
       "ArcadeTangAirFlowMin": 51.0,
@@ -1054,7 +1054,7 @@
     "AdvancedMass": false,
     "SeparateFuelTanks": false,
     "Takeoff": 2495.0,
-    "CenterOfGravity": [0.05,-0.35,0.02],
+    "CenterOfGravity": [0.0,-0.35,0.02],
     "WingCritOverload": [-40000.0,83000.0],
     "GearDestructionIndSpeed": 320.0,
     "AirbrakeDestructionIndSpeed": -1.0,
@@ -1344,14 +1344,14 @@
       },
       "VelPID": {
         "Kp": 0.05,
-        "Ki": 0.005,
+        "Ki": 0.01,
         "Imax": 2.0,
         "Kd": 0.0,
         "dTau": 0.0208,
         "Lim": [-0.25,0.25]
       },
       "PosPID": {
-        "Kp": 0.05,
+        "Kp": 0.01,
         "Ki": 0.0,
         "Imax": 0.0,
         "Kd": 0.0,
@@ -1389,14 +1389,14 @@
       },
       "VelPID": {
         "Kp": 0.05,
-        "Ki": 0.08,
+        "Ki": 0.05,
         "Imax": 1.0,
         "Kd": 0.005,
         "dTau": 0.0208,
         "Lim": [-0.3,0.3]
       },
       "PosPID": {
-        "Kp": 0.05,
+        "Kp": 0.01,
         "Ki": 0.0,
         "Imax": 0.0,
         "Kd": 0.0,
@@ -1437,21 +1437,21 @@
       }
     },
     "Throttle": {
-      "Limits": [0.05,0.75],
-      "ClimbMax": [-8.0,12.0],
+      "Limits": [0.05,0.99],
+      "ClimbMax": [-3.0,3.0],
       "ClimbDeadZone": 0.0,
-      "AltMax": [-8.0,12.0],
-      "AltDeadZone": 0.1,
-      "AltHoldClimbTreshold": 0.5,
-      "ClimbMinLimByHorSpeed": [40.0,-3.0,70.0,-15.0],
-      "ClimbMinLimByRAltitude": [10.0,-3.0,40.0,-15.0],
+      "AltMax": [-3.0,3.0],
+      "AltDeadZone": 0.0,
+      "AltHoldClimbTreshold": 0.0,
+      "ClimbMinLimByHorSpeed": [40.0,-3.0,70.0,-3.0],
+      "ClimbMinLimByRAltitude": [10.0,-3.0,40.0,-3.0],
       "ClimbPID": {
-        "Kp": 0.8,
+        "Kp": 0.6,
         "Ki": 0.4,
         "Imax": 2.5,
-        "Kd": 0.001,
+        "Kd": 0.02,
         "dTau": 0.0208,
-        "Lim": [0.05,0.95]
+        "Lim": [0.35,0.95]
       },
       "AltPID": {
         "Kp": 1.0,

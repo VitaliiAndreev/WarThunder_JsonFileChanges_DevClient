@@ -68,19 +68,25 @@
       }
     }
   },
-  "scopeRanges": {
-    "range0": 9300.0,
-    "range1": 18600.0,
-    "range2": 3700.0
+  "scanPatternSets": {
+    "common": {
+      "scanPattern2": "searchMidBars",
+      "scanPattern3": "searchMaxBars",
+      "scanPattern1": "searchMinBars"
+    }
+  },
+  "scopeRangeSets": {
+    "common": {
+      "range0": 9300.0,
+      "range1": 18600.0,
+      "range2": 3700.0
+    }
   },
   "fsms": {
     "main": {
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
-          "setScopeRange": {
-            "scopeRangeIndex": 0
-          },
           "setSignal": {
             "signal": "search"
           },
@@ -93,9 +99,11 @@
             "elevationRange": [-20.0,40.0],
             "distanceRange": [0.0,18600.0]
           },
-          "setFsmActive": {
-            "fsm": "searchPattern",
-            "active": true
+          "setScanPatternSet": {
+            "scanPatternSet": "common"
+          },
+          "setScopeRangeSet": {
+            "scopeRangeSet": "common"
           }
         },
         "setStandbyMode": {
@@ -152,6 +160,22 @@
             "setStandbyMode": []
           }
         },
+        "switchScanPattern": [
+          {
+            "stateFrom": "standby"
+          },
+          {
+            "stateFrom": "search"
+          },
+          {
+            "command": "scanPatternSwitch"
+          },
+          {
+            "actions": {
+              "setNextScanPattern": []
+            }
+          }
+        ],
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {
@@ -193,107 +217,6 @@
           }
         }
       }
-    },
-    "searchPattern": {
-      "stateInit": "init",
-      "actionsTemplates": {
-        "setSearchMinBars": {
-          "setScanPattern": {
-            "scanPattern": "searchMinBars"
-          },
-          "setCenterElevation": {
-            "source": "constant",
-            "value": 2.5
-          }
-        },
-        "setSearchMidBars": {
-          "setScanPattern": {
-            "scanPattern": "searchMidBars"
-          },
-          "setCenterElevation": {
-            "source": "constant",
-            "value": 5.0
-          }
-        },
-        "setSearchMaxBars": {
-          "setScanPattern": {
-            "scanPattern": "searchMaxBars"
-          },
-          "setCenterElevation": {
-            "source": "constant",
-            "value": 10.0
-          }
-        }
-      },
-      "transitions": [
-        {
-          "activateSearchMinBars": {
-            "stateFrom": "searchMinBars",
-            "event": "fsmActivate",
-            "actions": {
-              "setSearchMinBars": []
-            }
-          }
-        },
-        {
-          "activateSearchMidBars": {
-            "stateFrom": "searchMidBars",
-            "event": "fsmActivate",
-            "actions": {
-              "setSearchMinBars": []
-            }
-          }
-        },
-        {
-          "activateSearchMaxBars": {
-            "stateFrom": "searchMaxBars",
-            "event": "fsmActivate",
-            "actions": {
-              "setSearchMinBars": []
-            }
-          }
-        },
-        {
-          "switchToSearchMidBars": {
-            "stateFrom": "init",
-            "event": "fsmActivate",
-            "stateTo": "searchMidBars",
-            "actions": {
-              "setSearchMidBars": []
-            }
-          }
-        },
-        {
-          "switchToSearchMaxBars": {
-            "stateFrom": "searchMidBars",
-            "command": "scanPatternSwitch",
-            "stateTo": "searchMaxBars",
-            "actions": {
-              "setSearchMaxBars": []
-            }
-          }
-        },
-        {
-          "switchToSearchMinBars": {
-            "stateFrom": "searchMaxBars",
-            "command": "scanPatternSwitch",
-            "stateTo": "searchMinBars",
-            "actions": {
-              "setSearchMinBars": []
-            }
-          }
-        },
-        {
-          "switchToSearchMidBars": {
-            "stateFrom": "searchMinBars",
-            "command": "scanPatternSwitch",
-            "stateTo": "searchMidBars",
-            "actions": {
-              "setSearchMidBars": []
-            }
-          }
-        }
-      ]
     }
   }
 }

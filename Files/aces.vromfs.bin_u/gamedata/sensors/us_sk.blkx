@@ -58,11 +58,7 @@
     "main": {
       "stateInit": "init",
       "actionsTemplates": {
-        "init": {
-          "setScopeRange": {
-            "scopeRangeIndex": 0
-          }
-        },
+        "init": [],
         "setStandbyMode": {
           "setTransiver": [],
           "setCenterAzimuth": {
@@ -123,6 +119,22 @@
             "setStandbyMode": []
           }
         },
+        "switchScanPattern": [
+          {
+            "stateFrom": "standby"
+          },
+          {
+            "stateFrom": "search"
+          },
+          {
+            "command": "scanPatternSwitch"
+          },
+          {
+            "actions": {
+              "setNextScanPattern": []
+            }
+          }
+        ],
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {

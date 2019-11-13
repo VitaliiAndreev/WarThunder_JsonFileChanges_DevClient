@@ -58,9 +58,6 @@
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
-          "setScopeRange": {
-            "scopeRangeIndex": 0
-          },
           "setSignal": {
             "signal": "search"
           },
@@ -133,6 +130,22 @@
             "setStandbyMode": []
           }
         },
+        "switchScanPattern": [
+          {
+            "stateFrom": "standby"
+          },
+          {
+            "stateFrom": "search"
+          },
+          {
+            "command": "scanPatternSwitch"
+          },
+          {
+            "actions": {
+              "setNextScanPattern": []
+            }
+          }
+        ],
         "switchScopeRange": {
           "command": "rangeSwitch",
           "actions": {
