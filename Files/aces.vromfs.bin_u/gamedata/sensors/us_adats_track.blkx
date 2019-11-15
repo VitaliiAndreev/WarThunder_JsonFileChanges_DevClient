@@ -10,26 +10,12 @@
       "visibilityType": "infraRed",
       "backScatteringBandNum": 0,
       "antenna": {
-        "angleHalfSens": 2.0,
-        "sideLobesSensitivity": -30.0
+        "angleHalfSens": 0.5,
+        "sideLobesSensitivity": -60.0
       }
     }
   },
   "scanPatterns": {
-    "lock": {
-      "type": "pyramide",
-      "azimuthLimits": [-20.0,20.0],
-      "elevationLimits": [-10.0,80.0],
-      "yawStabLimit": 180.0,
-      "pitchStabLimit": 10.0,
-      "rollStabLimit": 10.0,
-      "period": 0.25,
-      "width": 9.0,
-      "barHeight": 2.0,
-      "barsCount": 3,
-      "rowMajor": false,
-      "indicate": true
-    },
     "losLock": {
       "type": "pyramide",
       "azimuthLimits": [-20.0,20.0],
@@ -38,8 +24,8 @@
       "pitchStabLimit": 10.0,
       "rollStabLimit": 10.0,
       "period": 0.25,
-      "width": 2.5,
-      "barHeight": 2.0,
+      "width": 0.25,
+      "barHeight": 0.5,
       "barsCount": 1,
       "rowMajor": false,
       "indicate": true
@@ -83,7 +69,7 @@
           },
           {
             "setScanPattern": {
-              "scanPattern": "lock"
+              "scanPattern": "losLock"
             }
           },
           {
@@ -94,12 +80,6 @@
           },
           {
             "clearTargetsOfInterest": []
-          },
-          {
-            "setFsmActive": {
-              "fsm": "lock",
-              "active": false
-            }
           },
           {
             "setFsmActive": {
@@ -121,21 +101,6 @@
           }
         ],
         "setLockMode": {
-          "setScanPattern": {
-            "scanPattern": "lock"
-          },
-          "resetScanPhase": [],
-          "setCenterAzimuth": {
-            "source": "targetDesignation"
-          },
-          "clearTargetsOfInterest": [],
-          "setFsmActive": {
-            "fsm": "lock",
-            "active": true
-          },
-          "setTransiver": {
-            "transiver": "track"
-          },
           "setCenterElevation": {
             "source": "constant",
             "value": 9.0
@@ -217,14 +182,6 @@
             }
           }
         },
-        "lock": {
-          "stateFrom": "checkLockType0",
-          "event": "designationTypeEquals",
-          "stateTo": "lock",
-          "actions": {
-            "setLockMode": []
-          }
-        },
         "checkLockType1": {
           "stateFrom": "checkLockType0",
           "event": "designationTypeNotEquals",
@@ -248,72 +205,30 @@
           "event": "designationTypeNotEquals",
           "stateTo": "standby"
         },
-        "track": [
-          {
-            "stateFrom": "lock"
-          },
-          {
-            "stateFrom": "losLock"
-          },
-          {
-            "event": "targetDetected"
-          },
-          {
-            "stateTo": "track"
-          },
-          {
-            "actions": [
-              {
-                "setTrackMode": []
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "lock",
-                  "active": false
-                }
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "losLock",
-                  "active": false
-                }
-              }
-            ]
+        "track": {
+          "stateFrom": "losLock",
+          "event": "targetDetected",
+          "stateTo": "track",
+          "actions": {
+            "setTrackMode": [],
+            "setFsmActive": {
+              "fsm": "losLock",
+              "active": false
+            }
           }
-        ],
-        "failedLock": [
-          {
-            "stateFrom": "lock"
-          },
-          {
-            "stateFrom": "losLock"
-          },
-          {
-            "event": "scanFinished"
-          },
-          {
-            "stateTo": "standby"
-          },
-          {
-            "actions": [
-              {
-                "setStandbyMode": []
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "lock",
-                  "active": false
-                }
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "losLock",
-                  "active": false
-                }
-              }
-            ]
+        },
+        "failedLock": {
+          "stateFrom": "losLock",
+          "event": "scanFinished",
+          "stateTo": "standby",
+          "actions": {
+            "setStandbyMode": [],
+            "setFsmActive": {
+              "fsm": "losLock",
+              "active": false
+            }
           }
-        ],
+        },
         "finishedTrack": [
           {
             "stateFrom": "track"
@@ -340,23 +255,6 @@
             }
           }
         ]
-      }
-    },
-    "lock": {
-      "stateInit": "lock",
-      "transitions": {
-        "scan": {
-          "event": "update",
-          "actions": {
-            "scan": []
-          }
-        },
-        "detect": {
-          "event": "targetInSight",
-          "actions": {
-            "detectTarget": []
-          }
-        }
       }
     },
     "losLock": {
