@@ -21,6 +21,9 @@
   "minAltCameraBomberView": 20.0,
   "showUpObjToTeamIconBlinkTime": 5.0,
   "showUpObjToTeamCooldownTime": 10.0,
+  "saclosMissileLineOfSight": true,
+  "saclosMissileTreesDeadZone": 0.0,
+  "saclosMissileTreesTransparencyTreshold": 0.5,
   "minFreeCrewIntegrity": -1.0,
   "ai": {
     "outerSphereMul": 3.0,
@@ -66,6 +69,9 @@
     "ctaZoneDominationDiff": 8,
     "ctaNoAliveAirctaftTimer": 20,
     "ctaNoAliveAirctaftPenalty": 0.05,
+    "ctaMinPlayerSupremacy": 2.0,
+    "ctaMaxPlayerSupremacy": 4.0,
+    "ctaPlayerSupremacyMaxCoef": 3.0,
     "ctaNoAliveAirctaftDelay": 100,
     "ctaZoneDominationTimeToKillStreakScore": 90
   },
@@ -82,6 +88,9 @@
     "ctaZoneDominationDiff": 4,
     "ctaNoAliveAirctaftTimer": 20,
     "ctaNoAliveAirctaftPenalty": 0.05,
+    "ctaMinPlayerSupremacy": 2.0,
+    "ctaMaxPlayerSupremacy": 4.0,
+    "ctaPlayerSupremacyMaxCoef": 3.0,
     "ctaNoAliveAirctaftDelay": 100,
     "ctaZoneDominationTimeToKillStreakScore": 90
   },
@@ -1683,6 +1692,7 @@
     "sunInfraRedBrightnessMult": 0.0001,
     "sunInfraRedBrightnessSourcesMask": 3,
     "opticalTreesTransparencyTreshold": 0.02,
+    "radarSelectedTargetLockFromOptics": true,
     "radarCrossSectionAspectMultFrontFront": 1.0,
     "radarCrossSectionAspectMultFrontSide": 1.2,
     "radarCrossSectionAspectMultFrontRear": 1.0,
@@ -1693,6 +1703,19 @@
     "radarAntipodEffect": [0.0,1.0,100.0,0.0],
     "radarTargetsMaxTime": 2.0,
     "radarFrequencyBandCrossSection0": {
+      "band10": true,
+      "band11": true,
+      "band12": true,
+      "crossSectionMult": 1.0,
+      "backScattering0": [3.0,-28.0],
+      "backScattering1": [10.0,-12.0],
+      "backScattering2": [20.0,-11.0],
+      "backScattering3": [50.0,-8.0],
+      "backScattering4": [70.0,-4.0],
+      "backScattering5": [90.0,-1.7],
+      "treesNonTransparencyMult": 0.001
+    },
+    "radarFrequencyBandCrossSection1": {
       "band7": true,
       "band8": true,
       "band9": true,
@@ -1705,7 +1728,7 @@
       "backScattering5": [90.0,-2.0],
       "treesNonTransparencyMult": 0.004
     },
-    "radarFrequencyBandCrossSection1": {
+    "radarFrequencyBandCrossSection2": {
       "band6": true,
       "band5": true,
       "band4": true,
@@ -1718,7 +1741,7 @@
       "backScattering5": [90.0,-2.0],
       "treesNonTransparencyMult": 0.008
     },
-    "radarFrequencyBandCrossSection2": {
+    "radarFrequencyBandCrossSection3": {
       "band3": true,
       "crossSectionMult": 1.0,
       "backScattering0": [3.0,-40.0],
@@ -1729,7 +1752,7 @@
       "backScattering5": [90.0,-3.0],
       "treesNonTransparencyMult": 0.016
     },
-    "radarFrequencyBandCrossSection3": {
+    "radarFrequencyBandCrossSection4": {
       "band0": true,
       "band1": true,
       "band2": true,

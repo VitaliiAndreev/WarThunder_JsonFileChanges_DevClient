@@ -108,6 +108,11 @@
     "canReloadNonGuns": true
   },
   {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
+  },
+  {
     "default_skin_tomoe": [
       {
         "replace_tex": {
@@ -960,10 +965,13 @@
         "armorThickness": 10.0,
         "mast_01_dm": {
           "hp": 300.0
-        },
+        }
+      },
+      "radiolocation": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0,
         "radar_02_dm": {
-          "armorThickness": 5.0,
-          "hp": 300.0
+          "hp": 150.0
         }
       },
       "engine": {
@@ -2000,36 +2008,111 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
+    "MetaParts": [
+      {
+        "cover": [
+          {
+            "part": "compartment_01_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 2000.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_02_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 2000.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_03_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 2000.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_04_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 3500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "bridge": {
+          "part": "bridge_dm",
           "effect": {
             "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.2,
+            "conditionDamage": 260.0,
             "kill": true,
             "killEffect": "destruction"
           }
         }
-      ],
-      "bridge": {
-        "part": "bridge_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 300.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
       }
-    }
+    ]
   },
   {
     "tags": {
@@ -2359,7 +2442,7 @@
         "Weapon": {
           "trigger": "gunner2",
           "triggerGroup": "secondary",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_02",
           "flash": "emtr_gun_flame_02",
           "useEmitter": true,
@@ -2426,7 +2509,7 @@
         "Weapon": {
           "trigger": "gunner2",
           "triggerGroup": "secondary",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_03",
           "flash": "emtr_gun_flame_03",
           "useEmitter": true,
@@ -2493,7 +2576,7 @@
         "Weapon": {
           "trigger": "gunner3",
           "triggerGroup": "secondary",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_04",
           "flash": "emtr_gun_flame_04",
           "useEmitter": true,
@@ -2560,7 +2643,7 @@
         "Weapon": {
           "trigger": "gunner3",
           "triggerGroup": "secondary",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_05",
           "flash": "emtr_gun_flame_05",
           "useEmitter": true,

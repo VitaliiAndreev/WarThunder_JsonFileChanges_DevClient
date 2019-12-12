@@ -12,6 +12,9 @@
     "MetaPartsBlk": "gameData/FlightModels/dm/metaparts/4x_engine_bomber_metaparts.blk"
   },
   {
+    "exhaustEffectsBlk": "gameData/FlightModels/exhaustEffects/exhaustEffects_high_common.blk"
+  },
+  {
     "noEffectsDist": 8.0
   },
   {
@@ -108,7 +111,10 @@
           "hp": 15.0
         }
       },
-      "armor12_7": {
+      "armor9_5": {
+        "armor10_dm": {
+          "hp": 40.0
+        },
         "armor1_dm": {
           "hp": 40.0
         },
@@ -117,23 +123,20 @@
         },
         "armor4_dm": {
           "hp": 40.0
-        }
-      },
-      "armor9_5": {
+        },
         "armor5_dm": {
           "hp": 40.0
         },
         "armor6_dm": {
           "hp": 40.0
-        }
-      },
-      "armor22_23": {
+        },
         "armor7_dm": {
           "hp": 40.0
-        }
-      },
-      "glass63_5": {
-        "armor2_dm": {
+        },
+        "armor8_dm": {
+          "hp": 40.0
+        },
+        "armor9_dm": {
           "hp": 40.0
         }
       },
@@ -285,6 +288,11 @@
         },
         "spar_r_dm": {
           "hp": 89.5
+        }
+      },
+      "glass38": {
+        "armor2_dm": {
+          "hp": 100.0
         }
       },
       "protected_controls": {
@@ -503,6 +511,11 @@
       },
       {
         "part": {
+          "name": "armor10_dm"
+        }
+      },
+      {
+        "part": {
           "name": "armor1_dm"
         }
       },
@@ -534,6 +547,16 @@
       {
         "part": {
           "name": "armor7_dm"
+        }
+      },
+      {
+        "part": {
+          "name": "armor8_dm"
+        }
+      },
+      {
+        "part": {
+          "name": "armor9_dm"
         }
       },
       {
@@ -1636,12 +1659,20 @@
       },
       {
         "part": {
-          "name": "spar_l_dm"
+          "name": "spar_l_dm",
+          "onKill": {
+            "nothing": 0.0,
+            "cut": 1.0
+          }
         }
       },
       {
         "part": {
-          "name": "spar_r_dm"
+          "name": "spar_r_dm",
+          "onKill": {
+            "nothing": 0.0,
+            "cut": 1.0
+          }
         }
       },
       {

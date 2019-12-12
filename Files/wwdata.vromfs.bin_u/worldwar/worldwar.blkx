@@ -420,15 +420,6 @@
       "airfieldSize": 0.077
     },
     {
-      "airfieldTex": "ui/gameuiskin#map_airfield"
-    },
-    {
-      "airfieldTexSelected": "ui/gameuiskin#map_airfield_selected_hover"
-    },
-    {
-      "airfieldTexHover": "ui/gameuiskin#map_airfield_hover"
-    },
-    {
       "entrenchTex": "ui/gameuiskin#army_defense"
     },
     {
@@ -561,15 +552,9 @@
     {
       "armyIconArtillery": {
         "text": "worldwar/iconArtilleryFire",
+        "textArtilleryReadyToFire": "worldwar/iconArtillery",
         "offset": [1.0,-0.5],
-        "size": 0.073
-      }
-    },
-    {
-      "armyIconArtilleryReadyFire": {
-        "text": "worldwar/iconArtillery",
-        "offset": [1.0,-0.5],
-        "size": 0.069
+        "size": 0.071
       }
     },
     {
@@ -600,8 +585,9 @@
       "armyIconCustom": {
         "name": "coastalArtillery",
         "text": "worldwar/iconCoastalArtillery",
-        "offset": [0.0,-1.0],
-        "size": 0.08
+        "textArtilleryReadyToFire": "worldwar/iconCoastalArtilleryFire",
+        "offset": [2.0,2.0],
+        "size": 0.075
       }
     },
     {
@@ -616,6 +602,7 @@
       "armyIconCustom": {
         "name": "cruiser",
         "text": "worldwar/iconWaterCruiser",
+        "textArtilleryReadyToFire": "worldwar/iconWaterCruiserFire",
         "offset": [0.0,0.0],
         "size": 0.09
       }
@@ -624,32 +611,27 @@
       "armyIconCustom": {
         "name": "landingCraftEmpty",
         "text": "worldwar/iconLandingCraftEmpty",
+        "textLoadedInfantry": "worldwar/iconLandingCraftInfantry",
+        "textLoadedGround": "worldwar/iconLandingCraftTank",
+        "textLoadedArtillery": "worldwar/iconLandingCraftArtillery",
         "offset": [0.5,1.0],
         "size": 0.08
       }
     },
     {
-      "armyIconCustom": {
-        "name": "landingCraftTank",
-        "text": "worldwar/iconLandingCraftTank",
-        "offset": [0.0,1.0],
-        "size": 0.075
-      }
-    },
-    {
-      "armyIconCustom": {
-        "name": "landingCraftInfantry",
-        "text": "worldwar/iconLandingCraftInfantry",
-        "offset": [0.0,1.0],
-        "size": 0.075
-      }
-    },
-    {
-      "armyIconCustom": {
-        "name": "landingCraftArtillery",
-        "text": "worldwar/iconLandingCraftArtillery",
-        "offset": [0.0,1.0],
-        "size": 0.075
+      "airfieldsTex": {
+        "default": {
+          "airfieldSizeMul": 1.0,
+          "airfieldTex": "ui/gameuiskin#map_airfield",
+          "airfieldTexSelected": "ui/gameuiskin#map_airfield_selected_hover",
+          "airfieldTexHover": "ui/gameuiskin#map_airfield_hover"
+        },
+        "aircraft_carrier": {
+          "airfieldSizeMul": 1.0,
+          "airfieldTex": "ui/gameuiskin#map_aircraft_carrier",
+          "airfieldTexSelected": "ui/gameuiskin#map_aircraft_carrier_selected_hover",
+          "airfieldTexHover": "ui/gameuiskin#map_aircraft_carrier_hover"
+        }
       }
     },
     {

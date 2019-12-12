@@ -3,22 +3,25 @@
     "cannon": true
   },
   {
-    "weaponType": 3
+    "weaponType": 1
   },
   {
-    "bUseHookAsRel": true
+    "aimMinDist": 0.05
   },
   {
-    "emitColor": [1.0,1.0,0.0]
+    "aimMaxDist": 6000.0
   },
   {
-    "emitI": 10.0
+    "maxDeltaAngle": 0.09
   },
   {
-    "emitR": 3.0
+    "ChainfireTime": 10.0
   },
   {
-    "emitTime": 0.03
+    "maxDeltaAngleVertical": 0.09
+  },
+  {
+    "attackMaxDist": 2500.0
   },
   {
     "shotFreq": 2.5
@@ -27,16 +30,7 @@
     "shotFreqRndK": 0.2
   },
   {
-    "traceFreq": 3
-  },
-  {
-    "bEnablePause": false
-  },
-  {
     "bullets": 500
-  },
-  {
-    "bulletsCluster": 1
   },
   {
     "reloadTime": 15.0
@@ -48,19 +42,16 @@
     "recoilOffset": 0.825
   },
   {
-    "aimMinDist": 0.05
+    "recoilTimes": [0.05,0.15]
   },
   {
-    "aimMaxDist": 2500.0
+    "bulletsCluster": 1
   },
   {
-    "maxDeltaAngle": 0.09
+    "traceFreq": 3
   },
   {
-    "maxDeltaAngleVertical": 0.09
-  },
-  {
-    "attackMaxDist": 2500.0
+    "shouldCollideWithRendinsts": true
   },
   {
     "fxType": "small_gun_flame"
@@ -72,25 +63,10 @@
     "fxScale": 1.0
   },
   {
-    "shouldCollideWithRendinsts": true
-  },
-  {
     "sfxReloadBullet": "naval_gun_reload"
   },
   {
     "soundLoop": true
-  },
-  {
-    "notUseDefaultBulletInGui": true
-  },
-  {
-    "isBulletBelt": false
-  },
-  {
-    "recoilOffset": 0.1
-  },
-  {
-    "recoilTimes": [0.05,0.15]
   },
   {
     "sound_path": "ships/weapon_ships/cannons"
@@ -103,6 +79,25 @@
   },
   {
     "soundLoop": true
+  },
+  {
+    "notUseDefaultBulletInGui": true
+  },
+  {
+    "isBulletBelt": false
+  },
+  {
+    "overheat": [
+      {
+        "overheat": [15.0,0.0]
+      },
+      {
+        "overheat": [20.0,0.05]
+      },
+      {
+        "overheat": [30.0,0.5]
+      }
+    ]
   },
   {
     "bullet": {
@@ -169,15 +164,6 @@
             }
           }
         ]
-      },
-      "armorpower": {
-        "ArmorPower0m": [10.0,10.0],
-        "ArmorPower1000m": [7.5,1000.0],
-        "ArmorPower2000m": [6.0,2000.0],
-        "ArmorPower2500m": [5.0,2500.0],
-        "ArmorPower3000m": [3.0,3000.0],
-        "ArmorPower3500m": [1.5,3500.0],
-        "ArmorPower4000m": [0.0,4000.0]
       },
       "hitpower": {
         "HitPower0m": [1.0,500.0],
@@ -365,15 +351,6 @@
             }
           ]
         },
-        "armorpower": {
-          "ArmorPower0m": [10.0,10.0],
-          "ArmorPower1000m": [7.5,1000.0],
-          "ArmorPower2000m": [6.0,2000.0],
-          "ArmorPower2500m": [5.0,2500.0],
-          "ArmorPower3000m": [3.0,3000.0],
-          "ArmorPower3500m": [1.5,3500.0],
-          "ArmorPower4000m": [0.0,4000.0]
-        },
         "hitpower": {
           "HitPower0m": [1.0,500.0],
           "HitPower2500m": [0.5,2500.0],
@@ -493,18 +470,5 @@
         }
       }
     }
-  },
-  {
-    "overheat": [
-      {
-        "overheat": [15.0,0.0]
-      },
-      {
-        "overheat": [20.0,0.05]
-      },
-      {
-        "overheat": [30.0,0.5]
-      }
-    ]
   }
 ]

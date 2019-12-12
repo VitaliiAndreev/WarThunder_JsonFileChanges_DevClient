@@ -102,6 +102,11 @@
     "canReloadNonGuns": true
   },
   {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
+  },
+  {
     "default_skin_tomoe": [
       {
         "replace_tex": {
@@ -528,6 +533,10 @@
         "bridge_dm": {
           "armorThickness": 1.0,
           "hp": 150.0
+        },
+        "radio_station_dm": {
+          "armorThickness": 1.0,
+          "hp": 100.0
         }
       },
       "superstructures": {
@@ -617,7 +626,7 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 10.0,
         "steering_gear_01_dm": {
-          "hp": 113.0
+          "hp": 106.0
         }
       },
       "pumps": {
@@ -780,6 +789,9 @@
           "hp": 600.0
         },
         "ammunition_storage_02_dm": {
+          "hp": 600.0
+        },
+        "ammunition_storage_03_dm": {
           "hp": 600.0
         }
       },
@@ -1595,36 +1607,100 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "effect": {
-            "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.2,
-            "kill": true,
-            "killEffect": "destruction"
+    "MetaParts": [
+      {
+        "cover": [
+          {
+            "part": "compartment_01_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
           }
-        }
-      ],
-      "bridge": {
-        "part": "bridge_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 300.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_02_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_03_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "bridge": [
+          {
+            "part": "bridge_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
       }
-    }
+    ]
   },
   {
     "tags": {

@@ -84,28 +84,32 @@
       "AileronsMode": "Manual",
       "ElevatorMode": "Manual",
       "RudderMode": "Manual",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": true
     },
     "ModePreset1": {
       "Mode": "Separate",
       "AileronsMode": "Rate",
       "ElevatorMode": "Rate",
       "RudderMode": "Rate",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": false
     },
     "ModePreset2": {
       "Mode": "Separate",
       "AileronsMode": "Angle",
       "ElevatorMode": "Angle",
       "RudderMode": "Rate",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": false
     },
     "ModePreset3": {
       "Mode": "Separate",
       "AileronsMode": "Vel",
       "ElevatorMode": "Vel",
       "RudderMode": "Rate",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": false
     }
   },
   "Areas": {
@@ -117,8 +121,8 @@
     "WingRightOut": 0.7,
     "Aileron": 0.1,
     "Fuselage": 200.0,
-    "Stabilizer": 0.8,
-    "Elevator": 0.8,
+    "Stabilizer": 0.01,
+    "Elevator": 1.7,
     "Keel": 2.0,
     "Rudder": 0.1
   },
@@ -1745,7 +1749,7 @@
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 1.5,
       "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-      "AngleLim": 50.0,
+      "AngleLim": 190.0,
       "RatePID": {
         "Kp": 2.0,
         "Ki": 0.8,
@@ -1784,7 +1788,7 @@
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 1.5,
       "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-      "AngleLim": 30.0,
+      "AngleLim": 190.0,
       "RatePID": {
         "Kp": 2.0,
         "Ki": 0.8,
@@ -1816,7 +1820,8 @@
     },
     "Yaw": {
       "RateMax": [-55.0,55.0],
-      "AngleMax": [-90.0,90.0],
+      "HeadingDeadZone": 0.1,
+      "HeadingHoldRateTreshold": 2.0,
       "RatePID": {
         "Kp": 3.0,
         "Ki": 1.0,
@@ -1825,11 +1830,11 @@
         "Lim": [-1.0,1.0]
       },
       "AnglePID": {
-        "Kp": 0.0,
+        "Kp": 1.0,
         "Ki": 0.0,
         "Imax": 0.0,
         "Kd": 0.0,
-        "Lim": [0.0,0.0]
+        "Lim": [-1.0,1.0]
       },
       "Trim": {
         "Source": "PropTorque",

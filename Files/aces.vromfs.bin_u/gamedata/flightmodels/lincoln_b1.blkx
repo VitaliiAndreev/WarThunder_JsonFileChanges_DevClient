@@ -84,19 +84,8 @@
           "hp": 15.0
         }
       },
-      "armor6_35": {
-        "armor1_dm": {
-          "hp": 35.0
-        },
-        "armor2_dm": {
-          "hp": 35.0
-        },
-        "armor3_dm": {
-          "hp": 35.0
-        }
-      },
       "armor8": {
-        "armor4_dm": {
+        "armor1_dm": {
           "hp": 40.0
         }
       },
@@ -286,40 +275,40 @@
       },
       "steel_cooling_sys": {
         "oil1_dm": {
-          "hp": 23.5
+          "hp": 17.5
         },
         "oil2_dm": {
-          "hp": 23.0
+          "hp": 23.5
         },
         "oil3_dm": {
-          "hp": 23.5
+          "hp": 17.5
         },
         "oil4_dm": {
-          "hp": 23.0
+          "hp": 23.5
         },
         "oil5_dm": {
-          "hp": 23.5
+          "hp": 17.5
         },
         "oil6_dm": {
-          "hp": 23.0
-        },
-        "oil7_dm": {
           "hp": 23.5
         },
+        "oil7_dm": {
+          "hp": 17.5
+        },
         "oil8_dm": {
-          "hp": 23.0
+          "hp": 23.5
         },
         "water1_dm": {
-          "hp": 20.8
+          "hp": 16.5
         },
         "water2_dm": {
-          "hp": 20.8
+          "hp": 16.5
         },
         "water3_dm": {
-          "hp": 20.8
+          "hp": 16.5
         },
         "water4_dm": {
-          "hp": 20.8
+          "hp": 16.5
         }
       },
       "steel_pilot": {
@@ -478,21 +467,6 @@
       {
         "part": {
           "name": "armor1_dm"
-        }
-      },
-      {
-        "part": {
-          "name": "armor2_dm"
-        }
-      },
-      {
-        "part": {
-          "name": "armor3_dm"
-        }
-      },
-      {
-        "part": {
-          "name": "armor4_dm"
         }
       },
       {
@@ -1789,12 +1763,20 @@
       },
       {
         "part": {
-          "name": "spar_l_dm"
+          "name": "spar_l_dm",
+          "onKill": {
+            "nothing": 0.0,
+            "cut": 1.0
+          }
         }
       },
       {
         "part": {
-          "name": "spar_r_dm"
+          "name": "spar_r_dm",
+          "onKill": {
+            "nothing": 0.0,
+            "cut": 1.0
+          }
         }
       },
       {
@@ -2625,14 +2607,170 @@
         ]
       },
       {
-        "part": {
-          "name": "wing_l_dm"
-        }
+        "part": [
+          {
+            "name": "wing_l_dm"
+          },
+          {
+            "defaultEffectPart": "spar_l_dm"
+          },
+          {
+            "onHit": {
+              "damage": 50.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 0.6,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onHit": {
+              "damage": 70.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 0.8,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onHit": {
+              "damage": 100.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 30.0,
+              "cut": 0.0,
+              "nothing": 3.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 50.0,
+              "cut": 0.0,
+              "nothing": 2.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 70.0,
+              "cut": 0.0,
+              "nothing": 1.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 100.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          }
+        ]
       },
       {
-        "part": {
-          "name": "wing_r_dm"
-        }
+        "part": [
+          {
+            "name": "wing_r_dm"
+          },
+          {
+            "defaultEffectPart": "spar_r_dm"
+          },
+          {
+            "onHit": {
+              "damage": 50.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 0.6,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onHit": {
+              "damage": 70.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 0.8,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onHit": {
+              "damage": 100.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 30.0,
+              "cut": 0.0,
+              "nothing": 3.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 50.0,
+              "cut": 0.0,
+              "nothing": 2.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 70.0,
+              "cut": 0.0,
+              "nothing": 1.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          },
+          {
+            "onKill": {
+              "damage": 100.0,
+              "cut": 0.0,
+              "part": {
+                "ratio": 1.0,
+                "canCut": true
+              }
+            }
+          }
+        ]
       },
       {
         "part": {
@@ -2971,7 +3109,6 @@
       "pilot1": "pilot_raf_500",
       "gunner2": "gunner_sit_raf_500",
       "gunner3": "gunner_sit_raf_500",
-      "gunner4": "gunner_sit_raf_500",
       "gunner5": "gunner_sit_raf_500"
     }
   },

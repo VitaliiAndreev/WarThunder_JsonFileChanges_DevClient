@@ -1,24 +1,18 @@
 {
   "cannon": true,
-  "weaponType": -1,
-  "bUseHookAsRel": true,
-  "emitColor": [1.0,1.0,0.0],
-  "emitI": 10.0,
-  "emitR": 3.0,
-  "emitTime": 0.03,
-  "shotFreq": 0.29,
-  "traceFreq": 4,
-  "bEnablePause": false,
-  "bullets": -1,
-  "bulletsCluster": 1,
-  "aimMinDist": 0.05,
-  "aimMaxDist": 8000.0,
+  "weaponType": 1,
+  "aimMinDist": 50.0,
+  "aimMaxDist": 15700.0,
   "maxDeltaAngle": 0.075,
   "maxDeltaAngleVertical": 0.075,
-  "attackMaxDist": 8000.0,
+  "attackMaxDist": 15700.0,
+  "shotFreq": 0.29,
+  "bullets": 1,
+  "recoilOffset": 0.48,
+  "recoilTimes": [0.15,0.4],
+  "shouldCollideWithRendinsts": true,
   "fxType": "big_gun_flame",
   "fxGroundDust": "water_shock_wave",
-  "shouldCollideWithRendinsts": true,
   "sound_path": "ships/weapon_common/cannons",
   "sound_pathStudio": "naval/weapon/cannons",
   "sound": "76mm_qf17",
@@ -26,8 +20,6 @@
   "fxMultipleSpawn": true,
   "isBulletBelt": false,
   "notUseDefaultBulletInGui": true,
-  "recoilOffset": 0.48,
-  "recoilTimes": [0.15,0.4],
   "bullet": [
     {
       "bulletCount": 40
@@ -162,17 +154,6 @@
             }
           }
         ]
-      }
-    },
-    {
-      "armorpower": {
-        "ArmorPower0m": [35.0,10.0],
-        "ArmorPower1000m": [27.0,1000.0],
-        "ArmorPower2000m": [21.0,2000.0],
-        "ArmorPower4000m": [12.0,4000.0],
-        "ArmorPower6000m": [4.0,6000.0],
-        "ArmorPower8000m": [1.5,8000.0],
-        "ArmorPower8100m": [0.0,8100.0]
       }
     },
     {
@@ -441,17 +422,6 @@
         }
       },
       {
-        "armorpower": {
-          "ArmorPower0m": [35.0,10.0],
-          "ArmorPower1000m": [27.0,1000.0],
-          "ArmorPower2000m": [21.0,2000.0],
-          "ArmorPower4000m": [12.0,4000.0],
-          "ArmorPower6000m": [4.0,6000.0],
-          "ArmorPower8000m": [1.5,8000.0],
-          "ArmorPower8100m": [0.0,8100.0]
-        }
-      },
-      {
         "hitpower": {
           "HitPower0m": [1.0,500.0],
           "HitPower4000m": [0.5,4000.0],
@@ -592,17 +562,18 @@
       "bulletType": "apcbc_tank",
       "bulletName": "76mm_mk29",
       "hitPowerMult": 100.0,
-      "armorFragmentsDamage": true,
-      "armorFragmentsDamageRadius": 3.5,
-      "armorFragmentsDamageAngle": 22.0,
-      "armorFragmentsAmount": 35,
-      "armorFragmentsArmorPower": 4.0,
-      "armorFragmentsHit": 10.0,
+      "dynamicKv": true,
       "relativeVelArmorShift": [200.0,1000.0],
       "ricochetEffect": "cannon_ricochet",
       "waterCollisionEffect": "water_splash_76_00",
       "waterFxScale": [1.0,1.0],
       "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 1.0,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        },
         "shatter": [
           {
             "useRealShatters": true
@@ -697,20 +668,6 @@
         "HitPower0m": [1.0,500.0],
         "HitPower4000m": [0.5,4000.0],
         "HitPower8000m": [0.1,8000.0]
-      },
-      "armorpower": {
-        "ArmorPower0m": [112.0,0.0],
-        "ArmorPower1000m": [89.0,1000.0],
-        "ArmorPower2000m": [70.0,2000.0],
-        "ArmorPower3000m": [55.0,3000.0],
-        "ArmorPower4000m": [47.0,4000.0],
-        "ArmorPower5000m": [39.0,5000.0],
-        "ArmorPower6000m": [31.0,6000.0],
-        "ArmorPower7000m": [23.0,7000.0],
-        "ArmorPower8000m": [15.0,8000.0],
-        "ArmorPower90000m": [7.0,90000.0],
-        "ArmorPower10000m": [4.0,10000.0],
-        "ArmorPower11000m": [0.0,11000.0]
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
@@ -941,15 +898,6 @@
             }
           }
         ]
-      },
-      "armorpower": {
-        "ArmorPower0m": [35.0,10.0],
-        "ArmorPower1000m": [27.0,1000.0],
-        "ArmorPower2000m": [21.0,2000.0],
-        "ArmorPower4000m": [12.0,4000.0],
-        "ArmorPower6000m": [4.0,6000.0],
-        "ArmorPower8000m": [1.5,8000.0],
-        "ArmorPower8100m": [0.0,8100.0]
       },
       "hitpower": {
         "HitPower0m": [1.0,500.0],

@@ -87,6 +87,12 @@
     "explosionFx": "ship_explosion"
   },
   {
+    "radarAnimVar": "radar_target_yaw_rotate"
+  },
+  {
+    "radarAnimPitchVar": "radar_target_pitch_rotate"
+  },
+  {
     "smokeScreenActivateTime": 2.5
   },
   {
@@ -109,6 +115,11 @@
   },
   {
     "depthTraceCriticalDepth": 2.0
+  },
+  {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
   },
   {
     "default_skin_tomoe": [
@@ -775,6 +786,21 @@
             "name": "fuel_tank_05_dm"
           },
           {
+            "name": "fuel_tank_06_dm"
+          },
+          {
+            "name": "fuel_tank_07_dm"
+          },
+          {
+            "name": "fuel_tank_08_dm"
+          },
+          {
+            "name": "fuel_tank_09_dm"
+          },
+          {
+            "name": "fuel_tank_10_dm"
+          },
+          {
             "onHit": {
               "damageType": "explosion",
               "fire": 0.3,
@@ -801,15 +827,8 @@
           {
             "onHit": {
               "damageType": "explosion",
-              "fire": 0.4,
-              "damage": 200.0,
-              "fHitCritical": false
-            }
-          },
-          {
-            "onKill": {
               "fire": 0.2,
-              "nothing": 0.8,
+              "damage": 200.0,
               "fHitCritical": false
             }
           }
@@ -845,27 +864,49 @@
             "name": "compartment_09_dm"
           },
           {
-            "name": "superstructure_dm"
-          },
-          {
-            "name": "deckhouse_dm"
+            "name": "compartment_10_dm"
           },
           {
             "name": "bridge_dm"
           },
           {
-            "onHit": {
-              "damageType": "explosion",
-              "fire": 0.05,
-              "damage": 50.0,
-              "fHitCritical": false
-            }
+            "name": "radio_station_dm"
           },
           {
             "onHit": {
               "damageType": "explosion",
               "fire": 0.1,
-              "damage": 400.0,
+              "damage": 200.0,
+              "fHitCritical": false
+            }
+          }
+        ]
+      },
+      {
+        "part": [
+          {
+            "name": "superstructure_dm"
+          },
+          {
+            "name": "superstructure_back_dm"
+          },
+          {
+            "name": "superstructure_front_dm"
+          },
+          {
+            "name": "superstructure_bottom_dm"
+          },
+          {
+            "name": "superstructure_side_dm"
+          },
+          {
+            "name": "superstructure_top_dm"
+          },
+          {
+            "onHit": {
+              "damageType": "explosion",
+              "fire": 0.25,
+              "damage": 300.0,
               "fHitCritical": false
             }
           }
@@ -874,39 +915,96 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "part": "compartment_04_dm"
-        },
-        {
-          "part": "compartment_05_dm"
-        },
-        {
-          "part": "compartment_06_dm"
-        },
-        {
-          "part": "compartment_07_dm"
-        },
-        {
+    "MetaParts": [
+      {
+        "cover": {
+          "part": "compartment_01_dm",
           "effect": {
             "conditionDamageType": "explosion",
-            "conditionDamage": 45000.0,
+            "conditionDamage": 20000.0,
             "kill": true,
             "killEffect": "destruction"
           }
         }
-      ]
-    }
+      },
+      {
+        "cover": {
+          "part": "compartment_02_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_03_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_04_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_05_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_06_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_07_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_08_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      }
+    ]
   },
   {
     "DamageParts": {
@@ -946,7 +1044,7 @@
         }
       },
       "superstructures": {
-        "fireParamsPreset": "ship_cover",
+        "fireParamsPreset": "ship_superstructure",
         "genericDamageMult": 0.4,
         "shatterDamageMult": 0.3,
         "explosionDamageMult": 1.0,
@@ -983,13 +1081,16 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 30.0,
         "stern_bottom_dm": {
-          "hp": 5000.0
+          "explosionArmorQuality": 2.0,
+          "hp": 15000.0
         },
         "mid_bottom_dm": {
-          "hp": 5000.0
+          "explosionArmorQuality": 2.0,
+          "hp": 15000.0
         },
         "bow_bottom_dm": {
-          "hp": 5000.0
+          "explosionArmorQuality": 2.0,
+          "hp": 15000.0
         }
       },
       "bulkheads": {
@@ -1034,21 +1135,27 @@
         "armorThickness": 10.0,
         "mast_01_dm": {
           "hp": 444.0
-        },
+        }
+      },
+      "radiolocation": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0,
         "radar_01_dm": {
-          "armorThickness": 5.0,
           "hp": 150.0
         },
         "radar_02_dm": {
-          "armorThickness": 5.0,
           "hp": 150.0
         },
-        "radar_03_dm": {
-          "armorThickness": 5.0,
+        "radar_04_dm": {
+          "hp": 150.0
+        },
+        "antenna_target_location_01_dm": {
           "hp": 209.0
         },
-        "radar_04_dm": {
-          "armorThickness": 5.0,
+        "antenna_target_tagging_01_dm": {
+          "hp": 269.0
+        },
+        "antenna_target_tagging_mount_01_dm": {
           "hp": 150.0
         }
       },
@@ -1244,7 +1351,7 @@
         "armorThickness": 5.0
       },
       "gun_masks": {
-        "armorClass": "CHA_tank",
+        "armorClass": "ship_RHA",
         "armorThickness": 15.0
       },
       "gun_barrels": {
@@ -1721,7 +1828,43 @@
     }
   },
   {
+    "cockpit": {
+      "headPos": [0.0,19.0,-58.0],
+      "headPosOnShooting": [10.0,18.0,0.0],
+      "detectionHeight": 17.0
+    }
+  },
+  {
+    "sound": {
+      "EngineName": "engine_ctr_jet",
+      "EngineNameAi": "engine_ctr_jet_ai",
+      "TrackSoundPath": "ships/engines_ships",
+      "TrackSoundPathStudio": "naval/engines",
+      "TrackSoundName": "tracks_ctr",
+      "TrackSoundNameCockpit": "tracks_ctr_interior",
+      "TrackSoundNameAi": "tracks_ai_ctr"
+    }
+  },
+  {
+    "optics": {
+      "binoculars": "navy_binoculars"
+    }
+  },
+  {
     "commonWeapons": [
+      {
+        "animatedBones": [
+          {
+            "node": "antenna_target_location"
+          },
+          {
+            "node": "antenna_target_tagging"
+          },
+          {
+            "node": "antenna_target_tagging_mount"
+          }
+        ]
+      },
       {
         "Weapon": {
           "trigger": "gunner0",
@@ -2040,24 +2183,6 @@
         }
       }
     ]
-  },
-  {
-    "cockpit": {
-      "headPos": [0.0,19.0,-58.0],
-      "headPosOnShooting": [10.0,18.0,0.0],
-      "detectionHeight": 17.0
-    }
-  },
-  {
-    "sound": {
-      "EngineName": "engine_ctr_jet",
-      "EngineNameAi": "engine_ctr_jet_ai",
-      "TrackSoundPath": "ships/engines_ships",
-      "TrackSoundPathStudio": "naval/engines",
-      "TrackSoundName": "tracks_ctr",
-      "TrackSoundNameCockpit": "tracks_ctr_interior",
-      "TrackSoundNameAi": "tracks_ai_ctr"
-    }
   },
   {
     "unitFx": [
@@ -2708,9 +2833,29 @@
     ]
   },
   {
-    "optics": {
-      "binoculars": "navy_binoculars"
-    }
+    "sensors": [
+      {
+        "sensor": {
+          "blk": "gameData/sensors/su_foot_n.blk",
+          "designationFromBody": true,
+          "designationTurretIndex": 1,
+          "dmPart": "antenna_target_location_01_dm"
+        }
+      },
+      {
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_mr_105.blk"
+          },
+          {
+            "dmPart": "antenna_target_tagging_01_dm"
+          },
+          {
+            "dmPart": "antenna_target_tagging_mount_01_dm"
+          }
+        ]
+      }
+    ]
   },
   {
     "modifications": {

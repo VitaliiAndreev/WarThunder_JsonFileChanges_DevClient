@@ -1016,7 +1016,10 @@
       "tracks": {
         "animationMultiplier": 0.95,
         "height": 0.07,
-        "width": 0.91
+        "width": 0.91,
+        "fricFrontal": [1.5,1.5],
+        "criticalHillAngle": 27.0,
+        "hillClimbingDeclineFricKoef": 15.0
       },
       "collisionProps": {
         "cls_turret": "convex_hull",
@@ -1027,48 +1030,53 @@
       "engine": {
         "horsePowers": 650.0,
         "maxRPM": 2500.0,
-        "minRPM": 1000.0
+        "minRPM": 600.0
       },
       "mechanics": {
         "maxBrakeForce": 325132.0,
-        "driveGearRadius": 0.4,
-        "mainGearRatio": 0.394,
-        "sideGearRatio": 1.38,
-        "gearType": "differential",
-        "neutralGearRatio": 250.0,
+        "driveGearRadius": 0.39,
+        "mainGearRatio": 1.2,
+        "sideGearRatio": 4.2,
+        "neutralGearRatio": 34.0,
         "gearRatios": [
           {
-            "ratio": -36.5
+            "ratio": -3.83
           },
           {
-            "ratio": -47.0
+            "ratio": -6.86
           },
           {
-            "ratio": -61.5
+            "ratio": -10.5
           },
           {
-            "ratio": -82.0
+            "ratio": -15.56
           },
           {
-            "ratio": -106.0
+            "ratio": -22.8
+          },
+          {
+            "ratio": -34.48
           },
           {
             "ratio": 0.0
           },
           {
-            "ratio": 106.0
+            "ratio": 34.48
           },
           {
-            "ratio": 82.0
+            "ratio": 22.8
           },
           {
-            "ratio": 61.5
+            "ratio": 15.56
           },
           {
-            "ratio": 47.0
+            "ratio": 10.5
           },
           {
-            "ratio": 36.5
+            "ratio": 6.86
+          },
+          {
+            "ratio": 3.83
           }
         ]
       },
@@ -1077,7 +1085,7 @@
         "defaultGearRadius": 0.25,
         "frontBackGearRadius": 0.35,
         "topGearRadius": 0.15,
-        "defaultDampeningForce": [243849.0,243839.0],
+        "defaultDampeningForce": [320000.0,320000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
       }
@@ -2475,6 +2483,8 @@
     "cockpit": {
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
+      "sightFov": 25.0,
+      "sightName": "default_tank_spg",
       "headPos": [0.0,3.7,-9.5],
       "headPosOnShooting": [-0.75,3.45,-1.12],
       "bone_turret": "",

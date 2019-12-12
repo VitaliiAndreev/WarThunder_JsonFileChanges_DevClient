@@ -1,35 +1,41 @@
 {
   "cannon": true,
-  "weaponType": 3,
-  "bUseHookAsRel": true,
-  "emitColor": [1.0,1.0,0.0],
-  "emitI": 10.0,
-  "emitR": 3.0,
-  "emitTime": 0.03,
-  "shotFreq": 3.3,
-  "shotFreqRndK": 0.05,
-  "traceFreq": 3,
-  "bEnablePause": false,
-  "bullets": 250,
-  "bulletsCluster": 1,
-  "reloadTime": 3.0,
-  "bulletsCartridge": 50,
+  "weaponType": 1,
   "aimMinDist": 0.05,
   "aimMaxDist": 4000.0,
   "maxDeltaAngle": 0.05,
   "maxDeltaAngleVertical": 0.05,
   "attackMaxDist": 4000.0,
-  "notUseDefaultBulletInGui": true,
+  "ChainfireTime": 10.0,
+  "shotFreq": 3.3,
+  "shotFreqRndK": 0.05,
+  "bullets": 250,
+  "reloadTime": 3.0,
+  "bulletsCartridge": 50,
+  "recoilOffset": 0.15,
+  "recoilTimes": [0.1,0.15],
+  "bulletsCluster": 1,
+  "traceFreq": 3,
+  "shouldCollideWithRendinsts": true,
   "sound_path": "ships/weapon_ships/cannons",
   "sound_pathStudio": "naval/weapon/cannons",
   "sound": "40mm_l70_bofors_mel_58",
   "fxType": "40mm_gun_flame",
   "fxMultipleSpawn": true,
-  "shouldCollideWithRendinsts": true,
   "sfxReloadBullet": "naval_gun_reload",
   "isBulletBelt": false,
-  "recoilOffset": 0.15,
-  "recoilTimes": [0.1,0.15],
+  "notUseDefaultBulletInGui": true,
+  "overheat": [
+    {
+      "overheat": [30.0,0.0]
+    },
+    {
+      "overheat": [40.0,0.05]
+    },
+    {
+      "overheat": [45.0,0.5]
+    }
+  ],
   "bullet": [
     {
       "bulletCount": 25
@@ -443,16 +449,5 @@
         }
       }
     ]
-  },
-  "overheat": [
-    {
-      "overheat": [30.0,0.0]
-    },
-    {
-      "overheat": [40.0,0.05]
-    },
-    {
-      "overheat": [45.0,0.5]
-    }
-  ]
+  }
 }

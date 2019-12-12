@@ -183,15 +183,6 @@
         },
         "turret_01_front_dm": {
           "armorThickness": 34.0
-        },
-        "ex_decor_04_dm": {
-          "armorThickness": 5.0
-        },
-        "ex_decor_05_dm": {
-          "armorThickness": 5.0
-        },
-        "ex_armor_r_07_dm": {
-          "armorThickness": 5.0
         }
       },
       "side_skirts": {
@@ -241,6 +232,9 @@
         },
         "ex_armor_l_06_dm": {
           "armorThickness": 25.0
+        },
+        "ex_armor_r_07_dm": {
+          "armorThickness": 5.0
         }
       },
       "hull_CHA": {
@@ -1791,7 +1785,10 @@
       "tracks": {
         "animationMultiplier": -0.68,
         "height": 0.055,
-        "width": 0.4
+        "width": 0.4,
+        "fricFrontal": [1.0,1.0],
+        "criticalHillAngle": 27.0,
+        "hillClimbingDeclineFricKoef": 15.0
       },
       "collisionProps": {
         "cls_turret": "convex_hull",
@@ -1803,10 +1800,11 @@
         "minRPM": 600.0
       },
       "mechanics": {
-        "maxBrakeForce": 110000.0,
+        "maxBrakeForce": 125000.0,
         "driveGearRadius": 0.34,
         "mainGearRatio": 3.45,
         "sideGearRatio": 2.74,
+        "neutralGearRatio": 15.0,
         "gearRatios": [
           {
             "ratio": -5.64
@@ -1836,7 +1834,7 @@
         "defaultGearRadius": 0.15,
         "topGearRadius": 0.13,
         "frontBackGearRadius": 0.28,
-        "defaultDampeningForce": [120000.0,120000.0],
+        "defaultDampeningForce": [130000.0,130000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
       }
@@ -1873,6 +1871,12 @@
         "rotation": 0.5,
         "collisionNode": "cls_turret"
       }
+    }
+  },
+  {
+    "attachables": {
+      "ex_decor_04_dm": true,
+      "ex_decor_05_dm": true
     }
   },
   {
@@ -2361,6 +2365,8 @@
     "cockpit": {
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
+      "sightFov": 25.0,
+      "sightName": "default_tank_spg",
       "headPos": [0.0,4.0,-8.0],
       "headPosOnShooting": [0.3,3.4,-0.5],
       "bone_turret": "bone_turret_02",

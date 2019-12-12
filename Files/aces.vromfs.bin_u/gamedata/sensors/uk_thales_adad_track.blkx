@@ -103,12 +103,6 @@
           },
           {
             "setFsmActive": {
-              "fsm": "losLock",
-              "active": false
-            }
-          },
-          {
-            "setFsmActive": {
               "fsm": "track",
               "active": false
             }
@@ -145,7 +139,7 @@
             "width": 1000.0
           }
         },
-        "setLosLockMode": {
+        "setLosVisualPreLockMode": {
           "setScanPattern": {
             "scanPattern": "losLock"
           },
@@ -158,9 +152,11 @@
             "source": "targetDesignation"
           },
           "setFsmActive": {
-            "fsm": "losLock",
+            "fsm": "lock",
             "active": true
-          },
+          }
+        },
+        "setLosLockMode": {
           "setTransiver": {
             "transiver": "track"
           },
@@ -168,6 +164,15 @@
             "source": "constRange",
             "pos": 4000.0,
             "width": 8000.0
+          }
+        },
+        "setVisualLockMode": {
+          "setTransiver": {
+            "transiver": "track"
+          },
+          "setDistGatePos": {
+            "source": "targetDesignation",
+            "width": 1000.0
           }
         },
         "setTrackMode": {
@@ -240,11 +245,31 @@
           "event": "designationTypeEquals",
           "stateTo": "losLock",
           "actions": {
+            "setLosVisualPreLockMode": [],
             "setLosLockMode": []
           }
         },
-        "finishLockTypeCheck": {
+        "checkLockType2": {
           "stateFrom": "checkLockType1",
+          "event": "designationTypeNotEquals",
+          "stateTo": "checkLockType2",
+          "actions": {
+            "checkDesignationTypeEquals": {
+              "value": 2
+            }
+          }
+        },
+        "visualLock": {
+          "stateFrom": "checkLockType2",
+          "event": "designationTypeEquals",
+          "stateTo": "visualLock",
+          "actions": {
+            "setLosVisualPreLockMode": [],
+            "setVisualLockMode": []
+          }
+        },
+        "finishLockTypeCheck": {
+          "stateFrom": "checkLockType2",
           "event": "designationTypeNotEquals",
           "stateTo": "standby"
         },
@@ -256,29 +281,22 @@
             "stateFrom": "losLock"
           },
           {
+            "stateFrom": "visualLock"
+          },
+          {
             "event": "targetDetected"
           },
           {
             "stateTo": "track"
           },
           {
-            "actions": [
-              {
-                "setTrackMode": []
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "lock",
-                  "active": false
-                }
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "losLock",
-                  "active": false
-                }
+            "actions": {
+              "setTrackMode": [],
+              "setFsmActive": {
+                "fsm": "lock",
+                "active": false
               }
-            ]
+            }
           }
         ],
         "failedLock": [
@@ -289,29 +307,22 @@
             "stateFrom": "losLock"
           },
           {
+            "stateFrom": "visualLock"
+          },
+          {
             "event": "scanFinished"
           },
           {
             "stateTo": "standby"
           },
           {
-            "actions": [
-              {
-                "setStandbyMode": []
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "lock",
-                  "active": false
-                }
-              },
-              {
-                "setFsmActive": {
-                  "fsm": "losLock",
-                  "active": false
-                }
+            "actions": {
+              "setStandbyMode": [],
+              "setFsmActive": {
+                "fsm": "lock",
+                "active": false
               }
-            ]
+            }
           }
         ],
         "finishedTrack": [
@@ -344,23 +355,6 @@
     },
     "lock": {
       "stateInit": "lock",
-      "transitions": {
-        "scan": {
-          "event": "update",
-          "actions": {
-            "scan": []
-          }
-        },
-        "detect": {
-          "event": "targetInSight",
-          "actions": {
-            "detectTarget": []
-          }
-        }
-      }
-    },
-    "losLock": {
-      "stateInit": "losLock",
       "transitions": {
         "scan": {
           "event": "update",

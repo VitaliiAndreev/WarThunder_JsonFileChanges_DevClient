@@ -105,6 +105,11 @@
     "perfectRangefinder": true
   },
   {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
+  },
+  {
     "default_skin_tomoe": [
       {
         "replace_tex": {
@@ -513,11 +518,9 @@
         "stopChanceOnDeadPart": 0.2,
         "genericDamageMult": 0.6,
         "shatterDamageMult": 0.6,
-        "explosionDamageMult": 0.8,
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_wood",
         "armorThickness": 40.0,
-        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 300.0
         },
@@ -531,19 +534,13 @@
           "hp": 300.0
         },
         "bridge_dm": {
-          "genericDamageMult": 1.5,
           "shatterDamageMult": 1.5,
-          "explosionDamageMult": 1.0,
-          "armorThickness": 1.0,
+          "armorThickness": 25.0,
           "hp": 100.0
         }
       },
       "superstructures": {
         "fireParamsPreset": "ship_cover",
-        "genericDamageMult": 1.0,
-        "shatterDamageMult": 1.0,
-        "explosionDamageMult": 1.0,
-        "secondaryShatterDamageMult": 1.0,
         "stopChanceOnDeadPart": 0.2,
         "armorClass": "ship_wood",
         "armorThickness": 15.0,
@@ -1648,36 +1645,100 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "effect": {
-            "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.2,
-            "kill": true,
-            "killEffect": "destruction"
+    "MetaParts": [
+      {
+        "cover": [
+          {
+            "part": "compartment_01_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
           }
-        }
-      ],
-      "bridge": {
-        "part": "bridge_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 300.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_02_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_03_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "bridge": [
+          {
+            "part": "bridge_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
       }
-    }
+    ]
   },
   {
     "class_tags": {
@@ -1868,7 +1929,7 @@
       "Weapon": {
         "trigger": "gunner0",
         "triggerGroup": "primary",
-        "blk": "gameData/Weapons/navalModels_weapons/25mm_Type_96_naval_user_cannon.blk",
+        "blk": "gameData/Weapons/navalModels_weapons/25mm_60_type96_naval_user_cannon.blk",
         "emitter": "emtr_gun_flame_01",
         "flash": "emtr_gun_flame_01",
         "useEmitter": true,

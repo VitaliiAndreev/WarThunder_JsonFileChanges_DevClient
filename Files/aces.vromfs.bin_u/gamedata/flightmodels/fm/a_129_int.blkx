@@ -92,28 +92,32 @@
       "AileronsMode": "Manual",
       "ElevatorMode": "Manual",
       "RudderMode": "Manual",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": true
     },
     "ModePreset1": {
       "Mode": "Separate",
       "AileronsMode": "Rate",
       "ElevatorMode": "Rate",
       "RudderMode": "Rate",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": false
     },
     "ModePreset2": {
       "Mode": "Separate",
       "AileronsMode": "Angle",
       "ElevatorMode": "Angle",
       "RudderMode": "Rate",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": false
     },
     "ModePreset3": {
       "Mode": "Separate",
       "AileronsMode": "Vel",
       "ElevatorMode": "Vel",
       "RudderMode": "Rate",
-      "ThrottleMode": "Climb"
+      "ThrottleMode": "Climb",
+      "allowOverrideByForcedStabilization": false
     }
   },
   "MouseAim": {
@@ -128,8 +132,8 @@
     "WingRightOut": 0.4,
     "Aileron": 0.1,
     "Fuselage": 111.0,
-    "Stabilizer": 1.5,
-    "Elevator": 0.1,
+    "Stabilizer": 0.01,
+    "Elevator": 1.6,
     "Keel": 1.5,
     "Rudder": 0.1
   },
@@ -1394,14 +1398,14 @@
       "RateMax": [-70.0,70.0],
       "RateDeadZone": 0.0,
       "AngleMax": [-45.0,45.0],
-      "AngleDeadZone": 0.0,
+      "HeadingDeadZone": 0.0,
       "VelMax": [-30.0,30.0],
       "VelDeadZone": 0.0,
       "PosMax": [-300.0,300.0],
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 0.5,
       "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-      "AngleLim": 50.0,
+      "AngleLim": 190.0,
       "RatePID": {
         "Kp": 2.0,
         "Ki": 0.8,
@@ -1439,14 +1443,14 @@
       "RateMax": [-70.0,70.0],
       "RateDeadZone": 0.0,
       "AngleMax": [-30.0,30.0],
-      "AngleDeadZone": 0.0,
+      "HeadingDeadZone": 0.0,
       "VelMax": [-100.0,100.0],
       "VelDeadZone": 0.0,
       "PosMax": [-1000.0,1000.0],
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 1.5,
       "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-      "AngleLim": 30.0,
+      "AngleLim": 190.0,
       "RatePID": {
         "Kp": 2.0,
         "Ki": 0.8,
@@ -1480,38 +1484,57 @@
         "Lim": [-30.0,30.0]
       }
     },
-    "Yaw": {
-      "RateMax": [-50.0,50.0],
-      "RateDeadZone": 0.0,
-      "AngleMax": [-90.0,90.0],
-      "AngleDeadZone": 0.0,
-      "RatePID": {
-        "Kp": 3.0,
-        "Ki": 1.0,
-        "Imax": 1.0,
-        "Kd": 0.05,
-        "dTau": 0.025,
-        "Lim": [-1.0,1.0]
+    "Yaw": [
+      {
+        "RateMax": [-50.0,50.0]
       },
-      "AnglePID": {
-        "Kp": 0.0,
-        "Ki": 0.0,
-        "Imax": 0.0,
-        "Kd": 0.0,
-        "dTau": 0.025,
-        "Lim": [0.0,0.0]
+      {
+        "RateDeadZone": 0.0
       },
-      "Trim": {
-        "Source": "PropTorque",
-        "Propeller0": true,
-        "PropTorqueAxis": [0.0,-1.0,0.0],
-        "Table0": [100.0,-1.0,0.0,1.0],
-        "Table1": [1000.0,-1.0,0.0,1.0],
-        "Table2": [7000.0,-1.0,0.19,1.0],
-        "Table3": [21200.0,-1.0,-0.0,1.0],
-        "Table4": [54600.0,-1.0,-0.07,1.0]
+      {
+        "AngleMax": [-90.0,90.0]
+      },
+      {
+        "HeadingDeadZone": 0.0
+      },
+      {
+        "HeadingDeadZone": 0.1
+      },
+      {
+        "HeadingHoldRateTreshold": 2.0
+      },
+      {
+        "RatePID": {
+          "Kp": 3.0,
+          "Ki": 1.0,
+          "Imax": 1.0,
+          "Kd": 0.05,
+          "dTau": 0.025,
+          "Lim": [-1.0,1.0]
+        }
+      },
+      {
+        "AnglePID": {
+          "Kp": 1.0,
+          "Ki": 0.0,
+          "Imax": 0.0,
+          "Kd": 0.0,
+          "Lim": [-1.0,1.0]
+        }
+      },
+      {
+        "Trim": {
+          "Source": "PropTorque",
+          "Propeller0": true,
+          "PropTorqueAxis": [0.0,-1.0,0.0],
+          "Table0": [100.0,-1.0,0.0,1.0],
+          "Table1": [1000.0,-1.0,0.0,1.0],
+          "Table2": [7000.0,-1.0,0.19,1.0],
+          "Table3": [21200.0,-1.0,-0.0,1.0],
+          "Table4": [54600.0,-1.0,-0.07,1.0]
+        }
       }
-    },
+    ],
     "Propulsor": {
       "Trim": {
         "Source": "",

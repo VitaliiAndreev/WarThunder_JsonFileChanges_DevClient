@@ -1340,6 +1340,11 @@
   {
     "commonWeapons": [
       {
+        "hideNodes": {
+          "node": "fuse2"
+        }
+      },
+      {
         "Weapon": {
           "dummy": true,
           "trigger": "gunner0",
@@ -3634,6 +3639,9 @@
             "separateDm": true
           },
           {
+            "overwriteLinks": true
+          },
+          {
             "dp": "elevator_dm"
           },
           {
@@ -3645,6 +3653,7 @@
         "dp": {
           "dm": "stab1_dm",
           "separateDm": true,
+          "overwriteLinks": true,
           "dp": "elevator0_dm"
         }
       },
@@ -3652,6 +3661,7 @@
         "dp": {
           "dm": "stab2_dm",
           "separateDm": true,
+          "overwriteLinks": true,
           "dp": "elevator1_dm"
         }
       },
@@ -3662,6 +3672,9 @@
           },
           {
             "separateDm": true
+          },
+          {
+            "overwriteLinks": true
           },
           {
             "dp": "rudder_dm"
@@ -3683,6 +3696,9 @@
             "separateDm": true
           },
           {
+            "overwriteLinks": true
+          },
+          {
             "dp": "rudder0_dm"
           },
           {
@@ -3697,6 +3713,9 @@
           },
           {
             "separateDm": true
+          },
+          {
+            "overwriteLinks": true
           },
           {
             "dp": "rudder1_dm"
@@ -3767,137 +3786,53 @@
         }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_l_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_l%d"
-          },
-          {
-            "dp": "wheel_l"
-          },
-          {
-            "dp": "wheel%d_l"
-          }
-        ]
+        "dp": {
+          "dm": "gear_l_dm",
+          "separateDm": true,
+          "dp": "gear_l%d"
+        }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_1l_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_1l%d"
-          },
-          {
-            "dp": "wheel_1l"
-          },
-          {
-            "dp": "wheel%d_1l"
-          }
-        ]
+        "dp": {
+          "dm": "gear_1l_dm",
+          "separateDm": true,
+          "dp": "gear_1l%d"
+        }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_r_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_r%d"
-          },
-          {
-            "dp": "wheel_r"
-          },
-          {
-            "dp": "wheel%d_r"
-          }
-        ]
+        "dp": {
+          "dm": "gear_r_dm",
+          "separateDm": true,
+          "dp": "gear_r%d"
+        }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_1r_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_1r%d"
-          },
-          {
-            "dp": "wheel_1r"
-          },
-          {
-            "dp": "wheel%d_1r"
-          }
-        ]
+        "dp": {
+          "dm": "gear_1r_dm",
+          "separateDm": true,
+          "dp": "gear_1r%d"
+        }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_c_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_c%d"
-          },
-          {
-            "dp": "wheel_c"
-          },
-          {
-            "dp": "wheel%d_c"
-          }
-        ]
+        "dp": {
+          "dm": "gear_c_dm",
+          "separateDm": true,
+          "dp": "gear_c%d"
+        }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_2c_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_2c%d"
-          },
-          {
-            "dp": "wheel_2c"
-          },
-          {
-            "dp": "wheel%d_2c"
-          }
-        ]
+        "dp": {
+          "dm": "gear_2c_dm",
+          "separateDm": true,
+          "dp": "gear_2c%d"
+        }
       },
       {
-        "dp": [
-          {
-            "dm": "gear_3c_dm"
-          },
-          {
-            "separateDm": true
-          },
-          {
-            "dp": "gear_3c%d"
-          },
-          {
-            "dp": "wheel_3c"
-          },
-          {
-            "dp": "wheel%d_3c"
-          }
-        ]
+        "dp": {
+          "dm": "gear_3c_dm",
+          "separateDm": true,
+          "dp": "gear_3c%d"
+        }
       },
       {
         "dp": [
@@ -4065,7 +4000,129 @@
         "reqModification": "uh_1c_xm18",
         "tier": 4
       },
+      "heli_false_thermal_targets": {
+        "turn_it_off": false,
+        "tier": 1,
+        "invertEnableLogic": false,
+        "group": "mi-24_EVU",
+        "effects": {
+          "commonWeapons": [
+            {
+              "Weapon": {
+                "dummy": true,
+                "trigger": "gunner0",
+                "triggerGroup": "primary",
+                "blk": "gameData/Weapons/cannonM197.blk",
+                "emitter": "optic1_gun",
+                "defaultYaw": 0.0,
+                "defaultPitch": 0.0,
+                "speedYaw": 25.0,
+                "speedPitch": 25.0,
+                "bullets": 1,
+                "parkInDeadzone": false,
+                "aimForOperatedShell": true,
+                "turret": {
+                  "head": "optic1_turret",
+                  "gun": "optic1_gun",
+                  "mainTurret": true
+                },
+                "limits": {
+                  "yaw": [-115.0,115.0],
+                  "pitch": [-50.0,25.0]
+                }
+              }
+            },
+            {
+              "Weapon": [
+                {
+                  "trigger": "gunner0"
+                },
+                {
+                  "blk": "gameData/Weapons/cannonM197.blk"
+                },
+                {
+                  "emitter": "flare1"
+                },
+                {
+                  "flash": "flare1"
+                },
+                {
+                  "turret": "turret1"
+                },
+                {
+                  "shell": "emtr_shellrejection1"
+                },
+                {
+                  "dm": "gunner1_dm"
+                },
+                {
+                  "gunnerDm": "gunner1_dm"
+                },
+                {
+                  "gunDm": "cannon1_dm"
+                },
+                {
+                  "partsDP": "cannon1_dm"
+                },
+                {
+                  "bullets": 750
+                },
+                {
+                  "recoilOffset": 0.0
+                },
+                {
+                  "rotationAnimScale": "gun_rotate_01:CRS"
+                },
+                {
+                  "parkInDeadzone": false
+                },
+                {
+                  "turret": {
+                    "head": "turret1",
+                    "gun": "gun1",
+                    "barrel": "gun_barrel1",
+                    "mainTurret": true,
+                    "ballisticTargeting": true
+                  }
+                },
+                {
+                  "limits": {
+                    "yaw": [-115.0,115.0],
+                    "pitch": [-50.0,25.0]
+                  }
+                },
+                {
+                  "limitsTable": {
+                    "lim1": [-115.0,-103.0,-50.0,15.0],
+                    "lim2": [-103.0,-75.0,-50.0,19.0],
+                    "lim3": [-75.0,-52.0,-50.0,24.0],
+                    "lim4": [-52.0,-35.0,-50.0,25.0],
+                    "lim5": [-35.0,-15.0,-50.0,23.0],
+                    "lim6": [-15.0,15.0,-50.0,20.0],
+                    "lim7": [15.0,35.0,-50.0,23.0],
+                    "lim8": [35.0,52.0,-50.0,25.0],
+                    "lim9": [52.0,75.0,-50.0,24.0],
+                    "lim10": [75.0,103.0,-50.0,19.0],
+                    "lim11": [103.0,115.0,-50.0,15.0]
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": {
+                "trigger": "flares",
+                "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
+                "emitter": "emtr_flare1",
+                "bullets": 30,
+                "external": true,
+                "separate": true
+              }
+            }
+          ]
+        }
+      },
       "ah_1_m200_2": {
+        "reqModification": "heli_false_thermal_targets",
         "deactivationIsAllowed": false,
         "modClass": "weapon",
         "tier": 2
@@ -4083,6 +4140,7 @@
         "tier": 4
       },
       "heli_night_vision_system": {
+        "image": "#ui/gameuiskin#thermal_sight",
         "effects": {
           "nightVision": {
             "gunnerIr": {

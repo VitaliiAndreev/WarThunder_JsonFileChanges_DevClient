@@ -1057,22 +1057,38 @@
     },
     {
       "part": {
-        "name": "spar1_l_dm"
+        "name": "spar1_l_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
       "part": {
-        "name": "spar1_r_dm"
+        "name": "spar1_r_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
       "part": {
-        "name": "spar2_l_dm"
+        "name": "spar2_l_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
       "part": {
-        "name": "spar2_r_dm"
+        "name": "spar2_r_dm",
+        "onKill": {
+          "nothing": 0.0,
+          "cut": 1.0
+        }
       }
     },
     {
@@ -1993,14 +2009,9 @@
       }
     }
   ],
-  "spawn_count": {
-    "numSpawnsPerBattleSimulation": 2,
-    "numSpawnsPerBattleArcade": 3,
-    "numSpawnsPerBattleHistorical": 1
-  },
   "ikPilot": [
     {
-      "model": "pilot_german_char"
+      "model": "pilot_sweden_early_char"
     },
     {
       "maxHeadHorAngle": 60.0
@@ -2192,12 +2203,28 @@
       ]
     }
   ],
-  "weapon_presets": {
-    "preset": {
-      "name": "pyorremyrsky_default",
-      "blk": "gameData/FlightModels/weaponPresets/pyorremyrsky_default.blk"
+  "weapon_presets": [
+    {
+      "preset": {
+        "name": "pyorremyrsky_default",
+        "blk": "gameData/FlightModels/weaponPresets/pyorremyrsky_default.blk"
+      }
+    },
+    {
+      "preset": {
+        "name": "pyorremyrsky_4x50kg",
+        "blk": "gameData/FlightModels/weaponPresets/pyorremyrsky_4x50kg.blk",
+        "reqModification": "fin_50kg"
+      }
+    },
+    {
+      "preset": {
+        "name": "pyorremyrsky_4x100kg",
+        "blk": "gameData/FlightModels/weaponPresets/pyorremyrsky_4x100kg.blk",
+        "reqModification": "fin_100kg"
+      }
     }
-  },
+  ],
   "user_skin": [
     {
       "name": "pyorremyrsky"
@@ -2337,6 +2364,15 @@
     },
     "mg15120_new_gun": {
       "reqModification": "mg15120_belt_pack",
+      "tier": 4
+    },
+    "fin_50kg": {
+      "modClass": "weapon",
+      "tier": 2
+    },
+    "fin_100kg": {
+      "modClass": "weapon",
+      "reqModification": "fin_50kg",
       "tier": 4
     }
   },

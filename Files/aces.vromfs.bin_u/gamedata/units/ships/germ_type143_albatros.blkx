@@ -78,6 +78,12 @@
     "exhaustFx": "ps_exhaust"
   },
   {
+    "radarAnimVar": "radar_target_yaw_rotate"
+  },
+  {
+    "radarAnimPitchVar": "radar_target_pitch_rotate"
+  },
+  {
     "smokeScreenActivateTime": 2.5
   },
   {
@@ -94,6 +100,11 @@
   },
   {
     "canReloadNonGuns": true
+  },
+  {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
   },
   {
     "default_skin_tomoe": [
@@ -687,6 +698,16 @@
         },
         "mast_02_dm": {
           "hp": 500.0
+        }
+      },
+      "radiolocation": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0,
+        "antenna_target_location_01_dm": {
+          "hp": 150.0
+        },
+        "antenna_target_tagging_01_dm": {
+          "hp": 150.0
         }
       },
       "engine": {
@@ -1791,39 +1812,96 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "part": "compartment_04_dm"
-        },
-        {
-          "part": "compartment_05_dm"
-        },
-        {
-          "part": "compartment_06_dm"
-        },
-        {
-          "part": "compartment_07_dm"
-        },
-        {
+    "MetaParts": [
+      {
+        "cover": {
+          "part": "compartment_01_dm",
           "effect": {
             "conditionDamageType": "explosion",
-            "conditionDamage": 45000.0,
+            "conditionDamage": 20000.0,
             "kill": true,
             "killEffect": "destruction"
           }
         }
-      ]
-    }
+      },
+      {
+        "cover": {
+          "part": "compartment_02_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_03_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_04_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_05_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_06_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_07_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_08_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      }
+    ]
   },
   {
     "tags": {
@@ -1943,12 +2021,40 @@
     }
   },
   {
+    "sensors": [
+      {
+        "sensor": {
+          "blk": "gameData/sensors/su_foot_n.blk",
+          "designationFromBody": true,
+          "designationTurretIndex": 1,
+          "dmPart": "antenna_target_location_01_dm"
+        }
+      },
+      {
+        "sensor": {
+          "blk": "gameData/sensors/su_mr_105.blk",
+          "dmPart": "fire_director_01_dm"
+        }
+      }
+    ]
+  },
+  {
     "commonWeapons": [
+      {
+        "animatedBones": [
+          {
+            "node": "antenna_target_location"
+          },
+          {
+            "node": "antenna_target_tagging"
+          }
+        ]
+      },
       {
         "Weapon": {
           "trigger": "gunner0",
           "triggerGroup": "primary",
-          "blk": "gameData/Weapons/navalModels_weapons/76mm_Melara_76_62_naval_user_cannon.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/76mm_62_oto_melara_sr_naval_user_cannon.blk",
           "emitter": "emtr_gun_flame_01",
           "flash": "emtr_gun_flame_01",
           "useEmitter": true,
@@ -2020,7 +2126,7 @@
         "Weapon": {
           "trigger": "gunner1",
           "triggerGroup": "primary",
-          "blk": "gameData/Weapons/navalModels_weapons/76mm_Melara_76_62_naval_user_cannon.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/76mm_62_oto_melara_sr_naval_user_cannon.blk",
           "emitter": "emtr_gun_flame_02",
           "flash": "emtr_gun_flame_02",
           "useEmitter": true,

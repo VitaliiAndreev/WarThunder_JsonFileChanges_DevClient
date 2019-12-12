@@ -142,16 +142,13 @@
       "armor_al_7039": {
         "armorClass": "aluminum_armor_7039",
         "body_side_dm": {
-          "armorThickness": 44.0
+          "armorThickness": 25.4
         },
         "superstructure_side_dm": {
-          "armorThickness": 44.0
+          "armorThickness": 25.4
         },
         "body_back_dm": {
-          "armorThickness": 44.0
-        },
-        "superstructure_back_dm": {
-          "armorThickness": 44.0
+          "armorThickness": 25.4
         },
         "body_bottom_dm": {
           "armorThickness": 25.4
@@ -166,11 +163,11 @@
           "armorThickness": 25.4
         },
         "turret_commander_dm": {
-          "armorThickness": 38.1,
+          "armorThickness": 25.4,
           "armorClass": "CHA_tank"
         },
         "turret_02_top_dm": {
-          "armorThickness": 38.1,
+          "armorThickness": 25.4,
           "armorClass": "CHA_tank"
         },
         "gun_mask_dm": {
@@ -183,27 +180,21 @@
           "armorThickness": 25.4
         },
         "turret_04_top_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_05_bottom_dm": {
           "armorThickness": 25.4
         },
         "turret_05_front_dm": {
-          "armorThickness": 38.1,
+          "armorThickness": 25.4,
           "armorClass": "CHA_tank"
         },
         "turret_05_side_dm": {
-          "armorThickness": 38.1,
+          "armorThickness": 25.4,
           "armorClass": "CHA_tank"
         },
-        "turret_05_back_dm": {
-          "armorThickness": 25.4
-        },
         "turret_06_back_dm": {
-          "armorThickness": 38.1
-        },
-        "turret_04_back_dm": {
-          "armorThickness": 44.0
+          "armorThickness": 25.4
         },
         "turret_06_top_dm": {
           "armorThickness": 12.7
@@ -212,13 +203,13 @@
       "armor_al_5083": {
         "armorClass": "aluminum_armor_5083",
         "body_front_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_01_front_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "superstructure_front_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "superstructure_top_dm": {
           "armorThickness": 25.4
@@ -230,24 +221,27 @@
           "armorThickness": 25.4
         },
         "turret_01_back_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_02_back_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_02_front_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_02_side_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_03_bottom_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_03_back_dm": {
-          "armorThickness": 38.1
+          "armorThickness": 25.4
         },
         "turret_05_top_dm": {
+          "armorThickness": 25.4
+        },
+        "turret_04_back_dm": {
           "armorThickness": 25.4
         }
       },
@@ -263,6 +257,20 @@
         },
         "turret_bottom_dm": {
           "armorThickness": 6.35
+        },
+        "turret_06_bottom_dm": {
+          "armorThickness": 6.35,
+          "hidableInViewer": true
+        },
+        "superstructure_back_dm": {
+          "armorThickness": 6.35,
+          "hidableInViewer": true
+        },
+        "turret_06_side_dm": {
+          "armorThickness": 6.35
+        },
+        "turret_05_back_dm": {
+          "armorThickness": 25.4
         }
       },
       "optics": {
@@ -310,7 +318,9 @@
         "createSecondaryShatters": false,
         "hidableInViewer": true,
         "turret_03_top_dm": [],
-        "body_top_dm": [],
+        "body_top_dm": {
+          "armorThickness": 9.0
+        },
         "turret_01_side_dm": [],
         "turret_04_side_dm": [],
         "turret_04_bottom_dm": [],
@@ -1568,53 +1578,20 @@
           "role": "tank_gunner"
         },
         {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "commander"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "driver": [
-        {
-          "dmPart": "driver_dm"
-        },
-        {
-          "role": "driver"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "commander"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "loader": [
-        {
-          "dmPart": "loader_dm"
-        },
-        {
           "role": "loader"
         },
         {
-          "substitute": "machine_gunner"
-        },
-        {
           "substitute": "commander"
         }
       ],
+      "driver": {
+        "dmPart": "driver_dm",
+        "role": "driver",
+        "substitute": "commander"
+      },
       "commander": {
         "dmPart": "commander_dm",
         "role": "commander"
-      },
-      "machine_gunner": {
-        "dmPart": "machine_gunner_dm",
-        "role": "radio_gunner"
       }
     }
   },
@@ -1896,7 +1873,7 @@
           "blk": "gameData/Weapons/groundModels_weapons/25mm_M242_user_cannon.blk",
           "emitter": "bone_gun_barrel",
           "flash": "emtr_gun_flame",
-          "recoilOffset": 0.12,
+          "recoilOffset": 0.01,
           "maxAdditionalPitch": 0.0,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
@@ -2167,7 +2144,7 @@
         "driveGearRadius": 0.23,
         "mainGearRatio": 1.0,
         "sideGearRatio": 4.071,
-        "neutralGearRatio": 5.0,
+        "neutralGearRatio": 8.0,
         "gearRatios": [
           {
             "ratio": -4.35
@@ -2794,7 +2771,7 @@
                 "blk": "gameData/Weapons/groundModels_weapons/25mm_M242_user_cannon.blk",
                 "emitter": "bone_gun_barrel",
                 "flash": "emtr_gun_flame",
-                "recoilOffset": 0.12,
+                "recoilOffset": 0.01,
                 "maxAdditionalPitch": 0.0,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,

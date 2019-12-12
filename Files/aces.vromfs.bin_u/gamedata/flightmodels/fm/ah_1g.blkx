@@ -84,14 +84,16 @@
       "AileronsMode": "Manual",
       "ElevatorMode": "Manual",
       "RudderMode": "Manual",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": true
     },
     "ModePreset1": {
       "Mode": "Separate",
       "AileronsMode": "Rate",
       "ElevatorMode": "Rate",
       "RudderMode": "Rate",
-      "ThrottleMode": "Manual"
+      "ThrottleMode": "Manual",
+      "allowOverrideByForcedStabilization": false
     }
   },
   "Areas": {
@@ -103,8 +105,8 @@
     "WingRightOut": 0.3,
     "Aileron": 0.1,
     "Fuselage": 141.0,
-    "Stabilizer": 0.8,
-    "Elevator": 0.7,
+    "Stabilizer": 0.01,
+    "Elevator": 1.5,
     "Keel": 1.6,
     "Rudder": 0.1
   },
@@ -1118,7 +1120,7 @@
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 1.5,
       "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-      "AngleLim": 50.0,
+      "AngleLim": 190.0,
       "RatePID": {
         "Kp": 3.0,
         "Ki": 1.0,
@@ -1156,7 +1158,7 @@
       "PosDeadZone": 0.1,
       "PosHoldVelTreshold": 1.5,
       "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-      "AngleLim": 45.0,
+      "AngleLim": 190.0,
       "RatePID": {
         "Kp": 3.0,
         "Ki": 1.0,
@@ -1188,7 +1190,8 @@
     },
     "Yaw": {
       "RateMax": [-60.0,60.0],
-      "AngleMax": [-90.0,90.0],
+      "HeadingDeadZone": 0.1,
+      "HeadingHoldRateTreshold": 2.0,
       "RatePID": {
         "Kp": 2.0,
         "Ki": 1.0,
@@ -1197,11 +1200,11 @@
         "Lim": [-1.0,1.0]
       },
       "AnglePID": {
-        "Kp": 0.0,
+        "Kp": 1.0,
         "Ki": 0.0,
         "Imax": 0.0,
         "Kd": 0.0,
-        "Lim": [0.0,0.0]
+        "Lim": [-1.0,1.0]
       },
       "Trim": {
         "Source": "PropTorque",

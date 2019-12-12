@@ -1,24 +1,18 @@
 {
   "cannon": true,
-  "weaponType": -1,
-  "bUseHookAsRel": true,
-  "emitColor": [1.0,1.0,0.0],
-  "emitI": 10.0,
-  "emitR": 3.0,
-  "emitTime": 0.03,
+  "weaponType": 1,
   "aimMinDist": 0.05,
   "aimMaxDist": 20000.0,
   "attackMaxDist": 15000.0,
   "maxDeltaAngle": 0.53,
   "maxDeltaAngleVertical": 0.2,
   "shotFreq": 0.1333,
-  "traceFreq": 4,
-  "bEnablePause": false,
-  "bullets": -1,
-  "bulletsCluster": 1,
+  "bullets": 1,
+  "recoilOffset": 0.406,
+  "recoilTimes": [0.15,0.6],
+  "shouldCollideWithRendinsts": true,
   "fxType": "200mm_gun_flame",
   "fxGroundDust": "water_shock_wave",
-  "shouldCollideWithRendinsts": true,
   "sound_path": "ships/weapon_common/cannons",
   "sound_pathStudio": "naval/weapon/cannons",
   "sound": "130mm_b13",
@@ -26,8 +20,6 @@
   "fxMultipleSpawn": true,
   "isBulletBelt": false,
   "notUseDefaultBulletInGui": true,
-  "recoilOffset": 0.406,
-  "recoilTimes": [0.15,0.6],
   "bullet": {
     "bulletCount": 25,
     "mass": 33.4,
@@ -143,15 +135,6 @@
           }
         }
       ]
-    },
-    "armorpower": {
-      "ArmorPower0m": [57.0,10.0],
-      "ArmorPower5000m": [40.0,5000.0],
-      "ArmorPower10000m": [26.0,10000.0],
-      "ArmorPower15000m": [11.0,15000.0],
-      "ArmorPower20000m": [6.0,20000.0],
-      "ArmorPower25000m": [3.0,25000.0],
-      "ArmorPower26000m": [0.0,26000.0]
     },
     "hitpower": {
       "HitPower0m": [50.0,500.0],
@@ -396,15 +379,6 @@
           }
         ]
       },
-      "armorpower": {
-        "ArmorPower0m": [57.0,10.0],
-        "ArmorPower5000m": [40.0,5000.0],
-        "ArmorPower10000m": [26.0,10000.0],
-        "ArmorPower15000m": [11.0,15000.0],
-        "ArmorPower20000m": [6.0,20000.0],
-        "ArmorPower25000m": [3.0,25000.0],
-        "ArmorPower26000m": [0.0,26000.0]
-      },
       "hitpower": {
         "HitPower0m": [50.0,500.0],
         "HitPower5000m": [35.0,5000.0],
@@ -542,8 +516,9 @@
       "speed": 861.0,
       "maxDistance": 60000.0,
       "speedDispersion": 0.01,
-      "bulletType": "sap_tank",
+      "bulletType": "sapbc_tank",
       "bulletName": "130mm_obr1928_sap",
+      "dynamicKv": true,
       "relativeVelHitShift": [300.0,1000.0],
       "relativeVelArmorShift": [200.0,1000.0],
       "fuseDelayDist": 6.0,
@@ -552,6 +527,12 @@
       "waterCollisionEffect": "120-203_water_splash",
       "waterFxScale": [0.7,0.85],
       "damage": {
+        "kinetic": {
+          "demarrePenetrationK": 1.0,
+          "demarreSpeedPow": 1.43,
+          "demarreMassPow": 0.71,
+          "demarreCaliberPow": 1.07
+        },
         "shatter": [
           {
             "useRealShatters": true
@@ -644,35 +625,11 @@
       },
       "hitpower": {
         "HitPower0m": [1.0,500.0],
-        "HitPower5000m": [1.0,5000.0],
-        "HitPower10000m": [1.0,10000.0],
-        "HitPower15000m": [1.0,15000.0],
-        "HitPower20000m": [1.0,20000.0],
-        "HitPower25000m": [1.0,25000.0],
-        "HitPower26000m": [1.0,26000.0]
-      },
-      "armorpower": {
-        "ArmorPower0m": [225.0,0.0],
-        "ArmorPower1000m": [175.0,1000.0],
-        "ArmorPower2000m": [155.0,2000.0],
-        "ArmorPower3000m": [136.0,3000.0],
-        "ArmorPower4000m": [118.0,4000.0],
-        "ArmorPower5000m": [98.0,5000.0],
-        "ArmorPower6000m": [78.0,6000.0],
-        "ArmorPower7000m": [59.0,7000.0],
-        "ArmorPower8000m": [39.0,8000.0],
-        "ArmorPower90000m": [30.0,90000.0],
-        "ArmorPower10000m": [21.0,10000.0],
-        "ArmorPower11000m": [19.0,11000.0],
-        "ArmorPower12000m": [16.0,12000.0],
-        "ArmorPower13000m": [14.0,13000.0],
-        "ArmorPower14000m": [11.0,14000.0],
-        "ArmorPower15000m": [9.0,15000.0],
-        "ArmorPower16000m": [8.0,16000.0],
-        "ArmorPower17000m": [6.0,17000.0],
-        "ArmorPower18000m": [4.0,18000.0],
-        "ArmorPower19000m": [3.0,19000.0],
-        "ArmorPower20000m": [0.0,20000.0]
+        "HitPower5000m": [0.9,5000.0],
+        "HitPower10000m": [0.8,10000.0],
+        "HitPower15000m": [0.6,15000.0],
+        "HitPower20000m": [0.4,20000.0],
+        "HitPower25000m": [0.2,25000.0]
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
@@ -911,15 +868,6 @@
             }
           }
         ]
-      },
-      "armorpower": {
-        "ArmorPower0m": [57.0,10.0],
-        "ArmorPower5000m": [40.0,5000.0],
-        "ArmorPower10000m": [26.0,10000.0],
-        "ArmorPower15000m": [11.0,15000.0],
-        "ArmorPower20000m": [6.0,20000.0],
-        "ArmorPower25000m": [3.0,25000.0],
-        "ArmorPower26000m": [0.0,26000.0]
       },
       "hitpower": {
         "HitPower0m": [50.0,500.0],

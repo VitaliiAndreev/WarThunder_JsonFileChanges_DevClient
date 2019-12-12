@@ -39,6 +39,9 @@
     "useSimpleDeathConditionsAndEffects": false
   },
   {
+    "autoSightDistanceCorrection": true
+  },
+  {
     "subclass": "heavyVehicle"
   },
   {
@@ -448,10 +451,6 @@
           "armorClass": "tank_structural_steel"
         },
         "turret_08_back_dm": {
-          "armorThickness": 5.0,
-          "armorClass": "tank_structural_steel"
-        },
-        "turret_08_front_dm": {
           "armorThickness": 5.0,
           "armorClass": "tank_structural_steel"
         },
@@ -2887,8 +2886,7 @@
       "sightName": "challenger_2_sight",
       "headPos": [0.0,4.2,-9.0],
       "headPosOnShooting": [-0.7,3.5,0.64],
-      "detectionHeight": 2.489,
-      "bone_turret": "bone_mg_aa_h_01"
+      "detectionHeight": 2.489
     }
   },
   {
@@ -2910,6 +2908,217 @@
       "tank_medical_kit_expendable": {
         "image": "#ui/gameuiskin#tank_reinforcement_uk"
       },
+      "challenger_2_protection_improvement": {
+        "modClass": "firepower",
+        "invertEnableLogic": false,
+        "turn_it_off": false,
+        "tier": 3,
+        "effects": {
+          "rcostAddParam": -0.1,
+          "changeMass": 1100.0,
+          "hideNodes": [
+            {
+              "node": "ex_decor_l_20"
+            },
+            {
+              "node": "ex_decor_r_20"
+            },
+            {
+              "node": "ex_decor_l_21"
+            },
+            {
+              "node": "ex_decor_r_21"
+            }
+          ]
+        },
+        "disableModEffects": {
+          "hideNodes": [
+            {
+              "node": "ex_decor_r_01"
+            },
+            {
+              "node": "ex_decor_r_04"
+            },
+            {
+              "node": "ex_armor_r_01"
+            },
+            {
+              "node": "ex_armor_r_02"
+            },
+            {
+              "node": "ex_armor_r_03"
+            },
+            {
+              "node": "body_01"
+            },
+            {
+              "node": "ex_decor_r_05"
+            },
+            {
+              "node": "ex_decor_r_06"
+            },
+            {
+              "node": "ex_decor_r_09"
+            },
+            {
+              "node": "ex_decor_r_10"
+            },
+            {
+              "node": "ex_decor_r_08"
+            },
+            {
+              "node": "ex_decor_r_07"
+            },
+            {
+              "node": "ex_decor_r_11"
+            },
+            {
+              "node": "ex_decor_r_12"
+            },
+            {
+              "node": "ex_decor_r_13"
+            },
+            {
+              "node": "ex_decor_r_14"
+            },
+            {
+              "node": "ex_armor_r_05"
+            },
+            {
+              "node": "ex_decor_r_17"
+            },
+            {
+              "node": "ex_armor_r_04"
+            },
+            {
+              "node": "turret_01"
+            },
+            {
+              "node": "ex_armor_l_04"
+            },
+            {
+              "node": "ex_decor_l_17"
+            },
+            {
+              "node": "ex_armor_l_05"
+            },
+            {
+              "node": "ex_decor_l_14"
+            },
+            {
+              "node": "ex_decor_l_13"
+            },
+            {
+              "node": "ex_decor_l_12"
+            },
+            {
+              "node": "ex_decor_l_11"
+            },
+            {
+              "node": "ex_decor_l_10"
+            },
+            {
+              "node": "ex_decor_l_09"
+            },
+            {
+              "node": "ex_decor_l_08"
+            },
+            {
+              "node": "ex_decor_l_07"
+            },
+            {
+              "node": "ex_decor_l_06"
+            },
+            {
+              "node": "ex_decor_l_05"
+            },
+            {
+              "node": "ex_decor_l_04"
+            },
+            {
+              "node": "ex_decor_l_01"
+            },
+            {
+              "node": "ex_armor_l_01"
+            },
+            {
+              "node": "ex_armor_l_02"
+            },
+            {
+              "node": "ex_armor_l_03"
+            },
+            {
+              "node": "ex_era_hull_01"
+            },
+            {
+              "node": "ex_era_hull_02"
+            },
+            {
+              "node": "ex_era_hull_03"
+            },
+            {
+              "node": "ex_era_hull_04"
+            },
+            {
+              "node": "ex_era_hull_05"
+            },
+            {
+              "node": "ex_era_hull_06"
+            },
+            {
+              "node": "ex_era_hull_07"
+            },
+            {
+              "node": "ex_era_hull_08"
+            },
+            {
+              "node": "ex_era_hull_09"
+            },
+            {
+              "node": "ex_era_hull_10"
+            },
+            {
+              "node": "ex_era_hull_11"
+            },
+            {
+              "node": "ex_era_hull_12"
+            },
+            {
+              "node": "ex_era_hull_13"
+            },
+            {
+              "node": "ex_era_hull_14"
+            },
+            {
+              "node": "ex_era_hull_15"
+            },
+            {
+              "node": "ex_era_hull_16"
+            },
+            {
+              "node": "ex_era_hull_17"
+            },
+            {
+              "node": "ex_era_hull_18"
+            },
+            {
+              "node": "ex_era_hull_19"
+            },
+            {
+              "node": "ex_era_hull_20"
+            },
+            {
+              "node": "ex_era_hull_21"
+            },
+            {
+              "node": "ex_era_hull_22"
+            },
+            {
+              "node": "ex_armor_02"
+            }
+          ]
+        }
+      },
       "modern_tank_laser_rangefinder": [],
       "120mm_britain_L37A7_HESH": [],
       "120mm_britain_L26_APDSFS": [],
@@ -2921,7 +3130,7 @@
       "art_support": [],
       "tank_engine_smoke_screen_system": [],
       "tank_smoke_screen_system_mod": {
-        "tier": 3,
+        "tier": 1,
         "effects": {
           "commonWeapons": [
             {

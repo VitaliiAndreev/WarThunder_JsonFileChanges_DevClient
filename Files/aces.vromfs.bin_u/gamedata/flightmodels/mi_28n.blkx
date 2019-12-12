@@ -115,23 +115,23 @@
         "hp": 19.5
       }
     },
-    "glass22": {
+    "new_armor_glass22": {
       "armor3_dm": {
-        "hp": 100.0
+        "hp": 110.0
       },
       "armor5_dm": {
-        "hp": 100.0
+        "hp": 110.0
       },
       "armor6_dm": {
-        "hp": 100.0
+        "hp": 110.0
       },
       "armor7_dm": {
-        "hp": 100.0
+        "hp": 110.0
       }
     },
-    "glass44": {
+    "new_armor_glass44": {
       "armor11_dm": {
-        "hp": 100.0
+        "hp": 110.0
       }
     },
     "protected_controls": {
@@ -1827,8 +1827,8 @@
           "mainTurret": true
         },
         "limits": {
-          "yaw": [-60.0,60.0],
-          "pitch": [-40.0,10.0]
+          "yaw": [-110.0,110.0],
+          "pitch": [-40.0,13.0]
         },
         "gunStabilizer": {
           "hasVerticalGunFreeMode": false,
@@ -1875,8 +1875,8 @@
           "speedPitch": 25.0
         },
         "limits": {
-          "yaw": [-60.0,60.0],
-          "pitch": [-40.0,10.0]
+          "yaw": [-110.0,110.0],
+          "pitch": [-40.0,13.0]
         }
       }
     }
@@ -4159,6 +4159,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "elevator_dm"
         },
         {
@@ -4170,6 +4173,7 @@
       "dp": {
         "dm": "stab1_dm",
         "separateDm": true,
+        "overwriteLinks": true,
         "dp": "elevator0_dm"
       }
     },
@@ -4177,6 +4181,7 @@
       "dp": {
         "dm": "stab2_dm",
         "separateDm": true,
+        "overwriteLinks": true,
         "dp": "elevator1_dm"
       }
     },
@@ -4187,6 +4192,9 @@
         },
         {
           "separateDm": true
+        },
+        {
+          "overwriteLinks": true
         },
         {
           "dp": "rudder_dm"
@@ -4208,6 +4216,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "rudder0_dm"
         },
         {
@@ -4222,6 +4233,9 @@
         },
         {
           "separateDm": true
+        },
+        {
+          "overwriteLinks": true
         },
         {
           "dp": "rudder1_dm"
@@ -4292,137 +4306,53 @@
       }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_l_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_l%d"
-        },
-        {
-          "dp": "wheel_l"
-        },
-        {
-          "dp": "wheel%d_l"
-        }
-      ]
+      "dp": {
+        "dm": "gear_l_dm",
+        "separateDm": true,
+        "dp": "gear_l%d"
+      }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_1l_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_1l%d"
-        },
-        {
-          "dp": "wheel_1l"
-        },
-        {
-          "dp": "wheel%d_1l"
-        }
-      ]
+      "dp": {
+        "dm": "gear_1l_dm",
+        "separateDm": true,
+        "dp": "gear_1l%d"
+      }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_r_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_r%d"
-        },
-        {
-          "dp": "wheel_r"
-        },
-        {
-          "dp": "wheel%d_r"
-        }
-      ]
+      "dp": {
+        "dm": "gear_r_dm",
+        "separateDm": true,
+        "dp": "gear_r%d"
+      }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_1r_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_1r%d"
-        },
-        {
-          "dp": "wheel_1r"
-        },
-        {
-          "dp": "wheel%d_1r"
-        }
-      ]
+      "dp": {
+        "dm": "gear_1r_dm",
+        "separateDm": true,
+        "dp": "gear_1r%d"
+      }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_c_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_c%d"
-        },
-        {
-          "dp": "wheel_c"
-        },
-        {
-          "dp": "wheel%d_c"
-        }
-      ]
+      "dp": {
+        "dm": "gear_c_dm",
+        "separateDm": true,
+        "dp": "gear_c%d"
+      }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_2c_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_2c%d"
-        },
-        {
-          "dp": "wheel_2c"
-        },
-        {
-          "dp": "wheel%d_2c"
-        }
-      ]
+      "dp": {
+        "dm": "gear_2c_dm",
+        "separateDm": true,
+        "dp": "gear_2c%d"
+      }
     },
     {
-      "dp": [
-        {
-          "dm": "gear_3c_dm"
-        },
-        {
-          "separateDm": true
-        },
-        {
-          "dp": "gear_3c%d"
-        },
-        {
-          "dp": "wheel_3c"
-        },
-        {
-          "dp": "wheel%d_3c"
-        }
-      ]
+      "dp": {
+        "dm": "gear_3c_dm",
+        "separateDm": true,
+        "dp": "gear_3c%d"
+      }
     },
     {
       "dp": [
@@ -4637,8 +4567,8 @@
                 "mainTurret": true
               },
               "limits": {
-                "yaw": [-60.0,60.0],
-                "pitch": [-40.0,10.0]
+                "yaw": [-110.0,110.0],
+                "pitch": [-40.0,13.0]
               },
               "gunStabilizer": {
                 "hasVerticalGunFreeMode": false,
@@ -4685,8 +4615,8 @@
                 "speedPitch": 25.0
               },
               "limits": {
-                "yaw": [-60.0,60.0],
-                "pitch": [-40.0,10.0]
+                "yaw": [-110.0,110.0],
+                "pitch": [-40.0,13.0]
               }
             }
           },
@@ -4708,6 +4638,23 @@
               "bullets": 64,
               "external": true,
               "separate": false
+            }
+          }
+        ],
+        "sensors": [
+          {
+            "sensor": {
+              "blk": "gameData/sensors/tv_tracker.blk"
+            }
+          },
+          {
+            "sensor": {
+              "blk": "gameData/sensors/su_spo-15.blk"
+            }
+          },
+          {
+            "sensor": {
+              "blk": "gameData/sensors/su_l_370_2.blk"
             }
           }
         ]
@@ -4737,6 +4684,7 @@
       "tier": 4
     },
     "heli_night_vision_system": {
+      "image": "#ui/gameuiskin#thermal_sight",
       "effects": {
         "nightVision": {
           "gunnerIr": {

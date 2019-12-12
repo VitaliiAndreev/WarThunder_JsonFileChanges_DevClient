@@ -31,6 +31,9 @@
   "smokeScreenOffset": [-3.0,0.0,2.0],
   "canReloadNonGuns": true,
   "rearmTimeOnField": 60.0,
+  "hideNodesInDmg": {
+    "node": "flag"
+  },
   "default_skin_tomoe": [
     {
       "replace_tex": {
@@ -983,39 +986,134 @@
       ]
     }
   ],
-  "MetaParts": {
-    "cover": [
-      {
-        "part": "compartment_01_dm"
-      },
-      {
-        "part": "compartment_02_dm"
-      },
-      {
-        "part": "compartment_03_dm"
-      },
-      {
-        "part": "compartment_04_dm"
-      },
-      {
+  "MetaParts": [
+    {
+      "cover": [
+        {
+          "part": "compartment_01_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "shatter",
+            "conditionDamage": 5000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      ]
+    },
+    {
+      "cover": [
+        {
+          "part": "compartment_02_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "shatter",
+            "conditionDamage": 5000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      ]
+    },
+    {
+      "cover": [
+        {
+          "part": "compartment_03_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "shatter",
+            "conditionDamage": 5000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      ]
+    },
+    {
+      "cover": [
+        {
+          "part": "compartment_04_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "shatter",
+            "conditionDamage": 5000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      ]
+    },
+    {
+      "cover": [
+        {
+          "part": "compartment_05_dm"
+        },
+        {
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 400.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        },
+        {
+          "effect": {
+            "conditionDamageType": "shatter",
+            "conditionDamage": 5000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      ]
+    },
+    {
+      "bridge": {
+        "part": "bridge_dm",
         "effect": {
           "conditionDamageType": "explosion",
-          "conditionDamageRel": 0.3,
+          "conditionDamage": 400.0,
           "kill": true,
           "killEffect": "destruction"
         }
       }
-    ],
-    "bridge": {
-      "part": "bridge_dm",
-      "effect": {
-        "conditionDamageType": "explosion",
-        "conditionDamage": 400.0,
-        "kill": true,
-        "killEffect": "destruction"
-      }
     }
-  },
+  ],
   "tags": {
     "country_ussr": true,
     "type_ship": true,
@@ -2295,7 +2393,7 @@
       "Weapon": {
         "trigger": "gunner0",
         "triggerGroup": "primary",
-        "blk": "gameData/Weapons/navalModels_weapons/76mm_F34_naval_user_cannon.blk",
+        "blk": "gameData/Weapons/navalModels_weapons/76mm_40_f34_naval_user_cannon.blk",
         "emitter": "gun_barrel_01",
         "flash": "emtr_gun_flame_19",
         "useEmitter": true,
@@ -2384,7 +2482,7 @@
       "Weapon": {
         "trigger": "gunner2",
         "triggerGroup": "machinegun",
-        "blk": "gameData/Weapons/navalModels_weapons/12_7mm_DShK_naval_user_machinegun.blk",
+        "blk": "gameData/Weapons/navalModels_weapons/12_7mm_dshk_1938_naval_user_machinegun.blk",
         "emitter": "emtr_gun_flame_17",
         "flash": "emtr_gun_flame_17",
         "useEmitter": true,
@@ -2444,7 +2542,7 @@
       "Weapon": {
         "trigger": "gunner2",
         "triggerGroup": "machinegun",
-        "blk": "gameData/Weapons/navalModels_weapons/12_7mm_DShK_naval_user_machinegun.blk",
+        "blk": "gameData/Weapons/navalModels_weapons/12_7mm_dshk_1938_naval_user_machinegun.blk",
         "emitter": "emtr_gun_flame_18",
         "flash": "emtr_gun_flame_18",
         "useEmitter": true,

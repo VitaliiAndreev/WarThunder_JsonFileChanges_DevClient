@@ -105,6 +105,11 @@
     "useSimpleDeathConditionsAndEffects": false
   },
   {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
+  },
+  {
     "default_skin_tomoe": [
       {
         "replace_tex": {
@@ -1647,39 +1652,111 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "part": "compartment_04_dm"
-        },
-        {
+    "MetaParts": [
+      {
+        "cover": [
+          {
+            "part": "compartment_01_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 2000.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_02_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 2000.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_03_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 2000.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_04_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 260.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 3500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "bridge": {
+          "part": "bridge_dm",
           "effect": {
             "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.3,
+            "conditionDamage": 260.0,
             "kill": true,
             "killEffect": "destruction"
           }
         }
-      ],
-      "bridge": {
-        "part": "bridge_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 400.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
       }
-    }
+    ]
   },
   {
     "tags": {
@@ -2879,11 +2956,9 @@
         "stopChanceOnDeadPart": 0.2,
         "genericDamageMult": 0.6,
         "shatterDamageMult": 0.6,
-        "explosionDamageMult": 0.8,
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_wood",
         "armorThickness": 28.0,
-        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 500.0
         },
@@ -2897,26 +2972,17 @@
           "hp": 478.0
         },
         "bridge_dm": {
-          "genericDamageMult": 1.5,
           "shatterDamageMult": 1.5,
-          "explosionDamageMult": 1.0,
-          "armorThickness": 1.0,
+          "armorThickness": 25.0,
           "hp": 100.0
         },
         "radio_station_dm": {
-          "genericDamageMult": 1.5,
-          "shatterDamageMult": 1.5,
-          "explosionDamageMult": 1.0,
-          "armorThickness": 1.0,
+          "armorThickness": 25.0,
           "hp": 80.0
         }
       },
       "superstructures": {
         "fireParamsPreset": "ship_cover",
-        "genericDamageMult": 1.0,
-        "shatterDamageMult": 1.0,
-        "explosionDamageMult": 1.0,
-        "secondaryShatterDamageMult": 1.0,
         "stopChanceOnDeadPart": 0.2,
         "armorClass": "ship_wood",
         "armorThickness": 15.0,
@@ -3318,7 +3384,7 @@
         "Weapon": {
           "trigger": "gunner0",
           "triggerGroup": "primary",
-          "blk": "gameData/Weapons/navalModels_weapons/40mm_QF_2pdr_mk_XV_naval_user_cannon.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/40mm_39_2pdr_qf_mk2c_naval_user_cannon.blk",
           "emitter": "main_caliber_gun_01",
           "flash": "emtr_gun_flame_01",
           "useEmitter": true,
@@ -3371,7 +3437,7 @@
         "Weapon": {
           "trigger": "gunner1",
           "triggerGroup": "primary",
-          "blk": "gameData/Weapons/navalModels_weapons/40mm_QF_2pdr_mk_XV_naval_user_cannon.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/40mm_39_2pdr_qf_mk2c_naval_user_cannon.blk",
           "emitter": "main_caliber_gun_02",
           "flash": "emtr_gun_flame_10",
           "useEmitter": true,
@@ -3429,7 +3495,7 @@
             "triggerGroup": "secondary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk2_single_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_06"
@@ -3573,7 +3639,7 @@
             "triggerGroup": "secondary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk2_single_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_07"
@@ -3717,7 +3783,7 @@
             "triggerGroup": "secondary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_mk_v_twin_mount_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_08"
@@ -3852,7 +3918,7 @@
             "triggerGroup": "secondary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_mk_v_twin_mount_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_09"
@@ -3982,7 +4048,7 @@
         "Weapon": {
           "trigger": "gunner5",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_Vikkers_GO_No5_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_vickers_go_no5_naval_user_machinegun.blk",
           "emitter": "aa_gun_02",
           "flash": "emtr_gun_flame_02",
           "useEmitter": true,
@@ -4043,7 +4109,7 @@
         "Weapon": {
           "trigger": "gunner5",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_Vikkers_GO_No5_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_vickers_go_no5_naval_user_machinegun.blk",
           "emitter": "aa_gun_02",
           "flash": "emtr_gun_flame_03",
           "useEmitter": true,
@@ -4104,7 +4170,7 @@
         "Weapon": {
           "trigger": "gunner6",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_Vikkers_GO_No5_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_vickers_go_no5_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_04",
           "flash": "emtr_gun_flame_04",
           "useEmitter": true,
@@ -4165,7 +4231,7 @@
         "Weapon": {
           "trigger": "gunner6",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_Vikkers_GO_No5_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/7_7mm_vickers_go_no5_naval_user_machinegun.blk",
           "emitter": "aa_gun_01",
           "flash": "emtr_gun_flame_05",
           "useEmitter": true,

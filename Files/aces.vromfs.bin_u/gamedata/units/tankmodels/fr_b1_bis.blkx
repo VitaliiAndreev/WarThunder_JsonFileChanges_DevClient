@@ -181,7 +181,25 @@
           "armorClass": "CHA_tank"
         },
         "turret_01_back_dm": {
-          "armorThickness": 38.0
+          "armorThickness": 5.0
+        },
+        "ex_decor_r_03_dm": {
+          "armorThickness": 5.0
+        },
+        "ex_decor_r_04_dm": {
+          "armorThickness": 5.0
+        },
+        "ex_decor_r_05_dm": {
+          "armorThickness": 5.0
+        },
+        "ex_decor_l_03_dm": {
+          "armorThickness": 5.0
+        },
+        "ex_decor_l_04_dm": {
+          "armorThickness": 5.0
+        },
+        "ex_decor_l_05_dm": {
+          "armorThickness": 5.0
         }
       },
       "hull_CHA": {
@@ -683,6 +701,18 @@
         "fuel_tank_l_04_dm": [],
         "fuel_tank_l_05_dm": []
       }
+    }
+  },
+  {
+    "attachables": {
+      "superstructure_back_dm": false,
+      "body_front_dm": false,
+      "ex_decor_r_03_dm": true,
+      "ex_decor_r_04_dm": true,
+      "ex_decor_r_05_dm": true,
+      "ex_decor_l_03_dm": true,
+      "ex_decor_l_04_dm": true,
+      "ex_decor_l_05_dm": true
     }
   },
   {
@@ -1887,10 +1917,11 @@
         "minRPM": 600.0
       },
       "mechanics": {
-        "maxBrakeForce": 180000.0,
+        "maxBrakeForce": 195000.0,
         "driveGearRadius": 0.34,
         "mainGearRatio": 4.33,
         "sideGearRatio": 2.74,
+        "neutralGearRatio": 15.0,
         "gearRatios": [
           {
             "ratio": -5.64
@@ -1920,7 +1951,7 @@
         "defaultGearRadius": 0.23,
         "topGearRadius": 0.13,
         "frontBackGearRadius": 0.28,
-        "defaultDampeningForce": [120000.0,120000.0],
+        "defaultDampeningForce": [195000.0,195000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
       }
@@ -2443,8 +2474,10 @@
   },
   {
     "cockpit": {
-      "zoomOutFov": 40.0,
-      "zoomInFov": 21.0,
+      "zoomOutFov": 19.49,
+      "zoomInFov": 18.49,
+      "sightFov": 10.0,
+      "sightName": "sfl_zf",
       "headPos": [0.0,4.0,-8.0],
       "headPosOnShooting": [0.67,3.3,-0.27],
       "detectionHeight": 2.79

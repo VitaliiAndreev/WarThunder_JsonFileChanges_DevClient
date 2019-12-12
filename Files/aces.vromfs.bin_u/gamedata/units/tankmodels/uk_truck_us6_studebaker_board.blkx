@@ -183,9 +183,9 @@
   ],
   "DamageParts": {
     "formatVersion": 2,
-    "armorThickness": 5.0,
-    "armorClass": "RHA_tank",
-    "hp": 1000.0,
+    "armorThickness": 4.0,
+    "armorClass": "tank_structural_steel",
+    "hp": 500.0,
     "hull": {
       "superstructure_side_dm": [],
       "body_side_dm": [],
@@ -564,7 +564,7 @@
     },
     "body": [
       {
-        "hp": 1200.0
+        "hp": 500.0
       },
       {
         "part": "superstructure_side_dm"
@@ -579,7 +579,7 @@
         "effect": {
           "conditionDamageType": "explosion",
           "expl": 2.0,
-          "conditionDamage": 50.0,
+          "conditionDamage": 100.0,
           "kill": true,
           "killEffect": "expl"
         }
@@ -591,6 +591,14 @@
           "conditionDamage": 100.0,
           "kill": true,
           "killEffect": "expl"
+        }
+      },
+      {
+        "effect": {
+          "expl": 1.0,
+          "conditionDead": true,
+          "kill": true,
+          "killEffect": "fire"
         }
       }
     ],
@@ -620,7 +628,7 @@
         "effect": {
           "conditionDamageType": "explosion",
           "expl": 2.0,
-          "conditionDamage": 100.0,
+          "conditionDamage": 50.0,
           "kill": true,
           "killEffect": "fire"
         }
@@ -630,6 +638,14 @@
           "conditionDamageType": "cumulative",
           "expl": 2.0,
           "conditionDamage": 100.0,
+          "kill": true,
+          "killEffect": "fire"
+        }
+      },
+      {
+        "effect": {
+          "expl": 1.0,
+          "conditionDead": true,
           "kill": true,
           "killEffect": "fire"
         }

@@ -3,7 +3,7 @@
   "transivers": {
     "track": {
       "power": 200.0,
-      "band": 0,
+      "band": -1,
       "rcs": 1.0,
       "range": 8000.0,
       "rangeMax": 10000.0,
@@ -83,7 +83,7 @@
           },
           {
             "setFsmActive": {
-              "fsm": "losLock",
+              "fsm": "lock",
               "active": false
             }
           },
@@ -100,17 +100,7 @@
             }
           }
         ],
-        "setLockMode": {
-          "setCenterElevation": {
-            "source": "constant",
-            "value": 9.0
-          },
-          "setDistGatePos": {
-            "source": "targetDesignation",
-            "width": 1000.0
-          }
-        },
-        "setLosLockMode": {
+        "setLosVisualPreLockMode": {
           "setScanPattern": {
             "scanPattern": "losLock"
           },
@@ -123,9 +113,11 @@
             "source": "targetDesignation"
           },
           "setFsmActive": {
-            "fsm": "losLock",
+            "fsm": "lock",
             "active": true
-          },
+          }
+        },
+        "setLosLockMode": {
           "setTransiver": {
             "transiver": "track"
           },
@@ -133,6 +125,15 @@
             "source": "constRange",
             "pos": 5000.0,
             "width": 10000.0
+          }
+        },
+        "setVisualLockMode": {
+          "setTransiver": {
+            "transiver": "track"
+          },
+          "setDistGatePos": {
+            "source": "targetDesignation",
+            "width": 100.0
           }
         },
         "setTrackMode": {
@@ -172,19 +173,9 @@
             "setStandbyMode": []
           }
         },
-        "checkLockType0": {
+        "checkLockType1": {
           "stateFrom": "standby",
           "command": "designateTarget",
-          "stateTo": "checkLockType0",
-          "actions": {
-            "checkDesignationTypeEquals": {
-              "value": 0
-            }
-          }
-        },
-        "checkLockType1": {
-          "stateFrom": "checkLockType0",
-          "event": "designationTypeNotEquals",
           "stateTo": "checkLockType1",
           "actions": {
             "checkDesignationTypeEquals": {
@@ -197,38 +188,80 @@
           "event": "designationTypeEquals",
           "stateTo": "losLock",
           "actions": {
+            "setLosVisualPreLockMode": [],
             "setLosLockMode": []
           }
         },
-        "finishLockTypeCheck": {
+        "checkLockType2": {
           "stateFrom": "checkLockType1",
+          "event": "designationTypeNotEquals",
+          "stateTo": "checkLockType2",
+          "actions": {
+            "checkDesignationTypeEquals": {
+              "value": 2
+            }
+          }
+        },
+        "visualLock": {
+          "stateFrom": "checkLockType2",
+          "event": "designationTypeEquals",
+          "stateTo": "visualLock",
+          "actions": {
+            "setLosVisualPreLockMode": [],
+            "setVisualLockMode": []
+          }
+        },
+        "finishLockTypeCheck": {
+          "stateFrom": "checkLockType2",
           "event": "designationTypeNotEquals",
           "stateTo": "standby"
         },
-        "track": {
-          "stateFrom": "losLock",
-          "event": "targetDetected",
-          "stateTo": "track",
-          "actions": {
-            "setTrackMode": [],
-            "setFsmActive": {
-              "fsm": "losLock",
-              "active": false
+        "track": [
+          {
+            "stateFrom": "losLock"
+          },
+          {
+            "stateFrom": "visualLock"
+          },
+          {
+            "event": "targetDetected"
+          },
+          {
+            "stateTo": "track"
+          },
+          {
+            "actions": {
+              "setTrackMode": [],
+              "setFsmActive": {
+                "fsm": "lock",
+                "active": false
+              }
             }
           }
-        },
-        "failedLock": {
-          "stateFrom": "losLock",
-          "event": "scanFinished",
-          "stateTo": "standby",
-          "actions": {
-            "setStandbyMode": [],
-            "setFsmActive": {
-              "fsm": "losLock",
-              "active": false
+        ],
+        "failedLock": [
+          {
+            "stateFrom": "losLock"
+          },
+          {
+            "stateFrom": "visualLock"
+          },
+          {
+            "event": "scanFinished"
+          },
+          {
+            "stateTo": "standby"
+          },
+          {
+            "actions": {
+              "setStandbyMode": [],
+              "setFsmActive": {
+                "fsm": "lock",
+                "active": false
+              }
             }
           }
-        },
+        ],
         "finishedTrack": [
           {
             "stateFrom": "track"
@@ -257,8 +290,8 @@
         ]
       }
     },
-    "losLock": {
-      "stateInit": "losLock",
+    "lock": {
+      "stateInit": "lock",
       "transitions": {
         "scan": {
           "event": "update",

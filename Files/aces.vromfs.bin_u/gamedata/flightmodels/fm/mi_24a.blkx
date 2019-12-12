@@ -201,21 +201,24 @@
         "AileronsMode": "Manual",
         "ElevatorMode": "Manual",
         "RudderMode": "Manual",
-        "ThrottleMode": "Manual"
+        "ThrottleMode": "Manual",
+        "allowOverrideByForcedStabilization": true
       },
       "ModePreset1": {
         "Mode": "Separate",
         "AileronsMode": "Rate",
         "ElevatorMode": "Rate",
         "RudderMode": "Rate",
-        "ThrottleMode": "Manual"
+        "ThrottleMode": "Manual",
+        "allowOverrideByForcedStabilization": false
       },
       "ModePreset2": {
         "Mode": "Separate",
         "AileronsMode": "Angle",
         "ElevatorMode": "Angle",
         "RudderMode": "Rate",
-        "ThrottleMode": "Manual"
+        "ThrottleMode": "Manual",
+        "allowOverrideByForcedStabilization": false
       }
     }
   },
@@ -501,7 +504,7 @@
       "Position": [0.0,1.0,0.75],
       "Direction": [0.0,0.0],
       "Main": {
-        "StandbyFriction": 0.0009,
+        "StandbyFriction": 0.0001,
         "FuelSystemNum": 0,
         "Type": "TurboProp",
         "Cylinders": 12,
@@ -922,7 +925,7 @@
       "Position": [0.0,1.0,-0.75],
       "Direction": [0.0,0.0],
       "Main": {
-        "StandbyFriction": 0.0009,
+        "StandbyFriction": 0.0001,
         "FuelSystemNum": 0,
         "Type": "TurboProp",
         "Cylinders": 12,
@@ -1340,7 +1343,7 @@
     "Propeller0": {
       "AxisDirection": [60.0,85.5],
       "CyclicPitchAxisDirectionPitch": [-0.0,-4.5],
-      "Pos": [-0.0,2.0,-0.15],
+      "Pos": [0.2,2.0,-0.15],
       "Geometry": {
         "RotationDirection": 0,
         "Radius": 8.65,
@@ -1901,7 +1904,7 @@
         "PosDeadZone": 0.1,
         "PosHoldVelTreshold": 1.5,
         "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-        "AngleLim": 50.0,
+        "AngleLim": 190.0,
         "RatePID": {
           "Kp": 1.4,
           "Ki": 0.4,
@@ -1940,7 +1943,7 @@
         "PosDeadZone": 0.1,
         "PosHoldVelTreshold": 1.5,
         "AngleLimByRaltitude": [15.0,190.0,40.0,190.0],
-        "AngleLim": 45.0,
+        "AngleLim": 190.0,
         "RatePID": {
           "Kp": 2.0,
           "Ki": 0.8,
@@ -1972,7 +1975,8 @@
       },
       "Yaw": {
         "RateMax": [-55.0,55.0],
-        "AngleMax": [-90.0,90.0],
+        "HeadingDeadZone": 0.1,
+        "HeadingHoldRateTreshold": 2.0,
         "RatePID": {
           "Kp": 2.0,
           "Ki": 0.8,
@@ -1981,11 +1985,11 @@
           "Lim": [-1.0,1.0]
         },
         "AnglePID": {
-          "Kp": 0.0,
+          "Kp": 1.0,
           "Ki": 0.0,
           "Imax": 0.0,
           "Kd": 0.0,
-          "Lim": [0.0,0.0]
+          "Lim": [-1.0,1.0]
         },
         "Trim": {
           "Source": "PropTorque",

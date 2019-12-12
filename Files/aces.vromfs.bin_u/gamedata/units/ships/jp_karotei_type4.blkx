@@ -102,6 +102,11 @@
     "canReloadNonGuns": true
   },
   {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
+  },
+  {
     "default_skin_tomoe": [
       {
         "replace_tex": {
@@ -371,7 +376,7 @@
         "pelvisTargetNode": "Bip01 Pelvis_"
       },
       {
-        "crouchDelta": [-0.8,-0.7,0.7]
+        "crouchDelta": [-0.3,-0.3,0.3]
       },
       {
         "suffix": "3"
@@ -511,11 +516,9 @@
         "stopChanceOnDeadPart": 0.2,
         "genericDamageMult": 0.6,
         "shatterDamageMult": 0.6,
-        "explosionDamageMult": 0.8,
         "secondaryShatterDamageMult": 1.0,
         "armorClass": "ship_wood",
         "armorThickness": 40.0,
-        "hidableInViewer": true,
         "compartment_01_dm": {
           "hp": 300.0
         },
@@ -526,26 +529,17 @@
           "hp": 300.0
         },
         "bridge_dm": {
-          "genericDamageMult": 1.5,
           "shatterDamageMult": 1.5,
-          "explosionDamageMult": 1.0,
-          "armorThickness": 1.0,
+          "armorThickness": 25.0,
           "hp": 100.0
         },
         "radio_station_dm": {
-          "genericDamageMult": 1.5,
-          "shatterDamageMult": 1.5,
-          "explosionDamageMult": 1.0,
-          "armorThickness": 1.0,
+          "armorThickness": 25.0,
           "hp": 80.0
         }
       },
       "superstructures": {
         "fireParamsPreset": "ship_cover",
-        "genericDamageMult": 1.0,
-        "shatterDamageMult": 1.0,
-        "explosionDamageMult": 1.0,
-        "secondaryShatterDamageMult": 1.0,
         "stopChanceOnDeadPart": 0.2,
         "armorClass": "ship_wood",
         "armorThickness": 15.0,
@@ -1606,39 +1600,100 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "part": "compartment_04_dm"
-        },
-        {
-          "effect": {
-            "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.3,
-            "kill": true,
-            "killEffect": "destruction"
+    "MetaParts": [
+      {
+        "cover": [
+          {
+            "part": "compartment_01_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
           }
-        }
-      ],
-      "bridge": {
-        "part": "bridge_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 400.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_02_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_03_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "bridge": [
+          {
+            "part": "bridge_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
       }
-    }
+    ]
   },
   {
     "ShipPhys": {
@@ -1908,24 +1963,18 @@
             "head": "aa_turret_01",
             "gun": "aa_gun_01",
             "barrel": "gun_barrel_02",
-            "gunnerDm": "aa_turret_01_dm",
-            "linkedAnimPart": {
-              "verNode": "bone_radius_foot_01",
-              "verLimits": [0.0,9.0],
-              "verOriginLimits": [0.0,65.0]
-            }
+            "gunnerDm": "aa_turret_01_dm"
           },
           "limits": {
             "yaw": [-180.0,180.0],
             "pitch": [-10.0,65.0]
           },
           "limitsTable": {
-            "lim1": [-180.0,-150.0,35.0,65.0],
-            "lim2": [-150.0,-50.0,-10.0,65.0],
-            "lim3": [-50.0,0.0,45.0,65.0],
-            "lim4": [0.0,50.0,45.0,65.0],
-            "lim5": [50.0,150.0,-10.0,65.0],
-            "lim6": [150.0,180.0,35.0,65.0]
+            "lim1": [-180.0,-157.0,-2.0,65.0],
+            "lim2": [-157.0,-52.0,-10.0,65.0],
+            "lim3": [-52.0,52.0,25.0,65.0],
+            "lim4": [52.0,157.0,-10.0,65.0],
+            "lim5": [157.0,180.0,-2.0,65.0]
           },
           "gunStabilizer": {
             "hasVerticalGunFreeMode": true,
@@ -1989,12 +2038,11 @@
             "pitch": [-10.0,65.0]
           },
           "limitsTable": {
-            "lim1": [-180.0,-150.0,35.0,65.0],
-            "lim2": [-150.0,-50.0,-10.0,65.0],
-            "lim3": [-50.0,0.0,45.0,65.0],
-            "lim4": [0.0,50.0,45.0,65.0],
-            "lim5": [50.0,150.0,-10.0,65.0],
-            "lim6": [150.0,180.0,35.0,65.0]
+            "lim1": [-180.0,-157.0,-2.0,65.0],
+            "lim2": [-157.0,-52.0,-10.0,65.0],
+            "lim3": [-52.0,52.0,25.0,65.0],
+            "lim4": [52.0,157.0,-10.0,65.0],
+            "lim5": [157.0,180.0,-2.0,65.0]
           },
           "gunStabilizer": {
             "hasVerticalGunFreeMode": true,

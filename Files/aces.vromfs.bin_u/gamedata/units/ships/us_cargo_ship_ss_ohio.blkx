@@ -80,6 +80,9 @@
   {
     "harmflag": {
       "harmonizationSuffix": "_tomoe",
+      "hideNodesInDmg": {
+        "node": "flag"
+      },
       "default_skin_tomoe": [
         {
           "replace_tex": {
@@ -587,7 +590,7 @@
         }
       },
       "superstructures": {
-        "fireParamsPreset": "ship_cover",
+        "fireParamsPreset": "ship_superstructure",
         "genericDamageMult": 0.4,
         "shatterDamageMult": 0.3,
         "explosionDamageMult": 1.0,
@@ -613,16 +616,19 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 30.0,
         "stern_bottom_dm": {
-          "hp": 5000.0
+          "explosionArmorQuality": 2.0,
+          "hp": 15000.0
         },
         "mid_side_dm": {
           "hp": 5000.0
         },
         "mid_bottom_dm": {
-          "hp": 5000.0
+          "explosionArmorQuality": 2.0,
+          "hp": 15000.0
         },
         "bow_bottom_dm": {
-          "hp": 5000.0
+          "explosionArmorQuality": 2.0,
+          "hp": 15000.0
         }
       },
       "bulkheads": {
@@ -695,6 +701,10 @@
         "mast_05_dm": {
           "hp": 500.0
         }
+      },
+      "radiolocation": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0
       },
       "engine": {
         "armorThrough": 150.0,
@@ -847,7 +857,7 @@
         "armorThickness": 5.0
       },
       "gun_masks": {
-        "armorClass": "CHA_tank",
+        "armorClass": "ship_RHA",
         "armorThickness": 15.0
       },
       "gun_barrels": {
@@ -1813,89 +1823,96 @@
     ]
   },
   {
-    "MetaParts": {
-      "compartment1": {
-        "part": "compartment_01_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+    "MetaParts": [
+      {
+        "cover": {
+          "part": "compartment_01_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "compartment2": {
-        "part": "compartment_02_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_02_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "compartment3": {
-        "part": "compartment_03_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_03_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "compartment4": {
-        "part": "compartment_04_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_04_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "compartment5": {
-        "part": "compartment_05_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_05_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "compartment6": {
-        "part": "compartment_06_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_06_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "compartment7": {
-        "part": "compartment_07_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_07_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       },
-      "engine_room1": {
-        "part": "engine_room_01_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
-      },
-      "engine_room2": {
-        "part": "engine_room_02_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 18000.0,
-          "kill": true,
-          "killEffect": "destruction"
+      {
+        "cover": {
+          "part": "compartment_08_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
         }
       }
-    }
+    ]
   },
   {
     "ShipPhys": {
@@ -1972,7 +1989,7 @@
             "triggerGroup": "primary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_mk_v_twin_mount_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_01"
@@ -2083,7 +2100,7 @@
             "triggerGroup": "primary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_mk_v_twin_mount_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_02"
@@ -2194,7 +2211,7 @@
             "triggerGroup": "primary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_mk_v_twin_mount_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_03"
@@ -2305,7 +2322,7 @@
             "triggerGroup": "primary"
           },
           {
-            "blk": "gameData/Weapons/navalModels_weapons/20mm_Oerlikon_mk_v_twin_mount_naval_user_cannon.blk"
+            "blk": "gameData/Weapons/navalModels_weapons/20mm_oerlikon_mk5_twin_mount_naval_user_cannon.blk"
           },
           {
             "emitter": "emtr_gun_flame_04"

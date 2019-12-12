@@ -93,6 +93,11 @@
     "explosionFx": "ship_explosion"
   },
   {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
+  },
+  {
     "default_skin_tomoe": [
       {
         "replace_tex": {
@@ -1135,14 +1140,22 @@
         },
         "mast_03_dm": {
           "hp": 300.0
-        },
+        }
+      },
+      "radiolocation": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0,
         "radar_01_dm": {
-          "armorThickness": 5.0,
-          "hp": 300.0
+          "hp": 150.0
         },
         "radar_02_dm": {
-          "armorThickness": 5.0,
-          "hp": 300.0
+          "hp": 150.0
+        },
+        "antenna_target_location_01_dm": {
+          "hp": 150.0
+        },
+        "fire_director_01_dm": {
+          "hp": 150.0
         }
       },
       "engine": {
@@ -1225,7 +1238,7 @@
           "hp": 537.0
         },
         "ex_armor_04_dm": {
-          "hp": 397.0
+          "hp": 391.0
         },
         "ex_armor_05_dm": {
           "hp": 433.0
@@ -1365,6 +1378,9 @@
           "hp": 800.0
         },
         "ammunition_storage_02_dm": {
+          "hp": 800.0
+        },
+        "ammo_turret_01_dm": {
           "hp": 800.0
         }
       },
@@ -2223,33 +2239,96 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "part": "compartment_04_dm"
-        },
-        {
-          "part": "compartment_05_dm"
-        },
-        {
+    "MetaParts": [
+      {
+        "cover": {
+          "part": "compartment_01_dm",
           "effect": {
             "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.25,
+            "conditionDamage": 20000.0,
             "kill": true,
             "killEffect": "destruction"
           }
         }
-      ]
-    }
+      },
+      {
+        "cover": {
+          "part": "compartment_02_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_03_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_04_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_05_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_06_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_07_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      },
+      {
+        "cover": {
+          "part": "compartment_08_dm",
+          "effect": {
+            "conditionDamageType": "explosion",
+            "conditionDamage": 20000.0,
+            "kill": true,
+            "killEffect": "destruction"
+          }
+        }
+      }
+    ]
   },
   {
     "tags": {
@@ -2382,7 +2461,31 @@
     }
   },
   {
+    "sensors": [
+      {
+        "sensor": {
+          "blk": "gameData/sensors/su_foot_n.blk",
+          "designationFromBody": true,
+          "designationTurretIndex": 1,
+          "dmPart": "antenna_target_location_01_dm"
+        }
+      },
+      {
+        "sensor": {
+          "blk": "gameData/sensors/ship_optical_sight.blk",
+          "turretIndex": 0,
+          "dmPart": "fire_director_01_dm"
+        }
+      }
+    ]
+  },
+  {
     "commonWeapons": [
+      {
+        "animatedBones": {
+          "node": "fire_director_01_dm"
+        }
+      },
       {
         "Weapon": {
           "trigger": "gunner0",
@@ -2395,10 +2498,11 @@
           "breechDP": "main_caliber_gun_01_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
-          "useGunnerTargetingQuality": false,
           "speedYaw": 24.0,
           "speedPitch": 30.0,
-          "bullets": 300,
+          "bullets": 1500,
+          "fireConeAngle": 1.0,
+          "useGunnerTargetingQuality": false,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2468,11 +2572,6 @@
           "breechDP": "auxiliary_caliber_gun_01_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
-          "useGunnerTargetingQuality": false,
-          "isBulletBelt": false,
-          "speedYaw": 30.0,
-          "speedPitch": 24.0,
-          "bullets": 2000,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2489,6 +2588,10 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
+          "speedYaw": 30.0,
+          "speedPitch": 24.0,
+          "bullets": 2000,
+          "useGunnerTargetingQuality": false,
           "turret": {
             "head": "auxiliary_caliber_turret_01",
             "gun": "auxiliary_caliber_gun_01",
@@ -2530,7 +2633,7 @@
         "Weapon": {
           "trigger": "gunner2",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_02",
           "flash": "emtr_gun_flame_02",
           "useEmitter": true,
@@ -2538,9 +2641,6 @@
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "isBulletBelt": true,
-          "speedYaw": 60.0,
-          "speedPitch": 80.0,
-          "bullets": 2000,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2557,6 +2657,9 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
+          "speedYaw": 60.0,
+          "speedPitch": 55.0,
+          "bullets": 2000,
           "useGunnerTargetingQuality": false,
           "turret": {
             "head": "aa_turret_01",
@@ -2595,7 +2698,7 @@
         "Weapon": {
           "trigger": "gunner2",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_03",
           "flash": "emtr_gun_flame_03",
           "useEmitter": true,
@@ -2603,9 +2706,6 @@
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "isBulletBelt": true,
-          "speedYaw": 60.0,
-          "speedPitch": 80.0,
-          "bullets": 2000,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2622,6 +2722,9 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
+          "speedYaw": 60.0,
+          "speedPitch": 55.0,
+          "bullets": 2000,
           "useGunnerTargetingQuality": false,
           "turret": {
             "head": "aa_turret_01",
@@ -2655,7 +2758,7 @@
         "Weapon": {
           "trigger": "gunner3",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_04",
           "flash": "emtr_gun_flame_04",
           "useEmitter": true,
@@ -2663,9 +2766,6 @@
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "isBulletBelt": true,
-          "speedYaw": 60.0,
-          "speedPitch": 80.0,
-          "bullets": 2000,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2682,6 +2782,9 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
+          "speedYaw": 60.0,
+          "speedPitch": 55.0,
+          "bullets": 2000,
           "useGunnerTargetingQuality": false,
           "turret": {
             "head": "aa_turret_02",
@@ -2720,7 +2823,7 @@
         "Weapon": {
           "trigger": "gunner3",
           "triggerGroup": "machinegun",
-          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_M2_HB_naval_user_machinegun.blk",
+          "blk": "gameData/Weapons/navalModels_weapons/12_7mm_m2_browning_naval_user_machinegun.blk",
           "emitter": "emtr_gun_flame_05",
           "flash": "emtr_gun_flame_05",
           "useEmitter": true,
@@ -2728,9 +2831,6 @@
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "isBulletBelt": true,
-          "speedYaw": 60.0,
-          "speedPitch": 80.0,
-          "bullets": 2000,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2747,6 +2847,9 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
+          "speedYaw": 60.0,
+          "speedPitch": 55.0,
+          "bullets": 2000,
           "useGunnerTargetingQuality": false,
           "turret": {
             "head": "aa_turret_02",
@@ -3602,30 +3705,66 @@
   },
   {
     "ammoStowages": {
-      "ammo1": {
-        "weaponTrigger": "gunner0",
-        "shells": {
-          "fatalFire": true,
-          "fatalExplosion": true,
-          "fireEvent": "ammo_fire_1",
-          "explosionEvent": "ammo_explosion_1",
-          "ammunition_storage_01_dm": {
-            "count": 300
+      "ammo1": [
+        {
+          "weaponTrigger": "gunner0"
+        },
+        {
+          "replenishmentDelay": 5.0
+        },
+        {
+          "replenishmentTime": 2.0
+        },
+        {
+          "shells": {
+            "firstStage": true,
+            "fatalFire": false,
+            "fatalExplosion": false,
+            "explosionEvent": "ammo_explosion_1",
+            "fireEvent": "ammo_fire_1",
+            "dstrElevatorDisablesShooting": false,
+            "ammo_turret_01_dm": {
+              "count": 200
+            }
+          }
+        },
+        {
+          "shells": {
+            "reloadTimeMult": 1.42,
+            "fatalFire": false,
+            "fatalExplosion": true,
+            "explosionEvent": "ammo_explosion_1",
+            "fireEvent": "ammo_fire_1",
+            "elevator": "elevator_01_dm",
+            "dstrElevatorDisablesShooting": false,
+            "ammunition_storage_01_dm": {
+              "count": 1300
+            }
           }
         }
-      },
-      "ammo2": {
-        "weaponTrigger": "gunner1",
-        "shells": {
-          "fatalFire": true,
-          "fatalExplosion": true,
-          "fireEvent": "ammo_fire_2",
-          "explosionEvent": "ammo_explosion_2",
-          "ammunition_storage_02_dm": {
-            "count": 2000
+      ],
+      "ammo2": [
+        {
+          "weaponTrigger": "gunner1"
+        },
+        {
+          "weaponTrigger": "gunner2"
+        },
+        {
+          "weaponTrigger": "gunner3"
+        },
+        {
+          "shells": {
+            "fatalFire": true,
+            "fatalExplosion": true,
+            "fireEvent": "ammo_fire_2",
+            "explosionEvent": "ammo_explosion_2",
+            "ammunition_storage_02_dm": {
+              "count": 10000
+            }
           }
         }
-      }
+      ]
     }
   },
   {
@@ -3677,17 +3816,6 @@
           "deviation": 0.6,
           "rotation": 2.1,
           "collisionNode": "mast_02_dm"
-        }
-      },
-      {
-        "part": {
-          "node": "ex_decor_08",
-          "idx": 5,
-          "mass": 950.0,
-          "cutDamage": 350.0,
-          "deviation": 0.6,
-          "rotation": 2.1,
-          "collisionNode": "ex_decor_08_dm"
         }
       },
       {

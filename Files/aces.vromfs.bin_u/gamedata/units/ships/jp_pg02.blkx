@@ -99,6 +99,12 @@
     "rocketLaunchAnimVar": "pg02_rocket_launch"
   },
   {
+    "radarAnimVar": "radar_target_yaw_rotate"
+  },
+  {
+    "radarAnimPitchVar": "radar_target_pitch_rotate"
+  },
+  {
     "explosionFx": "ship_explosion"
   },
   {
@@ -124,6 +130,11 @@
   },
   {
     "perfectRangefinder": true
+  },
+  {
+    "hideNodesInDmg": {
+      "node": "flag"
+    }
   },
   {
     "default_skin_tomoe": [
@@ -601,14 +612,19 @@
         "armorThickness": 10.0,
         "mast_01_dm": {
           "hp": 465.0
+        }
+      },
+      "radiolocation": {
+        "armorClass": "ship_structural_steel",
+        "armorThickness": 5.0,
+        "antenna_target_location_01_dm": {
+          "hp": 150.0
         },
-        "radar_01_dm": {
-          "armorThickness": 5.0,
-          "hp": 300.0
+        "antenna_target_location_02_dm": {
+          "hp": 150.0
         },
-        "radar_02_dm": {
-          "armorThickness": 5.0,
-          "hp": 300.0
+        "antenna_target_tagging_01_dm": {
+          "hp": 150.0
         }
       },
       "engine": {
@@ -731,7 +747,7 @@
         "armorClass": "tank_barrel",
         "armorThickness": 8.0,
         "main_caliber_gun_01_dm": {
-          "hp": 174.0
+          "hp": 138.0
         }
       },
       "gun_aux_caliber": {
@@ -1582,36 +1598,100 @@
     ]
   },
   {
-    "MetaParts": {
-      "cover": [
-        {
-          "part": "compartment_01_dm"
-        },
-        {
-          "part": "compartment_02_dm"
-        },
-        {
-          "part": "compartment_03_dm"
-        },
-        {
-          "effect": {
-            "conditionDamageType": "explosion",
-            "conditionDamageRel": 0.2,
-            "kill": true,
-            "killEffect": "destruction"
+    "MetaParts": [
+      {
+        "cover": [
+          {
+            "part": "compartment_01_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
           }
-        }
-      ],
-      "bridge": {
-        "part": "bridge_dm",
-        "effect": {
-          "conditionDamageType": "explosion",
-          "conditionDamage": 300.0,
-          "kill": true,
-          "killEffect": "destruction"
-        }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_02_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "cover": [
+          {
+            "part": "compartment_03_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
+      },
+      {
+        "bridge": [
+          {
+            "part": "bridge_dm"
+          },
+          {
+            "effect": {
+              "conditionDamageType": "explosion",
+              "conditionDamage": 200.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          },
+          {
+            "effect": {
+              "conditionDamageType": "shatter",
+              "conditionDamage": 1500.0,
+              "kill": true,
+              "killEffect": "destruction"
+            }
+          }
+        ]
       }
-    }
+    ]
   },
   {
     "tags": {
@@ -1827,7 +1907,29 @@
     }
   },
   {
+    "sensors": [
+      {
+        "sensor": {
+          "blk": "gameData/sensors/su_foot_n.blk",
+          "designationFromBody": true,
+          "designationTurretIndex": 1,
+          "dmPart": "antenna_target_location_02_dm"
+        }
+      },
+      {
+        "sensor": {
+          "blk": "gameData/sensors/su_mr_105.blk",
+          "turretIndex": 0,
+          "dmPart": "antenna_target_tagging_01_dm"
+        }
+      }
+    ]
+  },
+  {
     "commonWeapons": {
+      "animatedBones": {
+        "node": "antenna_target_location"
+      },
       "Weapon": [
         {
           "trigger": "gunner0"
@@ -1836,7 +1938,7 @@
           "triggerGroup": "primary"
         },
         {
-          "blk": "gameData/Weapons/navalModels_weapons/20mm_JM61_RFS_naval_user_cannon.blk"
+          "blk": "gameData/Weapons/navalModels_weapons/20mm_jm61_rfs_vulcan_naval_user_cannon.blk"
         },
         {
           "emitter": "emtr_gun_flame_01"
@@ -2667,7 +2769,7 @@
                 "triggerGroup": "primary"
               },
               {
-                "blk": "gameData/Weapons/navalModels_weapons/20mm_jm61_m_naval_user_cannon.blk"
+                "blk": "gameData/Weapons/navalModels_weapons/20mm_jm61_m_vulcan_naval_user_cannon.blk"
               },
               {
                 "emitter": "emtr_gun_flame_01"

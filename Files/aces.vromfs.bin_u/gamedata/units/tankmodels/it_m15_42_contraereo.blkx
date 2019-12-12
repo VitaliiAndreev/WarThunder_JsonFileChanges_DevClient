@@ -283,82 +283,6 @@
         "crouchDelta": [0.0,0.0,0.0]
       },
       {
-        "suffix": "2"
-      },
-      {
-        "dmName": "machine_gunner_dm"
-      },
-      {
-        "deadHeadAttitudeMin": -40.0
-      },
-      {
-        "deadHeadAttitudeMax": -55.0
-      },
-      {
-        "ikNode": {
-          "downNode": "Bip01 L Hand",
-          "midNode": "Bip01 L Forearm",
-          "upNode": "Bip01 L UpperArm",
-          "targetNode": "lefthand_",
-          "flexionDir": [0.5,-0.5,0.3]
-        }
-      },
-      {
-        "ikNode": {
-          "downNode": "Bip01 R Hand",
-          "midNode": "Bip01 R Forearm",
-          "upNode": "Bip01 R UpperArm",
-          "targetNode": "righthand_",
-          "flexionDir": [-0.5,-0.5,0.3]
-        }
-      },
-      {
-        "ikNode": {
-          "downNode": "Bip01 L Foot",
-          "midNode": "Bip01 L Calf",
-          "upNode": "Bip01 L Thigh",
-          "targetNode": "pedal_lfoot_",
-          "flexionDir": [-0.2,1.0,-1.0]
-        }
-      },
-      {
-        "ikNode": {
-          "downNode": "Bip01 R Foot",
-          "midNode": "Bip01 R Calf",
-          "upNode": "Bip01 R Thigh",
-          "targetNode": "pedal_rfoot_",
-          "flexionDir": [-0.6,1.0,-1.0]
-        }
-      }
-    ]
-  },
-  {
-    "ikGunner": [
-      {
-        "model": "italian_gunner_char"
-      },
-      {
-        "maxHeadHorAngle": 60.0
-      },
-      {
-        "maxHeadDownAngle": 60.0
-      },
-      {
-        "maxHeadUpAngle": 10.0
-      },
-      {
-        "headNode": "Bip01 Head"
-      },
-      {
-        "pelvisNode": "Bip01 Pelvis"
-      },
-      {
-        "pelvisTargetNode": "Bip01 Pelvis_"
-      },
-      {
-        "crouchDelta": [0.0,0.0,0.0]
-      },
-      {
         "suffix": "3"
       },
       {
@@ -1944,42 +1868,19 @@
   {
     "tank_crew": {
       "changeTimeMult": 1.0,
-      "gunner": [
-        {
-          "dmPart": "gunner_dm"
-        },
-        {
-          "role": "tank_gunner"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
-      "driver": [
-        {
-          "dmPart": "driver_dm"
-        },
-        {
-          "role": "driver"
-        },
-        {
-          "substitute": "machine_gunner"
-        },
-        {
-          "substitute": "loader"
-        }
-      ],
+      "gunner": {
+        "dmPart": "gunner_dm",
+        "role": "tank_gunner",
+        "substitute": "loader"
+      },
+      "driver": {
+        "dmPart": "driver_dm",
+        "role": "driver",
+        "substitute": "loader"
+      },
       "loader": {
         "dmPart": "loader_dm",
-        "role": "loader",
-        "substitute": "machine_gunner"
-      },
-      "machine_gunner": {
-        "dmPart": "machine_gunner_dm",
-        "role": "radio_gunner"
+        "role": "loader"
       }
     }
   },
@@ -2841,6 +2742,8 @@
     "cockpit": {
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
+      "sightFov": 25.0,
+      "sightName": "default_tank_spg",
       "headPos": [0.0,3.7,-6.5],
       "headPosOnShooting": [-0.4,2.9,0.16],
       "detectionHeight": 2.55
@@ -2946,7 +2849,233 @@
       "20mm_kwk_30_APCR_ammo_pack": [],
       "20mm_Breda_HE": [],
       "20mm_Breda_APHE": [],
-      "20mm_ger_kwk30_APCR": []
+      "20mm_ger_kwk30_APCR": [],
+      "tank_smoke_screen_system_mod": {
+        "tier": 3,
+        "effects": {
+          "commonWeapons": [
+            {
+              "Weapon": {
+                "trigger": "gunner0",
+                "blk": "gameData/Weapons/groundModels_weapons/20mm_Scotti_Isotta_20_70_M41_user_cannon.blk",
+                "reloadTime": 4.0,
+                "emitter": "bone_gun_barrel_01",
+                "flash": "emtr_gun_flame_01",
+                "useEmitter": true,
+                "recoilOffset": 0.02,
+                "defaultYaw": 0.0,
+                "defaultPitch": 0.0,
+                "barrelDP": "gun_barrel_01_dm",
+                "breechDP": "cannon_breech_dm",
+                "speedYaw": 60.0,
+                "speedPitch": 20.0,
+                "bullets": 750,
+                "fireConeAngle": 15.0,
+                "ChainfireTime": 0.5,
+                "DelayAfterShoot": 2.0,
+                "accuracyAir": 1.5,
+                "accuracyGnd": 0.0,
+                "errMeasureVel": 0.0,
+                "errMeasureVelFast": 0.0,
+                "errMeasureVelFwdShift": 0.0,
+                "errMeasureVelDir": 0.0,
+                "errTargettingOn100kmph": 0.0,
+                "errTargetting": 3.0,
+                "errExplTime": 0.0,
+                "turret": {
+                  "head": "bone_turret",
+                  "gun": "bone_gun",
+                  "barrel": "bone_gun_barrel_01",
+                  "gunnerDm": "gunner_dm",
+                  "verDriveDm": "drive_turret_v_dm",
+                  "horDriveDm": "drive_turret_h_dm"
+                },
+                "limits": {
+                  "yaw": [-180.0,180.0],
+                  "pitch": [-5.0,90.0]
+                }
+              }
+            },
+            {
+              "Weapon": {
+                "trigger": "gunner0",
+                "blk": "gameData/Weapons/groundModels_weapons/20mm_Scotti_Isotta_20_70_M41_user_cannon.blk",
+                "reloadTime": 4.0,
+                "emitter": "bone_gun_barrel_02",
+                "flash": "emtr_gun_flame_02",
+                "useEmitter": true,
+                "recoilOffset": 0.02,
+                "defaultYaw": 0.0,
+                "defaultPitch": 0.0,
+                "barrelDP": "gun_barrel_02_dm",
+                "breechDP": "cannon_breech_dm",
+                "speedYaw": 60.0,
+                "speedPitch": 20.0,
+                "bullets": 750,
+                "fireConeAngle": 15.0,
+                "ChainfireTime": 0.5,
+                "DelayAfterShoot": 2.0,
+                "accuracyAir": 1.5,
+                "accuracyGnd": 0.0,
+                "errMeasureVel": 0.0,
+                "errMeasureVelFast": 0.0,
+                "errMeasureVelFwdShift": 0.0,
+                "errMeasureVelDir": 0.0,
+                "errTargettingOn100kmph": 0.0,
+                "errTargetting": 3.0,
+                "errExplTime": 0.0,
+                "reuseYawTrigger": 10,
+                "reusePitchTrigger": 10,
+                "turret": {
+                  "head": "bone_turret",
+                  "gun": "bone_gun",
+                  "barrel": "bone_gun_barrel_02",
+                  "gunnerDm": "gunner_dm",
+                  "verDriveDm": "drive_turret_v_dm",
+                  "horDriveDm": "drive_turret_h_dm"
+                },
+                "limits": {
+                  "yaw": [-180.0,180.0],
+                  "pitch": [-5.0,90.0]
+                }
+              }
+            },
+            {
+              "Weapon": {
+                "trigger": "gunner0",
+                "blk": "gameData/Weapons/groundModels_weapons/20mm_Scotti_Isotta_20_70_M41_user_cannon.blk",
+                "reloadTime": 4.0,
+                "emitter": "bone_gun_barrel_03",
+                "flash": "emtr_gun_flame_03",
+                "useEmitter": true,
+                "recoilOffset": 0.02,
+                "defaultYaw": 0.0,
+                "defaultPitch": 0.0,
+                "barrelDP": "gun_barrel_03_dm",
+                "breechDP": "cannon_breech_dm",
+                "speedYaw": 60.0,
+                "speedPitch": 20.0,
+                "bullets": 750,
+                "fireConeAngle": 15.0,
+                "ChainfireTime": 0.5,
+                "DelayAfterShoot": 2.0,
+                "accuracyAir": 1.5,
+                "accuracyGnd": 0.0,
+                "errMeasureVel": 0.0,
+                "errMeasureVelFast": 0.0,
+                "errMeasureVelFwdShift": 0.0,
+                "errMeasureVelDir": 0.0,
+                "errTargettingOn100kmph": 0.0,
+                "errTargetting": 3.0,
+                "errExplTime": 0.0,
+                "reuseYawTrigger": 10,
+                "reusePitchTrigger": 10,
+                "turret": {
+                  "head": "bone_turret",
+                  "gun": "bone_gun",
+                  "barrel": "bone_gun_barrel_03",
+                  "gunnerDm": "gunner_dm",
+                  "verDriveDm": "drive_turret_v_dm",
+                  "horDriveDm": "drive_turret_h_dm"
+                },
+                "limits": {
+                  "yaw": [-180.0,180.0],
+                  "pitch": [-5.0,90.0]
+                }
+              }
+            },
+            {
+              "Weapon": {
+                "trigger": "gunner0",
+                "blk": "gameData/Weapons/groundModels_weapons/20mm_Scotti_Isotta_20_70_M41_user_cannon.blk",
+                "reloadTime": 4.0,
+                "emitter": "bone_gun_barrel_04",
+                "flash": "emtr_gun_flame_04",
+                "useEmitter": true,
+                "recoilOffset": 0.02,
+                "defaultYaw": 0.0,
+                "defaultPitch": 0.0,
+                "barrelDP": "gun_barrel_04_dm",
+                "breechDP": "cannon_breech_dm",
+                "speedYaw": 60.0,
+                "speedPitch": 20.0,
+                "bullets": 750,
+                "fireConeAngle": 15.0,
+                "ChainfireTime": 0.5,
+                "DelayAfterShoot": 2.0,
+                "accuracyAir": 1.5,
+                "accuracyGnd": 0.0,
+                "errMeasureVel": 0.0,
+                "errMeasureVelFast": 0.0,
+                "errMeasureVelFwdShift": 0.0,
+                "errMeasureVelDir": 0.0,
+                "errTargettingOn100kmph": 0.0,
+                "errTargetting": 3.0,
+                "errExplTime": 0.0,
+                "reuseYawTrigger": 10,
+                "reusePitchTrigger": 10,
+                "turret": {
+                  "head": "bone_turret",
+                  "gun": "bone_gun",
+                  "barrel": "bone_gun_barrel_04",
+                  "gunnerDm": "gunner_dm",
+                  "verDriveDm": "drive_turret_v_dm",
+                  "horDriveDm": "drive_turret_h_dm"
+                },
+                "limits": {
+                  "yaw": [-180.0,180.0],
+                  "pitch": [-5.0,90.0]
+                }
+              }
+            },
+            {
+              "Weapon": {
+                "trigger": "gunner3",
+                "triggerGroup": "smoke",
+                "blk": "gameData/Weapons/groundModels_weapons/66mm_germ_smoke_candle_launcher.blk",
+                "weaponType": "rockets",
+                "startFx": "",
+                "useEmitter": true,
+                "emitter": "emtr_mortar_flame_01",
+                "emitterGenRange": [1,5],
+                "emitterGenFmt": "emtr_mortar_flame_%02d",
+                "createGunEffects": true,
+                "defaultYaw": 0.0,
+                "defaultPitch": 0.0,
+                "allowableDelta": 360.0,
+                "salvo": 1,
+                "speedYaw": 24.0,
+                "speedPitch": 15.0,
+                "fireConeAngle": 1.0,
+                "bullets": 5,
+                "salvoAmount": 100.0,
+                "ChainfireTime": 0.0,
+                "DelayAfterShoot": 5.0,
+                "AttackMaxDistance": 1000.0,
+                "AttackMaxRadius": 1000.0,
+                "AttackMaxHeight": 1000.0,
+                "accuracyAir": 0.0,
+                "accuracyGnd": 1.5,
+                "errMeasureVel": 0.0,
+                "errMeasureVelFast": 0.0,
+                "errMeasureVelFwdShift": 0.0,
+                "errMeasureVelDir": 0.0,
+                "errTargettingOn100kmph": 0.0,
+                "errTargetting": 3.0,
+                "errExplTime": 0.0,
+                "turret": {
+                  "head": "bone_grenade",
+                  "gun": "bone_grenade"
+                },
+                "limits": {
+                  "yaw": [-0.0,0.0],
+                  "pitch": [0.0,0.0]
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   },
   {
