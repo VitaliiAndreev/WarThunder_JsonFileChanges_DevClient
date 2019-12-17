@@ -1,0 +1,2364 @@
+{
+  "selected_tag": "",
+  "bin_dump_file": "",
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 15.0
+    },
+    "stars": {
+      "latitude": 48.0,
+      "longitude": 44.0,
+      "year": 1940,
+      "month": 1,
+      "day": 15,
+      "time": 12.0
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "mission": {
+      "name": "na_mission_logic",
+      "level": "levels/water.bin",
+      "type": "domination",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
+      "campaign": "pacific",
+      "environment": "Day",
+      "weather": "hazy",
+      "missionDebriefing": "",
+      "missionBriefing": "",
+      "chapter": "test",
+      "deathPenaltyMulRounds": 0.0,
+      "scoreLimit": 10000,
+      "timeLimit": 20,
+      "deathPenaltyMul": 0.0,
+      "ctaCaptureZoneEqualPenaltyMul": 0.0,
+      "randomSpawnTeams": true,
+      "useSpawnScore": true,
+      "tags": [],
+      "missionType": {
+        "_Dom": false,
+        "_Conq": false,
+        "_Bttl": false,
+        "_Bto": false,
+        "_Flc": false,
+        "_v1_race_straight": false,
+        "_v1_race_inverted": false,
+        "_v2_race_straight": false,
+        "_v2_race_inverted": false,
+        "_Conq1": false,
+        "_Conq2": false,
+        "_Conq3": false,
+        "_Conq4": false,
+        "_Conq5": false,
+        "_Conq6": false,
+        "_DBttl": false,
+        "_CnvA": false,
+        "_CnvB": false,
+        "_ArtDA": false,
+        "_ArtDB": false,
+        "_DBttlA": false,
+        "_DBttlB": false
+      }
+    },
+    "spectator_points": [],
+    "cover_points": [],
+    "aiParams": {
+      "aiEffectivenessViscosity": 90.0,
+      "effectivenessDistances": [2500.0,7000.0]
+    }
+  },
+  "imports": [],
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "score_penalty_set": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "timeExpires": {
+          "time": 5.0
+        }
+      },
+      "conditions": [
+        {
+          "varCompareBool": {
+            "var_value": "left_start",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        },
+        {
+          "varCompareBool": {
+            "var_value": "right_start",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        }
+      ],
+      "actions": [],
+      "else_actions": [
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": 2.0,
+            "var": "score_penalty_mid"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": 2.0,
+            "var": "score_penalty_home"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": 3.0,
+            "var": "score_penalty_fatal"
+          }
+        }
+      ]
+    },
+    "score_set": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "initMission": []
+      },
+      "conditions": [],
+      "actions": {
+        "missionSetProperties": {
+          "scoreLimit": 12000
+        }
+      },
+      "else_actions": []
+    },
+    "tie_reset": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": [
+        {
+          "varCompareBool": {
+            "var_value": "t1_have_final_point",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        },
+        {
+          "varCompareBool": {
+            "var_value": "t2_have_final_point",
+            "value": true,
+            "comparasion_func": "equal"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "varSetBool": {
+            "value": false,
+            "var": "t1_have_final_point"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": false,
+            "var": "t2_have_final_point"
+          }
+        },
+        {
+          "wait": {
+            "time": 5.0
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "left_cz_start"
+            },
+            {
+              "target": "right_cz_start"
+            }
+          ]
+        }
+      ],
+      "else_actions": []
+    },
+    "left_cz_start": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "varCompareBool": {
+          "var_value": "left_start",
+          "value": true,
+          "comparasion_func": "equal"
+        }
+      },
+      "actions": [
+        {
+          "triggerEnable": {
+            "target": "left_cz_capt_start"
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "left_cz_capt_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "counter_left",
+          "value": 0,
+          "comparasion_func": "less",
+          "var_value_other": "max_counter"
+        }
+      },
+      "actions": [
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "left_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "left_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": false,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": false,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "counter_left"
+          }
+        }
+      ],
+      "else_actions": {
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "timeMultiplier": 1.5,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "target": "left_capture_zone",
+          "iconIndex": 0,
+          "canCaptureByGM": true,
+          "onlyPlayersCanCapture": true,
+          "zoneType": "capture_one_time",
+          "captureNoPenalty": true
+        },
+        "triggerEnable": [
+          {
+            "target": "left_cz_capt_by_t1"
+          },
+          {
+            "target": "left_cz_capt_by_t2"
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "counter_left"
+        },
+        "triggerDisable": {
+          "target": "left_cz_capt_start"
+        }
+      }
+    },
+    "left_cz_capt_by_t1": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "left_capture_zone",
+          "army": 1
+        }
+      },
+      "actions": [
+        {
+          "gameMPChangeScore": {
+            "value": -2000,
+            "valueSystem": "amount",
+            "var": "score_penalty_mid",
+            "team": "B"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "left_capture_zone",
+            "iconIndex": 0,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "left_cz_t2_capt_start"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "left_cz_capt_by_t2": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "left_capture_zone",
+          "army": 2
+        }
+      },
+      "actions": [
+        {
+          "gameMPChangeScore": {
+            "value": -2000,
+            "valueSystem": "amount",
+            "var": "score_penalty_mid",
+            "team": "A"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "left_capture_zone",
+            "iconIndex": 0,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "left_cz_t1_capt_start"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "left_cz_t1_capt_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "counter_left",
+          "value": 0,
+          "comparasion_func": "less",
+          "var_value_other": "max_counter"
+        }
+      },
+      "actions": [
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t1_left_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t1_left_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "counter_left"
+          }
+        }
+      ],
+      "else_actions": [
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": false,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": false,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 2.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t1_left_capture_zone",
+            "iconIndex": 0,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture_one_time",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "left_cz_t1_capt_by_t1"
+            },
+            {
+              "target": "left_cz_t1_capt_by_t2"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "counter_left"
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "left_cz_t1_capt_start"
+          }
+        }
+      ]
+    },
+    "left_cz_t1_capt_by_t1": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t1_left_capture_zone",
+          "army": 1
+        }
+      },
+      "actions": {
+        "gameMPChangeScore": {
+          "value": -1000,
+          "valueSystem": "amount",
+          "var": "score_penalty_home",
+          "team": "B"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "timeMultiplier": 1.0,
+          "disableZone": true,
+          "name_for_respawn_base": "",
+          "target": "t1_left_capture_zone",
+          "iconIndex": 0,
+          "canCaptureByGM": true,
+          "onlyPlayersCanCapture": true,
+          "zoneType": "capture",
+          "captureNoPenalty": true
+        },
+        "triggerEnable": {
+          "target": "left_cz_start"
+        }
+      },
+      "else_actions": []
+    },
+    "left_cz_t1_capt_by_t2": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t1_left_capture_zone",
+          "army": 2
+        }
+      },
+      "actions": [
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t1_left_capture_zone",
+            "iconIndex": 0,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "value": -10000,
+            "valueSystem": "amount",
+            "var": "score_penalty_fatal",
+            "team": "A"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "t2_have_final_point"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "left_cz_t2_capt_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "counter_left",
+          "value": 0,
+          "comparasion_func": "less",
+          "var_value_other": "max_counter"
+        }
+      },
+      "actions": [
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t2_left_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t2_left_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": false,
+            "team": "Both",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "counter_left"
+          }
+        }
+      ],
+      "else_actions": [
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": false,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": false,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 2.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t2_left_capture_zone",
+            "iconIndex": 0,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture_one_time",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "left_cz_t2_capt_by_t1"
+            },
+            {
+              "target": "left_cz_t2_capt_by_t2"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "counter_left"
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "left_cz_t2_capt_start"
+          }
+        }
+      ]
+    },
+    "left_cz_t2_capt_by_t1": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t2_left_capture_zone",
+          "army": 1
+        }
+      },
+      "actions": [
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t2_left_capture_zone",
+            "iconIndex": 0,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "value": -10000,
+            "valueSystem": "amount",
+            "var": "score_penalty_fatal",
+            "team": "B"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "t1_have_final_point"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_left_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_left_capture_zone",
+            "areaNameTo": "left_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "left_cz_t2_capt_by_t2": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t2_left_capture_zone",
+          "army": 2
+        }
+      },
+      "actions": {
+        "gameMPChangeScore": {
+          "value": -1000,
+          "valueSystem": "amount",
+          "var": "score_penalty_home",
+          "team": "A"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "timeMultiplier": 1.0,
+          "disableZone": true,
+          "name_for_respawn_base": "",
+          "target": "t2_left_capture_zone",
+          "iconIndex": 0,
+          "canCaptureByGM": true,
+          "onlyPlayersCanCapture": true,
+          "zoneType": "capture",
+          "captureNoPenalty": true
+        },
+        "triggerEnable": {
+          "target": "left_cz_start"
+        }
+      },
+      "else_actions": []
+    },
+    "right_cz_start": {
+      "is_enabled": true,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "varCompareBool": {
+          "var_value": "right_start",
+          "value": true,
+          "comparasion_func": "equal"
+        }
+      },
+      "actions": [
+        {
+          "triggerEnable": {
+            "target": "right_cz_capt_start"
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "White",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "right_cz_capt_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "counter_right",
+          "value": 0,
+          "comparasion_func": "less",
+          "var_value_other": "max_counter"
+        }
+      },
+      "actions": [
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "right_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "right_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": false,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": false,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "counter_right"
+          }
+        }
+      ],
+      "else_actions": {
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "timeMultiplier": 1.5,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "target": "right_capture_zone",
+          "iconIndex": 1,
+          "canCaptureByGM": true,
+          "onlyPlayersCanCapture": true,
+          "zoneType": "capture_one_time",
+          "captureNoPenalty": true
+        },
+        "triggerEnable": [
+          {
+            "target": "right_cz_capt_by_t1"
+          },
+          {
+            "target": "right_cz_capt_by_t2"
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "counter_right"
+        },
+        "triggerDisable": {
+          "target": "right_cz_capt_start"
+        }
+      }
+    },
+    "right_cz_capt_by_t1": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "right_capture_zone",
+          "army": 1
+        }
+      },
+      "actions": [
+        {
+          "gameMPChangeScore": {
+            "value": -2000,
+            "valueSystem": "amount",
+            "var": "score_penalty_mid",
+            "team": "B"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "right_capture_zone",
+            "iconIndex": 1,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "right_cz_t2_capt_start"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "right_cz_capt_by_t2": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "right_capture_zone",
+          "army": 2
+        }
+      },
+      "actions": [
+        {
+          "gameMPChangeScore": {
+            "value": -2000,
+            "valueSystem": "amount",
+            "var": "score_penalty_mid",
+            "team": "A"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "right_capture_zone",
+            "iconIndex": 1,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "right_cz_t1_capt_start"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "right_cz_t1_capt_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "counter_right",
+          "value": 0,
+          "comparasion_func": "less",
+          "var_value_other": "max_counter"
+        }
+      },
+      "actions": [
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t1_right_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t1_right_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "counter_right"
+          }
+        }
+      ],
+      "else_actions": [
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": false,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": false,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 2.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t1_right_capture_zone",
+            "iconIndex": 1,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture_one_time",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "right_cz_t1_capt_by_t1"
+            },
+            {
+              "target": "right_cz_t1_capt_by_t2"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "counter_right"
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "right_cz_t1_capt_start"
+          }
+        }
+      ]
+    },
+    "right_cz_t1_capt_by_t1": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t1_right_capture_zone",
+          "army": 1
+        }
+      },
+      "actions": {
+        "gameMPChangeScore": {
+          "value": -1000,
+          "valueSystem": "amount",
+          "var": "score_penalty_home",
+          "team": "B"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "timeMultiplier": 1.0,
+          "disableZone": true,
+          "name_for_respawn_base": "",
+          "target": "t1_right_capture_zone",
+          "iconIndex": 1,
+          "canCaptureByGM": true,
+          "onlyPlayersCanCapture": true,
+          "zoneType": "capture",
+          "captureNoPenalty": true
+        },
+        "triggerEnable": {
+          "target": "right_cz_start"
+        }
+      },
+      "else_actions": []
+    },
+    "right_cz_t1_capt_by_t2": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t1_right_capture_zone",
+          "army": 2
+        }
+      },
+      "actions": [
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t1_right_capture_zone",
+            "iconIndex": 1,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "value": -10000,
+            "valueSystem": "amount",
+            "var": "score_penalty_fatal",
+            "team": "A"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "t2_have_final_point"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t1_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t1_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "right_cz_t2_capt_start": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "counter_right",
+          "value": 0,
+          "comparasion_func": "less",
+          "var_value_other": "max_counter"
+        }
+      },
+      "actions": [
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t2_right_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "__missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t2_right_capture_zone",
+            "canCaptureOnGround": true,
+            "canCaptureByGM": false,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": false,
+            "team": "Both",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White",
+            "scale": 0.65
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "counter_right"
+          }
+        }
+      ],
+      "else_actions": [
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": false,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": false,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "White"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 2.0,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "t2_right_capture_zone",
+            "iconIndex": 1,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture_one_time",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "right_cz_t2_capt_by_t1"
+            },
+            {
+              "target": "right_cz_t2_capt_by_t2"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "counter_right"
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "right_cz_t2_capt_start"
+          }
+        }
+      ]
+    },
+    "right_cz_t2_capt_by_t1": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t2_right_capture_zone",
+          "army": 1
+        }
+      },
+      "actions": [
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "timeMultiplier": 1.0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "t2_right_capture_zone",
+            "iconIndex": 1,
+            "canCaptureByGM": true,
+            "onlyPlayersCanCapture": true,
+            "zoneType": "capture",
+            "captureNoPenalty": true
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "value": -10000,
+            "valueSystem": "amount",
+            "var": "score_penalty_fatal",
+            "team": "B"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "t1_have_final_point"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": true,
+            "team": "A",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Ally",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "t2_right_capture_zone",
+            "show": true,
+            "team": "B",
+            "iconName": "ui/gameuiskin#objective_captureZone_current",
+            "colorCode": "Enemy",
+            "scale": 0.65
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "A",
+            "colorCode": "Ally",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "t2_right_capture_zone",
+            "areaNameTo": "right_capture_zone",
+            "show": true,
+            "team": "B",
+            "colorCode": "Enemy",
+            "scale": 0.4,
+            "curve": false,
+            "arrow": false,
+            "clear": false
+          }
+        }
+      ],
+      "else_actions": []
+    },
+    "right_cz_t2_capt_by_t2": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "target": "t2_right_capture_zone",
+          "army": 2
+        }
+      },
+      "actions": {
+        "gameMPChangeScore": {
+          "value": -1000,
+          "valueSystem": "amount",
+          "var": "score_penalty_home",
+          "team": "A"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "timeMultiplier": 1.0,
+          "disableZone": true,
+          "name_for_respawn_base": "",
+          "target": "t2_right_capture_zone",
+          "iconIndex": 1,
+          "canCaptureByGM": true,
+          "onlyPlayersCanCapture": true,
+          "zoneType": "capture",
+          "captureNoPenalty": true
+        },
+        "triggerEnable": {
+          "target": "right_cz_start"
+        }
+      },
+      "else_actions": []
+    }
+  },
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "variables": {
+    "counter_left": 0,
+    "counter_right": 0,
+    "max_counter": 22,
+    "left_start": false,
+    "right_start": false,
+    "score_penalty_mid": -2000,
+    "score_penalty_home": -1000,
+    "score_penalty_fatal": -4000,
+    "t1_have_final_point": false,
+    "t2_have_final_point": false
+  },
+  "dialogs": [],
+  "airfields": [],
+  "effects": [],
+  "units": [],
+  "areas": [],
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "wayPoints": []
+}
