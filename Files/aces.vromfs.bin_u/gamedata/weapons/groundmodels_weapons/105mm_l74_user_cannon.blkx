@@ -34,7 +34,7 @@
     "speed": 1478.0,
     "maxDistance": 10000.0,
     "bulletType": "apds_tank",
-    "bulletName": "105mm_l28a1",
+    "bulletName": "105mm_slpprj_m61",
     "Cx": 0.155,
     "breakingArmorThicknessEffective": true,
     "breakingArmorThickness": [30.0,150.0],
@@ -654,6 +654,60 @@
           "fx": "75_122_he_hit_snow_stone",
           "fxScale": [0.8,1.0]
         }
+      }
+    }
+  },
+  "105mm_us_M416_Smoke": {
+    "bullet": {
+      "bulletCount": 40,
+      "mass": 18.7,
+      "damageMass": 0.57,
+      "explosiveType": "smoke_composition",
+      "explosiveMass": 0.05,
+      "caliber": 0.105,
+      "speed": 330.0,
+      "maxDistance": 10000.0,
+      "bulletType": "smoke_tank",
+      "bulletName": "105mm_rokgr_m61",
+      "hitPowerMult": 2.0,
+      "nearHitPower": [1.0,50.0],
+      "midHitPower": [0.9,300.0],
+      "farHitPower": [0.1,700.0],
+      "endHitPower": [0.008,1500.0],
+      "relativeVelHitShift": [300.0,1000.0],
+      "nearArmorPower": [3.0,150.0],
+      "midArmorPower": [3.0,600.0],
+      "farArmorPower": [3.0,1000.0],
+      "relativeVelArmorShift": [200.0,1000.0],
+      "explodeTreshold": 0.5,
+      "explodeHitPower": 90.0,
+      "explodeArmorPower": 8.0,
+      "explodeRadius": [0.4,0.8],
+      "fuseDelayDist": 0.4,
+      "shutterDamage": true,
+      "shutterDamageRadius": 18.5,
+      "shutterAmount": 130,
+      "shutterArmorPower": 7.5,
+      "shutterHit": 11.0,
+      "smokeShell": true,
+      "smokeShellRad": 20.0,
+      "smokeActivateTime": 5.0,
+      "smokeTime": 25.0,
+      "groundCollisionEffect": "smoke_shell_explosion",
+      "groundFxScale": [1.2,1.4],
+      "ricochetEffect": "cannon_ricochet",
+      "waterCollisionEffect": "120-203_smoke_water_splash",
+      "waterFxScale": [0.7,0.8],
+      "explosionPatchRadius": 1.5,
+      "collisions": {
+        "steel": {
+          "fx": "smoke_shell_explosion"
+        }
+      },
+      "visual": {
+        "range_percent_of_ammo": [100.0,0.0],
+        "traceFreq": 1,
+        "tracer": "noColor"
       }
     }
   }

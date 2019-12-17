@@ -2,41 +2,39 @@
   "type": "radar",
   "transivers": {
     "search": {
-      "sideLobesAttenuation": -15.0,
+      "sideLobesAttenuation": -20.0,
       "power": 250.0,
-      "band": 0,
+      "band": 8,
       "rcs": 3.0,
       "range": 12000.0,
       "rangeMax": 20000.0,
       "antenna": {
         "azimuth": {
           "angleHalfSens": 4.8,
-          "sideLobesSensitivity": -24.0
+          "sideLobesSensitivity": -26.0
         },
         "elevation": {
-          "angleHalfSens": 15.0,
-          "sideLobesSensitivity": -20.0
+          "angleHalfSens": 10.5,
+          "sideLobesSensitivity": -26.0
         }
       }
     },
     "track": {
-      "sideLobesAttenuation": -15.0,
+      "sideLobesAttenuation": -20.0,
       "power": 250.0,
-      "band": 0,
+      "band": 8,
       "rcs": 3.0,
       "range": 10000.0,
       "rangeMax": 20000.0,
       "antenna": {
         "angleHalfSens": 4.8,
-        "sideLobesSensitivity": -24.0
+        "sideLobesSensitivity": -26.0
       }
     }
   },
   "signals": {
     "search": {
       "groundClutter": true,
-      "aircraftAsTarget": true,
-      "groundVehiclesAsTarget": true,
       "friendFoeId": false,
       "distance": {
         "presents": true,
@@ -47,8 +45,6 @@
     },
     "track": {
       "groundClutter": true,
-      "aircraftAsTarget": true,
-      "groundVehiclesAsTarget": true,
       "angularAccuracy": 0.07,
       "distanceAccuracy": 25.0,
       "distance": {
@@ -326,10 +322,9 @@
             }
           ]
         },
-        "finishedTrack": {
+        "brokenTrack": {
           "stateFrom": "track",
           "event": "activeTargetOfInterestInertialTimeOut",
-          "command": "selectTarget",
           "stateTo": "lock",
           "actions": {
             "setFsmActive": {
@@ -338,6 +333,25 @@
             },
             "setLockMode": []
           }
+        },
+        "finishedTrack": {
+          "stateFrom": "track",
+          "command": "selectTarget",
+          "stateTo": "standbyOrSearch",
+          "actions": [
+            {
+              "setFsmActive": {
+                "fsm": "track",
+                "active": false
+              }
+            },
+            {
+              "setFsmActive": {
+                "fsm": "standbyOrSearch",
+                "active": true
+              }
+            }
+          ]
         },
         "switchScanPattern": {
           "stateFrom": "standbyOrSearch",
@@ -603,7 +617,7 @@
           },
           "setCenterElevation": {
             "source": "constant",
-            "value": 2.5
+            "value": 3.0
           }
         },
         "setSearch3Bars": {
@@ -621,7 +635,7 @@
           },
           "setCenterElevation": {
             "source": "constant",
-            "value": 5.0
+            "value": 5.5
           }
         }
       },

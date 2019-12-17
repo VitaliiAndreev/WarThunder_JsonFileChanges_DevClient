@@ -287,10 +287,9 @@
             }
           ]
         },
-        "finishedTrack": {
+        "brokenTrack": {
           "stateFrom": "track",
           "event": "activeTargetOfInterestInertialTimeOut",
-          "command": "selectTarget",
           "stateTo": "lock",
           "actions": {
             "setFsmActive": {
@@ -299,6 +298,25 @@
             },
             "setLockMode": []
           }
+        },
+        "finishedTrack": {
+          "stateFrom": "track",
+          "command": "selectTarget",
+          "stateTo": "standbyOrSearch",
+          "actions": [
+            {
+              "setFsmActive": {
+                "fsm": "track",
+                "active": false
+              }
+            },
+            {
+              "setFsmActive": {
+                "fsm": "standbyOrSearch",
+                "active": true
+              }
+            }
+          ]
         },
         "switchScanPattern": {
           "stateFrom": "standbyOrSearch",

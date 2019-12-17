@@ -33,6 +33,12 @@
     "dustFx": ""
   },
   {
+    "support_unit_class": "structures/ussr_152mm_d1"
+  },
+  {
+    "support_unit_tag": "artillery"
+  },
+  {
     "subclass": "heavyVehicle"
   },
   {
@@ -102,7 +108,7 @@
     "arcadePowerMult": 1.5
   },
   {
-    "arcadeTurnPowerMult": 1.1
+    "arcadeTurnPowerMult": 1.0
   },
   {
     "spawn_count": {
@@ -124,7 +130,7 @@
           "armorThickness": 40.0
         },
         "turret_01_bottom_dm": {
-          "armorThickness": 20.0
+          "armorThickness": 30.0
         },
         "turret_02_front_dm": {
           "armorThickness": 10.0,
@@ -233,7 +239,7 @@
           "armorThickness": 10.0
         },
         "superstructure_back_dm": {
-          "armorThickness": 20.0
+          "armorThickness": 30.0
         },
         "ex_armor_l_02_dm": {
           "armorThickness": 5.0,
@@ -529,15 +535,6 @@
           "armorThickness": 10.0
         }
       },
-      "power_block": {
-        "armorClass": "armor_tank_engine",
-        "hp": 100.0,
-        "armorThickness": 150.0,
-        "fireProtectionHp": 5.0,
-        "restrainDamage": 0.5,
-        "engine_dm": [],
-        "transmission_dm": []
-      },
       "ammo": {
         "armorClass": "tank_structural_steel",
         "hp": 300.0,
@@ -720,6 +717,17 @@
         "fuel_tank_l_03_dm": [],
         "fuel_tank_l_04_dm": [],
         "fuel_tank_l_05_dm": []
+      },
+      "power_block": {
+        "armorClass": "armor_tank_engine",
+        "hp": 100.0,
+        "armorThickness": 150.0,
+        "fireProtectionHp": 5.0,
+        "restrainDamage": 0.5,
+        "genericArmorQuality": 0.05,
+        "cumulativeArmorQuality": 0.1,
+        "engine_dm": [],
+        "transmission_dm": []
       }
     }
   },
@@ -728,6 +736,7 @@
       {
         "armorArrayHull": {
           "xrayDmPart": "composite_armor_hull_01_dm",
+          "titleLoc": "RHA_tank_modern",
           "armorArrayText": {
             "layer": {
               "dmPart": "composite_armor_hull_01_dm",
@@ -739,6 +748,7 @@
       {
         "armorArrayHull": {
           "xrayDmPart": "composite_armor_hull_02_dm",
+          "titleLoc": "RHA_tank_modern",
           "armorArrayText": {
             "layer": {
               "dmPart": "composite_armor_hull_02_dm",
@@ -1655,8 +1665,7 @@
       ],
       "loader": {
         "dmPart": "loader_dm",
-        "role": "loader",
-        "substitute": "commander"
+        "role": "loader"
       },
       "commander": [
         {
@@ -1670,6 +1679,9 @@
         },
         {
           "role": "commander"
+        },
+        {
+          "substitute": "loader"
         }
       ]
     }
@@ -1958,8 +1970,8 @@
         "Empty": 37000.0,
         "Fuel": 700.0,
         "TakeOff": 37700.0,
-        "momentOfInertia": [2.0,2.0,4.0],
-        "CenterOfGravity": [0.0,0.4,0.0],
+        "momentOfInertia": [2.0,4.0,4.0],
+        "CenterOfGravity": [0.1,0.4,0.0],
         "AdvancedMass": false,
         "trackMass": 1500.0,
         "CenterOfGravityClampY": [0.0,0.5]
@@ -1967,7 +1979,8 @@
       "tracks": {
         "animationMultiplier": -0.63,
         "height": 0.085,
-        "width": 0.67
+        "width": 0.67,
+        "fricSideRot": [5.0,0.0,0.6,0.3]
       },
       "collisionProps": {
         "cls_body": "convex_hull"
@@ -1982,7 +1995,7 @@
         "driveGearRadius": 0.37,
         "mainGearRatio": 1.8,
         "sideGearRatio": 6.25,
-        "neutralGearRatio": 8.0,
+        "neutralGearRatio": 13.0,
         "gearRatios": [
           {
             "ratio": -1.47
@@ -2000,7 +2013,13 @@
             "ratio": -4.95
           },
           {
+            "ratio": -6.95
+          },
+          {
             "ratio": 0.0
+          },
+          {
+            "ratio": 6.95
           },
           {
             "ratio": 4.95
@@ -2597,12 +2616,14 @@
         "image": "#ui/gameuiskin#tank_reinforcement_sw"
       },
       "modern_tank_laser_rangefinder": [],
-      "105mm_usa_HESH": [],
+      "art_support": [],
       "105mm_sweden_APDS": [],
       "105mm_sweden_HE": [],
-      "105mm_usa_HESH_ammo_pack": [],
+      "105mm_us_M416_Smoke": [],
       "105mm_sweden_APDS_ammo_pack": [],
+      "105mm_us_M416_Smoke_ammo_pack": [],
       "night_vision_system": {
+        "tier": 3,
         "effects": {
           "nightVision": {
             "gunnerIr": {
