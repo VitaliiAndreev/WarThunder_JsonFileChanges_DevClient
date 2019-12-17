@@ -2684,7 +2684,7 @@
     "germ_destroyer_class1936a_mob_z32": 103,
     "germ_destroyer_class1936b": 107,
     "germ_destroyer_class1939_t22": 71,
-    "germ_destroyer_class1939_t31": 77,
+    "germ_destroyer_class1939_t31": 71,
     "germ_escort_typem1943": 35,
     "germ_kanonenboot_k2": 105,
     "germ_ls4_class": 31,
@@ -2791,7 +2791,6 @@
     "us_destroyer_fletcher_bennion": 71,
     "us_destroyer_fletcher_cowell": 71,
     "us_destroyer_porter_1941": 71,
-    "us_destroyer_porter_1944": 71,
     "us_destroyer_somers": 71,
     "us_destroyer_sumner": 71,
     "us_elco_77ft_pt20": 31,
@@ -4762,6 +4761,52 @@
         }
       ]
     },
+    "he_i_fuse_ball": {
+      "normalizationPreset": "default",
+      "ricochetPreset": "default",
+      "slopeEffectPreset": "ap",
+      "stabilityThreshold": 0.05,
+      "stabilityCaliberToArmorThreshold": 5.0,
+      "stabilityReductionAfterRicochet": 0.5,
+      "stabilityReductionAfterPenetration": 0.3,
+      "stabilityRicochetModifier": [
+        {
+          "mod1": [0.0,0.05]
+        },
+        {
+          "mod2": [20.0,0.1]
+        },
+        {
+          "mod3": [30.0,0.2]
+        },
+        {
+          "mod3": [45.0,0.3]
+        }
+      ]
+    },
+    "he_frag_t_ball": {
+      "normalizationPreset": "default",
+      "ricochetPreset": "default",
+      "slopeEffectPreset": "ap",
+      "stabilityThreshold": 0.05,
+      "stabilityCaliberToArmorThreshold": 5.0,
+      "stabilityReductionAfterRicochet": 0.5,
+      "stabilityReductionAfterPenetration": 0.3,
+      "stabilityRicochetModifier": [
+        {
+          "mod1": [0.0,0.05]
+        },
+        {
+          "mod2": [20.0,0.1]
+        },
+        {
+          "mod3": [30.0,0.2]
+        },
+        {
+          "mod3": [45.0,0.3]
+        }
+      ]
+    },
     "i_t_ball": {
       "normalizationPreset": "default",
       "ricochetPreset": "default",
@@ -5002,6 +5047,14 @@
       "fresnel": [0.23,0.1,2.0]
     },
     "aphe": {
+      "normalizationPreset": "ap",
+      "slopeEffectPreset": "ap",
+      "ricochetPreset": "ap",
+      "modelName": "tank_bullet_aphe",
+      "secondaryShattersPreset": "ap",
+      "fresnel": [0.23,0.1,2.0]
+    },
+    "aphe_t": {
       "normalizationPreset": "ap",
       "slopeEffectPreset": "ap",
       "ricochetPreset": "ap",
@@ -6251,7 +6304,7 @@
   },
   "bulletDecals": {
     "ap": {
-      "bullets": "ac_shell_tank, apbc_tank, apbc_usa_tank, apds_tank, apds_early_tank, apds_autocannon, apds_l15_tank, apds_fs_tank, apds_fs_long_tank, apds_fs_full_body_steel_tank, apds_fs_tungsten_small_core_tank, apds_fs_tungsten_l10_l15_tank, apc_tank, aphe_tank, aphebc_tank, apcbc_tank, ap_tank,ap_large_caliber_tank, tp_tank, shrapnel_tank, he_ball, ap_i_ball, ap_i_t_ball, ap_i_t, apc_t, ap_t_ball, ap_ball, apc_solid_medium_caliber_tank, apcbc_solid_medium_caliber_tank,aphe, sap_hei_tank, sap_tank, sapbc_tank, common_tank, special_common_tank",
+      "bullets": "ac_shell_tank, apbc_tank, apbc_usa_tank, apds_tank, apds_early_tank, apds_autocannon, apds_l15_tank, apds_fs_tank, apds_fs_long_tank, apds_fs_full_body_steel_tank, apds_fs_tungsten_small_core_tank, apds_fs_tungsten_l10_l15_tank, apc_tank, aphe_tank, aphebc_tank, apcbc_tank, ap_tank,ap_large_caliber_tank, tp_tank, shrapnel_tank, he_ball, ap_i_ball, ap_i_t_ball, ap_i_t, apc_t, ap_t_ball, ap_ball, apc_solid_medium_caliber_tank, apcbc_solid_medium_caliber_tank,aphe, aphe_t, sap_hei_tank, sap_tank, sapbc_tank, common_tank, special_common_tank",
       "pierce": "pr_gen",
       "stop": "st_gen",
       "ricochet": "st_gen",

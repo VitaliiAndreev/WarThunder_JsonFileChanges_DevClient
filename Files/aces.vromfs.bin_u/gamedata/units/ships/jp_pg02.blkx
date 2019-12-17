@@ -99,12 +99,6 @@
     "rocketLaunchAnimVar": "pg02_rocket_launch"
   },
   {
-    "radarAnimVar": "radar_target_yaw_rotate"
-  },
-  {
-    "radarAnimPitchVar": "radar_target_pitch_rotate"
-  },
-  {
     "explosionFx": "ship_explosion"
   },
   {
@@ -621,9 +615,6 @@
           "hp": 150.0
         },
         "antenna_target_location_02_dm": {
-          "hp": 150.0
-        },
-        "antenna_target_tagging_01_dm": {
           "hp": 150.0
         }
       },
@@ -1909,12 +1900,23 @@
   {
     "sensors": [
       {
-        "sensor": {
-          "blk": "gameData/sensors/su_foot_n.blk",
-          "designationFromBody": true,
-          "designationTurretIndex": 1,
-          "dmPart": "antenna_target_location_02_dm"
-        }
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_foot_n.blk"
+          },
+          {
+            "designationFromBody": true
+          },
+          {
+            "designationTurretIndex": 1
+          },
+          {
+            "dmPart": "antenna_target_location_01_dm"
+          },
+          {
+            "dmPart": "antenna_target_location_02_dm"
+          }
+        ]
       },
       {
         "sensor": {
@@ -1926,10 +1928,23 @@
     ]
   },
   {
+    "radarAnimations": {
+      "anim": {
+        "radarAnimVar": "radar_target_yaw_rotate",
+        "animatedRadarIdx": 0
+      }
+    }
+  },
+  {
     "commonWeapons": {
-      "animatedBones": {
-        "node": "antenna_target_location"
-      },
+      "animatedBones": [
+        {
+          "node": "antenna_target_location_01"
+        },
+        {
+          "node": "antenna_target_location_02"
+        }
+      ],
       "Weapon": [
         {
           "trigger": "gunner0"

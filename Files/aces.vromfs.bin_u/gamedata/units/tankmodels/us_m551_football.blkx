@@ -45,7 +45,9 @@
   "attachables": {
     "ex_armor_02_dm": true,
     "ex_decor_05_dm": true,
-    "collision_add_dm": true
+    "collision_add_dm": true,
+    "fuel_tank_r_01_dm": true,
+    "fuel_tank_l_01_dm": true
   },
   "sound": {
     "EngineName": "engine_chaffee_m24",
@@ -2022,6 +2024,50 @@
         "recoilMultiplier": 0.3,
         "shotFreq": 0.2,
         "useEmitter": true,
+        "allowableDelta": 180.0,
+        "defaultYaw": 0.0,
+        "defaultPitch": 0.0,
+        "barrelDP": "gun_barrel_02_dm",
+        "parkInDeadzone": false,
+        "speedYaw": 30.0,
+        "speedPitch": 20.0,
+        "bullets": 1000,
+        "salvoAmount": 100.0,
+        "ChainfireTime": 0.0,
+        "DelayAfterShoot": 5.0,
+        "AttackMaxDistance": 1000.0,
+        "AttackMaxRadius": 1000.0,
+        "AttackMaxHeight": 1000.0,
+        "accuracyAir": 0.0,
+        "accuracyGnd": 1.5,
+        "errMeasureVel": 0.0,
+        "errMeasureVelFast": 0.0,
+        "errMeasureVelFwdShift": 0.0,
+        "errMeasureVelDir": 0.0,
+        "errTargettingOn100kmph": 0.0,
+        "errTargetting": 3.0,
+        "errExplTime": 0.0,
+        "turret": {
+          "head": "bone_mg_aa_h_01",
+          "gun": "bone_mg_aa_v_01",
+          "gunnerDm": "commander_dm"
+        },
+        "limits": {
+          "yaw": [0.0,0.0],
+          "pitch": [0.0,0.0]
+        }
+      }
+    },
+    {
+      "Weapon": {
+        "trigger": "gunner1",
+        "triggerGroup": "machinegun",
+        "blk": "gameData/Weapons/groundModels_weapons/152mm_football_user_cannon_without_effect.blk",
+        "emitter": "bone_mg_aa_v_01",
+        "flash": "bone_mg_aa_flame_01",
+        "recoilMultiplier": 1.0,
+        "shotFreq": 0.2,
+        "useEmitter": false,
         "allowableDelta": 180.0,
         "defaultYaw": 0.0,
         "defaultPitch": 0.0,

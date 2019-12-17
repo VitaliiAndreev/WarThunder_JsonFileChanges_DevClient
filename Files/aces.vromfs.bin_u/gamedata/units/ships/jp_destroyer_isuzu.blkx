@@ -81,12 +81,6 @@
     "exhaustFx": "ps_exhaust_blur"
   },
   {
-    "radarAnimVar": "radar_target_yaw_rotate"
-  },
-  {
-    "radarAnimPitchVar": "radar_target_pitch_rotate"
-  },
-  {
     "explosionFx": "ship_explosion"
   },
   {
@@ -115,15 +109,6 @@
   },
   {
     "depthTraceCriticalDepth": 5.3
-  },
-  {
-    "customClassIco": "!#ui/gameuiskin#image_in_progress_ico"
-  },
-  {
-    "customImage": "!#ui/unitskin#image_in_progress"
-  },
-  {
-    "customTooltipImage": "ui/aircrafts/image_in_progress"
   },
   {
     "hideNodesInDmg": {
@@ -882,6 +867,9 @@
         "armorThickness": 8.0,
         "superstructure_back_dm": {
           "hp": 2308.0
+        },
+        "superstructure_front_dm": {
+          "hp": 4646.0
         }
       },
       "hull_construction": {
@@ -947,6 +935,9 @@
           "hp": 305.0
         },
         "fire_director_01_dm": {
+          "hp": 150.0
+        },
+        "fire_director_mount_01_dm": {
           "hp": 150.0
         }
       },
@@ -2010,17 +2001,52 @@
   {
     "sensors": [
       {
-        "sensor": {
-          "blk": "gameData/sensors/su_foot_n.blk",
-          "designationFromBody": true,
-          "designationTurretIndex": 1,
-          "dmPart": "antenna_target_location_01_dm"
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_foot_n.blk"
+          },
+          {
+            "designationFromBody": true
+          },
+          {
+            "designationTurretIndex": 1
+          },
+          {
+            "dmPart": "antenna_target_location_01_dm"
+          },
+          {
+            "dmPart": "antenna_target_location_02_dm"
+          }
+        ]
+      },
+      {
+        "sensor": [
+          {
+            "blk": "gameData/sensors/ship_optical_sight.blk"
+          },
+          {
+            "dmPart": "fire_director_mount_01_dm"
+          },
+          {
+            "dmPart": "fire_director_01_dm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "radarAnimations": [
+      {
+        "anim": {
+          "radarAnimVar": "radar_target_yaw_rotate",
+          "animatedRadarIdx": 0
         }
       },
       {
-        "sensor": {
-          "blk": "gameData/sensors/ship_optical_sight.blk",
-          "dmPart": "fire_director_01_dm"
+        "anim": {
+          "radarAnimVar": "target_tagging_yaw_rotate",
+          "animatedRadarIdx": 1,
+          "radarAnimPitchVar": "target_tagging_pitch_rotate"
         }
       }
     ]
@@ -2030,7 +2056,13 @@
       {
         "animatedBones": [
           {
-            "node": "antenna_target_location"
+            "node": "antenna_target_location_01"
+          },
+          {
+            "node": "antenna_target_location_02"
+          },
+          {
+            "node": "fire_director_mount01_dm"
           },
           {
             "node": "fire_director_01_dm"

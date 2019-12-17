@@ -87,12 +87,6 @@
     "explosionFx": "ship_explosion"
   },
   {
-    "radarAnimVar": "radar_target_yaw_rotate"
-  },
-  {
-    "radarAnimPitchVar": "radar_target_pitch_rotate"
-  },
-  {
     "smokeScreenActivateTime": 10.0
   },
   {
@@ -809,6 +803,79 @@
     ]
   },
   {
+    "ikGunner": [
+      {
+        "model": "japan_sailor_char"
+      },
+      {
+        "maxHeadHorAngle": 60.0
+      },
+      {
+        "maxHeadDownAngle": 60.0
+      },
+      {
+        "maxHeadUpAngle": 10.0
+      },
+      {
+        "headNode": "Bip01 Head"
+      },
+      {
+        "pelvisNode": "Bip01 Pelvis"
+      },
+      {
+        "pelvisTargetNode": "Bip01 Pelvis_"
+      },
+      {
+        "crouchDelta": [0.0,0.0,0.0]
+      },
+      {
+        "suffix": "9"
+      },
+      {
+        "deadHeadAttitudeMin": -55.0
+      },
+      {
+        "deadHeadAttitudeMax": -40.0
+      },
+      {
+        "ikNode": {
+          "downNode": "Bip01 L Hand",
+          "midNode": "Bip01 L Forearm",
+          "upNode": "Bip01 L UpperArm",
+          "targetNode": "lefthand_",
+          "flexionDir": [0.5,-0.5,0.3]
+        }
+      },
+      {
+        "ikNode": {
+          "downNode": "Bip01 R Hand",
+          "midNode": "Bip01 R Forearm",
+          "upNode": "Bip01 R UpperArm",
+          "targetNode": "righthand_",
+          "flexionDir": [-0.5,-0.5,0.3]
+        }
+      },
+      {
+        "ikNode": {
+          "downNode": "Bip01 L Foot",
+          "midNode": "Bip01 L Calf",
+          "upNode": "Bip01 L Thigh",
+          "targetNode": "pedal_lfoot_",
+          "flexionDir": [-0.2,1.0,-1.0]
+        }
+      },
+      {
+        "ikNode": {
+          "downNode": "Bip01 R Foot",
+          "midNode": "Bip01 R Calf",
+          "upNode": "Bip01 R Thigh",
+          "targetNode": "pedal_rfoot_",
+          "flexionDir": [-0.6,1.0,-1.0]
+        }
+      }
+    ]
+  },
+  {
     "attach": {
       "Bip01 Pelvis_1": "japan_sailor_sit",
       "Bip01 Pelvis_2": "japan_sailor_sit",
@@ -816,7 +883,8 @@
       "Bip01 Pelvis_4": "japan_sailor_standing",
       "Bip01 Pelvis_5": "japan_sailor_standing",
       "Bip01 Pelvis_7": "japan_sailor_sit",
-      "Bip01 Pelvis_8": "japan_sailor_sit"
+      "Bip01 Pelvis_8": "japan_sailor_sit",
+      "Bip01 Pelvis_9": "japan_sailor_standing"
     }
   },
   {
@@ -1020,6 +1088,9 @@
           "hp": 300.0
         },
         "antenna_target_tagging_01_dm": {
+          "hp": 150.0
+        },
+        "antenna_target_tagging_mount_01_dm": {
           "hp": 191.0
         }
       },
@@ -2699,10 +2770,16 @@
       {
         "animatedBones": [
           {
-            "node": "antenna_target_location"
+            "node": "antenna_target_location_01"
           },
           {
-            "node": "antenna_target_tagging"
+            "node": "antenna_target_location_02"
+          },
+          {
+            "node": "antenna_target_tagging_mount_01"
+          },
+          {
+            "node": "antenna_target_tagging_01"
           }
         ]
       },
@@ -3028,17 +3105,52 @@
   {
     "sensors": [
       {
-        "sensor": {
-          "blk": "gameData/sensors/su_foot_n.blk",
-          "designationFromBody": true,
-          "designationTurretIndex": 1,
-          "dmPart": "antenna_target_location_02_dm"
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_foot_n.blk"
+          },
+          {
+            "designationFromBody": true
+          },
+          {
+            "designationTurretIndex": 1
+          },
+          {
+            "dmPart": "antenna_target_location_01_dm"
+          },
+          {
+            "dmPart": "antenna_target_location_02_dm"
+          }
+        ]
+      },
+      {
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_mr_105.blk"
+          },
+          {
+            "dmPart": "antenna_target_tagging_mount_01_dm"
+          },
+          {
+            "dmPart": "antenna_target_tagging_01_dm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "radarAnimations": [
+      {
+        "anim": {
+          "radarAnimVar": "radar_target_yaw_rotate",
+          "animatedRadarIdx": 0
         }
       },
       {
-        "sensor": {
-          "blk": "gameData/sensors/su_mr_105.blk",
-          "dmPart": "antenna_target_tagging_01_dm"
+        "anim": {
+          "radarAnimVar": "target_tagging_yaw_rotate",
+          "animatedRadarIdx": 1,
+          "radarAnimPitchVar": "target_tagging_pitch_rotate"
         }
       }
     ]

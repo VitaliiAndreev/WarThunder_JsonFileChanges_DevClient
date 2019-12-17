@@ -108,6 +108,21 @@
     "canReloadNonGuns": true
   },
   {
+    "smokeScreenActivateTime": 5.0
+  },
+  {
+    "smokeScreenEffectTime": 7.0
+  },
+  {
+    "smokeScreenRad": 12.0
+  },
+  {
+    "smokeScreenOffset": [-3.0,0.0,2.0]
+  },
+  {
+    "smokeScreenFxType": "tank_smokescreen"
+  },
+  {
     "controlDevices": [
       {
         "device": {
@@ -1990,9 +2005,9 @@
   {
     "VehiclePhys": {
       "Mass": {
-        "Empty": 27500.0,
+        "Empty": 26000.0,
         "Fuel": 500.0,
-        "TakeOff": 28000.0,
+        "TakeOff": 26500.0,
         "momentOfInertia": [2.0,2.0,4.0],
         "CenterOfGravity": [-0.1,1.4,0.0],
         "CenterOfGravityClampY": [0.0,0.5],
@@ -2674,6 +2689,7 @@
       "tank_medical_kit_expendable": {
         "image": "#ui/gameuiskin#tank_reinforcement_uk"
       },
+      "tank_engine_smoke_screen_system": [],
       "airstrike": [],
       "improved_optics": {
         "tier": 3
@@ -2961,7 +2977,7 @@
         }
       },
       "night_vision_system": {
-        "tier": 3,
+        "tier": 1,
         "effects": {
           "nightVision": {
             "gunnerIr": {
@@ -3233,6 +3249,11 @@
         "rotation": 2.5,
         "collisionNode": "cls_turret"
       }
+    }
+  },
+  {
+    "smokeScreenExhaustEmitters": {
+      "emitter": "emtr_exhaust_01"
     }
   }
 ]

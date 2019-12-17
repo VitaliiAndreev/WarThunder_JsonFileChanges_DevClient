@@ -78,12 +78,6 @@
     "exhaustFx": "ps_exhaust"
   },
   {
-    "radarAnimVar": "radar_target_yaw_rotate"
-  },
-  {
-    "radarAnimPitchVar": "radar_target_pitch_rotate"
-  },
-  {
     "smokeScreenActivateTime": 2.5
   },
   {
@@ -706,7 +700,7 @@
         "antenna_target_location_01_dm": {
           "hp": 150.0
         },
-        "antenna_target_tagging_01_dm": {
+        "antenna_target_tagging_mount_01_dm": {
           "hp": 150.0
         }
       },
@@ -2031,9 +2025,33 @@
         }
       },
       {
-        "sensor": {
-          "blk": "gameData/sensors/su_mr_105.blk",
-          "dmPart": "fire_director_01_dm"
+        "sensor": [
+          {
+            "blk": "gameData/sensors/su_mr_105.blk"
+          },
+          {
+            "dmPart": "antenna_target_tagging_mount_01_dm"
+          },
+          {
+            "dmPart": "antenna_target_tagging_01_dm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "radarAnimations": [
+      {
+        "anim": {
+          "radarAnimVar": "radar_target_yaw_rotate",
+          "animatedRadarIdx": 0
+        }
+      },
+      {
+        "anim": {
+          "radarAnimVar": "target_tagging_yaw_rotate",
+          "animatedRadarIdx": 1,
+          "radarAnimPitchVar": "target_tagging_pitch_rotate"
         }
       }
     ]
@@ -2043,10 +2061,13 @@
       {
         "animatedBones": [
           {
-            "node": "antenna_target_location"
+            "node": "antenna_target_location_01"
           },
           {
-            "node": "antenna_target_tagging"
+            "node": "antenna_target_tagging_mount_01"
+          },
+          {
+            "node": "antenna_target_tagging_01"
           }
         ]
       },

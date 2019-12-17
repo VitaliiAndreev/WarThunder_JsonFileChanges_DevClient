@@ -303,21 +303,14 @@
           "stateFrom": "track",
           "event": "activeTargetOfInterestInertialTimeOut",
           "command": "selectTarget",
-          "stateTo": "standbyOrSearch",
-          "actions": [
-            {
-              "setFsmActive": {
-                "fsm": "track",
-                "active": false
-              }
+          "stateTo": "lock",
+          "actions": {
+            "setFsmActive": {
+              "fsm": "track",
+              "active": false
             },
-            {
-              "setFsmActive": {
-                "fsm": "standbyOrSearch",
-                "active": true
-              }
-            }
-          ]
+            "setLockMode": []
+          }
         },
         "switchScanPattern": {
           "stateFrom": "standbyOrSearch",

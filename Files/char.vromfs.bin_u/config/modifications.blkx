@@ -559,6 +559,39 @@
         "bulletMod": "akan_m47_air_targets"
       }
     },
+    "akan_m47_57mm_belt_pack": {
+      "image": "#ui/gameuiskin#ammo",
+      "modClass": "weapon",
+      "tier": 3,
+      "caliber": 57.0,
+      "deactivationIsAllowed": false
+    },
+    "akan_m47_57mm_new_gun": {
+      "image": "#ui/gameuiskin#weapon",
+      "tier": 4,
+      "modClass": "weapon",
+      "invertEnableLogic": true,
+      "caliber": 57.0,
+      "modOverdriveType": "new_gun",
+      "modUpgradeType": "new_gun",
+      "effects": {
+        "weaponMod": "akan_m47_57mm_new_gun"
+      }
+    },
+    "akan_m47_57mm_ground_targets": {
+      "reqModification": "akan_m47_57mm_belt_pack",
+      "group": "akan_m47_57mm",
+      "effects": {
+        "bulletMod": "akan_m47_57mm_ground_targets"
+      }
+    },
+    "akan_m47_57mm_air_targets": {
+      "reqModification": "akan_m47_57mm_belt_pack",
+      "group": "akan_m47_57mm",
+      "effects": {
+        "bulletMod": "akan_m47_57mm_air_targets"
+      }
+    },
     "mg_universal": {
       "reqModification": "mg_belt_pack",
       "group": "mg",
@@ -8438,6 +8471,20 @@
       "modClass": "firepower",
       "deactivationIsAllowed": false
     },
+    "57mm_HE_VT": {
+      "image": "#ui/gameuiskin#tank_ammo",
+      "reqModification": "57mm_HE_VT_ammo_pack",
+      "group": "57mm_HE",
+      "effects": {
+        "additiveBulletMod": "57mm_HE_VT"
+      }
+    },
+    "57mm_HE_VT_ammo_pack": {
+      "image": "#ui/gameuiskin#tank_ammo",
+      "tier": 4,
+      "modClass": "firepower",
+      "deactivationIsAllowed": false
+    },
     "57mm_germ_Bofors_HE": {
       "image": "#ui/gameuiskin#tank_ammo",
       "isReserve": true,
@@ -10363,6 +10410,16 @@
       "modClass": "weapon",
       "deactivationIsAllowed": false
     },
+    "mig_21_ub16": {
+      "image": "#ui/gameuiskin#pilon_rocket",
+      "modClass": "weapon",
+      "deactivationIsAllowed": false
+    },
+    "mig_21_ub32": {
+      "image": "#ui/gameuiskin#pilon_rocket",
+      "modClass": "weapon",
+      "deactivationIsAllowed": false
+    },
     "j_7_hf5": {
       "image": "#ui/gameuiskin#pilon_rocket",
       "modClass": "weapon",
@@ -10418,6 +10475,11 @@
       "modClass": "weapon",
       "deactivationIsAllowed": false
     },
+    "swe_minb_m61": {
+      "image": "#ui/gameuiskin#pilon_bomb",
+      "modClass": "weapon",
+      "deactivationIsAllowed": false
+    },
     "swe_minb_m40": {
       "image": "#ui/gameuiskin#pilon_bomb",
       "modClass": "weapon",
@@ -10434,6 +10496,11 @@
       "deactivationIsAllowed": false
     },
     "swe_torp_m41": {
+      "image": "#ui/gameuiskin#pilon_torpedo",
+      "modClass": "weapon",
+      "deactivationIsAllowed": false
+    },
+    "swe_torp_t18b_1": {
       "image": "#ui/gameuiskin#pilon_torpedo",
       "modClass": "weapon",
       "deactivationIsAllowed": false
@@ -14806,6 +14873,12 @@
       "deactivationIsAllowed": false
     },
     "heli_false_thermal_targets": {
+      "image": "#ui/gameuiskin#heli_false_thermal_targets",
+      "modClass": "weapon",
+      "requiresModelReload": true,
+      "group": "mi-24_EVU"
+    },
+    "MAW_system_heli_false_thermal_targets": {
       "image": "#ui/gameuiskin#heli_false_thermal_targets",
       "modClass": "weapon",
       "requiresModelReload": true,

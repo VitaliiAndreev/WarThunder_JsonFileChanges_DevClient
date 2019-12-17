@@ -1156,6 +1156,9 @@
         },
         "fire_director_01_dm": {
           "hp": 150.0
+        },
+        "fire_director_mount_01_dm": {
+          "hp": 150.0
         }
       },
       "engine": {
@@ -2471,10 +2474,36 @@
         }
       },
       {
-        "sensor": {
-          "blk": "gameData/sensors/ship_optical_sight.blk",
-          "turretIndex": 0,
-          "dmPart": "fire_director_01_dm"
+        "sensor": [
+          {
+            "blk": "gameData/sensors/ship_optical_sight.blk"
+          },
+          {
+            "turretIndex": 0
+          },
+          {
+            "dmPart": "fire_director_mount_01_dm"
+          },
+          {
+            "dmPart": "fire_director_01_dm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "radarAnimations": [
+      {
+        "anim": {
+          "radarAnimVar": "radar_target_yaw_rotate",
+          "animatedRadarIdx": 0
+        }
+      },
+      {
+        "anim": {
+          "radarAnimVar": "target_tagging_yaw_rotate",
+          "animatedRadarIdx": 1,
+          "radarAnimPitchVar": "target_tagging_pitch_rotate"
         }
       }
     ]
@@ -2482,9 +2511,14 @@
   {
     "commonWeapons": [
       {
-        "animatedBones": {
-          "node": "fire_director_01_dm"
-        }
+        "animatedBones": [
+          {
+            "node": "fire_director_01_mount_dm"
+          },
+          {
+            "node": "fire_director_01_dm"
+          }
+        ]
       },
       {
         "Weapon": {
