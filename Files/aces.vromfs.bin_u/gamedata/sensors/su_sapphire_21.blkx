@@ -8,6 +8,7 @@
       "rcs": 3.0,
       "range": 18000.0,
       "rangeMax": 30000.0,
+      "timeGainControl": false,
       "antenna": {
         "azimuth": {
           "angleHalfSens": 4.8,
@@ -21,11 +22,12 @@
     },
     "track": {
       "sideLobesAttenuation": -20.0,
-      "power": 250.0,
+      "power": 300.0,
       "band": 8,
       "rcs": 3.0,
       "range": 15000.0,
       "rangeMax": 30000.0,
+      "timeGainControl": false,
       "antenna": {
         "angleHalfSens": 4.8,
         "sideLobesSensitivity": -30.0
@@ -48,14 +50,13 @@
     "track": {
       "groundClutter": true,
       "aircraftAsTarget": true,
-      "angularAccuracy": 0.07,
-      "distanceAccuracy": 25.0,
+      "angularAccuracy": 0.05,
+      "distanceAccuracy": 15.0,
       "distance": {
         "presents": true,
-        "minValue": 75.0,
+        "minValue": 300.0,
         "maxValue": 30000.0,
-        "signalWidthMin": 150.0,
-        "width": 100.0
+        "width": 300.0
       }
     }
   },
@@ -91,6 +92,7 @@
       "type": "cone",
       "azimuthLimits": [-30.0,30.0],
       "elevationLimits": [-17.0,17.0],
+      "rollStabLimit": 30.0,
       "period": 0.5,
       "width": 2.5,
       "indicate": true
@@ -98,7 +100,8 @@
     "track": {
       "type": "no",
       "azimuthLimits": [-30.0,30.0],
-      "elevationLimits": [-17.0,17.0]
+      "elevationLimits": [-17.0,17.0],
+      "rollStabLimit": 30.0
     }
   },
   "fsms": {

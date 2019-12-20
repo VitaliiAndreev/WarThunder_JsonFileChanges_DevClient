@@ -8,14 +8,15 @@
       "rcs": 3.0,
       "range": 12000.0,
       "rangeMax": 20000.0,
+      "timeGainControl": false,
       "antenna": {
         "azimuth": {
           "angleHalfSens": 4.8,
-          "sideLobesSensitivity": -26.0
+          "sideLobesSensitivity": -27.0
         },
         "elevation": {
-          "angleHalfSens": 10.5,
-          "sideLobesSensitivity": -26.0
+          "angleHalfSens": 10.0,
+          "sideLobesSensitivity": -27.0
         }
       }
     },
@@ -26,15 +27,17 @@
       "rcs": 3.0,
       "range": 10000.0,
       "rangeMax": 20000.0,
+      "timeGainControl": false,
       "antenna": {
         "angleHalfSens": 4.8,
-        "sideLobesSensitivity": -26.0
+        "sideLobesSensitivity": -27.0
       }
     }
   },
   "signals": {
     "search": {
       "groundClutter": true,
+      "aircraftAsTarget": true,
       "friendFoeId": false,
       "distance": {
         "presents": true,
@@ -45,14 +48,14 @@
     },
     "track": {
       "groundClutter": true,
+      "aircraftAsTarget": true,
       "angularAccuracy": 0.07,
       "distanceAccuracy": 25.0,
       "distance": {
         "presents": true,
-        "minValue": 75.0,
+        "minValue": 300.0,
         "maxValue": 20000.0,
-        "signalWidthMin": 150.0,
-        "width": 100.0
+        "width": 300.0
       }
     }
   },
@@ -88,6 +91,7 @@
       "type": "cone",
       "azimuthLimits": [-30.0,30.0],
       "elevationLimits": [-17.0,17.0],
+      "rollStabLimit": 30.0,
       "period": 0.5,
       "width": 2.5,
       "indicate": true
@@ -95,7 +99,8 @@
     "track": {
       "type": "no",
       "azimuthLimits": [-30.0,30.0],
-      "elevationLimits": [-17.0,17.0]
+      "elevationLimits": [-17.0,17.0],
+      "rollStabLimit": 30.0
     }
   },
   "fsms": {
@@ -116,7 +121,7 @@
           },
           "setTargetDesignationRange": {
             "azimuthRange": [-5.0,5.0],
-            "distanceRange": [0.0,12000.0]
+            "distanceRange": [0.0,10000.0]
           }
         },
         "setLockMode": [
