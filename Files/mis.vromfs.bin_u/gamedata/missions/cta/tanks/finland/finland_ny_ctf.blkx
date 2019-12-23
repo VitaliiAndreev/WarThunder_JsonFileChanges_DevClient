@@ -238,6 +238,7 @@
             "newGridHorizontalCellCount": 0,
             "killArea": false,
             "detectionArea": false,
+            "airMapArea": false,
             "area": "battlearea"
           }
         },
@@ -253,11 +254,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t1_tank_spawn",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": true
             }
@@ -275,11 +279,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "onlyOnePlayerPerSpawnPoint": false,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "replaceAreas": false,
             "target": "t2_tank_spawn",
             "team": "B",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": true
             }
@@ -295,9 +302,6 @@
             },
             {
               "offset": [0.0,0.0,0.0]
-            },
-            {
-              "radiusOffset": [0.0,0.0]
             },
             {
               "show": true
@@ -337,6 +341,9 @@
             },
             {
               "target": "t2_flag_area_smoke_04"
+            },
+            {
+              "radiusOffset": [0.0,0.0]
             }
           ]
         },
@@ -469,6 +476,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t1_flag",
           "object_type": "any",
           "target_type": "isMarked",
@@ -524,9 +533,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_flag",
-          "target": "battlearea"
+          "target": "battlearea",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -568,9 +577,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_flag",
-          "target": "t1_players"
+          "target": "t1_players",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -589,6 +598,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t1_flag",
           "move_type": "teleport"
         },
@@ -668,6 +679,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t2_flag",
           "object_type": "any",
           "target_type": "isMarked",
@@ -723,9 +736,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_flag",
-          "target": "battlearea"
+          "target": "battlearea",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -767,9 +780,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_flag",
-          "target": "t2_players"
+          "target": "t2_players",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -788,6 +801,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t2_flag",
           "move_type": "teleport"
         },
@@ -822,9 +837,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_flag",
-          "target": "t2_players"
+          "target": "t2_players",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -873,6 +888,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t1_flag",
           "object_type": "any",
           "move_type": "teleport"
@@ -908,9 +925,9 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_flag",
-          "target": "t1_players"
+          "target": "t1_players",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -959,6 +976,8 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "t2_flag",
           "object_type": "any",
           "move_type": "teleport"
@@ -990,10 +1009,10 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_players",
           "target": "t2_flag_area",
-          "unit_type_ex": "isAlive"
+          "unit_type_ex": "isAlive",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1033,6 +1052,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_ny_ctf_capture_the_enemy_flag",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1040,6 +1061,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_ny_ctf_capture_the_enemy_flag",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1190,6 +1213,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t1_flag",
             "move_type": "teleport"
           }
@@ -1210,6 +1235,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t2_flag",
             "move_type": "teleport"
           }
@@ -1223,6 +1250,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_ny_ctf_capture_the_enemy_flag",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1230,6 +1259,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_ny_ctf_capture_the_enemy_flag",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1295,10 +1326,10 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_players",
           "target": "t1_flag_area",
-          "unit_type_ex": "isAlive"
+          "unit_type_ex": "isAlive",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -1338,6 +1369,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_ny_ctf_capture_the_enemy_flag",
             "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1345,6 +1378,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_ny_ctf_capture_the_enemy_flag",
             "status": 3,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -1495,6 +1530,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t1_flag",
             "move_type": "teleport"
           }
@@ -1515,6 +1552,8 @@
             "object_var_name": "",
             "object_var_comp_op": "equal",
             "object_var_value": 0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "t2_flag",
             "move_type": "teleport"
           }
@@ -1528,6 +1567,8 @@
           "moSetObjectiveStatus": {
             "target": "t1_ny_ctf_capture_the_enemy_flag",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "A"
           }
         },
@@ -1535,6 +1576,8 @@
           "moSetObjectiveStatus": {
             "target": "t2_ny_ctf_capture_the_enemy_flag",
             "status": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
             "team": "B"
           }
         },
@@ -2343,9 +2386,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_flag",
-            "target": "t1_flag_area"
+            "target": "t1_flag_area",
+            "object_var_value": 0
           }
         },
         "actions": [
@@ -2410,9 +2453,9 @@
             "check_objects": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_flag",
-            "target": "t2_flag_area"
+            "target": "t2_flag_area",
+            "object_var_value": 0
           }
         },
         "actions": [
@@ -2487,14 +2530,14 @@
             "effect_type": "specify",
             "effect": "waypoint_ground_arrow",
             "offset": [0.0,4.0,0.0],
-            "radiusOffset": [0.0,0.0],
             "show": true,
             "attach": true,
             "scale": 0.6,
             "loopSpawn": true,
             "delay": [1.0,1.0],
             "target": "t2_players",
-            "useForTriggerFiltered": true
+            "useForTriggerFiltered": true,
+            "radiusOffset": [0.0,0.0]
           },
           "unitSetIndication": {
             "set": true,
@@ -2552,14 +2595,14 @@
             "effect_type": "specify",
             "effect": "waypoint_ground_arrow",
             "offset": [0.0,4.0,0.0],
-            "radiusOffset": [0.0,0.0],
             "show": false,
             "attach": true,
             "scale": 0.6,
             "loopSpawn": true,
             "delay": [1.0,1.0],
             "target": "t2_players",
-            "useForTriggerFiltered": true
+            "useForTriggerFiltered": true,
+            "radiusOffset": [0.0,0.0]
           },
           "unitSetIndication": {
             "set": false,
@@ -2622,14 +2665,14 @@
             "effect_type": "specify",
             "effect": "waypoint_ground_arrow",
             "offset": [0.0,4.0,0.0],
-            "radiusOffset": [0.0,0.0],
             "show": true,
             "attach": true,
             "scale": 0.6,
             "loopSpawn": true,
             "delay": [1.0,1.0],
             "target": "t1_players",
-            "useForTriggerFiltered": true
+            "useForTriggerFiltered": true,
+            "radiusOffset": [0.0,0.0]
           },
           "unitSetIndication": {
             "set": true,
@@ -2687,14 +2730,14 @@
             "effect_type": "specify",
             "effect": "waypoint_ground_arrow",
             "offset": [0.0,4.0,0.0],
-            "radiusOffset": [0.0,0.0],
             "show": false,
             "attach": true,
             "scale": 0.6,
             "loopSpawn": true,
             "delay": [1.0,1.0],
             "target": "t1_players",
-            "useForTriggerFiltered": true
+            "useForTriggerFiltered": true,
+            "radiusOffset": [0.0,0.0]
           },
           "unitSetIndication": {
             "set": false,
@@ -4444,6 +4487,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "player_01"
           },
           {
@@ -4538,6 +4584,9 @@
           },
           {
             "squad_members": "player_32"
+          },
+          {
+            "squad_members": "dummy"
           }
         ]
       }
@@ -4553,6 +4602,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "player_01"
           },
           {
@@ -4647,6 +4699,9 @@
           },
           {
             "squad_members": "player_32"
+          },
+          {
+            "squad_members": "dummy"
           },
           {
             "object_type": "isTeamA"
@@ -4665,6 +4720,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "player_01"
           },
           {
@@ -4759,6 +4817,9 @@
           },
           {
             "squad_members": "player_32"
+          },
+          {
+            "squad_members": "dummy"
           },
           {
             "object_type": "isTeamB"
