@@ -2172,33 +2172,7 @@
       }
     ]
   },
-  "commonWeapons": [
-    {
-      "Weapon": {
-        "trigger": "cannon",
-        "blk": "gameData/Weapons/cannonDEFA552.blk",
-        "emitter": "flare1",
-        "flash": "flare1",
-        "dm": "cannon1_dm",
-        "bullets": 120,
-        "spread": 1.2,
-        "traceOffset": 1,
-        "counterIndex": 1
-      }
-    },
-    {
-      "Weapon": {
-        "trigger": "cannon",
-        "blk": "gameData/Weapons/cannonDEFA552.blk",
-        "emitter": "flare2",
-        "flash": "flare2",
-        "dm": "cannon2_dm",
-        "bullets": 120,
-        "spread": 1.2,
-        "traceOffset": 2
-      }
-    }
-  ],
+  "commonWeapons": [],
   "weapon_presets": [
     {
       "preset": {
@@ -2218,6 +2192,13 @@
         "name": "etendard_4m_2x1000lb_bombs",
         "blk": "gameData/FlightModels/weaponPresets/etendard_4m_2x1000lbs.blk",
         "reqModification": "us_1000lb_mk83"
+      }
+    },
+    {
+      "preset": {
+        "name": "etendard_4m_as20",
+        "blk": "gameData/FlightModels/weaponPresets/etendard_4m_as20.blk",
+        "reqModification": "nord_as_20"
       }
     },
     {
@@ -5851,8 +5832,13 @@
     },
     "us_1000lb_mk83": {
       "modClass": "weapon",
-      "tier": 3,
+      "tier": 2,
       "reqModification": "us_500lb_m64"
+    },
+    "nord_as_20": {
+      "prevModification": "us_1000lb_mk83",
+      "tier": 3,
+      "modClass": "weapon"
     },
     "fr_matra_sneb": {
       "tier": 2,
