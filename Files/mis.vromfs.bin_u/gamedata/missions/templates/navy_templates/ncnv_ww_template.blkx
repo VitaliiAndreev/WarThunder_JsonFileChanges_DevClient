@@ -143,9 +143,8 @@
               "tank": false,
               "ship": true,
               "boat": true,
-              "type_gun_boat": true,
+              "type_frigate": false,
               "type_destroyer": false,
-              "type_light_cruiser": false,
               "type_cruiser": false,
               "type_battleship": false
             }
@@ -175,9 +174,8 @@
               "tank": false,
               "ship": true,
               "boat": false,
-              "type_gun_boat": false,
+              "type_frigate": true,
               "type_destroyer": true,
-              "type_light_cruiser": true,
               "type_cruiser": true,
               "type_battleship": false
             }
@@ -207,9 +205,8 @@
               "tank": false,
               "ship": true,
               "boat": true,
-              "type_gun_boat": true,
+              "type_frigate": false,
               "type_destroyer": false,
-              "type_light_cruiser": false,
               "type_cruiser": false,
               "type_battleship": false
             }
@@ -239,9 +236,8 @@
               "tank": false,
               "ship": true,
               "boat": false,
-              "type_gun_boat": false,
+              "type_frigate": true,
               "type_destroyer": true,
-              "type_light_cruiser": true,
               "type_cruiser": true,
               "type_battleship": false
             }
@@ -437,18 +433,59 @@
       "events": {
         "initMission": []
       },
+      "conditions": {
+        "unitCheckTag": {
+          "target": "@convoy_sq_name",
+          "tags": {
+            "ship": true,
+            "boat": true,
+            "type_frigate": false,
+            "type_destroyer": false,
+            "type_cruiser": false,
+            "type_battleship": false
+          }
+        }
+      },
+      "actions": {
+        "unitSetFormation": {
+          "formation_type": "cols",
+          "formation_div": 3,
+          "formation_step": [16.0,5.5],
+          "formation_noise": [0.2,0.2],
+          "object": "@convoy_sq_name",
+          "allUnitsInOneFormation": true
+        },
+        "triggerEnable": {
+          "target": "ncnv_template_init6"
+        }
+      },
+      "else_actions": {
+        "unitSetFormation": {
+          "formation_type": "cols",
+          "formation_div": 3,
+          "formation_step": [8.0,2.7],
+          "formation_noise": [0.2,0.2],
+          "object": "@convoy_sq_name",
+          "allUnitsInOneFormation": true
+        },
+        "triggerEnable": {
+          "target": "ncnv_template_init6"
+        }
+      }
+    },
+    "ncnv_template_init6": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "initMission": []
+      },
       "conditions": [],
       "actions": [
-        {
-          "unitSetFormation": {
-            "formation_type": "cols",
-            "formation_div": 3,
-            "formation_step": [8.0,2.7],
-            "formation_noise": [0.2,0.2],
-            "object": "@convoy_sq_name",
-            "allUnitsInOneFormation": true
-          }
-        },
         {
           "unitRespawn": {
             "delay": 0.01,
