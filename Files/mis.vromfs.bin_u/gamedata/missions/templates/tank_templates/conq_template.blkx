@@ -2,35 +2,24 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": {
-      "army": 1,
-      "wing": ""
+      "army": 1
     },
     "player_teamB": {
-      "army": 2,
-      "wing": ""
+      "army": 2
     },
     "mission": {
-      "name": "stalingrad_factory_Dom",
       "level": "levels/avg_stalingrad_factory.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "UserMissions",
       "environment": "Day",
       "weather": "hazy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "chapter": "air_ground_battles",
       "scoreLimit": 17000,
       "timeLimit": 20,
       "deathPenaltyMul": 1.0,
       "country_axis": "germany",
       "country_allies": "ussr",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
       "editSlotbar": {
         "keepOwnUnits": false,
         "country_usa": {
@@ -133,38 +122,9 @@
             "allModifications": true
           }
         }
-      },
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
       }
     },
-    "spectator_points": [],
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
-    }
+    "spectator_points": []
   },
   "imports": [],
   "triggers": {
@@ -284,60 +244,30 @@
           "equal": true
         }
       },
-      "actions": [
-        {
-          "varSetString": [
-            {
-              "value": "conq_circle_01"
-            },
-            {
-              "var": "circle_name"
-            },
-            {
-              "var": "temp_circle_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_capture_area_01"
-            },
-            {
-              "var": "zone_name"
-            },
-            {
-              "var": "temp_zone_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_effect_01"
-            },
-            {
-              "var": "effect_name"
-            },
-            {
-              "var": "temp_effect_name"
-            }
-          ]
-        },
-        {
-          "triggerEnable": [
-            {
-              "target": "conc_check_arcade"
-            },
-            {
-              "target": "conq_check_realistic"
-            },
-            {
-              "target": "conq_check_hardcore"
-            }
-          ]
-        }
-      ],
+      "actions": {
+        "varSetString": [
+          {
+            "value": "conq_capture_area_01"
+          },
+          {
+            "var": "zone_name"
+          },
+          {
+            "var": "temp_zone_name"
+          }
+        ],
+        "triggerEnable": [
+          {
+            "target": "conc_check_arcade"
+          },
+          {
+            "target": "conq_check_realistic"
+          },
+          {
+            "target": "conq_check_hardcore"
+          }
+        ]
+      },
       "else_actions": []
     },
     "conq2_init": {
@@ -357,60 +287,30 @@
           "equal": true
         }
       },
-      "actions": [
-        {
-          "varSetString": [
-            {
-              "value": "conq_circle_02"
-            },
-            {
-              "var": "circle_name"
-            },
-            {
-              "var": "temp_circle_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_capture_area_02"
-            },
-            {
-              "var": "zone_name"
-            },
-            {
-              "var": "temp_zone_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_effect_02"
-            },
-            {
-              "var": "effect_name"
-            },
-            {
-              "var": "temp_effect_name"
-            }
-          ]
-        },
-        {
-          "triggerEnable": [
-            {
-              "target": "conc_check_arcade"
-            },
-            {
-              "target": "conq_check_realistic"
-            },
-            {
-              "target": "conq_check_hardcore"
-            }
-          ]
-        }
-      ],
+      "actions": {
+        "varSetString": [
+          {
+            "value": "conq_capture_area_02"
+          },
+          {
+            "var": "zone_name"
+          },
+          {
+            "var": "temp_zone_name"
+          }
+        ],
+        "triggerEnable": [
+          {
+            "target": "conc_check_arcade"
+          },
+          {
+            "target": "conq_check_realistic"
+          },
+          {
+            "target": "conq_check_hardcore"
+          }
+        ]
+      },
       "else_actions": []
     },
     "conq3_init": {
@@ -430,60 +330,30 @@
           "equal": true
         }
       },
-      "actions": [
-        {
-          "varSetString": [
-            {
-              "value": "conq_circle_03"
-            },
-            {
-              "var": "circle_name"
-            },
-            {
-              "var": "temp_circle_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_capture_area_03"
-            },
-            {
-              "var": "zone_name"
-            },
-            {
-              "var": "temp_zone_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_effect_03"
-            },
-            {
-              "var": "effect_name"
-            },
-            {
-              "var": "temp_effect_name"
-            }
-          ]
-        },
-        {
-          "triggerEnable": [
-            {
-              "target": "conc_check_arcade"
-            },
-            {
-              "target": "conq_check_realistic"
-            },
-            {
-              "target": "conq_check_hardcore"
-            }
-          ]
-        }
-      ],
+      "actions": {
+        "varSetString": [
+          {
+            "value": "conq_capture_area_03"
+          },
+          {
+            "var": "zone_name"
+          },
+          {
+            "var": "temp_zone_name"
+          }
+        ],
+        "triggerEnable": [
+          {
+            "target": "conc_check_arcade"
+          },
+          {
+            "target": "conq_check_realistic"
+          },
+          {
+            "target": "conq_check_hardcore"
+          }
+        ]
+      },
       "else_actions": []
     },
     "conq4_init": {
@@ -503,60 +373,30 @@
           "equal": true
         }
       },
-      "actions": [
-        {
-          "varSetString": [
-            {
-              "value": "conq_circle_04"
-            },
-            {
-              "var": "circle_name"
-            },
-            {
-              "var": "temp_circle_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_capture_area_04"
-            },
-            {
-              "var": "zone_name"
-            },
-            {
-              "var": "temp_zone_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "conq_effect_04"
-            },
-            {
-              "var": "effect_name"
-            },
-            {
-              "var": "temp_effect_name"
-            }
-          ]
-        },
-        {
-          "triggerEnable": [
-            {
-              "target": "conc_check_arcade"
-            },
-            {
-              "target": "conq_check_realistic"
-            },
-            {
-              "target": "conq_check_hardcore"
-            }
-          ]
-        }
-      ],
+      "actions": {
+        "varSetString": [
+          {
+            "value": "conq_capture_area_04"
+          },
+          {
+            "var": "zone_name"
+          },
+          {
+            "var": "temp_zone_name"
+          }
+        ],
+        "triggerEnable": [
+          {
+            "target": "conc_check_arcade"
+          },
+          {
+            "target": "conq_check_realistic"
+          },
+          {
+            "target": "conq_check_hardcore"
+          }
+        ]
+      },
       "else_actions": []
     },
     "conc_check_arcade": {
@@ -581,21 +421,7 @@
           "varAddString": {
             "value": "_arcade",
             "digits": 0,
-            "var": "circle_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_arcade",
-            "digits": 0,
             "var": "zone_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_arcade",
-            "digits": 0,
-            "var": "effect_name"
           }
         },
         {
@@ -661,20 +487,6 @@
           }
         },
         {
-          "varAddString": {
-            "value": "_realistic",
-            "digits": 0,
-            "var": "temp_circle_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_realistic",
-            "digits": 0,
-            "var": "temp_effect_name"
-          }
-        },
-        {
           "varAddString": [
             {
               "value": "_realistic"
@@ -731,18 +543,6 @@
         },
         {
           "objectExists": {
-            "target": "@temp_effect_name",
-            "type": "area"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "@temp_circle_name",
-            "type": "objectGroup"
-          }
-        },
-        {
-          "objectExists": {
             "target": "@temp_t1_spawn_01_name",
             "type": "squad"
           }
@@ -765,20 +565,6 @@
             "value": "_realistic",
             "digits": 0,
             "var": "zone_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_realistic",
-            "digits": 0,
-            "var": "circle_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_realistic",
-            "digits": 0,
-            "var": "effect_name"
           }
         },
         {
@@ -827,20 +613,6 @@
             "value": "_arcade",
             "digits": 0,
             "var": "zone_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_arcade",
-            "digits": 0,
-            "var": "circle_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_arcade",
-            "digits": 0,
-            "var": "effect_name"
           }
         },
         {
@@ -902,20 +674,6 @@
             "value": "_hardcore",
             "digits": 0,
             "var": "zone_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_hardcore",
-            "digits": 0,
-            "var": "circle_name"
-          }
-        },
-        {
-          "varAddString": {
-            "value": "_hardcore",
-            "digits": 0,
-            "var": "effect_name"
           }
         },
         {
@@ -1151,51 +909,6 @@
       "conditions": [],
       "actions": [
         {
-          "comment": {
-            "value": "put to sleep all possible circles"
-          }
-        },
-        {
-          "unitPutToSleep": [
-            {
-              "target": "conq_circle_01_arcade"
-            },
-            {
-              "target": "conq_circle_02_arcade"
-            },
-            {
-              "target": "conq_circle_03_arcade"
-            },
-            {
-              "target": "conq_circle_04_arcade"
-            },
-            {
-              "target": "conq_circle_01_realistic"
-            },
-            {
-              "target": "conq_circle_02_realistic"
-            },
-            {
-              "target": "conq_circle_03_realistic"
-            },
-            {
-              "target": "conq_circle_04_realistic"
-            },
-            {
-              "target": "conq_circle_01_hardcore"
-            },
-            {
-              "target": "conq_circle_02_hardcore"
-            },
-            {
-              "target": "conq_circle_03_hardcore"
-            },
-            {
-              "target": "conq_circle_04_hardcore"
-            }
-          ]
-        },
-        {
           "missionMarkAsRespawnPoint": {
             "loc_name": "missions/spawn_01",
             "spawnEffect": false,
@@ -1259,6 +972,7 @@
             "auto_smoke": true,
             "markUnitPreset": "tank_decal",
             "markUnits": "cz_circle_01",
+            "zoneDefenders": [],
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1266,20 +980,6 @@
               "type_utility_helicopter": true,
               "tank": true
             }
-          }
-        },
-        {
-          "__unitPlayEffect": {
-            "effect_type": "specify",
-            "effect": "pv_point_smoke_blue",
-            "offset": [0.0,0.0,0.0],
-            "show": true,
-            "attach": true,
-            "scale": 1.0,
-            "loopSpawn": true,
-            "delay": [1.0,1.0],
-            "target": "@effect_name",
-            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -1468,16 +1168,12 @@
   },
   "variables": {
     "zone_name": "",
-    "circle_name": "",
-    "effect_name": "",
     "t1_spawn_01_name": "",
     "t1_spawn_02_name": "",
     "t2_spawn_01_name": "",
     "t2_spawn_02_name": "",
     "battle_area_name": "",
     "temp_zone_name": "",
-    "temp_circle_name": "",
-    "temp_effect_name": "",
     "temp_t1_spawn_01_name": "",
     "temp_t1_spawn_02_name": "",
     "temp_t2_spawn_01_name": "",

@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": {
       "army": 1
     },
@@ -13,48 +9,14 @@
       "army": 2
     },
     "mission": {
-      "name": "untitled",
       "level": "levels/water.bin",
       "type": "singleMission",
       "restoreType": "attempts",
       "optionalTakeOff": false,
-      "campaign": "UserMissions",
       "environment": "Day",
-      "weather": "hazy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_DBttl": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
-      }
+      "weather": "hazy"
     },
-    "spectator_points": [],
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
-    }
+    "spectator_points": []
   },
   "imports": [],
   "triggers": {
@@ -328,8 +290,7 @@
             "target": "@t1_bombers_spawn_str",
             "team": "A",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -360,8 +321,7 @@
             "target": "@t2_bombers_spawn_str",
             "team": "B",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -392,8 +352,7 @@
             "target": "@t1_air_spawn_str",
             "team": "A",
             "tags": {
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
+              "type_bomber": false,
               "type_longrange_bomber": false,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -424,8 +383,7 @@
             "target": "@t2_air_spawn_str",
             "team": "B",
             "tags": {
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
+              "type_bomber": false,
               "type_longrange_bomber": false,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -519,8 +477,7 @@
             "target": "@t1_bombers_spawn_str",
             "team": "A",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -551,8 +508,7 @@
             "target": "@t2_bombers_spawn_str",
             "team": "B",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -583,8 +539,7 @@
             "target": "@t1_air_spawn_str",
             "team": "A",
             "tags": {
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
+              "type_bomber": false,
               "type_longrange_bomber": false,
               "tank": false,
               "artillery": false,
@@ -612,8 +567,7 @@
             "target": "@t2_air_spawn_str",
             "team": "B",
             "tags": {
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
+              "type_bomber": false,
               "type_longrange_bomber": false,
               "tank": false,
               "artillery": false,
@@ -680,8 +634,7 @@
             "target": "@t1_bombers_spawn_str",
             "team": "A",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -712,8 +665,7 @@
             "target": "@t2_bombers_spawn_str",
             "team": "B",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "helicopter": false,
               "type_attack_helicopter": false,
@@ -775,8 +727,7 @@
             "target": "t1_bombers_spawn_arcade",
             "team": "A",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "tank": false,
               "artillery": false,
@@ -804,8 +755,7 @@
             "target": "t1_air_spawn_arcade",
             "team": "A",
             "tags": {
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
+              "type_bomber": false,
               "type_longrange_bomber": false,
               "tank": false,
               "artillery": false,
@@ -866,8 +816,7 @@
             "target": "t2_bombers_spawn_arcade",
             "team": "B",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "tank": false,
               "artillery": false,
@@ -921,8 +870,7 @@
             "target": "t2_air_spawn_arcade",
             "team": "B",
             "tags": {
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
+              "type_bomber": false,
               "type_longrange_bomber": false,
               "tank": false,
               "artillery": false,
@@ -975,8 +923,7 @@
             "target": "t1_bombers_spawn_arcade",
             "team": "A",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "tank": false,
               "artillery": false,
@@ -1004,8 +951,7 @@
             "target": "t2_bombers_spawn_arcade",
             "team": "B",
             "tags": {
-              "type_medium_bomber": true,
-              "type_heavy_bomber": true,
+              "type_bomber": true,
               "type_longrange_bomber": true,
               "tank": false,
               "artillery": false,
@@ -1034,8 +980,6 @@
             "team": "A",
             "tags": {
               "type_bomber": true,
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
               "type_longrange_bomber": false,
               "tank": false,
               "artillery": false,
@@ -1064,8 +1008,6 @@
             "team": "B",
             "tags": {
               "type_bomber": true,
-              "type_medium_bomber": false,
-              "type_heavy_bomber": false,
               "type_longrange_bomber": false,
               "tank": false,
               "artillery": false,

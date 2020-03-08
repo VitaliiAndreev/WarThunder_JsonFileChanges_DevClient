@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 28.0
-    },
     "player": [
       {
         "army": 1
@@ -116,50 +112,22 @@
       }
     ],
     "mission": {
-      "name": "arcade_honolulu_GS",
       "level": "levels/honolulu.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "pacific",
       "environment": "Day",
       "weather": "clear",
-      "missionDebriefing": "",
-      "missionBriefing": "",
       "versus_axis": "japan",
       "versus_allies": "usa",
-      "chapter": "ground_strike",
-      "scoreLimit": 2400,
+      "locName": "missions/_GS/heavy_tank;location/honolulu",
+      "locDesc": "missions/_GS/desc",
+      "scoreLimit": 7000,
       "timeLimit": 25,
-      "deathPenaltyMul": 0.0,
+      "deathPenaltyMul": 0.4,
+      "allowEmptyTeams": false,
       "country_axis": "japan",
       "country_allies": "usa",
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_race_straight": false,
-        "_race_inverted": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
-      },
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
@@ -167,10 +135,9 @@
         "isHelicoptersAllowed": false
       }
     },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 28.0
     },
     "spectator_points": [
       {
@@ -394,6 +361,22 @@
         "showWayPoints": true,
         "excludes": []
       }
+    },
+    {
+      "import_record": {
+        "file": "gameData/missions/templates/air_templates/gs/assaults_gs_template.blk",
+        "importAreas": true,
+        "importUnits": true,
+        "importTriggers": true,
+        "importMissionObjectives": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showUnits": true,
+        "showTriggers": true,
+        "showMissionObjectives": true,
+        "showWayPoints": true,
+        "excludes": []
+      }
     }
   ],
   "triggers": {
@@ -412,6 +395,12 @@
       },
       "conditions": [],
       "actions": [
+        {
+          "varSetBool": {
+            "value": false,
+            "var": "barabashka_enabled"
+          }
+        },
         {
           "varSetInt": {
             "value": 4,
@@ -705,7 +694,7 @@
       "else_actions": []
     },
     "ground_indication": {
-      "is_enabled": true,
+      "is_enabled": false,
       "comments": "",
       "props": {
         "actionsType": "PERFORM_ONE_BY_ONE",
@@ -1142,11 +1131,11 @@
           [-0.965925,0.0,0.258819],
           [7098.0,1500.0,-17159.9]
         ],
-        "unit_class": "b-17g",
+        "unit_class": "a7m2",
         "closed_waypoints": false,
         "isShipSpline": false,
         "shipTurnRadius": 100.0,
-        "weapons": "B17G_4x2000lbs",
+        "weapons": "",
         "bullets0": "",
         "bullets1": "",
         "bullets2": "",
@@ -1313,10 +1302,16 @@
             "object_marking": 0
           },
           {
+            "squad_members": "t2_land_squad"
+          },
+          {
             "squad_members": "t2_tanks_squad"
           },
           {
             "squad_members": "t2_navy_ships_squad"
+          },
+          {
+            "squad_members": "t2_quest_additional_units"
           }
         ]
       }
@@ -2284,6 +2279,9 @@
             "object_marking": 0
           },
           {
+            "squad_members": "t1_land_squad"
+          },
+          {
             "squad_members": "t1_tanks_squad"
           },
           {
@@ -2291,6 +2289,9 @@
           },
           {
             "squad_members": "t1_navy_ships_squad"
+          },
+          {
+            "squad_members": "t1_quest_additional_units"
           }
         ]
       }
@@ -6001,7 +6002,7 @@
           [-0.0871558,0.0,-0.996195],
           [-4152.65,96.0122,-13200.2]
         ],
-        "unit_class": "dynAF_kh_gol_airfield_gumrak",
+        "unit_class": "dynaf_universal_1line_a",
         "props": {
           "army": 1,
           "active": true
@@ -6015,9 +6016,9 @@
           [0.865273,0.0,-0.501301],
           [0.0,1.0,0.0],
           [0.501301,0.0,0.865273],
-          [11389.9,57.176,-16161.0]
+          [11345.3,57.176,-16251.6]
         ],
-        "unit_class": "dynAF_kh_gol_airfield_gumrak",
+        "unit_class": "dynaf_universal_1line_a",
         "props": {
           "army": 2,
           "active": true
@@ -9410,7 +9411,7 @@
           [-0.0871557,0.0,-0.996195],
           [0.0,1.0,0.0],
           [0.996195,0.0,-0.0871557],
-          [9703.15,50.15,-15912.2]
+          [9735.98,50.1499,-15917.1]
         ],
         "unit_class": "dynBase_oil_storage_large_square",
         "props": {
@@ -9426,7 +9427,7 @@
           [0.5373,0.0,-0.843391],
           [0.0,1.0,0.0],
           [0.843391,0.0,0.5373],
-          [7781.95,38.8,-15317.3]
+          [7838.53,74.7549,-15289.3]
         ],
         "unit_class": "dynBase_military_base_square",
         "props": {
@@ -10449,20 +10450,20 @@
     "t1_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [1148.57,0.0,-100.487],
+        [1813.71,0.0,-158.679],
         [0.0,350.0,0.0],
-        [21.9852,0.0,251.291],
-        [-4288.19,93.6135,-13104.0]
+        [65.4569,0.0,748.173],
+        [-4188.08,80.0,-13194.2]
       ],
       "props": []
     },
     "t2_airfield_bombing_zone": {
       "type": "Box",
       "tm": [
-        [1038.87,0.0,-647.081],
+        [1585.89,0.0,-894.245],
         [0.0,350.0,0.0],
-        [155.899,0.0,250.29],
-        [11484.4,57.2599,-16320.7]
+        [368.379,0.0,653.297],
+        [11382.6,57.26,-16260.8]
       ],
       "props": []
     },
@@ -10472,7 +10473,7 @@
         [450.0,0.0,0.0],
         [0.0,450.0,0.0],
         [0.0,0.0,450.0],
-        [9704.45,42.7,-15917.5]
+        [9761.9,31.6151,-15946.9]
       ],
       "props": []
     },
@@ -10482,7 +10483,7 @@
         [450.0,0.0,0.0],
         [0.0,450.0,0.0],
         [0.0,0.0,450.0],
-        [7788.35,57.0,-15319.7]
+        [7872.65,57.0,-15322.6]
       ],
       "props": []
     },
@@ -10832,6 +10833,105 @@
         [-259.807,0.0,-150.0],
         [3366.99,500.003,-14751.8]
       ],
+      "props": []
+    },
+    "at_area": {
+      "type": "Sphere",
+      "tm": [
+        [8312.32,0.0,-13671.4],
+        [0.0,16000.0,0.0],
+        [13671.4,0.0,8312.32],
+        [3352.81,1250.0,-12227.9]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t1_spawn_01_01": {
+      "type": "Point",
+      "tm": [
+        [0.866025,0.0,0.5],
+        [0.0,1.0,0.0],
+        [-0.5,0.0,0.866025],
+        [-2163.91,1250.0,-18017.0]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t2_spawn_01_01": {
+      "type": "Point",
+      "tm": [
+        [0.866025,0.0,0.5],
+        [0.0,1.0,0.0],
+        [-0.5,0.0,0.866025],
+        [-2163.91,1250.0,-18017.0]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t1_spawn_01_02": {
+      "type": "Point",
+      "tm": [
+        [-0.866025,0.0,-0.5],
+        [0.0,1.0,0.0],
+        [0.5,0.0,-0.866025],
+        [11044.1,1249.99,-9990.55]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t2_spawn_01_02": {
+      "type": "Point",
+      "tm": [
+        [-0.866025,0.0,-0.5],
+        [0.0,1.0,0.0],
+        [0.5,0.0,-0.866025],
+        [11044.1,1249.99,-9990.55]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t1_spawn_02_01": {
+      "type": "Point",
+      "tm": [
+        [0.866025,0.0,0.5],
+        [0.0,1.0,0.0],
+        [-0.5,0.0,0.866025],
+        [-4323.92,1250.0,-14476.4]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t2_spawn_02_01": {
+      "type": "Point",
+      "tm": [
+        [0.866025,0.0,0.5],
+        [0.0,1.0,0.0],
+        [-0.5,0.0,0.866025],
+        [-4323.92,1250.0,-14476.4]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t1_spawn_02_02": {
+      "type": "Point",
+      "tm": [
+        [-0.866025,0.0,-0.5],
+        [0.0,1.0,0.0],
+        [0.5,0.0,-0.866025],
+        [8879.82,1249.99,-6444.14]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "at_t2_spawn_02_02": {
+      "type": "Point",
+      "tm": [
+        [-0.866025,0.0,-0.5],
+        [0.0,1.0,0.0],
+        [0.5,0.0,-0.866025],
+        [8879.82,1249.99,-6444.14]
+      ],
+      "objLayer": 0,
       "props": []
     }
   },

@@ -420,7 +420,9 @@
         "ex_decor_r_08_dm": [],
         "ex_decor_l_06_dm": [],
         "ex_decor_l_07_dm": [],
-        "ex_decor_l_08_dm": []
+        "ex_decor_l_08_dm": [],
+        "ex_decor_r_11_dm": [],
+        "ex_decor_l_11_dm": []
       },
       "chassis": {
         "armorClass": "tank_steel_wheels",
@@ -673,6 +675,26 @@
         "ammo_turret_53_dm": [],
         "ammo_turret_54_dm": [],
         "ammo_turret_55_dm": [],
+        "ammo_turret_56_dm": [],
+        "ammo_turret_57_dm": [],
+        "ammo_turret_58_dm": [],
+        "ammo_turret_59_dm": [],
+        "ammo_turret_60_dm": [],
+        "ammo_turret_61_dm": [],
+        "ammo_turret_62_dm": [],
+        "ammo_turret_63_dm": [],
+        "ammo_turret_64_dm": [],
+        "ammo_turret_65_dm": [],
+        "ammo_turret_66_dm": [],
+        "ammo_turret_67_dm": [],
+        "ammo_turret_68_dm": [],
+        "ammo_turret_69_dm": [],
+        "ammo_turret_70_dm": [],
+        "ammo_turret_71_dm": [],
+        "ammo_turret_72_dm": [],
+        "ammo_turret_73_dm": [],
+        "ammo_turret_74_dm": [],
+        "ammo_turret_75_dm": [],
         "ammo_body_dm": [],
         "ammo_body_01_dm": [],
         "ammo_body_02_dm": [],
@@ -778,6 +800,18 @@
         "fuel_tank_l_04_dm": [],
         "fuel_tank_l_05_dm": []
       }
+    }
+  },
+  {
+    "attachables": {
+      "ex_decor_r_06_dm": true,
+      "ex_decor_r_07_dm": true,
+      "ex_decor_r_08_dm": true,
+      "ex_decor_l_06_dm": true,
+      "ex_decor_l_07_dm": true,
+      "ex_decor_l_08_dm": true,
+      "ex_decor_r_11_dm": true,
+      "ex_decor_l_11_dm": true
     }
   },
   {
@@ -1572,6 +1606,15 @@
     }
   },
   {
+    "gunConvergence": {
+      "updateFromRangefinder": true,
+      "minDistance": 200.0,
+      "distance": 1000.0,
+      "vertical": true,
+      "horizontal": true
+    }
+  },
+  {
     "class_tags": []
   },
   {
@@ -1658,6 +1701,11 @@
           "blk": "gameData/Weapons/groundModels_weapons/20mm_Rh_202_user_cannon.blk",
           "emitter": "bone_gun_barrel_02",
           "flash": "emtr_gun_flame_02",
+          "sleeveEmitter": "emtr_shell",
+          "sleeveMesh": "auto_cannon_cartridge_case",
+          "sleevesLifeTime": 4.0,
+          "sleeveImpulse": [2.5,0.0,0.0],
+          "linkSleeveToGun": true,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "hudSightIconOffset": [15.0,-35.0],
@@ -2161,24 +2209,6 @@
               "name": "tank_engine_fire",
               "emitter": "emtr_fire_engine_02"
             }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_smoke",
-              "emitter": "emtr_fire_engine"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_smoke",
-              "emitter": "emtr_fire_engine_01"
-            }
-          },
-          {
-            "fx": {
-              "name": "tank_engine_smoke",
-              "emitter": "emtr_fire_engine_02"
-            }
           }
         ]
       },
@@ -2190,67 +2220,78 @@
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo"
+              "emitter": "emtr_fire_ammo",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_01"
+              "emitter": "emtr_fire_ammo_01",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_02"
+              "emitter": "emtr_fire_ammo_02",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_03"
+              "emitter": "emtr_fire_ammo_03",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_04"
+              "emitter": "emtr_fire_ammo_04",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_05"
+              "emitter": "emtr_fire_ammo_05",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_06"
+              "emitter": "emtr_fire_ammo_06",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_07"
+              "emitter": "emtr_fire_ammo_07",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_08"
+              "emitter": "emtr_fire_ammo_08",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_09"
+              "emitter": "emtr_fire_ammo_09",
+              "useVelocity": false
             }
           },
           {
             "fx": {
               "name": "tank_ammo_fire",
-              "emitter": "emtr_fire_ammo_10"
+              "emitter": "emtr_fire_ammo_10",
+              "useVelocity": false
             }
           }
         ]
@@ -2396,7 +2437,7 @@
           },
           {
             "fx": {
-              "name": "tank_smoke_big",
+              "name": "tank_smoke_small",
               "emitter": "emtr_smoke_dmg"
             }
           },
@@ -2740,6 +2781,11 @@
                 "blk": "gameData/Weapons/groundModels_weapons/20mm_Rh_202_user_cannon.blk",
                 "emitter": "bone_gun_barrel_02",
                 "flash": "emtr_gun_flame_02",
+                "sleeveEmitter": "emtr_shell",
+                "sleeveMesh": "auto_cannon_cartridge_case",
+                "sleevesLifeTime": 4.0,
+                "sleeveImpulse": [2.5,0.0,0.0],
+                "linkSleeveToGun": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
                 "hudSightIconOffset": [15.0,-35.0],

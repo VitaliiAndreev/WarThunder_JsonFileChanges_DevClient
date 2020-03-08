@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 772.0,
-      "temperature": 26.0
-    },
     "player": {
       "army": 1,
       "wing": "player_wing"
@@ -14,48 +10,23 @@
       "army": 2
     },
     "mission": {
-      "name": "dlc_cover_the_descent",
       "level": "levels/sicily.bin",
       "type": "singleMission",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "western",
       "environment": "Day",
       "weather": "cloudy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "chapter": "sicily",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
       "windSpeed": [4.0,7.0],
       "windDirectionDeg": [304.0,307.0],
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_DBttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false
-      },
       "stars": {
         "year": 1943,
         "month": 7,
         "day": 9
       }
     },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
+    "atmosphere": {
+      "pressure": 772.0,
+      "temperature": 26.0
     },
     "spectator_points": [],
     "briefing": {
@@ -75,6 +46,9 @@
           },
           {
             "picture": ""
+          },
+          {
+            "showAirMap": false
           },
           {
             "arrow": [
@@ -174,21 +148,45 @@
         {
           "unitSetProperties": [
             {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
               "object": "germ_artillery"
             },
             {
               "object": "usa_tanks_squad"
             },
             {
-              "attack_type": "hold_fire"
+              "stealthRadius": -1.0
             },
             {
-              "stealthRadius": -1.0
+              "attack_type": "hold_fire"
             }
           ]
         },
         {
           "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
             {
               "object": "bf109_01"
             },
@@ -239,6 +237,18 @@
         {
           "unitSetProperties": [
             {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
               "object": "usa_tanks_squad"
             },
             {
@@ -251,6 +261,18 @@
         },
         {
           "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
             {
               "object": "usa_navy_ship_01"
             },
@@ -277,6 +299,18 @@
         {
           "unitSetProperties": [
             {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
               "object": "germ_town_aaa_01"
             },
             {
@@ -298,6 +332,10 @@
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "allies",
             "effShootingRate": 0.4,
             "plane": {
@@ -311,6 +349,18 @@
         },
         {
           "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
             {
               "object": "germ_air_defence_01"
             },
@@ -333,6 +383,10 @@
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "bf109_for_cannons",
             "effShootingRate": 0.6,
             "plane": {
@@ -353,6 +407,15 @@
             "shouldKeepFormation": false,
             "teleportHeightValue": 1000.0,
             "horizontalDirectionForTeleport": true,
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "target_marking": 0,
+            "waypointReachedDist": 10.0,
+            "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "allies",
             "follow_offset": [-350.0,20.0,20.0]
           }
@@ -364,12 +427,18 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "dlc_cover_the_descent_bots"
+            "target": "dlc_cover_the_descent_bots",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
           "unitSetIndication": {
             "set": true,
+            "target_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "target": "descent_bots"
           }
         },
@@ -417,6 +486,33 @@
               "horizontalDirectionForTeleport": true
             },
             {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "waypointReachedDist": 10.0
+            },
+            {
+              "recalculatePathDist": -1.0
+            },
+            {
+              "fastClimb": false
+            },
+            {
+              "destTimeMode": false
+            },
+            {
               "object": "bf109_01"
             },
             {
@@ -442,6 +538,18 @@
           "unitSetIndication": [
             {
               "set": true
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
             },
             {
               "target": "bf109_01"
@@ -541,6 +649,15 @@
           "shouldKeepFormation": false,
           "teleportHeightValue": 1000.0,
           "horizontalDirectionForTeleport": true,
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "target_marking": 0,
+          "waypointReachedDist": 10.0,
+          "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "bf109_01_add",
           "speed": 650.0,
           "follow_offset": [-150.0,500.0,20.0]
@@ -637,6 +754,8 @@
             "check_targets": "any",
             "object_marking": 0,
             "target_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
             "object": "bf109_01",
             "target": "descent_bots"
           }
@@ -648,6 +767,9 @@
             "check_objects": "any",
             "target_type": "isAlive",
             "check_period": 1.0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "bf109_01"
           }
         },
@@ -658,6 +780,9 @@
             "check_objects": "any",
             "target_type": "isAlive",
             "check_period": 1.0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "bf109_01"
           }
         }
@@ -675,6 +800,18 @@
         },
         "unitSetProperties": [
           {
+            "object_marking": 0
+          },
+          {
+            "object_var_name": ""
+          },
+          {
+            "object_var_comp_op": "equal"
+          },
+          {
+            "object_var_value": 0
+          },
+          {
             "object": "usa_navy_ship_01"
           },
           {
@@ -690,10 +827,10 @@
             "object": "usa_navy_ship_05"
           },
           {
-            "speed": 300.0
+            "delayForObjects": [1.0,5.0]
           },
           {
-            "delayForObjects": [1.0,5.0]
+            "speed": 300.0
           }
         ]
       },
@@ -719,6 +856,9 @@
           "check_objects": "all",
           "target_type": "isAlive",
           "check_period": 1.0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "bf109_01"
         }
       },
@@ -779,6 +919,8 @@
           "check_targets": "any",
           "object_marking": 0,
           "target_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "descent_bots",
           "target": "descent_landing_point"
         }
@@ -793,6 +935,10 @@
           }
         ],
         "unitSetProperties": {
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "descent_bots",
           "speed": 0.0
         },
@@ -817,6 +963,33 @@
           },
           {
             "horizontalDirectionForTeleport": true
+          },
+          {
+            "object_marking": 0
+          },
+          {
+            "object_var_name": ""
+          },
+          {
+            "object_var_comp_op": "equal"
+          },
+          {
+            "object_var_value": 0
+          },
+          {
+            "target_marking": 0
+          },
+          {
+            "waypointReachedDist": 10.0
+          },
+          {
+            "recalculatePathDist": -1.0
+          },
+          {
+            "fastClimb": false
+          },
+          {
+            "destTimeMode": false
           },
           {
             "object": "bf109_01"
@@ -881,7 +1054,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "dlc_cover_the_descent_bots",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -893,6 +1068,15 @@
             "shouldKeepFormation": false,
             "teleportHeightValue": 100.0,
             "horizontalDirectionForTeleport": true,
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "target_marking": 0,
+            "waypointReachedDist": 10.0,
+            "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "usa_tanks_squad",
             "move_type": "teleport",
             "delayForObjects": [1.0,1.5]
@@ -905,9 +1089,13 @@
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "usa_tanks_squad",
-            "attack_type": "fire_at_will",
             "stealthRadius": 5500.0,
+            "attack_type": "fire_at_will",
             "effShootingRate": 0.05,
             "speed": 5.0
           }
@@ -916,6 +1104,18 @@
           "unitSetIndication": [
             {
               "set": false
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
             },
             {
               "target": "bf109_01"
@@ -948,12 +1148,17 @@
             "icon": "ship",
             "icon army": 1,
             "set": false,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "target": "descent_bots"
           }
         },
         {
           "moAddMissionObjective": {
-            "target": "dlc_cover_the_descent_tanks"
+            "target": "dlc_cover_the_descent_tanks",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -968,17 +1173,25 @@
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "germ_artillery",
-            "attack_type": "fire_at_will",
             "stealthRadius": 3500.0,
+            "attack_type": "fire_at_will",
             "effShootingRate": 0.5
           }
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "usa_tanks_squad",
-            "attack_type": "fire_at_will",
             "stealthRadius": 5500.0,
+            "attack_type": "fire_at_will",
             "effShootingRate": 0.05,
             "speed": 20.0
           }
@@ -996,6 +1209,10 @@
         {
           "unitSetIndication": {
             "set": true,
+            "target_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "target": "germ_artillery"
           }
         },
@@ -1082,6 +1299,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 7,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "descent_bots"
         }
       },
@@ -1096,7 +1315,9 @@
         ],
         "moSetObjectiveStatus": {
           "target": "dlc_cover_the_descent_bots",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 3.0
@@ -1124,6 +1345,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 4,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "usa_tanks_squad"
         }
       },
@@ -1133,7 +1356,9 @@
         },
         "moSetObjectiveStatus": {
           "target": "dlc_cover_the_descent_tanks",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 3.0
@@ -1161,6 +1386,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 1,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "germ_artillery"
         }
       },
@@ -1173,7 +1400,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "dlc_cover_the_descent_tanks",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1219,6 +1448,9 @@
           "icon": "ship",
           "icon army": 1,
           "set": true,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "descent_bots"
         }
       },
@@ -1246,6 +1478,9 @@
           "icon": "tank",
           "icon army": 1,
           "set": true,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "usa_tanks_squad"
         }
       },
@@ -1277,6 +1512,12 @@
           },
           {
             "value": 12
+          },
+          {
+            "object_var_name": ""
+          },
+          {
+            "object_var_comp_op": "equal"
           },
           {
             "object": "bf109_01"
@@ -1316,6 +1557,18 @@
         "unitSetIndication": [
           {
             "set": true
+          },
+          {
+            "target_marking": 0
+          },
+          {
+            "object_var_name": ""
+          },
+          {
+            "object_var_comp_op": "equal"
+          },
+          {
+            "object_var_value": 0
           },
           {
             "target": "bf109_02"
@@ -1421,6 +1674,9 @@
           "check_objects": "all",
           "target_type": "isAlive",
           "check_period": 1.0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "bf109_02"
         }
       },
@@ -1472,6 +1728,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 6,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "bf109_02"
         }
       },
@@ -1510,6 +1768,18 @@
         "unitSetIndication": [
           {
             "set": true
+          },
+          {
+            "target_marking": 0
+          },
+          {
+            "object_var_name": ""
+          },
+          {
+            "object_var_comp_op": "equal"
+          },
+          {
+            "object_var_value": 0
           },
           {
             "target": "bf109_03"
@@ -1618,6 +1888,9 @@
           "check_objects": "all",
           "target_type": "isAlive",
           "check_period": 1.0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "bf109_03"
         }
       },
@@ -1669,6 +1942,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 1,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "descent_bots",
           "var": "bots_alive_count"
         }
@@ -1714,6 +1989,9 @@
             "check_objects": "any",
             "target_type": "isAlive",
             "check_period": 1.0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "germ_artillery"
           }
         },
@@ -1724,12 +2002,19 @@
             "check_objects": "any",
             "target_type": "isAlive",
             "check_period": 1.0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "germ_artillery"
           }
         }
       ],
       "actions": {
         "unitSetProperties": {
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "germ_air_defence_01",
           "accuracy": 1.0,
           "effShootingRate": 1.0
@@ -1759,6 +2044,9 @@
           "icon": "cannon",
           "icon army": 2,
           "set": true,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "germ_artillery"
         }
       },
@@ -1837,10 +2125,12 @@
           [0.21644,0.0,-0.976296],
           [0.0,1.0,0.0],
           [0.976296,0.0,0.21644],
-          [29559.4,350.0,-7858.4]
+          [28122.8,350.0,-9218.3]
         ],
         "unit_class": "spitfire_ix",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "SpitfireIX_default",
         "bullets0": "",
         "bullets1": "",
@@ -1880,10 +2170,12 @@
           [-0.422618,0.0,-0.906308],
           [0.0,1.0,0.0],
           [0.906308,0.0,-0.422618],
-          [29412.2,-122.5,-10566.5]
+          [30378.1,-122.5,-11120.0]
         ],
         "unit_class": "uss_dd_sims",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1916,7 +2208,9 @@
             "props": {
               "speed": 0.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -1929,10 +2223,12 @@
           [-0.422618,0.0,-0.906308],
           [0.0,1.0,0.0],
           [0.906308,0.0,-0.422618],
-          [29648.1,-122.5,-11366.0]
+          [30614.0,-122.5,-11919.5]
         ],
         "unit_class": "uss_dd_sims",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1965,7 +2261,9 @@
             "props": {
               "speed": 0.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -1978,10 +2276,12 @@
           [-0.422618,0.0,-0.906308],
           [0.0,1.0,0.0],
           [0.906308,0.0,-0.422618],
-          [30402.8,-122.5,-11247.8]
+          [31368.7,-122.5,-11801.3]
         ],
         "unit_class": "uss_dd_sims",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2014,7 +2314,9 @@
             "props": {
               "speed": 0.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2027,10 +2329,12 @@
           [-0.422618,0.0,-0.906308],
           [0.0,1.0,0.0],
           [0.906308,0.0,-0.422618],
-          [29393.6,-122.5,-9832.95]
+          [30503.2,-122.5,-10650.3]
         ],
         "unit_class": "uss_dd_sims",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2063,7 +2367,9 @@
             "props": {
               "speed": 0.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2076,10 +2382,12 @@
           [-0.422618,0.0,-0.906308],
           [0.0,1.0,0.0],
           [0.906308,0.0,-0.422618],
-          [29968.1,-122.5,-9836.3]
+          [31103.7,-122.5,-10480.0]
         ],
         "unit_class": "uss_dd_sims",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2112,7 +2420,9 @@
             "props": {
               "speed": 0.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2125,10 +2435,12 @@
           [-0.608761,0.0,-0.793353],
           [0.0,1.0,0.0],
           [0.793353,0.0,-0.608761],
-          [30130.3,0.0,-10399.8]
+          [29370.8,0.0,-11616.8]
         ],
         "unit_class": "uss_lcvp_lite",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2155,12 +2467,14 @@
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [28915.1,-122.45,-13317.7]
+              [28218.8,-122.45,-13079.8]
             ],
             "props": {
               "speed": 300.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "descent_bots_wp_02": {
@@ -2174,7 +2488,9 @@
             "props": {
               "speed": 300.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "descent_bots_wp_03": {
@@ -2183,12 +2499,14 @@
               [1.0,0.0,0.0],
               [0.0,1.0,0.0],
               [0.0,0.0,1.0],
-              [23388.0,-113.3,-18403.5]
+              [23224.3,-113.3,-18039.7]
             ],
             "props": {
               "speed": 300.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2205,6 +2523,8 @@
         ],
         "unit_class": "bf-109f-4",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109F-4_SC250",
         "bullets0": "",
         "bullets1": "",
@@ -2249,6 +2569,8 @@
         ],
         "unit_class": "bf-109f-4",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109F-4_SC250",
         "bullets0": "",
         "bullets1": "",
@@ -2293,6 +2615,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2324,7 +2648,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_01_wp_02": {
@@ -2338,7 +2664,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2354,6 +2682,9 @@
           [23238.1,8.2,-18486.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "usa_tank_01"
           },
@@ -2428,6 +2759,8 @@
         ],
         "unit_class": "germ_88mm_pak43",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2462,6 +2795,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2493,7 +2828,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_02_wp_02": {
@@ -2507,7 +2844,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2524,6 +2863,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2555,7 +2896,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_03_wp_02": {
@@ -2569,7 +2912,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2586,6 +2931,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2617,7 +2964,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_04_wp_02": {
@@ -2631,7 +2980,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2648,6 +2999,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2679,7 +3032,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_05_wp_02": {
@@ -2693,7 +3048,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2710,6 +3067,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2741,7 +3100,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_06_wp_02": {
@@ -2755,7 +3116,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2772,6 +3135,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2803,7 +3168,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_07_wp_02": {
@@ -2817,7 +3184,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2834,6 +3203,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2865,7 +3236,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_08_wp_02": {
@@ -2879,7 +3252,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2896,6 +3271,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2927,7 +3304,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_09_wp_02": {
@@ -2941,7 +3320,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -2958,6 +3339,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2989,7 +3372,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_10_wp_02": {
@@ -3003,7 +3388,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3020,6 +3407,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3051,7 +3440,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_11_wp_02": {
@@ -3065,7 +3456,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3082,6 +3475,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3113,7 +3508,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_12_wp_02": {
@@ -3127,7 +3524,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3144,6 +3543,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3175,7 +3576,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_13_wp_02": {
@@ -3189,7 +3592,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3206,6 +3611,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3237,7 +3644,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_14_wp_02": {
@@ -3251,7 +3660,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3268,6 +3679,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3299,7 +3712,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_15_wp_02": {
@@ -3313,7 +3728,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3330,6 +3747,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3361,7 +3780,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_16_wp_02": {
@@ -3375,7 +3796,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3392,6 +3815,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3423,7 +3848,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_17_wp_02": {
@@ -3437,7 +3864,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3454,6 +3883,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3485,7 +3916,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_18_wp_02": {
@@ -3499,7 +3932,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3516,6 +3951,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3547,7 +3984,9 @@
             "props": {
               "speed": 5.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_19_wp_02": {
@@ -3561,7 +4000,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3578,6 +4019,8 @@
         ],
         "unit_class": "us_m4a1",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3609,7 +4052,9 @@
             "props": {
               "speed": 0.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           },
           "usa_tank_20_wp_02": {
@@ -3623,7 +4068,9 @@
             "props": {
               "speed": 10.0,
               "moveType": "MOVETO_STRAIGHT",
-              "shouldKeepFormation": false
+              "shouldKeepFormation": false,
+              "tas": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -3640,6 +4087,8 @@
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3673,6 +4122,8 @@
         ],
         "unit_class": "bf-109f-4",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109F-4_SC250",
         "bullets0": "",
         "bullets1": "",
@@ -3717,6 +4168,8 @@
         ],
         "unit_class": "bf-109f-4",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109F-4_SC250",
         "bullets0": "",
         "bullets1": "",
@@ -3761,6 +4214,8 @@
         ],
         "unit_class": "bf-109g-2",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109G-2_default",
         "bullets0": "",
         "bullets1": "",
@@ -3805,6 +4260,8 @@
         ],
         "unit_class": "bf-109f-4",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109F-4_SC250",
         "bullets0": "",
         "bullets1": "",
@@ -3849,6 +4306,8 @@
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3882,6 +4341,8 @@
         ],
         "unit_class": "germ_88mm_pak43",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3915,6 +4376,8 @@
         ],
         "unit_class": "germ_88mm_pak43",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3948,6 +4411,8 @@
         ],
         "unit_class": "germ_88mm_pak43",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3977,10 +4442,12 @@
           [0.21644,0.0,-0.976296],
           [0.0,1.0,0.0],
           [0.976296,0.0,0.21644],
-          [29559.3,350.0,-7730.6]
+          [28122.7,350.0,-9090.5]
         ],
         "unit_class": "spitfire_ix",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "SpitfireIX_default",
         "bullets0": "",
         "bullets1": "",
@@ -4025,6 +4492,8 @@
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4058,6 +4527,8 @@
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4091,6 +4562,8 @@
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4124,6 +4597,8 @@
         ],
         "unit_class": "germ_88mm_flak36",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4157,6 +4632,8 @@
         ],
         "unit_class": "bf-109f-4",
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "Bf-109F-4_default",
         "bullets0": "",
         "bullets1": "",

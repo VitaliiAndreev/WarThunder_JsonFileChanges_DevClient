@@ -110,6 +110,12 @@
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
+          "setEnabled": {
+            "value": false
+          },
+          "setTransiver": {
+            "transiver": "search"
+          },
           "setSignal": {
             "signal": "search"
           },
@@ -127,6 +133,16 @@
           }
         },
         "setLockMode": [
+          {
+            "setModeName": {
+              "name": "acquisition"
+            }
+          },
+          {
+            "setEnabled": {
+              "value": true
+            }
+          },
           {
             "clearTargets": []
           },
@@ -200,6 +216,16 @@
           }
         ],
         "setTrackMode": [
+          {
+            "setModeName": {
+              "name": "track"
+            }
+          },
+          {
+            "setEnabled": {
+              "value": true
+            }
+          },
           {
             "setScanPatternSet": []
           },
@@ -410,9 +436,17 @@
       "stateInit": "init",
       "actionsTemplates": {
         "setStandbyMode": {
-          "setTransiver": [],
+          "setModeName": {
+            "name": "standby"
+          },
+          "setEnabled": {
+            "value": false
+          },
           "clearTargets": [],
           "clearTargetsOfInterest": [],
+          "setTransiver": {
+            "transiver": "search"
+          },
           "setSignal": {
             "signal": "search"
           },
@@ -436,6 +470,16 @@
           }
         },
         "setSearchMode": [
+          {
+            "setModeName": {
+              "name": "search"
+            }
+          },
+          {
+            "setEnabled": {
+              "value": true
+            }
+          },
           {
             "setFsmActive": {
               "fsm": "search",

@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": {
       "army": 1,
       "wing": "player"
@@ -14,48 +10,27 @@
       "army": 2
     },
     "mission": {
-      "name": "ussr_moscow_they_shall_not_pass",
       "level": "levels/moscow.bin",
       "type": "singleMission",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "eastern",
       "environment": "Morning",
       "weather": "cloudy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "chapter": "moscow",
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
+      "forceSkiesInitialRandomSeed": true,
+      "skiesInitialRandomSeed": 10,
+      "customWeather": {
+        "clouds_gen": {
+          "humidity": 0.5,
+          "persistence": 0.5,
+          "asymmetry": 0.1
+        },
+        "clouds_position": {
+          "start_altitude": 2.5,
+          "thickness": 4.5
+        }
       }
     },
     "spectator_points": [],
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
-    },
     "briefing": {
       "place_loc": "",
       "date_loc": "",
@@ -272,6 +247,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "player",
             "move_type": "teleport",
             "lookat": "retreat_point"
@@ -323,7 +300,6 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "player",
           "target": "waypoint01"
         },
@@ -374,7 +350,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "ussr_single_moscow02_take_off_obj",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -384,6 +362,20 @@
             "squad": "ge_planes_squad",
             "getSquadName": true,
             "object_type": "isInactive"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "object": "ge_planes_squad",
+            "accuracy": 0.1,
+            "airAccuracy": 0.1,
+            "effShootingRate": 0.1,
+            "airEffShootingRate": 0.1,
+            "effShootingRateByPlayer": 0.1
           }
         },
         {
@@ -484,7 +476,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "ussr_single_moscow02_destroy_bombers_obj"
+            "target": "ussr_single_moscow02_destroy_bombers_obj",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -685,9 +679,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "ge_bombers_squad",
-          "target": "moscow"
+          "target": "moscow",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -747,7 +741,9 @@
         ],
         "moSetObjectiveStatus": {
           "target": "ussr_single_moscow02_destroy_bombers_obj",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "missionSetTargetsIndicator": {
           "target_type": "isMarked",
@@ -805,7 +801,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "ussr_single_moscow02_destroy_bombers_obj",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -846,7 +844,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "ussr_single_moscow02_land_obj"
+            "target": "ussr_single_moscow02_land_obj",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -886,7 +886,9 @@
       "actions": {
         "moSetObjectiveStatus": {
           "target": "ussr_single_moscow02_land_obj",
-          "status": 2
+          "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 2.0
@@ -917,8 +919,8 @@
             "value": 5,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@bombers_squad_name_01_str"
+            "object": "@bombers_squad_name_01_str",
+            "object_var_value": 0
           }
         },
         {
@@ -929,8 +931,8 @@
             "value": 5,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@bombers_squad_name_01_str"
+            "object": "@bombers_squad_name_01_str",
+            "object_var_value": 0
           }
         }
       ],
@@ -950,6 +952,8 @@
           "target_marking": 0,
           "waypointReachedDist": 10.0,
           "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "@bombers_squad_name_01_str"
         },
         "unitSetIndication": {
@@ -990,8 +994,8 @@
             "value": 5,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@bombers_squad_name_02_str"
+            "object": "@bombers_squad_name_02_str",
+            "object_var_value": 0
           }
         },
         {
@@ -1002,8 +1006,8 @@
             "value": 5,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@bombers_squad_name_02_str"
+            "object": "@bombers_squad_name_02_str",
+            "object_var_value": 0
           }
         }
       ],
@@ -1023,6 +1027,8 @@
           "target_marking": 0,
           "waypointReachedDist": 10.0,
           "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "@bombers_squad_name_02_str"
         },
         "unitSetIndication": {
@@ -1063,8 +1069,8 @@
             "value": 5,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@bombers_squad_name_03_str"
+            "object": "@bombers_squad_name_03_str",
+            "object_var_value": 0
           }
         },
         {
@@ -1075,8 +1081,8 @@
             "value": 5,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
-            "object": "@bombers_squad_name_03_str"
+            "object": "@bombers_squad_name_03_str",
+            "object_var_value": 0
           }
         }
       ],
@@ -1096,6 +1102,8 @@
           "target_marking": 0,
           "waypointReachedDist": 10.0,
           "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
           "object": "@bombers_squad_name_03_str"
         },
         "unitSetIndication": {
@@ -1954,6 +1962,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "ge_bombers_01"
           },
           {
@@ -1987,6 +1998,9 @@
           [-2694.95,71.3,25476.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "ussr_fighters_01"
           },
@@ -2057,6 +2071,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "ussr_air_def_01"
           },
           {
@@ -2084,6 +2101,9 @@
           [7634.25,67.2,26021.9]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "ussr_air_def_06"
           },
@@ -2548,6 +2568,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "bombtarget_01"
           },
           {
@@ -2896,6 +2919,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "ge_bombers_01"
           },
           {
@@ -2921,6 +2947,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "ge_bombers_04"
           },
           {
@@ -2942,6 +2971,9 @@
           [15737.3,47.9,28701.5]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "ge_bombers_06"
           },
@@ -3015,6 +3047,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "ge_fighters_01"
           },
           {
@@ -3039,6 +3074,9 @@
           [13879.2,79.8,27543.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "ge_bombers_squad_wave01"
           },

@@ -63,6 +63,12 @@
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
+          "setEnabled": {
+            "value": false
+          },
+          "setTransiver": {
+            "transiver": "search"
+          },
           "setSignal": {
             "signal": "search"
           },
@@ -79,7 +85,12 @@
           }
         },
         "setStandbyMode": {
-          "setTransiver": [],
+          "setModeName": {
+            "name": "standby"
+          },
+          "setEnabled": {
+            "value": false
+          },
           "setCenterAzimuth": {
             "source": "constant",
             "value": 0.0
@@ -87,13 +98,16 @@
           "clearTargets": []
         },
         "setSearchMode": {
+          "setModeName": {
+            "name": "search"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "clearTargets": [],
           "setFsmActive": {
             "fsm": "search",
             "active": true
-          },
-          "setTransiver": {
-            "transiver": "search"
           },
           "setScanPattern": {
             "scanPattern": "search"

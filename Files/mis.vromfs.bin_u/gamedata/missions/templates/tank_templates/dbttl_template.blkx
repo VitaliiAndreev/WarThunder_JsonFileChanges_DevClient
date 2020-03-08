@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 30.0
-    },
     "player": {
       "army": 1
     },
@@ -13,51 +9,19 @@
       "army": 2
     },
     "mission": {
-      "name": "",
       "level": "levels/water.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "pacific",
       "environment": "Day",
       "weather": "clear",
-      "missionDebriefing": "",
-      "missionBriefing": "",
       "scoreLimit": 6400,
       "timeLimit": 25,
       "deathPenaltyMul": 0.0,
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_race_straight": false,
-        "_race_inverted": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_DBttl": true,
-        "_DBttlA": true,
-        "_DBttlB": true,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
-      }
+      "restoreType": "attempts",
+      "optionalTakeOff": false
     },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 30.0
     },
     "spectator_points": []
   },
@@ -86,18 +50,6 @@
           "varSetString": {
             "value": "dbttl_t1_capture_area",
             "var": "zone_name"
-          }
-        },
-        {
-          "varSetString": {
-            "value": "dbttl_t1_circle",
-            "var": "circle_name"
-          }
-        },
-        {
-          "varSetString": {
-            "value": "dbttl_t1_effect",
-            "var": "effect_name"
           }
         },
         {
@@ -186,18 +138,6 @@
           "varSetString": {
             "value": "dbttl_t2_capture_area",
             "var": "zone_name"
-          }
-        },
-        {
-          "varSetString": {
-            "value": "dbttl_t2_circle",
-            "var": "circle_name"
-          }
-        },
-        {
-          "varSetString": {
-            "value": "dbttl_t2_effect",
-            "var": "effect_name"
           }
         },
         {
@@ -314,7 +254,7 @@
             "auto_smoke": true,
             "captureNoPenalty": true,
             "markUnitPreset": "tank_decal",
-            "markUnits": "cz_circle_01",
+            "markUnits": "cz_circle",
             "zoneDefenders": []
           }
         },
@@ -394,7 +334,7 @@
             "auto_smoke": true,
             "captureNoPenalty": true,
             "markUnitPreset": "tank_decal",
-            "markUnits": "cz_circle_02",
+            "markUnits": "cz_circle",
             "zoneDefenders": []
           }
         },
@@ -668,25 +608,6 @@
             "tags": {
               "tank": true
             }
-          }
-        },
-        {
-          "__unitWakeUp": {
-            "target": "@circle_name"
-          }
-        },
-        {
-          "__unitPlayEffect": {
-            "effect_type": "specify",
-            "effect": "pv_point_smoke_blue",
-            "offset": [0.0,0.0,0.0],
-            "show": true,
-            "attach": true,
-            "scale": 1.0,
-            "loopSpawn": true,
-            "delay": [1.0,1.0],
-            "target": "@effect_name",
-            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -1289,8 +1210,6 @@
     "dbttl_cur_timer": 0,
     "dbttl_timer_from_desc": 0,
     "zone_name": "",
-    "circle_name": "",
-    "effect_name": "",
     "t1_spawn_01_name": "",
     "t1_spawn_02_name": "",
     "t2_spawn_02_name": "",
@@ -1302,42 +1221,23 @@
   "dialogs": [],
   "airfields": [],
   "effects": [],
-  "units": [
-    {
-      "objectGroups": {
-        "name": "cz_circle_01",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1831.7,4.65,2455.55]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "cz_circle_02",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1846.35,4.65,2455.55]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": true
-        }
+  "units": {
+    "objectGroups": {
+      "name": "cz_circle",
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [1831.7,4.65,2455.55]
+      ],
+      "unit_class": "capture_zone_circle",
+      "objLayer": 2,
+      "props": {
+        "army": 0,
+        "active": true
       }
     }
-  ],
+  },
   "areas": [],
   "objLayers": [
     {

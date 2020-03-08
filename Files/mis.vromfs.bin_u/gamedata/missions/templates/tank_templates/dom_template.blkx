@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": {
       "army": 1,
       "wing": ""
@@ -14,22 +10,17 @@
       "army": 2
     },
     "mission": {
-      "name": "stalingrad_factory_Dom",
       "level": "levels/avg_stalingrad_factory.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "UserMissions",
       "environment": "Day",
       "weather": "hazy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "chapter": "air_ground_battles",
       "scoreLimit": 17000,
       "timeLimit": 20,
       "deathPenaltyMul": 1.0,
       "country_axis": "germany",
       "country_allies": "ussr",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
       "editSlotbar": {
         "keepOwnUnits": false,
         "country_usa": {
@@ -132,38 +123,9 @@
             "allModifications": true
           }
         }
-      },
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
       }
     },
-    "spectator_points": [],
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
-    }
+    "spectator_points": []
   },
   "imports": [],
   "triggers": {
@@ -223,50 +185,6 @@
             },
             {
               "var": "temp_zone_03_name"
-            }
-          ]
-        },
-        {
-          "comment": {
-            "value": ""
-          }
-        },
-        {
-          "varSetString": [
-            {
-              "value": "dom_circle_01"
-            },
-            {
-              "var": "circle_01_name"
-            },
-            {
-              "var": "temp_circle_01_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "dom_circle_02"
-            },
-            {
-              "var": "circle_02_name"
-            },
-            {
-              "var": "temp_circle_02_name"
-            }
-          ]
-        },
-        {
-          "varSetString": [
-            {
-              "value": "dom_circle_03"
-            },
-            {
-              "var": "circle_03_name"
-            },
-            {
-              "var": "temp_circle_03_name"
             }
           ]
         },
@@ -407,25 +325,6 @@
               "digits": 0
             },
             {
-              "var": "circle_01_name"
-            },
-            {
-              "var": "circle_02_name"
-            },
-            {
-              "var": "circle_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_arcade"
-            },
-            {
-              "digits": 0
-            },
-            {
               "var": "t1_spawn_01_name"
             },
             {
@@ -500,25 +399,6 @@
               "digits": 0
             },
             {
-              "var": "temp_circle_01_name"
-            },
-            {
-              "var": "temp_circle_02_name"
-            },
-            {
-              "var": "temp_circle_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_realistic"
-            },
-            {
-              "digits": 0
-            },
-            {
               "var": "temp_t1_spawn_01_name"
             },
             {
@@ -579,24 +459,6 @@
         },
         {
           "objectExists": {
-            "target": "@temp_circle_01_name",
-            "type": "objectGroup"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "@temp_circle_02_name",
-            "type": "objectGroup"
-          }
-        },
-        {
-          "objectExists": {
-            "target": "@temp_circle_03_name",
-            "type": "objectGroup"
-          }
-        },
-        {
-          "objectExists": {
             "target": "@temp_t1_spawn_01_name",
             "type": "squad"
           }
@@ -630,25 +492,6 @@
             },
             {
               "var": "zone_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_realistic"
-            },
-            {
-              "digits": 0
-            },
-            {
-              "var": "circle_01_name"
-            },
-            {
-              "var": "circle_02_name"
-            },
-            {
-              "var": "circle_03_name"
             }
           ]
         },
@@ -709,25 +552,6 @@
             },
             {
               "var": "zone_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_arcade"
-            },
-            {
-              "digits": 0
-            },
-            {
-              "var": "circle_01_name"
-            },
-            {
-              "var": "circle_02_name"
-            },
-            {
-              "var": "circle_03_name"
             }
           ]
         },
@@ -801,25 +625,6 @@
             },
             {
               "var": "zone_03_name"
-            }
-          ]
-        },
-        {
-          "varAddString": [
-            {
-              "value": "_hardcore"
-            },
-            {
-              "digits": 0
-            },
-            {
-              "var": "circle_01_name"
-            },
-            {
-              "var": "circle_02_name"
-            },
-            {
-              "var": "circle_03_name"
             }
           ]
         },
@@ -1118,6 +923,7 @@
             "auto_smoke": true,
             "markUnitPreset": "tank_decal",
             "markUnits": "cz_circle_01",
+            "zoneDefenders": [],
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1141,6 +947,7 @@
             "auto_smoke": true,
             "markUnitPreset": "tank_decal",
             "markUnits": "cz_circle_02",
+            "zoneDefenders": [],
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1164,6 +971,7 @@
             "auto_smoke": true,
             "markUnitPreset": "tank_decal",
             "markUnits": "cz_circle_03",
+            "zoneDefenders": [],
             "tags": {
               "air": false,
               "helicopter": true,
@@ -1172,42 +980,6 @@
               "tank": true
             }
           }
-        },
-        {
-          "comment": {
-            "value": "put to sleep all possible circles"
-          }
-        },
-        {
-          "unitPutToSleep": [
-            {
-              "target": "dom_circle_01_arcade"
-            },
-            {
-              "target": "dom_circle_02_arcade"
-            },
-            {
-              "target": "dom_circle_03_arcade"
-            },
-            {
-              "target": "dom_circle_01_realistic"
-            },
-            {
-              "target": "dom_circle_02_realistic"
-            },
-            {
-              "target": "dom_circle_03_realistic"
-            },
-            {
-              "target": "dom_circle_01_hardcore"
-            },
-            {
-              "target": "dom_circle_02_hardcore"
-            },
-            {
-              "target": "dom_circle_03_hardcore"
-            }
-          ]
         },
         {
           "moAddMissionObjective": {
@@ -1340,726 +1112,6 @@
         }
       },
       "else_actions": []
-    },
-    "spawn_capturing": {
-      "isCategory": true,
-      "is_enabled": true,
-      "get_param_from_desc": {
-        "is_enabled": true,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": false
-        },
-        "events": {
-          "initMission": []
-        },
-        "conditions": [],
-        "actions": {
-          "varSetBool": {
-            "value": false,
-            "var": "enableSpawnCapturing",
-            "fromDescriptor": "enableSpawnCapturing"
-          },
-          "triggerEnable": {
-            "target": "enable_spawn_capturing"
-          }
-        },
-        "else_actions": []
-      },
-      "enable_spawn_capturing": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": false
-        },
-        "events": {
-          "initMission": []
-        },
-        "conditions": {
-          "varCompareBool": {
-            "var_value": "enableSpawnCapturing",
-            "value": true,
-            "comparasion_func": "equal"
-          }
-        },
-        "actions": {
-          "triggerEnable": [
-            {
-              "target": "t1_captured_all_check"
-            },
-            {
-              "target": "t1_can_capture_spawn01"
-            },
-            {
-              "target": "t1_can_capture_spawn02"
-            },
-            {
-              "target": "t1_cant_capture_spawn01"
-            },
-            {
-              "target": "t1_cant_capture_spawn02"
-            },
-            {
-              "target": "t1_spawn_captured"
-            },
-            {
-              "target": "t2_captured_all_check"
-            },
-            {
-              "target": "t2_can_capture_spawn01"
-            },
-            {
-              "target": "t2_can_capture_spawn02"
-            },
-            {
-              "target": "t2_cant_capture_spawn01"
-            },
-            {
-              "target": "t2_cant_capture_spawn02"
-            },
-            {
-              "target": "t2_spawn_captured"
-            }
-          ]
-        },
-        "else_actions": []
-      },
-      "t1_captured_all_check": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "missionIsZoneCaptured": {
-              "target": "@zone_01_name",
-              "army": 1
-            }
-          },
-          {
-            "missionIsZoneCaptured": {
-              "target": "@zone_02_name",
-              "army": 1
-            }
-          },
-          {
-            "missionIsZoneCaptured": {
-              "target": "@zone_03_name",
-              "army": 1
-            }
-          }
-        ],
-        "actions": {
-          "varSetBool": {
-            "value": true,
-            "var": "t1_capured_all"
-          }
-        },
-        "else_actions": {
-          "varSetBool": {
-            "value": false,
-            "var": "t1_capured_all"
-          }
-        }
-      },
-      "t1_can_capture_spawn01": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t1_capured_all",
-              "value": true,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block01",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block01",
-              "type": "areaAsCaptureZone",
-              "invertResult": true
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 2,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": false,
-            "target": "t2_killarea_block01",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t1_can_capture_spawn02": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t1_capured_all",
-              "value": true,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block02",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block02",
-              "type": "areaAsCaptureZone",
-              "invertResult": true
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 2,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": false,
-            "target": "t2_killarea_block02",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t1_cant_capture_spawn01": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t1_capured_all",
-              "value": false,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block01",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block01",
-              "type": "areaAsCaptureZone"
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 2,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": true,
-            "target": "t2_killarea_block01",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t1_cant_capture_spawn02": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t1_capured_all",
-              "value": false,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block02",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t2_killarea_block02",
-              "type": "areaAsCaptureZone"
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 2,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": true,
-            "target": "t2_killarea_block02",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t1_spawn_captured": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ANY",
-          "enableAfterComplete": false
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "missionIsZoneCaptured": {
-              "target": "t2_killarea_block01",
-              "army": 1
-            }
-          },
-          {
-            "missionIsZoneCaptured": {
-              "target": "t2_killarea_block02",
-              "army": 1
-            }
-          }
-        ],
-        "actions": {
-          "gameMPChangeScore": {
-            "value": -100,
-            "valueSystem": "percentage",
-            "team": "B"
-          }
-        },
-        "else_actions": []
-      },
-      "t2_captured_all_check": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "missionIsZoneCaptured": {
-              "target": "@zone_01_name",
-              "army": 2
-            }
-          },
-          {
-            "missionIsZoneCaptured": {
-              "target": "@zone_02_name",
-              "army": 2
-            }
-          },
-          {
-            "missionIsZoneCaptured": {
-              "target": "@zone_03_name",
-              "army": 2
-            }
-          }
-        ],
-        "actions": {
-          "varSetBool": {
-            "value": true,
-            "var": "t2_capured_all"
-          }
-        },
-        "else_actions": {
-          "varSetBool": {
-            "value": false,
-            "var": "t2_capured_all"
-          }
-        }
-      },
-      "t2_can_capture_spawn01": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t2_capured_all",
-              "value": true,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block01",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block01",
-              "type": "areaAsCaptureZone",
-              "invertResult": true
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 1,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": false,
-            "target": "t1_killarea_block01",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t2_can_capture_spawn02": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t2_capured_all",
-              "value": true,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block02",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block02",
-              "type": "areaAsCaptureZone",
-              "invertResult": true
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 1,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": false,
-            "target": "t1_killarea_block02",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t2_cant_capture_spawn01": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t2_capured_all",
-              "value": false,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block01",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block01",
-              "type": "areaAsCaptureZone"
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 1,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": true,
-            "target": "t1_killarea_block01",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t2_cant_capture_spawn02": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
-          "enableAfterComplete": true
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "varCompareBool": {
-              "var_value": "t2_capured_all",
-              "value": false,
-              "comparasion_func": "equal"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block02",
-              "type": "area"
-            }
-          },
-          {
-            "objectExists": {
-              "target": "t1_killarea_block02",
-              "type": "areaAsCaptureZone"
-            }
-          }
-        ],
-        "actions": {
-          "missionMarkAsCaptureZone": {
-            "army": 1,
-            "name_for_respawn_base": "",
-            "timeMultiplier": 1.5,
-            "disableZone": true,
-            "target": "t1_killarea_block02",
-            "canCaptureOnGround": true,
-            "playAirfieldSound": false,
-            "canCaptureInAir": false,
-            "canCaptureByGM": true,
-            "auto_smoke": true,
-            "zoneDefenders": [],
-            "tags": {
-              "air": false,
-              "helicopter": true,
-              "type_attack_helicopter": true,
-              "type_utility_helicopter": true,
-              "tank": true
-            }
-          }
-        },
-        "else_actions": []
-      },
-      "t2_spawn_captured": {
-        "is_enabled": false,
-        "comments": "",
-        "props": {
-          "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ANY",
-          "enableAfterComplete": false
-        },
-        "events": {
-          "periodicEvent": {
-            "time": 1.0
-          }
-        },
-        "conditions": [
-          {
-            "missionIsZoneCaptured": {
-              "target": "t1_killarea_block01",
-              "army": 2
-            }
-          },
-          {
-            "missionIsZoneCaptured": {
-              "target": "t2_killarea_block02",
-              "army": 2
-            }
-          }
-        ],
-        "actions": {
-          "gameMPChangeScore": {
-            "value": -100,
-            "valueSystem": "percentage",
-            "team": "A"
-          }
-        },
-        "else_actions": []
-      }
     }
   },
   "mission_objectives": {
@@ -2082,9 +1134,6 @@
     "zone_01_name": "",
     "zone_02_name": "",
     "zone_03_name": "",
-    "circle_01_name": "",
-    "circle_02_name": "",
-    "circle_03_name": "",
     "t1_spawn_01_name": "",
     "t1_spawn_02_name": "",
     "t2_spawn_01_name": "",
@@ -2093,20 +1142,11 @@
     "temp_zone_01_name": "",
     "temp_zone_02_name": "",
     "temp_zone_03_name": "",
-    "temp_circle_01_name": "",
-    "temp_circle_02_name": "",
-    "temp_circle_03_name": "",
-    "temp_effect_01_name": "",
-    "temp_effect_02_name": "",
-    "temp_effect_03_name": "",
     "temp_t1_spawn_01_name": "",
     "temp_t1_spawn_02_name": "",
     "temp_t2_spawn_01_name": "",
     "temp_t2_spawn_02_name": "",
-    "temp_battle_area_name": "",
-    "enableSpawnCapturing": false,
-    "t1_capured_all": false,
-    "t2_capured_all": false
+    "temp_battle_area_name": ""
   },
   "dialogs": [],
   "airfields": [],

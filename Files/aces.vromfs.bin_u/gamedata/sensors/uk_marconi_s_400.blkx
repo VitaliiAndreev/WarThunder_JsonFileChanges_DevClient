@@ -148,6 +148,12 @@
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
+          "setEnabled": {
+            "value": false
+          },
+          "setTransiver": {
+            "transiver": "search"
+          },
           "setTargetDesignationRange": {
             "azimuthRange": [-30.0,30.0],
             "distanceRange": [0.0,16000.0]
@@ -157,6 +163,12 @@
           }
         },
         "setLockMode": {
+          "setModeName": {
+            "name": "acquisition"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setCenterAzimuth": {
             "source": "activeDetectedTarget"
           },
@@ -186,6 +198,9 @@
           }
         },
         "setLosVisualPreLockMode": {
+          "setEnabled": {
+            "value": true
+          },
           "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "losLock"
@@ -205,6 +220,12 @@
           }
         },
         "setLosLockMode": {
+          "setModeName": {
+            "name": "acquisition"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setTransiver": {
             "transiver": "track"
           },
@@ -218,6 +239,12 @@
           }
         },
         "setVisualLockMode": {
+          "setModeName": {
+            "name": "acquisition"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setTransiver": {
             "transiver": "track"
           },
@@ -230,6 +257,12 @@
           }
         },
         "setTrackMode": {
+          "setModeName": {
+            "name": "track"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setScanPatternSet": [],
           "setScanPattern": {
             "scanPattern": "track"
@@ -514,22 +547,57 @@
     "standbyOrSearch": {
       "stateInit": "init",
       "actionsTemplates": {
-        "setStandbyMode": {
-          "setTransiver": [],
-          "clearTargets": [],
-          "clearTargetsOfInterest": [],
-          "setSignal": {
-            "signal": "search"
+        "setStandbyMode": [
+          {
+            "setModeName": {
+              "name": "standby"
+            }
           },
-          "setCenterElevation": {
-            "source": "constant",
-            "value": 7.5
+          {
+            "setEnabled": {
+              "value": false
+            }
           },
-          "setScanPatternSet": {
-            "scanPatternSet": "search"
+          {
+            "setEnabled": {
+              "value": false
+            }
+          },
+          {
+            "clearTargets": []
+          },
+          {
+            "clearTargetsOfInterest": []
+          },
+          {
+            "setTransiver": {
+              "transiver": "search"
+            }
+          },
+          {
+            "setSignal": {
+              "signal": "search"
+            }
+          },
+          {
+            "setCenterElevation": {
+              "source": "constant",
+              "value": 7.5
+            }
+          },
+          {
+            "setScanPatternSet": {
+              "scanPatternSet": "search"
+            }
           }
-        },
+        ],
         "setSearchMode": {
+          "setModeName": {
+            "name": "search"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setCenterAzimuth": {
             "source": "constant",
             "value": 0.0

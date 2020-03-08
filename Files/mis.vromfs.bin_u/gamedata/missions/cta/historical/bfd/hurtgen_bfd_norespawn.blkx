@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": [
       {
         "army": 1
@@ -212,17 +208,10 @@
       }
     ],
     "mission": {
-      "name": "hurtgen_BfD_norespawn",
       "level": "levels/hurtgen.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "western",
       "environment": "Day",
       "weather": "clear",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "chapter": "base_dom",
       "locName": "missions/hurtgen_BfD_norespawn",
       "locDesc": "missions/_BfD_norespawn/desc",
       "scoreLimit": 2900,
@@ -230,42 +219,14 @@
       "deathPenaltyMul": 0.0,
       "country_axis": "germany",
       "country_allies": "ussr",
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Flc": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_DBttl": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false,
-        "_DBttlA": false,
-        "_DBttlB": false
-      },
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
         "isShipsAllowed": false,
         "isHelicoptersAllowed": false
       }
-    },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
     },
     "spectator_points": [],
     "briefing": {
@@ -665,7 +626,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "zoneType": "capture",
-            "captureNoPenalty": true
+            "captureNoPenalty": true,
+            "zoneDefenders": []
           }
         },
         {
@@ -679,7 +641,8 @@
             "canCaptureInAir": false,
             "canCaptureByGM": true,
             "zoneType": "capture",
-            "captureNoPenalty": true
+            "captureNoPenalty": true,
+            "zoneDefenders": []
           }
         },
         {
@@ -6501,12 +6464,12 @@
       "objectGroups": {
         "name": "t1_cargo_zone_01",
         "tm": [
-          [-0.00111036,0.0,-0.999999],
+          [0.902787,0.0,0.430086],
           [0.0,1.0,0.0],
-          [0.999999,0.0,-0.00111036],
-          [6626.99,103.331,-327.853]
+          [-0.430086,0.0,0.902787],
+          [6626.99,64.3501,-327.853]
         ],
-        "unit_class": "cargo_zone_square",
+        "unit_class": "dynBase_small_factory_square",
         "objLayer": 2,
         "props": {
           "army": 1,
@@ -6521,9 +6484,9 @@
           [-0.213575,0.0,-0.976926],
           [0.0,1.0,0.0],
           [0.976926,0.0,-0.213575],
-          [6534.75,172.289,5993.89]
+          [6534.75,21.0408,5993.89]
         ],
-        "unit_class": "cargo_zone_square",
+        "unit_class": "dynBase_petrol_camp_square",
         "objLayer": 2,
         "props": {
           "army": 1,
@@ -6538,9 +6501,9 @@
           [-0.289774,0.0,-0.957095],
           [0.0,1.0,0.0],
           [0.957095,0.0,-0.289774],
-          [2203.88,83.5852,-8193.45]
+          [2222.52,21.8542,-8176.8]
         ],
-        "unit_class": "cargo_zone_square",
+        "unit_class": "dynBase_fuel_storage_square",
         "objLayer": 2,
         "props": {
           "army": 1,
@@ -6555,9 +6518,9 @@
           [0.430929,0.0,-0.902385],
           [0.0,1.0,0.0],
           [0.902385,0.0,0.430929],
-          [-12249.8,152.139,12023.8]
+          [-12249.8,152.151,12023.8]
         ],
-        "unit_class": "cargo_zone_square",
+        "unit_class": "dynBase_field_camp_square",
         "objLayer": 2,
         "props": {
           "army": 2,
@@ -6572,9 +6535,9 @@
           [-0.00111036,0.0,-0.999999],
           [0.0,1.0,0.0],
           [0.999999,0.0,-0.00111036],
-          [-16318.3,328.464,5115.73]
+          [-16318.3,266.364,5115.73]
         ],
-        "unit_class": "cargo_zone_square",
+        "unit_class": "dynBase_hq_camp_square",
         "objLayer": 2,
         "props": {
           "army": 2,
@@ -6589,9 +6552,9 @@
           [-0.698288,0.0,-0.715816],
           [0.0,1.0,0.0],
           [0.715816,0.0,-0.698288],
-          [-14560.3,157.196,-2627.44]
+          [-14560.3,169.048,-2627.44]
         ],
-        "unit_class": "cargo_zone_square",
+        "unit_class": "dynBase_oil_storage_small_square",
         "objLayer": 2,
         "props": {
           "army": 2,
@@ -10993,7 +10956,7 @@
         [-0.721733,0.0,-650.0],
         [0.0,650.0,0.0],
         [650.0,0.0,-0.721733],
-        [6646.0,136.309,-326.323]
+        [6646.0,66.4209,-326.323]
       ],
       "objLayer": 0,
       "props": []
@@ -11004,7 +10967,7 @@
         [-138.824,0.0,-635.003],
         [0.0,650.0,0.0],
         [635.003,0.0,-138.824],
-        [6541.94,172.339,5993.54]
+        [6541.94,20.8405,5993.54]
       ],
       "objLayer": 0,
       "props": []
@@ -11037,7 +11000,7 @@
         [280.104,0.0,-586.551],
         [0.0,650.0,0.0],
         [586.551,0.0,280.104],
-        [-12252.8,152.166,12023.0]
+        [-12252.8,152.178,12023.0]
       ],
       "objLayer": 0,
       "props": []
@@ -11048,7 +11011,7 @@
         [-0.721733,0.0,-650.0],
         [0.0,650.0,0.0],
         [650.0,0.0,-0.721733],
-        [-16316.9,327.952,5118.18]
+        [-16316.9,269.91,5118.18]
       ],
       "objLayer": 0,
       "props": []

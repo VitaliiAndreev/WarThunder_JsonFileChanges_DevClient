@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "stars": {
       "latitude": 48.0,
       "longitude": 44.0,
@@ -220,17 +216,12 @@
       }
     ],
     "mission": {
-      "name": "finland_islands_02_NDom",
       "level": "levels/avn_finland_islands.bin",
       "type": "domination",
       "restoreType": "attempts",
       "optionalTakeOff": false,
-      "campaign": "pacific",
       "environment": "Day",
       "weather": "hazy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "chapter": "test",
       "locName": "missions/_NDom;finland_islands/name",
       "locDesc": "finland_islands/desc;missions/_NDom/desc",
       "scoreLimit": 20000,
@@ -241,31 +232,6 @@
       "randomSpawnTeams": true,
       "country_axis": "germany",
       "country_allies": "ussr",
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_DBttl": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
-      },
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
         "isTanksAllowed": false,
@@ -274,11 +240,6 @@
       }
     },
     "spectator_points": [],
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
-    },
     "briefing": {
       "place_loc": "",
       "date_loc": "",
@@ -324,6 +285,20 @@
           {
             "icon": {
               "icontype": "destroyer",
+              "side": "ally",
+              "target": "briefing_t1_cruiserspawn01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "destroyer",
+              "side": "ally",
+              "target": "briefing_t1_cruiserspawn02"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "destroyer",
               "side": "enemy",
               "target": "briefing_t2_shipspawn01"
             }
@@ -340,6 +315,20 @@
               "icontype": "ship",
               "side": "enemy",
               "target": "briefing_t2_boatspawn02"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "destroyer",
+              "side": "enemy",
+              "target": "briefing_t2_cruiserspawn01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "destroyer",
+              "side": "enemy",
+              "target": "briefing_t2_cruiserspawn02"
             }
           },
           {
@@ -503,24 +492,24 @@
     }
   },
   "areas": {
-    "briefing_t1_shipspawn01": {
+    "briefing_t1_cruiserspawn01": {
       "type": "Point",
       "tm": [
         [-0.67559,0.0,0.737277],
         [0.0,1.0,0.0],
         [-0.737277,0.0,-0.67559],
-        [-6782.05,-0.000976563,-3313.53]
+        [-7208.0,0.0,-5088.6]
       ],
       "objLayer": 0,
       "props": []
     },
-    "briefing_t2_shipspawn01": {
+    "briefing_t2_cruiserspawn01": {
       "type": "Point",
       "tm": [
         [-0.819152,0.0,-0.573576],
         [0.0,1.0,0.0],
         [0.573576,0.0,-0.819152],
-        [7327.94,-0.000976563,-3446.68]
+        [7768.6,0.0,-5288.6]
       ],
       "objLayer": 0,
       "props": []
@@ -531,7 +520,7 @@
         [-0.737277,0.0,0.67559],
         [0.0,1.0,0.0],
         [-0.67559,0.0,-0.737277],
-        [-2605.28,-0.000976563,3782.6]
+        [-2858.35,0.0,4204.95]
       ],
       "objLayer": 0,
       "props": []
@@ -542,7 +531,7 @@
         [-1.0,0.0,-5.96046e-08],
         [0.0,1.0,0.0],
         [5.96046e-08,0.0,-1.0],
-        [-3170.1,-0.000976563,584.407]
+        [-3347.05,0.0,1048.65]
       ],
       "objLayer": 0,
       "props": []
@@ -564,7 +553,7 @@
         [-1.0,0.0,-5.96046e-08],
         [0.0,1.0,0.0],
         [5.96046e-08,0.0,-1.0],
-        [3642.07,-0.000976563,1774.08]
+        [4063.15,0.0,1884.5]
       ],
       "objLayer": 0,
       "props": []
@@ -575,7 +564,7 @@
         [-164.316,0.0,0.0],
         [0.0,141.705,0.0],
         [0.0,0.0,-164.316],
-        [273.842,-0.000976563,1948.32]
+        [259.15,0.0,1740.05]
       ],
       "objLayer": 0,
       "props": []
@@ -586,7 +575,7 @@
         [-192.583,0.0,-7.62939e-06],
         [0.0,141.705,0.0],
         [7.62939e-06,0.0,-192.583],
-        [285.167,-0.000976563,-1005.18]
+        [288.15,0.0,-1027.7]
       ],
       "objLayer": 0,
       "props": []
@@ -597,7 +586,7 @@
         [-722.033,0.0,-1.52588e-05],
         [0.0,141.705,0.0],
         [1.52588e-05,0.0,-722.033],
-        [279.84,-0.000976563,-7117.2]
+        [324.25,0.0,-7491.4]
       ],
       "objLayer": 0,
       "props": []
@@ -620,6 +609,50 @@
         [0.0,1.0,0.0],
         [0.0,0.0,1.0],
         [9216.0,0.0,5120.0]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "briefing_t1_cruiserspawn02": {
+      "type": "Point",
+      "tm": [
+        [-0.67559,0.0,0.737277],
+        [0.0,1.0,0.0],
+        [-0.737277,0.0,-0.67559],
+        [-7071.95,0.0,-10462.2]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "briefing_t2_cruiserspawn02": {
+      "type": "Point",
+      "tm": [
+        [-0.819152,0.0,-0.573576],
+        [0.0,1.0,0.0],
+        [0.573576,0.0,-0.819152],
+        [7130.5,0.0,-10553.4]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "briefing_t2_shipspawn01": {
+      "type": "Point",
+      "tm": [
+        [-0.819152,0.0,-0.573576],
+        [0.0,1.0,0.0],
+        [0.573576,0.0,-0.819152],
+        [8045.9,0.0,2343.0]
+      ],
+      "objLayer": 0,
+      "props": []
+    },
+    "briefing_t1_shipspawn01": {
+      "type": "Point",
+      "tm": [
+        [-0.819152,0.0,-0.573576],
+        [0.0,1.0,0.0],
+        [0.573576,0.0,-0.819152],
+        [-7157.15,0.0,1838.05]
       ],
       "objLayer": 0,
       "props": []

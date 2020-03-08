@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": [
       {
         "army": 1
@@ -212,55 +208,27 @@
       }
     ],
     "mission": {
-      "name": "krymsk_Capt",
       "level": "levels/avg_krymsk.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
-      "campaign": "eastern",
       "environment": "Day",
       "weather": "hazy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
       "locName": "missions/_Capt;krymsk/name",
       "locDesc": "krymsk/desc;missions/_Capt/desc",
-      "chapter": "air_ground_battles",
       "scoreLimit": 10000,
       "timeLimit": 25,
       "deathPenaltyMul": 1.0,
       "ctaCaptureZoneEqualPenaltyMul": 0.0,
+      "allowedKillStreaks": true,
       "country_axis": "germany",
       "country_allies": "ussr",
-      "allowedKillStreaks": true,
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
       "allowedUnitTypes": {
         "isAirplanesAllowed": true,
-        "isTanksAllowed": true
-      },
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_DBttlA": false,
-        "_DBttlB": false
+        "isTanksAllowed": true,
+        "isShipsAllowed": false,
+        "isHelicoptersAllowed": true
       }
-    },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
     },
     "spectator_points": [],
     "briefing": {
@@ -280,6 +248,9 @@
           },
           {
             "picture": ""
+          },
+          {
+            "showAirMap": false
           },
           {
             "icon": {
@@ -401,9 +372,6 @@
               "isUnit": false
             },
             {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
               "radius": -1.0
             },
             {
@@ -425,6 +393,18 @@
               "showOnMap": true
             },
             {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
               "target": "t1_tank_spawn_01"
             },
             {
@@ -435,6 +415,9 @@
             },
             {
               "disableAfter": -1
+            },
+            {
+              "offset": [0.0,0.0,0.0]
             },
             {
               "tags": {
@@ -458,9 +441,6 @@
               "isUnit": false
             },
             {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
               "radius": -1.0
             },
             {
@@ -482,6 +462,18 @@
               "showOnMap": true
             },
             {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
               "target": "t2_tank_spawn_01"
             },
             {
@@ -489,6 +481,9 @@
             },
             {
               "team": "B"
+            },
+            {
+              "offset": [0.0,0.0,0.0]
             },
             {
               "tags": {
@@ -503,7 +498,6 @@
             "spawnEffect": false,
             "isAirfield": false,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -511,8 +505,13 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "t1_air_spawn",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": false,
               "artillery": false
@@ -525,7 +524,6 @@
             "spawnEffect": false,
             "isAirfield": false,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -533,8 +531,13 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "t2_air_spawn",
             "team": "B",
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": false,
               "artillery": false
@@ -561,9 +564,6 @@
               "isUnit": false
             },
             {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
               "radius": -1.0
             },
             {
@@ -583,6 +583,18 @@
             },
             {
               "showOnMap": true
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
             },
             {
               "target": "t1_art_spawn01"
@@ -624,6 +636,9 @@
               "team": "A"
             },
             {
+              "offset": [0.0,0.0,0.0]
+            },
+            {
               "tags": {
                 "artillery": true
               }
@@ -645,9 +660,6 @@
               "isUnit": false
             },
             {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
               "radius": -1.0
             },
             {
@@ -667,6 +679,18 @@
             },
             {
               "showOnMap": true
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
             },
             {
               "target": "t1_art_spawn13"
@@ -684,6 +708,9 @@
               "team": "A"
             },
             {
+              "offset": [0.0,0.0,0.0]
+            },
+            {
               "tags": {
                 "artillery": true
               }
@@ -705,9 +732,6 @@
               "isUnit": false
             },
             {
-              "offset": [0.0,0.0,0.0]
-            },
-            {
               "radius": -1.0
             },
             {
@@ -727,6 +751,18 @@
             },
             {
               "showOnMap": true
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
             },
             {
               "target": "t2_art_spawn01"
@@ -768,6 +804,9 @@
               "team": "B"
             },
             {
+              "offset": [0.0,0.0,0.0]
+            },
+            {
               "tags": {
                 "artillery": true
               }
@@ -787,9 +826,6 @@
             },
             {
               "isUnit": false
-            },
-            {
-              "offset": [0.0,0.0,0.0]
             },
             {
               "radius": -1.0
@@ -813,6 +849,18 @@
               "showOnMap": true
             },
             {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
               "target": "t2_art_spawn13"
             },
             {
@@ -828,6 +876,9 @@
               "team": "B"
             },
             {
+              "offset": [0.0,0.0,0.0]
+            },
+            {
               "tags": {
                 "artillery": true
               }
@@ -836,6 +887,18 @@
         },
         {
           "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
             {
               "object": "t1_aaa_squad"
             },
@@ -856,7 +919,6 @@
             "spawnEffect": false,
             "isAirfield": false,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -864,9 +926,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "t1_tank_spawn_01",
             "team": "A",
             "disableAfter": -1,
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": true
             }
@@ -878,7 +945,6 @@
             "spawnEffect": false,
             "isAirfield": false,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -886,9 +952,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "t1_tank_spawn_02",
             "team": "A",
             "disableAfter": -1,
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": true
             }
@@ -900,7 +971,6 @@
             "spawnEffect": false,
             "isAirfield": false,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -908,9 +978,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "t2_tank_spawn_01",
             "team": "B",
             "disableAfter": -1,
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": true
             }
@@ -922,7 +997,6 @@
             "spawnEffect": false,
             "isAirfield": false,
             "isUnit": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
             "isStrictSpawn": false,
             "useExisting": false,
@@ -930,9 +1004,14 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": true,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "t2_tank_spawn_02",
             "team": "B",
             "disableAfter": -1,
+            "offset": [0.0,0.0,0.0],
             "tags": {
               "tank": true
             }
@@ -1088,23 +1167,6 @@
       }
     },
     {
-      "objectGroups": {
-        "name": "tcp_t1_capture_area_06_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2182.09,198.413,1721.4]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": true
-        }
-      }
-    },
-    {
       "air_defence": {
         "name": "t1_aaa_01",
         "tm": [
@@ -1116,6 +1178,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1150,6 +1214,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1184,6 +1250,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1218,6 +1286,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1252,6 +1322,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1286,6 +1358,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1320,6 +1394,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1354,6 +1430,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1388,6 +1466,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1422,6 +1502,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1456,6 +1538,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1490,6 +1574,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1524,6 +1610,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1558,6 +1646,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1592,6 +1682,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1626,6 +1718,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1660,6 +1754,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1694,6 +1790,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1728,6 +1826,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1762,6 +1862,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1796,6 +1898,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1830,6 +1934,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1864,6 +1970,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1898,6 +2006,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1932,6 +2042,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1966,6 +2078,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2000,6 +2114,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2034,6 +2150,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2068,6 +2186,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2102,6 +2222,8 @@
         "unit_class": "germ_20mmx4_flak38_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2134,6 +2256,9 @@
           [4466.22,201.497,2866.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_aaa_01"
           },
@@ -2192,6 +2317,9 @@
           [1527.35,310.729,-130.899]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t2_aaa_01"
           },
@@ -2300,6 +2428,8 @@
         "unit_class": "a5m4",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -2331,176 +2461,6 @@
           }
         },
         "way": []
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t1_capture_area_01_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2387.82,186.899,1596.08]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t1_capture_area_02_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2306.35,191.27,1732.53]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t1_capture_area_03_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2164.73,192.194,1907.78]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t1_capture_area_04_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1994.02,208.954,2085.58]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t1_capture_area_05_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2148.69,217.504,2023.62]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 1,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t2_capture_area_01_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2265.68,197.43,1516.32]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 2,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t2_capture_area_02_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2170.8,206.426,1579.49]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 2,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t2_capture_area_03_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [2039.55,214.475,1793.1]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 2,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t2_capture_area_04_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1902.85,221.556,1984.99]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 2,
-          "active": true
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "tcp_t2_capture_area_05_group",
-        "tm": [
-          [1.0,0.0,0.0],
-          [0.0,1.0,0.0],
-          [0.0,0.0,1.0],
-          [1927.55,229.06,1830.54]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 2,
-          "active": true
-        }
       }
     }
   ],

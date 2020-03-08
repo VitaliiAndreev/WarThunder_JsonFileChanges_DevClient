@@ -5,7 +5,7 @@
   "resetViralAcquisitionDaysCounter": 1,
   "moderatorPresenceCheckMaxCode": 65536,
   "moderatorPresenceCheckPeriodSec": 1200,
-  "mapTypes": "AfDto;AfD;BC;BfDn;BfD;ADto;AD;GS;GSA;GSB;DF;BfD_norespawn;GS_norespawn;BfDn_arcade;GSn;BfD_noresp;Dom;Dom_no_respawn;dblDom;Conq;Conq_no_respawn;Bttl;Bttl_no_respawn;bfd_norespawn;day_norespawn;bfd_norespawn;duel;AfDn;tm;race;race_straight;race_inverted;Bto;Conq1;Conq2;Conq3;Conq4;Conq5;Conq6;DBttlA;DBttlB;ArtDA;ArtDB;PvE;PvE_1;PvE_2;PvE_3;PvE_4;PvE_5;PvE_6;I2M;H2M;Tdm;Capt;NTDM;NDom;NTdm;NBttl;NConq;nctf;NCnv;NCnvA;NCnvB;NS;NA;NAleft;NAright;N2M;4x4_norespawn;2x2_norespawn;1x1_norespawn;mission;FFA;BDB;BDA;MDB;GSA;GSB;CnvA;CnvB;ACsD;BR;ctf;HS;HfD;HA;UDom",
+  "mapTypes": "AfDto;AfD;BC;BfDn;BfD;ADto;AD;GS;GSA;GSB;DF;BfD_norespawn;GS_norespawn;BfDn_arcade;GSn;BfD_noresp;Dom;Dom_no_respawn;dblDom;Conq;Conq_no_respawn;Bttl;Bttl_no_respawn;bfd_norespawn;day_norespawn;bfd_norespawn;duel;AfDn;tm;race;race_straight;race_inverted;Bto;Conq1;Conq2;Conq3;Conq4;Conq5;Conq6;DBttlA;DBttlB;ArtDA;ArtDB;PvE;PvE_1;PvE_2;PvE_3;PvE_4;PvE_5;PvE_6;I2M;H2M;Tdm;Capt;NTDM;NDom;NTdm;NBttl;NConq;nctf;NCnv;NCnvA;NCnvB;NS;NA;NAleft;NAright;N2M;4x4_norespawn;2x2_norespawn;1x1_norespawn;mission;FFA;BDB;BDA;MDB;GSA;GSB;CnvA;CnvB;ACsD;BR;ctf;HS;HfD;HA;UDom;_tft;_tfs",
   "ordersPerSession": 3,
   "randomBattle": {
     "classiness": {
@@ -180,7 +180,9 @@
       "_Capt": 3,
       "_ArtDA": 3,
       "_ArtDB": 3,
-      "_UDom": 0
+      "_UDom": 0,
+      "_tft": 3,
+      "_tfs": 6
     }
   },
   "mapIntDiffToName": {
@@ -1943,6 +1945,18 @@
     "SpendGold": {
       "condition": ""
     },
+    "SpendFreeRP": {
+      "condition": ""
+    },
+    "Profile": {
+      "condition": ""
+    },
+    "UserCards": {
+      "condition": ""
+    },
+    "CrewInfo": {
+      "condition": ""
+    },
     "CrewSkills": {
       "condition": ""
     },
@@ -2170,9 +2184,6 @@
       "condition": "",
       "platform_lock": "android"
     },
-    "TanksPs4": {
-      "condition": ""
-    },
     "TanksInCustomBattles": {
       "condition": "Tanks"
     },
@@ -2261,17 +2272,9 @@
         "condition": "role_ALPHA_TESTER"
       }
     ],
-    "SwedenAircraftsInFirstCountryChoice": [
-      {
-        "condition": "role_DEVELOPER"
-      },
-      {
-        "condition": "role_TESTER"
-      },
-      {
-        "condition": "role_ALPHA_TESTER"
-      }
-    ],
+    "SwedenAircraftsInFirstCountryChoice": {
+      "condition": ""
+    },
     "SwedenTanksInFirstCountryChoice": [
       {
         "condition": "role_DEVELOPER"
@@ -2314,10 +2317,14 @@
     },
     "QmbCoopPc": [],
     "QmbCoopPs4": [],
+    "QmbCoop": [],
     "DynCampaignCoopPc": {
       "condition": ""
     },
     "DynCampaignCoopPs4": {
+      "condition": ""
+    },
+    "DynCampaignCoop": {
       "condition": ""
     },
     "SingleMissionsCoopPc": {
@@ -2326,10 +2333,28 @@
     "SingleMissionsCoopPs4": {
       "condition": ""
     },
+    "SingleMissionsCoop": {
+      "condition": ""
+    },
     "CustomBattlesPc": {
       "condition": ""
     },
     "CustomBattlesPs4": {
+      "condition": ""
+    },
+    "CustomBattles": {
+      "condition": ""
+    },
+    "Leaderboards": {
+      "condition": ""
+    },
+    "HangarWndHelp": {
+      "condition": ""
+    },
+    "EulaInMenu": {
+      "condition": ""
+    },
+    "WarpointsInMenu": {
       "condition": ""
     },
     "WorldWar": {
@@ -2435,9 +2460,28 @@
       },
       {
         "condition": "role_TESTER"
+      }
+    ],
+    "ConstantlyComputedWeaponSight": [
+      {
+        "condition": "role_GAIJIN"
       },
       {
-        "condition": "helicopter_access"
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      }
+    ],
+    "ShowDamageReport": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
       }
     ],
     "UserSkins": {
@@ -2596,6 +2640,9 @@
       "condition": ""
     },
     "UnlockAllCountries": {
+      "condition": ""
+    },
+    "GameModeSelector": {
       "condition": ""
     },
     "AllModesInRandomBattles": {
@@ -2840,9 +2887,6 @@
       },
       {
         "condition": "role_TESTER"
-      },
-      {
-        "condition": "role_ALPHA_TESTER"
       }
     ],
     "ItemsShopInTopMenu": {
@@ -3030,6 +3074,9 @@
     "LiveStats": {
       "condition": ""
     },
+    "PromoBlocks": {
+      "condition": ""
+    },
     "ShowAllPromoBlocks": [
       {
         "condition": "role_DEVELOPER"
@@ -3141,23 +3188,9 @@
     "ChinaTankUnlocked": {
       "condition": ""
     },
-    "SwedenAircraftUnlocked": [
-      {
-        "condition": "role_GAIJIN"
-      },
-      {
-        "condition": "role_DEVELOPER"
-      },
-      {
-        "condition": "role_TESTER"
-      },
-      {
-        "condition": "role_ALPHA_TESTER"
-      },
-      {
-        "condition": "wt_access_sweden_aircrafts_unlocks"
-      }
-    ],
+    "SwedenAircraftUnlocked": {
+      "condition": ""
+    },
     "SwedenTankUnlocked": [
       {
         "condition": "role_GAIJIN"
@@ -3170,6 +3203,9 @@
       },
       {
         "condition": "role_ALPHA_TESTER"
+      },
+      {
+        "condition": "wt_access_sweden_tanks_unlocks"
       }
     ],
     "CountryChina": {
@@ -3240,6 +3276,9 @@
       "condition": ""
     },
     "GamepadCursorControl": {
+      "condition": ""
+    },
+    "ControlsHelp": {
       "condition": ""
     },
     "QaTestTiketLocker": {
@@ -3339,6 +3378,9 @@
       "condition": ""
     },
     "CraftAfterBattleTrophy": [],
+    "UnitInfo": {
+      "condition": ""
+    },
     "WikiUnitInfo": {
       "condition": "",
       "platform_lock": "xboxOne"
@@ -3422,6 +3464,9 @@
       "condition": ""
     },
     "forceYesterdayForEveryDayLoginAward": [],
+    "Tutorials": {
+      "condition": ""
+    },
     "NewUnitTypeToBattleTutorial": {
       "condition": ""
     },
@@ -3507,6 +3552,31 @@
       }
     ],
     "PrivacySettings": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      }
+    ],
+    "HudMultifuncMenu": [
+      {
+        "condition": "role_GAIJIN"
+      },
+      {
+        "condition": "role_DEVELOPER"
+      },
+      {
+        "condition": "role_TESTER"
+      },
+      {
+        "condition": "role_ALPHA_TESTER"
+      }
+    ],
+    "ShowWeapPresetsMenu": [
       {
         "condition": "role_GAIJIN"
       },

@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 15.0
-    },
     "player": {
       "army": 1
     },
@@ -13,45 +9,12 @@
       "army": 2
     },
     "mission": {
-      "name": "untitled",
       "type": "singleMission",
       "level": "levels/water.bin",
-      "campaign": "UserMissions",
       "restoreType": "attempts",
       "optionalTakeOff": false,
-      "missionDebriefing": "",
-      "missionBriefing": "",
       "environment": "Day",
-      "weather": "hazy",
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false,
-        "_Bttl": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false
-      }
-    },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
+      "weather": "hazy"
     },
     "spectator_points": []
   },
@@ -68,146 +31,42 @@
   "dialogs": [],
   "airfields": [],
   "effects": [],
-  "units": [
-    {
-      "tankModels": {
-        "name": "t1_player01",
-        "tm": [
-          [0.173649,0.0,0.984807],
-          [0.0,1.0,0.0],
-          [-0.984807,0.0,0.173649],
-          [3470.03,681.347,2669.34]
-        ],
-        "unit_class": "germ_flakpanzer_38t_Gepard",
-        "objLayer": 1,
-        "closed_waypoints": false,
-        "isShipSpline": false,
-        "shipTurnRadius": 100.0,
-        "weapons": "",
-        "bullets0": "",
-        "bullets1": "",
-        "bullets2": "",
-        "bullets3": "",
-        "bulletsCount0": 0,
-        "bulletsCount1": 0,
-        "bulletsCount2": 0,
-        "bulletsCount3": 0,
-        "props": {
-          "army": 2,
-          "count": 1,
-          "formation_type": "rows",
-          "formation_div": 3,
-          "formation_step": [2.5,2.0],
-          "formation_noise": [0.1,0.1],
-          "uniqueName": "",
-          "attack_type": "fire_at_will"
-        },
-        "way": []
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "dom_circle_01_arcade",
-        "tm": [
-          [-1.72511,0.0,-0.227114],
-          [0.0,1.0,0.0],
-          [0.227114,0.0,-1.72511],
-          [3827.9,683.382,2225.4]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": false
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "dom_circle_02_arcade",
-        "tm": [
-          [-1.72511,0.0,-0.227114],
-          [0.0,1.0,0.0],
-          [0.227114,0.0,-1.72511],
-          [3115.7,683.373,2189.35]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": false
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "dom_circle_03_arcade",
-        "tm": [
-          [-1.72511,0.0,-0.227114],
-          [0.0,1.0,0.0],
-          [0.227114,0.0,-1.72511],
-          [2712.9,678.161,2211.85]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": false
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "dom_circle_01_hardcore",
-        "tm": [
-          [-1.72511,0.0,-0.227114],
-          [0.0,1.0,0.0],
-          [0.227114,0.0,-1.72511],
-          [3827.9,683.382,2225.4]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": false
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "dom_circle_02_hardcore",
-        "tm": [
-          [-1.72511,0.0,-0.227114],
-          [0.0,1.0,0.0],
-          [0.227114,0.0,-1.72511],
-          [3115.7,683.373,2189.35]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": false
-        }
-      }
-    },
-    {
-      "objectGroups": {
-        "name": "dom_circle_03_hardcore",
-        "tm": [
-          [-1.72511,0.0,-0.227114],
-          [0.0,1.0,0.0],
-          [0.227114,0.0,-1.72511],
-          [2712.9,678.161,2211.85]
-        ],
-        "unit_class": "capture_zone_circle",
-        "objLayer": 2,
-        "props": {
-          "army": 0,
-          "active": false
-        }
-      }
+  "units": {
+    "tankModels": {
+      "name": "t1_player01",
+      "tm": [
+        [0.173649,0.0,0.984807],
+        [0.0,1.0,0.0],
+        [-0.984807,0.0,0.173649],
+        [3470.03,681.347,2669.34]
+      ],
+      "unit_class": "germ_flakpanzer_38t_Gepard",
+      "objLayer": 1,
+      "closed_waypoints": false,
+      "isShipSpline": false,
+      "shipTurnRadius": 100.0,
+      "weapons": "",
+      "bullets0": "",
+      "bullets1": "",
+      "bullets2": "",
+      "bullets3": "",
+      "bulletsCount0": 0,
+      "bulletsCount1": 0,
+      "bulletsCount2": 0,
+      "bulletsCount3": 0,
+      "props": {
+        "army": 2,
+        "count": 1,
+        "formation_type": "rows",
+        "formation_div": 3,
+        "formation_step": [2.5,2.0],
+        "formation_noise": [0.1,0.1],
+        "uniqueName": "",
+        "attack_type": "fire_at_will"
+      },
+      "way": []
     }
-  ],
+  },
   "areas": {
     "t2_tankSpawn01_zone01": {
       "type": "Sphere",
@@ -849,7 +708,7 @@
       ],
       "props": []
     },
-    "dom_capture_area_01_arcade": {
+    "dom_capture_area_03_arcade": {
       "type": "Cylinder",
       "tm": [
         [42.8736,0.0,0.0],
@@ -871,7 +730,7 @@
       "objLayer": 0,
       "props": []
     },
-    "dom_capture_area_03_arcade": {
+    "dom_capture_area_01_arcade": {
       "type": "Cylinder",
       "tm": [
         [42.8736,0.0,0.0],
@@ -882,40 +741,7 @@
       "objLayer": 0,
       "props": []
     },
-    "dom_effect_01_arcade": {
-      "type": "Point",
-      "tm": [
-        [-4.93384,0.0,-0.649548],
-        [0.0,1.0,0.0],
-        [0.474672,0.0,-3.60547],
-        [3828.7,683.5,2222.35]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "dom_effect_02_arcade": {
-      "type": "Point",
-      "tm": [
-        [-4.93384,0.0,-0.649548],
-        [0.0,1.0,0.0],
-        [0.474672,0.0,-3.60547],
-        [3116.5,683.491,2186.3]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "dom_effect_03_arcade": {
-      "type": "Point",
-      "tm": [
-        [-4.93384,0.0,-0.649548],
-        [0.0,1.0,0.0],
-        [0.474672,0.0,-3.60547],
-        [2713.7,678.1,2208.8]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "dom_capture_area_01_hardcore": {
+    "dom_capture_area_03_hardcore": {
       "type": "Cylinder",
       "tm": [
         [42.8736,0.0,0.0],
@@ -937,46 +763,13 @@
       "objLayer": 0,
       "props": []
     },
-    "dom_capture_area_03_hardcore": {
+    "dom_capture_area_01_hardcore": {
       "type": "Cylinder",
       "tm": [
         [42.8736,0.0,0.0],
         [0.0,35.85,0.0],
         [0.0,0.0,42.8736],
         [2713.0,678.154,2211.5]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "dom_effect_01_hardcore": {
-      "type": "Point",
-      "tm": [
-        [-4.93384,0.0,-0.649548],
-        [0.0,1.0,0.0],
-        [0.474672,0.0,-3.60547],
-        [3828.7,683.5,2222.35]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "dom_effect_02_hardcore": {
-      "type": "Point",
-      "tm": [
-        [-4.93384,0.0,-0.649548],
-        [0.0,1.0,0.0],
-        [0.474672,0.0,-3.60547],
-        [3116.5,683.491,2186.3]
-      ],
-      "objLayer": 0,
-      "props": []
-    },
-    "dom_effect_03_hardcore": {
-      "type": "Point",
-      "tm": [
-        [-4.93384,0.0,-0.649548],
-        [0.0,1.0,0.0],
-        [0.474672,0.0,-3.60547],
-        [2713.7,678.1,2208.8]
       ],
       "objLayer": 0,
       "props": []

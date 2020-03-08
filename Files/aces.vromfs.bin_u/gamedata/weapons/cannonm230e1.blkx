@@ -7,8 +7,8 @@
   "emitR": 3.0,
   "emitTime": 0.03,
   "aimMinDist": 10.0,
-  "aimMaxDist": 1000.0,
-  "maxDeltaAngle": 0.35,
+  "aimMaxDist": 4500.0,
+  "maxDeltaAngle": 0.15,
   "shotFreq": 10.41,
   "traceFreq": 4,
   "bEnablePause": false,
@@ -18,17 +18,22 @@
   "mass": 55.9,
   "bullet": {
     "bulletCount": 30,
-    "mass": 0.348,
-    "explosiveType": "comp_b",
+    "mass": 0.339,
+    "explosiveType": "pbxn_5",
     "explosiveMass": 0.021,
     "caliber": 0.03,
     "speed": 805.0,
-    "maxDistance": 7000.0,
+    "maxDistance": 4500.0,
     "bulletType": "he_frag_i_t",
     "bulletName": "30mm_m789",
     "hitPowerMult": 10.0,
     "effectiveDistance": 2500.0,
     "relativeVelHitShift": [300.0,1000.0],
+    "shutterDamage": true,
+    "shutterDamageRadius": 4.0,
+    "shutterAmount": 15,
+    "shutterArmorPower": 2.0,
+    "shutterHit": 3.0,
     "ricochetEffect": "bullet_hit_armor",
     "waterCollisionEffect": "big_water_splash",
     "waterFxScale": [0.8,1.0],
@@ -155,15 +160,15 @@
       "range_percent_of_ammo": [100.0,0.0],
       "traceFreq": 1,
       "tracer": "noColor",
-      "trail": "smallTrail"
+      "trail": "black"
     }
   },
   "gunSound": {
     "path": "sounds/guns",
     "pathStudio": "aircraft/weapon",
-    "outside": "cannon_t_160_outside",
-    "cockpit": "cannon_t_160_inside",
-    "ai": "cannon_t_160_ai"
+    "outside": "cannon_M230E1_outside",
+    "cockpit": "cannon_M230E1_inside",
+    "ai": "cannon_M230E1_ai"
   },
   "overheat": [
     {
@@ -174,7 +179,7 @@
     }
   ],
   "aden_new_gun": {
-    "maxDeltaAngle": 0.65,
+    "maxDeltaAngle": 0.2,
     "overheat": [
       {
         "overheat": [20.0,0.0]

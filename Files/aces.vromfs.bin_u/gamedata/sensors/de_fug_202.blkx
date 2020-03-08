@@ -42,12 +42,23 @@
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
+          "setEnabled": {
+            "value": false
+          },
+          "setTransiver": {
+            "transiver": "search"
+          },
           "setScopeRange": {
             "scopeRangeIndex": 0
           }
         },
         "setStandbyMode": {
-          "setTransiver": [],
+          "setModeName": {
+            "name": "standby"
+          },
+          "setEnabled": {
+            "value": false
+          },
           "setSignal": {
             "signal": "search"
           },
@@ -57,8 +68,11 @@
           "clearTargets": []
         },
         "setSearchMode": {
-          "setTransiver": {
-            "transiver": "search"
+          "setModeName": {
+            "name": "search"
+          },
+          "setEnabled": {
+            "value": true
           },
           "setFsmActive": {
             "fsm": "search",

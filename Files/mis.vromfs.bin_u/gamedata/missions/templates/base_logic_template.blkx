@@ -209,47 +209,13 @@
       }
     ],
     "mission": {
-      "name": "untitled",
       "level": "levels/guadalcanal.bin",
       "type": "domination",
       "restoreType": "attempts",
       "optionalTakeOff": false,
-      "campaign": "pacific",
       "environment": "Evening",
       "weather": "clear",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "scoreLimit": 5000,
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_Bttl": false,
-        "_Bto": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Flc": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false,
-        "_DBttl": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false
-      }
-    },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
+      "scoreLimit": 5000
     },
     "spectator_points": []
   },
@@ -362,7 +328,13 @@
           "var": "barabashka_init_timer"
         }
       },
-      "conditions": [],
+      "conditions": {
+        "varCompareBool": {
+          "var_value": "barabashka_enabled",
+          "value": true,
+          "comparasion_func": "equal"
+        }
+      },
       "actions": [
         {
           "varSetReal": {
@@ -529,10 +501,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_land_squad",
             "target": "t2_land_squad",
             "var": "distance_timer_destroy",
+            "object_var_value": 0,
             "compareCenters": false
           }
         },
@@ -548,10 +520,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_land_squad",
             "target": "t1_land_squad",
             "var": "distance_timer_destroy",
+            "object_var_value": 0,
             "compareCenters": false
           }
         }
@@ -616,10 +588,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_quest_units_squad",
             "target": "t2_quest_units_squad",
             "var": "distance_timer_destroy",
+            "object_var_value": 0,
             "compareCenters": false,
             "check_all_units": true
           }
@@ -636,10 +608,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_quest_units_squad",
             "target": "t1_quest_units_squad",
             "var": "distance_timer_destroy",
+            "object_var_value": 0,
             "compareCenters": false,
             "check_all_units": true
           }
@@ -735,10 +707,10 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_land_squad",
           "target": "t2_quest_units_squad",
-          "var": "distance_timer_destroy"
+          "var": "distance_timer_destroy",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -783,10 +755,10 @@
           "check_targets": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_land_squad",
           "target": "t1_quest_units_squad",
-          "var": "distance_timer_destroy"
+          "var": "distance_timer_destroy",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -1059,8 +1031,8 @@
           "object_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_quest_units_squad",
+          "object_var_value": 0,
           "var": "t1_land_unit_count"
         }
       },
@@ -1094,8 +1066,8 @@
           "object_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_quest_units_squad",
+          "object_var_value": 0,
           "var": "t2_land_unit_count"
         }
       },
@@ -1129,8 +1101,8 @@
           "object_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t1_quest_units_squad",
+          "object_var_value": 0,
           "var": "t1_land_unit_count"
         }
       },
@@ -1164,8 +1136,8 @@
           "object_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "t2_quest_units_squad",
+          "object_var_value": 0,
           "var": "t2_land_unit_count"
         }
       },
@@ -1285,10 +1257,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t1_quest_units_squad",
             "target": "t2_quest_units_squad",
             "var": "nearDamageDistance",
+            "object_var_value": 0,
             "compareCenters": false
           }
         },
@@ -1304,10 +1276,10 @@
             "check_targets": "any",
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "t2_quest_units_squad",
             "target": "t1_quest_units_squad",
             "var": "nearDamageDistance",
+            "object_var_value": 0,
             "compareCenters": false
           }
         }
@@ -1393,9 +1365,6 @@
               "object_var_comp_op": "equal"
             },
             {
-              "object_var_value": 0
-            },
-            {
               "object": "t1_land_squad"
             },
             {
@@ -1406,6 +1375,9 @@
             },
             {
               "var": "nearDamageDistance"
+            },
+            {
+              "object_var_value": 0
             },
             {
               "compareCenters": false
@@ -1445,9 +1417,6 @@
               "object_var_comp_op": "equal"
             },
             {
-              "object_var_value": 0
-            },
-            {
               "object": "t2_land_squad"
             },
             {
@@ -1458,6 +1427,9 @@
             },
             {
               "var": "nearDamageDistance"
+            },
+            {
+              "object_var_value": 0
             },
             {
               "compareCenters": false
@@ -2821,7 +2793,8 @@
     "barabashka_init_timer": 120,
     "barabashka_is_waiting": false,
     "t1_enemy_airfield_name": "",
-    "t2_enemy_airfield_name": ""
+    "t2_enemy_airfield_name": "",
+    "barabashka_enabled": true
   },
   "dialogs": [],
   "airfields": [],
@@ -5782,6 +5755,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_player01"
           },
           {
@@ -5993,6 +5969,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "t1_player01"
           },
           {
@@ -6203,6 +6182,9 @@
           [37979.7,27.75,29793.9]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "t1_player01"
           },

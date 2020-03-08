@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 24.0
-    },
     "player": {
       "army": 1,
       "wing": "armada_01"
@@ -14,46 +10,17 @@
       "army": 2
     },
     "mission": {
-      "name": "wakeIs_05",
       "level": "levels/wake_island.bin",
       "type": "campaign",
-      "restoreType": "tactical control",
-      "optionalTakeOff": false,
       "environment": "Morning",
       "weather": "hazy",
-      "missionDebriefing": "",
-      "missionBriefing": "",
-      "campaign": "usa_pacific_41_43",
       "windDirection": [1.0,0.0,0.0],
-      "chapter": "wake_island",
       "helicopterCallsign": "",
       "pilotName": "",
+      "restoreType": "tactical control",
+      "optionalTakeOff": false,
       "windSpeed": [5.0,5.0],
       "windDirectionDeg": [90.0,90.0],
-      "tags": [],
-      "missionType": {
-        "_Dom": false,
-        "_Conq": false,
-        "_CnvA": false,
-        "_CnvB": false,
-        "_ArtDA": false,
-        "_ArtDB": false,
-        "_Bttl": false,
-        "_DBttlA": false,
-        "_DBttlB": false,
-        "_Bto": false,
-        "_Flc": false,
-        "_v1_race_straight": false,
-        "_v1_race_inverted": false,
-        "_v2_race_straight": false,
-        "_v2_race_inverted": false,
-        "_Conq1": false,
-        "_Conq2": false,
-        "_Conq3": false,
-        "_Conq4": false,
-        "_Conq5": false,
-        "_Conq6": false
-      },
       "stars": {
         "latitude": 19.0,
         "longitude": 167.0,
@@ -101,10 +68,9 @@
         }
       }
     },
-    "cover_points": [],
-    "aiParams": {
-      "aiEffectivenessViscosity": 90.0,
-      "effectivenessDistances": [2500.0,7000.0]
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 24.0
     },
     "spectator_points": [],
     "briefing": [
@@ -367,6 +333,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "not_player_sq",
             "move_type": "teleport"
           }
@@ -409,7 +377,7 @@
         },
         {
           "triggerEnable": {
-            "target": "landing_start"
+            "target": "start_cut"
           }
         }
       ],
@@ -675,7 +643,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "wakeIs_mission5_fly00"
+            "target": "wakeIs_mission5_fly00",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -721,9 +691,9 @@
           "target_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "armada_01",
-          "target": "wp01"
+          "target": "wp01",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -755,6 +725,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "armada_01",
             "move_type": "teleport",
             "lookat": "jap_bombers00",
@@ -1071,7 +1043,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "wakeIs_mission5_fly00",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1112,6 +1086,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "jap_bombers00",
             "speed": 250.0
           }
@@ -1159,6 +1135,12 @@
             },
             {
               "recalculatePathDist": -1.0
+            },
+            {
+              "fastClimb": false
+            },
+            {
+              "destTimeMode": false
             },
             {
               "object": "jap_bombers01"
@@ -1217,6 +1199,12 @@
             },
             {
               "recalculatePathDist": -1.0
+            },
+            {
+              "fastClimb": false
+            },
+            {
+              "destTimeMode": false
             },
             {
               "object": "jap_fighters00"
@@ -1559,6 +1547,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "us_second_plane",
             "follow_radius": 100.0
           }
@@ -1596,7 +1586,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "wakeIs_mission5_fly01"
+            "target": "wakeIs_mission5_fly01",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1631,6 +1623,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "us_second_plane",
             "follow_radius": 100.0
           }
@@ -1664,9 +1658,9 @@
             "target_marking": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "armada_01",
-            "target": "jap_squad"
+            "target": "jap_squad",
+            "object_var_value": 0
           }
         },
         {
@@ -1681,9 +1675,9 @@
             "target_marking": 0,
             "object_var_name": "",
             "object_var_comp_op": "equal",
-            "object_var_value": 0,
             "object": "jap_squad",
-            "target": "wake3000"
+            "target": "wake3000",
+            "object_var_value": 0
           }
         }
       ],
@@ -1693,7 +1687,9 @@
         },
         "moSetObjectiveStatus": {
           "target": "wakeIs_mission5_fly01",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "triggerEnable": {
           "target": "bombers_start"
@@ -1739,7 +1735,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "wakeIs_mission5_fly01",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -1782,6 +1780,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "dummy_for_teleport",
             "move_type": "teleport",
             "lookat": "player_sq",
@@ -1809,6 +1809,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "armada_01",
             "move_type": "teleport",
             "lookat": "jap_bombers00",
@@ -2104,7 +2106,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "wakeIs_mission5_att00"
+            "target": "wakeIs_mission5_att00",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -2208,9 +2212,9 @@
           "check_objects": "any",
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "jpn_bombers_sq",
-          "target": "wake_island_area"
+          "target": "wake_island_area",
+          "object_var_value": 0
         },
         "unitWhenCountMatches": {
           "object_type": "canBomb",
@@ -2219,8 +2223,8 @@
           "value": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jpn_bombers_sq"
+          "object": "jpn_bombers_sq",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -2280,8 +2284,8 @@
           "value": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jpn_bombers_sq"
+          "object": "jpn_bombers_sq",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -2424,8 +2428,8 @@
           "value": 5,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jap_bombers00"
+          "object": "jap_bombers00",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -2455,6 +2459,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "jap_bombers00"
           }
         },
@@ -2497,8 +2503,8 @@
           "value": 5,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jap_bombers01"
+          "object": "jap_bombers01",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -2528,6 +2534,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "jap_bombers01"
           }
         },
@@ -2570,8 +2578,8 @@
           "value": 5,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jap_bombers02"
+          "object": "jap_bombers02",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -2601,6 +2609,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "jap_bombers02"
           }
         },
@@ -2643,8 +2653,8 @@
           "value": 5,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jap_bombers03"
+          "object": "jap_bombers03",
+          "object_var_value": 0
         }
       },
       "actions": [
@@ -2674,6 +2684,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "jap_bombers03"
           }
         },
@@ -2715,9 +2727,9 @@
           "target_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "jpn_bombers_sq",
-          "target": "wake3000"
+          "target": "wake3000",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -2763,6 +2775,12 @@
           },
           {
             "recalculatePathDist": -1.0
+          },
+          {
+            "fastClimb": false
+          },
+          {
+            "destTimeMode": false
           },
           {
             "object": "jap_bombers00"
@@ -2828,9 +2846,9 @@
           "target_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
           "object": "jpn_bombers_sq",
-          "target": "wake3000"
+          "target": "wake3000",
+          "object_var_value": 0
         },
         "unitWhenCountMatches": {
           "object_type": "isKilledByPlayer",
@@ -2839,8 +2857,8 @@
           "value": 3,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jpn_bombers_sq"
+          "object": "jpn_bombers_sq",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -2901,8 +2919,8 @@
           "value": 2,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "jpn_bombers_sq"
+          "object": "jpn_bombers_sq",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -2933,8 +2951,8 @@
           "value": 12,
           "object_var_name": "",
           "object_var_comp_op": "equal",
-          "object_var_value": 0,
-          "object": "wake_artillery"
+          "object": "wake_artillery",
+          "object_var_value": 0
         }
       },
       "actions": {
@@ -2943,7 +2961,9 @@
         },
         "moSetObjectiveStatus": {
           "target": "wakeIs_mission5_att00",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 2.0
@@ -2986,9 +3006,6 @@
             "object_var_comp_op": "equal"
           },
           {
-            "object_var_value": 0
-          },
-          {
             "object": "jap_bombers00"
           },
           {
@@ -2999,6 +3016,9 @@
           },
           {
             "object": "jap_bombers03"
+          },
+          {
+            "object_var_value": 0
           }
         ]
       },
@@ -3157,6 +3177,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "player_fake",
             "move_type": "teleport",
             "lookat": "airfield_start",
@@ -3585,6 +3607,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "player_fake",
             "move_type": "teleport",
             "lookat": "airfield_end",
@@ -3607,6 +3631,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "zero_cut01",
             "move_type": "teleport",
             "lookat": "f4f_cut_move",
@@ -3652,6 +3678,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "player_fake"
           }
         },
@@ -3671,6 +3699,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "zero_cut01",
             "lookat": "f4f_cut_move",
             "velocity": 200.0
@@ -3906,6 +3936,12 @@
               "recalculatePathDist": -1.0
             },
             {
+              "fastClimb": false
+            },
+            {
+              "destTimeMode": false
+            },
+            {
               "object": "zero_cut01"
             },
             {
@@ -4086,6 +4122,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "not_player_sq",
             "move_type": "teleport",
             "lookat": "airfield_end",
@@ -4121,6 +4159,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "player_sq",
             "move_type": "teleport",
             "lookat": "airfield_end",
@@ -4184,6 +4224,8 @@
             "target_marking": 0,
             "waypointReachedDist": 10.0,
             "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
             "object": "jap_fighters00",
             "move_type": "teleport",
             "lookat": "evac"
@@ -4232,6 +4274,12 @@
             },
             {
               "recalculatePathDist": -1.0
+            },
+            {
+              "fastClimb": false
+            },
+            {
+              "destTimeMode": false
             },
             {
               "object": "jap_fighters00"
@@ -4287,11 +4335,11 @@
             "loop": false,
             "scale": 1.0,
             "effect_type": "specify",
-            "radiusOffset": [0.0,0.0],
             "attach": false,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "player_sq"
+            "target": "player_sq",
+            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -4302,7 +4350,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "wakeIs_mission5_att00",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -4318,7 +4368,9 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "wakeIs_mission5_fly02"
+            "target": "wakeIs_mission5_fly02",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -4408,7 +4460,9 @@
         {
           "moSetObjectiveStatus": {
             "target": "wakeIs_mission5_fly02",
-            "status": 2
+            "status": 2,
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         },
         {
@@ -4737,11 +4791,11 @@
             "loop": false,
             "scale": 1.0,
             "effect_type": "specify",
-            "radiusOffset": [0.0,0.0],
             "attach": false,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "deb_cut_destr05"
+            "target": "deb_cut_destr05",
+            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -4763,11 +4817,11 @@
             "loop": false,
             "scale": 1.0,
             "effect_type": "specify",
-            "radiusOffset": [0.0,0.0],
             "attach": false,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "deb_cut_destr04"
+            "target": "deb_cut_destr04",
+            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -4802,9 +4856,6 @@
               "effect_type": "specify"
             },
             {
-              "radiusOffset": [0.0,0.0]
-            },
-            {
               "attach": false
             },
             {
@@ -4818,6 +4869,9 @@
             },
             {
               "target": "deb_cut_destr03"
+            },
+            {
+              "radiusOffset": [0.0,0.0]
             }
           ]
         },
@@ -4847,11 +4901,11 @@
             "loop": false,
             "scale": 1.0,
             "effect_type": "specify",
-            "radiusOffset": [0.0,0.0],
             "attach": false,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "deb_cut_destr06"
+            "target": "deb_cut_destr06",
+            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -4867,11 +4921,11 @@
             "loop": false,
             "scale": 1.0,
             "effect_type": "specify",
-            "radiusOffset": [0.0,0.0],
             "attach": false,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "deb_cut_destr07"
+            "target": "deb_cut_destr07",
+            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -4887,11 +4941,11 @@
             "loop": false,
             "scale": 1.0,
             "effect_type": "specify",
-            "radiusOffset": [0.0,0.0],
             "attach": false,
             "loopSpawn": true,
             "delay": [1.0,1.0],
-            "target": "deb_cut_destr01"
+            "target": "deb_cut_destr01",
+            "radiusOffset": [0.0,0.0]
           }
         },
         {
@@ -5447,6 +5501,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "jap_fighters00"
           },
           {
@@ -5792,6 +5849,9 @@
           [-59.85,2.0,-681.8]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "btry_D"
           },
@@ -6203,6 +6263,7 @@
           [5377.3,0.0,4129.45]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "armada_01",
           "object_type": "isPlayer"
         }
@@ -6218,6 +6279,7 @@
           [9341.45,0.0,-1263.9]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "armada_01",
           "object_type": "isNotPlayer"
         }
@@ -6233,6 +6295,9 @@
           [7923.45,0.0,30340.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "jap_bombers00"
           },
@@ -6952,6 +7017,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "cut_dd01"
           },
           {
@@ -6994,6 +7062,7 @@
           [-1216.75,-91.0,-2764.7]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "cutscene_jap_bombers",
           "object_type": "isFormationLeader"
         }

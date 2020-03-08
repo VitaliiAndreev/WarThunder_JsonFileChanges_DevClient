@@ -50,12 +50,23 @@
       "stateInit": "init",
       "actionsTemplates": {
         "init": {
+          "setEnabled": {
+            "value": false
+          },
+          "setTransiver": {
+            "transiver": "track"
+          },
           "setSignal": {
             "signal": "track"
           }
         },
         "setStandbyMode": {
-          "setTransiver": [],
+          "setModeName": {
+            "name": "standby"
+          },
+          "setEnabled": {
+            "value": false
+          },
           "setScanPattern": {
             "scanPattern": "lock"
           },
@@ -66,6 +77,12 @@
           "clearTargetsOfInterest": []
         },
         "setLockMode": {
+          "setModeName": {
+            "name": "acquisition"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setScanPattern": {
             "scanPattern": "lock"
           },
@@ -79,9 +96,6 @@
             "fsm": "lock",
             "active": true
           },
-          "setTransiver": {
-            "transiver": "track"
-          },
           "setCenterElevation": {
             "source": "constant",
             "value": 0.0
@@ -93,6 +107,12 @@
           }
         },
         "setTrackMode": {
+          "setModeName": {
+            "name": "track"
+          },
+          "setEnabled": {
+            "value": true
+          },
           "setScanPattern": {
             "scanPattern": "track"
           },
@@ -113,9 +133,6 @@
           "setFsmActive": {
             "fsm": "track",
             "active": true
-          },
-          "setTransiver": {
-            "transiver": "track"
           }
         }
       },
