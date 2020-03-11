@@ -2,10 +2,6 @@
   "selected_tag": "",
   "bin_dump_file": "",
   "mission_settings": {
-    "atmosphere": {
-      "pressure": 760.0,
-      "temperature": 22.0
-    },
     "player": {
       "army": 1,
       "wing": "player_wing"
@@ -16,19 +12,22 @@
     "mission": {
       "level": "levels/korea.bin",
       "type": "singleMission",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
       "environment": "Day",
       "weather": "hazy",
-      "windSpeed": [6.0,7.0],
       "gt_cooperative": true,
       "gt_reload_explosives": true,
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
+      "windSpeed": [6.0,7.0],
       "stars": {
         "year": 1951,
         "month": 4,
-        "day": 4,
-        "time": 16.0
+        "day": 4
       }
+    },
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 22.0
     },
     "briefing": {
       "place_loc": "",
@@ -47,6 +46,9 @@
           },
           {
             "picture": ""
+          },
+          {
+            "showAirMap": false
           },
           {
             "arrow": [
@@ -142,9 +144,13 @@
       "importAreas": true,
       "importUnits": true,
       "importTriggers": true,
+      "importMissionObjectives": true,
+      "importWayPoints": true,
       "showAreas": true,
       "showUnits": true,
       "showTriggers": true,
+      "showMissionObjectives": true,
+      "showWayPoints": true,
       "excludes": []
     }
   },
@@ -167,6 +173,18 @@
         {
           "unitSetProperties": [
             {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
               "object": "ussr_tanks_squad"
             },
             {
@@ -179,6 +197,18 @@
         },
         {
           "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
             {
               "object": "mig15_01"
             },
@@ -204,6 +234,18 @@
         },
         {
           "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
             {
               "object": "air_defence_01"
             },
@@ -281,10 +323,13 @@
         },
         {
           "moAddMissionObjective": {
-            "target": "iron_stream_take_off"
+            "target": "iron_stream_take_off",
+            "object_var_comp_op": "equal",
+            "object_var_name": ""
           }
         }
-      ]
+      ],
+      "else_actions": []
     },
     "fail_mission": {
       "is_enabled": true,
@@ -305,6 +350,8 @@
           "object_type": "isAlive",
           "object_marking": 0,
           "check_objects": "any",
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_squad",
           "target": "airfield_area"
         }
@@ -312,13 +359,16 @@
       "actions": {
         "moSetObjectiveStatus": {
           "target": "iron_stream_main",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 3.0
         },
         "missionFailed": []
-      }
+      },
+      "else_actions": []
     },
     "fail_add_01": {
       "is_enabled": false,
@@ -339,6 +389,8 @@
           "object_type": "isAlive",
           "object_marking": 0,
           "check_objects": "any",
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_squad",
           "target": "add_area_01"
         }
@@ -360,6 +412,21 @@
             "power": 1.0
           },
           {
+            "useEffect": false
+          },
+          {
+            "countEffects": 1
+          },
+          {
+            "delay": [1.0,1.0]
+          },
+          {
+            "offset": [0.0,0.0,0.0]
+          },
+          {
+            "radiusOffset": [10.0,15.0]
+          },
+          {
             "target": "cannon_01"
           },
           {
@@ -378,7 +445,8 @@
         "triggerEnable": {
           "target": "add_mo_fail"
         }
-      }
+      },
+      "else_actions": []
     },
     "fail_add_03": {
       "is_enabled": false,
@@ -399,6 +467,8 @@
           "object_type": "isAlive",
           "object_marking": 0,
           "check_objects": "any",
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_squad",
           "target": "add_area_03"
         }
@@ -420,6 +490,21 @@
             "power": 1.0
           },
           {
+            "useEffect": false
+          },
+          {
+            "countEffects": 1
+          },
+          {
+            "delay": [1.0,1.0]
+          },
+          {
+            "offset": [0.0,0.0,0.0]
+          },
+          {
+            "radiusOffset": [10.0,15.0]
+          },
+          {
             "target": "cannon_05"
           },
           {
@@ -435,7 +520,8 @@
         "triggerEnable": {
           "target": "add_mo_fail"
         }
-      }
+      },
+      "else_actions": []
     },
     "add_mo_fail": {
       "is_enabled": false,
@@ -459,9 +545,12 @@
       "actions": {
         "moSetObjectiveStatus": {
           "target": "iron_stream_add_01",
-          "status": 3
+          "status": 3,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         }
-      }
+      },
+      "else_actions": []
     },
     "complete_add_01": {
       "is_enabled": false,
@@ -482,6 +571,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 3,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_01"
         }
       },
@@ -499,6 +590,16 @@
             "useUnitHeightForTele": true,
             "shouldKeepFormation": false,
             "teleportHeightValue": 1000.0,
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "target_marking": 0,
+            "waypointReachedDist": 10.0,
+            "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
+            "horizontalDirectionForTeleport": true,
             "object": "ussr_tanks_01"
           }
         },
@@ -510,14 +611,24 @@
             "useUnitHeightForTele": true,
             "shouldKeepFormation": false,
             "teleportHeightValue": 1000.0,
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
+            "target_marking": 0,
+            "waypointReachedDist": 10.0,
+            "recalculatePathDist": -1.0,
+            "fastClimb": false,
+            "destTimeMode": false,
+            "horizontalDirectionForTeleport": true,
             "object": "ussr_tanks_03"
           }
         },
         {
           "varModify": {
-            "var": "base_saved",
             "operator": "add",
-            "value": 1.0
+            "value": 1.0,
+            "var": "base_saved"
           }
         },
         {
@@ -528,6 +639,10 @@
         {
           "unitSetIndication": {
             "set": false,
+            "target_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "target": "ussr_tanks_01"
           }
         },
@@ -541,7 +656,8 @@
             "target": "area_01_point"
           }
         }
-      ]
+      ],
+      "else_actions": []
     },
     "complete_add_03": {
       "is_enabled": false,
@@ -562,6 +678,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 3,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_03"
         }
       },
@@ -576,18 +694,32 @@
           "useUnitHeightForTele": true,
           "shouldKeepFormation": false,
           "teleportHeightValue": 1000.0,
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "target_marking": 0,
+          "waypointReachedDist": 10.0,
+          "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
+          "horizontalDirectionForTeleport": true,
           "object": "ussr_tanks_03"
         },
         "varModify": {
-          "var": "base_saved",
           "operator": "add",
-          "value": 1.0
+          "value": 1.0,
+          "var": "base_saved"
         },
         "wait": {
           "time": 20.0
         },
         "unitSetIndication": {
           "set": false,
+          "target_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "ussr_tanks_03"
         },
         "missionMarkAsWaypoint": {
@@ -598,7 +730,8 @@
           "scale": 1.0,
           "target": "area_03_point"
         }
-      }
+      },
+      "else_actions": []
     },
     "add_mo_complete": {
       "is_enabled": false,
@@ -623,9 +756,12 @@
       "actions": {
         "moSetObjectiveStatus": {
           "target": "iron_stream_add_01",
-          "status": 2
+          "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         }
-      }
+      },
+      "else_actions": []
     },
     "start_tanks_01": {
       "is_enabled": false,
@@ -663,6 +799,16 @@
           "useUnitHeightForTele": true,
           "shouldKeepFormation": false,
           "teleportHeightValue": 1000.0,
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "target_marking": 0,
+          "waypointReachedDist": 10.0,
+          "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
+          "horizontalDirectionForTeleport": true,
           "object": "mig15_01",
           "follow_offset": [-150.0,2000.0,20.0]
         },
@@ -688,6 +834,10 @@
         ],
         "unitSetIndication": {
           "set": true,
+          "target_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "ussr_tanks_01"
         },
         "wait": {
@@ -702,9 +852,12 @@
           "target": "area_01_point"
         },
         "moAddMissionObjective": {
-          "target": "iron_stream_add_01"
+          "target": "iron_stream_add_01",
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         }
-      }
+      },
+      "else_actions": []
     },
     "tanks_01_players_near": {
       "is_enabled": false,
@@ -727,6 +880,10 @@
           "target_type": "isAlive",
           "check_objects": "any",
           "check_targets": "any",
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "target_marking": 0,
           "object": "player_wing",
           "target": "ussr_tanks_01"
         }
@@ -740,7 +897,8 @@
           "playerAttractedCount": 2,
           "playerAttractedEffRate": 0.6
         }
-      }
+      },
+      "else_actions": []
     },
     "start_tanks_02": {
       "is_enabled": false,
@@ -766,6 +924,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 3,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_03"
         }
       },
@@ -785,6 +945,16 @@
           "useUnitHeightForTele": true,
           "shouldKeepFormation": false,
           "teleportHeightValue": 1000.0,
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "target_marking": 0,
+          "waypointReachedDist": 10.0,
+          "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
+          "horizontalDirectionForTeleport": true,
           "object": "mig15_02",
           "follow_offset": [-150.0,2000.0,20.0]
         },
@@ -793,9 +963,14 @@
         },
         "unitSetIndication": {
           "set": true,
+          "target_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "ussr_tanks_02"
         }
-      }
+      },
+      "else_actions": []
     },
     "tanks_02_players_near": {
       "is_enabled": false,
@@ -818,6 +993,10 @@
           "target_type": "isAlive",
           "check_objects": "any",
           "check_targets": "any",
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "target_marking": 0,
           "object": "player_wing",
           "target": "ussr_tanks_01"
         }
@@ -831,7 +1010,8 @@
           "playerAttractedCount": 2,
           "playerAttractedEffRate": 0.6
         }
-      }
+      },
+      "else_actions": []
     },
     "start_tanks_03": {
       "is_enabled": false,
@@ -857,6 +1037,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 3,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_01"
         }
       },
@@ -876,6 +1058,16 @@
           "useUnitHeightForTele": true,
           "shouldKeepFormation": false,
           "teleportHeightValue": 1000.0,
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "target_marking": 0,
+          "waypointReachedDist": 10.0,
+          "recalculatePathDist": -1.0,
+          "fastClimb": false,
+          "destTimeMode": false,
+          "horizontalDirectionForTeleport": true,
           "object": "mig15_03",
           "follow_offset": [-150.0,2000.0,20.0]
         },
@@ -898,6 +1090,10 @@
         ],
         "unitSetIndication": {
           "set": true,
+          "target_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "ussr_tanks_03"
         },
         "missionMarkAsWaypoint": {
@@ -908,7 +1104,8 @@
           "scale": 1.0,
           "target": "area_03_point"
         }
-      }
+      },
+      "else_actions": []
     },
     "tanks_03_players_near": {
       "is_enabled": false,
@@ -931,6 +1128,10 @@
           "target_type": "isAlive",
           "check_objects": "any",
           "check_targets": "any",
+          "object_marking": 0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "target_marking": 0,
           "object": "player_wing",
           "target": "ussr_tanks_01"
         }
@@ -944,7 +1145,8 @@
           "playerAttractedCount": 2,
           "playerAttractedEffRate": 0.6
         }
-      }
+      },
+      "else_actions": []
     },
     "complete_mission": {
       "is_enabled": true,
@@ -965,13 +1167,17 @@
           "object_marking": 0,
           "func": "less",
           "value": 6,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "ussr_tanks_squad"
         }
       },
       "actions": {
         "moSetObjectiveStatus": {
           "target": "iron_stream_main",
-          "status": 2
+          "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 3.0
@@ -979,7 +1185,8 @@
         "missionCompleted": {
           "timer": false
         }
-      }
+      },
+      "else_actions": []
     },
     "update_indicator": {
       "is_enabled": false,
@@ -997,9 +1204,9 @@
       "conditions": [],
       "actions": {
         "varModify": {
-          "var": "timer",
           "operator": "add",
-          "value": 1.0
+          "value": 1.0,
+          "var": "timer"
         },
         "missionSetTargetsIndicator": {
           "target_type": "isActive",
@@ -1008,9 +1215,13 @@
           "icon": "tank",
           "icon army": 2,
           "set": true,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "target": "ussr_tanks_squad"
         }
-      }
+      },
+      "else_actions": []
     },
     "taked_off": {
       "is_enabled": true,
@@ -1034,13 +1245,17 @@
       "actions": {
         "moSetObjectiveStatus": {
           "target": "iron_stream_take_off",
-          "status": 2
+          "status": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "wait": {
           "time": 3.0
         },
         "moAddMissionObjective": {
-          "target": "iron_stream_main"
+          "target": "iron_stream_main",
+          "object_var_comp_op": "equal",
+          "object_var_name": ""
         },
         "triggerEnable": [
           {
@@ -1050,7 +1265,8 @@
             "target": "update_indicator"
           }
         ]
-      }
+      },
+      "else_actions": []
     },
     "check_1_ppl": {
       "is_enabled": true,
@@ -1071,6 +1287,8 @@
           "object_marking": 0,
           "func": "less",
           "value": 2,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "player_wing"
         }
       },
@@ -1079,6 +1297,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_01",
             "randomTargetsCount": 12
           }
@@ -1087,6 +1310,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_02",
             "randomTargetsCount": 12
           }
@@ -1095,6 +1323,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_03",
             "randomTargetsCount": 12
           }
@@ -1109,7 +1342,8 @@
             }
           ]
         }
-      ]
+      ],
+      "else_actions": []
     },
     "check_2_ppl": {
       "is_enabled": true,
@@ -1130,6 +1364,8 @@
           "object_marking": 0,
           "func": "equal",
           "value": 2,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "player_wing"
         }
       },
@@ -1138,6 +1374,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_01",
             "randomTargetsCount": 8
           }
@@ -1146,6 +1387,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_02",
             "randomTargetsCount": 8
           }
@@ -1154,6 +1400,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_03",
             "randomTargetsCount": 8
           }
@@ -1168,7 +1419,8 @@
             }
           ]
         }
-      ]
+      ],
+      "else_actions": []
     },
     "check_3_ppl": {
       "is_enabled": true,
@@ -1189,6 +1441,8 @@
           "object_marking": 0,
           "func": "equal",
           "value": 3,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
           "object": "player_wing"
         }
       },
@@ -1197,6 +1451,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_01",
             "randomTargetsCount": 4
           }
@@ -1205,6 +1464,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_02",
             "randomTargetsCount": 4
           }
@@ -1213,6 +1477,11 @@
           "unitDamage": {
             "part": 1,
             "power": 1.0,
+            "useEffect": false,
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [10.0,15.0],
             "target": "ussr_tanks_03",
             "randomTargetsCount": 4
           }
@@ -1227,7 +1496,8 @@
             }
           ]
         }
-      ]
+      ],
+      "else_actions": []
     },
     "player_near_zone_01": {
       "is_enabled": false,
@@ -1262,7 +1532,8 @@
           "scale": 1.0,
           "target": "area_01_point"
         }
-      }
+      },
+      "else_actions": []
     },
     "player_near_zone_03": {
       "is_enabled": false,
@@ -1297,7 +1568,8 @@
           "scale": 1.0,
           "target": "area_03_point"
         }
-      }
+      },
+      "else_actions": []
     }
   },
   "mission_objectives": {
@@ -1360,9 +1632,19 @@
           [0.0,0.0,1.0],
           [8927.25,462.65,-9624.65]
         ],
+        "unit_class": "f-82e",
         "closed_waypoints": false,
-        "unit_class": "f-82g",
-        "weapons": "f_82g_5in_rockets",
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
+        "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 4,
@@ -1396,9 +1678,19 @@
           [0.737277,0.0,-0.67559],
           [13518.6,102.8,-8469.75]
         ],
-        "closed_waypoints": false,
         "unit_class": "ussr_t34_85",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 2,
           "count": 18,
@@ -1420,7 +1712,10 @@
             ],
             "props": {
               "speed": 10.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_08": {
@@ -1433,7 +1728,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_09": {
@@ -1446,7 +1744,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_10": {
@@ -1459,7 +1760,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_11": {
@@ -1472,7 +1776,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_12": {
@@ -1485,7 +1792,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_13": {
@@ -1498,7 +1808,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_01_wp_14": {
@@ -1511,7 +1824,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -1526,9 +1842,19 @@
           [-0.34202,0.0,-0.939693],
           [12681.3,99.35,-13858.0]
         ],
-        "closed_waypoints": false,
         "unit_class": "ussr_t34_85",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 2,
           "count": 18,
@@ -1550,7 +1876,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_02_wp_03": {
@@ -1563,7 +1892,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_02_wp_04": {
@@ -1576,7 +1908,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -1591,9 +1926,19 @@
           [-0.965926,0.0,0.258819],
           [9943.45,99.35,-14944.9]
         ],
-        "closed_waypoints": false,
         "unit_class": "ussr_t34_85",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 2,
           "count": 18,
@@ -1615,7 +1960,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_03_wp_05": {
@@ -1628,7 +1976,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           },
           "ussr_tanks_03_wp_06": {
@@ -1641,7 +1992,10 @@
             ],
             "props": {
               "speed": 20.0,
-              "moveType": "MOVETO_STRAIGHT"
+              "moveType": "MOVETO_STRAIGHT",
+              "tas": false,
+              "shouldKeepFormation": false,
+              "canUsePathFinder": false
             }
           }
         }
@@ -1656,10 +2010,10 @@
           [0.0,0.0,1.0],
           [12697.5,71.05,-12658.5]
         ],
-        "closed_waypoints": false,
-        "unit_class": "",
-        "weapons": "",
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "ussr_tanks_01"
           },
@@ -1669,8 +2023,7 @@
           {
             "squad_members": "ussr_tanks_03"
           }
-        ],
-        "way": []
+        ]
       }
     },
     {
@@ -1682,9 +2035,19 @@
           [0.300706,0.0,-0.953717],
           [17217.1,2503.8,-8083.1]
         ],
-        "closed_waypoints": false,
         "unit_class": "mig-15",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "mig_15bis_nr23_default",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 2,
           "count": 4,
@@ -1717,9 +2080,19 @@
           [-0.573576,0.0,-0.819152],
           [17800.7,2503.8,-14612.3]
         ],
-        "closed_waypoints": false,
         "unit_class": "mig-15",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "mig_15bis_nr23_default",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 2,
           "count": 4,
@@ -1752,9 +2125,19 @@
           [-0.843391,0.0,0.5373],
           [7542.1,2503.8,-19384.6]
         ],
-        "closed_waypoints": false,
         "unit_class": "mig-15",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "mig_15bis_nr23_default",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 2,
           "count": 4,
@@ -1787,9 +2170,19 @@
           [-0.737277,0.0,0.67559],
           [12864.5,77.5,-9526.35]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1812,9 +2205,19 @@
           [-0.737277,0.0,0.67559],
           [12918.8,77.5,-9611.1]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1837,9 +2240,19 @@
           [-0.737277,0.0,0.67559],
           [12885.2,77.5,-9708.4]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1862,9 +2275,19 @@
           [-0.737277,0.0,0.67559],
           [12760.1,77.5,-9541.35]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1887,9 +2310,19 @@
           [0.766044,0.0,-0.642788],
           [10593.6,121.4,-13575.6]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1912,9 +2345,19 @@
           [0.766044,0.0,-0.642788],
           [10292.7,121.4,-13452.0]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1937,9 +2380,19 @@
           [0.766044,0.0,-0.642788],
           [10476.5,121.4,-13483.7]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_57mm_m1",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -1962,10 +2415,10 @@
           [0.0,0.0,1.0],
           [8516.3,141.0,-15058.0]
         ],
-        "closed_waypoints": false,
-        "unit_class": "",
-        "weapons": "",
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "cannon_01"
           },
@@ -1987,8 +2440,7 @@
           {
             "squad_members": "cannon_07"
           }
-        ],
-        "way": []
+        ]
       }
     },
     {
@@ -2000,9 +2452,19 @@
           [0.0,0.0,1.0],
           [8898.25,49.15,-10146.2]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_40mm_bofors",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -2025,9 +2487,19 @@
           [0.0,0.0,1.0],
           [8028.0,49.15,-10860.5]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_40mm_bofors",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -2050,9 +2522,19 @@
           [0.0,0.0,1.0],
           [8389.25,49.15,-11177.3]
         ],
-        "closed_waypoints": false,
         "unit_class": "us_40mm_bofors",
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
         "props": {
           "army": 1,
           "count": 1,
@@ -2218,5 +2700,28 @@
       ],
       "props": []
     }
-  }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": false
+      }
+    }
+  ],
+  "wayPoints": []
 }

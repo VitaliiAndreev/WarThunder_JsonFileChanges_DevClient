@@ -28,23 +28,23 @@
     "mission": {
       "level": "levels/avg_mozdok.bin",
       "type": "domination",
-      "restoreType": "attempts",
-      "optionalTakeOff": false,
       "environment": "Day",
       "weather": "hazy",
       "nameKillStreaks": "killStreaks_survival_event_aircraftOrHelicopter",
-      "forceSkiesInitialRandomSeed": true,
-      "skiesInitialRandomSeed": 33,
-      "allowEmptyTeams": true,
-      "deathPenaltyMul": 0.0,
-      "ctaCaptureZoneEqualPenaltyMul": 0.0,
       "gt_mp_tickets": false,
       "gt_mp_capture": false,
-      "useAlternativeMapCoord": false,
       "gt_reload_explosives": false,
+      "deathPenaltyMul": 0.0,
+      "ctaCaptureZoneEqualPenaltyMul": 0.0,
+      "useAlternativeMapCoord": false,
       "remapAiTankModels": false,
+      "allowEmptyTeams": true,
       "country_axis": "germany",
       "country_allies": "ussr",
+      "restoreType": "attempts",
+      "optionalTakeOff": false,
+      "forceSkiesInitialRandomSeed": true,
+      "skiesInitialRandomSeed": 33,
       "editSlotbar": {
         "keepOwnUnits": false,
         "country_ussr": {
@@ -163,10 +163,19 @@
               "showOnMap": false
             },
             {
-              "offset": [0.0,0.0,0.0]
+              "radius": -1.0
             },
             {
-              "radius": -1.0
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "replaceAreas": false
             },
             {
               "target": "spawnpoint01"
@@ -182,6 +191,9 @@
             },
             {
               "team": "A"
+            },
+            {
+              "offset": [0.0,0.0,0.0]
             },
             {
               "tags": {
@@ -208,25 +220,33 @@
             "removeAreas": false,
             "canSpawnOnNeutral": false,
             "showOnMap": false,
-            "offset": [0.0,0.0,0.0],
             "radius": -1.0,
+            "resetStrictSpawnIndex": false,
+            "forceCreate": false,
+            "onlyOnePlayerPerSpawnPoint": false,
+            "replaceAreas": false,
             "target": "artillery_spawnpoints_squad",
             "team": "A",
+            "offset": [0.0,0.0,0.0],
             "tags": {
-              "artillery": true,
               "type_heavy_tank": false,
               "type_medium_tank": false,
               "type_light_tank": false,
               "type_tank_destroyer": false,
-              "type_spaa": false
+              "type_spaa": false,
+              "artillery": true
             }
           }
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "all_enemy_units",
-            "attack_type": "dont_aim",
             "calmDetection": true,
+            "attack_type": "dont_aim",
             "accuracy": 1.0,
             "effShootingRate": 1.0,
             "speed": 20.0,
@@ -240,6 +260,10 @@
         {
           "__unitSetIndication": {
             "set": true,
+            "target_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "target": "all_enemy_units"
           }
         },
@@ -267,17 +291,25 @@
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "dummies_squad",
-            "stealthRadius": 0.0,
-            "isImmortal": true
+            "isImmortal": true,
+            "stealthRadius": 0.0
           }
         },
         {
           "unitSetProperties": {
+            "object_marking": 0,
+            "object_var_name": "",
+            "object_var_comp_op": "equal",
+            "object_var_value": 0,
             "object": "artillery_squad",
-            "effShootingRate": 0.0,
             "targetableByAi": false,
-            "isImmortal": true
+            "isImmortal": true,
+            "effShootingRate": 0.0
           }
         },
         {
@@ -289,7 +321,8 @@
             "target": "restoration_zone",
             "canCaptureByGM": true,
             "onlyPlayersCanCapture": true,
-            "captureNoPenalty": true
+            "captureNoPenalty": true,
+            "zoneDefenders": []
           }
         }
       ],
@@ -434,6 +467,9 @@
           "object_marking": 0,
           "target_type": "isAlive",
           "check_period": 1.0,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
           "object": "all_enemy_units"
         },
         "varCompareInt": {
@@ -560,6 +596,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -594,6 +632,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -628,6 +668,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -662,6 +704,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -695,6 +739,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "player_tank01"
           },
           {
@@ -727,6 +774,8 @@
         "unit_class": "ussr_76mm_zis3_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -761,6 +810,8 @@
         "unit_class": "ussr_76mm_zis3_noground",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -794,6 +845,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "artillery01"
           },
           {
@@ -817,6 +871,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -851,6 +907,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -884,6 +942,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks01"
           },
           {
@@ -908,6 +969,9 @@
           [1402.95,16.9,5040.6]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "wave01"
           },
@@ -971,6 +1035,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -1005,6 +1071,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -1039,6 +1107,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -1073,6 +1143,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -1107,6 +1179,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -1141,6 +1215,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -1174,6 +1250,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks04"
           },
           {
@@ -1206,6 +1285,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1240,6 +1321,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -1274,6 +1357,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1307,6 +1392,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks10"
           },
           {
@@ -1333,6 +1421,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1367,6 +1457,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -1401,6 +1493,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1435,6 +1529,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1469,6 +1565,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1503,6 +1601,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -1537,6 +1637,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_maus_default",
         "bullets0": "",
         "bullets1": "",
@@ -1569,6 +1671,9 @@
           [576.55,36.8415,3354.45]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "enemy_tanks14"
           },
@@ -1674,6 +1779,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -1708,6 +1815,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -1742,6 +1851,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -1776,6 +1887,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -1810,6 +1923,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -1844,6 +1959,8 @@
         "unit_class": "germ_pzkpfw_III_ausf_M",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_III_ausf_M_default",
         "bullets0": "",
         "bullets1": "",
@@ -1877,6 +1994,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks01_01"
           },
           {
@@ -1902,6 +2022,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks01_02"
           },
           {
@@ -1926,6 +2049,9 @@
           [759.45,7.72602,4949.79]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "enemy_tanks01_03"
           },
@@ -1953,6 +2079,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -1987,6 +2115,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2021,6 +2151,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2055,6 +2187,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2089,6 +2223,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2123,6 +2259,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2157,6 +2295,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2191,6 +2331,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2225,6 +2367,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2259,6 +2403,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2293,6 +2439,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2327,6 +2475,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2361,6 +2511,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2395,6 +2547,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2429,6 +2583,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2463,6 +2619,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2497,6 +2655,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2531,6 +2691,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_IV_ausf_H_default",
         "bullets0": "",
         "bullets1": "",
@@ -2564,6 +2726,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks04_01"
           },
           {
@@ -2595,6 +2760,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks04_02"
           },
           {
@@ -2625,6 +2793,9 @@
           [733.9,0.0,4137.25]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "enemy_tanks04_03"
           },
@@ -2658,6 +2829,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -2692,6 +2865,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -2726,6 +2901,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -2760,6 +2937,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2794,6 +2973,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2828,6 +3009,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -2862,6 +3045,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -2896,6 +3081,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -2930,6 +3117,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -2963,6 +3152,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks10_01"
           },
           {
@@ -2988,6 +3180,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks10_02"
           },
           {
@@ -3012,6 +3207,9 @@
           [671.6,38.237,3592.55]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "enemy_tanks10_03"
           },
@@ -3039,6 +3237,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3073,6 +3273,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3107,6 +3309,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3141,6 +3345,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3175,6 +3381,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3209,6 +3417,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3243,6 +3453,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3277,6 +3489,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3311,6 +3525,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3345,6 +3561,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3379,6 +3597,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3413,6 +3633,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3447,6 +3669,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3481,6 +3705,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3515,6 +3741,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3549,6 +3777,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -3583,6 +3813,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3617,6 +3849,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3651,6 +3885,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_maus_default",
         "bullets0": "",
         "bullets1": "",
@@ -3685,6 +3921,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_maus_default",
         "bullets0": "",
         "bullets1": "",
@@ -3719,6 +3957,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_maus_default",
         "bullets0": "",
         "bullets1": "",
@@ -3751,6 +3991,9 @@
           [618.05,35.9166,3126.1]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "enemy_tanks14_01"
           },
@@ -3789,6 +4032,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "enemy_tanks14_02"
           },
           {
@@ -3825,6 +4071,9 @@
           [702.25,27.4304,2821.0]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "enemy_tanks14_03"
           },
@@ -3864,6 +4113,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3898,6 +4149,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3932,6 +4185,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -3966,6 +4221,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4000,6 +4257,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4034,6 +4293,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4068,6 +4329,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4102,6 +4365,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4136,6 +4401,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4170,6 +4437,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4204,6 +4473,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4238,6 +4509,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4272,6 +4545,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4306,6 +4581,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4340,6 +4617,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4374,6 +4653,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4408,6 +4689,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4442,6 +4725,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4476,6 +4761,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4510,6 +4797,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4544,6 +4833,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4578,6 +4869,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4612,6 +4905,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4646,6 +4941,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4680,6 +4977,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4714,6 +5013,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4748,6 +5049,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4782,6 +5085,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4816,6 +5121,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4850,6 +5157,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4884,6 +5193,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4918,6 +5229,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4952,6 +5265,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -4986,6 +5301,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -5020,6 +5337,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -5054,6 +5373,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -5088,6 +5409,8 @@
         "unit_class": "dummy",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -5114,12 +5437,15 @@
       "squad": {
         "name": "dummies_squad",
         "tm": [
-          [-1.67082e-39,4.590233e-41,-1.67083e-39],
-          [4.590233e-41,1.401298e-45,0.0],
-          [1.9223e-39,0.0,-2.78053e-33],
+          [-0.0,0.0,-0.0],
+          [0.0,0.0,0.0],
+          [0.0,0.0,-2.78053e-33],
           [1803.35,14.4163,2927.33]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "dummy01"
           },
@@ -5295,6 +5621,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "streak_attacker04"
           },
           {
@@ -5315,6 +5644,8 @@
         "unit_class": "b-29",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "B29_8x2000lbs",
         "bullets0": "",
         "bullets1": "",
@@ -5359,6 +5690,8 @@
         "unit_class": "b-29",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "B29_8x2000lbs",
         "bullets0": "",
         "bullets1": "",
@@ -5403,7 +5736,9 @@
         "unit_class": "il_2m_1943",
         "objLayer": 1,
         "closed_waypoints": false,
-        "weapons": "il_2m_type3_4xrs132",
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
+        "weapons": "IL2I_rs132",
         "bullets0": "",
         "bullets1": "",
         "bullets2": "",
@@ -5447,6 +5782,8 @@
         "unit_class": "il_2m_1943",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "il_2m_type3_4xrs132",
         "bullets0": "",
         "bullets1": "",
@@ -5489,6 +5826,9 @@
           [-11906.5,-478.5,-2399.4]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "streak_bomber05"
           },
@@ -6173,6 +6513,8 @@
         "unit_class": "germ_panther_II",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_panther_II_default",
         "bullets0": "",
         "bullets1": "",
@@ -6239,6 +6581,7 @@
           [2407.42,2.55731,3349.54]
         ],
         "props": {
+          "object_marking": 0,
           "squad_members": "all_enemy_units",
           "object_type": "isActive"
         }
@@ -6256,6 +6599,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6290,6 +6635,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6324,6 +6671,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6358,6 +6707,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6392,6 +6743,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6426,6 +6779,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6460,6 +6815,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6494,6 +6851,8 @@
         "unit_class": "germ_pzkpfw_IV_ausf_H",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6528,6 +6887,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -6562,6 +6923,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -6596,6 +6959,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -6630,6 +6995,8 @@
         "unit_class": "germ_pzkpfw_VI_ausf_e_tiger",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "germ_pzkpfw_VI_ausf_e_tiger_default",
         "bullets0": "",
         "bullets1": "",
@@ -6664,6 +7031,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6698,6 +7067,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6732,6 +7103,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6766,6 +7139,8 @@
         "unit_class": "germ_pzkpfw_Maus",
         "objLayer": 1,
         "closed_waypoints": false,
+        "isShipSpline": false,
+        "shipTurnRadius": 100.0,
         "weapons": "",
         "bullets0": "",
         "bullets1": "",
@@ -6799,6 +7174,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "wave01"
           },
           {
@@ -6823,6 +7201,9 @@
           [1021.29,76.0289,4551.97]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "wave05"
           },
@@ -6849,6 +7230,9 @@
         ],
         "props": [
           {
+            "object_marking": 0
+          },
+          {
             "squad_members": "wave09"
           },
           {
@@ -6873,6 +7257,9 @@
           [977.466,76.0289,4240.11]
         ],
         "props": [
+          {
+            "object_marking": 0
+          },
           {
             "squad_members": "wave13"
           },
