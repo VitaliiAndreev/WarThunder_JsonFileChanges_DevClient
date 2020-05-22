@@ -1462,17 +1462,28 @@
         }
       },
       {
-        "animatedBones": [
-          {
-            "node": "antenna_target_tagging"
+        "Weapon": {
+          "dummy": true,
+          "trigger": "gunner2",
+          "triggerGroup": "primary",
+          "blk": "gameData/Weapons/dummy_weapon.blk",
+          "emitter": "antenna_target_tagging",
+          "defaultYaw": 0.0,
+          "defaultPitch": 0.0,
+          "parkForDisableRadar": true,
+          "barrelDP": "antenna_target_tagging_dm",
+          "speedYaw": 25.0,
+          "speedPitch": 25.0,
+          "bullets": 1,
+          "turret": {
+            "head": "bone_turret_02",
+            "gun": "antenna_target_tagging"
           },
-          {
-            "node": "antenna_target_tagging_mount"
-          },
-          {
-            "node": "ex_armor_04"
+          "limits": {
+            "yaw": [-90.0,90.0],
+            "pitch": [-10.0,20.0]
           }
-        ]
+        }
       }
     ]
   },
