@@ -827,7 +827,7 @@
         "hidableInViewer": true,
         "fireProtectionHp": 3.0,
         "compartment_01_dm": {
-          "hp": 1993.0
+          "hp": 1989.0
         },
         "compartment_02_dm": {
           "hp": 1204.0
@@ -1008,7 +1008,7 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 15.0,
         "main_caliber_turret_01_dm": {
-          "hp": 250.0
+          "hp": 150.0
         }
       },
       "turrets_aux_caliber": {
@@ -1191,10 +1191,40 @@
           "hp": 100.0
         },
         "depth_charge_19_dm": {
-          "hp": 110.0
+          "hp": 100.0
         },
         "depth_charge_20_dm": {
-          "hp": 110.0
+          "hp": 100.0
+        },
+        "depth_charge_21_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_22_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_23_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_24_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_25_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_26_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_27_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_28_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_29_dm": {
+          "hp": 100.0
+        },
+        "depth_charge_30_dm": {
+          "hp": 100.0
         }
       },
       "mines": {
@@ -2323,9 +2353,10 @@
           "breechDP": "auxiliary_caliber_gun_01_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
-          "speedYaw": 50.0,
-          "speedPitch": 55.0,
-          "bullets": 1950,
+          "speedYaw": 75.0,
+          "speedPitch": 65.0,
+          "bullets": 1500,
+          "useGunnerTargetingQuality": false,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2342,7 +2373,6 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
-          "useGunnerTargetingQuality": false,
           "turret": {
             "head": "auxiliary_caliber_turret_01",
             "gun": "auxiliary_caliber_gun_01",
@@ -2394,9 +2424,10 @@
           "breechDP": "auxiliary_caliber_gun_02_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
-          "speedYaw": 50.0,
-          "speedPitch": 55.0,
-          "bullets": 1950,
+          "speedYaw": 75.0,
+          "speedPitch": 65.0,
+          "bullets": 1500,
+          "useGunnerTargetingQuality": false,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2413,7 +2444,6 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
-          "useGunnerTargetingQuality": false,
           "turret": {
             "head": "auxiliary_caliber_turret_02",
             "gun": "auxiliary_caliber_gun_02",
@@ -2467,9 +2497,10 @@
           "breechDP": "auxiliary_caliber_gun_03_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
-          "speedYaw": 50.0,
-          "speedPitch": 55.0,
-          "bullets": 1950,
+          "speedYaw": 75.0,
+          "speedPitch": 65.0,
+          "bullets": 1500,
+          "useGunnerTargetingQuality": false,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2486,7 +2517,6 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
-          "useGunnerTargetingQuality": false,
           "turret": {
             "head": "auxiliary_caliber_turret_03",
             "gun": "auxiliary_caliber_gun_03",
@@ -2540,21 +2570,21 @@
       },
       {
         "preset": {
-          "name": "jp_no1_ch2_depth_charges",
-          "blk": "gameData/units/ships/weaponPresets/jp_no1_ch2_depth_charges.blk",
+          "name": "depth_charges",
+          "blk": "gameData/units/ships/weaponPresets/jp_no4_ch8_depth_charges.blk",
           "reqModification": "ship_depth_charge"
         }
       },
       {
         "preset": {
-          "name": "jp_no1_ch2_bomb_mortar",
-          "blk": "gameData/units/ships/weaponPresets/jp_no1_ch2_bomb_mortar.blk",
+          "name": "bomb_mortar",
+          "blk": "gameData/units/ships/weaponPresets/jp_no4_ch8_bomb_mortar.blk",
           "reqModification": "ship_bomb_mortar"
         }
       },
       {
         "preset": {
-          "name": "jp_no1_ch2_bomb_mortar_and_depth_charges",
+          "name": "bomb_mortar_and_depth_charges",
           "blk": "gameData/units/ships/weaponPresets/jp_no4_ch8_bomb_mortar_and_depth_charges.blk",
           "reqModification": "ship_bomb_mortar"
         }
@@ -3341,7 +3371,267 @@
             "count": 1950
           }
         }
-      }
+      },
+      "ammo5": [
+        {
+          "weaponTrigger": "gunner4"
+        },
+        {
+          "replenishmentTime": 5.0
+        },
+        {
+          "replenishmentDelay": 5.0
+        },
+        {
+          "removeLoadedAmmo": false
+        },
+        {
+          "fatalFire": false
+        },
+        {
+          "fatalExplosion": false
+        },
+        {
+          "fireEvent": "torpedo_fire"
+        },
+        {
+          "explosionEvent": "torpedo_explosion"
+        },
+        {
+          "fireParamsPreset": "ship_torpedo_fire"
+        },
+        {
+          "shatterRadiusConstraint": 25.0
+        },
+        {
+          "shells": {
+            "autoLoad": true,
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_15_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_19_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_20_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_21_dm": {
+              "count": 1
+            }
+          }
+        }
+      ],
+      "ammo6": [
+        {
+          "weaponTrigger": "gunner5"
+        },
+        {
+          "replenishmentTime": 5.0
+        },
+        {
+          "replenishmentDelay": 5.0
+        },
+        {
+          "removeLoadedAmmo": false
+        },
+        {
+          "fatalFire": false
+        },
+        {
+          "fatalExplosion": false
+        },
+        {
+          "fireEvent": "torpedo_fire"
+        },
+        {
+          "explosionEvent": "torpedo_explosion"
+        },
+        {
+          "fireParamsPreset": "ship_torpedo_fire"
+        },
+        {
+          "shatterRadiusConstraint": 25.0
+        },
+        {
+          "shells": {
+            "autoLoad": true,
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_16_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_24_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_23_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_22_dm": {
+              "count": 1
+            }
+          }
+        }
+      ],
+      "ammo7": [
+        {
+          "weaponTrigger": "gunner6"
+        },
+        {
+          "replenishmentTime": 5.0
+        },
+        {
+          "replenishmentDelay": 5.0
+        },
+        {
+          "removeLoadedAmmo": false
+        },
+        {
+          "fatalFire": false
+        },
+        {
+          "fatalExplosion": false
+        },
+        {
+          "fireEvent": "torpedo_fire"
+        },
+        {
+          "explosionEvent": "torpedo_explosion"
+        },
+        {
+          "fireParamsPreset": "ship_torpedo_fire"
+        },
+        {
+          "shatterRadiusConstraint": 25.0
+        },
+        {
+          "shells": {
+            "autoLoad": true,
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_17_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_25_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_26_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_27_dm": {
+              "count": 1
+            }
+          }
+        }
+      ],
+      "ammo8": [
+        {
+          "weaponTrigger": "gunner7"
+        },
+        {
+          "replenishmentTime": 5.0
+        },
+        {
+          "replenishmentDelay": 5.0
+        },
+        {
+          "removeLoadedAmmo": false
+        },
+        {
+          "fatalFire": false
+        },
+        {
+          "fatalExplosion": false
+        },
+        {
+          "fireEvent": "torpedo_fire"
+        },
+        {
+          "explosionEvent": "torpedo_explosion"
+        },
+        {
+          "fireParamsPreset": "ship_torpedo_fire"
+        },
+        {
+          "shatterRadiusConstraint": 25.0
+        },
+        {
+          "shells": {
+            "autoLoad": true,
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_18_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_30_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_29_dm": {
+              "count": 1
+            }
+          }
+        },
+        {
+          "shells": {
+            "damageEffect": "ammunition_depth_charges",
+            "depth_charge_28_dm": {
+              "count": 1
+            }
+          }
+        }
+      ]
     }
   },
   {

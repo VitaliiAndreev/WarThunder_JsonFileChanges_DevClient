@@ -1293,6 +1293,21 @@
             "name": "ammo_body_50_dm"
           },
           {
+            "name": "ammo_body_51_dm"
+          },
+          {
+            "name": "ammo_body_52_dm"
+          },
+          {
+            "name": "ammo_body_53_dm"
+          },
+          {
+            "name": "ammo_body_54_dm"
+          },
+          {
+            "name": "ammo_body_55_dm"
+          },
+          {
             "name": "ammo_body_l_01_dm"
           },
           {
@@ -2092,7 +2107,10 @@
           "substitute": "commander"
         },
         {
-          "substitute": "loader_01_dm"
+          "substitute": "loader_01"
+        },
+        {
+          "substitute": "loader_02"
         }
       ],
       "driver": [
@@ -2106,26 +2124,25 @@
           "substitute": "commander"
         },
         {
-          "substitute": "loader_01_dm"
+          "substitute": "loader_01"
+        },
+        {
+          "substitute": "loader_02"
         }
       ],
-      "commander": [
-        {
-          "dmPart": "commander_dm"
-        },
-        {
-          "role": "commander"
-        },
-        {
-          "role": "loader"
-        },
-        {
-          "substitute": "loader_01_dm"
-        }
-      ],
-      "loader_01_dm": {
+      "commander": {
+        "dmPart": "commander_dm",
+        "role": "commander"
+      },
+      "loader_01": {
         "dmPart": "loader_01_dm",
-        "role": "radio_gunner"
+        "role": "loader",
+        "substitute": "commander"
+      },
+      "loader_02": {
+        "dmPart": "loader_02_dm",
+        "role": "loader",
+        "substitute": "commander"
       }
     }
   },
@@ -2155,7 +2172,7 @@
     "commonWeapons": {
       "Weapon": {
         "trigger": "gunner0",
-        "blk": "gameData/Weapons/groundModels_weapons/120mm_type_3_user_cannon.blk",
+        "blk": "gameData/Weapons/groundModels_weapons/120mm_10th_Year_type_user_cannon.blk",
         "emitter": "bone_gun_barrel",
         "flash": "emtr_gun_flame",
         "recoilMultiplier": 0.4,
@@ -2163,8 +2180,8 @@
         "defaultPitch": 0.0,
         "barrelDP": "gun_barrel_dm",
         "breechDP": "cannon_breech_dm",
-        "speedYaw": 6.0,
-        "speedPitch": 4.0,
+        "speedYaw": 10.0,
+        "speedPitch": 6.5,
         "fireConeAngle": 1.0,
         "bullets": 10,
         "salvoAmount": 100.0,
@@ -2190,7 +2207,7 @@
         },
         "limits": {
           "yaw": [-60.0,60.0],
-          "pitch": [-8.0,15.0]
+          "pitch": [-10.0,15.0]
         }
       }
     }

@@ -819,7 +819,13 @@
       },
       "turrets": {
         "armorClass": "ship_structural_steel",
-        "armorThickness": 15.0
+        "armorThickness": 15.0,
+        "turret_02_dm": {
+          "hp": 250.0
+        },
+        "turret_03_dm": {
+          "hp": 250.0
+        }
       },
       "turrets_main_caliber": {
         "armorClass": "ship_structural_steel",
@@ -834,7 +840,13 @@
       },
       "turrets_aa_caliber": {
         "armorClass": "ship_structural_steel",
-        "armorThickness": 8.0
+        "armorThickness": 8.0,
+        "aa_turret_01_dm": {
+          "hp": 50.0
+        },
+        "aa_turret_02_dm": {
+          "hp": 50.0
+        }
       },
       "gun_main_caliber": {
         "armorClass": "tank_barrel",
@@ -849,7 +861,13 @@
       },
       "gun_aa_caliber": {
         "armorClass": "tank_barrel",
-        "armorThickness": 4.0
+        "armorThickness": 4.0,
+        "aa_gun_01_dm": {
+          "hp": 40.0
+        },
+        "aa_gun_02_dm": {
+          "hp": 40.0
+        }
       },
       "gun_barrels": {
         "armorClass": "tank_barrel",
@@ -859,6 +877,9 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 10.0,
         "depth_charge_mount_01_dm": {
+          "hp": 250.0
+        },
+        "depth_charge_mount_02_dm": {
           "hp": 250.0
         },
         "tt_01_dm": {
@@ -901,18 +922,6 @@
           "hp": 100.0
         },
         "depth_charge_02_dm": {
-          "hp": 100.0
-        },
-        "depth_charge_03_dm": {
-          "hp": 100.0
-        },
-        "depth_charge_04_dm": {
-          "hp": 100.0
-        },
-        "depth_charge_05_dm": {
-          "hp": 100.0
-        },
-        "depth_charge_06_dm": {
           "hp": 100.0
         }
       },
@@ -1900,7 +1909,7 @@
       {
         "Weapon": {
           "trigger": "gunner0",
-          "triggerGroup": "secondary",
+          "triggerGroup": "primary",
           "blk": "gameData/Weapons/navalModels_weapons/20mm_65_breda_naval_user_cannon.blk",
           "emitter": "emtr_gun_flame_01",
           "flash": "emtr_gun_flame_01",
@@ -2912,6 +2921,7 @@
         "fireParamsPreset": "ship_torpedo_fire",
         "splashRadiusConstraint": 15.0,
         "shatterRadiusConstraint": 15.0,
+        "removeLoadedAmmo": false,
         "shells": {
           "damageEffect": "ammunition_torpedoes",
           "torpedo_01_dm": {
@@ -2928,6 +2938,7 @@
         "fireParamsPreset": "ship_torpedo_fire",
         "splashRadiusConstraint": 15.0,
         "shatterRadiusConstraint": 15.0,
+        "removeLoadedAmmo": false,
         "shells": {
           "damageEffect": "ammunition_torpedoes",
           "torpedo_02_dm": {
@@ -3083,6 +3094,35 @@
           "deviation": 0.6,
           "rotation": 2.1,
           "collisionNode": "mast_02_dm"
+        }
+      }
+    ]
+  },
+  {
+    "user_skin": [
+      {
+        "name": "mas_classe500_3_1944"
+      },
+      {
+        "replace_tex": {
+          "from": "camo_flat_darkgrey*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "camo_honedgrey*"
+        }
+      },
+      {
+        "set_tex": {
+          "from": "turret_breda_mod65_c*",
+          "param": "camo_skin_tex"
+        }
+      },
+      {
+        "set_tex": {
+          "from": "mas_classe500_3_c*",
+          "param": "camo_skin_tex"
         }
       }
     ]

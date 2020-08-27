@@ -882,6 +882,21 @@
             "name": "ammo_body_50_dm"
           },
           {
+            "name": "ammo_body_51_dm"
+          },
+          {
+            "name": "ammo_body_52_dm"
+          },
+          {
+            "name": "ammo_body_53_dm"
+          },
+          {
+            "name": "ammo_body_54_dm"
+          },
+          {
+            "name": "ammo_body_55_dm"
+          },
+          {
             "name": "ammo_body_l_01_dm"
           },
           {
@@ -2912,7 +2927,10 @@
             "triggerGroup": "special"
           },
           {
-            "blk": "gameData/Weapons/groundModels_weapons/125mm_HJ_73_rocket_launcher_user_cannon.blk"
+            "blk": "gameData/Weapons/groundModels_weapons/125mm_hj_73_rocket_launcher.blk"
+          },
+          {
+            "weaponType": "rockets"
           },
           {
             "useEmitter": true
@@ -2921,7 +2939,7 @@
             "emitter": "bone_rocket_01"
           },
           {
-            "reloadAnimVar": "bmp_1_action"
+            "reloadAnimVar": "zbd_86_action"
           },
           {
             "stopForFire": true
@@ -3058,16 +3076,16 @@
       },
       "73mm_ussr_2A28_HEAT": [],
       "73mm_ussr_2A28_HE": [],
-      "125mm_cn_HJ_ATGM": [],
-      "125mm_cn_HJ73E_ATGM": [],
-      "125mm_cn_HJ73E_ATGM_ammo_pack": [],
       "manual_extinguisher": [],
       "tank_tool_kit": [],
       "airstrike": [],
       "improved_optics": [],
-      "tank_smoke_screen_system_mod": {
-        "tier": 4,
+      "type_86_turret_improvement": {
+        "invertEnableLogic": false,
+        "turn_it_off": false,
         "effects": {
+          "changeMass": 400.0,
+          "rcostAddParam": 0.9,
           "commonWeapons": [
             {
               "Weapon": {
@@ -3218,7 +3236,10 @@
                   "triggerGroup": "special"
                 },
                 {
-                  "blk": "gameData/Weapons/groundModels_weapons/125mm_HJ_73_rocket_launcher_user_cannon.blk"
+                  "blk": "gameData/Weapons/groundModels_weapons/125mm_AFT_07_rocket_launcher.blk"
+                },
+                {
+                  "weaponType": "rockets"
                 },
                 {
                   "useEmitter": true
@@ -3227,7 +3248,7 @@
                   "emitter": "bone_rocket_01"
                 },
                 {
-                  "reloadAnimVar": "bmp_1_action"
+                  "reloadAnimVar": "zbd_86_action"
                 },
                 {
                   "stopForFire": true
@@ -3441,6 +3462,11 @@
               ]
             }
           ]
+        },
+        "disableModEffects": {
+          "hideNodes": {
+            "node": "rocket_mount"
+          }
         }
       },
       "night_vision_system": {

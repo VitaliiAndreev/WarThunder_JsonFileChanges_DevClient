@@ -2,13 +2,13 @@
   "type": "radar",
   "transivers": {
     "track": {
-      "power": 150.0,
-      "band": 4,
+      "power": 200.0,
+      "band": 8,
       "rcs": 100.0,
-      "range": 22000.0,
+      "range": 20000.0,
       "rangeMax": 30000.0,
       "antenna": {
-        "angleHalfSens": 2.0,
+        "angleHalfSens": 3.0,
         "sideLobesSensitivity": -30.0
       }
     }
@@ -16,13 +16,13 @@
   "scanPatterns": {
     "lock": {
       "type": "pyramide",
-      "azimuthLimits": [-150.0,150.0],
-      "elevationLimits": [-10.0,70.0],
+      "azimuthLimits": [-180.0,180.0],
+      "elevationLimits": [-10.0,60.0],
       "yawStabLimit": 180.0,
       "pitchStabLimit": 10.0,
       "rollStabLimit": 10.0,
       "period": 0.5,
-      "width": 7.5,
+      "width": 17.5,
       "barHeight": 2.0,
       "barsCount": 1,
       "rowMajor": false,
@@ -30,8 +30,8 @@
     },
     "losLock": {
       "type": "pyramide",
-      "azimuthLimits": [-150.0,150.0],
-      "elevationLimits": [-10.0,70.0],
+      "azimuthLimits": [-180.0,180.0],
+      "elevationLimits": [-10.0,60.0],
       "yawStabLimit": 180.0,
       "pitchStabLimit": 10.0,
       "rollStabLimit": 10.0,
@@ -44,8 +44,8 @@
     },
     "track": {
       "type": "no",
-      "azimuthLimits": [-150.0,150.0],
-      "elevationLimits": [-10.0,70.0],
+      "azimuthLimits": [-180.0,180.0],
+      "elevationLimits": [-10.0,60.0],
       "yawStabLimit": 180.0,
       "pitchStabLimit": 10.0,
       "rollStabLimit": 10.0
@@ -54,9 +54,9 @@
   "signals": {
     "track": {
       "aircraftAsTarget": true,
-      "groundVehiclesAsTarget": true,
+      "groundVehiclesAsTarget": false,
       "groundClutter": false,
-      "angularAccuracy": 0.1,
+      "angularAccuracy": 0.03,
       "distanceAccuracy": 10.0,
       "track": true,
       "distance": {
@@ -122,7 +122,7 @@
           {
             "setCenterElevation": {
               "source": "constant",
-              "value": 5.5
+              "value": 15.5
             }
           }
         ],
@@ -147,7 +147,7 @@
           },
           "setCenterElevation": {
             "source": "constant",
-            "value": 5.5
+            "value": 15.5
           },
           "setDistGatePos": {
             "source": "targetDesignation",
