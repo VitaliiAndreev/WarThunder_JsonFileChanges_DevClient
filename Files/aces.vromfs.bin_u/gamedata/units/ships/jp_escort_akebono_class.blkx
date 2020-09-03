@@ -1531,7 +1531,7 @@
         "antenna_target_location_01_dm": {
           "hp": 162.0
         },
-        "antenna_target_location_02_dm": {
+        "antenna_target_tagging_01_dm": {
           "hp": 150.0
         }
       }
@@ -3079,7 +3079,7 @@
   },
   {
     "cockpit": {
-      "headPos": [0.0,20.0,-69.0],
+      "headPos": [0.0,20.0,-59.0],
       "headPosOnShooting": [20.2,20.8,0.0],
       "detectionHeight": 22.3
     }
@@ -3479,16 +3479,16 @@
           },
           "limits": {
             "yaw": [-180.0,180.0],
-            "pitch": [-15.0,90.0]
+            "pitch": [-15.0,89.0]
           },
           "limitsTable": {
-            "lim1": [-180.0,-163.0,27.0,90.0],
-            "lim2": [-163.0,-137.0,-5.0,90.0],
-            "lim3": [-137.0,-13.0,-12.0,90.0],
-            "lim4": [-13.0,13.0,-7.0,90.0],
-            "lim5": [13.0,137.0,-12.0,90.0],
-            "lim6": [137.0,163.0,-5.0,90.0],
-            "lim7": [163.0,180.0,27.0,90.0]
+            "lim1": [-180.0,-163.0,27.0,89.0],
+            "lim2": [-163.0,-137.0,-5.0,89.0],
+            "lim3": [-137.0,-13.0,-12.0,89.0],
+            "lim4": [-13.0,13.0,-7.0,89.0],
+            "lim5": [13.0,137.0,-12.0,89.0],
+            "lim6": [137.0,163.0,-5.0,89.0],
+            "lim7": [163.0,180.0,27.0,89.0]
           },
           "gunStabilizer": {
             "hasVerticalGunFreeMode": true,
@@ -3554,16 +3554,16 @@
           },
           "limits": {
             "yaw": [-180.0,180.0],
-            "pitch": [-15.0,90.0]
+            "pitch": [-15.0,89.0]
           },
           "limitsTable": {
-            "lim1": [-180.0,-163.0,27.0,90.0],
-            "lim2": [-163.0,-137.0,-5.0,90.0],
-            "lim3": [-137.0,-13.0,-12.0,90.0],
-            "lim4": [-13.0,13.0,-7.0,90.0],
-            "lim5": [13.0,137.0,-12.0,90.0],
-            "lim6": [137.0,163.0,-5.0,90.0],
-            "lim7": [163.0,180.0,27.0,90.0]
+            "lim1": [-180.0,-163.0,27.0,89.0],
+            "lim2": [-163.0,-137.0,-5.0,89.0],
+            "lim3": [-137.0,-13.0,-12.0,89.0],
+            "lim4": [-13.0,13.0,-7.0,89.0],
+            "lim5": [13.0,137.0,-12.0,89.0],
+            "lim6": [137.0,163.0,-5.0,89.0],
+            "lim7": [163.0,180.0,27.0,89.0]
           },
           "gunStabilizer": {
             "hasVerticalGunFreeMode": true,
@@ -3618,25 +3618,22 @@
     ]
   },
   {
-    "sensors": {
-      "sensor": [
-        {
-          "blk": "gameData/sensors/naval/su_foot_n.blk"
-        },
-        {
-          "designationFromBody": true
-        },
-        {
-          "designationTurretIndex": 1
-        },
-        {
+    "sensors": [
+      {
+        "sensor": {
+          "blk": "gameData/sensors/naval/su_foot_n.blk",
+          "designationFromBody": true,
+          "designationTurretIndex": 1,
           "dmPart": "antenna_target_location_01_dm"
-        },
-        {
-          "dmPart": "antenna_target_location_02_dm"
         }
-      ]
-    }
+      },
+      {
+        "sensor": {
+          "blk": "gameData/sensors/naval/ship_optical_sight.blk",
+          "dmPart": "antenna_target_tagging_01_dm"
+        }
+      }
+    ]
   },
   {
     "radarAnimations": {

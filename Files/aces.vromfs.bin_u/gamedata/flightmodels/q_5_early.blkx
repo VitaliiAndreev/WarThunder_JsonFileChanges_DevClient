@@ -21,23 +21,14 @@
   "damagePartsToVisualEffectsMapBlk": "gameData/FlightModels/DM/dm_parts_to_visual_effects_map.blk",
   "damagePartsExcludeFromHoleBlk": "gameData/FlightModels/DM/dm_parts_exclude_from_hole.blk",
   "explosion_dmBlk": "gameData/FlightModels/DM/commonExplosion.blk",
-  "fireParamsPreset": "1500kph",
+  "fireParamsPreset": "1400kph",
   "fightAiBehaviour": "fighter",
-  "customClassIco": "!#ui/gameuiskin#image_in_progress_ico.svg",
-  "customImage": "!#ui/unitskin#image_in_progress",
-  "customTooltipImage": "ui/aircrafts/image_in_progress",
   "DamageParts": {
     "armor10": {
-      "armor2_dm": {
-        "hp": 40.0
-      },
       "armor5_dm": {
         "hp": 40.0
       },
       "armor6_dm": {
-        "hp": 40.0
-      },
-      "armor7_dm": {
         "hp": 40.0
       },
       "cannon1_dm": {
@@ -48,13 +39,18 @@
       }
     },
     "armor16": {
-      "armor3_dm": {
+      "armor4_dm": {
         "hp": 45.0
       }
     },
     "armor25": {
-      "armor4_dm": {
+      "armor3_dm": {
         "hp": 50.0
+      }
+    },
+    "armor8": {
+      "armor7_dm": {
+        "hp": 40.0
       }
     },
     "armor_engine": {
@@ -168,8 +164,13 @@
         "hp": 60.5
       }
     },
-    "glass60": {
+    "glass4_5": {
       "armor1_dm": {
+        "hp": 100.0
+      }
+    },
+    "glass8": {
+      "armor2_dm": {
         "hp": 100.0
       }
     },
@@ -2167,40 +2168,40 @@
       "mirrorNode": "blister10"
     },
     {
-      "lightPos": [3.608601,0.471697,0.1363]
+      "lightPos": [4.585864,0.317791,-0.005031]
     },
     {
-      "lightColor": [0.0,0.4,0.3]
+      "lightColor": [1.91,0.65,0.02]
     },
     {
-      "lightRadius": 0.2
+      "lightRadius": 0.33
     },
     {
-      "lightPos1": [3.611472,0.471193,-0.089014]
+      "lightPos1": [4.63233,0.265471,0.210962]
     },
     {
-      "lightColor1": [0.0,0.4,0.3]
+      "lightColor1": [0.1,1.0,0.05]
     },
     {
-      "lightRadius1": 0.15
+      "lightRadius1": 0.13
     },
     {
-      "lightPos2": [3.386666,0.727173,0.000475]
+      "lightPos2": [4.589855,0.275526,-0.171266]
     },
     {
-      "lightColor2": [0.0,0.4,0.3]
+      "lightColor2": [0.1,1.0,0.05]
     },
     {
-      "lightRadius2": 0.2
+      "lightRadius2": 0.18
     },
     {
-      "lightPos3": [3.559717,0.354409,0.348711]
+      "lightPos3": [4.591404,0.066645,0.00615]
     },
     {
-      "lightColor3": [0.5,0.2,0.2]
+      "lightColor3": [0.1,1.0,0.05]
     },
     {
-      "lightRadius3": 0.25
+      "lightRadius3": 0.18
     },
     {
       "devices": {
@@ -2226,6 +2227,7 @@
         "g_meter_max": [-5.0,10.0],
         "altitude_hour": [0.0,20000.0],
         "altitude_min": [0.0,1000.0],
+        "altitude1_hour": [0.0,20000.0],
         "altitude_koef": 1.0,
         "bank": [-8.0,8.0],
         "bank1": [-8.0,8.0],
@@ -2317,7 +2319,30 @@
       "preset": {
         "name": "q_5_early_type90_rockets",
         "blk": "gameData/FlightModels/weaponPresets/q_5_early_type90_rockets.blk",
-        "reqModification": "cn_q5_hf6"
+        "reqModification": "cn_q5_hf6",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/cn_type90_heat.blk"
+            },
+            {
+              "amountPerTier": 7.0
+            },
+            {
+              "iconType": "nar_ap_middle"
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            }
+          ]
+        }
       }
     },
     {
@@ -2333,6 +2358,66 @@
         },
         {
           "reqModification": "cn_q5_hf6"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/BombGuns/su_ofab250_olive.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "iconType": "bombs_middle"
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/cn_type90_heat.blk"
+                },
+                {
+                  "amountPerTier": 7.0
+                },
+                {
+                  "iconType": "nar_ap_middle"
+                },
+                {
+                  "tier": {
+                    "idx": 3
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 9
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -2346,7 +2431,7 @@
     "radiusSpeed": 2.0
   },
   "fireParams": {
-    "engineExtinguishFireSpeed": [383.0,427.0],
+    "engineExtinguishFireSpeed": [356.0,400.0],
     "engineExtinguishFireSpeedChance": [0.01,0.1],
     "fireDamagePowerRel": 0.05,
     "nonExtinguishFireTime": 5.0
@@ -2637,7 +2722,13 @@
     {
       "replace_tex": {
         "from": "q_5_early_c*",
-        "to": "q_5_early_tomoe_c*"
+        "to": "q_5_early_c_tomoe*"
+      }
+    },
+    {
+      "replace_tex": {
+        "from": "q_5_early_c_dmg*",
+        "to": "q_5_early_c_tomoe_dmg*"
       }
     },
     {
@@ -2648,13 +2739,7 @@
     },
     {
       "replace_tex": {
-        "from": "q_5_early_c_dmg*",
-        "to": "q_5_early_tomoe_c_dmg*"
-      }
-    },
-    {
-      "replace_tex": {
-        "from": "q_5_early_n_dmg*",
+        "from": "q_5_early_n*",
         "to": "q_5_early_tomoe_n_dmg*"
       }
     }

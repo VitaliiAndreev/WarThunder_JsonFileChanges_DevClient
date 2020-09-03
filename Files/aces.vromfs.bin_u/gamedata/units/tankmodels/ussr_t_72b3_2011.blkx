@@ -238,10 +238,12 @@
           "armorThickness": 30.0
         },
         "turret_06_back_dm": {
-          "armorThickness": 20.0
+          "armorThickness": 20.0,
+          "explosionArmorQuality": 2.0
         },
         "turret_05_back_dm": {
-          "armorThickness": 20.0
+          "armorThickness": 20.0,
+          "explosionArmorQuality": 2.0
         },
         "turret_04_back_dm": {
           "armorThickness": 40.0,
@@ -378,12 +380,8 @@
         }
       },
       "grille": {
-        "armorClass": "tank_structural_steel",
+        "armorClass": "grille_structural_steel",
         "hp": 300.0,
-        "armorThickness": 15.0,
-        "armorEffectiveThicknessMax": 15.0,
-        "stopChanceOnDeadPart": 0.0,
-        "createSecondaryShatters": false,
         "ex_armor_body_l_20_dm": [],
         "ex_armor_body_l_21_dm": [],
         "ex_armor_turret_01_dm": [],
@@ -394,10 +392,6 @@
       },
       "turret_grille_armor": {
         "hp": 300.0,
-        "cumulativeEffectiveThicknessMax": 200.0,
-        "genericArmorQuality": 0.01,
-        "cumulativeArmorQuality": 2.0,
-        "armorThickness": 50.0,
         "armorClass": "grille_air",
         "composite_armor_hull_02_dm": [],
         "composite_armor_hull_03_dm": [],
@@ -603,147 +597,152 @@
       },
       "relict_era_hull_turret": {
         "armorClass": "ERA_Relict",
-        "kineticProtectionEquivalent": 150.0,
+        "kineticProtectionEquivalent": 20.0,
         "cumulativeProtectionEquivalent": 600.0,
-        "hp": 200.0,
-        "armorThickness": 20.0,
-        "genericDamageMult": 3.0,
-        "cumulativeArmorQuality": 6.4,
-        "explosionArmorQuality": 0.1,
-        "explosionDamageMult": 2.0,
+        "hp": 350.0,
+        "armorThickness": 30.0,
+        "genericArmorQuality": 0.1,
+        "cumulativeArmorQuality": 2.0,
+        "explosionArmorQuality": 0.7,
+        "explosionDamageMult": 1.1,
         "stopChanceOnDeadPart": 0.0,
         "hidableInViewer": true,
         "hidableInXrayViewer": true,
         "restrainDamage": 0.5,
         "ex_era_turret_19_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_20_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_21_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_22_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_23_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_24_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_25_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_26_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
         "ex_era_turret_27_dm": {
           "explosionArmorQuality": 0.1,
-          "explosionDamageMult": 1.3,
-          "hp": 350.0
+          "explosionDamageMult": 1.3
         },
-        "ex_era_hull_15_dm": [],
-        "ex_era_hull_16_dm": [],
-        "ex_era_hull_17_dm": [],
-        "ex_era_hull_18_dm": [],
-        "ex_era_hull_19_dm": [],
-        "ex_era_hull_20_dm": [],
-        "ex_era_hull_21_dm": [],
-        "ex_era_hull_22_dm": [],
-        "ex_era_hull_23_dm": [],
-        "ex_era_hull_24_dm": [],
-        "ex_era_hull_25_dm": [],
-        "ex_era_hull_26_dm": [],
-        "ex_era_hull_27_dm": [],
-        "ex_era_hull_28_dm": [],
-        "ex_era_hull_29_dm": [],
-        "ex_era_hull_30_dm": [],
-        "ex_era_hull_31_dm": [],
-        "ex_era_hull_32_dm": [],
-        "ex_era_hull_33_dm": [],
-        "ex_era_hull_34_dm": [],
-        "ex_era_hull_35_dm": [],
-        "ex_era_hull_36_dm": [],
-        "ex_era_hull_37_dm": [],
-        "ex_era_hull_38_dm": [],
-        "ex_era_hull_39_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_15_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_40_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_16_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_41_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_17_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_42_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_18_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_43_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_19_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_44_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_20_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_45_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_21_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_46_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_22_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_47_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_23_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_48_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_24_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_49_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_25_dm": {
+          "cumulativeArmorQuality": 3.0
         },
-        "ex_era_hull_50_dm": {
-          "explosionArmorQuality": 0.7,
-          "explosionDamageMult": 1.1,
-          "hp": 350.0
+        "ex_era_hull_26_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_27_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_28_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_29_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_30_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_31_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_32_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_33_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_34_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_35_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_36_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_37_dm": {
+          "cumulativeArmorQuality": 3.0
+        },
+        "ex_era_hull_38_dm": {
+          "cumulativeArmorQuality": 3.0
         }
+      },
+      "relict_era_hull_inner": {
+        "armorClass": "ERA_Relict",
+        "kineticProtectionEquivalent": 200.0,
+        "cumulativeProtectionEquivalent": 600.0,
+        "cumulativeEffectiveThicknessMax": 500.0,
+        "hp": 200.0,
+        "armorThickness": 25.0,
+        "explosionArmorQuality": 0.5,
+        "explosionDamageMult": 1.1,
+        "stopChanceOnDeadPart": 0.0,
+        "hidableInViewer": true,
+        "hidableInXrayViewer": true,
+        "restrainDamage": 0.5,
+        "ex_era_hull_39_dm": [],
+        "ex_era_hull_40_dm": [],
+        "ex_era_hull_41_dm": [],
+        "ex_era_hull_42_dm": [],
+        "ex_era_hull_43_dm": [],
+        "ex_era_hull_44_dm": [],
+        "ex_era_hull_45_dm": [],
+        "ex_era_hull_46_dm": [],
+        "ex_era_hull_47_dm": [],
+        "ex_era_hull_48_dm": [],
+        "ex_era_hull_49_dm": [],
+        "ex_era_hull_50_dm": []
       },
       "body_side_screens": {
         "armorClass": "t_90_rubber_fabric_screens",
@@ -861,6 +860,7 @@
         "stopChanceOnDeadPart": 0.0,
         "createSecondaryShatters": false,
         "hidableInViewer": true,
+        "turret_03_back_dm": [],
         "ex_decor_04_dm": [],
         "ex_decor_08_dm": [],
         "ex_decor_13_dm": [],
@@ -952,11 +952,7 @@
           "armorThickness": 30.0,
           "hp": 400.0,
           "ex_armor_03_dm": [],
-          "ex_armor_04_dm": [],
-          "turret_03_back_dm": {
-            "armorClass": "tank_structural_steel",
-            "armorThickness": 20.0
-          }
+          "ex_armor_04_dm": []
         }
       },
       "tracks": {

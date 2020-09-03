@@ -589,7 +589,9 @@
       "TrackSoundName": "tracks_light",
       "TrackSoundNameCockpit": "tracks_light_interior",
       "EngineNameAi": "engine_tank_ai_light",
-      "TrackSoundNameAi": "tracks_ai_light"
+      "TrackSoundNameAi": "tracks_ai_light",
+      "turret_turn": "turret_turn_manual",
+      "gun_turn": "turret_turn_mg_light"
     }
   },
   {
@@ -3076,7 +3078,12 @@
           "turret": {
             "head": "bone_turret",
             "gun": "bone_gun",
-            "gunnerDm": "gunner_dm"
+            "gunnerDm": "gunner_dm",
+            "linkedAnimPart": {
+              "verNode": "bone_camera_gunner",
+              "verLimits": [-45.0,45.0],
+              "verOriginLimits": [-45.0,45.0]
+            }
           },
           "limits": {
             "yaw": [-45.0,45.0],
@@ -3221,7 +3228,12 @@
                 "turret": {
                   "head": "bone_turret",
                   "gun": "bone_gun",
-                  "gunnerDm": "gunner_dm"
+                  "gunnerDm": "gunner_dm",
+                  "linkedAnimPart": {
+                    "verNode": "bone_camera_gunner",
+                    "verLimits": [-45.0,45.0],
+                    "verOriginLimits": [-45.0,45.0]
+                  }
                 },
                 "limits": {
                   "yaw": [-45.0,45.0],

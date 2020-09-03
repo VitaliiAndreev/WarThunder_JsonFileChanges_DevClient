@@ -1694,7 +1694,7 @@
         "hidableInViewer": true,
         "fireProtectionHp": 3.0,
         "compartment_01_dm": {
-          "hp": 700.0
+          "hp": 641.0
         },
         "compartment_02_dm": {
           "hp": 467.0
@@ -1905,23 +1905,23 @@
         "fireProtectionHp": 60.0,
         "armorThickness": 15.0,
         "turret_01_side_dm": {
-          "armorClass": "CHA_tank",
+          "armorClass": "RHA_tank",
           "armorThickness": 53.0,
-          "hp": 344.0
+          "hp": 342.0
         },
         "turret_02_side_dm": {
-          "armorClass": "CHA_tank",
+          "armorClass": "RHA_tank",
           "armorThickness": 53.0,
-          "hp": 344.0
+          "hp": 342.0
         },
-        "turret_01_top_dm": {
-          "armorClass": "CHA_tank",
-          "armorThickness": 15.0,
+        "turret_01_front_dm": {
+          "armorClass": "RHA_tank",
+          "armorThickness": 20.0,
           "hp": 250.0
         },
-        "turret_02_top_dm": {
-          "armorClass": "CHA_tank",
-          "armorThickness": 15.0,
+        "turret_04_front_dm": {
+          "armorClass": "RHA_tank",
+          "armorThickness": 20.0,
           "hp": 250.0
         },
         "turret_07_front_dm": {
@@ -1938,6 +1938,16 @@
           "armorClass": "ship_Wsh",
           "armorThickness": 12.0,
           "hp": 326.0
+        },
+        "turret_01_top_dm": {
+          "armorClass": "RHA_tank",
+          "armorThickness": 15.0,
+          "hp": 250.0
+        },
+        "turret_02_top_dm": {
+          "armorClass": "RHA_tank",
+          "armorThickness": 15.0,
+          "hp": 250.0
         }
       },
       "turrets": {
@@ -1962,12 +1972,12 @@
         "main_caliber_turret_01_dm": {
           "armorClass": "ship_structural_steel",
           "armorThickness": 4.0,
-          "hp": 316.0
+          "hp": 300.0
         },
         "main_caliber_turret_02_dm": {
           "armorClass": "ship_structural_steel",
           "armorThickness": 4.0,
-          "hp": 317.0
+          "hp": 300.0
         }
       },
       "turrets_aux_caliber": {
@@ -2019,10 +2029,10 @@
         "armorClass": "tank_barrel",
         "armorThickness": 7.0,
         "main_caliber_gun_01_dm": {
-          "hp": 169.0
+          "hp": 150.0
         },
         "main_caliber_gun_02_dm": {
-          "hp": 169.0
+          "hp": 150.0
         }
       },
       "gun_aux_caliber": {
@@ -2123,7 +2133,7 @@
       "sailor4": {
         "dmPart": "compartment_03_dm",
         "role": "sailor",
-        "crew": 6
+        "crew": 7
       },
       "sailor5": {
         "dmPart": "compartment_04_dm",
@@ -2138,7 +2148,7 @@
       "sailor7": {
         "dmPart": "main_caliber_turret_02_dm",
         "role": "sailor",
-        "crew": 4
+        "crew": 3
       }
     }
   },
@@ -2349,6 +2359,8 @@
           "speedYaw": 15.0,
           "speedPitch": 15.0,
           "bullets": 500,
+          "useGunnerTargetingQuality": false,
+          "fireConeAngle": 1.0,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2381,6 +2393,23 @@
             "lim3": [-15.0,15.0,15.0,85.0],
             "lim4": [15.0,166.0,-5.0,85.0],
             "lim5": [166.0,180.0,17.0,85.0]
+          },
+          "gunStabilizer": {
+            "hasVerticalGunFreeMode": true,
+            "hasHorizontal": true,
+            "horizontalOmegaMult": 1.0,
+            "horizontalSpeedLimitKPH": 80.0,
+            "hasVertical": true,
+            "verticalOmegaMult": 1.0,
+            "verticalSpeedLimitKPH": 80.0,
+            "errorKPHToDegrees": [
+              {
+                "row": [5.0,0.01]
+              },
+              {
+                "row": [70.0,0.05]
+              }
+            ]
           }
         }
       },
@@ -2399,6 +2428,8 @@
           "speedYaw": 15.0,
           "speedPitch": 15.0,
           "bullets": 500,
+          "useGunnerTargetingQuality": false,
+          "fireConeAngle": 1.0,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2431,6 +2462,23 @@
             "lim3": [-50.0,50.0,0.0,85.0],
             "lim4": [50.0,162.0,-5.0,85.0],
             "lim5": [162.0,180.0,12.0,85.0]
+          },
+          "gunStabilizer": {
+            "hasVerticalGunFreeMode": true,
+            "hasHorizontal": true,
+            "horizontalOmegaMult": 1.0,
+            "horizontalSpeedLimitKPH": 80.0,
+            "hasVertical": true,
+            "verticalOmegaMult": 1.0,
+            "verticalSpeedLimitKPH": 80.0,
+            "errorKPHToDegrees": [
+              {
+                "row": [5.0,0.01]
+              },
+              {
+                "row": [70.0,0.05]
+              }
+            ]
           }
         }
       },
@@ -2514,9 +2562,10 @@
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "isBulletBelt": true,
-          "speedYaw": 50.0,
-          "speedPitch": 75.0,
+          "speedYaw": 75.0,
+          "speedPitch": 65.0,
           "bullets": 2000,
+          "useGunnerTargetingQuality": false,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2533,7 +2582,6 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
-          "useGunnerTargetingQuality": false,
           "turret": {
             "head": "aa_turret_02",
             "gun": "aa_gun_02",
@@ -2579,9 +2627,10 @@
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "isBulletBelt": true,
-          "speedYaw": 50.0,
-          "speedPitch": 75.0,
+          "speedYaw": 75.0,
+          "speedPitch": 65.0,
           "bullets": 2000,
+          "useGunnerTargetingQuality": false,
           "allowableDelta": 2.0,
           "ChainfireTime": 60.0,
           "DelayAfterShoot": 0.0,
@@ -2598,7 +2647,6 @@
           "errMeasureVelDir": 3.0,
           "errTargetting": 1.0,
           "errExplTime": 0.0,
-          "useGunnerTargetingQuality": false,
           "turret": {
             "head": "aa_turret_03",
             "gun": "aa_gun_03",

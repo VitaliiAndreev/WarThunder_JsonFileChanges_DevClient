@@ -2787,8 +2787,47 @@
       "tank_medical_kit_expendable": {
         "image": "#ui/gameuiskin#tank_reinforcement_jp"
       },
-      "modern_tank_laser_rangefinder": {
-        "tier": 2
+      "laser_rangefinder_lws": {
+        "effects": {
+          "rangefinderMounted": true,
+          "isLaser": true,
+          "distanceError": [25.0,25.0,25.0,25.0],
+          "distanceThresholdMin": [1000.0,3000.0,5000.0,9999.0],
+          "distanceThresholdMax": [1000.0,3000.0,5000.0,9999.0],
+          "distanceErrorRealistic": [25.0,25.0,25.0,25.0],
+          "distanceThresholdMinRealistic": [1000.0,3000.0,5000.0,9999.0],
+          "distanceThresholdMaxRealistic": [1000.0,3000.0,5000.0,9999.0],
+          "timeMeasurementRange": [0.5,0.5],
+          "rcostAddParam": 0.98,
+          "sensors": [
+            {
+              "sensor": {
+                "blk": "gameData/sensors/us_an_apg_66_m_247.blk",
+                "turretIndex": 0,
+                "designationFromBody": true,
+                "designationTurretIndex": 0,
+                "dmPart": "antenna_target_location_dm"
+              }
+            },
+            {
+              "sensor": {
+                "blk": "gameData/sensors/de_gepard_fr.blk",
+                "turretIndex": 0,
+                "dmPart": "antenna_target_tagging_dm"
+              }
+            },
+            {
+              "sensor": {
+                "blk": "gameData/sensors/LaserDesignatorSensor.blk"
+              }
+            },
+            {
+              "sensor": {
+                "blk": "gameData/sensors/it_ralm-101.blk"
+              }
+            }
+          ]
+        }
       },
       "35mm_kda_HE": {
         "maxToRespawn": 1
@@ -2803,7 +2842,8 @@
       "35mm_kda_APHEI_ammo_pack": [],
       "35mm_kda_APDS_ammo_pack": [],
       "tank_smoke_screen_system_mod": {
-        "tier": 3,
+        "modClass": "protection",
+        "tier": 4,
         "effects": {
           "commonWeapons": [
             {

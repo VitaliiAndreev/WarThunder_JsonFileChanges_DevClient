@@ -2414,11 +2414,11 @@
         },
         "bridge_dm": {
           "armorThickness": 1.45,
-          "hp": 451.0
+          "hp": 450.0
         },
         "radio_station_dm": {
           "armorThickness": 1.45,
-          "hp": 275.0
+          "hp": 400.0
         }
       },
       "superstructures": {
@@ -2575,7 +2575,7 @@
           "hp": 1677.0
         },
         "fuel_tank_04_dm": {
-          "hp": 1945.0
+          "hp": 2908.0
         }
       },
       "coal_bunkers": {
@@ -2606,7 +2606,7 @@
           "hp": 250.0
         },
         "ex_armor_04_dm": {
-          "hp": 398.0
+          "hp": 255.0
         },
         "ex_armor_05_dm": {
           "hp": 480.0
@@ -2665,16 +2665,16 @@
         "armorThickness": 3.0,
         "oneSided": true,
         "main_caliber_turret_01_dm": {
-          "hp": 200.0
+          "hp": 212.0
         },
         "main_caliber_turret_02_dm": {
-          "hp": 200.0
+          "hp": 213.0
         },
         "main_caliber_turret_03_dm": {
-          "hp": 200.0
+          "hp": 212.0
         },
         "main_caliber_turret_04_dm": {
-          "hp": 200.0
+          "hp": 220.0
         }
       },
       "turrets_aux_caliber": {
@@ -2988,7 +2988,7 @@
         "armorClass": "ship_structural_steel",
         "fireProtectionHp": 5.0,
         "elevator_01_dm": {
-          "hp": 526.0
+          "hp": 500.0
         },
         "elevator_02_dm": {
           "hp": 848.0
@@ -3042,8 +3042,8 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 5.0,
         "dmgState": 0.0,
-        "radar_01_dm": {
-          "hp": 150.0
+        "antenna_target_location_01_dm": {
+          "hp": 171.0
         }
       }
     }
@@ -3808,40 +3808,40 @@
   {
     "ShipPhys": {
       "mass": {
-        "Empty": 3500000.0,
-        "momentOfInertia": [38.0,480.0,310.0],
-        "CenterOfGravity": [-2.0,-0.2,0.0]
+        "Empty": 3300000.0,
+        "momentOfInertia": [50.0,600.0,380.0],
+        "CenterOfGravity": [-2.1,-0.05,0.0]
       },
       "engines": [
         {
           "maxSpeed": 18.01
         },
         {
-          "maxReverseSpeed": 7.2
+          "maxReverseSpeed": 8.0
         },
         {
           "speedToTime": [
             {
-              "row": [5.0,6.6]
+              "row": [5.0,6.2]
             },
             {
-              "row": [10.0,15.2]
+              "row": [10.0,12.8]
             },
             {
-              "row": [18.01,29.2]
+              "row": [18.01,27.5]
             }
           ]
         },
         {
           "reverseSpeedToTime": [
             {
-              "row": [2.0,2.4]
+              "row": [2.0,2.0]
             },
             {
-              "row": [4.0,7.5]
+              "row": [4.0,5.0]
             },
             {
-              "row": [7.2,17.0]
+              "row": [8.0,11.0]
             }
           ]
         },
@@ -3931,7 +3931,7 @@
       },
       "hydrodynamics": {
         "bodyArea": 0.0,
-        "mulReaction": 1.2,
+        "mulReaction": 1.1,
         "rudder": {
           "pos": [-56.0,-0.8,0.0],
           "area": 16.0,
@@ -3943,8 +3943,8 @@
   },
   {
     "cockpit": {
-      "headPos": [0.0,21.0,-69.0],
-      "headPosOnShooting": [28.6,17.8,0.0],
+      "headPos": [0.0,23.0,-77.0],
+      "headPosOnShooting": [33.0,18.8,0.0],
       "detectionHeight": 29.0
     }
   },
@@ -3965,7 +3965,39 @@
     }
   },
   {
+    "sensors": {
+      "sensor": {
+        "blk": "gameData/sensors/naval/naval_nav_radar.blk",
+        "designationFromBody": true,
+        "designationTurretIndex": 1,
+        "dmPart": "antenna_target_location_01_dm"
+      }
+    }
+  },
+  {
+    "radarAnimations": [
+      {
+        "anim": {
+          "radarAnimVar": "radar_target_yaw_rotate",
+          "animatedRadarIdx": 0
+        }
+      },
+      {
+        "anim": {
+          "radarAnimVar": "target_tagging_yaw_rotate",
+          "animatedRadarIdx": 1,
+          "radarAnimPitchVar": "target_tagging_pitch_rotate"
+        }
+      }
+    ]
+  },
+  {
     "commonWeapons": [
+      {
+        "animatedBones": {
+          "node": "antenna_target_location_01"
+        }
+      },
       {
         "Weapon": {
           "trigger": "gunner0",
@@ -4004,12 +4036,7 @@
             "head": "main_caliber_turret_01",
             "gun": "main_caliber_gun_01",
             "barrel": "gun_barrel_01",
-            "gunnerDm": "main_caliber_turret_01_dm",
-            "linkedAnimPart": {
-              "horNode": "ex_armor_04",
-              "horLimits": [-150.0,150.0],
-              "horOriginLimits": [-150.0,150.0]
-            }
+            "gunnerDm": "main_caliber_turret_01_dm"
           },
           "limits": {
             "yaw": [-140.0,140.0],
@@ -4017,7 +4044,7 @@
           },
           "limitsTable": {
             "lim1": [-140.0,-33.0,-5.0,45.0],
-            "lim2": [-33.0,33.0,1.0,45.0],
+            "lim2": [-33.0,33.0,0.0,45.0],
             "lim3": [33.0,140.0,-5.0,45.0]
           },
           "gunStabilizer": {

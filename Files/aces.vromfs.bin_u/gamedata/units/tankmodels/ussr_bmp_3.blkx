@@ -2282,6 +2282,13 @@
     }
   },
   {
+    "sensors": {
+      "sensor": {
+        "blk": "gameData/sensors/LaserBeamRidingSensor.blk"
+      }
+    }
+  },
+  {
     "controlDevices": [
       {
         "device": {
@@ -3272,6 +3279,12 @@
             },
             {
               "node": "turret_part_bmp_3"
+            },
+            {
+              "node": "gun_mask_01"
+            },
+            {
+              "node": "gun_mask_02"
             }
           ]
         },
@@ -3731,7 +3744,31 @@
       "airstrike": [],
       "improved_optics": [],
       "modern_tank_laser_rangefinder": {
-        "tier": 1
+        "tier": 1,
+        "effects": {
+          "rangefinderMounted": true,
+          "isLaser": true,
+          "distanceError": [25.0,25.0,25.0,25.0],
+          "distanceThresholdMin": [1000.0,3000.0,5000.0,9999.0],
+          "distanceThresholdMax": [1000.0,3000.0,5000.0,9999.0],
+          "distanceErrorRealistic": [25.0,25.0,25.0,25.0],
+          "distanceThresholdMinRealistic": [1000.0,3000.0,5000.0,9999.0],
+          "distanceThresholdMaxRealistic": [1000.0,3000.0,5000.0,9999.0],
+          "timeMeasurementRange": [0.5,0.5],
+          "rcostAddParam": 0.98,
+          "sensors": [
+            {
+              "sensor": {
+                "blk": "gameData/sensors/LaserBeamRidingSensor.blk"
+              }
+            },
+            {
+              "sensor": {
+                "blk": "gameData/sensors/LaserDesignatorSensor.blk"
+              }
+            }
+          ]
+        }
       },
       "30mm_2a42_HE": {
         "maxToRespawn": 1

@@ -31,9 +31,6 @@
   "fireParamsPreset": "1700kph",
   "fightAiBehaviour": "fighter",
   "autopilotImpl": "FBW",
-  "customClassIco": "!#ui/gameuiskin#image_in_progress_ico.svg",
-  "customImage": "!#ui/unitskin#image_in_progress",
-  "customTooltipImage": "ui/aircrafts/image_in_progress",
   "DamageParts": {
     "armor10": {
       "cannon1_dm": {
@@ -2012,40 +2009,40 @@
       "mirrorNode": "blister8"
     },
     {
-      "lightPos": [4.74418,0.81799,0.19467]
+      "lightPos": [4.976167,0.607395,0.165254]
     },
     {
-      "lightColor": [0.0,0.1,0.0]
+      "lightColor": [0.91,0.05,0.13]
     },
     {
-      "lightRadius": 0.45
+      "lightRadius": 0.2
     },
     {
-      "lightPos1": [4.517507,0.705064,-0.28422]
+      "lightPos1": [4.956398,0.616251,-0.261856]
     },
     {
-      "lightColor1": [0.0,0.1,0.0]
+      "lightColor1": [0.91,0.05,0.13]
     },
     {
-      "lightRadius1": 0.45
+      "lightRadius1": 0.2
     },
     {
-      "lightPos2": [4.516283,0.392118,0.512851]
+      "lightPos2": [4.951085,0.56656,-0.004782]
     },
     {
-      "lightColor2": [0.0,0.1,0.0]
+      "lightColor2": [0.41,0.75,0.3]
     },
     {
-      "lightRadius2": 0.45
+      "lightRadius2": 0.35
     },
     {
-      "lightPos3": [4.581921,1.087765,0.131489]
+      "lightPos3": [5.024328,0.683216,-0.00347]
     },
     {
-      "lightColor3": [0.0,0.1,0.0]
+      "lightColor3": [1.91,0.65,0.02]
     },
     {
-      "lightRadius3": 0.05
+      "lightRadius3": 0.19
     },
     {
       "devices": {
@@ -2102,6 +2099,142 @@
         "g_meter": [-5.0,10.0],
         "g_meter_min": [-5.0,10.0],
         "g_meter_max": [-5.0,10.0]
+      }
+    },
+    {
+      "multifunctionDisplays": {
+        "display": [
+          {
+            "textureArea": [0.0,0.0,0.5,0.5]
+          },
+          {
+            "page": {
+              "type": "map"
+            }
+          },
+          {
+            "page": {
+              "type": "rwr"
+            }
+          },
+          {
+            "page": {
+              "type": "devices",
+              "speed": {
+                "texture": "us_mfd_speed",
+                "position": [120.0,110.0],
+                "arrowTexCoord": [0.0,0.93,0.4,0.97],
+                "backgroundTexCoord": [0.0,0.0,0.91,0.89],
+                "size": [192.0,192.0],
+                "color": "#ffff00ff",
+                "valueTextSize": 30.0,
+                "valueMul": 0.54,
+                "ranges": [
+                  {
+                    "limits": [50.0,100.0,-0.24,0.3]
+                  },
+                  {
+                    "limits": [100.0,150.0,0.3,0.69]
+                  },
+                  {
+                    "limits": [150.0,200.0,0.69,1.0]
+                  },
+                  {
+                    "limits": [200.0,250.0,1.0,1.32]
+                  }
+                ]
+              },
+              "vario": {
+                "texture": "us_mfd_vario",
+                "position": [552.0,110.0],
+                "arrowTexCoord": [0.0,0.93,0.4,0.97],
+                "backgroundTexCoord": [0.0,0.0,0.89,0.89],
+                "size": [192.0,192.0],
+                "color": "#1e1effff",
+                "valueTextSize": 30.0,
+                "valueMul": 0.1969,
+                "ranges": [
+                  {
+                    "limits": [-6.0,-4.0,0.05,0.22]
+                  },
+                  {
+                    "limits": [-4.0,-2.0,0.22,0.56]
+                  },
+                  {
+                    "limits": [-2.0,-1.0,0.56,0.72]
+                  },
+                  {
+                    "limits": [-1.0,1.0,0.72,1.28]
+                  },
+                  {
+                    "limits": [1.0,2.0,1.28,1.44]
+                  },
+                  {
+                    "limits": [2.0,4.0,1.44,1.78]
+                  },
+                  {
+                    "limits": [4.0,6.0,1.78,1.95]
+                  }
+                ]
+              },
+              "altitude_hour": {
+                "texture": "us_mfd_altitude",
+                "position": [552.0,402.0],
+                "backgroundTexCoord": [0.0,0.0,0.89,0.89],
+                "arrowTexCoord": [0.47,0.92,0.86,1.0],
+                "size": [192.0,192.0],
+                "ranges": {
+                  "limits": [0.0,10.0,-0.5,1.5]
+                }
+              },
+              "altitude_min": {
+                "texture": "us_mfd_altitude",
+                "position": [552.0,402.0],
+                "backgroundTexCoord": [0.0,0.0,0.89,0.89],
+                "arrowTexCoord": [0.0,0.93,0.4,0.97],
+                "size": [192.0,192.0],
+                "color": "#1e1effff",
+                "valueTextSize": 30.0,
+                "notDrawBackground": true,
+                "ranges": {
+                  "limits": [0.0,1000.0,-0.5,1.5]
+                }
+              },
+              "compass": {
+                "texture": "us_mfd_compass",
+                "position": [130.0,402.0],
+                "backgroundTexCoord": [0.0,0.0,0.5,1.0],
+                "arrowTexCoord": [0.5,0.0,1.0,1.0],
+                "size": [192.0,192.0],
+                "arrowSize": [192.0,192.0],
+                "ranges": {
+                  "limits": [0.0,360.0,0.0,-2.0]
+                }
+              },
+              "aviahorizon_pitch": {
+                "texture": "us_mfd_ahorizon",
+                "arrowTex": "us_mfd_ahorizon_scale",
+                "position": [340.0,256.0],
+                "backgroundTexCoord": [0.11,0.0,0.89,0.89],
+                "arrowTexCoord": [0.0,0.4,1.0,0.6],
+                "size": [180.0,180.0],
+                "ranges": {
+                  "limits": [-90.0,90.0,0.35,-0.35]
+                }
+              },
+              "aviahorizon_roll": {
+                "texture": "us_mfd_ahorizon",
+                "position": [340.0,256.0],
+                "arrowTexCoord": [0.2,0.9,0.8,1.0],
+                "size": [180.0,180.0],
+                "notDrawBackground": true,
+                "ranges": {
+                  "limits": [-180.0,180.0,-1.0,1.0]
+                }
+              }
+            }
+          }
+        ]
       }
     },
     {
@@ -2190,25 +2323,52 @@
       }
     },
     {
-      "preset": {
-        "name": "jaguar_gr1_rocket_crv7_ra79_aim_9",
-        "blk": "gameData/FlightModels/weaponPresets/jaguar_gr1_rocket_crv7_ra79_aim_9.blk",
-        "reqModification": "uk_lau_5003b_a"
-      }
+      "preset": [
+        {
+          "name": "jaguar_gr1_rocket_crv7_ra79_aim_9"
+        },
+        {
+          "blk": "gameData/FlightModels/weaponPresets/jaguar_gr1_rocket_crv7_ra79_aim_9.blk"
+        },
+        {
+          "reqModification": "uk_lau_5003b_a"
+        },
+        {
+          "reqModification": "us_aim_9g"
+        }
+      ]
     },
     {
-      "preset": {
-        "name": "jaguar_gr1_bomb_uk_540lbs_gp_aim_9",
-        "blk": "gameData/FlightModels/weaponPresets/jaguar_gr1_bomb_uk_540lbs_gp_aim_9.blk",
-        "reqModification": "uk_mk_n1_540lb"
-      }
+      "preset": [
+        {
+          "name": "jaguar_gr1_bomb_uk_540lbs_gp_aim_9"
+        },
+        {
+          "blk": "gameData/FlightModels/weaponPresets/jaguar_gr1_bomb_uk_540lbs_gp_aim_9.blk"
+        },
+        {
+          "reqModification": "uk_mk_n1_540lb"
+        },
+        {
+          "reqModification": "us_aim_9g"
+        }
+      ]
     },
     {
-      "preset": {
-        "name": "jaguar_gr1_bomb_uk_1000lbs_gp_aim_9",
-        "blk": "gameData/FlightModels/weaponPresets/jaguar_gr1_bomb_uk_1000lbs_gp_aim_9.blk",
-        "reqModification": "uk_mk_10_1000lb"
-      }
+      "preset": [
+        {
+          "name": "jaguar_gr1_bomb_uk_1000lbs_gp_aim_9"
+        },
+        {
+          "blk": "gameData/FlightModels/weaponPresets/jaguar_gr1_bomb_uk_1000lbs_gp_aim_9.blk"
+        },
+        {
+          "reqModification": "uk_mk_10_1000lb"
+        },
+        {
+          "reqModification": "us_aim_9g"
+        }
+      ]
     }
   ],
   "sensors": {
@@ -2355,19 +2515,17 @@
     "chuteFallSpeed": 1.9
   },
   "cutting": {
-    "emtr_break_wing1_l_from": [-0.820025,-0.0217219,3.80443],
-    "emtr_break_wing1_l_to": [-0.820025,-0.0217219,4.62286],
-    "emtr_break_wing2_l_from": [-0.820025,-0.0217219,5.85051],
-    "emtr_break_wing2_l_to": [-0.820025,-0.0217219,6.68148],
-    "emtr_break_wing1_r_from": [-0.820025,-0.0217219,-3.80443],
-    "emtr_break_wing1_r_to": [-0.820025,-0.0217219,-4.62286],
-    "emtr_break_wing2_r_from": [-0.820025,-0.0217219,-5.85051],
-    "emtr_break_wing2_r_to": [-0.820025,-0.0217219,-6.68148],
-    "emtr_break_wing_tail": [-4.87037,0.0,0.0],
-    "finCut": false,
-    "emtr_break_stab_l_from": [-6.67327,3.0542,0.51771],
-    "emtr_break_stab_l_to": [-6.67327,3.0542,2.07084],
-    "emtr_break_stab_r_from": [-6.67327,3.0542,-0.51771],
-    "emtr_break_stab_r_to": [-6.67327,3.0542,-2.07084]
+    "emtr_break_wing1_l_from": [-0.0938195,0.743883,1.9198],
+    "emtr_break_wing1_l_to": [-0.0938195,0.743883,2.38459],
+    "emtr_break_wing2_l_from": [-0.0938195,0.743883,3.08178],
+    "emtr_break_wing2_l_to": [-0.0938195,0.743883,3.57296],
+    "emtr_break_wing1_r_from": [-0.0938195,0.743883,-1.9198],
+    "emtr_break_wing1_r_to": [-0.0938195,0.743883,-2.38459],
+    "emtr_break_wing2_r_from": [-0.0938195,0.743883,-3.08178],
+    "emtr_break_wing2_r_to": [-0.0938195,0.743883,-3.57296],
+    "emtr_break_wing_tail": [-3.2,0.0,0.0],
+    "finCut": true,
+    "emtr_break_tail_from": [-3.46162,0.160974,-1.32634e-07],
+    "emtr_break_tail_to": [-5.96479,0.160974,-1.32634e-07]
   }
 }

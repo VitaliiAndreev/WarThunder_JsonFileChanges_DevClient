@@ -1159,7 +1159,7 @@
         "radar_02_dm": {
           "hp": 150.0
         },
-        "antenna_target_location_01_dm": {
+        "antenna_target_tagging_01_dm": {
           "hp": 150.0
         },
         "fire_director_01_dm": {
@@ -2402,32 +2402,22 @@
     }
   },
   {
-    "sensors": [
-      {
-        "sensor": {
-          "blk": "gameData/sensors/naval/su_foot_n.blk",
-          "designationFromBody": true,
-          "designationTurretIndex": 1,
-          "dmPart": "antenna_target_location_01_dm"
+    "sensors": {
+      "sensor": [
+        {
+          "blk": "gameData/sensors/naval/ship_optical_sight.blk"
+        },
+        {
+          "dmPart": "fire_director_mount_01_dm"
+        },
+        {
+          "dmPart": "fire_director_01_dm"
+        },
+        {
+          "dmPart": "antenna_target_tagging_01_dm"
         }
-      },
-      {
-        "sensor": [
-          {
-            "blk": "gameData/sensors/naval/ship_optical_sight.blk"
-          },
-          {
-            "turretIndex": 0
-          },
-          {
-            "dmPart": "fire_director_mount_01_dm"
-          },
-          {
-            "dmPart": "fire_director_01_dm"
-          }
-        ]
-      }
-    ]
+      ]
+    }
   },
   {
     "radarAnimations": [
@@ -2451,10 +2441,10 @@
       {
         "animatedBones": [
           {
-            "node": "fire_director_01_mount_dm"
+            "node": "fire_director_mount_01"
           },
           {
-            "node": "fire_director_01_dm"
+            "node": "fire_director_01"
           }
         ]
       },

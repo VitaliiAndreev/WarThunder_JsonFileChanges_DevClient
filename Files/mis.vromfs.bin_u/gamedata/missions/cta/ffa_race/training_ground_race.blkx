@@ -1377,9 +1377,14 @@
           "value": 1.0,
           "var": "players_online_int"
         },
-        "triggerEnable": {
-          "target": "delayed_players_remove"
-        }
+        "triggerEnable": [
+          {
+            "target": "delayed_players_remove"
+          },
+          {
+            "target": "delayed_players_removal_stop"
+          }
+        ]
       },
       "else_actions": []
     },
@@ -1398,15 +1403,17 @@
       },
       "conditions": {
         "unitWhenStatus": {
-          "object_type": "isDelayed",
-          "check_objects": "all",
+          "object_type": "isMarked",
+          "check_objects": "any",
           "object_marking": 0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
-          "object": "players_squad"
+          "object": "players_squad",
+          "force_check_delayed": true,
+          "unit_type_ex": "isDelayed",
+          "target_marking_var": "delayed_marker_int"
         }
       },
       "actions": {
@@ -1414,13 +1421,51 @@
           "target_marking": 0,
           "target": "players_squad",
           "useForTriggerFiltered": true
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "delayed_marker_int"
         }
       },
       "else_actions": {
-        "triggerDisable": {
-          "target": "delayed_players_remove"
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "delayed_marker_int"
         }
       }
+    },
+    "delayed_players_removal_stop": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "conditions": {
+        "varCompareInt": {
+          "var_value": "delayed_marker_int",
+          "value": 4,
+          "comparasion_func": "more"
+        }
+      },
+      "actions": {
+        "triggerDisable": {
+          "target": "delayed_players_remove"
+        },
+        "varSetInt": {
+          "value": 1,
+          "var": "delayed_marker_int"
+        }
+      },
+      "else_actions": []
     },
     "player_in_spawnpoint01": {
       "is_enabled": false,
@@ -1491,6 +1536,9 @@
             },
             {
               "target": "player_allow_bailout01"
+            },
+            {
+              "target": "player_away_from_spawnpoint01"
             }
           ]
         },
@@ -1540,6 +1588,45 @@
           }
         }
       ],
+      "else_actions": []
+    },
+    "player_away_from_spawnpoint01": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "conditions": {
+        "unitWhenStatus": {
+          "object_type": "isMarked",
+          "check_objects": "any",
+          "object_marking": 1,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "check_period": 1.0,
+          "object": "players_squad",
+          "force_check_delayed": true,
+          "unit_type_ex": "isDelayed"
+        }
+      },
+      "actions": {
+        "triggerEnable": {
+          "target": "player_in_spawnpoint01"
+        },
+        "unitMark": {
+          "target_marking": 0,
+          "target": "players_squad",
+          "useForTriggerFiltered": true
+        }
+      },
       "else_actions": []
     },
     "player_allow_bailout01": {
@@ -1747,6 +1834,9 @@
           },
           {
             "target": "player_allow_bailout02"
+          },
+          {
+            "target": "player_away_from_spawnpoint02"
           }
         ],
         "unitMark": {
@@ -1784,6 +1874,45 @@
         "playerOptions": {
           "object": "players_squad",
           "allowBailout": false,
+          "useForTriggerFiltered": true
+        }
+      },
+      "else_actions": []
+    },
+    "player_away_from_spawnpoint02": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "conditions": {
+        "unitWhenStatus": {
+          "object_type": "isMarked",
+          "check_objects": "any",
+          "object_marking": 2,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "check_period": 1.0,
+          "object": "players_squad",
+          "force_check_delayed": true,
+          "unit_type_ex": "isDelayed"
+        }
+      },
+      "actions": {
+        "triggerEnable": {
+          "target": "player_in_spawnpoint02"
+        },
+        "unitMark": {
+          "target_marking": 0,
+          "target": "players_squad",
           "useForTriggerFiltered": true
         }
       },
@@ -2013,6 +2142,9 @@
             },
             {
               "target": "player_allow_bailout03"
+            },
+            {
+              "target": "player_away_from_spawnpoint03"
             }
           ]
         },
@@ -2062,6 +2194,45 @@
           }
         }
       ],
+      "else_actions": []
+    },
+    "player_away_from_spawnpoint03": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "conditions": {
+        "unitWhenStatus": {
+          "object_type": "isMarked",
+          "check_objects": "any",
+          "object_marking": 3,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "check_period": 1.0,
+          "object": "players_squad",
+          "force_check_delayed": true,
+          "unit_type_ex": "isDelayed"
+        }
+      },
+      "actions": {
+        "triggerEnable": {
+          "target": "player_in_spawnpoint03"
+        },
+        "unitMark": {
+          "target_marking": 0,
+          "target": "players_squad",
+          "useForTriggerFiltered": true
+        }
+      },
       "else_actions": []
     },
     "player_allow_bailout03": {
@@ -2288,6 +2459,9 @@
             },
             {
               "target": "player_allow_bailout04"
+            },
+            {
+              "target": "player_away_from_spawnpoint04"
             }
           ]
         },
@@ -2337,6 +2511,45 @@
           }
         }
       ],
+      "else_actions": []
+    },
+    "player_away_from_spawnpoint04": {
+      "is_enabled": false,
+      "comments": "",
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "conditions": {
+        "unitWhenStatus": {
+          "object_type": "isMarked",
+          "check_objects": "any",
+          "object_marking": 4,
+          "object_var_name": "",
+          "object_var_comp_op": "equal",
+          "object_var_value": 0,
+          "check_period": 1.0,
+          "object": "players_squad",
+          "force_check_delayed": true,
+          "unit_type_ex": "isDelayed"
+        }
+      },
+      "actions": {
+        "triggerEnable": {
+          "target": "player_in_spawnpoint04"
+        },
+        "unitMark": {
+          "target_marking": 0,
+          "target": "players_squad",
+          "useForTriggerFiltered": true
+        }
+      },
       "else_actions": []
     },
     "player_allow_bailout04": {
@@ -2626,6 +2839,18 @@
             },
             {
               "target": "player_in_spawnpoint04"
+            },
+            {
+              "target": "player_away_from_spawnpoint01"
+            },
+            {
+              "target": "player_away_from_spawnpoint02"
+            },
+            {
+              "target": "player_away_from_spawnpoint03"
+            },
+            {
+              "target": "player_away_from_spawnpoint04"
             }
           ]
         },
@@ -4107,7 +4332,6 @@
           "object_type": "isKilled",
           "check_objects": "any",
           "object_marking": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
@@ -5097,7 +5321,6 @@
           "object_type": "isKilled",
           "check_objects": "any",
           "object_marking": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
@@ -6087,7 +6310,6 @@
           "object_type": "isKilled",
           "check_objects": "any",
           "object_marking": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
           "object_var_name": "",
           "object_var_comp_op": "equal",
@@ -6979,7 +7201,6 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
           "object": "pillars_squad_common"
         }
@@ -7022,7 +7243,6 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
           "object": "pillars_squad02"
         },
@@ -7071,7 +7291,6 @@
           "object_var_name": "",
           "object_var_comp_op": "equal",
           "object_var_value": 0,
-          "target_type": "isAlive",
           "check_period": 1.0,
           "object": "pillars_squad01"
         },
@@ -7173,7 +7392,8 @@
     "player05_range_hint_str": "",
     "player06_range_hint_str": "",
     "player07_range_hint_str": "",
-    "player08_range_hint_str": ""
+    "player08_range_hint_str": "",
+    "delayed_marker_int": 1
   },
   "dialogs": [],
   "airfields": [],
@@ -30479,7 +30699,7 @@
   "wayPoints": [],
   "__viewPoints": {
     "viewpt_01": {
-      "pos": [1786.61,-366.99,1585.91],
+      "pos": [1786.61,-360.795,1585.91],
       "ht": 2.0647
     }
   }

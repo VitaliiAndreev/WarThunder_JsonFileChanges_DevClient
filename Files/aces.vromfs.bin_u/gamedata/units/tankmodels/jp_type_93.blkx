@@ -2790,7 +2790,34 @@
       "tank_tool_kit": [],
       "new_tank_horizontal_aiming": [],
       "new_tank_vertical_aiming": [],
-      "modern_tank_laser_rangefinder": [],
+      "modern_tank_laser_rangefinder": {
+        "effects": {
+          "rangefinderMounted": true,
+          "isLaser": true,
+          "distanceError": [25.0,25.0,25.0,25.0],
+          "distanceThresholdMin": [1000.0,3000.0,5000.0,9999.0],
+          "distanceThresholdMax": [1000.0,3000.0,5000.0,9999.0],
+          "distanceErrorRealistic": [25.0,25.0,25.0,25.0],
+          "distanceThresholdMinRealistic": [1000.0,3000.0,5000.0,9999.0],
+          "distanceThresholdMaxRealistic": [1000.0,3000.0,5000.0,9999.0],
+          "timeMeasurementRange": [0.5,0.5],
+          "rcostAddParam": 0.98,
+          "sensors": [
+            {
+              "sensor": {
+                "blk": "gameData/sensors/it_tv_tracker_3jb10.blk",
+                "turretIndex": 0,
+                "dmPart": "optic_gun_dm"
+              }
+            },
+            {
+              "sensor": {
+                "blk": "gameData/sensors/LaserDesignatorSensor.blk"
+              }
+            }
+          ]
+        }
+      },
       "tank_medical_kit": {
         "image": "#ui/gameuiskin#tank_reinforcement_jp"
       },

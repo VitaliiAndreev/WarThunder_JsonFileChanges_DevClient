@@ -10602,6 +10602,35 @@
         ]
       }
     },
+    "laser_rangefinder_lws": {
+      "image": "#ui/gameuiskin#counterMeasures",
+      "tier": 2,
+      "modClass": "firepower",
+      "effects": {
+        "rangefinderMounted": true,
+        "isLaser": true,
+        "distanceError": [25.0,25.0,25.0,25.0],
+        "distanceThresholdMin": [1000.0,3000.0,5000.0,9999.0],
+        "distanceThresholdMax": [1000.0,3000.0,5000.0,9999.0],
+        "distanceErrorRealistic": [25.0,25.0,25.0,25.0],
+        "distanceThresholdMinRealistic": [1000.0,3000.0,5000.0,9999.0],
+        "distanceThresholdMaxRealistic": [1000.0,3000.0,5000.0,9999.0],
+        "timeMeasurementRange": [0.5,0.5],
+        "rcostAddParam": 0.98,
+        "sensors": [
+          {
+            "sensor": {
+              "blk": "gameData/sensors/LaserDesignatorSensor.blk"
+            }
+          },
+          {
+            "sensor": {
+              "blk": "gameData/sensors/it_ralm-101.blk"
+            }
+          }
+        ]
+      }
+    },
     "modern_tank_laser_rangefinder": {
       "image": "#ui/gameuiskin#tank_laser_rangefinder",
       "tier": 4,
@@ -10617,8 +10646,10 @@
         "distanceThresholdMaxRealistic": [1000.0,3000.0,5000.0,9999.0],
         "timeMeasurementRange": [0.5,0.5],
         "rcostAddParam": 0.98,
-        "sensor": {
-          "blk": "gameData/sensors/LaserDesignatorSensor.blk"
+        "sensors": {
+          "sensor": {
+            "blk": "gameData/sensors/LaserDesignatorSensor.blk"
+          }
         }
       }
     },
@@ -13973,6 +14004,14 @@
       "group": "120mm_HE",
       "effects": {
         "additiveBulletMod": "120mm_jp_HE"
+      }
+    },
+    "120mm_jp_SAP": {
+      "image": "#ui/gameuiskin#tank_ammo",
+      "isReserve": true,
+      "group": "120mm_AP",
+      "effects": {
+        "additiveBulletMod": "120mm_jp_SAP"
       }
     },
     "105mm_japan_HE": {
