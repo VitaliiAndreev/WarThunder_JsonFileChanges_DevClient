@@ -51,7 +51,7 @@
       "massEnd": 55.8
     },
     {
-      "maxDeltaAngle": 2.0
+      "maxDeltaAngle": 0.0
     },
     {
       "dragCx": 0.018
@@ -66,7 +66,7 @@
       "wingAreaMult": 1.4
     },
     {
-      "CxK": 4.1
+      "CxK": 4.2
     },
     {
       "WdK": [0.1,0.1,0.1]
@@ -78,10 +78,13 @@
       "finsAoaVer": 0.16
     },
     {
-      "force": 18100.0
+      "force": 13070.0
     },
     {
-      "timeFire": 3.5
+      "timeFire": 5.0
+    },
+    {
+      "fireDelay": 0.0
     },
     {
       "spawnExplosionFx": false
@@ -90,7 +93,7 @@
       "spawnExplosionWreckage": false
     },
     {
-      "explosionEffect": "atgm_hit"
+      "explosionEffect": "explosion_midair_medium"
     },
     {
       "defFxScale": [2.2,2.5]
@@ -114,7 +117,16 @@
       "explosionPatchRadius": 5.0
     },
     {
-      "smokeEffect": "hydra_smoke_modern"
+      "fireEffect": "rocket_fire_light_huge"
+    },
+    {
+      "smokeEffect": ""
+    },
+    {
+      "hazeEffect": "haze_missile"
+    },
+    {
+      "endSmokeViscosity": 0.5
     },
     {
       "maxDistance": 18000.0
@@ -169,9 +181,6 @@
     },
     {
       "explodeRadius": [1.0,3.5]
-    },
-    {
-      "explosionPatchRadius": 5.0
     },
     {
       "rendinstDamageRadius": 15.0
@@ -382,10 +391,11 @@
         "rangeMax": 11000.0,
         "fov": 2.5,
         "minAngleToSun": 10.0,
-        "lockAngleMax": 10.0,
+        "lockAngleMax": 40.0,
         "angleMax": 40.0,
         "rateMax": 12.0,
-        "prolongationTimeMax": 1.0
+        "prolongationTimeMax": 1.0,
+        "designationSourceTypeMask": 2
       }
     },
     {

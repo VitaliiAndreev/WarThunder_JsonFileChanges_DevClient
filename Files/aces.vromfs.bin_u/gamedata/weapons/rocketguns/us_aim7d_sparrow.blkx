@@ -51,7 +51,7 @@
       "massEnd": 144.0
     },
     {
-      "maxDeltaAngle": 2.0
+      "maxDeltaAngle": 0.0
     },
     {
       "dragCx": 0.018
@@ -78,10 +78,13 @@
       "finsAoaVer": 0.16
     },
     {
-      "force": 52000.0
+      "force": 41000.0
     },
     {
       "timeFire": 2.1
+    },
+    {
+      "fireDelay": 0.25
     },
     {
       "spawnExplosionFx": false
@@ -90,7 +93,7 @@
       "spawnExplosionWreckage": false
     },
     {
-      "explosionEffect": "atgm_hit"
+      "explosionEffect": "explosion_midair_big"
     },
     {
       "defFxScale": [2.2,2.5]
@@ -114,7 +117,16 @@
       "explosionPatchRadius": 5.0
     },
     {
-      "smokeEffect": "hydra_smoke_modern"
+      "fireEffect": "rocket_fire_light_huge"
+    },
+    {
+      "smokeEffect": ""
+    },
+    {
+      "hazeEffect": "haze_missile"
+    },
+    {
+      "endSmokeViscosity": 0.5
     },
     {
       "maxDistance": 45000.0
@@ -174,9 +186,6 @@
       "explodeRadius": [1.0,3.5]
     },
     {
-      "explosionPatchRadius": 5.0
-    },
-    {
       "rendinstDamageRadius": 15.0
     },
     {
@@ -213,7 +222,7 @@
       "speedViscosity": 0.2
     },
     {
-      "timeLife": 60.0
+      "timeLife": 40.0
     },
     {
       "machMax": 4.0
@@ -382,7 +391,7 @@
         "angleMax": 45.0,
         "rateMax": 12.0,
         "prolongationTimeMax": 1.0,
-        "targetDesignator": true,
+        "designationSourceTypeMask": 2,
         "transmitter": {
           "power": 200.0,
           "antenna": {
@@ -401,12 +410,12 @@
         },
         "dopplerSpeed": {
           "presents": true,
-          "minValue": -2000.0,
-          "maxValue": 2000.0,
+          "minValue": -3000.0,
+          "maxValue": 3000.0,
           "width": 15.0,
           "signalWidthMin": 7.0,
           "refWidth": 45.0,
-          "dopplerSpeedGateSearchRange": 160.0
+          "dopplerSpeedGateSearchRange": 300.0
         }
       }
     },
@@ -433,6 +442,39 @@
       "proximityFuse": {
         "timeOut": 2.0,
         "radius": 8.0
+      }
+    },
+    {
+      "table0": {
+        "altitude": 1500.0,
+        "fighterMach": [0.7,1.0],
+        "targetMach": [-0.7,-0.7],
+        "targetMach2Mult": -1.0,
+        "rangeMin": [3200.0,1200.0,3400.0,1050.0],
+        "rangeMax": [16000.0,3200.0,20000.0,3800.0],
+        "altDiff": [500.0,1200.0]
+      }
+    },
+    {
+      "table1": {
+        "altitude": 7600.0,
+        "fighterMach": [0.9,1.2],
+        "targetMach": [-0.9,-0.9],
+        "targetMach2Mult": -1.0,
+        "rangeMin": [5000.0,1800.0,5200.0,1550.0],
+        "rangeMax": [24000.0,5400.0,28000.0,6300.0],
+        "altDiff": [500.0,1200.0]
+      }
+    },
+    {
+      "table2": {
+        "altitude": 12000.0,
+        "fighterMach": [1.4,1.8],
+        "targetMach": [-1.4,-1.4],
+        "targetMach2Mult": -1.0,
+        "rangeMin": [7500.0,2400.0,7700.0,2050.0],
+        "rangeMax": [35000.0,10000.0,46000.0,11600.0],
+        "altDiff": [500.0,1000.0]
       }
     },
     {

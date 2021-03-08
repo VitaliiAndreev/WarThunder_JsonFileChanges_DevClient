@@ -114,6 +114,18 @@
     "depthTraceCriticalDepth": 2.0
   },
   {
+    "haveAnchor": true
+  },
+  {
+    "anchorPos": [47.18,4.22,-1.66]
+  },
+  {
+    "spawn_count": {
+      "numSpawnsPerBattleArcade": 3,
+      "numSpawnsPerBattleHistorical": 3
+    }
+  },
+  {
     "hideNodesInDmg": {
       "node": "flag"
     }
@@ -123,6 +135,12 @@
       {
         "replace_tex": {
           "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_03_c*",
           "to": "flag_ussr_01_c_tomoe*"
         }
       },
@@ -200,6 +218,12 @@
       },
       {
         "replace_tex": {
+          "from": "flag_germany_05_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
           "from": "germany_flag_decal*",
           "to": "germany_harm_flag_decal*"
         }
@@ -226,6 +250,12 @@
         "replace_tex": {
           "from": "airplane_usa_curtiss_sc_seahawk_c*",
           "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_uk_vought_os2u_kingfisher_usa_c*",
+          "to": "airplane_uk_vought_os2u_kingfisher_usa_c_tomoe*"
         }
       }
     ]
@@ -1421,6 +1451,7 @@
   {
     "DamageParts": {
       "formatVersion": 2,
+      "createSecondaryShatters": false,
       "compartments": {
         "fireParamsPreset": "ship_cover_destroyer",
         "stopChanceOnDeadPart": 0.9,
@@ -1803,7 +1834,6 @@
       },
       "ammo_storages": {
         "armorClass": "ship_structural_steel",
-        "createSecondaryShatters": false,
         "oneSided": true,
         "armorThickness": 10.0,
         "fireProtectionHp": 15.0
@@ -2664,8 +2694,8 @@
           },
           {
             "onKill": {
-              "nothing": 0.85,
-              "fire": 0.15
+              "nothing": 0.75,
+              "fire": 0.25
             }
           }
         ]
@@ -3682,13 +3712,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_01",
@@ -3805,7 +3835,7 @@
             "accuracyAir": 1.0
           },
           {
-            "accuracyGnd": 0.5
+            "accuracyGnd": 0.8
           },
           {
             "errMeasureVel": 0.0
@@ -3817,13 +3847,13 @@
             "errMeasureVelFast": 100.0
           },
           {
-            "errMeasureVelFwdShift": 1.0
+            "errMeasureVelFwdShift": 0.5
           },
           {
             "errMeasureVelDir": 3.0
           },
           {
-            "errTargetting": 1.0
+            "errTargetting": 3.0
           },
           {
             "errExplTime": 0.0
@@ -3915,13 +3945,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_03",
@@ -3986,13 +4016,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_04",
@@ -4047,13 +4077,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_01",
@@ -4118,13 +4148,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_02",
@@ -4282,6 +4312,10 @@
       "120mm_jp_type3_naval_he": [],
       "120mm_jp_type0_distant_fuse_naval_he": [],
       "120mm_jp_type0_distant_fuse_naval_he_ammo_pack": [],
+      "120mm_jp_type1_base_fuse_naval_he": [],
+      "120mm_jp_type1_base_fuse_naval_he_ammo_pack": {
+        "prevModification": "120mm_jp_type0_distant_fuse_naval_he_ammo_pack"
+      },
       "7_7mm_vickers_navy_universal": [],
       "7_7mm_lewis_navy_ap": [],
       "7_7mm_lewis_navy_ap_ammo_pack": [],
@@ -4294,9 +4328,11 @@
       "new_main_caliber_turrets": {
         "reqModification": "new_aux_caliber_turrets"
       },
-      "ship_rangefinder": [],
-      "ship_bomb_mortar": {
+      "ship_rangefinder": {
         "prevModification": "7_7mm_lewis_navy_incendiary_ammo_pack"
+      },
+      "ship_bomb_mortar": {
+        "prevModification": "ship_rangefinder"
       },
       "torpedoes_movement_mode": {
         "prevModification": "new_main_caliber_turrets",
@@ -4306,7 +4342,7 @@
         }
       },
       "ship_mines": {
-        "prevModification": "ship_rangefinder"
+        "prevModification": "120mm_jp_type1_base_fuse_naval_he_ammo_pack"
       }
     }
   },

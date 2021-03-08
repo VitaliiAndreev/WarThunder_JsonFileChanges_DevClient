@@ -23,10 +23,9 @@
     "bulletType": "atgm_tank",
     "cumulativeSecondaryShattersPreset": "atgm",
     "explodeOnRendinst": true,
-    "modelName": "tank_bullet_heat_fs",
     "fresnel": [0.23,0.1,2.0],
     "bulletName": "us_starstreak",
-    "maxDeltaAngle": 2.0,
+    "maxDeltaAngle": 0.0,
     "dragCx": 0.027,
     "length": 1.08,
     "distFromCmToStab": 0.005,
@@ -44,6 +43,7 @@
     "thrustDeviation": 0.01,
     "operated": true,
     "isBeamRider": true,
+    "autoAimingMultiChannel": true,
     "operatedDist": 7000.0,
     "autoLeveling": true,
     "autoAiming": true,
@@ -57,7 +57,10 @@
     "waterCollisionEffect": "120-203_he_water_splash",
     "waterFxScale": [1.2,1.4],
     "explosionPatchRadius": 5.0,
-    "smokeEffect": "hydra_smoke_modern",
+    "fireEffect": "rocket_fire_short",
+    "smokeEffect": "",
+    "hazeEffect": "haze_missile",
+    "endSmokeViscosity": 0.05,
     "maxDistance": 8500.0,
     "minDistance": 30.0,
     "spawnExplosionWreckage": false,
@@ -110,9 +113,9 @@
       "operatedDist": 9800.0,
       "autoLeveling": true,
       "autoAiming": true,
-      "maxAxisValues": 1.0,
+      "maxAxisValues": 2.8,
       "aimSensitivity": 15.0,
-      "autoAimTrackingSensitivity": 0.4,
+      "autoAimTrackingSensitivity": 0.35,
       "explosionEffect": "atgm_hit",
       "defFxScale": [2.2,2.5],
       "groundCollisionEffect": "art_ground_splash",
@@ -121,7 +124,10 @@
       "waterCollisionEffect": "120-203_he_water_splash",
       "waterFxScale": [1.2,1.4],
       "explosionPatchRadius": 5.0,
+      "fireEffect": "rocket_fire_short",
       "smokeEffect": "",
+      "hazeEffect": "haze_missile",
+      "endSmokeViscosity": 0.05,
       "maxDistance": 9800.0,
       "minDistance": 30.0,
       "spawnExplosionWreckage": false,
@@ -141,6 +147,8 @@
       "speedViscosity": 0.1,
       "timeToLive": 30.4,
       "price": 3000.0,
+      "hasTracerTrail": true,
+      "tracerTrailEmitter": [-0.5,0.0,0.0],
       "collisions": {
         "steel": {
           "fx": "cannon_hit_armor_cumulative",
@@ -169,6 +177,14 @@
       "hitpower": {
         "HitPower0m": [1.0,500.0],
         "HitPower7000m": [0.9,7000.0]
+      },
+      "tracerTrail": {
+        "smokeEffect": "",
+        "visual": {
+          "traceFreq": 1,
+          "tracer": "152mmRed",
+          "trail": "black"
+        }
       }
     },
     "stabilityRicochetModifier": [

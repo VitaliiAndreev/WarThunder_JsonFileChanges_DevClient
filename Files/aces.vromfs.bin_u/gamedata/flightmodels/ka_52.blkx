@@ -44,9 +44,6 @@
     "armor10": {
       "cannon1_dm": {
         "hp": 15.0
-      },
-      "radar_dm": {
-        "hp": 15.0
       }
     },
     "armor_engine": {
@@ -55,14 +52,6 @@
         "hp": 30.5
       },
       "engine2_dm": {
-        "genericDamageMult": 1.6,
-        "hp": 30.5
-      },
-      "propeller_shaft1_dm": {
-        "genericDamageMult": 1.6,
-        "hp": 30.5
-      },
-      "propeller_shaft2_dm": {
         "genericDamageMult": 1.6,
         "hp": 30.5
       },
@@ -107,12 +96,23 @@
         "hp": 19.5
       }
     },
+    "dural5": {
+      "radar_dm": {
+        "hp": 35.0
+      }
+    },
     "new_armor_glass44": {
       "armor1_dm": {
         "hp": 110.0
       }
     },
     "protected_controls": {
+      "propeller_shaft1_dm": {
+        "hp": 60.5
+      },
+      "propeller_shaft2_dm": {
+        "hp": 60.5
+      },
       "tailcontrol_dm": {
         "hp": 80.5
       },
@@ -556,78 +556,14 @@
       }
     },
     {
-      "part": [
-        {
-          "name": "propeller_shaft1_dm"
-        },
-        {
-          "onHit": {
-            "fire": 0.001,
-            "leak_oil": 0.8,
-            "cut": 0.0
-          }
-        },
-        {
-          "onHit": {
-            "damage": 30.0,
-            "fire": 0.005,
-            "leak_oil": 0.95,
-            "cut": 0.0
-          }
-        },
-        {
-          "onKill": {
-            "fire": 25.0,
-            "leak_oil": 10.0,
-            "cut": 0.0
-          }
-        },
-        {
-          "onKill": {
-            "damage": 30.0,
-            "fire": 30.0,
-            "leak_oil": 10.0,
-            "cut": 0.0
-          }
-        }
-      ]
+      "part": {
+        "name": "propeller_shaft1_dm"
+      }
     },
     {
-      "part": [
-        {
-          "name": "propeller_shaft2_dm"
-        },
-        {
-          "onHit": {
-            "fire": 0.001,
-            "leak_oil": 0.8,
-            "cut": 0.0
-          }
-        },
-        {
-          "onHit": {
-            "damage": 30.0,
-            "fire": 0.005,
-            "leak_oil": 0.95,
-            "cut": 0.0
-          }
-        },
-        {
-          "onKill": {
-            "fire": 25.0,
-            "leak_oil": 10.0,
-            "cut": 0.0
-          }
-        },
-        {
-          "onKill": {
-            "damage": 30.0,
-            "fire": 30.0,
-            "leak_oil": 10.0,
-            "cut": 0.0
-          }
-        }
-      ]
+      "part": {
+        "name": "propeller_shaft2_dm"
+      }
     },
     {
       "part": {
@@ -1461,8 +1397,8 @@
   },
   "cockpit": {
     "textToShowInCockpit": "msg/textToShowInCockpit",
-    "headPos": [2.47,0.51,0.382],
-    "headPosOnShooting": [2.4,0.51,0.382],
+    "headPos": [2.47,0.487,0.382],
+    "headPosOnShooting": [2.4,0.487,0.382],
     "lightPos": [3.191985,0.061043,0.469077],
     "lightColor": [0.01,0.6,0.1],
     "lightRadius": 0.3,
@@ -1841,7 +1777,6 @@
         "defaultPitch": 0.0,
         "speedYaw": 40.0,
         "speedPitch": 40.0,
-        "bullets": 1,
         "aimForOperatedShell": true,
         "turret": {
           "head": "optic1_turret",
@@ -2557,6 +2492,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -2748,6 +2686,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -2943,6 +2884,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -3043,6 +2987,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -3134,6 +3081,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -3239,6 +3189,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -3330,6 +3283,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -3435,6 +3391,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -3526,6 +3485,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -3631,6 +3593,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -3722,6 +3687,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -3827,6 +3795,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -3918,6 +3889,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -4899,7 +4873,6 @@
               "defaultPitch": 0.0,
               "speedYaw": 40.0,
               "speedPitch": 40.0,
-              "bullets": 1,
               "aimForOperatedShell": true,
               "turret": {
                 "head": "optic1_turret",
@@ -5023,7 +4996,6 @@
               "defaultPitch": 0.0,
               "speedYaw": 40.0,
               "speedPitch": 40.0,
-              "bullets": 1,
               "aimForOperatedShell": true,
               "turret": {
                 "head": "optic1_turret",
@@ -5112,24 +5084,60 @@
             ]
           },
           {
-            "Weapon": {
-              "trigger": "flares",
-              "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
-              "emitter": "emtr_flare1",
-              "bullets": 64,
-              "external": true,
-              "separate": false
-            }
+            "Weapon": [
+              {
+                "trigger": "flares"
+              },
+              {
+                "startFx": ""
+              },
+              {
+                "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk"
+              },
+              {
+                "emitter": "emtr_flare1"
+              },
+              {
+                "bullets": 64
+              },
+              {
+                "external": true
+              },
+              {
+                "separate": false
+              },
+              {
+                "startFx": ""
+              }
+            ]
           },
           {
-            "Weapon": {
-              "trigger": "flares",
-              "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
-              "emitter": "emtr_flare2",
-              "bullets": 64,
-              "external": true,
-              "separate": false
-            }
+            "Weapon": [
+              {
+                "trigger": "flares"
+              },
+              {
+                "startFx": ""
+              },
+              {
+                "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk"
+              },
+              {
+                "emitter": "emtr_flare2"
+              },
+              {
+                "bullets": 64
+              },
+              {
+                "external": true
+              },
+              {
+                "separate": false
+              },
+              {
+                "startFx": ""
+              }
+            ]
           }
         ],
         "sensors": [

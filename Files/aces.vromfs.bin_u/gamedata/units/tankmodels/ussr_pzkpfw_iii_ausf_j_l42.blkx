@@ -885,8 +885,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -898,8 +917,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -1632,6 +1652,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -1653,7 +1682,7 @@
     "cockpit": {
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
-      "sightFov": 25.0,
+      "sightFov": 20.0,
       "sightName": "default_tank_spg",
       "headPos": [0.0,4.0,-8.0],
       "headPosOnShooting": [-0.2,3.1,0.0],
@@ -1846,6 +1875,9 @@
         "turret_03_front_dm": {
           "armorThickness": 20.0
         },
+        "turret_04_back_dm": {
+          "armorThickness": 31.5
+        },
         "ex_decor_04_dm": {
           "armorThickness": 5.0,
           "armorClass": "tank_structural_steel"
@@ -1901,6 +1933,10 @@
           "armorThickness": 3.0,
           "hp": 20.0
         },
+        "optic_body_03_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
         "optic_turret_01_dm": {
           "armorThickness": 3.0,
           "hp": 20.0
@@ -1918,6 +1954,30 @@
           "hp": 20.0
         },
         "optic_turret_05_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_07_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_08_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_09_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_10_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_11_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_12_dm": {
           "armorThickness": 3.0,
           "hp": 20.0
         }
@@ -2309,8 +2369,11 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
+        "fireParamsPreset": "fuel_internal",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -2332,8 +2395,9 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fireParamsPreset": "fuel_exterior",
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
@@ -2359,6 +2423,14 @@
       "ex_decor_l_02_dm": true,
       "ex_decor_l_07_dm": true,
       "ex_decor_r_08_dm": true
+    }
+  },
+  {
+    "user_skin": {
+      "name": "pzkpfw_III_ausf_J_kwk_38_L_42",
+      "replace_tex": {
+        "from": "ger_camo_grey*"
+      }
     }
   },
   {
@@ -2512,12 +2584,28 @@
     }
   },
   {
-    "default_skin": {
-      "replace_tex": {
-        "from": "ger_camo_grey*",
-        "to": "ussr_camo_green*"
+    "default_skin": [
+      {
+        "replace_tex": {
+          "from": "ger_camo_grey*",
+          "to": "ussr_camo_green*"
+        }
+      },
+      {
+        "set_tex": {
+          "from": "pzkpfw_III_ausf_J_kwk_38_L_42_body_c*",
+          "to": "pzkpfw_III_ausf_J_kwk_38_L_42_skin_t3_body_c*",
+          "param": "camo_skin_tex"
+        }
+      },
+      {
+        "set_tex": {
+          "from": "pzkpfw_III_ausf_J_kwk_38_L_42_turret_c*",
+          "to": "pzkpfw_III_ausf_J_kwk_38_L_42_skin_t3_turret_c*",
+          "param": "camo_skin_tex"
+        }
       }
-    }
+    ]
   },
   {
     "skin": {

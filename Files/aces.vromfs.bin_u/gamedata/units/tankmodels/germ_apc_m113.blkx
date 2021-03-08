@@ -384,8 +384,11 @@
       "armorClass": "tank_structural_steel",
       "hp": 250.0,
       "armorThickness": 2.0,
-      "armorThrough": 12.0,
-      "fireProtectionHp": 15.0,
+      "armorThrough": 10.0,
+      "fireProtectionHp": 10.0,
+      "createSecondaryShatters": false,
+      "fireParamsPreset": "fuel_internal",
+      "stopChanceOnDeadPart": 0.0,
       "fuel_tank_dm": [],
       "fuel_tank_01_dm": [],
       "fuel_tank_02_dm": [],
@@ -407,8 +410,9 @@
       "armorClass": "tank_structural_steel",
       "hp": 250.0,
       "armorThickness": 2.0,
-      "armorThrough": 12.0,
-      "fireProtectionHp": 15.0,
+      "armorThrough": 10.0,
+      "fireProtectionHp": 10.0,
+      "createSecondaryShatters": false,
       "fireParamsPreset": "fuel_exterior",
       "fuel_tank_exterior_r_01_dm": [],
       "fuel_tank_exterior_r_02_dm": [],
@@ -1130,8 +1134,27 @@
         {
           "onHit": {
             "damageType": "generic",
-            "fire": 0.8,
+            "fire": 0.7,
+            "expl": 0.2,
             "damage": 300.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.5,
+            "expl": 0.5,
+            "damage": 400.0,
+            "fHitCritical": true
+          }
+        },
+        {
+          "onHit": {
+            "damageType": "generic",
+            "fire": 0.1,
+            "expl": 0.9,
+            "damage": 600.0,
             "fHitCritical": true
           }
         },
@@ -1160,7 +1183,7 @@
         {
           "onKill": {
             "fire": 0.5,
-            "nothing": 0.7,
+            "expl": 0.5,
             "fHitCritical": true
           }
         }
@@ -1444,23 +1467,6 @@
           "kill": true,
           "killEffect": "hullBreak"
         }
-      },
-      {
-        "effect": {
-          "conditionDamageType": "generic",
-          "expl": 1.0,
-          "conditionDamage": 750.0,
-          "kill": true,
-          "killEffect": "hullBreak"
-        }
-      },
-      {
-        "effect": {
-          "expl": 1.0,
-          "conditionDead": true,
-          "kill": true,
-          "killEffect": "hullBreak"
-        }
       }
     ],
     "mount": [
@@ -1499,23 +1505,6 @@
           "conditionDamageType": "cumulative",
           "expl": 1.0,
           "conditionDamage": 250.0,
-          "kill": true,
-          "killEffect": "hullBreak"
-        }
-      },
-      {
-        "effect": {
-          "conditionDamageType": "generic",
-          "expl": 1.0,
-          "conditionDamage": 750.0,
-          "kill": true,
-          "killEffect": "hullBreak"
-        }
-      },
-      {
-        "effect": {
-          "expl": 1.0,
-          "conditionDead": true,
           "kill": true,
           "killEffect": "hullBreak"
         }
@@ -2179,6 +2168,15 @@
     {
       "event": {
         "name": "fuel_exterior",
+        "fx": {
+          "name": "tank_ex_fuel_explosion",
+          "centerDmgPart": true
+        }
+      }
+    },
+    {
+      "event": {
+        "name": "fuel_internal",
         "fx": {
           "name": "tank_ex_fuel_explosion",
           "centerDmgPart": true

@@ -673,8 +673,11 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
+        "fireParamsPreset": "fuel_internal",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -696,8 +699,9 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fireParamsPreset": "fuel_exterior",
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
@@ -1486,8 +1490,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1499,8 +1522,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -1938,7 +1962,7 @@
         "Empty": 32973.0,
         "Fuel": 527.0,
         "TakeOff": 33500.0,
-        "momentOfInertia": [4.0,5.0,6.0],
+        "momentOfInertia": [2.5,2.5,6.0],
         "CenterOfGravity": [0.0,0.5,0.0],
         "AdvancedMass": true,
         "trackMass": 2500.0,
@@ -1993,11 +2017,11 @@
         ]
       },
       "suspension": {
-        "suspensionOffsets": [-0.2,-0.17,0.1],
+        "suspensionOffsets": [-0.13,-0.13,0.1],
         "defaultGearRadius": 0.4,
         "frontBackGearRadius": 0.32,
         "topGearRadius": 0.127,
-        "defaultDampeningForce": [105000.0,105000.0],
+        "defaultDampeningForce": [150000.0,150000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
       }
@@ -2615,6 +2639,15 @@
       {
         "event": {
           "name": "fuel_exterior",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
+          "name": "fuel_internal",
           "fx": {
             "name": "tank_ex_fuel_explosion",
             "centerDmgPart": true

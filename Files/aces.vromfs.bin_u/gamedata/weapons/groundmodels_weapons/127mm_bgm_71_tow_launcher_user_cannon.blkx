@@ -17,6 +17,11 @@
   "bullets": -1,
   "bulletsCluster": 1,
   "useSingleIconForBullet": true,
+  "fxGroundDust": "",
+  "fxSandDust": "",
+  "fxSnowDust": "",
+  "fxConcreteDust": "",
+  "fxWaterShockWave": "",
   "shouldCollideWithRendinsts": true,
   "sound_path": "tanks/weapon_tanks/atgm",
   "sound_pathStudio": "ground/weapon/atgm",
@@ -45,7 +50,6 @@
     "bulletType": "atgm_tank",
     "cumulativeSecondaryShattersPreset": "atgm",
     "explodeOnRendinst": true,
-    "modelName": "tank_bullet_heat_fs",
     "fresnel": [0.23,0.1,2.0],
     "bulletName": "127mm_i_tow",
     "mass": 37.0,
@@ -81,7 +85,6 @@
       "bulletType": "atgm_tank",
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
-      "modelName": "tank_bullet_heat_fs",
       "fresnel": [0.23,0.1,2.0],
       "maxDeltaAngle": 0.03,
       "dragCx": 0.027,
@@ -104,7 +107,10 @@
       "waterCollisionEffect": "120-203_he_water_splash",
       "waterFxScale": [1.2,1.4],
       "explosionPatchRadius": 5.0,
-      "smokeEffect": "trail_smoke",
+      "fireEffect": "rocket_fire_short_doubleside",
+      "smokeEffect": "",
+      "hazeEffect": "haze_missile",
+      "endSmokeViscosity": 0.05,
       "maxDistance": 3000.0,
       "minDistance": 30.0,
       "spawnExplosionWreckage": false,
@@ -139,6 +145,7 @@
       "speedViscosity": 0.2,
       "timeToLive": 20.0,
       "price": 3000.0,
+      "mesh": "bgm_71_tow_rocket_deployed",
       "stabilityRicochetModifier": [
         {
           "mod1": [0.0,0.0]
@@ -172,12 +179,7 @@
         "armorPower": 630.0,
         "distance": 7.5,
         "damage": 600.0,
-        "onHitChanceMultFire": 25.0,
-        "cumulativeFragmentsDamageRadius": 4.5,
-        "cumulativeFragmentsDamageAngle": 20.0,
-        "cumulativeFragmentsAmount": 40,
-        "cumulativeFragmentsArmorPower": 5.0,
-        "cumulativeFragmentsHit": 9.0
+        "onHitChanceMultFire": 25.0
       }
     }
   },
@@ -193,7 +195,6 @@
       "bulletType": "atgm_tank",
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
-      "modelName": "tank_bullet_heat_fs",
       "fresnel": [0.23,0.1,2.0],
       "bulletName": "127mm_i_tow",
       "mass": 37.0,
@@ -229,7 +230,6 @@
         "bulletType": "atgm_tank",
         "cumulativeSecondaryShattersPreset": "atgm",
         "explodeOnRendinst": true,
-        "modelName": "tank_bullet_heat_fs",
         "fresnel": [0.23,0.1,2.0],
         "maxDeltaAngle": 0.03,
         "dragCx": 0.027,
@@ -252,7 +252,10 @@
         "waterCollisionEffect": "120-203_he_water_splash",
         "waterFxScale": [1.2,1.4],
         "explosionPatchRadius": 5.0,
-        "smokeEffect": "trail_smoke",
+        "fireEffect": "rocket_fire_short_doubleside",
+        "smokeEffect": "",
+        "hazeEffect": "haze_missile",
+        "endSmokeViscosity": 0.05,
         "maxDistance": 3000.0,
         "minDistance": 30.0,
         "spawnExplosionWreckage": false,
@@ -287,6 +290,7 @@
         "speedViscosity": 0.2,
         "timeToLive": 20.0,
         "price": 3000.0,
+        "mesh": "bgm_71_tow_rocket_deployed",
         "stabilityRicochetModifier": [
           {
             "mod1": [0.0,0.0]
@@ -320,12 +324,7 @@
           "armorPower": 630.0,
           "distance": 7.5,
           "damage": 600.0,
-          "onHitChanceMultFire": 25.0,
-          "cumulativeFragmentsDamageRadius": 4.5,
-          "cumulativeFragmentsDamageAngle": 20.0,
-          "cumulativeFragmentsAmount": 40,
-          "cumulativeFragmentsArmorPower": 5.0,
-          "cumulativeFragmentsHit": 9.0
+          "onHitChanceMultFire": 25.0
         }
       }
     }
@@ -342,7 +341,6 @@
       "bulletType": "atgm_tank",
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
-      "modelName": "tank_bullet_heat_fs",
       "fresnel": [0.23,0.1,2.0],
       "bulletName": "127mm_tow_2b",
       "mass": 22.6,
@@ -379,7 +377,6 @@
         "bulletType": "atgm_tank",
         "cumulativeSecondaryShattersPreset": "atgm",
         "explodeOnRendinst": true,
-        "modelName": "tank_bullet_heat_fs",
         "fresnel": [0.23,0.1,2.0],
         "aimPosOffset": [1.0,0.0],
         "maxDeltaAngle": 0.03,
@@ -404,7 +401,10 @@
         "waterCollisionEffect": "120-203_he_water_splash",
         "waterFxScale": [1.2,1.4],
         "explosionPatchRadius": 5.0,
-        "smokeEffect": "trail_smoke",
+        "fireEffect": "rocket_fire_short_doubleside",
+        "smokeEffect": "",
+        "hazeEffect": "haze_missile",
+        "endSmokeViscosity": 0.05,
         "maxDistance": 3750.0,
         "minDistance": 30.0,
         "spawnExplosionWreckage": false,
@@ -430,6 +430,8 @@
         "timeToLive": 20.0,
         "price": 3000.0,
         "mesh": "bgm_71_tow_rocket_deployed",
+        "hasTracerTrail": true,
+        "tracerTrailEmitter": [-0.5,0.0,0.0],
         "stabilityRicochetModifier": [
           {
             "mod1": [0.0,0.0]
@@ -566,6 +568,14 @@
           "distance": 7.5,
           "damage": 900.0,
           "onHitChanceMultFire": 25.0
+        },
+        "tracerTrail": {
+          "smokeEffect": "",
+          "visual": {
+            "traceFreq": 1,
+            "tracer": "152mmRed",
+            "trail": "black"
+          }
         }
       }
     }

@@ -114,6 +114,12 @@
     "depthTraceCriticalDepth": 5.3
   },
   {
+    "haveAnchor": true
+  },
+  {
+    "anchorPos": [94.46,6.85,-2.18]
+  },
+  {
     "hideNodesInDmg": {
       "node": "flag"
     }
@@ -123,6 +129,12 @@
       {
         "replace_tex": {
           "from": "flag_ussr_01_c*",
+          "to": "flag_ussr_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "flag_ussr_03_c*",
           "to": "flag_ussr_01_c_tomoe*"
         }
       },
@@ -200,6 +212,12 @@
       },
       {
         "replace_tex": {
+          "from": "flag_germany_05_c*",
+          "to": "flag_germany_01_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
           "from": "germany_flag_decal*",
           "to": "germany_harm_flag_decal*"
         }
@@ -226,6 +244,12 @@
         "replace_tex": {
           "from": "airplane_usa_curtiss_sc_seahawk_c*",
           "to": "airplane_usa_curtiss_sc_seahawk_c_tomoe*"
+        }
+      },
+      {
+        "replace_tex": {
+          "from": "airplane_uk_vought_os2u_kingfisher_usa_c*",
+          "to": "airplane_uk_vought_os2u_kingfisher_usa_c_tomoe*"
         }
       }
     ]
@@ -1571,6 +1595,7 @@
   {
     "DamageParts": {
       "formatVersion": 2,
+      "createSecondaryShatters": false,
       "compartments": {
         "fireParamsPreset": "ship_compartment_cruiser",
         "stopChanceOnDeadPart": 1.0,
@@ -1578,28 +1603,28 @@
         "armorThickness": 1.45,
         "oneSided": true,
         "compartment_01_dm": {
-          "hp": 8441.0
+          "hp": 3418.0
         },
         "compartment_02_dm": {
-          "hp": 9000.0
+          "hp": 3000.0
         },
         "compartment_03_dm": {
-          "hp": 5886.0
+          "hp": 3043.0
         },
         "compartment_04_dm": {
-          "hp": 9000.0
+          "hp": 3000.0
         },
         "compartment_05_dm": {
-          "hp": 7160.0
+          "hp": 4578.0
         },
         "compartment_06_dm": {
-          "hp": 9000.0
+          "hp": 3000.0
         },
         "compartment_07_dm": {
-          "hp": 8122.0
+          "hp": 3000.0
         },
         "compartment_08_dm": {
-          "hp": 7395.0
+          "hp": 3000.0
         },
         "compartment_09_dm": {
           "hp": 3000.0
@@ -1609,13 +1634,19 @@
         },
         "radio_station_dm": {
           "hp": 300.0
+        },
+        "plotting_room_01_dm": {
+          "hp": 700.0
+        },
+        "plotting_room_02_dm": {
+          "hp": 528.0
         }
       },
       "cover": {
         "fireParamsPreset": "ship_cover_cruiser",
-        "stopChanceOnDeadPart": 0.9,
+        "stopChanceOnDeadPart": 0.6,
         "armorClass": "ship_structural_steel",
-        "armorThickness": 25.4,
+        "armorThickness": 20.0,
         "hidableInViewer": true,
         "cover_01_dm": {
           "hp": 4500.0
@@ -1817,88 +1848,108 @@
       },
       "citadel_armor": {
         "fireProtectionHp": 120.0,
-        "armorClass": "ship_STS",
+        "armorClass": "ship_RHA",
         "armorThickness": 40.0,
         "fireDamageMult": 0.1,
         "armor_cit_01_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 20.0,
           "hp": 10000.0
         },
         "armor_cit_02_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 130.0,
           "hp": 10000.0
         },
         "armor_cit_03_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 50.0,
           "hp": 10000.0
         },
         "armor_cit_04_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 10.0,
           "hp": 10000.0
         },
         "armor_cit_05_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 130.0,
           "hp": 10000.0
         },
         "armor_cit_06_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 20.0,
           "hp": 10000.0
         },
         "armor_cit_07_dm": {
-          "armorClass": "ship_STS",
           "armorThickness": 10.0,
           "hp": 10000.0
         },
         "armor_cit_08_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 30.0,
           "hp": 10000.0
         },
         "armor_cit_09_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 70.0,
           "hp": 10000.0
         },
         "armor_cit_10_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 30.0,
           "hp": 10000.0
         },
         "armor_cit_11_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 100.0,
           "hp": 10000.0
         },
         "armor_cit_12_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 30.0,
           "hp": 10000.0
         },
         "armor_cit_13_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 120.0,
+          "hp": 10000.0
+        },
+        "armor_cit_14_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 13.0,
+          "hp": 10000.0
+        },
+        "armor_cit_15_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 13.0,
+          "hp": 10000.0
+        },
+        "armor_cit_16_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 10.0,
+          "hp": 10000.0
+        },
+        "armor_cit_17_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 10.0,
+          "hp": 10000.0
+        },
+        "armor_cit_18_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 6.0,
+          "hp": 10000.0
+        },
+        "armor_cit_19_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 6.0,
+          "hp": 10000.0
+        },
+        "armor_cit_20_dm": {
+          "armorClass": "ship_STS",
+          "armorThickness": 10.0,
           "hp": 10000.0
         }
       },
       "belt_armor": {
         "fireProtectionHp": 120.0,
-        "armorClass": "ship_STS",
+        "armorClass": "ship_RHA",
         "armorThickness": 40.0,
         "hidableInViewer": true,
         "fireDamageMult": 0.1,
         "armor_belt_01_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 20.0,
           "hp": 10000.0
         },
         "armor_belt_02_dm": {
-          "armorClass": "ship_RHA",
           "armorThickness": 100.0,
           "hp": 10000.0
         }
@@ -2116,12 +2167,6 @@
         "ex_armor_16_dm": {
           "hp": 1000.0
         },
-        "ex_armor_17_dm": {
-          "hp": 500.0
-        },
-        "ex_armor_18_dm": {
-          "hp": 500.0
-        },
         "ex_armor_20_dm": {
           "hp": 500.0
         },
@@ -2139,51 +2184,6 @@
         },
         "ex_armor_25_dm": {
           "hp": 500.0
-        },
-        "ex_armor_04_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 10.0,
-          "hp": 1000.0
-        },
-        "ex_armor_05_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 10.0,
-          "hp": 500.0
-        },
-        "ex_armor_06_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 6.0,
-          "hp": 500.0
-        },
-        "ex_armor_07_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 10.0,
-          "hp": 1000.0
-        },
-        "ex_armor_08_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 10.0,
-          "hp": 500.0
-        },
-        "ex_armor_09_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 6.0,
-          "hp": 500.0
-        },
-        "ex_armor_11_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 13.0,
-          "hp": 629.0
-        },
-        "ex_armor_14_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 13.0,
-          "hp": 629.0
-        },
-        "ex_armor_19_dm": {
-          "armorClass": "ship_STS",
-          "armorThickness": 10.0,
-          "hp": 1000.0
         }
       },
       "bulges": {
@@ -2193,8 +2193,7 @@
         "explosionArmorQuality": 8.6,
         "explosionDamageMult": 2.0,
         "fireDamageMult": 0.001,
-        "hidableInViewer": true,
-        "createSecondaryShatters": true
+        "hidableInViewer": true
       },
       "turrets_main_caliber": {
         "fireParamsPreset": "ship_turrets",
@@ -2510,7 +2509,6 @@
       "ammo_first_stage": {
         "armorClass": "ship_structural_steel",
         "fireParamsPreset": "ship_ammo_fire",
-        "createSecondaryShatters": false,
         "oneSided": true,
         "armorThickness": 25.4,
         "fireProtectionHp": 10.0,
@@ -2618,110 +2616,339 @@
         },
         "radar_03_dm": {
           "hp": 350.0
+        },
+        "fire_director_01_dm": {
+          "hp": 693.0
+        },
+        "fire_director_02_dm": {
+          "hp": 693.0
+        },
+        "fire_director_03_dm": {
+          "hp": 363.0
+        },
+        "fire_director_04_dm": {
+          "hp": 363.0
         }
       }
     }
   },
   {
-    "tank_crew": {
-      "minCrewMemberRepairCount": 414,
-      "minCrewMemberAliveCount": 355,
-      "sailor1": {
-        "dmPart": "bridge_dm",
-        "role": "sailor",
-        "crew": 15
+    "tank_crew": [
+      {
+        "minCrewMemberRepairCount": 414
       },
-      "sailor2": {
-        "dmPart": "compartment_01_dm",
-        "role": "sailor",
-        "crew": 115
+      {
+        "minCrewMemberAliveCount": 355
       },
-      "sailor3": {
-        "dmPart": "compartment_02_dm",
-        "role": "sailor",
-        "crew": 123
+      {
+        "sailor1": {
+          "dmPart": "bridge_dm",
+          "role": "sailor",
+          "crew": 10
+        }
       },
-      "sailor4": {
-        "dmPart": "compartment_03_dm",
-        "role": "sailor",
-        "crew": 80
+      {
+        "sailor2": {
+          "dmPart": "compartment_01_dm",
+          "role": "sailor",
+          "crew": 81
+        }
       },
-      "sailor5": {
-        "dmPart": "compartment_04_dm",
-        "role": "sailor",
-        "crew": 122
+      {
+        "sailor3": {
+          "dmPart": "compartment_02_dm",
+          "role": "sailor",
+          "crew": 71
+        }
       },
-      "sailor6": {
-        "dmPart": "compartment_05_dm",
-        "role": "sailor",
-        "crew": 97
+      {
+        "sailor4": {
+          "dmPart": "compartment_03_dm",
+          "role": "sailor",
+          "crew": 72
+        }
       },
-      "sailor7": {
-        "dmPart": "compartment_06_dm",
-        "role": "sailor",
-        "crew": 122
+      {
+        "sailor5": {
+          "dmPart": "compartment_04_dm",
+          "role": "sailor",
+          "crew": 71
+        }
       },
-      "sailor8": {
-        "dmPart": "compartment_07_dm",
-        "role": "sailor",
-        "crew": 110
+      {
+        "sailor6": {
+          "dmPart": "compartment_05_dm",
+          "role": "sailor",
+          "crew": 109
+        }
       },
-      "sailor9": {
-        "dmPart": "compartment_08_dm",
-        "role": "sailor",
-        "crew": 101
+      {
+        "sailor7": {
+          "dmPart": "compartment_06_dm",
+          "role": "sailor",
+          "crew": 71
+        }
       },
-      "sailor10": {
-        "dmPart": "compartment_09_dm",
-        "role": "sailor",
-        "crew": 41
+      {
+        "sailor8": {
+          "dmPart": "compartment_07_dm",
+          "role": "sailor",
+          "crew": 71
+        }
       },
-      "sailor11": {
-        "dmPart": "main_caliber_turret_01_dm",
-        "role": "sailor",
-        "crew": 57
+      {
+        "sailor9": {
+          "dmPart": "compartment_08_dm",
+          "role": "sailor",
+          "crew": 71
+        }
       },
-      "sailor12": {
-        "dmPart": "main_caliber_turret_02_dm",
-        "role": "sailor",
-        "crew": 57
+      {
+        "sailor10": {
+          "dmPart": "compartment_09_dm",
+          "role": "sailor",
+          "crew": 71
+        }
       },
-      "sailor13": {
-        "dmPart": "main_caliber_turret_03_dm",
-        "role": "sailor",
-        "crew": 57
+      {
+        "sailor11": {
+          "dmPart": "main_caliber_turret_01_dm",
+          "role": "sailor",
+          "crew": 17
+        }
       },
-      "sailor14": {
-        "dmPart": "main_caliber_turret_04_dm",
-        "role": "sailor",
-        "crew": 57
+      {
+        "sailor12": {
+          "dmPart": "main_caliber_turret_02_dm",
+          "role": "sailor",
+          "crew": 17
+        }
       },
-      "sailor15": {
-        "dmPart": "auxiliary_caliber_turret_01_dm",
-        "role": "sailor",
-        "crew": 5
+      {
+        "sailor13": {
+          "dmPart": "main_caliber_turret_03_dm",
+          "role": "sailor",
+          "crew": 17
+        }
       },
-      "sailor16": {
-        "dmPart": "auxiliary_caliber_turret_02_dm",
-        "role": "sailor",
-        "crew": 5
+      {
+        "sailor14": {
+          "dmPart": "main_caliber_turret_04_dm",
+          "role": "sailor",
+          "crew": 17
+        }
       },
-      "sailor17": {
-        "dmPart": "auxiliary_caliber_turret_03_dm",
-        "role": "sailor",
-        "crew": 5
+      {
+        "sailor15": {
+          "dmPart": "auxiliary_caliber_turret_01_dm",
+          "role": "sailor",
+          "crew": 12
+        }
       },
-      "sailor18": {
-        "dmPart": "auxiliary_caliber_turret_04_dm",
-        "role": "sailor",
-        "crew": 5
+      {
+        "sailor16": {
+          "dmPart": "auxiliary_caliber_turret_02_dm",
+          "role": "sailor",
+          "crew": 12
+        }
       },
-      "sailor19": {
-        "dmPart": "radio_station_dm",
-        "role": "sailor",
-        "crew": 10
+      {
+        "sailor17": {
+          "dmPart": "auxiliary_caliber_turret_03_dm",
+          "role": "sailor",
+          "crew": 12
+        }
+      },
+      {
+        "sailor18": {
+          "dmPart": "auxiliary_caliber_turret_04_dm",
+          "role": "sailor",
+          "crew": 12
+        }
+      },
+      {
+        "sailor19": {
+          "dmPart": "radio_station_dm",
+          "role": "sailor",
+          "crew": 5
+        }
+      },
+      {
+        "sailor20": {
+          "dmPart": "ammunition_storage_aux_01_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor21": {
+          "dmPart": "ammunition_storage_aux_02_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor22": {
+          "dmPart": "ammunition_storage_aux_03_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor23": {
+          "dmPart": "ammunition_storage_aux_04_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor24": {
+          "dmPart": "ammunition_storage_aux_05_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor25": {
+          "dmPart": "ammunition_storage_aux_06_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor26": {
+          "dmPart": "ammunition_storage_aux_07_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor27": {
+          "dmPart": "ammunition_storage_aux_08_dm",
+          "role": "sailor",
+          "crew": 8
+        }
+      },
+      {
+        "sailor28": {
+          "dmPart": "ammunition_storage_charges_01_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor28": {
+          "dmPart": "ammunition_storage_charges_02_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor29": {
+          "dmPart": "ammunition_storage_charges_03_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor30": {
+          "dmPart": "ammunition_storage_charges_04_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor31": {
+          "dmPart": "elevator_01_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor32": {
+          "dmPart": "elevator_02_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor33": {
+          "dmPart": "elevator_03_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor34": {
+          "dmPart": "elevator_04_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor35": {
+          "dmPart": "elevator_05_dm",
+          "role": "sailor",
+          "crew": 7
+        }
+      },
+      {
+        "sailor36": {
+          "dmPart": "elevator_06_dm",
+          "role": "sailor",
+          "crew": 7
+        }
+      },
+      {
+        "sailor37": {
+          "dmPart": "elevator_07_dm",
+          "role": "sailor",
+          "crew": 7
+        }
+      },
+      {
+        "sailor38": {
+          "dmPart": "elevator_08_dm",
+          "role": "sailor",
+          "crew": 7
+        }
+      },
+      {
+        "sailor39": {
+          "dmPart": "engine_room_01_dm",
+          "role": "sailor",
+          "crew": 25
+        }
+      },
+      {
+        "sailor40": {
+          "dmPart": "engine_room_02_dm",
+          "role": "sailor",
+          "crew": 25
+        }
+      },
+      {
+        "sailor41": {
+          "dmPart": "engine_room_03_dm",
+          "role": "sailor",
+          "crew": 25
+        }
+      },
+      {
+        "sailor42": {
+          "dmPart": "transmission_01_dm",
+          "role": "sailor",
+          "crew": 20
+        }
+      },
+      {
+        "sailor43": {
+          "dmPart": "transmission_02_dm",
+          "role": "sailor",
+          "crew": 20
+        }
       }
-    }
+    ]
   },
   {
     "DamageEffects": [
@@ -3360,6 +3587,12 @@
             "name": "cover_09_dm"
           },
           {
+            "name": "cover_10_dm"
+          },
+          {
+            "name": "cover_11_dm"
+          },
+          {
             "onHit": {
               "damageType": "explosion",
               "fire": 0.03,
@@ -3456,8 +3689,8 @@
           },
           {
             "onKill": {
-              "nothing": 0.85,
-              "fire": 0.15
+              "nothing": 0.75,
+              "fire": 0.25
             }
           }
         ]
@@ -3718,13 +3951,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_01",
@@ -3732,7 +3965,7 @@
             "barrel": "gun_barrel_01",
             "gunnerDm": "main_caliber_turret_01_dm",
             "linkedAnimPart": {
-              "horNode": "ex_armor_11",
+              "horNode": "fire_director_01",
               "horLimits": [-150.0,150.0],
               "horOriginLimits": [-150.0,150.0]
             }
@@ -3792,13 +4025,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_01",
@@ -3861,13 +4094,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_01",
@@ -3930,13 +4163,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_02",
@@ -3997,13 +4230,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_02",
@@ -4064,13 +4297,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_02",
@@ -4131,13 +4364,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_03",
@@ -4145,7 +4378,7 @@
             "barrel": "gun_barrel_51",
             "gunnerDm": "main_caliber_turret_03_dm",
             "linkedAnimPart": {
-              "horNode": "ex_armor_14",
+              "horNode": "fire_director_02",
               "horLimits": [-150.0,150.0],
               "horOriginLimits": [-150.0,150.0]
             }
@@ -4205,13 +4438,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_03",
@@ -4274,13 +4507,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_03",
@@ -4343,13 +4576,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_04",
@@ -4410,13 +4643,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_04",
@@ -4477,13 +4710,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "main_caliber_turret_04",
@@ -4551,13 +4784,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_01",
@@ -4565,7 +4798,7 @@
             "barrel": "gun_barrel_11",
             "gunnerDm": "auxiliary_caliber_turret_01_dm",
             "linkedAnimPart": {
-              "horNode": "ex_armor_09",
+              "horNode": "fire_director_03",
               "horLimits": [-180.0,180.0],
               "horOriginLimits": [-180.0,180.0]
             }
@@ -4636,13 +4869,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_01",
@@ -4716,13 +4949,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_02",
@@ -4730,7 +4963,7 @@
             "barrel": "gun_barrel_13",
             "gunnerDm": "auxiliary_caliber_turret_02_dm",
             "linkedAnimPart": {
-              "horNode": "ex_armor_06",
+              "horNode": "fire_director_04",
               "horLimits": [-180.0,180.0],
               "horOriginLimits": [-180.0,180.0]
             }
@@ -4801,13 +5034,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_02",
@@ -4881,13 +5114,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_03",
@@ -4961,13 +5194,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_03",
@@ -5041,13 +5274,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_04",
@@ -5121,13 +5354,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "auxiliary_caliber_turret_04",
@@ -5194,13 +5427,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_01",
@@ -5267,13 +5500,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_01",
@@ -5335,13 +5568,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_02",
@@ -5402,13 +5635,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_02",
@@ -5469,13 +5702,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_03",
@@ -5536,13 +5769,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_03",
@@ -5603,13 +5836,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_04",
@@ -5670,13 +5903,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_04",
@@ -5737,13 +5970,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_05",
@@ -5805,13 +6038,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_05",
@@ -5873,13 +6106,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_06",
@@ -5941,13 +6174,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_06",
@@ -6009,13 +6242,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_07",
@@ -6082,13 +6315,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_07",
@@ -6150,13 +6383,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_08",
@@ -6217,13 +6450,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_08",
@@ -6284,13 +6517,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_09",
@@ -6351,13 +6584,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_09",
@@ -6418,13 +6651,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_10",
@@ -6481,13 +6714,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_10",
@@ -6548,13 +6781,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_11",
@@ -6617,13 +6850,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_11",
@@ -6686,13 +6919,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_12",
@@ -6755,13 +6988,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_12",
@@ -6824,13 +7057,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_13",
@@ -6893,13 +7126,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_13",
@@ -6962,13 +7195,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_14",
@@ -7031,13 +7264,13 @@
           "randomAngle": 0.0,
           "accuracyBotMultAir": 0.55,
           "accuracyAir": 1.0,
-          "accuracyGnd": 0.5,
+          "accuracyGnd": 0.8,
           "errMeasureVel": 0.0,
           "errTargettingOn100kmph": 0.0,
           "errMeasureVelFast": 100.0,
-          "errMeasureVelFwdShift": 1.0,
+          "errMeasureVelFwdShift": 0.5,
           "errMeasureVelDir": 3.0,
-          "errTargetting": 1.0,
+          "errTargetting": 3.0,
           "errExplTime": 0.0,
           "turret": {
             "head": "aa_turret_14",
@@ -7292,7 +7525,7 @@
         },
         {
           "shells": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": true,
             "fatalExplosion": true,
             "damageEffect": "ammunition_storage_shells",
@@ -7303,7 +7536,7 @@
         },
         {
           "charges": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": false,
             "damageEffect": "ammunition_storage_charges",
             "ammunition_storage_charges_01_dm": {
@@ -7405,7 +7638,7 @@
         },
         {
           "shells": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": true,
             "fatalExplosion": true,
             "damageEffect": "ammunition_storage_shells",
@@ -7416,7 +7649,7 @@
         },
         {
           "charges": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": false,
             "damageEffect": "ammunition_storage_charges",
             "ammunition_storage_charges_02_dm": {
@@ -7518,7 +7751,7 @@
         },
         {
           "shells": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": true,
             "fatalExplosion": true,
             "damageEffect": "ammunition_storage_shells",
@@ -7529,7 +7762,7 @@
         },
         {
           "charges": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": false,
             "damageEffect": "ammunition_storage_charges",
             "ammunition_storage_charges_03_dm": {
@@ -7631,7 +7864,7 @@
         },
         {
           "shells": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": true,
             "fatalExplosion": true,
             "damageEffect": "ammunition_storage_shells",
@@ -7642,7 +7875,7 @@
         },
         {
           "charges": {
-            "reloadTimeMult": 1.66,
+            "reloadTimeMult": 1.25,
             "fatalFire": false,
             "damageEffect": "ammunition_storage_charges",
             "ammunition_storage_charges_04_dm": {
@@ -9214,13 +9447,13 @@
       },
       {
         "part": {
-          "node": "ex_armor_11",
+          "node": "fire_director_01",
           "idx": 4,
           "mass": 1200.0,
           "cutDamage": 350.0,
           "deviation": 0.6,
           "rotation": 2.1,
-          "collisionNode": "ex_armor_11_dm"
+          "collisionNode": "fire_director_01_dm"
         }
       },
       {
@@ -9280,13 +9513,13 @@
       },
       {
         "part": {
-          "node": "ex_armor_14",
+          "node": "fire_director_02",
           "idx": 10,
           "mass": 1100.0,
           "cutDamage": 350.0,
           "deviation": 0.6,
           "rotation": 2.1,
-          "collisionNode": "ex_armor_14_dm"
+          "collisionNode": "fire_director_02_dm"
         }
       }
     ]

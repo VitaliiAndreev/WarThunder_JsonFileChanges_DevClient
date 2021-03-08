@@ -105,6 +105,12 @@
     "type": "typeMediumTank"
   },
   {
+    "rearmSmokeTimeOnField": 60.0
+  },
+  {
+    "canReloadNonGuns": true
+  },
+  {
     "arcadeTurnPowerMult": 1.2
   },
   {
@@ -147,9 +153,6 @@
           "armorThickness": 5.0
         },
         "superstructure_bottom_dm": {
-          "armorThickness": 10.0
-        },
-        "wheel_support_dm": {
           "armorThickness": 10.0
         },
         "gun_mask_01_dm": {
@@ -257,6 +260,10 @@
           "armorThickness": 10.0,
           "hp": 20.0
         },
+        "optic_turret_14_dm": {
+          "armorThickness": 10.0,
+          "hp": 20.0
+        },
         "optic_body_01_dm": {
           "armorThickness": 10.0,
           "hp": 20.0
@@ -304,7 +311,8 @@
         "wheel_l_top_03_dm": [],
         "wheel_r_top_01_dm": [],
         "wheel_r_top_02_dm": [],
-        "wheel_r_top_03_dm": []
+        "wheel_r_top_03_dm": [],
+        "wheel_support_dm": []
       },
       "gun": {
         "armorClass": "tank_barrel",
@@ -632,8 +640,11 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
+        "fireParamsPreset": "fuel_internal",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -655,8 +666,9 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fireParamsPreset": "fuel_exterior",
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
@@ -1455,8 +1467,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1468,8 +1499,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -2495,6 +2527,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -2516,7 +2557,7 @@
     "cockpit": {
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
-      "sightFov": 25.0,
+      "sightFov": 20.0,
       "sightName": "default_tank_spg",
       "headPos": [0.0,3.5,-8.0],
       "headPosOnShooting": [-0.4,3.1,0.0],

@@ -209,11 +209,11 @@
           "armorThickness": 30.0
         },
         "composite_armor_hull_01_dm": {
-          "armorThickness": 30.0,
+          "armorThickness": 10.0,
           "hidableInXrayViewer": true
         },
         "composite_armor_hull_02_dm": {
-          "armorThickness": 10.0,
+          "armorThickness": 35.0,
           "hidableInXrayViewer": true
         },
         "composite_armor_hull_03_dm": {
@@ -904,6 +904,8 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "createSecondaryShatters": false,
+        "stopChanceOnDeadPart": 0.0,
+        "fireParamsPreset": "fuel_internal",
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -928,6 +930,7 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fireParamsPreset": "fuel_exterior",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
         "fuel_tank_exterior_r_03_dm": [],
@@ -1758,8 +1761,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1771,8 +1793,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -2384,7 +2407,7 @@
       {
         "Weapon": [
           {
-            "trigger": "gunner1"
+            "trigger": "gunner2"
           },
           {
             "triggerGroup": "coaxial"
@@ -2480,11 +2503,12 @@
       },
       {
         "Weapon": {
-          "trigger": "gunner2",
+          "trigger": "gunner3",
           "triggerGroup": "machinegun",
           "blk": "gameData/Weapons/groundModels_weapons/7_62mm_FN_MAG60_40_user_machinegun.blk",
-          "emitter": "bone_mg_aa_v",
+          "emitter": "emtr_mg_aa_flame",
           "flash": "emtr_mg_aa_flame",
+          "useEmitter": true,
           "barrelDP": "gun_barrel_04_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
@@ -2518,11 +2542,12 @@
       },
       {
         "Weapon": {
-          "trigger": "gunner3",
+          "trigger": "gunner5",
           "triggerGroup": "machinegun",
           "blk": "gameData/Weapons/groundModels_weapons/7_62mm_FN_MAG60_40_user_machinegun.blk",
-          "emitter": "bone_mg_v_01",
+          "emitter": "emtr_mg_flame_01",
           "flash": "emtr_mg_flame_01",
+          "useEmitter": true,
           "barrelDP": "gun_barrel_03_dm",
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
@@ -2556,7 +2581,7 @@
       },
       {
         "Weapon": {
-          "trigger": "gunner5",
+          "trigger": "gunner6",
           "triggerGroup": "smoke",
           "blk": "gameData/Weapons/groundModels_weapons/60mm_smoke_mortar_launcher.blk",
           "weaponType": "rockets",
@@ -3205,6 +3230,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -3596,7 +3630,7 @@
             {
               "Weapon": [
                 {
-                  "trigger": "gunner1"
+                  "trigger": "gunner2"
                 },
                 {
                   "triggerGroup": "coaxial"
@@ -3692,11 +3726,12 @@
             },
             {
               "Weapon": {
-                "trigger": "gunner2",
+                "trigger": "gunner3",
                 "triggerGroup": "machinegun",
                 "blk": "gameData/Weapons/groundModels_weapons/7_62mm_FN_MAG60_40_user_machinegun.blk",
-                "emitter": "bone_mg_aa_v",
+                "emitter": "emtr_mg_aa_flame",
                 "flash": "emtr_mg_aa_flame",
+                "useEmitter": true,
                 "barrelDP": "gun_barrel_04_dm",
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
@@ -3730,11 +3765,12 @@
             },
             {
               "Weapon": {
-                "trigger": "gunner3",
+                "trigger": "gunner5",
                 "triggerGroup": "machinegun",
                 "blk": "gameData/Weapons/groundModels_weapons/7_62mm_FN_MAG60_40_user_machinegun.blk",
-                "emitter": "bone_mg_v_01",
+                "emitter": "emtr_mg_flame_01",
                 "flash": "emtr_mg_flame_01",
+                "useEmitter": true,
                 "barrelDP": "gun_barrel_03_dm",
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
@@ -3768,7 +3804,7 @@
             },
             {
               "Weapon": {
-                "trigger": "gunner5",
+                "trigger": "gunner6",
                 "triggerGroup": "smoke",
                 "blk": "gameData/Weapons/groundModels_weapons/60mm_smoke_mortar_launcher.blk",
                 "weaponType": "rockets",

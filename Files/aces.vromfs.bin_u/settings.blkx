@@ -91,12 +91,14 @@
       "foliageReprojection": false,
       "waterQuality": "low",
       "giQuality": "low",
-      "lowResFx": true
+      "lowResFx": true,
+      "riGpuObjects": true
     },
     "sound": {
       "speakerMode": "",
       "fmod_sound_enable": false,
-      "enable_mod": false
+      "enable_mod": false,
+      "useLoopsForGunSound": false
     },
     "video": {
       "resolution": "",
@@ -351,20 +353,26 @@
     "clipmapScaleFor4K": 6,
     "backgroundAptiveSharpen": false,
     "backgroundAptiveSharpenAdaptiveness": 16.0,
-    "backgroundAptiveSharpenQuality": 12.0
+    "backgroundAptiveSharpenQuality": 12.0,
+    "riGpuObjects": true
   },
   "ps4": {
-    "garlic_size_mb": 2450,
-    "neo_garlic_size_mb": 2800,
-    "onion_size_mb": 128,
+    "garlic_size_mb": 2650,
+    "neo_garlic_size_mb": 3150,
+    "onion_size_mb": 150,
     "dcb_size_mb": 8,
     "ccb_size_mb": 8,
     "onion_blocks": 16384,
     "max_genmip_tex_sz": 2052,
-    "mem_reserve_mb": 256,
+    "mem_reserve_mb": 768,
     "emergency_buffer_pages": 20,
+    "shader_garlic_size_kb": 2048,
+    "dynbuf_heap_garlic_mb": 96,
+    "dynbuf_heap_onion_mb": 32,
+    "dynbuf_garlic_threshold_kb": 1024,
+    "dynbuf_onion_threshold_kb": 1024,
     "enable_deferred_mipgen": true,
-    "neo_4k_scale": 167,
+    "neo_4k_scale": 150,
     "guiWebCacheCircuit": "production",
     "enable_defrag": true
   },
@@ -374,9 +382,9 @@
     "mem_shader_heap_size_kb": 8192,
     "mem_reserve_mb": 256,
     "max_genmip_tex_sz": 2052,
-    "emergency_buffer_pages": 20,
+    "dynbuf_heap_gpu_mb": 160,
+    "dynbuf_direct_threshold_kb": 1024,
     "enable_deferred_mipgen": true,
-    "neo_4k_scale": 100,
     "guiWebCacheCircuit": "production",
     "enable_defrag": true
   },
@@ -501,7 +509,9 @@
     "water3d": true,
     "clipmap": true,
     "rendinstClipmapShadows": true,
-    "fxReflection": true
+    "fxReflection": true,
+    "detailedWaterForPlanes": true,
+    "wakeFoamWithoutAA": true
   },
   "clipmap": {
     "sideSize": 768,
@@ -510,6 +520,10 @@
     "stackCount": 8,
     "step": 1.7,
     "finalSize": 0.0
+  },
+  "clipmapImpostor": {
+    "enabled": false,
+    "distance": 1300.0
   },
   "aviWriter": {
     "quality": 100,
@@ -558,9 +572,6 @@
       "verboseLogs": false
     },
     {
-      "maxMemQuotaKB": 2838528
-    },
-    {
       "lqIsSplitBQ": false
     },
     {
@@ -574,7 +585,7 @@
     },
     {
       "win32": {
-        "enableStreaming": false
+        "enableStreaming": true
       }
     },
     {
@@ -664,5 +675,64 @@
   },
   "ugc": {
     "enabled": true
+  },
+  "unitedVdata.dynModel": {
+    "use": false,
+    "canRebuild": false,
+    "ps4": {
+      "IB": 60000,
+      "VB1": 65536,
+      "VB2": 65536,
+      "VB3": 65536,
+      "VB4": 65536,
+      "VB5": 0
+    },
+    "common_1GB": {
+      "IB": 20000,
+      "VB1": 65536,
+      "VB2": 0
+    },
+    "common_2GB": {
+      "IB": 40000,
+      "VB1": 65536,
+      "VB2": 65536,
+      "VB3": 0
+    },
+    "common": {
+      "IB": 60000,
+      "VB1": 65536,
+      "VB2": 65536,
+      "VB3": 65536,
+      "VB4": 65536,
+      "VB5": 0
+    }
+  },
+  "unitedVdata.rendInst": {
+    "ps4": {
+      "IB": 16384,
+      "VB1": 65536,
+      "VB2": 0
+    },
+    "common_1GB": {
+      "IB": 12000,
+      "VB1": 48000,
+      "VB2": 0
+    },
+    "common_2GB": {
+      "IB": 16384,
+      "VB1": 65536,
+      "VB2": 0
+    },
+    "common_3GB": {
+      "IB": 24000,
+      "VB1": 65536,
+      "VB2": 65536,
+      "VB3": 0
+    },
+    "common": {
+      "IB": 16384,
+      "VB1": 65536,
+      "VB2": 0
+    }
   }
 }

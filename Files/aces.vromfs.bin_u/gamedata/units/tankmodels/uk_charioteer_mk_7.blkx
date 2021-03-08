@@ -727,8 +727,11 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
+        "fireParamsPreset": "fuel_internal",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -750,8 +753,9 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fireParamsPreset": "fuel_exterior",
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
@@ -1574,8 +1578,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1587,8 +1610,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -1957,8 +1981,16 @@
       },
       "tracks": {
         "animationMultiplier": -0.68,
-        "height": 0.055,
-        "width": 0.4
+        "height": 0.07,
+        "width": 0.4,
+        "tracksTensionK": [7.0,9.0,2.0],
+        "trackMesh": "uk_a30_challenger_phys_track_line",
+        "trackLen": 0.103,
+        "trackCount": 125,
+        "trackFadeTime": 0.5,
+        "trackCntPeriod": 2,
+        "trackMaxSinking": 0.17,
+        "trackMaxHeight": 1.24
       },
       "collisionProps": {
         "cls_turret": "convex_hull",
@@ -1971,8 +2003,8 @@
       },
       "mechanics": {
         "maxBrakeForce": 120000.0,
-        "driveGearRadius": 0.34,
-        "mainGearRatio": 1.676,
+        "driveGearRadius": 0.31,
+        "mainGearRatio": 1.528,
         "sideGearRatio": 2.56,
         "neutralGearRatio": 11.64,
         "gearRatios": [
@@ -2621,6 +2653,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -2642,7 +2683,7 @@
     "cockpit": {
       "zoomOutFov": 15.0,
       "zoomInFov": 12.3,
-      "sightFov": 9.5,
+      "sightFov": 7.5,
       "sightName": "no43",
       "headPos": [0.0,3.7,-8.5],
       "headPosOnShooting": [-0.4,3.4,-0.45],

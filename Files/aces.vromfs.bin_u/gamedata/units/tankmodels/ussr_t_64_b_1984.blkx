@@ -927,6 +927,7 @@
             "onHit": {
               "damageType": "generic",
               "fire": 0.2,
+              "expl": 0.2,
               "damage": 200.0,
               "fHitCritical": true
             }
@@ -935,7 +936,26 @@
             "onHit": {
               "damageType": "generic",
               "fire": 0.4,
+              "expl": 0.25,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.45,
+              "expl": 0.45,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -947,8 +967,9 @@
           },
           {
             "onKill": {
-              "fire": 0.25,
-              "nothing": 0.75,
+              "fire": 0.35,
+              "expl": 0.35,
+              "nothing": 0.3,
               "fHitCritical": true
             }
           }
@@ -1660,6 +1681,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -1760,7 +1790,8 @@
           "armorThickness": 20.0
         },
         "turret_04_top_dm": {
-          "armorThickness": 30.0
+          "armorThickness": 30.0,
+          "explosionArmorQuality": 1.5
         },
         "turret_02_bottom_dm": {
           "armorThickness": 100.0,
@@ -1806,16 +1837,18 @@
         "hidableInXrayViewer": true,
         "composite_armor_turret_01_dm": {
           "armorThickness": 0.0,
-          "createSecondaryShatters": false
+          "createSecondaryShatters": false,
+          "ignoreSolidDimension": true
         },
         "composite_armor_turret_02_dm": {
           "armorThickness": 0.0,
-          "createSecondaryShatters": false
+          "createSecondaryShatters": false,
+          "ignoreSolidDimension": true
         },
         "turret_01_back_dm": {
           "armorThickness": 150.0,
-          "genericArmorQuality": 0.4,
-          "cumulativeArmorQuality": 0.4,
+          "genericArmorQuality": 0.8,
+          "cumulativeArmorQuality": 0.95,
           "createSecondaryShatters": false
         }
       },
@@ -1825,13 +1858,6 @@
           "armorThickness": 330.0,
           "variableThickness": true,
           "solidArmorTestDepth": 900.0
-        },
-        "turret_07_side_dm": {
-          "armorThickness": 130.0,
-          "genericArmorQuality": 1.5,
-          "cumulativeArmorQuality": 0.0,
-          "armorEffectiveThicknessMax": 400.0,
-          "createSecondaryShatters": false
         },
         "turret_07_back_dm": {
           "armorThickness": 140.0,
@@ -1923,6 +1949,9 @@
           "armorThickness": 140.0
         },
         "turret_07_top_dm": {
+          "armorThickness": 45.0
+        },
+        "turret_01_bottom_dm": {
           "armorThickness": 45.0
         },
         "turret_07_front_dm": {
@@ -2071,6 +2100,7 @@
         "ex_decor_09_dm": [],
         "ex_decor_10_dm": [],
         "ex_decor_13_dm": [],
+        "turret_07_side_dm": [],
         "turret_06_bottom_dm": {
           "armorThickness": 6.0,
           "secondaryShatterArmorQuality": 0.8
@@ -2101,6 +2131,10 @@
           "hp": 20.0
         },
         "optic_turret_04_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_05_dm": {
           "armorThickness": 3.0,
           "hp": 20.0
         },
@@ -2510,6 +2544,8 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "createSecondaryShatters": false,
+        "stopChanceOnDeadPart": 0.0,
+        "fireParamsPreset": "fuel_internal",
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -2534,6 +2570,7 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fireParamsPreset": "fuel_exterior",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
         "fuel_tank_exterior_r_03_dm": [],
@@ -2938,11 +2975,31 @@
           "errTargettingOn100kmph": 0.0,
           "errTargetting": 3.0,
           "errExplTime": 0.0,
-          "turret": {
-            "head": "bone_mg_aa_h_01",
-            "gun": "bone_mg_aa_v_01",
-            "gunnerDm": "commander_dm"
-          },
+          "turret": [
+            {
+              "head": "bone_mg_aa_h_01"
+            },
+            {
+              "gun": "bone_mg_aa_v_01"
+            },
+            {
+              "gunnerDm": "commander_dm"
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "bone_mg_aa_optic",
+                "verLimits": [-5.0,60.0],
+                "verOriginLimits": [-5.0,70.0]
+              }
+            },
+            {
+              "linkedAnimPart": {
+                "verNode": "bone_mg_aa_mount_01",
+                "verLimits": [-5.0,61.0],
+                "verOriginLimits": [-5.0,70.0]
+              }
+            }
+          ],
           "limits": {
             "yaw": [-180.0,180.0],
             "pitch": [-5.0,70.0]
@@ -3348,11 +3405,31 @@
                 "errTargettingOn100kmph": 0.0,
                 "errTargetting": 3.0,
                 "errExplTime": 0.0,
-                "turret": {
-                  "head": "bone_mg_aa_h_01",
-                  "gun": "bone_mg_aa_v_01",
-                  "gunnerDm": "commander_dm"
-                },
+                "turret": [
+                  {
+                    "head": "bone_mg_aa_h_01"
+                  },
+                  {
+                    "gun": "bone_mg_aa_v_01"
+                  },
+                  {
+                    "gunnerDm": "commander_dm"
+                  },
+                  {
+                    "linkedAnimPart": {
+                      "verNode": "bone_mg_aa_optic",
+                      "verLimits": [-5.0,60.0],
+                      "verOriginLimits": [-5.0,70.0]
+                    }
+                  },
+                  {
+                    "linkedAnimPart": {
+                      "verNode": "bone_mg_aa_mount_01",
+                      "verLimits": [-5.0,61.0],
+                      "verOriginLimits": [-5.0,70.0]
+                    }
+                  }
+                ],
                 "limits": {
                   "yaw": [-180.0,180.0],
                   "pitch": [-5.0,70.0]

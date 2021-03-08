@@ -275,6 +275,8 @@
       "armorThickness": 2.0,
       "armorThrough": 12.0,
       "fireProtectionHp": 15.0,
+      "fireParamsPreset": "fuel_internal",
+      "stopChanceOnDeadPart": 0.0,
       "fuel_tank_dm": [],
       "fuel_tank_01_dm": [],
       "fuel_tank_02_dm": [],
@@ -530,23 +532,6 @@
           "conditionDamageType": "cumulative",
           "expl": 1.0,
           "conditionDamage": 100.0,
-          "kill": true,
-          "killEffect": "fire"
-        }
-      },
-      {
-        "effect": {
-          "conditionDamageType": "generic",
-          "expl": 1.0,
-          "conditionDamage": 180.0,
-          "kill": true,
-          "killEffect": "fire"
-        }
-      },
-      {
-        "effect": {
-          "expl": 1.0,
-          "conditionDead": true,
           "kill": true,
           "killEffect": "fire"
         }
@@ -1282,6 +1267,15 @@
     {
       "event": {
         "name": "fuel_exterior",
+        "fx": {
+          "name": "tank_ex_fuel_explosion",
+          "centerDmgPart": true
+        }
+      }
+    },
+    {
+      "event": {
+        "name": "fuel_internal",
         "fx": {
           "name": "tank_ex_fuel_explosion",
           "centerDmgPart": true

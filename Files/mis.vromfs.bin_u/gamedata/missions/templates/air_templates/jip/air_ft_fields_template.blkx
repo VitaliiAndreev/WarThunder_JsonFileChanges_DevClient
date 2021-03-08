@@ -2334,7 +2334,7 @@
         "comments": "",
         "props": {
           "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
+          "conditionsType": "ANY",
           "enableAfterComplete": false
         },
         "events": {
@@ -2342,12 +2342,20 @@
             "time": 1.0
           }
         },
-        "conditions": {
-          "objectExists": {
-            "target": "@ft_generate_t1_aaa_name",
-            "type": "area"
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@ft_generate_t1_aaa_name",
+              "type": "area"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@ft_generate_t1_aaa_squad_name",
+              "type": "squad"
+            }
           }
-        },
+        ],
         "actions": [
           {
             "comment": {
@@ -3972,7 +3980,7 @@
         "comments": "",
         "props": {
           "actionsType": "PERFORM_ONE_BY_ONE",
-          "conditionsType": "ALL",
+          "conditionsType": "ANY",
           "enableAfterComplete": false
         },
         "events": {
@@ -3980,12 +3988,20 @@
             "time": 1.0
           }
         },
-        "conditions": {
-          "objectExists": {
-            "target": "@ft_generate_t2_aaa_name",
-            "type": "area"
+        "conditions": [
+          {
+            "objectExists": {
+              "target": "@ft_generate_t2_aaa_name",
+              "type": "area"
+            }
+          },
+          {
+            "objectExists": {
+              "target": "@ft_generate_t2_aaa_squad_name",
+              "type": "squad"
+            }
           }
-        },
+        ],
         "actions": [
           {
             "comment": {
@@ -4087,17 +4103,6 @@
               "value": 300.0,
               "var": "ft_damage_restore_base_hp"
             }
-          },
-          {
-            "comment": {
-              "value": "запоминаем матчинг ранг для дежурной пары"
-            }
-          },
-          {
-            "varSetInt": {
-              "value": 1,
-              "var": "st_matching_rank"
-            }
           }
         ],
         "else_actions": []
@@ -4174,17 +4179,6 @@
             "varSetReal": {
               "value": 850.0,
               "var": "ft_damage_restore_base_hp"
-            }
-          },
-          {
-            "comment": {
-              "value": "запоминаем матчинг ранг для дежурной пары"
-            }
-          },
-          {
-            "varSetInt": {
-              "value": 2,
-              "var": "st_matching_rank"
             }
           }
         ],
@@ -4263,17 +4257,6 @@
               "value": 1200.0,
               "var": "ft_damage_restore_base_hp"
             }
-          },
-          {
-            "comment": {
-              "value": "запоминаем матчинг ранг для дежурной пары"
-            }
-          },
-          {
-            "varSetInt": {
-              "value": 3,
-              "var": "st_matching_rank"
-            }
           }
         ],
         "else_actions": []
@@ -4351,17 +4334,6 @@
               "value": 2500.0,
               "var": "ft_damage_restore_base_hp"
             }
-          },
-          {
-            "comment": {
-              "value": "запоминаем матчинг ранг для дежурной пары"
-            }
-          },
-          {
-            "varSetInt": {
-              "value": 4,
-              "var": "st_matching_rank"
-            }
           }
         ],
         "else_actions": []
@@ -4429,17 +4401,6 @@
             "varSetReal": {
               "value": 3000.0,
               "var": "ft_damage_restore_base_hp"
-            }
-          },
-          {
-            "comment": {
-              "value": "запоминаем матчинг ранг для дежурной пары"
-            }
-          },
-          {
-            "varSetInt": {
-              "value": 5,
-              "var": "st_matching_rank"
             }
           }
         ],
@@ -9634,20 +9595,6 @@
             }
           },
           {
-            "__varAddString": {
-              "value": "@st_matching_rank",
-              "digits": 2,
-              "var": "st_t1_generate_name"
-            }
-          },
-          {
-            "__varAddString": {
-              "value": "_",
-              "digits": 0,
-              "var": "st_t1_generate_name"
-            }
-          },
-          {
             "varAddString": {
               "value": "@st_t1_generate_idx",
               "digits": 2,
@@ -10032,20 +9979,6 @@
             }
           },
           {
-            "__varAddString": {
-              "value": "@st_matching_rank",
-              "digits": 2,
-              "var": "st_t1_despawn_name"
-            }
-          },
-          {
-            "__varAddString": {
-              "value": "_",
-              "digits": 0,
-              "var": "st_t1_despawn_name"
-            }
-          },
-          {
             "varAddString": {
               "value": "@ft_destroy_t1_cur_field_idx",
               "digits": 2,
@@ -10169,20 +10102,6 @@
           {
             "varSetString": {
               "value": "st_t2_sentinel_",
-              "var": "st_t2_generate_name"
-            }
-          },
-          {
-            "__varAddString": {
-              "value": "@st_matching_rank",
-              "digits": 2,
-              "var": "st_t2_generate_name"
-            }
-          },
-          {
-            "__varAddString": {
-              "value": "_",
-              "digits": 0,
               "var": "st_t2_generate_name"
             }
           },
@@ -10561,20 +10480,6 @@
           {
             "varSetString": {
               "value": "st_t2_sentinel_",
-              "var": "st_t2_despawn_name"
-            }
-          },
-          {
-            "__varAddString": {
-              "value": "@st_matching_rank",
-              "digits": 2,
-              "var": "st_t2_despawn_name"
-            }
-          },
-          {
-            "__varAddString": {
-              "value": "_",
-              "digits": 0,
               "var": "st_t2_despawn_name"
             }
           },
@@ -13937,7 +13842,6 @@
     "ft_generate_t1_distance_check_fail": false,
     "ft_generate_t2_distance_check_fail": false,
     "st_is_launch_alowed": false,
-    "st_matching_rank": 0,
     "st_t1_generate_idx": 0,
     "st_t2_generate_idx": 0,
     "st_t1_generate_name": "",

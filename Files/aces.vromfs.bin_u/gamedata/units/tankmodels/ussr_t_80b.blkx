@@ -365,7 +365,8 @@
           "armorThickness": 90.0
         },
         "turret_09_back_dm": {
-          "armorThickness": 150.0
+          "armorThickness": 30.0,
+          "createSecondaryShatters": false
         },
         "gun_barrel_armor_dm": {
           "armorThickness": 200.0
@@ -432,6 +433,13 @@
         "ex_era_turret_10_dm": [],
         "ex_era_turret_11_dm": [],
         "ex_era_turret_12_dm": [],
+        "ex_era_turret_13_dm": [],
+        "ex_era_turret_14_dm": [],
+        "ex_era_turret_15_dm": [],
+        "ex_era_turret_16_dm": [],
+        "ex_era_turret_17_dm": [],
+        "ex_era_turret_18_dm": [],
+        "ex_era_turret_19_dm": [],
         "ex_era_hull_01_dm": [],
         "ex_era_hull_02_dm": [],
         "ex_era_hull_03_dm": [],
@@ -441,7 +449,15 @@
         "ex_era_hull_07_dm": [],
         "ex_era_hull_08_dm": [],
         "ex_era_hull_09_dm": [],
-        "ex_era_hull_10_dm": []
+        "ex_era_hull_10_dm": [],
+        "ex_era_hull_11_dm": [],
+        "ex_era_hull_12_dm": [],
+        "ex_era_hull_13_dm": [],
+        "ex_era_hull_14_dm": [],
+        "ex_era_hull_15_dm": [],
+        "ex_era_hull_16_dm": [],
+        "ex_era_hull_17_dm": [],
+        "ex_era_hull_18_dm": []
       },
       "body_side_screens": {
         "armorClass": "t_90_rubber_fabric_screens",
@@ -491,6 +507,12 @@
         "turret_03_back_dm": [],
         "ex_armor_05_dm": [],
         "ex_decor_05_dm": [],
+        "turret_11_top_dm": [],
+        "turret_12_top_dm": [],
+        "turret_13_top_dm": [],
+        "turret_14_top_dm": [],
+        "turret_15_top_dm": [],
+        "turret_16_top_dm": [],
         "timber": {
           "armorClass": "ship_wood",
           "armorThickness": 100.0,
@@ -950,6 +972,8 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "createSecondaryShatters": false,
+        "stopChanceOnDeadPart": 0.0,
+        "fireParamsPreset": "fuel_internal",
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -974,6 +998,7 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fireParamsPreset": "fuel_exterior",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
         "fuel_tank_exterior_r_03_dm": [],
@@ -1854,6 +1879,7 @@
             "onHit": {
               "damageType": "generic",
               "fire": 0.2,
+              "expl": 0.2,
               "damage": 200.0,
               "fHitCritical": true
             }
@@ -1862,7 +1888,26 @@
             "onHit": {
               "damageType": "generic",
               "fire": 0.4,
+              "expl": 0.25,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.45,
+              "expl": 0.45,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1874,8 +1919,9 @@
           },
           {
             "onKill": {
-              "fire": 0.25,
-              "nothing": 0.75,
+              "fire": 0.35,
+              "expl": 0.35,
+              "nothing": 0.3,
               "fHitCritical": true
             }
           }
@@ -2083,10 +2129,12 @@
           "blk": "gameData/Weapons/groundModels_weapons/125mm_2A46_2_user_cannon.blk",
           "emitter": "bone_gun_barrel",
           "flash": "emtr_gun_flame",
+          "maxAdditionalPitch": 0.0,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
           "barrelDP": "gun_barrel_dm",
           "breechDP": "cannon_breech_dm",
+          "aimForOperatedShell": true,
           "autoLoader": true,
           "speedYaw": 24.0,
           "speedPitch": 3.35,
@@ -2425,8 +2473,16 @@
       },
       "tracks": {
         "animationMultiplier": 0.72,
-        "height": 0.045,
-        "width": 0.65
+        "height": 0.065,
+        "width": 0.6,
+        "tracksTensionK": [5.0,10.0,6.0],
+        "trackMesh": "ussr_t_80_phys_track_line",
+        "trackLen": 0.164,
+        "trackCount": 80,
+        "trackFadeTime": 1.5,
+        "trackConnector": true,
+        "trackStartOffset": 0.08,
+        "trackMaxHeight": 1.22
       },
       "collisionProps": {
         "cls_turret": "convex_hull",
@@ -2442,8 +2498,8 @@
       },
       "mechanics": {
         "maxBrakeForce": 170000.0,
-        "driveGearRadius": 0.47,
-        "mainGearRatio": 1.28,
+        "driveGearRadius": 0.292,
+        "mainGearRatio": 0.795,
         "sideGearRatio": 6.25,
         "gearRatios": [
           {
@@ -2483,9 +2539,9 @@
       },
       "suspension": {
         "suspensionOffsets": [-0.14,-0.14,0.12],
-        "defaultGearRadius": 0.35,
+        "defaultGearRadius": 0.33,
         "frontBackGearRadius": 0.27,
-        "topGearRadius": 0.15,
+        "topGearRadius": 0.08,
         "defaultDampeningForce": [200000.0,200000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
@@ -3013,6 +3069,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -3157,10 +3222,12 @@
                 "blk": "gameData/Weapons/groundModels_weapons/125mm_2A46_2_user_cannon.blk",
                 "emitter": "bone_gun_barrel",
                 "flash": "emtr_gun_flame",
+                "maxAdditionalPitch": 0.0,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
                 "barrelDP": "gun_barrel_dm",
                 "breechDP": "cannon_breech_dm",
+                "aimForOperatedShell": true,
                 "autoLoader": true,
                 "speedYaw": 24.0,
                 "speedPitch": 3.35,
@@ -3553,10 +3620,12 @@
                 "blk": "gameData/Weapons/groundModels_weapons/125mm_2A46_2_user_cannon.blk",
                 "emitter": "bone_gun_barrel",
                 "flash": "emtr_gun_flame",
+                "maxAdditionalPitch": 0.0,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,
                 "barrelDP": "gun_barrel_dm",
                 "breechDP": "cannon_breech_dm",
+                "aimForOperatedShell": true,
                 "autoLoader": true,
                 "speedYaw": 24.0,
                 "speedPitch": 3.35,

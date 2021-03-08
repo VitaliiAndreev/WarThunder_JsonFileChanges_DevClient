@@ -854,8 +854,11 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
+        "fireParamsPreset": "fuel_internal",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -877,8 +880,9 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fireParamsPreset": "fuel_exterior",
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
@@ -1667,8 +1671,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1680,8 +1703,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -1894,73 +1918,6 @@
   },
   {
     "MetaParts": {
-      "inner": [
-        {
-          "hp": 10000.0
-        },
-        {
-          "part": "engine_dm"
-        },
-        {
-          "part": "transmission_dm"
-        },
-        {
-          "part": "cannon_breech_dm"
-        },
-        {
-          "part": "cannon_breech_01_dm"
-        },
-        {
-          "part": "cannon_breech_02_dm"
-        },
-        {
-          "part": "cannon_breech_03_dm"
-        },
-        {
-          "part": "cannon_breech_04_dm"
-        },
-        {
-          "part": "cannon_breech_05_dm"
-        },
-        {
-          "part": "body_bottom_dm"
-        },
-        {
-          "effect": {
-            "conditionDamageType": "explosion",
-            "expl": 1.0,
-            "conditionDamage": 250.0,
-            "kill": true,
-            "killEffect": "fire"
-          }
-        },
-        {
-          "effect": {
-            "conditionDamageType": "cumulative",
-            "expl": 1.0,
-            "conditionDamage": 100.0,
-            "kill": true,
-            "killEffect": "fire"
-          }
-        },
-        {
-          "effect": {
-            "conditionDamageType": "generic",
-            "expl": 1.0,
-            "conditionDamage": 180.0,
-            "kill": true,
-            "killEffect": "fire"
-          }
-        },
-        {
-          "effect": {
-            "expl": 1.0,
-            "conditionDead": true,
-            "kill": true,
-            "killEffect": "fire"
-          }
-        }
-      ],
       "body": [
         {
           "hp": 2000.0
@@ -2036,23 +1993,6 @@
             "kill": true,
             "killEffect": "hullBreak"
           }
-        },
-        {
-          "effect": {
-            "conditionDamageType": "generic",
-            "expl": 1.0,
-            "conditionDamage": 700.0,
-            "kill": true,
-            "killEffect": "hullBreak"
-          }
-        },
-        {
-          "effect": {
-            "expl": 1.0,
-            "conditionDead": true,
-            "kill": true,
-            "killEffect": "hullBreak"
-          }
         }
       ],
       "mount": [
@@ -2082,38 +2022,29 @@
             "kill": true,
             "killEffect": "hullBreak"
           }
-        },
+        }
+      ]
+    }
+  },
+  {
+    "chainIK": {
+      "points": [
         {
-          "effect": {
-            "conditionDamageType": "generic",
-            "expl": 1.0,
-            "conditionDamage": 700.0,
-            "kill": true,
-            "killEffect": "hullBreak"
+          "point": {
+            "nameTemplate": "gun_piston_01"
           }
         },
         {
-          "effect": {
-            "expl": 1.0,
-            "conditionDead": true,
-            "kill": true,
-            "killEffect": "hullBreak"
+          "point": {
+            "nameTemplate": "gun_piston_02"
           }
         }
       ]
     }
   },
   {
-    "orientedToEachOtherNodes": {
-      "pair": {
-        "n1": "gun_piston_02",
-        "n2": "gun_piston_01"
-      }
-    }
-  },
-  {
     "sound": {
-      "EngineName": "engine_m3_bradley",
+      "EngineName": "engine_patria_rear",
       "TrackSoundPath": "tanks/engines_tanks",
       "TrackSoundPathStudio": "ground/engines",
       "TrackSoundName": "tracks_wheels",
@@ -2171,26 +2102,26 @@
           "hasVerticalGunFreeMode": false,
           "hasHorizontal": true,
           "horizontalOmegaMult": 1.0,
-          "horizontalSpeedLimitKPH": 75.0,
+          "horizontalSpeedLimitKPH": 25.0,
           "hasVertical": true,
           "verticalOmegaMult": 1.0,
-          "verticalSpeedLimitKPH": 75.0,
+          "verticalSpeedLimitKPH": 25.0,
           "speedFromVehicleVerticalMult": -1.0,
           "errorKPHToDegrees": [
             {
               "row": [5.0,0.0]
             },
             {
-              "row": [25.0,0.015]
+              "row": [10.0,0.015]
             },
             {
-              "row": [35.0,0.02]
+              "row": [15.0,0.02]
             },
             {
-              "row": [45.0,0.1]
+              "row": [20.0,0.1]
             },
             {
-              "row": [50.0,0.3]
+              "row": [25.0,0.3]
             }
           ]
         }
@@ -2222,7 +2153,7 @@
         "momentOfInertia": [2.0,2.0,4.0],
         "CenterOfGravity": [-0.15,0.4,0.0],
         "CenterOfGravityClampY": [0.0,0.5],
-        "AdvancedMass": false,
+        "AdvancedMass": true,
         "trackMass": 40.0,
         "engineInertialMass": 400.0
       },
@@ -2273,11 +2204,11 @@
         ]
       },
       "suspension": {
-        "suspensionOffsets": [-0.16,-0.12,0.1],
+        "suspensionOffsets": [-0.11,-0.1,0.07],
         "defaultGearRadius": 0.406,
         "defaultDampeningForce": [36138.0,36138.0],
         "hasSuspensionOnDriveGear": true,
-        "dampeningRelaxationRatio": 0.2,
+        "dampeningRelaxationRatio": 0.3,
         "dampeningCompressionRatio": 0.1,
         "brokenWheelSteeringDeflection": -15.0,
         "steeringDeflection": {
@@ -2916,6 +2847,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -2939,7 +2879,7 @@
       "headPosOnShooting": [-1.1,2.6,0.0],
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
-      "sightFov": 25.0,
+      "sightFov": 20.0,
       "sightName": "default_tank_spg",
       "detectionHeight": 2.07
     }

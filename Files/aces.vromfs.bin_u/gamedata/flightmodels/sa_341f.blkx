@@ -32,15 +32,11 @@
     "armor_engine": {
       "engine1_dm": {
         "genericDamageMult": 1.6,
-        "hp": 49.5
+        "hp": 60.5
       },
       "transmission1_dm": {
         "genericDamageMult": 1.6,
-        "hp": 25.3
-      },
-      "propeller_shaft2_dm": {
-        "genericDamageMult": 1.6,
-        "hp": 25.3
+        "hp": 30.5
       }
     },
     "c_dural10": {
@@ -74,6 +70,9 @@
       }
     },
     "protected_controls": {
+      "propeller_shaft2_dm": {
+        "hp": 60.5
+      },
       "tailcontrol_dm": {
         "hp": 80.5
       },
@@ -717,9 +716,41 @@
       ]
     },
     {
-      "part": {
-        "name": "transmission1_dm"
-      }
+      "part": [
+        {
+          "name": "transmission1_dm"
+        },
+        {
+          "onHit": {
+            "fire": 0.001,
+            "leak_oil": 0.8,
+            "cut": 0.0
+          }
+        },
+        {
+          "onHit": {
+            "damage": 30.0,
+            "fire": 0.005,
+            "leak_oil": 0.95,
+            "cut": 0.0
+          }
+        },
+        {
+          "onKill": {
+            "fire": 25.0,
+            "leak_oil": 10.0,
+            "cut": 0.0
+          }
+        },
+        {
+          "onKill": {
+            "damage": 30.0,
+            "fire": 30.0,
+            "leak_oil": 10.0,
+            "cut": 0.0
+          }
+        }
+      ]
     },
     {
       "part": {
@@ -892,9 +923,8 @@
     "gun": "gun_default"
   },
   "cockpit": {
-    "textToShowInCockpit": "msg/textToShowInCockpit",
-    "headPos": [1.4,0.65,-0.34],
-    "headPosOnShooting": [1.4,0.65,-0.34],
+    "headPos": [1.4,0.61,-0.313],
+    "headPosOnShooting": [1.4,0.61,-0.313],
     "lightPos1": [2.019962,0.218256,-0.114969],
     "lightColor1": [0.01,0.6,0.1],
     "lightRadius1": 0.35,
@@ -902,21 +932,35 @@
     "sightOutFov": -1.0,
     "sightFov": 5.5,
     "devices": {
-      "speed": [0.0,55.555],
-      "bank": [-8.0,8.0],
-      "turn": [-0.23562,0.23562],
-      "vario": [-40.0,40.0],
-      "altitude_10k": [0.0,100000.0],
-      "altitude_min": [0.0,1000.0],
-      "altitude_hour": [0.0,10000.0],
-      "aviahorizon_pitch": [-60.0,60.0],
-      "aviahorizon_roll": [-180.0,180.0],
+      "stick_ailerons": [-2.0,2.0],
+      "stick_elevator": [-1.0,1.0],
+      "stick_ailerons1": [-2.0,2.0],
+      "pedals": [-1.0,1.0],
+      "pedals1": [-1.0,1.0],
+      "pedals2": [-1.0,1.0],
+      "pedals3": [-1.0,1.0],
+      "throttle": [0.0,1.0],
+      "prop_pitch": [0.0,1.0],
+      "weapon1": [0.0,1.0],
       "compass": [0.0,360.0],
-      "rpm_hour": [2000.0,20000.0],
-      "rpm_min": [0.0,1000.0],
-      "oil_temperature": [25.0,140.0],
-      "water_temperature": [250.0,1100.0],
-      "fuel_pressure": [0.0,15.0]
+      "compass1": [0.0,360.0],
+      "aviahorizon_pitch": [-45.0,45.0],
+      "aviahorizon_roll": [-180.0,180.0],
+      "aviahorizon_pitch1": [-45.0,45.0],
+      "aviahorizon_roll1": [-180.0,180.0],
+      "altitude_hour": [0.0,10000.0],
+      "altitude_min": [0.0,1000.0],
+      "altitude_koef": 1.0,
+      "radio_altitude": [0.0,850.0],
+      "speed": [0.0,102.777],
+      "vario": [-13.333,13.333],
+      "rpm": [0.0,5000.0],
+      "water_temperature": [0.0,800.0],
+      "oil_temperature": [0.0,100.0],
+      "fuel": [0.0,450.0],
+      "clock_hour": [0.0,12.0],
+      "clock_min": [0.0,60.0],
+      "clock_sec": [0.0,60.0]
     },
     "parts_holes_dmg": {
       "part": "fuse"
@@ -950,7 +994,6 @@
       "defaultPitch": 0.0,
       "speedYaw": 25.0,
       "speedPitch": 25.0,
-      "bullets": 1,
       "parkInDeadzone": false,
       "aimForOperatedShell": true,
       "turret": {
@@ -1176,7 +1219,6 @@
               "defaultPitch": 0.0,
               "speedYaw": 25.0,
               "speedPitch": 25.0,
-              "bullets": 1,
               "parkInDeadzone": false,
               "aimForOperatedShell": true,
               "turret": {
@@ -1206,6 +1248,7 @@
           {
             "Weapon": {
               "trigger": "flares",
+              "startFx": "",
               "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
               "emitter": "emtr_flare1",
               "bullets": 16,
@@ -1216,6 +1259,7 @@
           {
             "Weapon": {
               "trigger": "flares",
+              "startFx": "",
               "blk": "gameData/Weapons/rocketGuns/flare_launcher.blk",
               "emitter": "emtr_flare2",
               "bullets": 16,

@@ -13,7 +13,6 @@
   "waterToAirDistanceEquivalent": 50.0,
   "armorBreachK": 7.0,
   "damageToHpRicochetThreshold": 1.1,
-  "cumulativeArmorPowerDispersion": 0.2,
   "ricochetNormalRandomMult": 0.01,
   "ricochetNormalRandomMultGround": 0.25,
   "ricochetSpeedMul": 0.3,
@@ -28,7 +27,7 @@
   "maxRicochetProbThresholdForTest": 0.6,
   "armorResistance": 1900.0,
   "secondaryShatterWithoutPenetration": [20.0,5.0,0.0,0.0],
-  "cumulativePierceDispersion": 0.2,
+  "cumulativePierceDispersion": 0.05,
   "minSecondaryShatterAngleFromArmor": 15.0,
   "ricochetPenetrationModifier": [
     {
@@ -160,13 +159,18 @@
     "p3": [0.4,0.75]
   },
   "traceStrategy": {
+    "pattern0": {
+      "caliber": 10.0,
+      "circleCount": 1,
+      "pointCount": 3
+    },
     "pattern1": {
-      "caliber": 5.0,
+      "caliber": 20.0,
       "circleCount": 1,
       "pointCount": 4
     },
     "pattern2": {
-      "caliber": 20.0,
+      "caliber": 35.0,
       "circleCount": 1,
       "pointCount": 6
     },
@@ -174,6 +178,11 @@
       "caliber": 85.0,
       "circleCount": 2,
       "pointCount": 6
+    },
+    "pattern4": {
+      "caliber": 140.0,
+      "circleCount": 3,
+      "pointCount": 5
     }
   }
 }

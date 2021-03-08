@@ -961,8 +961,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -974,8 +993,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -1715,6 +1735,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -2348,8 +2377,11 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
+        "fireParamsPreset": "fuel_internal",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -2371,8 +2403,9 @@
         "armorClass": "tank_structural_steel",
         "hp": 250.0,
         "armorThickness": 2.0,
-        "armorThrough": 12.0,
-        "fireProtectionHp": 15.0,
+        "armorThrough": 10.0,
+        "fireProtectionHp": 10.0,
+        "createSecondaryShatters": false,
         "fireParamsPreset": "fuel_exterior",
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
@@ -2621,8 +2654,43 @@
       },
       "tracks": {
         "animationMultiplier": 0.68,
-        "height": 0.055,
-        "width": 0.4
+        "height": 0.1,
+        "width": 0.55,
+        "fricFrontal": [1.0,0.9],
+        "fricSideRot": [5.0,0.0,0.7,0.3],
+        "tracksTensionK": [7.0,12.0,1.0],
+        "trackMesh": "fr_arl_44_phys_track_line",
+        "trackLen": 0.158,
+        "trackCount": 84,
+        "trackFadeTime": 1.0,
+        "trackMaxHeight": 1.65,
+        "trackMaxSinking": 0.1,
+        "trackLimiters": [
+          {
+            "limiter": {
+              "p1": [-1.57,1.54,0.858647],
+              "p2": [0.77,1.54,0.858647]
+            }
+          },
+          {
+            "limiter": {
+              "p1": [0.77,1.54,0.858647],
+              "p2": [3.77,1.24,0.858647]
+            }
+          },
+          {
+            "limiter": {
+              "p1": [-1.57,1.54,-0.858647],
+              "p2": [0.77,1.54,-0.858647]
+            }
+          },
+          {
+            "limiter": {
+              "p1": [0.77,1.54,-0.858647],
+              "p2": [3.77,1.24,-0.858647]
+            }
+          }
+        ]
       },
       "collisionProps": {
         "cls_turret": "convex_hull",
@@ -2635,8 +2703,8 @@
       },
       "mechanics": {
         "maxBrakeForce": 180000.0,
-        "driveGearRadius": 0.34,
-        "mainGearRatio": 4.28,
+        "driveGearRadius": 0.4,
+        "mainGearRatio": 5.0352,
         "sideGearRatio": 2.74,
         "gearRatios": [
           {
@@ -2663,10 +2731,10 @@
         ]
       },
       "suspension": {
-        "suspensionOffsets": [-0.07,-0.02,0.02],
-        "defaultGearRadius": 0.23,
-        "topGearRadius": 0.13,
-        "frontBackGearRadius": 0.28,
+        "suspensionOffsets": [-0.07,-0.04,0.04],
+        "defaultGearRadius": 0.15,
+        "topGearRadius": 0.12,
+        "frontBackGearRadius": 0.38,
         "defaultDampeningForce": [120000.0,120000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
@@ -2677,7 +2745,7 @@
     "cockpit": {
       "zoomOutFov": 40.0,
       "zoomInFov": 21.0,
-      "sightFov": 25.0,
+      "sightFov": 20.0,
       "sightName": "default_tank_spg",
       "headPos": [0.0,4.0,-8.0],
       "headPosOnShooting": [-0.6,3.7,0.37],

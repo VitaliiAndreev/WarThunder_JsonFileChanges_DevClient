@@ -2,8 +2,8 @@
   "cannon": true,
   "weaponType": 1,
   "aimMinDist": 0.05,
-  "aimMaxDist": 20000.0,
-  "attackMaxDist": 15000.0,
+  "aimMaxDist": 10000.0,
+  "attackMaxDist": 10000.0,
   "maxDeltaAngle": 0.53,
   "maxDeltaAngleVertical": 0.2,
   "shotFreq": 0.1,
@@ -11,9 +11,12 @@
   "recoilOffset": 0.55,
   "recoilTimes": [0.18,0.6],
   "shouldCollideWithRendinsts": true,
-  "fxType": "200mm_gun_flame",
-  "fxGroundDust": "water_shock_wave",
-  "fxScale": 0.7,
+  "fxType": "muzzle_naval_100mm",
+  "fxGroundDust": "dust_ground_wave_dirt_big",
+  "fxSandDust": "dust_ground_wave_sand_big",
+  "fxSnowDust": "dust_ground_wave_snow_big",
+  "fxConcreteDust": "dust_ground_wave_asphalt_big",
+  "fxWaterShockWave": "water_shock_wave_big",
   "sound_path": "ships/weapon_common/cannons",
   "sound_pathStudio": "naval/weapon/cannons",
   "sound": "130mm_b13",
@@ -69,9 +72,6 @@
     },
     {
       "slopeEffectPreset": "ap"
-    },
-    {
-      "modelName": "tank_bullet_he"
     },
     {
       "fresnel": [0.23,0.1,2.0]
@@ -399,9 +399,6 @@
         "slopeEffectPreset": "ap"
       },
       {
-        "modelName": "tank_bullet_he"
-      },
-      {
         "fresnel": [0.23,0.1,2.0]
       },
       {
@@ -693,9 +690,10 @@
       "stabilityCaliberToArmorThreshold": 5.0,
       "stabilityReductionAfterRicochet": 0.5,
       "stabilityReductionAfterPenetration": 0.15,
+      "stucking": 0.7,
+      "stuckingAngle": 45.0,
       "bulletType": "aphebc_tank",
       "slopeEffectPreset": "apbc",
-      "modelName": "tank_bullet_aphebc",
       "fresnel": [0.23,0.1,2.0],
       "bulletName": "135mm_45_gr_perf_aphebc",
       "dynamicKv": true,
@@ -985,9 +983,6 @@
       },
       {
         "slopeEffectPreset": "ap"
-      },
-      {
-        "modelName": "tank_bullet_he"
       },
       {
         "fresnel": [0.23,0.1,2.0]

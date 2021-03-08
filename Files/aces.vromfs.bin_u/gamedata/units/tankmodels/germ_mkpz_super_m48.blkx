@@ -105,6 +105,9 @@
     "type": "typeMediumTank"
   },
   {
+    "autoSightDistanceCorrection": true
+  },
+  {
     "rearmSmokeTimeOnField": 60.0
   },
   {
@@ -897,8 +900,27 @@
           {
             "onHit": {
               "damageType": "generic",
-              "fire": 0.8,
+              "fire": 0.7,
+              "expl": 0.1,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.5,
+              "expl": 0.5,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -910,8 +932,9 @@
           },
           {
             "onKill": {
-              "fire": 0.3,
-              "nothing": 0.7,
+              "fire": 0.5,
+              "expl": 0.3,
+              "nothing": 0.2,
               "fHitCritical": true
             }
           }
@@ -1665,6 +1688,15 @@
       },
       {
         "event": {
+          "name": "fuel_internal",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
           "name": "big_bang",
           "fx": {
             "name": "tank_explosion",
@@ -1766,7 +1798,7 @@
           "triggerGroup": "machinegun",
           "blk": "gameData/Weapons/groundModels_weapons/7_92mm_MG3_user_machinegun.blk",
           "emitter": "bone_mg_aa_v_01",
-          "flash": "emtr_mg_flame_04",
+          "flash": "emtr_mg_flame_02",
           "useEmitter": true,
           "defaultYaw": 0.0,
           "defaultPitch": 0.0,
@@ -2199,6 +2231,8 @@
         "ex_decor_l_07_dm": [],
         "ex_decor_r_09_dm": [],
         "ex_decor_r_10_dm": [],
+        "ex_decor_02_dm": [],
+        "ex_decor_03_dm": [],
         "ex_decor_06_dm": [],
         "ex_decor_07_dm": [],
         "ex_decor_08_dm": [],
@@ -2638,6 +2672,8 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "createSecondaryShatters": false,
+        "stopChanceOnDeadPart": 0.0,
+        "fireParamsPreset": "fuel_internal",
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -2662,6 +2698,7 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fireParamsPreset": "fuel_exterior",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
         "fuel_tank_exterior_r_03_dm": [],
@@ -2866,7 +2903,7 @@
                 "triggerGroup": "machinegun",
                 "blk": "gameData/Weapons/groundModels_weapons/7_92mm_MG3_user_machinegun.blk",
                 "emitter": "bone_mg_aa_v_01",
-                "flash": "emtr_mg_flame_04",
+                "flash": "emtr_mg_flame_02",
                 "useEmitter": true,
                 "defaultYaw": 0.0,
                 "defaultPitch": 0.0,

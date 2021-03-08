@@ -205,7 +205,7 @@
         "composite_armor_hull_01_dm": {
           "armorThickness": 105.0,
           "genericArmorQuality": 0.001,
-          "cumulativeArmorQuality": 0.4
+          "cumulativeArmorQuality": 0.6
         }
       },
       "turret_composite_armor": {
@@ -219,8 +219,8 @@
           "armorThickness": 75.0,
           "genericArmorQuality": 0.65,
           "cumulativeArmorQuality": 0.75,
-          "secondaryShatterArmorQuality": 0.0,
-          "ArmorQuality": 1.0
+          "ArmorQuality": 1.0,
+          "createSecondaryShatters": false
         }
       },
       "turret": {
@@ -267,6 +267,9 @@
         },
         "turret_01_side_dm": {
           "armorThickness": 168.0
+        },
+        "turret_03_side_dm": {
+          "armorThickness": 45.0
         },
         "turret_01_back_dm": {
           "armorThickness": 65.0
@@ -374,6 +377,7 @@
           "armorThickness": 6.0
         },
         "ex_armor_r_01_dm": [],
+        "turret_07_side_dm": [],
         "timber": {
           "armorClass": "ship_wood",
           "armorThickness": 100.0,
@@ -404,6 +408,10 @@
           "hp": 20.0
         },
         "optic_turret_04_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
+        "optic_turret_05_dm": {
           "armorThickness": 3.0,
           "hp": 20.0
         },
@@ -813,6 +821,8 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "createSecondaryShatters": false,
+        "stopChanceOnDeadPart": 0.0,
+        "fireParamsPreset": "fuel_internal",
         "fuel_tank_dm": [],
         "fuel_tank_01_dm": [],
         "fuel_tank_02_dm": [],
@@ -837,6 +847,7 @@
         "armorThrough": 12.0,
         "fireProtectionHp": 15.0,
         "fireParamsPreset": "fuel_exterior",
+        "stopChanceOnDeadPart": 0.0,
         "fuel_tank_exterior_r_01_dm": [],
         "fuel_tank_exterior_r_02_dm": [],
         "fuel_tank_exterior_r_03_dm": [],
@@ -1696,6 +1707,7 @@
             "onHit": {
               "damageType": "generic",
               "fire": 0.2,
+              "expl": 0.2,
               "damage": 200.0,
               "fHitCritical": true
             }
@@ -1704,7 +1716,26 @@
             "onHit": {
               "damageType": "generic",
               "fire": 0.4,
+              "expl": 0.25,
               "damage": 300.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.45,
+              "expl": 0.45,
+              "damage": 400.0,
+              "fHitCritical": true
+            }
+          },
+          {
+            "onHit": {
+              "damageType": "generic",
+              "fire": 0.2,
+              "expl": 0.8,
+              "damage": 600.0,
               "fHitCritical": true
             }
           },
@@ -1716,8 +1747,9 @@
           },
           {
             "onKill": {
-              "fire": 0.25,
-              "nothing": 0.75,
+              "fire": 0.35,
+              "expl": 0.35,
+              "nothing": 0.3,
               "fHitCritical": true
             }
           }
@@ -2701,6 +2733,15 @@
       {
         "event": {
           "name": "fuel_exterior",
+          "fx": {
+            "name": "tank_ex_fuel_explosion",
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
+          "name": "fuel_internal",
           "fx": {
             "name": "tank_ex_fuel_explosion",
             "centerDmgPart": true

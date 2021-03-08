@@ -34,7 +34,24 @@
         "hp": 15.0
       }
     },
+    "armor12_7": {
+      "armor4_dm": {
+        "hp": 40.0
+      },
+      "armor8_dm": {
+        "hp": 40.0
+      },
+      "armor9_dm": {
+        "hp": 40.0
+      }
+    },
     "armor4_7": {
+      "armor10_dm": {
+        "hp": 35.0
+      },
+      "armor11_dm": {
+        "hp": 35.0
+      },
       "armor1_dm": {
         "hp": 35.0
       },
@@ -49,29 +66,12 @@
       },
       "armor6_dm": {
         "hp": 35.0
-      },
-      "armor10_dm": {
-        "hp": 35.0
-      },
-      "armor11_dm": {
-        "hp": 35.0
-      }
-    },
-    "armor12_7": {
-      "armor4_dm": {
-        "hp": 40.0
-      },
-      "armor8_dm": {
-        "hp": 40.0
-      },
-      "armor9_dm": {
-        "hp": 40.0
       }
     },
     "armor_engine": {
       "engine1_dm": {
         "genericDamageMult": 1.6,
-        "hp": 70.5
+        "hp": 71.5
       }
     },
     "c_dural3": {
@@ -122,10 +122,10 @@
     },
     "c_dural7": {
       "fuse1_dm": {
-        "hp": 64.9
+        "hp": 67.6
       },
       "fuse_dm": {
-        "hp": 63.8
+        "hp": 64.0
       },
       "tail_dm": {
         "genericDamageMult": 0.5,
@@ -146,14 +146,6 @@
       "wing2_r_dm": {
         "genericDamageMult": 0.3,
         "hp": 80.5
-      },
-      "wing_l_dm": {
-        "genericDamageMult": 0.3,
-        "hp": 72.9
-      },
-      "wing_r_dm": {
-        "genericDamageMult": 0.3,
-        "hp": 72.9
       }
     },
     "dural": {
@@ -231,6 +223,14 @@
     "steel_tank_s": {
       "tank1_dm": {
         "hp": 70.5
+      }
+    },
+    "wood": {
+      "wing_l_dm": {
+        "hp": 69.4
+      },
+      "wing_r_dm": {
+        "hp": 69.4
       }
     }
   },
@@ -351,6 +351,16 @@
     },
     {
       "part": {
+        "name": "armor10_dm"
+      }
+    },
+    {
+      "part": {
+        "name": "armor11_dm"
+      }
+    },
+    {
+      "part": {
         "name": "armor1_dm"
       }
     },
@@ -392,16 +402,6 @@
     {
       "part": {
         "name": "armor9_dm"
-      }
-    },
-    {
-      "part": {
-        "name": "armor10_dm"
-      }
-    },
-    {
-      "part": {
-        "name": "armor11_dm"
       }
     },
     {
@@ -1378,8 +1378,8 @@
       "part": {
         "name": "spar1_l_dm",
         "onKill": {
-          "nothing": 0.0,
-          "cut": 1.0
+          "nothing": 2.0,
+          "cut": 4.0
         }
       }
     },
@@ -1387,8 +1387,8 @@
       "part": {
         "name": "spar1_r_dm",
         "onKill": {
-          "nothing": 0.0,
-          "cut": 1.0
+          "nothing": 2.0,
+          "cut": 4.0
         }
       }
     },
@@ -1396,8 +1396,8 @@
       "part": {
         "name": "spar2_l_dm",
         "onKill": {
-          "nothing": 0.0,
-          "cut": 1.0
+          "nothing": 2.0,
+          "cut": 4.0
         }
       }
     },
@@ -1405,8 +1405,8 @@
       "part": {
         "name": "spar2_r_dm",
         "onKill": {
-          "nothing": 0.0,
-          "cut": 1.0
+          "nothing": 2.0,
+          "cut": 4.0
         }
       }
     },
@@ -2417,6 +2417,91 @@
         },
         {
           "reqModification": "btd_lbc"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": {
+                "blk": "gameData/weapons/bombguns/us_2000lbs_anm66.blk",
+                "amountPerTier": 1.0,
+                "tier": {
+                  "idx": 6,
+                  "iconType": "bombs_heavy"
+                }
+              }
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_1600lb_ap_an_mk1.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "tier": {
+                    "idx": 5,
+                    "iconType": "bombs_special"
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7,
+                    "iconType": "bombs_special"
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_500lb_anm64a1.blk"
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 2,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 3,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 4,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 8,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 9,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 10,
+                    "iconType": "bombs_middle"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2424,7 +2509,17 @@
       "preset": {
         "name": "f4u-6_1x2000lb",
         "blk": "gameData/FlightModels/weaponPresets/f4u-6_1x2000lb.blk",
-        "reqModification": "btd_lbc"
+        "reqModification": "btd_lbc",
+        "weaponConfig": {
+          "Weapon": {
+            "blk": "gameData/weapons/bombguns/us_2000lbs_anm66.blk",
+            "amountPerTier": 1.0,
+            "tier": {
+              "idx": 6,
+              "iconType": "bombs_heavy"
+            }
+          }
+        }
       }
     },
     {
@@ -2443,6 +2538,91 @@
         },
         {
           "reqModification": "btd_lbc"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": {
+                "blk": "gameData/weapons/bombguns/us_2000lbs_anm66.blk",
+                "amountPerTier": 1.0,
+                "tier": {
+                  "idx": 6,
+                  "iconType": "bombs_heavy"
+                }
+              }
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_1000lb_anm65a1.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "tier": {
+                    "idx": 5,
+                    "iconType": "bombs_large"
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7,
+                    "iconType": "bombs_large"
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_500lb_anm64a1.blk"
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 2,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 3,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 4,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 8,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 9,
+                    "iconType": "bombs_middle"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 10,
+                    "iconType": "bombs_middle"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2459,6 +2639,119 @@
         },
         {
           "reqModification": "btd_lbc"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": {
+                "blk": "gameData/weapons/bombguns/us_2000lbs_anm66.blk",
+                "amountPerTier": 1.0,
+                "tier": {
+                  "idx": 6,
+                  "iconType": "bombs_heavy"
+                }
+              }
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_1600lb_ap_an_mk1.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "tier": {
+                    "idx": 5,
+                    "iconType": "bombs_special"
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7,
+                    "iconType": "bombs_special"
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_250lb_anm57.blk"
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 0,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 1,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 2,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 3,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 4,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 8,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 9,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 10,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 11,
+                    "iconType": "bombs_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 12,
+                    "iconType": "bombs_small"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2485,6 +2778,119 @@
         },
         {
           "reqModification": "frc_mk2"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": {
+                "blk": "gameData/weapons/bombguns/us_2000lbs_anm66.blk",
+                "amountPerTier": 1.0,
+                "tier": {
+                  "idx": 6,
+                  "iconType": "bombs_heavy"
+                }
+              }
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_1000lb_anm65a1.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "tier": {
+                    "idx": 5,
+                    "iconType": "bombs_large"
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7,
+                    "iconType": "bombs_large"
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/rocketGuns/us_5_in_hvar_2.blk"
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 0,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 1,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 2,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 3,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 4,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 8,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 9,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 10,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 11,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 12,
+                    "iconType": "rockets_he_small"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2504,6 +2910,119 @@
         },
         {
           "reqModification": "frc_mk2"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": {
+                "blk": "gameData/weapons/bombguns/us_2000lbs_anm66.blk",
+                "amountPerTier": 1.0,
+                "tier": {
+                  "idx": 6,
+                  "iconType": "bombs_heavy"
+                }
+              }
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/bombguns/us_1600lb_ap_an_mk1.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "tier": {
+                    "idx": 5,
+                    "iconType": "bombs_special"
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7,
+                    "iconType": "bombs_special"
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/weapons/rocketGuns/us_5_in_hvar_2.blk"
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 0,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 1,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 2,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 3,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 4,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 8,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 9,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 10,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 11,
+                    "iconType": "rockets_he_small"
+                  }
+                },
+                {
+                  "tier": {
+                    "amountPerTier": 1.0,
+                    "idx": 12,
+                    "iconType": "rockets_he_small"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2663,7 +3182,7 @@
     {
       "dp": [
         {
-          "dm": "wing_l_dm"
+          "dm": "spar_l_dm"
         },
         {
           "separateDm": true
@@ -2762,6 +3281,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -2823,6 +3345,9 @@
         },
         {
           "dp": "gear_3c_dm"
+        },
+        {
+          "dm1": "wing_l_dm"
         },
         {
           "axis1": [0.0,0.0,1.0]
@@ -2871,7 +3396,7 @@
     {
       "dp": [
         {
-          "dm": "wing1_l_dm"
+          "dm": "spar1_l_dm"
         },
         {
           "separateDm": true
@@ -2973,6 +3498,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -3034,6 +3562,9 @@
         },
         {
           "dp": "gear_3c_dm"
+        },
+        {
+          "dm1": "wing1_l_dm"
         },
         {
           "axis1": [0.0,0.0,1.0]
@@ -3070,7 +3601,7 @@
     {
       "dp": [
         {
-          "dm": "wing2_l_dm"
+          "dm": "spar2_l_dm"
         },
         {
           "separateDm": true
@@ -3172,6 +3703,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -3235,6 +3769,9 @@
           "dp": "gear_3c_dm"
         },
         {
+          "dm1": "wing2_l_dm"
+        },
+        {
           "axis1": [0.0,0.0,1.0]
         },
         {
@@ -3269,7 +3806,7 @@
     {
       "dp": [
         {
-          "dm": "wing_r_dm"
+          "dm": "spar_r_dm"
         },
         {
           "separateDm": true
@@ -3368,6 +3905,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -3429,6 +3969,9 @@
         },
         {
           "dp": "gear_3c_dm"
+        },
+        {
+          "dm1": "wing_r_dm"
         },
         {
           "axis1": [0.0,0.0,-1.0]
@@ -3477,7 +4020,7 @@
     {
       "dp": [
         {
-          "dm": "wing1_r_dm"
+          "dm": "spar1_r_dm"
         },
         {
           "separateDm": true
@@ -3579,6 +4122,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -3640,6 +4186,9 @@
         },
         {
           "dp": "gear_3c_dm"
+        },
+        {
+          "dm1": "wing1_r_dm"
         },
         {
           "axis1": [0.0,0.0,-1.0]
@@ -3676,7 +4225,7 @@
     {
       "dp": [
         {
-          "dm": "wing2_r_dm"
+          "dm": "spar2_r_dm"
         },
         {
           "separateDm": true
@@ -3778,6 +4327,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -3839,6 +4391,9 @@
         },
         {
           "dp": "gear_3c_dm"
+        },
+        {
+          "dm1": "wing2_r_dm"
         },
         {
           "axis1": [0.0,0.0,-1.0]
@@ -3974,6 +4529,9 @@
           "dp": "tailcontrol_dm"
         },
         {
+          "dp": "engine%d_dm"
+        },
+        {
           "dp": "oil%d_dm"
         },
         {
@@ -4074,6 +4632,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -4165,6 +4726,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -4270,6 +4834,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -4361,6 +4928,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -4466,6 +5036,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -4557,6 +5130,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -4662,6 +5238,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -4753,6 +5332,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -4858,6 +5440,9 @@
           "separateDm": true
         },
         {
+          "overwriteLinks": true
+        },
+        {
           "dp": "stab_dm"
         },
         {
@@ -4949,6 +5534,9 @@
         },
         {
           "dp": "tailcontrol_dm"
+        },
+        {
+          "dp": "engine%d_dm"
         },
         {
           "dp": "oil%d_dm"
@@ -5048,7 +5636,7 @@
     {
       "dp": [
         {
-          "dm": "wing_l_dm"
+          "dm": "spar_l_dm"
         },
         {
           "separateDm": true
@@ -5070,6 +5658,9 @@
         },
         {
           "dp": "engine%d_dm"
+        },
+        {
+          "dm1": "wing_l_dm"
         },
         {
           "axis1": [0.0,0.0,1.0]
@@ -5133,7 +5724,7 @@
     {
       "dp": [
         {
-          "dm": "wing1_l_dm"
+          "dm": "spar1_l_dm"
         },
         {
           "separateDm": true
@@ -5155,6 +5746,9 @@
         },
         {
           "dp": "engine%d_dm"
+        },
+        {
+          "dm1": "wing1_l_dm"
         },
         {
           "axis1": [0.0,0.0,1.0]
@@ -5206,7 +5800,7 @@
     {
       "dp": [
         {
-          "dm": "wing2_l_dm"
+          "dm": "spar2_l_dm"
         },
         {
           "separateDm": true
@@ -5228,6 +5822,9 @@
         },
         {
           "dp": "engine%d_dm"
+        },
+        {
+          "dm1": "wing2_l_dm"
         },
         {
           "axis1": [0.0,0.0,1.0]
@@ -5279,7 +5876,7 @@
     {
       "dp": [
         {
-          "dm": "wing_r_dm"
+          "dm": "spar_r_dm"
         },
         {
           "separateDm": true
@@ -5301,6 +5898,9 @@
         },
         {
           "dp": "engine%d_dm"
+        },
+        {
+          "dm1": "wing_r_dm"
         },
         {
           "axis1": [0.0,0.0,-1.0]
@@ -5364,7 +5964,7 @@
     {
       "dp": [
         {
-          "dm": "wing1_r_dm"
+          "dm": "spar1_r_dm"
         },
         {
           "separateDm": true
@@ -5386,6 +5986,9 @@
         },
         {
           "dp": "engine%d_dm"
+        },
+        {
+          "dm1": "wing1_r_dm"
         },
         {
           "axis1": [0.0,0.0,-1.0]
@@ -5437,7 +6040,7 @@
     {
       "dp": [
         {
-          "dm": "wing2_r_dm"
+          "dm": "spar2_r_dm"
         },
         {
           "separateDm": true
@@ -5459,6 +6062,9 @@
         },
         {
           "dp": "engine%d_dm"
+        },
+        {
+          "dm1": "wing2_r_dm"
         },
         {
           "axis1": [0.0,0.0,-1.0]
