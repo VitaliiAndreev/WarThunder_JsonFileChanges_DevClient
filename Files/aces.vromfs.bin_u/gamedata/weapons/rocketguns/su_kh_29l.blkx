@@ -19,6 +19,7 @@
     "cumulativeSecondaryShattersPreset": "heat_fs",
     "explodeOnRendinst": true,
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/heat_fs.ivf",
     "bulletName": "su_kh_23m_missile",
     "caliber": 0.38,
     "mass": 657.0,
@@ -97,6 +98,9 @@
       }
     },
     "guidance": {
+      "warmUpTime": 1.0,
+      "workTime": 3600.0,
+      "uncageBeforeLaunch": true,
       "breakLockMaxTime": 2.0,
       "laserSeeker": {
         "range": 10000.0,
@@ -133,7 +137,6 @@
       "timeFire": 1.0
     },
     "tracerTrail": {
-      "smokeEffect": "fx1400_smoke",
       "visual": {
         "traceFreq": 1,
         "tracer": "100mmRed",

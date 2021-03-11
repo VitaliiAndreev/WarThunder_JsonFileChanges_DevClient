@@ -315,7 +315,12 @@
           "armorThickness": 40.0
         },
         "turret_02_back_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "hidableInViewer": true
+        },
+        "turret_06_back_dm": {
+          "armorThickness": 5.0,
+          "hidableInViewer": true
         },
         "turret_01_front_dm": {
           "armorThickness": 14.0
@@ -357,51 +362,18 @@
         "turret_09_bottom_dm": {
           "armorThickness": 20.0,
           "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_l_01_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_l_02_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_l_03_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_l_04_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_l_05_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_l_06_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_r_01_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_r_02_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_r_03_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_r_04_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
-        },
-        "ex_armor_turret_r_05_dm": {
-          "armorThickness": 20.0,
-          "armorClass": "CHA_tank_modern"
         }
+      },
+      "turret_RHA_screen": {
+        "armorClass": "RHA_tank_modern",
+        "hidableInViewer": true,
+        "createSecondaryShatters": false,
+        "variableThickness": true,
+        "armorThickness": 30.0,
+        "ex_armor_turret_l_05_dm": [],
+        "ex_armor_turret_l_06_dm": [],
+        "ex_armor_turret_r_04_dm": [],
+        "ex_armor_turret_r_05_dm": []
       },
       "inner_armor": {
         "armorClass": "RHA_tank_modern",
@@ -484,6 +456,23 @@
           "armorEffectiveThicknessMax": 550.0
         }
       },
+      "heavy_screens": {
+        "armorClass": "hull_side_special_armor",
+        "hp": 1000.0,
+        "armorThickness": 300.0,
+        "genericArmorQuality": 0.25,
+        "cumulativeArmorQuality": 1.0,
+        "hidableInViewer": true,
+        "variableThickness": true,
+        "gun_mask_03_dm": [],
+        "ex_armor_turret_l_01_dm": [],
+        "ex_armor_turret_l_02_dm": [],
+        "ex_armor_turret_l_03_dm": [],
+        "ex_armor_turret_l_04_dm": [],
+        "ex_armor_turret_r_01_dm": [],
+        "ex_armor_turret_r_02_dm": [],
+        "ex_armor_turret_r_03_dm": []
+      },
       "heavy_body_screens": {
         "armorClass": "hull_side_special_armor",
         "hp": 400.0,
@@ -507,7 +496,6 @@
         "hp": 200.0,
         "stopChanceOnDeadPart": 0.0,
         "createSecondaryShatters": false,
-        "turret_06_back_dm": [],
         "ex_armor_r_06_dm": [],
         "ex_armor_r_07_dm": [],
         "ex_armor_r_08_dm": [],
@@ -532,13 +520,10 @@
         "gun_mask_02_dm": {
           "armorThickness": 20.0
         },
-        "gun_mask_03_dm": {
+        "gun_mask_04_dm": {
           "armorThickness": 240.0,
           "armorClass": "tank_structural_steel",
           "hidableInViewer": false
-        },
-        "gun_mask_04_dm": {
-          "armorThickness": 40.0
         },
         "gun_mask_05_dm": {
           "armorThickness": 50.0
@@ -558,7 +543,9 @@
         "ex_decor_l_01_dm": [],
         "ex_decor_r_03_dm": [],
         "ex_decor_l_06_dm": [],
-        "ex_decor_l_07_dm": []
+        "ex_decor_l_07_dm": [],
+        "ex_armor_r_09_dm": [],
+        "ex_armor_l_09_dm": []
       },
       "optics": {
         "armorClass": "optics_tank",
@@ -618,12 +605,24 @@
           "cumulativeArmorQuality": 0.15,
           "hp": 200.0,
           "ex_armor_01_dm": [],
-          "ex_armor_02_dm": [],
-          "ex_armor_03_dm": [],
-          "ex_armor_04_dm": [],
-          "ex_armor_05_dm": [],
-          "ex_armor_06_dm": [],
-          "ex_armor_07_dm": []
+          "ex_armor_02_dm": {
+            "armorThickness": 10.0
+          },
+          "ex_armor_03_dm": {
+            "armorThickness": 10.0
+          },
+          "ex_armor_04_dm": {
+            "armorThickness": 10.0
+          },
+          "ex_armor_05_dm": {
+            "armorThickness": 10.0
+          },
+          "ex_armor_06_dm": {
+            "armorThickness": 10.0
+          },
+          "ex_armor_07_dm": {
+            "armorThickness": 10.0
+          }
         }
       },
       "gun": {
@@ -2357,7 +2356,7 @@
       {
         "Weapon": {
           "trigger": "gunner0",
-          "blk": "gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk",
+          "blk": "gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_2A5_user_cannon.blk",
           "emitter": "bone_gun_barrel",
           "flash": "emtr_gun_flame",
           "shotFreq": 0.1667,
@@ -2581,9 +2580,9 @@
   {
     "VehiclePhys": {
       "Mass": {
-        "Empty": 53850.0,
+        "Empty": 57900.0,
         "Fuel": 1300.0,
-        "TakeOff": 55150.0,
+        "TakeOff": 59200.0,
         "momentOfInertia": [4.0,5.0,6.0],
         "CenterOfGravity": [-0.1,0.5,0.0],
         "AdvancedMass": false,
@@ -3253,7 +3252,10 @@
       "tank_medical_kit_expendable": {
         "image": "#ui/gameuiskin#tank_reinforcement_ger"
       },
-      "120mm_NATO_HEAT_FS": [],
+      "120mm_DM_HE_FS": [],
+      "120mm_DM_HE_FS_ammo_pack": {
+        "tier": 2
+      },
       "120mm_NATO_APDS_FS": [],
       "120mm_NATO_APDS_FS_ammo_pack": [],
       "120mm_DM_APDS_FS": [],
@@ -3266,7 +3268,7 @@
             {
               "Weapon": {
                 "trigger": "gunner0",
-                "blk": "gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_user_cannon.blk",
+                "blk": "gameData/Weapons/groundModels_weapons/120mm_Rheinmetall_L44_2A5_user_cannon.blk",
                 "emitter": "bone_gun_barrel",
                 "flash": "emtr_gun_flame",
                 "shotFreq": 0.1667,
@@ -3532,18 +3534,16 @@
         "effects": {
           "nightVision": {
             "gunnerThermal": {
-              "resolution": [500,300],
-              "noiseFactor": 0.05
+              "resolution": [800,600],
+              "noiseFactor": 0.04
             },
-            "commanderIr": {
-              "resolution": [1600,1200],
-              "lightMult": 9.0,
-              "ghosting": 0.6,
-              "noiseFactor": 0.2
+            "commanderThermal": {
+              "resolution": [800,600],
+              "noiseFactor": 0.04
             },
             "driverIr": {
-              "resolution": [800,600],
-              "lightMult": 5.0,
+              "resolution": [1200,800],
+              "lightMult": 7.0,
               "ghosting": 0.6,
               "noiseFactor": 0.2
             }

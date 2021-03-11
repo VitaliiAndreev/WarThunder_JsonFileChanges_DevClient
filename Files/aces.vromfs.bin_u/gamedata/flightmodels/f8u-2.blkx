@@ -24,12 +24,9 @@
   "damagePartsToVisualEffectsMapBlk": "gameData/FlightModels/DM/dm_parts_to_visual_effects_map.blk",
   "damagePartsExcludeFromHoleBlk": "gameData/FlightModels/DM/dm_parts_exclude_from_hole.blk",
   "explosion_dmBlk": "gameData/FlightModels/DM/commonExplosion.blk",
-  "fireParamsPreset": "1200kph",
+  "fireParamsPreset": "2100kph",
   "fightAiBehaviour": "fighter",
   "autopilotImpl": "FBW",
-  "customClassIco": "!#ui/gameuiskin#image_in_progress_ico.svg",
-  "customImage": "!#ui/unitskin#image_in_progress",
-  "customTooltipImage": "ui/aircrafts/image_in_progress",
   "DamageParts": {
     "armor10": {
       "cannon1_dm": {
@@ -1913,31 +1910,31 @@
       "gunLightRadiusMul": 0.05
     },
     {
-      "lightPos": [5.082,0.376,0.0]
+      "lightPos": [7.419,0.277,-0.004]
     },
     {
-      "lightColor": [0.7,0.01,0.0]
+      "lightColor": [0.8,0.25,0.1]
     },
     {
-      "lightRadius": 0.45
+      "lightRadius": 0.4
     },
     {
-      "lightPos1": [5.186,0.052,-0.411]
+      "lightPos1": [7.301,0.122,0.417]
     },
     {
-      "lightColor1": [0.7,0.01,0.0]
+      "lightColor1": [0.8,0.25,0.1]
     },
     {
-      "lightRadius1": 0.2
+      "lightRadius1": 0.3
     },
     {
-      "lightPos2": [5.203,0.087,0.401]
+      "lightPos2": [7.211,0.151,-0.454]
     },
     {
-      "lightColor2": [0.7,0.01,0.0]
+      "lightColor2": [0.8,0.25,0.1]
     },
     {
-      "lightRadius2": 0.2
+      "lightRadius2": 0.3
     },
     {
       "sightInFov": 3.2
@@ -2027,8 +2024,8 @@
         "display": {
           "textureArea": [0.0,0.5,0.5,1.0],
           "page": {
-            "type": "radar_b_round",
-            "radarScale": 0.9
+            "type": "radar",
+            "radarScale": 0.7
           }
         }
       }
@@ -2105,12 +2102,300 @@
       }
     }
   ],
-  "weapon_presets": {
-    "preset": {
-      "name": "f8u-2_default",
-      "blk": "gameData/FlightModels/weaponPresets/f8u-2_default.blk"
+  "weapon_presets": [
+    {
+      "preset": {
+        "name": "f8u-2_default",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_default.blk"
+      }
+    },
+    {
+      "preset": {
+        "name": "f8u-2_2x_aim9b",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_2x_aim9b.blk",
+        "reqModification": "us_aim_9b"
+      }
+    },
+    {
+      "preset": {
+        "name": "f8u-2_4x_aim9b",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_4x_aim9b.blk",
+        "reqModification": "us_aim_9b"
+      }
+    },
+    {
+      "preset": {
+        "name": "f8u-2_2x_aim9d",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_2x_aim9d.blk",
+        "reqModification": "us_aim_9d",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/us_aim9d_sidewinder.blk"
+            },
+            {
+              "amountPerTier": 1.0
+            },
+            {
+              "iconType": "missile_type_b_air_to_air"
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "preset": {
+        "name": "f8u-2_4x_aim9d",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_4x_aim9d.blk",
+        "reqModification": "us_aim_9d",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/us_aim9d_sidewinder.blk"
+            },
+            {
+              "amountPerTier": 1.0
+            },
+            {
+              "iconType": "missile_type_b_air_to_air"
+            },
+            {
+              "tier": {
+                "idx": 4
+              }
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            },
+            {
+              "tier": {
+                "idx": 8
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "preset": {
+        "name": "f8u-2_4x_zuni",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_4x_zuni.blk",
+        "reqModification": "f4c_zuni",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/us_zuni_wafar_mk32.blk"
+            },
+            {
+              "iconType": "rockets_he_large_group_x2"
+            },
+            {
+              "amountPerTier": 2.0
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "preset": {
+        "name": "f8u-2_8x_zuni",
+        "blk": "gameData/FlightModels/weaponPresets/f8u-2_8x_zuni.blk",
+        "reqModification": "f4c_zuni",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/us_zuni_wafar_mk32.blk"
+            },
+            {
+              "iconType": "rockets_he_large_group_x2"
+            },
+            {
+              "amountPerTier": 2.0
+            },
+            {
+              "tier": {
+                "idx": 4
+              }
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            },
+            {
+              "tier": {
+                "idx": 8
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "preset": [
+        {
+          "name": "f8u-2_2x_aim9b_2x_zuni"
+        },
+        {
+          "blk": "gameData/FlightModels/weaponPresets/f8u-2_2x_aim9b_2x_zuni.blk"
+        },
+        {
+          "reqModification": "us_aim_9b"
+        },
+        {
+          "reqModification": "f4c_zuni"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/us_zuni_wafar_mk32.blk"
+                },
+                {
+                  "iconType": "rockets_he_large_group_x2"
+                },
+                {
+                  "amountPerTier": 2.0
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/us_aim9b_sidewinder.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "iconType": "missile_air_to_air"
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "preset": [
+        {
+          "name": "f8u-2_2x_aim9d_2x_zuni"
+        },
+        {
+          "blk": "gameData/FlightModels/weaponPresets/f8u-2_2x_aim9d_2x_zuni.blk"
+        },
+        {
+          "reqModification": "us_aim_9d"
+        },
+        {
+          "reqModification": "f4c_zuni"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/us_zuni_wafar_mk32.blk"
+                },
+                {
+                  "iconType": "rockets_he_large_group_x2"
+                },
+                {
+                  "amountPerTier": 2.0
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/us_aim9d_sidewinder.blk"
+                },
+                {
+                  "amountPerTier": 1.0
+                },
+                {
+                  "iconType": "missile_type_b_air_to_air"
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-  },
+  ],
   "jetwash": {
     "radius": 10.0,
     "minDist": 50.0,
@@ -2137,7 +2422,7 @@
     "distributionFactorMax": 0.5
   },
   "fireParams": {
-    "engineExtinguishFireSpeed": [299.0,345.0],
+    "engineExtinguishFireSpeed": [550.0,594.0],
     "engineExtinguishFireSpeedChance": [0.01,0.1],
     "fireDamagePowerRel": 0.05,
     "nonExtinguishFireTime": 5.0
@@ -2263,6 +2548,520 @@
       "reqModification": "mk_12_mod3_belt_pack",
       "tier": 3
     },
+    "us_f8u_ffar": {
+      "tier": 2,
+      "modClass": "weapon",
+      "turn_it_off": false,
+      "invertEnableLogic": false,
+      "group": "countermeasures",
+      "effects": {
+        "commonWeapons": [
+          {
+            "Weapon": {
+              "trigger": "machine gun",
+              "blk": "gameData/Weapons/cannonBrowning-Colt_Mk12_Mod3.blk",
+              "emitter": "flare1",
+              "flash": "flare1",
+              "dm": "cannon1_dm",
+              "bullets": 144,
+              "spread": 1.2,
+              "traceOffset": 1
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "machine gun",
+              "blk": "gameData/Weapons/cannonBrowning-Colt_Mk12_Mod3.blk",
+              "emitter": "flare2",
+              "flash": "flare2",
+              "dm": "cannon2_dm",
+              "bullets": 144,
+              "spread": 1.2,
+              "traceOffset": 1
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "cannon",
+              "blk": "gameData/Weapons/cannonBrowning-Colt_Mk12_Mod3.blk",
+              "emitter": "flare3",
+              "flash": "flare3",
+              "dm": "cannon3_dm",
+              "bullets": 144,
+              "spread": 1.2,
+              "traceOffset": 1
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "cannon",
+              "blk": "gameData/Weapons/cannonBrowning-Colt_Mk12_Mod3.blk",
+              "emitter": "flare4",
+              "flash": "flare4",
+              "dm": "cannon4_dm",
+              "bullets": 144,
+              "spread": 1.2,
+              "traceOffset": 1
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket1",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1],
+              "sizeSalvo": 16
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket2",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket3",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket4",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket5",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket6",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket7",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket8",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket9",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket10",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket11",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket12",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket13",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket14",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket15",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket16",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket17",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1],
+              "sizeSalvo": 16
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket18",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket19",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket20",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket21",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket22",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket23",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket24",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket25",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket26",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket27",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket28",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket29",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket30",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket31",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          },
+          {
+            "Weapon": {
+              "trigger": "rockets",
+              "external": false,
+              "separate": false,
+              "blk": "gameData/Weapons/rocketGuns/us_2_75_in_ffar_mighty_mouse.blk",
+              "weaponType": "aam",
+              "emitter": "rocket32",
+              "launcher": true,
+              "bullets": 1,
+              "gearName": "gear_c",
+              "gearLimit": [0.0,0.1]
+            }
+          }
+        ]
+      }
+    },
+    "f4c_zuni": {
+      "reqModification": "us_f8u_ffar",
+      "tier": 4,
+      "modClass": "weapon"
+    },
     "us_aim_9b": {
       "tier": 1,
       "modClass": "weapon"
@@ -2270,11 +3069,6 @@
     "us_aim_9d": {
       "reqModification": "us_aim_9b",
       "tier": 3,
-      "modClass": "weapon"
-    },
-    "f4c_zuni": {
-      "reqModification": "us_aim_9d",
-      "tier": 4,
       "modClass": "weapon"
     }
   },

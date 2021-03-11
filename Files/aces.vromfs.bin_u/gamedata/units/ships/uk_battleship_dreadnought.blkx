@@ -3747,8 +3747,6 @@
         "armorClass": "ships_oil_fuel_tank",
         "armorThickness": 10.0,
         "stopChanceOnDeadPart": 0.5,
-        "fireParamsPreset": "ship_fuel_tank",
-        "fireProtectionHp": 30.0,
         "fuel_tank_01_dm": {
           "hp": 8265.0
         },
@@ -3764,7 +3762,7 @@
       },
       "coal_bunkers": {
         "armorThickness": 3.0,
-        "armorClass": "ship_structural_steel",
+        "armorClass": "ships_coal_bunker",
         "stopChanceOnDeadPart": 0.0,
         "variableThickness": true,
         "kineticProtectionEquivalentPerMeter": 27.3,
@@ -4190,8 +4188,8 @@
           {
             "onHit": {
               "damageType": "fire",
-              "fire": 0.85,
-              "damage": 50.0,
+              "fire": 0.9,
+              "damage": 75.0,
               "fHitCritical": false
             }
           },
@@ -4282,179 +4280,6 @@
               "fire": 0.56,
               "expl": 0.89,
               "damage": 350.0,
-              "fHitCritical": false
-            }
-          }
-        ]
-      },
-      {
-        "part": {
-          "name": "ammo_turret_01_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_02_dm",
-          "onKill": {
-            "main_caliber_turret_02_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_03_dm",
-          "onKill": {
-            "main_caliber_turret_03_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_04_dm",
-          "onKill": {
-            "main_caliber_turret_04_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_05_dm",
-          "onKill": {
-            "main_caliber_turret_05_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_06_dm",
-          "onKill": {
-            "main_caliber_turret_06_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_07_dm",
-          "onKill": {
-            "main_caliber_turret_07_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_08_dm",
-          "onKill": {
-            "main_caliber_turret_08_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_09_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_09_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_10_dm",
-          "onKill": {
-            "main_caliber_turret_10_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_11_dm",
-          "onKill": {
-            "main_caliber_turret_11_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_12_dm",
-          "onKill": {
-            "main_caliber_turret_12_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_13_dm",
-          "onKill": {
-            "main_caliber_turret_13_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_14_dm",
-          "onKill": {
-            "main_caliber_turret_14_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_15_dm",
-          "onKill": {
-            "main_caliber_turret_15_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": [
-          {
-            "name": "fuel_tank_dm"
-          },
-          {
-            "name": "fuel_tank_01_dm"
-          },
-          {
-            "name": "fuel_tank_02_dm"
-          },
-          {
-            "name": "fuel_tank_03_dm"
-          },
-          {
-            "name": "fuel_tank_04_dm"
-          },
-          {
-            "name": "fuel_tank_05_dm"
-          },
-          {
-            "name": "fuel_tank_06_dm"
-          },
-          {
-            "name": "fuel_tank_07_dm"
-          },
-          {
-            "name": "fuel_tank_08_dm"
-          },
-          {
-            "name": "fuel_tank_09_dm"
-          },
-          {
-            "name": "fuel_tank_10_dm"
-          },
-          {
-            "onHit": {
-              "damageType": "explosion",
-              "fire": 0.95,
-              "damage": 400.0,
               "fHitCritical": false
             }
           }
@@ -7967,6 +7792,26 @@
         }
       },
       {
+        "event": {
+          "name": "ready_use_ammo_fire",
+          "fx": {
+            "name": "ship_fire",
+            "scale": 0.3,
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
+          "name": "ready_use_ammo_explosion",
+          "fx": {
+            "name": "ship_explosion_large_second",
+            "scale": 0.3,
+            "centerDmgPart": false
+          }
+        }
+      },
+      {
         "event": [
           {
             "name": "ammo_fire"
@@ -8500,7 +8345,7 @@
         "weaponTrigger": "gunner0",
         "explosionEvent": "ammo_explosion_1",
         "fireEvent": "ammo_fire_1",
-        "fireParamsPreset": "ship_ammo_fire",
+        "fireParamsPreset": "ship_ammo_fire_total",
         "elevator": "elevator_01_dm",
         "dstrElevatorDisablesShooting": false,
         "splashRadiusConstraint": 16.0,
@@ -8559,7 +8404,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_02_dm"
@@ -8628,7 +8473,7 @@
         "weaponTrigger": "gunner3",
         "explosionEvent": "ammo_explosion_3",
         "fireEvent": "ammo_fire_3",
-        "fireParamsPreset": "ship_ammo_fire",
+        "fireParamsPreset": "ship_ammo_fire_total",
         "elevator": "elevator_04_dm",
         "dstrElevatorDisablesShooting": false,
         "splashRadiusConstraint": 16.0,
@@ -8677,7 +8522,7 @@
         "weaponTrigger": "gunner4",
         "explosionEvent": "ammo_explosion_4",
         "fireEvent": "ammo_fire_4",
-        "fireParamsPreset": "ship_ammo_fire",
+        "fireParamsPreset": "ship_ammo_fire_total",
         "elevator": "elevator_05_dm",
         "dstrElevatorDisablesShooting": false,
         "splashRadiusConstraint": 16.0,
@@ -8766,7 +8611,7 @@
           "fatalFire": false
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_aux"
         },
         {
           "explosionEvent": "ammo_aux_explosion_1"
@@ -8855,7 +8700,7 @@
           "fatalFire": false
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_aux"
         },
         {
           "explosionEvent": "ammo_aux_explosion_4"

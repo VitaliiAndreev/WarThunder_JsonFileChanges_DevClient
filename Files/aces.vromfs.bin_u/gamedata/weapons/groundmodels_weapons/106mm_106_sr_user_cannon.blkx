@@ -47,6 +47,7 @@
     "cumulativeSecondaryShattersPreset": "heat_fs",
     "explodeOnRendinst": true,
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/heat_fs.ivf",
     "bulletName": "106mm_m344a1",
     "onHitChanceMultExplFuel": 0.3,
     "relativeVelHitShift": [300.0,1000.0],
@@ -56,7 +57,7 @@
     "explodeTreshold": 0.1,
     "explosionEffect": "hit_106_132mm_metal_he",
     "groundCollisionEffect": "hit_106_132mm_dirt_he",
-    "ricochetEffect": "hit_106_132mm_dirt_ap",
+    "ricochetEffect": "hit_106_132mm_metal_ap",
     "waterCollisionEffect": "hit_106_132mm_water",
     "explosionPatchRadius": 3.5,
     "stabilityRicochetModifier": {
@@ -79,7 +80,7 @@
     },
     "damage": {
       "explosive": {
-        "radius": 0.3,
+        "radius": 0.15,
         "offset": 0.2
       },
       "shatter": [
@@ -166,6 +167,9 @@
           }
         }
       ]
+    },
+    "shatterDamage": {
+      "breachConeAngle": 45.0
     },
     "cumulativeDamage": {
       "armorPower": 433.0,
@@ -279,6 +283,7 @@
       "useEffectiveArmorThicknessForShatter": true,
       "fresnel": [0.23,0.1,2.0],
       "cumulativeByNormal": true,
+      "shellAnimation": "video/shells_animations/hesh.ivf",
       "bulletName": "106mm_m361a1",
       "hitPowerMult": 20.0,
       "relativeVelHitShift": [300.0,1000.0],
@@ -288,7 +293,7 @@
       "explodeTreshold": 0.1,
       "explosionEffect": "hit_106_132mm_metal_he",
       "groundCollisionEffect": "hit_106_132mm_dirt_he",
-      "ricochetEffect": "hit_106_132mm_dirt_ap",
+      "ricochetEffect": "hit_106_132mm_metal_ap",
       "waterCollisionEffect": "hit_106_132mm_water",
       "explosionPatchRadius": 3.5,
       "stabilityRicochetModifier": [
@@ -324,7 +329,7 @@
       },
       "damage": {
         "explosive": {
-          "radius": 0.3,
+          "radius": 0.15,
           "offset": 0.2
         },
         "shatter": [
@@ -411,6 +416,9 @@
             }
           }
         ]
+      },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
       },
       "cumulativeDamage": {
         "armorPower": 152.0,

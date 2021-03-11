@@ -46,6 +46,7 @@
     "bulletType": "apds_fs_long_tank",
     "slopeEffectPreset": "apds_fs_long",
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/apfsds_modern.ivf",
     "bulletName": "125mm_3bm60",
     "hitPowerMult": 800.0,
     "onHitChanceMultExplFuel": 0.1,
@@ -198,13 +199,14 @@
       "fresnel": [0.23,0.1,2.0],
       "useEffectiveArmorThicknessForShatter": true,
       "explodeOnRendinst": true,
+      "shellAnimation": "video/shells_animations/he.ivf",
       "bulletName": "125mm_3of_19",
       "hitPowerMult": 1.0,
       "explodeTreshold": 0.1,
       "fuseDelayDist": 0.0,
       "explosionEffect": "hit_106_132mm_metal_he",
       "groundCollisionEffect": "hit_106_132mm_dirt_he",
-      "ricochetEffect": "hit_106_132mm_dirt_ap",
+      "ricochetEffect": "hit_106_132mm_metal_ap",
       "waterCollisionEffect": "hit_106_132mm_water",
       "explosionPatchRadius": 3.5,
       "stabilityRicochetModifier": {
@@ -310,6 +312,9 @@
           }
         ]
       },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
+      },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
         "traceFreq": 1,
@@ -412,6 +417,7 @@
       "bulletType": "apds_fs_long_tank",
       "slopeEffectPreset": "apds_fs_long",
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/apfsds_modern.ivf",
       "bulletName": "125mm_3bm59",
       "hitPowerMult": 800.0,
       "onHitChanceMultExplFuel": 0.1,
@@ -560,6 +566,7 @@
       "cumulativeSecondaryShattersPreset": "heat_fs",
       "explodeOnRendinst": true,
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/heat_fs.ivf",
       "bulletName": "125mm_3bk_29m",
       "onHitChanceMultExplFuel": 0.3,
       "relativeVelHitShift": [300.0,1000.0],
@@ -569,7 +576,7 @@
       "explodeTreshold": 0.1,
       "explosionEffect": "hit_106_132mm_metal_he",
       "groundCollisionEffect": "hit_106_132mm_dirt_he",
-      "ricochetEffect": "hit_106_132mm_dirt_ap",
+      "ricochetEffect": "hit_106_132mm_metal_ap",
       "waterCollisionEffect": "hit_106_132mm_water",
       "explosionPatchRadius": 3.5,
       "stabilityRicochetModifier": {
@@ -592,7 +599,7 @@
       },
       "damage": {
         "explosive": {
-          "radius": 0.3,
+          "radius": 0.15,
           "offset": 0.2
         },
         "shatter": [
@@ -679,6 +686,9 @@
             }
           }
         ]
+      },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
       },
       "cumulativeDamage": {
         "armorPower": 700.0,
@@ -785,12 +795,13 @@
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/atgm.ivf",
       "bulletName": "125mm_9m_119m",
       "caliber": 0.125,
       "sound_path": "tanks/weapon_tanks/atgm",
       "sound_pathStudio": "ground/weapon/atgm",
-      "sound": "atgm",
-      "sound_inside": "atgm_interior",
+      "sound": "atgm_cannon",
+      "sound_inside": "atgm_cannon_interior",
       "sfxReloadBullet": "grd_cannon_reload_auto",
       "recoilMultiplier": 0.05,
       "shotFxType": "muzzle_ground_40mm_slow",
@@ -825,6 +836,7 @@
         "cumulativeSecondaryShattersPreset": "atgm",
         "explodeOnRendinst": true,
         "fresnel": [0.23,0.1,2.0],
+        "shellAnimation": "video/shells_animations/atgm.ivf",
         "isBeamRider": true,
         "maxDeltaAngle": 0.02,
         "dragCx": 0.027,
@@ -841,7 +853,7 @@
         "autoAiming": true,
         "explosionEffect": "hit_106_132mm_metal_he",
         "groundCollisionEffect": "hit_106_132mm_dirt_he",
-        "ricochetEffect": "hit_106_132mm_dirt_ap",
+        "ricochetEffect": "hit_106_132mm_metal_ap",
         "waterCollisionEffect": "hit_106_132mm_water",
         "explosionPatchRadius": 3.5,
         "fireEffect": "rocket_fire_short_doubleside",
@@ -971,7 +983,7 @@
         },
         "damage": {
           "explosive": {
-            "radius": 0.3,
+            "radius": 0.15,
             "offset": 0.2
           },
           "shatter": [
@@ -1058,6 +1070,9 @@
               }
             }
           ]
+        },
+        "shatterDamage": {
+          "breachConeAngle": 45.0
         },
         "cumulativeDamage": {
           "armorPower": 750.0,

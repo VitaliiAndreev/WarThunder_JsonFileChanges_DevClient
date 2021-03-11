@@ -2279,6 +2279,9 @@
           "role": "tank_gunner"
         },
         {
+          "substitute": "machine_gunner"
+        },
+        {
           "substitute": "commander"
         },
         {
@@ -2286,6 +2289,9 @@
         },
         {
           "substitute": "loader_02"
+        },
+        {
+          "substitute": "loader_03"
         }
       ],
       "driver": [
@@ -2296,6 +2302,9 @@
           "role": "driver"
         },
         {
+          "substitute": "machine_gunner"
+        },
+        {
           "substitute": "commander"
         },
         {
@@ -2303,21 +2312,61 @@
         },
         {
           "substitute": "loader_02"
+        },
+        {
+          "substitute": "loader_03"
         }
       ],
       "commander": {
         "dmPart": "commander_dm",
-        "role": "commander"
+        "role": "commander",
+        "substitute": "machine_gunner"
       },
-      "loader_01": {
-        "dmPart": "loader_01_dm",
-        "role": "loader",
-        "substitute": "commander"
-      },
-      "loader_02": {
-        "dmPart": "loader_02_dm",
-        "role": "loader",
-        "substitute": "commander"
+      "loader_01": [
+        {
+          "dmPart": "loader_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
+      "loader_02": [
+        {
+          "dmPart": "loader_01_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
+      "loader_03": [
+        {
+          "dmPart": "loader_02_dm"
+        },
+        {
+          "role": "loader"
+        },
+        {
+          "substitute": "machine_gunner"
+        },
+        {
+          "substitute": "commander"
+        }
+      ],
+      "machine_gunner": {
+        "dmPart": "machine_gunner_dm",
+        "role": "radio_gunner"
       }
     }
   },
@@ -2344,48 +2393,97 @@
     "class_tags": []
   },
   {
-    "commonWeapons": {
-      "Weapon": {
-        "trigger": "gunner0",
-        "blk": "gameData/Weapons/groundModels_weapons/120mm_Schneider_Canet_1898_user_cannon.blk",
-        "emitter": "bone_gun_barrel",
-        "flash": "emtr_gun_flame",
-        "recoilMultiplier": 0.4,
-        "defaultYaw": 0.0,
-        "defaultPitch": 0.0,
-        "barrelDP": "gun_barrel_dm",
-        "breechDP": "cannon_breech_dm",
-        "speedYaw": 10.0,
-        "speedPitch": 6.5,
-        "fireConeAngle": 1.0,
-        "bullets": 16,
-        "salvoAmount": 100.0,
-        "ChainfireTime": 0.0,
-        "DelayAfterShoot": 5.0,
-        "AttackMaxDistance": 1000.0,
-        "AttackMaxRadius": 1000.0,
-        "AttackMaxHeight": 1000.0,
-        "accuracyAir": 0.0,
-        "accuracyGnd": 1.5,
-        "errMeasureVel": 0.0,
-        "errMeasureVelFast": 0.0,
-        "errMeasureVelFwdShift": 0.0,
-        "errMeasureVelDir": 0.0,
-        "errTargettingOn100kmph": 0.0,
-        "errTargetting": 3.0,
-        "errExplTime": 0.0,
-        "turret": {
-          "head": "bone_turret",
-          "gun": "bone_gun",
-          "barrel": "bone_gun_barrel",
-          "gunnerDm": "gunner_dm"
-        },
-        "limits": {
-          "yaw": [-12.0,12.0],
-          "pitch": [-10.0,15.0]
+    "commonWeapons": [
+      {
+        "Weapon": {
+          "trigger": "gunner0",
+          "blk": "gameData/Weapons/groundModels_weapons/120mm_Schneider_Canet_1898_user_cannon.blk",
+          "emitter": "bone_gun_barrel",
+          "flash": "emtr_gun_flame",
+          "recoilMultiplier": 0.4,
+          "defaultYaw": 0.0,
+          "defaultPitch": 0.0,
+          "barrelDP": "gun_barrel_dm",
+          "breechDP": "cannon_breech_dm",
+          "speedYaw": 10.0,
+          "speedPitch": 6.5,
+          "fireConeAngle": 1.0,
+          "bullets": 16,
+          "salvoAmount": 100.0,
+          "ChainfireTime": 0.0,
+          "DelayAfterShoot": 5.0,
+          "AttackMaxDistance": 1000.0,
+          "AttackMaxRadius": 1000.0,
+          "AttackMaxHeight": 1000.0,
+          "accuracyAir": 0.0,
+          "accuracyGnd": 1.5,
+          "errMeasureVel": 0.0,
+          "errMeasureVelFast": 0.0,
+          "errMeasureVelFwdShift": 0.0,
+          "errMeasureVelDir": 0.0,
+          "errTargettingOn100kmph": 0.0,
+          "errTargetting": 3.0,
+          "errExplTime": 0.0,
+          "turret": {
+            "head": "bone_turret",
+            "gun": "bone_gun",
+            "barrel": "bone_gun_barrel",
+            "gunnerDm": "gunner_dm"
+          },
+          "limits": {
+            "yaw": [-12.0,12.0],
+            "pitch": [-10.0,15.0]
+          }
+        }
+      },
+      {
+        "Weapon": {
+          "trigger": "gunner1",
+          "triggerGroup": "machinegun",
+          "blk": "gameData/Weapons/groundModels_weapons/7_7mm_Type_97_user_machinegun.blk",
+          "emitter": "bone_mg_v_01",
+          "flash": "emtr_mg_flame_01",
+          "defaultYaw": 0.0,
+          "defaultPitch": 0.0,
+          "barrelDP": "gun_barrel_04_dm",
+          "useAnimFlashNode": true,
+          "speedYaw": 20.0,
+          "speedPitch": 20.0,
+          "fireConeAngle": 1.0,
+          "bullets": 1950,
+          "salvoAmount": 100.0,
+          "ChainfireTime": 0.0,
+          "DelayAfterShoot": 5.0,
+          "AttackMaxDistance": 1000.0,
+          "AttackMaxRadius": 1000.0,
+          "AttackMaxHeight": 1000.0,
+          "accuracyAir": 0.0,
+          "accuracyGnd": 1.5,
+          "errMeasureVel": 0.0,
+          "errMeasureVelFast": 0.0,
+          "errMeasureVelFwdShift": 0.0,
+          "errMeasureVelDir": 0.0,
+          "errTargettingOn100kmph": 0.0,
+          "errTargetting": 3.0,
+          "errExplTime": 0.0,
+          "turret": {
+            "head": "bone_turret_01",
+            "gun": "bone_mg_v_01",
+            "gunnerDm": "machine_gunner_dm",
+            "verDriveDm": "drive_turret_v_01_dm",
+            "horDriveDm": "drive_turret_h_01_dm"
+          },
+          "limits": {
+            "yaw": [-110.0,110.0],
+            "pitch": [-8.0,20.0]
+          },
+          "limitsTable": {
+            "lim1": [-110.0,-75.0,-1.0,20.0],
+            "lim2": [-75.0,110.0,-8.0,20.0]
+          }
         }
       }
-    }
+    ]
   },
   {
     "weapon_presets": {

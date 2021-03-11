@@ -31,7 +31,7 @@
     "aimSensitivity": 8.0,
     "explosionEffect": "hit_106_132mm_metal_he",
     "groundCollisionEffect": "hit_106_132mm_dirt_he",
-    "ricochetEffect": "hit_106_132mm_dirt_ap",
+    "ricochetEffect": "hit_106_132mm_metal_ap",
     "waterCollisionEffect": "hit_106_132mm_water",
     "explosionPatchRadius": 3.5,
     "normalizationPreset": "heat",
@@ -45,6 +45,7 @@
     "cumulativeSecondaryShattersPreset": "atgm",
     "explodeOnRendinst": true,
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/atgm.ivf",
     "bulletName": "115_milan_2",
     "caliber": 0.115,
     "explosiveType": "comp_b",
@@ -192,7 +193,7 @@
     },
     "damage": {
       "explosive": {
-        "radius": 0.3,
+        "radius": 0.15,
         "offset": 0.2
       },
       "shatter": [
@@ -279,6 +280,9 @@
           }
         }
       ]
+    },
+    "shatterDamage": {
+      "breachConeAngle": 45.0
     },
     "cumulativeDamage": {
       "armorPower": 730.0,

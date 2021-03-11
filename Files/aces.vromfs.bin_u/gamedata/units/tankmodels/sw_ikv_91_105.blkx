@@ -403,7 +403,9 @@
           "ex_armor_r_02_dm": [],
           "ex_armor_r_03_dm": [],
           "ex_armor_l_04_dm": [],
-          "ex_armor_r_04_dm": []
+          "ex_armor_r_04_dm": [],
+          "ex_decor_r_01_dm": [],
+          "ex_decor_l_01_dm": []
         },
         "submodule": {
           "armorClass": "tank_traks",
@@ -2059,12 +2061,14 @@
           },
           "limits": {
             "yaw": [-180.0,180.0],
-            "pitch": [-10.0,15.0]
+            "pitch": [-8.0,15.0]
           },
           "limitsTable": {
             "lim1": [-180.0,-140.0,-0.0,15.0],
-            "lim2": [-140.0,140.0,-10.0,15.0],
-            "lim3": [140.0,180.0,-0.0,15.0]
+            "lim2": [-140.0,-40.0,-8.0,15.0],
+            "lim3": [-40.0,-2.0,-4.0,15.0],
+            "lim4": [-2.0,140.0,-8.0,15.0],
+            "lim6": [140.0,180.0,-0.0,15.0]
           },
           "gunStabilizer": {
             "hasVerticalGunFreeMode": false,
@@ -2247,7 +2251,58 @@
         "defaultDampeningForce": [180000.0,180000.0],
         "dampeningRelaxationRatio": 0.4,
         "dampeningCompressionRatio": 0.15
-      }
+      },
+      "floats": [
+        {
+          "volume": [2.2,1.0,1.0,0.85]
+        },
+        {
+          "volume": [2.2,1.0,-1.0,0.85]
+        },
+        {
+          "volume": [0.9,1.0,1.0,0.7]
+        },
+        {
+          "volume": [0.9,1.0,-1.0,0.7]
+        },
+        {
+          "volume": [-0.5,1.0,1.0,0.7]
+        },
+        {
+          "volume": [-0.5,1.0,-1.0,0.7]
+        },
+        {
+          "volume": [-1.9,1.0,1.0,0.7]
+        },
+        {
+          "volume": [-1.9,1.0,-1.0,0.7]
+        },
+        {
+          "volume": [-2.3,1.0,0.0,0.7]
+        },
+        {
+          "volume": [-3.4,1.0,1.0,0.85]
+        },
+        {
+          "volume": [-3.4,1.0,-1.0,0.85]
+        },
+        {
+          "waterJet": {
+            "exhaustNode": "emtr_waterjet_l",
+            "intake": [-1.25,0.4,0.85],
+            "thrust": 13000.0,
+            "reverseMult": 0.35
+          }
+        },
+        {
+          "waterJet": {
+            "exhaustNode": "emtr_waterjet_r",
+            "intake": [-1.25,0.4,-0.85],
+            "thrust": 13000.0,
+            "reverseMult": 0.35
+          }
+        }
+      ]
     }
   },
   {
@@ -2889,12 +2944,14 @@
                 },
                 "limits": {
                   "yaw": [-180.0,180.0],
-                  "pitch": [-10.0,15.0]
+                  "pitch": [-8.0,15.0]
                 },
                 "limitsTable": {
                   "lim1": [-180.0,-140.0,-0.0,15.0],
-                  "lim2": [-140.0,140.0,-10.0,15.0],
-                  "lim3": [140.0,180.0,-0.0,15.0]
+                  "lim2": [-140.0,-40.0,-8.0,15.0],
+                  "lim3": [-40.0,-2.0,-4.0,15.0],
+                  "lim4": [-2.0,140.0,-8.0,15.0],
+                  "lim6": [140.0,180.0,-0.0,15.0]
                 },
                 "gunStabilizer": {
                   "hasVerticalGunFreeMode": false,

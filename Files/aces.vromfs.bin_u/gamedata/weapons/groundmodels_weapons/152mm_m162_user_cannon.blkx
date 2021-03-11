@@ -48,6 +48,7 @@
     "cumulativeSecondaryShattersPreset": "heat_fs",
     "explodeOnRendinst": true,
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/heat.ivf",
     "bulletName": "152mm_m409a1",
     "onHitChanceMultExplFuel": 0.3,
     "relativeVelHitShift": [300.0,1000.0],
@@ -57,7 +58,7 @@
     "explodeTreshold": 0.1,
     "explosionEffect": "hit_106_132mm_metal_he",
     "groundCollisionEffect": "hit_106_132mm_dirt_he",
-    "ricochetEffect": "hit_106_132mm_dirt_ap",
+    "ricochetEffect": "hit_106_132mm_metal_ap",
     "waterCollisionEffect": "hit_106_132mm_water",
     "explosionPatchRadius": 3.5,
     "stabilityRicochetModifier": {
@@ -86,7 +87,7 @@
     },
     "damage": {
       "explosive": {
-        "radius": 0.3,
+        "radius": 0.15,
         "offset": 0.2
       },
       "shatter": [
@@ -173,6 +174,9 @@
           }
         }
       ]
+    },
+    "shatterDamage": {
+      "breachConeAngle": 45.0
     },
     "visual": {
       "range_percent_of_ammo": [100.0,0.0],
@@ -279,13 +283,14 @@
       "fresnel": [0.23,0.1,2.0],
       "explodeOnRendinst": true,
       "useEffectiveArmorThicknessForShatter": true,
+      "shellAnimation": "video/shells_animations/he.ivf",
       "bulletName": "152mm_m657a2",
       "hitPowerMult": 40.0,
       "explodeTreshold": 0.1,
       "fuseDelayDist": 0.0,
       "explosionEffect": "hit_106_132mm_metal_he",
       "groundCollisionEffect": "hit_106_132mm_dirt_he",
-      "ricochetEffect": "hit_106_132mm_dirt_ap",
+      "ricochetEffect": "hit_106_132mm_metal_ap",
       "waterCollisionEffect": "hit_106_132mm_water",
       "explosionPatchRadius": 3.5,
       "stabilityRicochetModifier": {
@@ -391,6 +396,9 @@
           }
         ]
       },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
+      },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
         "traceFreq": 1,
@@ -489,13 +497,14 @@
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/atgm.ivf",
       "bulletName": "152mm_mgm_61b",
       "mass": 27.8,
       "caliber": 0.152,
       "sound_path": "tanks/weapon_tanks/atgm",
       "sound_pathStudio": "ground/weapon/atgm",
-      "sound": "atgm",
-      "sound_inside": "atgm_interior",
+      "sound": "atgm_cannon",
+      "sound_inside": "atgm_cannon_interior",
       "mesh": "mgm_61b_rocket",
       "recoilMultiplier": 0.05,
       "stabilityRicochetModifier": [
@@ -528,6 +537,7 @@
         "cumulativeSecondaryShattersPreset": "atgm",
         "explodeOnRendinst": true,
         "fresnel": [0.23,0.1,2.0],
+        "shellAnimation": "video/shells_animations/atgm.ivf",
         "maxDeltaAngle": 0.03,
         "dragCx": 0.027,
         "length": 1.15,

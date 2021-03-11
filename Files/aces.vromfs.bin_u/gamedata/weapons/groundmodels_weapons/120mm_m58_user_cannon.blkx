@@ -48,6 +48,7 @@
     "bulletType": "apbc_usa_tank",
     "slopeEffectPreset": "ap",
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/ap.ivf",
     "bulletName": "120mm_m358",
     "onHitChanceMultExplFuel": 0.1,
     "relativeVelHitShift": [300.0,1000.0],
@@ -188,13 +189,14 @@
       "fresnel": [0.23,0.1,2.0],
       "explodeOnRendinst": true,
       "useEffectiveArmorThicknessForShatter": true,
+      "shellAnimation": "video/shells_animations/he.ivf",
       "bulletName": "120mm_m356",
       "hitPowerMult": 40.0,
       "explodeTreshold": 0.1,
       "fuseDelayDist": 0.0,
       "explosionEffect": "hit_106_132mm_metal_he",
       "groundCollisionEffect": "hit_106_132mm_dirt_he",
-      "ricochetEffect": "hit_106_132mm_dirt_ap",
+      "ricochetEffect": "hit_106_132mm_metal_ap",
       "waterCollisionEffect": "hit_106_132mm_water",
       "explosionPatchRadius": 3.5,
       "stabilityRicochetModifier": {
@@ -299,6 +301,9 @@
             }
           }
         ]
+      },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
@@ -405,6 +410,7 @@
       "cumulativeSecondaryShattersPreset": "heat_fs",
       "explodeOnRendinst": true,
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/heat_fs.ivf",
       "bulletName": "120mm_m469",
       "onHitChanceMultExplFuel": 0.3,
       "relativeVelHitShift": [300.0,1000.0],
@@ -414,7 +420,7 @@
       "explodeTreshold": 0.1,
       "explosionEffect": "hit_106_132mm_metal_he",
       "groundCollisionEffect": "hit_106_132mm_dirt_he",
-      "ricochetEffect": "hit_106_132mm_dirt_ap",
+      "ricochetEffect": "hit_106_132mm_metal_ap",
       "waterCollisionEffect": "hit_106_132mm_water",
       "explosionPatchRadius": 3.5,
       "stabilityRicochetModifier": {
@@ -443,7 +449,7 @@
       },
       "damage": {
         "explosive": {
-          "radius": 0.3,
+          "radius": 0.15,
           "offset": 0.2
         },
         "shatter": [
@@ -530,6 +536,9 @@
             }
           }
         ]
+      },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
       },
       "visual": {
         "range_percent_of_ammo": [100.0,0.0],
@@ -638,6 +647,7 @@
       "modelName": "tank_bullet_he",
       "fresnel": [0.23,0.1,2.0],
       "explodeOnRendinst": true,
+      "shellAnimation": "video/shells_animations/smoke.ivf",
       "bulletName": "120mm_m357",
       "hitPowerMult": 2.0,
       "nearHitPower": [1.0,50.0],

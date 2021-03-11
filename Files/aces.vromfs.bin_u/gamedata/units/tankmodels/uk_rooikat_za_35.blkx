@@ -159,11 +159,11 @@
           "armorThickness": 10.0
         },
         "turret_02_back_dm": {
-          "armorThickness": 20.0,
+          "armorThickness": 10.0,
           "armorClass": "tank_structural_steel"
         },
         "turret_02_side_dm": {
-          "armorThickness": 20.0,
+          "armorThickness": 10.0,
           "armorClass": "tank_structural_steel"
         },
         "body_side_dm": {
@@ -173,7 +173,8 @@
           "armorThickness": 10.0
         },
         "turret_02_bottom_dm": {
-          "armorThickness": 5.0
+          "armorThickness": 10.0,
+          "armorClass": "tank_structural_steel"
         },
         "body_bottom_dm": {
           "armorThickness": 15.0
@@ -1685,6 +1686,12 @@
     }
   },
   {
+    "attachables": {
+      "turret_02_back_dm": false,
+      "turret_02_bottom_dm": false
+    }
+  },
+  {
     "MetaParts": {
       "body": [
         {
@@ -1914,7 +1921,7 @@
           },
           "limitsTable": {
             "lim1": [-180.0,-140.0,-6.0,85.0],
-            "lim2": [-140.0,140.0,-8.0,85.0],
+            "lim2": [-140.0,140.0,-6.0,85.0],
             "lim3": [140.0,180.0,-6.0,85.0]
           },
           "gunStabilizer": {
@@ -2036,10 +2043,7 @@
             "node": "antenna_target_location"
           },
           {
-            "node": "antenna_target_tagging"
-          },
-          {
-            "node": "antenna_target_tagging_mount"
+            "node": "antenna_target_location_mount"
           }
         ]
       }
@@ -2054,15 +2058,29 @@
     }
   },
   {
-    "sensors": {
-      "sensor": {
-        "blk": "gameData/sensors/us_an_apg_66_m_247.blk",
-        "turretIndex": 0,
-        "designationFromBody": true,
-        "designationTurretIndex": 0,
-        "dmPart": "antenna_target_location_dm"
+    "sensors": [
+      {
+        "sensor": {
+          "blk": "gameData/sensors/us_adats_search.blk",
+          "turretIndex": 0,
+          "designationFromBody": true,
+          "designationTurretIndex": 0,
+          "dmPart": "antenna_target_location_dm"
+        }
+      },
+      {
+        "sensor": {
+          "blk": "gameData/sensors/us_adats_track.blk",
+          "turretIndex": 0,
+          "dmPart": "optic_gun_dm"
+        }
+      },
+      {
+        "sensor": {
+          "blk": "gameData/sensors/LaserBeamRidingSensor.blk"
+        }
       }
-    }
+    ]
   },
   {
     "VehiclePhys": {

@@ -3315,8 +3315,6 @@
         "armorClass": "ships_oil_fuel_tank",
         "armorThickness": 10.0,
         "stopChanceOnDeadPart": 0.5,
-        "fireParamsPreset": "ship_fuel_tank",
-        "fireProtectionHp": 30.0,
         "fuel_tank_01_dm": {
           "hp": 3000.0
         },
@@ -3766,7 +3764,7 @@
         "armorClass": "ship_structural_steel",
         "armorThickness": 1.0,
         "oneSided": true,
-        "fireDamageMult": 2.0,
+        "fireDamageMult": 1.5,
         "aa_turret_01_dm": {
           "hp": 70.0
         },
@@ -3992,7 +3990,6 @@
         "fireDamageMult": 0.75,
         "explosionDamageMult": 0.75,
         "shatterDamageMult": 0.75,
-        "secondaryShatterDamageMult": 0.5,
         "armorClass": "ship_structural_steel",
         "fireParamsPreset": "ship_ammo_fire_total",
         "armorThickness": 7.0,
@@ -4114,7 +4111,7 @@
       },
       "ammo_first_stage": {
         "armorClass": "ship_structural_steel",
-        "fireParamsPreset": "ship_ammo_fire",
+        "fireParamsPreset": "ship_ammo_fire_aux",
         "oneSided": true,
         "armorThickness": 7.0,
         "fireProtectionHp": 10.0,
@@ -4635,8 +4632,8 @@
           {
             "onHit": {
               "damageType": "fire",
-              "fire": 0.97,
-              "damage": 50.0,
+              "fire": 0.95,
+              "damage": 75.0,
               "fHitCritical": false
             }
           },
@@ -4655,15 +4652,14 @@
           {
             "onKill": {
               "expl": 0.76,
-              "fire": 0.75,
               "fHitCritical": false
             }
           },
           {
             "onHit": {
               "damageType": "fire",
-              "fire": 0.85,
-              "damage": 50.0,
+              "fire": 0.95,
+              "damage": 75.0,
               "fHitCritical": false
             }
           },
@@ -4681,7 +4677,7 @@
         "ammunition_first_stage": [
           {
             "onKill": {
-              "fire": 1.0,
+              "expl": 1.0,
               "fHitCritical": false
             }
           },
@@ -4761,8 +4757,8 @@
         "ammunition_torpedoes": [
           {
             "onKill": {
-              "expl": 0.15,
-              "nothing": 0.16,
+              "expl": 0.03,
+              "nothing": 0.04,
               "fHitCritical": false
             }
           },
@@ -4804,307 +4800,6 @@
               "damageType": "explosion",
               "expl": 0.15,
               "damage": 250.0,
-              "fHitCritical": false
-            }
-          }
-        ]
-      },
-      {
-        "part": {
-          "name": "ammo_turret_01_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_02_dm",
-          "onKill": {
-            "main_caliber_turret_02_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_03_dm",
-          "onKill": {
-            "main_caliber_turret_03_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_04_dm",
-          "onKill": {
-            "main_caliber_turret_04_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_05_dm",
-          "onKill": {
-            "main_caliber_turret_05_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_06_dm",
-          "onKill": {
-            "main_caliber_turret_06_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_07_dm",
-          "onKill": {
-            "main_caliber_turret_07_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_08_dm",
-          "onKill": {
-            "main_caliber_turret_08_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_09_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_09_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_10_dm",
-          "onKill": {
-            "main_caliber_turret_10_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_11_dm",
-          "onKill": {
-            "main_caliber_turret_11_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_12_dm",
-          "onKill": {
-            "main_caliber_turret_12_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_13_dm",
-          "onKill": {
-            "main_caliber_turret_13_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_14_dm",
-          "onKill": {
-            "main_caliber_turret_14_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammo_turret_15_dm",
-          "onKill": {
-            "main_caliber_turret_15_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_01_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_02_dm",
-          "onKill": {
-            "main_caliber_turret_02_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_03_dm",
-          "onKill": {
-            "main_caliber_turret_03_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_04_dm",
-          "onKill": {
-            "main_caliber_turret_04_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_05_dm",
-          "onKill": {
-            "main_caliber_turret_05_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_06_dm",
-          "onKill": {
-            "main_caliber_turret_06_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_07_dm",
-          "onKill": {
-            "main_caliber_turret_07_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_08_dm",
-          "onKill": {
-            "main_caliber_turret_08_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_09_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_09_dm",
-          "onKill": {
-            "main_caliber_turret_01_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_10_dm",
-          "onKill": {
-            "main_caliber_turret_10_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_11_dm",
-          "onKill": {
-            "main_caliber_turret_11_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_12_dm",
-          "onKill": {
-            "main_caliber_turret_12_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_13_dm",
-          "onKill": {
-            "main_caliber_turret_13_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_14_dm",
-          "onKill": {
-            "main_caliber_turret_14_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": {
-          "name": "ammunition_storage_charges_15_dm",
-          "onKill": {
-            "main_caliber_turret_15_dm": 1.0
-          }
-        }
-      },
-      {
-        "part": [
-          {
-            "name": "fuel_tank_dm"
-          },
-          {
-            "name": "fuel_tank_01_dm"
-          },
-          {
-            "name": "fuel_tank_02_dm"
-          },
-          {
-            "name": "fuel_tank_03_dm"
-          },
-          {
-            "name": "fuel_tank_04_dm"
-          },
-          {
-            "name": "fuel_tank_05_dm"
-          },
-          {
-            "name": "fuel_tank_06_dm"
-          },
-          {
-            "name": "fuel_tank_07_dm"
-          },
-          {
-            "name": "fuel_tank_08_dm"
-          },
-          {
-            "name": "fuel_tank_09_dm"
-          },
-          {
-            "name": "fuel_tank_10_dm"
-          },
-          {
-            "onHit": {
-              "damageType": "explosion",
-              "fire": 0.95,
-              "damage": 400.0,
               "fHitCritical": false
             }
           }
@@ -9276,7 +8971,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_01_dm"
@@ -9323,6 +9018,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_01_dm": {
               "count": 5
@@ -9371,7 +9068,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_02_dm"
@@ -9418,6 +9115,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_02_dm": {
               "count": 5
@@ -9466,7 +9165,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_03_dm"
@@ -9513,6 +9212,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_03_dm": {
               "count": 5
@@ -9561,7 +9262,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_04_dm"
@@ -9608,6 +9309,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_04_dm": {
               "count": 5
@@ -9656,7 +9359,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_04_dm"
@@ -9703,6 +9406,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_05_dm": {
               "count": 5
@@ -9751,7 +9456,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_05_dm"
@@ -9798,6 +9503,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_06_dm": {
               "count": 5
@@ -9846,7 +9553,7 @@
           "fireEvent": "ammo_fire_1"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_05_dm"
@@ -9893,6 +9600,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_07_dm": {
               "count": 5
@@ -9941,7 +9650,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_06_dm"
@@ -9988,6 +9697,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_08_dm": {
               "count": 5
@@ -10036,7 +9747,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_06_dm"
@@ -10083,6 +9794,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_09_dm": {
               "count": 5
@@ -10131,7 +9844,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_07_dm"
@@ -10178,6 +9891,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_10_dm": {
               "count": 5
@@ -10226,7 +9941,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_07_dm"
@@ -10273,6 +9988,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_11_dm": {
               "count": 5
@@ -10321,7 +10038,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_08_dm"
@@ -10368,6 +10085,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_12_dm": {
               "count": 5
@@ -10416,7 +10135,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_08_dm"
@@ -10463,6 +10182,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_13_dm": {
               "count": 5
@@ -10511,7 +10232,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_08_dm"
@@ -10558,6 +10279,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_14_dm": {
               "count": 5
@@ -10606,7 +10329,7 @@
           "fireEvent": "ammo_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_total"
         },
         {
           "elevator": "elevator_08_dm"
@@ -10653,6 +10376,8 @@
             "firstStage": true,
             "fatalFire": false,
             "fatalExplosion": false,
+            "fireEvent": "ready_use_ammo_fire",
+            "explosionEvent": "ready_use_ammo_explosion",
             "damageEffect": "ammunition_first_stage",
             "ammo_turret_15_dm": {
               "count": 5
@@ -10746,7 +10471,7 @@
           "fireEvent": "ammo_aux_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_aux"
         },
         {
           "splashRadiusConstraint": 10.0
@@ -10821,7 +10546,7 @@
           "fireEvent": "ammo_aux_fire_2"
         },
         {
-          "fireParamsPreset": "ship_ammo_fire"
+          "fireParamsPreset": "ship_ammo_fire_aux"
         },
         {
           "splashRadiusConstraint": 10.0
@@ -11161,7 +10886,27 @@
           "fx": {
             "name": "ship_explosion_large_second",
             "scale": 0.5,
-            "centerDmgPart": false
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
+          "name": "ready_use_ammo_fire",
+          "fx": {
+            "name": "ship_fire",
+            "scale": 0.3,
+            "centerDmgPart": true
+          }
+        }
+      },
+      {
+        "event": {
+          "name": "ready_use_ammo_explosion",
+          "fx": {
+            "name": "ship_explosion_large_second",
+            "scale": 0.3,
+            "centerDmgPart": true
           }
         }
       },

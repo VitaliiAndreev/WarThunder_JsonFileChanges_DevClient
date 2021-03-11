@@ -32,7 +32,7 @@
     "forceAutoAimingTimer": 1.0,
     "explosionEffect": "hit_106_132mm_metal_he",
     "groundCollisionEffect": "hit_106_132mm_dirt_he",
-    "ricochetEffect": "hit_106_132mm_dirt_ap",
+    "ricochetEffect": "hit_106_132mm_metal_ap",
     "waterCollisionEffect": "hit_106_132mm_water",
     "explosionPatchRadius": 3.5,
     "normalizationPreset": "heat",
@@ -46,6 +46,7 @@
     "cumulativeSecondaryShattersPreset": "atgm",
     "explodeOnRendinst": true,
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/atgm.ivf",
     "bulletName": "125mm_hj_73",
     "caliber": 0.125,
     "explosiveType": "a_ix_1",
@@ -194,7 +195,7 @@
     },
     "damage": {
       "explosive": {
-        "radius": 0.3,
+        "radius": 0.15,
         "offset": 0.2
       },
       "shatter": [
@@ -281,6 +282,9 @@
           }
         }
       ]
+    },
+    "shatterDamage": {
+      "breachConeAngle": 45.0
     },
     "cumulativeDamage": {
       "armorPower": 400.0,

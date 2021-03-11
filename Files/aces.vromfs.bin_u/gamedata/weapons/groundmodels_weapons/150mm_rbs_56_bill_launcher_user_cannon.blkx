@@ -51,6 +51,7 @@
     "cumulativeSecondaryShattersPreset": "atgm",
     "explodeOnRendinst": true,
     "fresnel": [0.23,0.1,2.0],
+    "shellAnimation": "video/shells_animations/atgm.ivf",
     "bulletName": "150mm_bill_2",
     "mass": 10.9,
     "caliber": 0.15,
@@ -90,6 +91,7 @@
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/atgm.ivf",
       "aimPosOffset": [1.0,0.0],
       "maxDeltaAngle": 0.03,
       "dragCx": 0.027,
@@ -158,101 +160,6 @@
         "detectGroundUnits": true,
         "detectGround": false
       },
-      "shatter": [
-        {
-          "useRealShatters": true
-        },
-        {
-          "countPortion": 0.15
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.5,
-            "damageScale": 1.5,
-            "angles": [0.0,9.0],
-            "countPortion": 0.1
-          }
-        },
-        {
-          "segment": {
-            "angles": [10.0,29.0],
-            "countPortion": 0.0
-          }
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.0,
-            "damageScale": 1.0,
-            "angles": [30.0,124.0],
-            "countPortion": 0.35
-          }
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.5,
-            "damageScale": 1.5,
-            "angles": [45.0,70.0],
-            "countPortion": 0.05
-          }
-        },
-        {
-          "segment": {
-            "angles": [125.0,169.0],
-            "countPortion": 0.0
-          }
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.0,
-            "damageScale": 1.0,
-            "angles": [170.0,189.0],
-            "countPortion": 0.1
-          }
-        },
-        {
-          "segment": {
-            "angles": [190.0,234.0],
-            "countPortion": 0.0
-          }
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.0,
-            "damageScale": 1.0,
-            "angles": [235.0,329.0],
-            "countPortion": 0.35
-          }
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.5,
-            "damageScale": 1.5,
-            "angles": [290.0,315.0],
-            "countPortion": 0.05
-          }
-        },
-        {
-          "segment": {
-            "angles": [330.0,349.0],
-            "countPortion": 0.0
-          }
-        },
-        {
-          "segment": {
-            "radiusScale": 1.0,
-            "penetrationScale": 1.5,
-            "damageScale": 1.5,
-            "angles": [350.0,359.0],
-            "countPortion": 0.1
-          }
-        }
-      ],
       "collisions": {
         "default": {
           "fx": "hit_133_160mm_dirt_he"
@@ -343,7 +250,7 @@
       },
       "damage": {
         "explosive": {
-          "radius": 0.3,
+          "radius": 0.15,
           "offset": 0.2
         },
         "shatter": [
@@ -431,6 +338,9 @@
           }
         ]
       },
+      "shatterDamage": {
+        "breachConeAngle": 45.0
+      },
       "cumulativeDamage": {
         "armorPower": 510.0,
         "distance": 7.5,
@@ -460,6 +370,7 @@
       "cumulativeSecondaryShattersPreset": "atgm",
       "explodeOnRendinst": true,
       "fresnel": [0.23,0.1,2.0],
+      "shellAnimation": "video/shells_animations/atgm.ivf",
       "bulletName": "150mm_bill_2",
       "mass": 10.9,
       "caliber": 0.15,
@@ -499,6 +410,7 @@
         "cumulativeSecondaryShattersPreset": "atgm",
         "explodeOnRendinst": true,
         "fresnel": [0.23,0.1,2.0],
+        "shellAnimation": "video/shells_animations/atgm.ivf",
         "aimPosOffset": [1.0,0.0],
         "maxDeltaAngle": 0.03,
         "dragCx": 0.027,
@@ -567,101 +479,6 @@
           "detectGroundUnits": true,
           "detectGround": false
         },
-        "shatter": [
-          {
-            "useRealShatters": true
-          },
-          {
-            "countPortion": 0.15
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.5,
-              "damageScale": 1.5,
-              "angles": [0.0,9.0],
-              "countPortion": 0.1
-            }
-          },
-          {
-            "segment": {
-              "angles": [10.0,29.0],
-              "countPortion": 0.0
-            }
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.0,
-              "damageScale": 1.0,
-              "angles": [30.0,124.0],
-              "countPortion": 0.35
-            }
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.5,
-              "damageScale": 1.5,
-              "angles": [45.0,70.0],
-              "countPortion": 0.05
-            }
-          },
-          {
-            "segment": {
-              "angles": [125.0,169.0],
-              "countPortion": 0.0
-            }
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.0,
-              "damageScale": 1.0,
-              "angles": [170.0,189.0],
-              "countPortion": 0.1
-            }
-          },
-          {
-            "segment": {
-              "angles": [190.0,234.0],
-              "countPortion": 0.0
-            }
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.0,
-              "damageScale": 1.0,
-              "angles": [235.0,329.0],
-              "countPortion": 0.35
-            }
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.5,
-              "damageScale": 1.5,
-              "angles": [290.0,315.0],
-              "countPortion": 0.05
-            }
-          },
-          {
-            "segment": {
-              "angles": [330.0,349.0],
-              "countPortion": 0.0
-            }
-          },
-          {
-            "segment": {
-              "radiusScale": 1.0,
-              "penetrationScale": 1.5,
-              "damageScale": 1.5,
-              "angles": [350.0,359.0],
-              "countPortion": 0.1
-            }
-          }
-        ],
         "collisions": {
           "default": {
             "fx": "hit_133_160mm_dirt_he"
@@ -752,7 +569,7 @@
         },
         "damage": {
           "explosive": {
-            "radius": 0.3,
+            "radius": 0.15,
             "offset": 0.2
           },
           "shatter": [
@@ -839,6 +656,9 @@
               }
             }
           ]
+        },
+        "shatterDamage": {
+          "breachConeAngle": 45.0
         },
         "cumulativeDamage": {
           "armorPower": 510.0,

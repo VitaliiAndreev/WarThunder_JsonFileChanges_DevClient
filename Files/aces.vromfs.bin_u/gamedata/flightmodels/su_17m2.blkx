@@ -7,6 +7,8 @@
   "haveCCIPForRocket": true,
   "haveCCIPForBombs": true,
   "haveCCIPForGun": true,
+  "haveCCRPForBombs": true,
+  "havePointOfInterestDesignator": true,
   "ilsASP17": true,
   "type": "typeFighter",
   "paratrooper": "ally",
@@ -29,9 +31,6 @@
   "fightAiBehaviour": "assault",
   "laserDesignator": true,
   "autopilotImpl": "FBW",
-  "customClassIco": "!#ui/gameuiskin#image_in_progress_ico.svg",
-  "customImage": "!#ui/unitskin#image_in_progress",
-  "customTooltipImage": "ui/aircrafts/image_in_progress",
   "DamageParts": {
     "alum_alloy20": {
       "armor2_dm": {
@@ -2378,7 +2377,45 @@
       "preset": {
         "name": "su_17m2_bomb_ofab100_120",
         "blk": "gameData/FlightModels/weaponPresets/su_17m2_bomb_ofab100_120.blk",
-        "reqModification": "su_17_ofab_100"
+        "reqModification": "su_17_ofab_100",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/BombGuns/su_ofab100_120.blk"
+            },
+            {
+              "iconType": "bombs_small_group_x4"
+            },
+            {
+              "amountPerTier": 4.0
+            },
+            {
+              "tier": {
+                "idx": 4
+              }
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 6
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            },
+            {
+              "tier": {
+                "idx": 8
+              }
+            }
+          ]
+        }
       }
     },
     {
@@ -2399,7 +2436,37 @@
       "preset": {
         "name": "su_17m2_rocket_ub32",
         "blk": "gameData/FlightModels/weaponPresets/su_17m2_rocket_ub32.blk",
-        "reqModification": "mig_21_ub32"
+        "reqModification": "mig_21_ub32",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/su_s_5k_rocket.blk"
+            },
+            {
+              "iconType": "nar_he_large"
+            },
+            {
+              "tier": {
+                "idx": 4
+              }
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            },
+            {
+              "tier": {
+                "idx": 8
+              }
+            }
+          ]
+        }
       }
     },
     {
@@ -2413,7 +2480,55 @@
       "preset": {
         "name": "su_17m2_rocket_s3k",
         "blk": "gameData/FlightModels/weaponPresets/su_17m2_rocket_s3k.blk",
-        "reqModification": "su_7b_s3"
+        "reqModification": "su_7b_s3",
+        "weaponConfig": {
+          "Weapon": [
+            {
+              "blk": "gameData/Weapons/rocketGuns/su_s_3k_rocket.blk"
+            },
+            {
+              "iconType": "rockets_ap_small_group"
+            },
+            {
+              "amountPerTier": 4.0
+            },
+            {
+              "tier": {
+                "idx": 3
+              }
+            },
+            {
+              "tier": {
+                "idx": 4
+              }
+            },
+            {
+              "tier": {
+                "idx": 5
+              }
+            },
+            {
+              "tier": {
+                "idx": 6
+              }
+            },
+            {
+              "tier": {
+                "idx": 7
+              }
+            },
+            {
+              "tier": {
+                "idx": 8
+              }
+            },
+            {
+              "tier": {
+                "idx": 9
+              }
+            }
+          ]
+        }
       }
     },
     {
@@ -2464,6 +2579,83 @@
         },
         {
           "reqModification": "mi_24_r_60"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_r_60.blk"
+                },
+                {
+                  "iconType": "missile_type_b_air_to_air"
+                },
+                {
+                  "tier": {
+                    "idx": 1
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 2
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 10
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 11
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/BombGuns/su_ofab100_120.blk"
+                },
+                {
+                  "iconType": "bombs_small_group"
+                },
+                {
+                  "amountPerTier": 3.0
+                },
+                {
+                  "tier": {
+                    "idx": 3
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 9
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2512,6 +2704,50 @@
         },
         {
           "reqModification": "mi_24_r_60"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_r_60.blk"
+                },
+                {
+                  "iconType": "missile_type_b_air_to_air"
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_s_5k_rocket.blk"
+                },
+                {
+                  "iconType": "nar_he_large"
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2544,6 +2780,88 @@
         },
         {
           "reqModification": "mi_24_r_60"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_r_60.blk"
+                },
+                {
+                  "iconType": "missile_type_b_air_to_air"
+                },
+                {
+                  "tier": {
+                    "idx": 1
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 2
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 10
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 11
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_s_3k_rocket.blk"
+                },
+                {
+                  "iconType": "rockets_ap_small_group"
+                },
+                {
+                  "amountPerTier": 4.0
+                },
+                {
+                  "tier": {
+                    "idx": 3
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 6
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 9
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2624,6 +2942,73 @@
         },
         {
           "reqModification": "su_17_sppu_22_gunpod"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/cannonGSh_23.blk"
+                },
+                {
+                  "iconType": "doublebarreled_box"
+                },
+                {
+                  "tier": {
+                    "idx": 2
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 10
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/BombGuns/su_ofab100_120.blk"
+                },
+                {
+                  "iconType": "bombs_small_group"
+                },
+                {
+                  "amountPerTier": 3.0
+                },
+                {
+                  "tier": {
+                    "idx": 3
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 9
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2672,6 +3057,50 @@
         },
         {
           "reqModification": "su_17_sppu_22_gunpod"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/cannonGSh_23.blk"
+                },
+                {
+                  "iconType": "doublebarreled_box"
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_s_5k_rocket.blk"
+                },
+                {
+                  "iconType": "nar_he_large"
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2704,6 +3133,78 @@
         },
         {
           "reqModification": "su_17_sppu_22_gunpod"
+        },
+        {
+          "weaponConfig": [
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/cannonGSh_23.blk"
+                },
+                {
+                  "iconType": "doublebarreled_box"
+                },
+                {
+                  "tier": {
+                    "idx": 2
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 10
+                  }
+                }
+              ]
+            },
+            {
+              "Weapon": [
+                {
+                  "blk": "gameData/Weapons/rocketGuns/su_s_3k_rocket.blk"
+                },
+                {
+                  "iconType": "rockets_ap_small_group"
+                },
+                {
+                  "amountPerTier": 4.0
+                },
+                {
+                  "tier": {
+                    "idx": 3
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 4
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 5
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 6
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 7
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 8
+                  }
+                },
+                {
+                  "tier": {
+                    "idx": 9
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
