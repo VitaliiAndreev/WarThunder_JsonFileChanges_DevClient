@@ -683,8 +683,10 @@
       "tracks": {
         "armorClass": "tank_traks",
         "armorThickness": 15.0,
-        "hp": 100.0,
+        "hp": 250.0,
         "genericEffectiveThicknessMax": 15.0,
+        "genericDamageMult": 1.5,
+        "cumulativeDamageMult": 1.5,
         "track_r_dm": [],
         "track_l_dm": []
       },
@@ -784,32 +786,39 @@
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
         "fireProtectionHp": 5.0,
         "hidableInViewer": false,
         "cannon_breech_dm": {
-          "restrainDamage": 0.5
+          "restrainDamage": 0.5,
+          "armorThrough": 150.0
         },
         "cannon_breech_01_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_02_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_03_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_04_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_05_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         }
       },
       "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
+        "armorThrough": 150.0,
         "fireProtectionHp": 5.0,
         "restrainDamage": 0.5,
         "engine_dm": [],
@@ -2054,6 +2063,40 @@
   },
   {
     "MetaParts": {
+      "open_fightning_compartment": [
+        {
+          "part": "driver_dm"
+        },
+        {
+          "part": "loader_dm"
+        },
+        {
+          "part": "gunner_dm"
+        },
+        {
+          "part": "commander_dm"
+        },
+        {
+          "part": "machine_gunner_dm"
+        },
+        {
+          "part": "gunner_01_dm"
+        },
+        {
+          "part": "gunner_02_dm"
+        },
+        {
+          "part": "loader_01_dm"
+        },
+        {
+          "part": "loader_02_dm"
+        },
+        {
+          "effect": {
+            "pressureOpen": true
+          }
+        }
+      ],
       "closed_fightning_compartment": [
         {
           "part": "driver_dm"
@@ -2090,30 +2133,6 @@
         },
         {
           "part": "cannon_breech_dm"
-        },
-        {
-          "part": "radio_station_dm"
-        },
-        {
-          "part": "drive_turret_v_dm"
-        },
-        {
-          "part": "drive_turret_h_dm"
-        },
-        {
-          "part": "drive_turret_v_01_dm"
-        },
-        {
-          "part": "drive_turret_h_01_dm"
-        },
-        {
-          "part": "drive_turret_v_02_dm"
-        },
-        {
-          "part": "drive_turret_h_02_dm"
-        },
-        {
-          "part": "transmission_dm"
         },
         {
           "part": "ammo_turret_dm"
@@ -2567,6 +2586,90 @@
         },
         {
           "part": "ammo_body_r_20_dm"
+        },
+        {
+          "part": "radiator_dm"
+        },
+        {
+          "part": "radiator_l_dm"
+        },
+        {
+          "part": "radiator_r_dm"
+        },
+        {
+          "part": "radio_station_dm"
+        },
+        {
+          "part": "drive_turret_v_dm"
+        },
+        {
+          "part": "drive_turret_h_dm"
+        },
+        {
+          "part": "drive_turret_v_01_dm"
+        },
+        {
+          "part": "drive_turret_h_01_dm"
+        },
+        {
+          "part": "drive_turret_v_02_dm"
+        },
+        {
+          "part": "drive_turret_h_02_dm"
+        },
+        {
+          "part": "engine_dm"
+        },
+        {
+          "part": "transmission_dm"
+        },
+        {
+          "part": "fuel_tank_dm"
+        },
+        {
+          "part": "fuel_tank_01_dm"
+        },
+        {
+          "part": "fuel_tank_02_dm"
+        },
+        {
+          "part": "fuel_tank_03_dm"
+        },
+        {
+          "part": "fuel_tank_04_dm"
+        },
+        {
+          "part": "fuel_tank_05_dm"
+        },
+        {
+          "part": "fuel_tank_r_01_dm"
+        },
+        {
+          "part": "fuel_tank_r_02_dm"
+        },
+        {
+          "part": "fuel_tank_r_03_dm"
+        },
+        {
+          "part": "fuel_tank_r_04_dm"
+        },
+        {
+          "part": "fuel_tank_r_05_dm"
+        },
+        {
+          "part": "fuel_tank_l_01_dm"
+        },
+        {
+          "part": "fuel_tank_l_02_dm"
+        },
+        {
+          "part": "fuel_tank_l_03_dm"
+        },
+        {
+          "part": "fuel_tank_l_04_dm"
+        },
+        {
+          "part": "fuel_tank_l_05_dm"
         },
         {
           "effect": {

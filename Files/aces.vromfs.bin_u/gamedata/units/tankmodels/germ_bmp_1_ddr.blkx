@@ -324,8 +324,6 @@
           "armorClass": "tank_traks",
           "armorThickness": 10.0,
           "hp": 150.0,
-          "track_r_dm": [],
-          "track_l_dm": [],
           "ex_armor_l_04_dm": [],
           "ex_armor_l_05_dm": [],
           "ex_armor_l_06_dm": [],
@@ -365,6 +363,16 @@
           "armorThickness": 5.0,
           "hp": 50.0
         }
+      },
+      "tracks": {
+        "armorClass": "tank_traks",
+        "armorThickness": 15.0,
+        "hp": 250.0,
+        "genericEffectiveThicknessMax": 15.0,
+        "genericDamageMult": 1.5,
+        "cumulativeDamageMult": 1.5,
+        "track_r_dm": [],
+        "track_l_dm": []
       },
       "equipment_body_turret": {
         "armorClass": "tank_structural_steel",
@@ -442,32 +450,39 @@
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
         "fireProtectionHp": 5.0,
         "hidableInViewer": false,
         "cannon_breech_dm": {
-          "restrainDamage": 0.5
+          "restrainDamage": 0.5,
+          "armorThrough": 150.0
         },
         "cannon_breech_01_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_02_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_03_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_04_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_05_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         }
       },
       "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
+        "armorThrough": 150.0,
         "fireProtectionHp": 5.0,
         "restrainDamage": 0.5,
         "engine_dm": [],
@@ -1783,9 +1798,6 @@
         },
         {
           "part": "drive_turret_h_02_dm"
-        },
-        {
-          "part": "transmission_dm"
         },
         {
           "part": "ammo_turret_dm"
@@ -3292,7 +3304,7 @@
     "cockpit": {
       "zoomOutFov": 13.2,
       "zoomInFov": 12.2,
-      "sightFov": 7.0,
+      "sightFov": 6.3,
       "sightName": "1_pn_22m1",
       "headPos": [0.0,4.0,-8.0],
       "headPosOnShooting": [-0.7,3.0,-0.3],

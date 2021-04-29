@@ -411,8 +411,10 @@
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
         "armorEffectiveThicknessMax": 20.0,
-        "hp": 100.0,
+        "hp": 300.0,
         "genericEffectiveThicknessMax": 20.0,
+        "genericDamageMult": 1.8,
+        "cumulativeDamageMult": 1.8,
         "track_r_dm": [],
         "track_l_dm": [],
         "track_r_01_dm": [],
@@ -514,32 +516,39 @@
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
         "fireProtectionHp": 5.0,
         "hidableInViewer": false,
         "cannon_breech_dm": {
-          "restrainDamage": 0.5
+          "restrainDamage": 0.5,
+          "armorThrough": 150.0
         },
         "cannon_breech_01_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_02_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_03_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_04_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_05_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         }
       },
       "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
+        "armorThrough": 150.0,
         "fireProtectionHp": 5.0,
         "restrainDamage": 0.5,
         "engine_dm": [],
@@ -1850,9 +1859,6 @@
         },
         {
           "part": "drive_turret_h_02_dm"
-        },
-        {
-          "part": "transmission_dm"
         },
         {
           "part": "ammo_turret_dm"
@@ -3176,32 +3182,15 @@
     ]
   },
   {
-    "cockpit": [
-      {
-        "zoomOutFov": 21.1
-      },
-      {
-        "zoomInFov": 10.5
-      },
-      {
-        "sightFov": 13.0
-      },
-      {
-        "sightName": "tsh2b_41"
-      },
-      {
-        "sightFov": 20.0
-      },
-      {
-        "headPos": [0.0,3.5,-8.5]
-      },
-      {
-        "headPosOnShooting": [-0.2,3.2,-0.5]
-      },
-      {
-        "detectionHeight": 2.2
-      }
-    ]
+    "cockpit": {
+      "zoomOutFov": 21.1,
+      "zoomInFov": 10.5,
+      "sightFov": 10.0,
+      "sightName": "tsh2b_41",
+      "headPos": [0.0,3.5,-8.5],
+      "headPosOnShooting": [-0.2,3.2,-0.5],
+      "detectionHeight": 2.2
+    }
   },
   {
     "modifications": {

@@ -19,10 +19,15 @@
   "defGame": "master",
   "waitForMenuMusic": true,
   "useOneshotForAirGunSound": true,
-  "minShotStep": 0.08,
+  "minShotStep": 0.037,
   "maxAltFallBullets": 20.0,
   "maxSpeedFallBullets": 50.0,
   "event_time_to_live": 12.0,
+  "event_planes_time_to_live": 4.0,
+  "event_planes_ai_time_to_live": 1.0,
+  "event_surface_time_to_live": 12.0,
+  "event_surface_ai_time_to_live": 6.0,
+  "event_explosion_time_to_live": 6.0,
   "FmEngineAi": "engine_ai",
   "FmBomberEngineAi": "engine_bomber_ai",
   "FmJetEngineAi": "engine_jet_ai",
@@ -357,7 +362,7 @@
         "name": "sounds/outside/engines"
       },
       {
-        "volLimits": [50.0,100.0]
+        "volLimits": [27.0,100.0]
       }
     ],
     "master": {
@@ -581,7 +586,7 @@
     "eventTireScreech": "tire_screech",
     "eventVibrationOverload": "vibration_overload",
     "eventWreckScrape": "wreck_scrape",
-    "bulletPassByRadius": 18.0,
+    "bulletPassByRadius": 30.0,
     "eventBulletHitShipMgun": "hit_mgun",
     "eventBulletHitShipSmall": "hit_small",
     "eventBulletHitShipMid": "hit_mid",
@@ -611,7 +616,7 @@
     "eventBoosterAiEngine": "engineBooster_ai",
     "eventWaveHitBoat": "collision_wave_boat",
     "eventWaveHitShip": "collision_wave_ship",
-    "shipSizeThreshold": 20.0,
+    "shipSizeThreshold": 35.0,
     "eventNuclearStrike": "explosions_far",
     "shockImpulseThreshold": 1.0
   },
@@ -814,7 +819,7 @@
     "lods": {
       "lod_0": {
         "radius": 20.0,
-        "maxSounds": 4,
+        "maxSounds": 6,
         "updInterval": 0.05
       },
       "lod_1": {
@@ -852,11 +857,11 @@
     "lods": {
       "lod_0": {
         "radius": 10.0,
-        "maxSounds": 2
+        "maxSounds": 8
       },
       "lod_1": {
         "radius": 200.0,
-        "maxSounds": 4
+        "maxSounds": 12
       }
     }
   },
@@ -922,7 +927,7 @@
     "lods": {
       "lod_0": {
         "radius": 300.0,
-        "maxSounds": 5
+        "maxSounds": 4
       },
       "lod_1": {
         "radius": 2000.0,
@@ -2415,6 +2420,447 @@
       "path": "ground/engines/ai_truck",
       "eventBack": "engine",
       "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine01_toon": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine01_start",
+      "eventStop": "engine01_stop",
+      "eventProp": "engine01_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine01",
+      "eventSurround": "",
+      "eventLod1": "engine01",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine01",
+      "event_start_cockpit_l": "engine01_start",
+      "event_stop_cockpit_l": "engine01_stop",
+      "event_prop_cockpit_l": "engine01_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine02_toon": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine02_start",
+      "eventStop": "engine02_stop",
+      "eventProp": "engine02_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine02",
+      "eventSurround": "",
+      "eventLod1": "engine02",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine02",
+      "event_start_cockpit_l": "engine02_start",
+      "event_stop_cockpit_l": "engine02_stop",
+      "event_prop_cockpit_l": "engine02_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine03_toon": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine03_start",
+      "eventStop": "engine03_stop",
+      "eventProp": "engine03_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine03",
+      "eventSurround": "",
+      "eventLod1": "engine03",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine03",
+      "event_start_cockpit_l": "engine03_start",
+      "event_stop_cockpit_l": "engine03_stop",
+      "event_prop_cockpit_l": "engine03_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine04_toon": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine04_start",
+      "eventStop": "engine04_stop",
+      "eventProp": "engine04_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine04",
+      "eventSurround": "",
+      "eventLod1": "engine04",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine04",
+      "event_start_cockpit_l": "engine04_start",
+      "event_stop_cockpit_l": "engine04_stop",
+      "event_prop_cockpit_l": "engine04_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine05_toon": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine05_start",
+      "eventStop": "engine05_stop",
+      "eventProp": "engine05_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine05",
+      "eventSurround": "",
+      "eventLod1": "engine05",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine05",
+      "event_start_cockpit_l": "engine05_start",
+      "event_stop_cockpit_l": "engine05_stop",
+      "event_prop_cockpit_l": "engine05_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine06_toon": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine06_start",
+      "eventStop": "engine06_stop",
+      "eventProp": "engine06_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine06",
+      "eventSurround": "",
+      "eventLod1": "engine06",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine06",
+      "event_start_cockpit_l": "engine06_start",
+      "event_stop_cockpit_l": "engine06_stop",
+      "event_prop_cockpit_l": "engine06_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine_uav": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine_uav_start",
+      "eventStop": "engine_uav_stop",
+      "eventProp": "engine_uav_prop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine_uav",
+      "eventSurround": "",
+      "eventLod1": "engine_uav",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    },
+    "cockpit": {
+      "path": "toon/engines",
+      "event_cockpit_l": "engine_uav",
+      "event_start_cockpit_l": "engine_uav_start",
+      "event_stop_cockpit_l": "engine_uav_stop",
+      "event_prop_cockpit_l": "engine_uav_prop",
+      "leftPos": [0.0,0.0,0.0],
+      "rpmSmooth": 0.02,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9
+    }
+  },
+  "engine01_toon_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine01_start",
+      "eventStop": "engine01_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine01_ai",
+      "eventSurround": "",
+      "eventLod1": "engine01_ai",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine02_toon_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine02_start",
+      "eventStop": "engine02_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine02_ai",
+      "eventSurround": "",
+      "eventLod1": "engine02_ai",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine03_toon_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine03_start",
+      "eventStop": "engine03_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine03_ai",
+      "eventSurround": "",
+      "eventLod1": "engine03_ai",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine04_toon_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine04_start",
+      "eventStop": "engine04_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine04_ai",
+      "eventSurround": "",
+      "eventLod1": "engine04_ai",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine05_toon_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine05_start",
+      "eventStop": "engine05_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine05_ai",
+      "eventSurround": "",
+      "eventLod1": "engine05_ai",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine06_toon_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine06_start",
+      "eventStop": "engine06_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine06_ai",
+      "eventSurround": "",
+      "eventLod1": "engine06_ai",
+      "rpmSmooth": 0.014,
+      "loadScale": 6.0,
+      "loadSmooth": 0.05,
+      "distSmooth": 0.9,
+      "distScaleOnNotHero": 1.0
+    }
+  },
+  "engine_uav_ai": {
+    "effects": {
+      "path": "toon/engines",
+      "wep": "engine_wep",
+      "overheatOutside": "engine_overheat_camera",
+      "overheatCockpit": "engine_overheat_cockpit",
+      "dive": "engine_dive",
+      "timeFallingDown": 2.0,
+      "engineVolumeOnOverheat": 0.8,
+      "eventStart": "engine_uav_start",
+      "eventStop": "engine_uav_stop"
+    },
+    "outside": {
+      "path": "toon/engines",
+      "eventFront": "",
+      "eventBack": "engine_uav_ai",
+      "eventSurround": "",
+      "eventLod1": "engine_uav_ai",
+      "rpmSmooth": 0.014,
       "loadScale": 6.0,
       "loadSmooth": 0.05,
       "distSmooth": 0.9,
@@ -8133,6 +8579,11 @@
       "ship": {
         "path": "naval/effects"
       }
+    },
+    "grd_cannon_reload_heavy": {
+      "path": "ground/effects",
+      "event": "reload_cannon_heavy",
+      "time": 4.5
     },
     "grd_cannon_burning_reload": {
       "path": "ground/effects",

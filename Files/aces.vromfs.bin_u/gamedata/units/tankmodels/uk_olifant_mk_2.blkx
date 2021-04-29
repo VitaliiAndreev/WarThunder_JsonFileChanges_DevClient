@@ -386,6 +386,10 @@
           "armorThickness": 10.0,
           "hp": 50.0
         },
+        "optic_turret_dm": {
+          "armorThickness": 3.0,
+          "hp": 20.0
+        },
         "optic_turret_01_dm": {
           "armorThickness": 3.0,
           "hp": 20.0
@@ -531,8 +535,10 @@
         "armorClass": "tank_traks",
         "armorThickness": 20.0,
         "armorEffectiveThicknessMax": 20.0,
-        "hp": 100.0,
+        "hp": 300.0,
         "genericEffectiveThicknessMax": 20.0,
+        "genericDamageMult": 1.8,
+        "cumulativeDamageMult": 1.8,
         "track_r_dm": [],
         "track_l_dm": [],
         "track_r_01_dm": [],
@@ -634,32 +640,39 @@
       "cannon_breech": {
         "armorClass": "tank_structural_steel",
         "hp": 150.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
         "fireProtectionHp": 5.0,
         "hidableInViewer": false,
         "cannon_breech_dm": {
-          "restrainDamage": 0.5
+          "restrainDamage": 0.5,
+          "armorThrough": 150.0
         },
         "cannon_breech_01_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_02_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_03_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_04_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         },
         "cannon_breech_05_dm": {
-          "armorThickness": 10.0
+          "armorThickness": 5.0,
+          "armorThrough": 5.0
         }
       },
       "power_block": {
         "armorClass": "armor_tank_engine",
         "hp": 100.0,
-        "armorThickness": 150.0,
+        "armorThickness": 5.0,
+        "armorThrough": 150.0,
         "fireProtectionHp": 5.0,
         "restrainDamage": 0.5,
         "engine_dm": [],
@@ -1952,9 +1965,6 @@
           "part": "drive_turret_h_02_dm"
         },
         {
-          "part": "transmission_dm"
-        },
-        {
           "part": "ammo_turret_dm"
         },
         {
@@ -2426,14 +2436,14 @@
   },
   {
     "sound": {
-      "EngineName": "engine_m3_bradley",
+      "EngineName": "engine_centurion",
       "TrackSoundPath": "tanks/engines_tanks",
       "TrackSoundPathStudio": "ground/engines",
-      "TrackSoundName": "tracks_wheels",
-      "TrackSoundNameCockpit": "tracks_wheels_interior",
+      "TrackSoundName": "tracks",
+      "TrackSoundNameCockpit": "tracks_interior",
       "turret_turn": "turret_turn_servo",
-      "EngineNameAi": "engine_truck_ai",
-      "TrackSoundNameAi": "tracks_ai_wheels"
+      "EngineNameAi": "engine_tank_ai_middle",
+      "TrackSoundNameAi": "tracks_ai_middle"
     }
   },
   {
@@ -2660,7 +2670,7 @@
         "driveGearRadius": 0.4,
         "mainGearRatio": 1.0,
         "sideGearRatio": 4.2,
-        "neutralGearRatio": 10.0,
+        "neutralGearRatio": 15.0,
         "gearType": "differential",
         "gearRatios": [
           {
